@@ -6,6 +6,50 @@
 
 ---
 
+## Versión 2.2 — 10 de noviembre de 2026 · Módulo propio de división celular
+
+### Contexto
+El docente consideró que la mitosis y la meiosis deben tener su propia
+sección, después de La célula y antes de Reproducción.
+
+### Cambios
+- **`division.html` (nuevo): «División celular: mitosis y meiosis».** Va en el
+  menú justo después de La célula. Tiene siete secciones:
+  1. **Cromosomas:**
+     - Cromosoma interactivo: cromátidas, centrómero, brazos, genes y ADN
+       enrollado.
+     - Cariotipo humano de 23 parejas (mujer XX / hombre XY), con 2n y n.
+     - Chequeo rápido.
+  2. **Ciclo celular:** diagrama circular G1, S, G2 y M, que se toca, con los
+     puntos de control.
+  3. **Mitosis:** la animación por fases que estaba en La célula, el truco
+     «ProMeAnaTe», para qué sirve y un chequeo.
+  4. **Citocinesis:** animación del surco en la célula animal y de la placa
+     celular en la vegetal.
+  5. **Meiosis:** la animación con los alelos A, a, B y b que estaba en
+     Genética (con «Otra orientación»), su relación con Mendel y las
+     combinaciones posibles.
+  6. **Mitosis vs. meiosis:** tabla y clasificador.
+  7. **Cuando la división falla:** cáncer y síndrome de Down (no disyunción),
+     con un cariotipo con trisomía 21.
+- **`celula.html`:** la sección 10 queda como tarjeta que lleva al módulo
+  nuevo. Su «Siguiente» ahora es División celular.
+- **`genetica.html`:** la sección 05 queda como la idea clave «La meiosis
+  explica las leyes de Mendel», con enlace a la meiosis paso a paso.
+- **Otros archivos:**
+  - `reinos.html`: su «Anterior» ahora es División celular.
+  - `reproduccion.html`: enlaza a `division.html#meiosis`.
+  - `bio.js`: el menú incluye el módulo.
+  - `index.html`: la portada tiene la tarjeta del módulo.
+  - `sw.js`: el caché incluye la página.
+- **Versiones:** `bionom-v19` y `?v=8`.
+
+### Verificación
+Con Playwright:
+- Revisión de la sintaxis de todos los scripts de las páginas tocadas.
+- Capturas de cada sección en computador y celular.
+- No hay errores ni desbordes.
+
 ## Versión 2.1 — 10 de noviembre de 2026 · Reproducción animada y desarrollo embrionario
 
 ### Contexto

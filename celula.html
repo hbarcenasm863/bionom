@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=7">
+<link rel="stylesheet" href="bio.css?v=8">
 <style>
 .hist-card{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center}
 .hist-card .ilu{font-size:4rem;text-align:center;background:var(--cn-brand-l);border-radius:16px;padding:10px 0}
@@ -58,7 +58,7 @@
     <a href="#membrana">💧 Ósmosis</a>
     <a href="#lab-papa">🥔 Laboratorio</a>
     <a href="#energia">⚡ Fotosíntesis y respiración</a>
-    <a href="#division">➗ Ciclo celular</a>
+    <a href="#division">✂️ División celular</a>
     <a href="#medicina">⚕️ Célula y medicina</a>
   </nav>
 
@@ -264,21 +264,9 @@
 
   <!-- ═══ DIVISIÓN CELULAR ═══ -->
   <section class="sec" id="division">
-    <h2><span class="n">10</span> El ciclo celular y la mitosis</h2>
-    <p class="lead">«Toda célula viene de otra», dijo Virchow. Pero ¿cómo se divide una célula sin perder su información? Primero <b>copia su ADN</b> y luego reparte una copia exacta a cada célula hija. Esta célula tiene 4 cromosomas (en ti son 46). Avanza fase por fase.</p>
-    <div class="card lado" style="align-items:center">
-      <svg id="mitosis" viewBox="0 0 320 240" style="width:100%" aria-hidden="true"></svg>
-      <div><div class="chips" id="fases" style="margin-bottom:10px"></div><div id="fase-t" aria-live="polite"></div><div class="ctrl"><button type="button" class="cn-btn" id="fa-ant">← Antes</button><button type="button" class="cn-btn cn-btn--primary" id="fa-sig">Siguiente fase →</button><button type="button" class="cn-btn" id="fa-play">▶ Animar</button></div></div>
-    </div>
-    <div class="grid g2" style="margin-top:14px">
-      <div class="card"><h3>🔁 ¿Para qué sirve la mitosis?</h3><p>Para <b>crecer</b> (pasaste de una célula a 30 billones), <b>reparar</b> heridas y reemplazar células viejas (tu piel se renueva cada mes) y, en organismos como las bacterias, las amebas o los fresales, para <b>reproducirse</b> de forma asexual.</p></div>
-      <div class="card"><h3>⚠️ Cuando el ciclo se descontrola</h3><p>El ciclo tiene «puntos de control» que revisan el ADN antes de seguir. Si un gen de control muta, la célula se divide sin parar y forma un tumor: así empieza el <b>cáncer</b>. El tabaco, el exceso de sol y algunas sustancias aumentan ese riesgo.</p></div>
-    </div>
-    <div class="dato">Para formar óvulos y espermatozoides hay otra división, la <b>meiosis</b>, que reparte los cromosomas a la mitad y los mezcla. La verás en <a href="genetica.html#meiosis">genética</a>, porque explica las leyes de Mendel.</div>
-    <div class="chequeo" data-ok="0" data-exp="En la metafase los cromosomas se alinean en el centro (el ecuador de la célula), sujetos por las fibras del huso.">
-      <div class="q">¿En qué fase los cromosomas se ordenan en fila en el centro de la célula?</div>
-      <div class="ops"><button class="op">Metafase</button><button class="op" data-por="En la anafase se separan hacia los polos.">Anafase</button><button class="op" data-por="En la profase apenas se condensan.">Profase</button><button class="op" data-por="En la telofase se forman los dos núcleos nuevos.">Telofase</button></div>
-    </div>
+    <h2><span class="n">10</span> ¿Cómo se divide una célula?</h2>
+    <p class="lead">«Toda célula viene de otra», dijo Virchow. Cómo se copia el ADN y se reparte entre las células hijas lo estudias en su propio módulo.</p>
+    <a class="card" href="division.html" style="display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--cn-tx)"><span style="font-size:2.6rem">✂️</span><span><b style="color:var(--cn-brand-d);font-size:1.15rem">Ir a División celular: mitosis y meiosis →</b><br><small style="color:var(--cn-dim)">Cromosomas · ciclo celular · mitosis · meiosis · cáncer y síndrome de Down</small></span></a>
   </section>
 
   <!-- ═══ MEDICINA ═══ -->
@@ -293,11 +281,11 @@
       <div class="flip"><div class="in"><div class="fr"><span class="e">🧪</span><b>Cultivos celulares</b><small>toca para voltear</small></div><div class="bk">Células que se mantienen vivas en el laboratorio para producir vacunas, probar medicamentos o fabricar piel para quemados.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">🔴</span><b>Exámenes de sangre</b><small>toca para voltear</small></div><div class="bk">Contar glóbulos rojos, blancos y plaquetas permite detectar anemias, infecciones y otras enfermedades.</div></div></div>
     </div>
-    <div class="sig"><a href="index.html"><small>← Volver</small><b>🗺️ Mapa de niveles</b></a><a class="der" href="reinos.html"><small>Siguiente →</small><b>🍄 Reinos y clasificación</b></a></div>
+    <div class="sig"><a href="index.html"><small>← Volver</small><b>🗺️ Mapa de niveles</b></a><a class="der" href="division.html"><small>Siguiente →</small><b>✂️ División celular</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=7"></script>
+<script src="bio.js?v=8"></script>
 <script>
 (function(){
 var esc=BIO.esc;
@@ -618,48 +606,11 @@ function priestley(){
 }
 prT.oninput=priestley;document.querySelectorAll('[data-pr],#pr-luz').forEach(function(x){x.onchange=priestley;});priestley();
 
-/* ═══ Mitosis ═══ */
-var COLC=['#e5484d','#3e8ed0'],FASES=[
- ['Interfase','La célula crece, trabaja y, en la etapa S, <b>copia todo su ADN</b>. Los cromosomas están desenrollados (cromatina) dentro del núcleo. Es la fase más larga: ocupa cerca del 90 % del ciclo.'],
- ['Profase','El ADN se enrolla y se condensan los <b>cromosomas</b>, cada uno con dos copias idénticas unidas (cromátidas hermanas): forma de X. La envoltura del núcleo desaparece y se forma el <b>huso</b> de fibras.'],
- ['Metafase','Los cromosomas se alinean en el <b>centro</b> de la célula (placa ecuatorial), sujetos por las fibras del huso.'],
- ['Anafase','Las fibras se acortan y <b>separan las cromátidas hermanas</b>: cada copia viaja a un polo de la célula.'],
- ['Telofase','Llega un juego completo de cromosomas a cada polo. Se forman <b>dos núcleos</b> nuevos y los cromosomas se vuelven a desenrollar.'],
- ['Citocinesis','El citoplasma se divide en dos. Resultado: <b>dos células hijas idénticas</b> a la madre, con el mismo número de cromosomas (4 aquí; 46 en ti).']
-];
-var fk=0,playF=null;
-function crom(x,y,c,doble,rot,esc){esc=esc||1;var w=4.5*esc,l=13*esc;var a='<g transform="translate('+x+' '+y+') rotate('+(rot||0)+')">';
-  if(doble)a+='<rect x="'+(-w-1.5)+'" y="'+(-l)+'" width="'+w+'" height="'+(2*l)+'" rx="'+w/2+'" fill="'+c+'" transform="rotate(-14)"/><rect x="1.5" y="'+(-l)+'" width="'+w+'" height="'+(2*l)+'" rx="'+w/2+'" fill="'+c+'" transform="rotate(14)"/><circle r="2.6" fill="#333"/>';
-  else a+='<rect x="'+(-w/2)+'" y="'+(-l)+'" width="'+w+'" height="'+(2*l)+'" rx="'+w/2+'" fill="'+c+'"/>';
-  return a+'</g>';}
-function dibMit(k){
-  var s='<defs><radialGradient id="cit" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#fff6f1"/><stop offset="1" stop-color="#fbd9cb"/></radialGradient></defs>';
-  var cel='<ellipse cx="160" cy="120" rx="120" ry="92" fill="url(#cit)" stroke="#e07a5f" stroke-width="4"/>';
-  if(k<=3)s+=cel;
-  if(k===0){s+='<circle cx="160" cy="120" r="48" fill="#ece3f7" stroke="#7b4bb7" stroke-width="3" stroke-dasharray="14 3"/>';
-    for(var i=0;i<4;i++)s+='<path d="M'+(132+i*14)+' '+(100+i%2*20)+' q8 -12 16 0 t16 0 t16 0" stroke="'+COLC[i%2]+'" stroke-width="2.4" fill="none" opacity=".85"/>';
-    s+='<circle cx="160" cy="120" r="9" fill="#7b4bb7" opacity=".6"/>';}
-  if(k===1){s+='<circle cx="160" cy="120" r="50" fill="none" stroke="#7b4bb7" stroke-width="2" stroke-dasharray="4 8" opacity=".5"/>'+crom(140,108,COLC[0],1,20)+crom(176,104,COLC[1],1,-30)+crom(150,140,COLC[1],1,60,0.8)+crom(178,138,COLC[0],1,-10,0.8)+'<circle cx="60" cy="120" r="6" fill="#d4a017"/><circle cx="260" cy="120" r="6" fill="#d4a017"/>';}
-  if(k>=2&&k<=3){for(var f=0;f<7;f++){var yy=60+f*20;s+='<path d="M60 120 Q110 '+yy+' 160 '+yy+'" stroke="#bfa36a" stroke-width="1" fill="none" opacity=".7"/><path d="M260 120 Q210 '+yy+' 160 '+yy+'" stroke="#bfa36a" stroke-width="1" fill="none" opacity=".7"/>';}s+='<circle cx="60" cy="120" r="6" fill="#d4a017"/><circle cx="260" cy="120" r="6" fill="#d4a017"/>';}
-  if(k===2){[[COLC[0],1],[COLC[1],1],[COLC[1],.8],[COLC[0],.8]].forEach(function(c,i){s+=crom(160,72+i*32,c[0],1,90,c[1]);});s+='<line x1="160" y1="34" x2="160" y2="206" stroke="#999" stroke-dasharray="4 4"/>';}
-  if(k===3){[[COLC[0],1],[COLC[1],1],[COLC[1],.8],[COLC[0],.8]].forEach(function(c,i){var y=78+i*28;s+=crom(105,y,c[0],0,90,c[1]*.9)+crom(215,y,c[0],0,90,c[1]*.9);});}
-  if(k===4){s+='<path d="M40 120 C40 40 150 30 160 60 C170 30 280 40 280 120 C280 200 170 210 160 180 C150 210 40 200 40 120Z" fill="url(#cit)" stroke="#e07a5f" stroke-width="4"/>';
-    [95,225].forEach(function(x){s+='<circle cx="'+x+'" cy="120" r="34" fill="#ece3f7" stroke="#7b4bb7" stroke-width="2.5"/>'+crom(x-10,108,COLC[0],0,30,.75)+crom(x+10,106,COLC[1],0,-20,.75)+crom(x-8,134,COLC[1],0,60,.6)+crom(x+12,132,COLC[0],0,-50,.6);});}
-  if(k===5){[90,230].forEach(function(x){s+='<ellipse cx="'+x+'" cy="120" rx="70" ry="64" fill="url(#cit)" stroke="#e07a5f" stroke-width="4"/><circle cx="'+x+'" cy="120" r="30" fill="#ece3f7" stroke="#7b4bb7" stroke-width="2.5" stroke-dasharray="10 3"/>';for(var j=0;j<4;j++)s+='<path d="M'+(x-20+j*9)+' '+(110+j%2*16)+' q5 -8 10 0 t10 0" stroke="'+COLC[j%2]+'" stroke-width="2" fill="none"/>';});}
-  s+='<text x="160" y="232" text-anchor="middle" style="font:800 15px Outfit" fill="#14532d">'+FASES[k][0]+'</text>';
-  return s;
-}
-var fz=document.getElementById('fases');fz.innerHTML=FASES.map(function(f,i){return '<button class="chip" data-f="'+i+'">'+(i+1)+'. '+f[0]+'</button>';}).join('');
-function verFase(k){fk=k;document.getElementById('mitosis').innerHTML=dibMit(k);document.getElementById('fase-t').innerHTML='<h3>'+FASES[k][0]+'</h3><p>'+FASES[k][1]+'</p>';
-  fz.querySelectorAll('.chip').forEach(function(b,i){b.classList.toggle('on',i===k);});document.getElementById('fa-ant').disabled=k===0;document.getElementById('fa-sig').disabled=k===5;if(k===5)BIO.marcarSeccion('division');}
-fz.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){verFase(+b.getAttribute('data-f'));};});
-document.getElementById('fa-sig').onclick=function(){verFase(fk+1);};document.getElementById('fa-ant').onclick=function(){verFase(fk-1);};
-document.getElementById('fa-play').onclick=function(){var b=this;if(playF){clearInterval(playF);playF=null;b.textContent='▶ Animar';return;}b.textContent='⏸ Pausar';verFase(0);playF=setInterval(function(){if(fk>=5){clearInterval(playF);playF=null;b.textContent='▶ Animar';return;}verFase(fk+1);},1800);};
-verFase(0);
+
 })();
 </script>
-<script src="text-zoom.js?v=7"></script>
-<script src="narracion.js?v=7"></script>
-<script src="pwa-install.js?v=7"></script>
+<script src="text-zoom.js?v=8"></script>
+<script src="narracion.js?v=8"></script>
+<script src="pwa-install.js?v=8"></script>
 </body>
 </html>
