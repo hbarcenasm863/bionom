@@ -124,6 +124,7 @@ detective:[
  ['Obtuvieron 3 amarillas por cada verde.','Obtuvieron 3 verdes por cada amarilla.'],
  ['El verde reapareció porque es un rasgo recesivo que estaba escondido.','El verde reapareció porque el ambiente cambió el color.'],
  ['El profesor concluyó que cada planta recibe un alelo de cada padre.','El profesor concluyó que cada planta recibe cuatro alelos de cada padre.'],
+ 'Para cerrar, escribió la conclusión en el tablero.',
  ['Y que la proporción 3 a 1 se predice con el cuadro de Punnett.','Y que la proporción 3 a 1 se predice con la tabla periódica.']]],
 ['El grupo sanguíneo de la familia',[
  'En la donación de sangre del colegio, Felipe preguntó por el grupo sanguíneo de su familia.',
