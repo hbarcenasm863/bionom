@@ -1,0 +1,141 @@
+// BioNom Service Worker
+// Páginas HTML: red primero (siempre la versión más reciente si hay conexión).
+// JS y CSS: red primero. Íconos y fuentes: stale-while-revalidate (rápido y se
+// autoactualiza en segundo plano). Todo funciona offline como respaldo.
+
+const CACHE = 'bionom-v1';
+const FONT_CACHE = 'bionom-fonts-v1';
+
+const ASSETS = [
+  './',
+  './index.html',
+  './celula.html',
+  './reinos.html',
+  './sistemas.html',
+  './bio.css',
+  './bio.js',
+  './text-zoom.js',
+  './narracion.js',
+  './pwa-install.js',
+  './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+  './icons/icon-180.png',
+  './icons/favicon-32.png',
+  './icons/logo.webp'
+];
+
+// Instalar: guardar todos los archivos en caché.
+// OJO: NO se llama self.skipWaiting() aquí. pwa-install.js muestra un banner
+// "Nueva versión disponible" y solo llama skipWaiting() (vía postMessage,
+// ver el listener 'message' más abajo) cuando el usuario pulsa "Actualizar".
+// Antes se llamaba aquí de forma incondicional, así que el SW nuevo tomaba
+// control solo, disparaba 'controllerchange' y forzaba location.reload() en
+// pwa-install.js sin que nadie lo pidiera — si un estudiante estaba a mitad
+// de una partida cuando se publicaba una versión nueva, la página se
+// recargaba sola y perdía el progreso del ejercicio.
+self.addEventListener('install', e => {
+  e.waitUntil(
+    caches.open(CACHE).then(c => c.addAll(ASSETS))
+  );
+});
+
+// Permite que pwa-install.js difiera la activación hasta que el usuario
+// pulse "Actualizar" en el banner (worker.postMessage('SKIP_WAITING')).
+self.addEventListener('message', e => {
+  if (e.data === 'SKIP_WAITING') self.skipWaiting();
+});
+
+// Activar: borrar cachés antiguas (mantener fuentes)
+self.addEventListener('activate', e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(
+        keys
+          .filter(k => k !== CACHE && k !== FONT_CACHE)
+          .map(k => caches.delete(k))
+      )
+    )
+  );
+  self.clients.claim();
+});
+
+// Fetch
+self.addEventListener('fetch', e => {
+  const url = e.request.url;
+
+  // No interceptar requests a Google Apps Script (analytics)
+  if (url.includes('script.google.com')) return;
+
+  // Google Fonts: stale-while-revalidate
+  if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) {
+    e.respondWith(
+      caches.open(FONT_CACHE).then(cache =>
+        cache.match(e.request).then(cached => {
+          const networkFetch = fetch(e.request).then(response => {
+            if (response && response.status === 200) {
+              cache.put(e.request, response.clone());
+            }
+            return response;
+          }).catch(() => cached); // sin red → devuelve caché aunque no esté
+          return cached || networkFetch;
+        })
+      )
+    );
+    return;
+  }
+
+  if (!url.startsWith(self.location.origin)) return;
+
+  // Navegación a páginas HTML: red primero, para que los cambios recientes
+  // lleguen de inmediato con conexión; si falla (sin red) usa el caché.
+  const isNavigation = e.request.mode === 'navigate' ||
+    (e.request.method === 'GET' && e.request.headers.get('accept')?.includes('text/html'));
+  if (isNavigation) {
+    e.respondWith(
+      fetch(e.request).then(response => {
+        if (response && response.status === 200) {
+          const clone = response.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+        }
+        return response;
+      }).catch(() => caches.match(e.request).then(cached => cached || caches.match('./index.html')))
+    );
+    return;
+  }
+
+  // JS y CSS: red primero (como las páginas), para que el código y los
+  // estilos nuevos lleguen de inmediato junto con el HTML nuevo. Antes eran
+  // stale-while-revalidate y un celular podía combinar un extras.js nuevo
+  // con un actividades.css viejo: el mapa conceptual se imprimía como texto
+  // suelto. Sin red, se usa la copia guardada (con o sin «?v=» en la URL).
+  const ruta = new URL(url).pathname;
+  if (/\.(js|css)$/.test(ruta)) {
+    e.respondWith(
+      fetch(e.request).then(response => {
+        if (response && response.status === 200 && response.type === 'basic') {
+          const clone = response.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+        }
+        return response;
+      }).catch(() => caches.match(e.request).then(cached => cached || caches.match(e.request, {ignoreSearch: true})))
+    );
+    return;
+  }
+
+  // Lo demás (íconos, imágenes): stale-while-revalidate — responde rápido
+  // desde caché y actualiza en segundo plano para la próxima visita.
+  e.respondWith(
+    caches.open(CACHE).then(cache =>
+      cache.match(e.request).then(cached => {
+        const networkFetch = fetch(e.request).then(response => {
+          if (response && response.status === 200 && response.type === 'basic') {
+            cache.put(e.request, response.clone());
+          }
+          return response;
+        }).catch(() => cached);
+        return cached || networkFetch;
+      })
+    )
+  );
+});

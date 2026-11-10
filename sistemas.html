@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sistemas del cuerpo humano — BioNom</title>
+<meta name="description" content="De la célula al sistema: tejidos, órganos y sistemas del cuerpo humano en una figura interactiva, con recorridos animados.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=1">
+<style>
+.escalon{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px 0}
+.escalon .e{flex:1;min-width:110px;text-align:center;background:#fff;border:2px solid var(--cn-brd);border-radius:14px;padding:10px 6px;transition:all .3s}
+.escalon .e .i{font-size:2.2rem;display:block}
+.escalon .e.on{border-color:var(--cn-naranja);background:#fff7ec;transform:translateY(-4px);box-shadow:var(--cn-sh-h)}
+.escalon .fl{color:var(--cn-dim);font-weight:900}
+.cuerpo-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:18px;align-items:start}
+@media(max-width:820px){.cuerpo-wrap{grid-template-columns:1fr}}
+#cuerpo,#rec-svg{max-height:78vh}
+.sil{fill:#f6e7da;stroke:#d9b99c;stroke-width:2}
+#cuerpo .org{opacity:0;transition:opacity .35s;pointer-events:none}
+#cuerpo .org.vis{opacity:1;pointer-events:auto}
+#cuerpo .org.tenue{opacity:.18;pointer-events:none}
+#cuerpo text{font:700 11px Outfit;pointer-events:none}
+.sist-btns{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.sist-info{border-left:6px solid;padding-left:12px;margin-bottom:12px}
+.rec-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.rec-cap{background:#fff7ec;border:1.5px solid #f5c58c;border-radius:12px;padding:10px 14px;margin-top:10px;min-height:60px}
+.func{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">🫀 Nivel del organismo</span>
+    <h1>Sistemas: un equipo de 30 billones de células</h1>
+    <p>Las células parecidas forman <b>tejidos</b>, los tejidos forman <b>órganos</b>, los órganos forman <b>sistemas</b> y todos los sistemas juntos forman un <b>organismo</b>: tú. Explora tu cuerpo por dentro y sigue el viaje de un bocado de comida y de una molécula de oxígeno.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Niveles: tejido → órgano → sistema → organismo</a>
+  </header>
+  <nav class="toc" aria-label="En esta página">
+    <strong>En esta página</strong>
+    <a href="#escalera">🪜 De célula a sistema</a>
+    <a href="#tejidos">🧱 Tejidos</a>
+    <a href="#cuerpo-sec">🧍 El cuerpo por dentro</a>
+    <a href="#recorridos">🚂 Recorridos</a>
+    <a href="#equipo">🤝 Trabajo en equipo</a>
+    <a href="#funciones">🎯 Funciones vitales</a>
+  </nav>
+
+  <section class="sec" id="escalera">
+    <h2><span class="n">01</span> De la célula al sistema</h2>
+    <p class="lead">Sigue el ejemplo del corazón. En cada paso, el nuevo nivel puede hacer algo que el anterior no podía.</p>
+    <div class="escalon" id="esc" aria-hidden="true">
+      <div class="e"><span class="i">🔴</span>Célula</div><span class="fl">→</span>
+      <div class="e"><span class="i">💪</span>Tejido</div><span class="fl">→</span>
+      <div class="e"><span class="i">❤️</span>Órgano</div><span class="fl">→</span>
+      <div class="e"><span class="i">🩸</span>Sistema</div><span class="fl">→</span>
+      <div class="e"><span class="i">🧑</span>Organismo</div>
+    </div>
+    <div class="pasos" data-alcambiar="pasoEsc">
+      <div class="paso" data-t="Célula"><h3>1. Célula: la fibra muscular cardíaca</h3><p>Es una célula alargada y ramificada, llena de mitocondrias (necesita mucha energía) y de proteínas que se acortan: por eso puede <b>contraerse</b>.</p></div>
+      <div class="paso" data-t="Tejido"><h3>2. Tejido muscular cardíaco</h3><p>Millones de esas células unidas por «puentes» que pasan la señal eléctrica de una a otra. Así se contraen <b>todas a la vez</b>, en un latido.</p></div>
+      <div class="paso" data-t="Órgano"><h3>3. Órgano: el corazón</h3><p>Une tejido muscular, tejido nervioso (marca el ritmo), tejido conectivo (las válvulas) y epitelial (lo recubre por dentro). Juntos <b>bombean sangre</b>: unas 100 000 veces al día.</p></div>
+      <div class="paso" data-t="Sistema"><h3>4. Sistema circulatorio</h3><p>Corazón + arterias + venas + capilares + sangre. Ahora sí se puede <b>llevar oxígeno y nutrientes a cada célula</b> y recoger sus desechos.</p></div>
+      <div class="paso" data-t="Organismo"><h3>5. Organismo</h3><p>El sistema circulatorio trabaja con el respiratorio, el digestivo, el nervioso… Todos juntos te mantienen <b>vivo</b>. Ningún sistema sobrevive solo.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="tejidos">
+    <h2><span class="n">02</span> Los cuatro tejidos del cuerpo</h2>
+    <p class="lead">Aunque tienes más de 200 tipos de células, todas se agrupan en solo <b>cuatro tipos de tejido</b>. Voltea cada tarjeta.</p>
+    <div class="grid g4">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🧴</span><b>Epitelial</b><small>toca para voltear</small></div><div class="bk"><b>Cubre y protege</b>: la piel, el interior del estómago y de los pulmones. Sus células van muy pegadas, como baldosas. También forma glándulas (sudor, saliva).</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🦴</span><b>Conectivo</b><small>toca para voltear</small></div><div class="bk"><b>Une y sostiene</b> los demás tejidos. Incluye el hueso, el cartílago, la grasa, los tendones… ¡y la sangre!</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">💪</span><b>Muscular</b><small>toca para voltear</small></div><div class="bk"><b>Se contrae y produce movimiento</b>. Hay tres tipos: esquelético (lo mueves a voluntad), liso (estómago, intestino) y cardíaco.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">⚡</span><b>Nervioso</b><small>toca para voltear</small></div><div class="bk"><b>Recibe y envía mensajes eléctricos</b>. Sus células, las neuronas, pueden medir más de un metro de largo (de la columna al pie).</div></div></div>
+    </div>
+    <div class="dato">Las plantas también tienen tejidos: <b>epidérmico</b> (protege), <b>xilema y floema</b> (llevan agua y savia, como las venas), <b>parénquima</b> (hace fotosíntesis y guarda reservas) y <b>meristemos</b> (donde la planta crece).</div>
+    <div class="chequeo" data-ok="1" data-exp="La sangre es tejido conectivo: tiene células (glóbulos) dentro de una «matriz» líquida, el plasma.">
+      <div class="q">¿A qué tipo de tejido pertenece la sangre?</div>
+      <div class="ops"><button class="op" data-por="El epitelial cubre superficies; la sangre circula por dentro.">Epitelial</button><button class="op">Conectivo</button><button class="op" data-por="La sangre no se contrae: es empujada por el corazón.">Muscular</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="cuerpo-sec">
+    <h2><span class="n">03</span> El cuerpo por dentro</h2>
+    <p class="lead">Escoge un sistema y luego <b>toca sus órganos</b> en la figura.</p>
+    <div class="sist-btns" id="sist-btns" role="group" aria-label="Sistemas"></div>
+    <div class="cuerpo-wrap">
+      <div class="fig"><svg id="cuerpo" viewBox="0 0 300 600" role="group" aria-label="Cuerpo humano"></svg><div class="ayuda">Toca un órgano</div></div>
+      <div class="det" id="org-det" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="recorridos">
+    <h2><span class="n">04</span> Recorridos por el cuerpo</h2>
+    <p class="lead">Escoge un viaje y avanza parada por parada. Observa por qué órganos pasa y qué le ocurre en cada uno.</p>
+    <div class="chips" id="rec-btns"></div>
+    <div class="lado" style="margin-top:12px">
+      <div class="fig"><svg id="rec-svg" viewBox="0 0 300 600" aria-hidden="true"></svg></div>
+      <div><div class="rec-cap" id="rec-cap" aria-live="polite"></div><div class="rec-bar"><button type="button" class="cn-btn" id="rec-ant">← Atrás</button><button type="button" class="cn-btn cn-btn--primary" id="rec-sig">Avanzar →</button><span id="rec-n" class="marcador"></span></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="equipo">
+    <h2><span class="n">05</span> Los sistemas trabajan en equipo</h2>
+    <p class="lead">Imagina que vas tarde y <b>corres para alcanzar el bus</b>. ¿Qué hace cada sistema? Avanza para descubrirlo.</p>
+    <div class="pasos" data-titulo="🏃 ¡Corre!">
+      <div class="paso" data-t="Nervioso"><h3>⚡ Sistema nervioso</h3><p>Tus ojos ven el bus alejarse. El cerebro decide correr y manda la orden a los músculos por los nervios en milésimas de segundo.</p></div>
+      <div class="paso" data-t="Endocrino"><h3>🧪 Sistema endocrino</h3><p>Las glándulas suprarrenales liberan <b>adrenalina</b> a la sangre: el corazón late más rápido y llega más glucosa a los músculos.</p></div>
+      <div class="paso" data-t="Locomotor"><h3>🦴 Sistema locomotor</h3><p>Los músculos de las piernas se contraen y jalan los huesos, que funcionan como palancas. ¡Avanzas!</p></div>
+      <div class="paso" data-t="Respiratorio"><h3>🫁 Sistema respiratorio</h3><p>Respiras más rápido y profundo para meter más oxígeno y sacar el CO₂ que producen tus músculos.</p></div>
+      <div class="paso" data-t="Circulatorio"><h3>❤️ Sistema circulatorio</h3><p>El corazón pasa de unos 70 a más de 150 latidos por minuto para repartir el oxígeno y la glucosa a los músculos.</p></div>
+      <div class="paso" data-t="Excretor"><h3>💧 Excreción y temperatura</h3><p>Los músculos calientan el cuerpo. Las glándulas de la piel producen <b>sudor</b> para enfriarte, y los riñones ajustan cuánta agua guardas.</p></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="Las hormonas viajan por la sangre: el endocrino necesita al circulatorio para que sus mensajes lleguen a su destino.">
+      <div class="q">La adrenalina sale de una glándula y llega al corazón. ¿Qué sistema la transporta?</div>
+      <div class="ops"><button class="op" data-por="El nervioso manda impulsos eléctricos por los nervios, no transporta hormonas.">El nervioso</button><button class="op" data-por="El respiratorio intercambia gases con el aire.">El respiratorio</button><button class="op">El circulatorio</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="funciones">
+    <h2><span class="n">06</span> Las tres funciones vitales</h2>
+    <p class="lead">Todo ser vivo cumple tres funciones: <b>nutrición</b> (obtener materia y energía), <b>relación</b> (percibir el ambiente y responder) y <b>reproducción</b> (originar nuevos individuos). Ubica cada sistema en la función que más le corresponde.</p>
+    <div class="card" id="clas-func"></div>
+    <div class="sig"><a href="reinos.html"><small>← Anterior</small><b>🍄 Reinos</b></a><a class="der" href="genetica.html"><small>Siguiente →</small><b>🧬 Genética</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=1"></script>
+<script>
+window.pasoEsc=function(k){document.querySelectorAll('#esc .e').forEach(function(e,i){e.classList.toggle('on',i===k);});};
+(function(){
+var C=document.getElementById('cuerpo');
+var SIL='<g class="sil-g"><ellipse class="sil" cx="150" cy="58" rx="36" ry="44"/><rect class="sil" x="134" y="95" width="32" height="22" rx="6"/>'+
+ '<path class="sil" d="M98 120 Q150 104 202 120 L214 200 Q206 270 200 330 Q150 352 100 330 Q94 270 86 200 Z"/>'+
+ '<path class="sil" d="M98 122 Q78 128 72 160 L58 280 Q54 300 64 302 Q72 302 74 286 L92 180 Z"/><path class="sil" d="M202 122 Q222 128 228 160 L242 280 Q246 300 236 302 Q228 302 226 286 L208 180 Z"/>'+
+ '<path class="sil" d="M104 328 L96 460 L100 570 Q102 588 126 586 Q132 580 126 570 L132 460 L146 340 Z"/><path class="sil" d="M196 328 L204 460 L200 570 Q198 588 174 586 Q168 580 174 570 L168 460 L154 340 Z"/></g>';
+/* Órganos: id → [sistema, nombre, ico, función, dibujo SVG, x y de etiqueta] */
+var ORG={
+ boca:['digestivo','Boca','👄','Los dientes <b>trituran</b> el alimento (digestión mecánica) y la saliva empieza a digerir el almidón (digestión química). La lengua forma el <b>bolo alimenticio</b>.','<path d="M138 80 Q150 90 162 80 Q150 86 138 80Z" fill="#c0392b" stroke="#8e2a1f" stroke-width="2"/>',150,74],
+ esofago:['digestivo','Esófago','⬇️','Tubo muscular de unos 25 cm que lleva el bolo al estómago con contracciones en ola (<b>peristaltismo</b>). Funciona aunque estés de cabeza.','<path d="M150 90 L150 205" stroke="#e8a07a" stroke-width="8" stroke-linecap="round" fill="none"/>',165,150],
+ estomago:['digestivo','Estómago','🫃','Bolsa muscular con <b>ácido clorhídrico</b> y enzimas que digieren las proteínas. Mezcla el bolo hasta volverlo una papilla llamada <b>quimo</b>.','<path d="M150 205 Q190 195 192 225 Q192 255 160 252 Q150 250 152 240 Q172 238 170 222 Q160 214 150 216Z" fill="#f2a07b" stroke="#c0623b" stroke-width="3"/>',190,212],
+ higado:['digestivo','Hígado','🟤','El órgano interno más grande. Produce la <b>bilis</b>, que ayuda a digerir las grasas, guarda glucosa y limpia la sangre de sustancias tóxicas.','<path d="M100 200 Q120 186 158 196 Q160 214 140 226 Q112 234 100 222Z" fill="#8d4a2f" stroke="#5e2f1c" stroke-width="3"/>',118,212],
+ pancreas:['digestivo','Páncreas','🌽','Envía al intestino <b>jugo pancreático</b> con enzimas para digerir de todo. También produce insulina (por eso está también en el sistema endocrino).','<path d="M130 255 Q160 246 182 252 Q178 262 150 264 Q134 264 130 255Z" fill="#f5c26b" stroke="#c48a1e" stroke-width="2.5"/>',158,272],
+ intdelgado:['digestivo','Intestino delgado','🌀','Tubo de unos <b>6 metros</b> enrollado. Termina la digestión y <b>absorbe los nutrientes</b> hacia la sangre a través de millones de pliegues llamados vellosidades.','<path d="M122 278 Q150 268 178 278 Q186 290 170 294 Q140 292 126 300 Q118 312 140 314 Q170 310 176 320" stroke="#f0b28c" stroke-width="9" fill="none" stroke-linecap="round"/>',150,290],
+ intgrueso:['digestivo','Intestino grueso','🔁','Mide 1,5 m y rodea al delgado. <b>Absorbe el agua</b> que queda y forma las heces. Ahí viven billones de bacterias útiles (microbiota).','<path d="M118 330 L112 270 Q112 262 120 262 L182 262 Q190 262 190 270 L188 330 Q170 334 158 330" stroke="#c98a5a" stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round"/>',100,300],
+ nariz:['respiratorio','Nariz y fosas nasales','👃','El aire entra, se <b>calienta, se humedece y se filtra</b> con los pelitos y el moco.','<path d="M150 52 L144 70 Q150 74 156 70 Z" fill="#e6a189" stroke="#a86650" stroke-width="2"/>',170,60],
+ traquea:['respiratorio','Tráquea','🦴','Tubo con anillos de cartílago que lo mantienen abierto. Lleva el aire hasta los bronquios. Por delante del esófago.','<path d="M150 98 L150 150 M150 150 L130 166 M150 150 L170 166" stroke="#7fb3d5" stroke-width="7" stroke-linecap="round" fill="none"/>',172,118],
+ pulmones:['respiratorio','Pulmones','🫁','Dos «esponjas» con unos 480 millones de <b>alvéolos</b>, sacos diminutos donde el oxígeno pasa a la sangre y el CO₂ sale de ella (<b>intercambio gaseoso</b>).','<path d="M144 132 Q112 126 104 170 Q100 205 140 205 Q146 170 144 132Z" fill="#f4a6b8" stroke="#c0607a" stroke-width="3"/><path d="M156 132 Q188 126 196 170 Q200 205 160 205 Q154 170 156 132Z" fill="#f4a6b8" stroke="#c0607a" stroke-width="3"/>',112,150],
+ diafragma:['respiratorio','Diafragma','〰️','Músculo en forma de cúpula bajo los pulmones. Al contraerse baja y el aire <b>entra</b> (inspiración); al relajarse sube y el aire <b>sale</b> (espiración).','<path d="M98 208 Q150 186 202 208" stroke="#d9534f" stroke-width="5" fill="none"/>',205,200],
+ corazon:['circulatorio','Corazón','❤️','Bomba muscular con <b>4 cavidades</b> (2 aurículas y 2 ventrículos). El lado derecho envía la sangre a los pulmones y el izquierdo, a todo el cuerpo.','<path d="M158 178 C150 166 136 170 138 184 C140 196 158 206 162 210 C168 204 184 194 184 182 C184 168 166 166 158 178Z" fill="#d62828" stroke="#8b1414" stroke-width="2.5"/>',182,170],
+ arterias:['circulatorio','Arterias','🔴','Vasos de pared gruesa y elástica que llevan la sangre <b>desde el corazón</b> hacia el cuerpo, con mucha presión. La aorta es la más grande.','<path d="M160 180 L160 130 L120 130 L80 200 L64 290 M160 130 L180 130 L220 200 L236 290 M162 210 L160 330 L116 380 L112 560 M160 330 L186 380 L190 560 M160 130 L150 70" stroke="#e63946" stroke-width="3.5" fill="none" stroke-linejoin="round"/>',92,230],
+ venas:['circulatorio','Venas','🔵','Llevan la sangre <b>de regreso al corazón</b>. Tienen válvulas que evitan que la sangre se devuelva por la gravedad.','<path d="M142 186 L140 136 L118 136 L76 208 L60 292 M140 136 L184 136 L224 208 L240 292 M140 214 L140 330 L106 380 L102 560 M140 330 L196 380 L198 560 M140 136 L144 70" stroke="#3a6ea5" stroke-width="3.5" fill="none" stroke-linejoin="round"/>',212,250],
+ rinones:['excretor','Riñones','🫘','Dos filtros del tamaño de un puño que limpian toda tu sangre unas 300 veces al día. Sacan la urea, las sales y el agua sobrante en forma de <b>orina</b>.','<path d="M118 238 Q102 240 104 262 Q108 282 124 278 Q116 262 126 252 Q130 240 118 238Z" fill="#9b2c2c" stroke="#5e1717" stroke-width="2.5"/><path d="M182 238 Q198 240 196 262 Q192 282 176 278 Q184 262 174 252 Q170 240 182 238Z" fill="#9b2c2c" stroke="#5e1717" stroke-width="2.5"/>',150,248],
+ ureteres:['excretor','Uréteres','〽️','Dos tubos delgados que llevan la orina de los riñones a la vejiga.','<path d="M122 278 Q130 300 144 316 M178 278 Q170 300 156 316" stroke="#e9c46a" stroke-width="4" fill="none"/>',108,300],
+ vejiga:['excretor','Vejiga','💧','Bolsa muscular que <b>guarda la orina</b> (hasta medio litro) hasta que la eliminas por la uretra.','<ellipse cx="150" cy="324" rx="16" ry="12" fill="#f6d55c" stroke="#b9922a" stroke-width="2.5"/><path d="M150 336 L150 348" stroke="#b9922a" stroke-width="3"/>',176,336],
+ piel:['excretor','Glándulas del sudor (piel)','💦','La piel también excreta: el <b>sudor</b> elimina agua, sales y un poco de urea, y además enfría el cuerpo.','<g fill="#5dade2"><circle cx="88" cy="160" r="4"/><circle cx="212" cy="160" r="4"/><circle cx="68" cy="250" r="4"/><circle cx="232" cy="250" r="4"/><circle cx="118" cy="44" r="4"/></g>',60,150],
+ cerebro:['nervioso','Encéfalo (cerebro)','🧠','Centro de control: recibe la información de los sentidos, la interpreta y <b>decide qué hacer</b>. También guarda memorias y emociones. El cerebelo coordina el equilibrio.','<path d="M120 52 Q118 22 150 18 Q184 20 182 52 Q170 62 150 60 Q128 62 120 52Z" fill="#f4a6b8" stroke="#b5527a" stroke-width="3"/><path d="M130 40 q8 -8 14 0 t14 0 t14 0" stroke="#b5527a" stroke-width="2" fill="none"/>',150,12],
+ medula:['nervioso','Médula espinal','🦯','Cordón de nervios protegido por la columna. Lleva mensajes entre el cerebro y el cuerpo y controla los <b>actos reflejos</b> (como quitar la mano del fuego).','<path d="M150 62 L150 330" stroke="#f1c40f" stroke-width="6" stroke-linecap="round"/>',170,300],
+ nervios:['nervioso','Nervios','⚡','Cables formados por prolongaciones de neuronas que llegan a cada rincón: llevan órdenes a los músculos y traen información de los sentidos.','<path d="M150 130 L96 140 L70 220 L62 290 M150 130 L204 140 L230 220 L238 290 M150 330 L120 400 L114 570 M150 330 L180 400 L186 570 M150 200 L104 190 M150 200 L196 190" stroke="#f39c12" stroke-width="2" fill="none"/>',230,200],
+ ojos:['nervioso','Órganos de los sentidos','👁️','Ojos, oídos, nariz, lengua y piel tienen <b>receptores</b> que captan luz, sonido, olores, sabores, presión y temperatura, y avisan al cerebro.','<circle cx="137" cy="56" r="5" fill="#2c3e50"/><circle cx="163" cy="56" r="5" fill="#2c3e50"/>',150,68],
+ hipofisis:['endocrino','Hipófisis','🎛️','Pequeña glándula bajo el cerebro, del tamaño de un garbanzo: es la «directora de orquesta» que controla a casi todas las demás glándulas. Produce la hormona del <b>crecimiento</b>.','<circle cx="150" cy="58" r="6" fill="#8e44ad"/>',176,52],
+ tiroides:['endocrino','Tiroides','🦋','Glándula en forma de mariposa en el cuello. Sus hormonas controlan la <b>velocidad del metabolismo</b>. Necesita yodo: por eso la sal de cocina en Colombia es yodada.','<path d="M138 104 Q144 96 150 106 Q156 96 162 104 Q160 116 150 112 Q140 116 138 104Z" fill="#9b59b6" stroke="#6c3483" stroke-width="2"/>',178,106],
+ suprarrenales:['endocrino','Glándulas suprarrenales','⚡','Sobre los riñones. Producen la <b>adrenalina</b>, que prepara al cuerpo para huir o enfrentar un peligro.','<path d="M110 236 L120 228 L128 238 Z M190 236 L180 228 L172 238 Z" fill="#a569bd" stroke="#6c3483" stroke-width="2"/>',150,232],
+ insulina:['endocrino','Páncreas (islotes)','🍬','Sus islotes producen <b>insulina</b> y glucagón, que regulan el azúcar de la sangre. Si falla la insulina aparece la diabetes.','<path d="M130 255 Q160 246 182 252 Q178 262 150 264 Q134 264 130 255Z" fill="#bb8fce" stroke="#6c3483" stroke-width="2"/>',158,272],
+ gonadas:['endocrino','Gónadas','🧬','Ovarios o testículos. Producen las células reproductoras y las <b>hormonas sexuales</b> (estrógenos, testosterona), que causan los cambios de la pubertad.','<circle cx="134" cy="322" r="6" fill="#d2b4de" stroke="#6c3483" stroke-width="2"/><circle cx="166" cy="322" r="6" fill="#d2b4de" stroke="#6c3483" stroke-width="2"/>',150,346],
+ craneo:['oseo','Cráneo','💀','Caja de huesos que <b>protege el encéfalo</b>. La mandíbula es su único hueso que se mueve.','<path d="M116 60 Q112 18 150 14 Q188 18 184 60 Q180 84 164 92 L136 92 Q120 84 116 60Z" fill="none" stroke="#cfc6b0" stroke-width="5"/>',150,10],
+ columna:['oseo','Columna vertebral','🦴','33 vértebras apiladas que <b>sostienen</b> el cuerpo y protegen la médula espinal.','<path d="M150 96 L150 330" stroke="#d8cfb8" stroke-width="10" stroke-dasharray="7 3"/>',172,316],
+ costillas:['oseo','Costillas','🧺','12 pares de huesos curvos que forman una jaula para <b>proteger el corazón y los pulmones</b>.','<path d="M150 130 Q110 132 106 150 M150 146 Q106 148 104 168 M150 162 Q104 166 104 186 M150 178 Q108 182 108 200 M150 130 Q190 132 194 150 M150 146 Q194 148 196 168 M150 162 Q196 166 196 186 M150 178 Q192 182 192 200" stroke="#d8cfb8" stroke-width="5" fill="none"/>',204,140],
+ pelvis:['oseo','Pelvis','🦋','Huesos de la cadera que sostienen los órganos del abdomen y unen la columna con las piernas.','<path d="M112 322 Q150 300 188 322 Q182 350 150 352 Q118 350 112 322Z" fill="none" stroke="#d8cfb8" stroke-width="6"/>',150,368],
+ extremidades:['oseo','Huesos de brazos y piernas','🦵','Funcionan como <b>palancas</b> que los músculos jalan. El <b>fémur</b> (muslo) es el hueso más largo y fuerte del cuerpo.','<path d="M100 130 L82 210 L66 290 M200 130 L218 210 L234 290 M126 350 L118 460 L116 570 M174 350 L182 460 L184 570" stroke="#d8cfb8" stroke-width="7" stroke-linecap="round" fill="none"/>',94,470],
+ musculos:['oseo','Músculos esqueléticos','💪','Más de 600 músculos unidos a los huesos por <b>tendones</b>. Solo pueden jalar (no empujar), por eso trabajan en pares: bíceps y tríceps.','<path d="M92 140 Q80 170 84 200 Q96 176 98 146Z M208 140 Q220 170 216 200 Q204 176 202 146Z M112 360 Q104 410 116 450 Q130 410 130 366Z M188 360 Q196 410 184 450 Q170 410 170 366Z" fill="#e57373" opacity=".75"/>',214,420]
+};
+var SIS={
+ digestivo:['🍽️ Digestivo','#e07a3f','Transforma los alimentos en nutrientes pequeños que la sangre puede absorber, y elimina lo que no se aprovecha.'],
+ respiratorio:['🫁 Respiratorio','#c0607a','Toma el oxígeno del aire y expulsa el dióxido de carbono que producen las células.'],
+ circulatorio:['❤️ Circulatorio','#d62828','Transporta oxígeno, nutrientes, hormonas y defensas a todas las células, y recoge sus desechos.'],
+ excretor:['💧 Excretor','#b9922a','Elimina los desechos del metabolismo (como la urea) y mantiene el equilibrio de agua y sales.'],
+ nervioso:['⚡ Nervioso','#d4a017','Recibe información, la procesa y coordina las respuestas del cuerpo con mensajes eléctricos muy rápidos.'],
+ endocrino:['🧪 Endocrino','#8e44ad','Coordina el cuerpo con <b>hormonas</b>, mensajeros químicos que viajan por la sangre. Más lento que el nervioso, pero de efecto duradero.'],
+ oseo:['🦴 Locomotor','#7a6a4f','Huesos y músculos: sostienen el cuerpo, protegen los órganos y permiten el movimiento.']
+};
+var sis='digestivo',vistos={};
+C.innerHTML=SIL+Object.keys(ORG).map(function(id){var o=ORG[id];return '<g class="org zona" data-o="'+id+'" data-s="'+o[0]+'" tabindex="-1" role="button" aria-label="'+o[1]+'">'+o[4]+'<text x="'+o[5]+'" y="'+o[6]+'" text-anchor="middle" fill="#10261a" stroke="#fff" stroke-width="3" paint-order="stroke">'+o[1].split(' ')[0]+'</text></g>';}).join('');
+// zona de toque más ancha para los órganos dibujados con líneas
+C.querySelectorAll('.org [fill=none],.org path[stroke-width]').forEach(function(x){if(x.getAttribute('fill')&&x.getAttribute('fill')!=='none')return;var c=x.cloneNode();c.setAttribute('stroke','transparent');c.setAttribute('stroke-width',16);c.removeAttribute('stroke-dasharray');x.parentNode.insertBefore(c,x.nextSibling);});
+var det=document.getElementById('org-det');
+function verSis(s){
+  sis=s;var S=SIS[s];
+  document.querySelectorAll('#sist-btns .chip').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-s')===s);});
+  C.querySelectorAll('.org').forEach(function(g){var v=g.getAttribute('data-s')===s;g.classList.toggle('vis',v);g.classList.remove('on');g.setAttribute('tabindex',v?'0':'-1');});
+  var lista=Object.keys(ORG).filter(function(id){return ORG[id][0]===s;});
+  det.innerHTML='<div class="sist-info" style="border-color:'+S[1]+'"><h3 style="color:'+S[1]+'">Sistema '+S[0].split(' ').slice(1).join(' ').toLowerCase()+'</h3><p>'+S[2]+'</p></div><p style="font-size:.9rem;color:var(--cn-dim)">Órganos: '+lista.map(function(id){return '<button type="button" class="chip" style="min-height:30px;padding:3px 10px;margin:2px" data-ver="'+id+'">'+ORG[id][2]+' '+ORG[id][1]+'</button>';}).join('')+'</p><div id="org-txt" style="margin-top:12px"><p class="vacio" style="padding:14px">👆 Toca un órgano en la figura o en la lista.</p></div>';
+  det.querySelectorAll('[data-ver]').forEach(function(b){b.onclick=function(){verOrg(b.getAttribute('data-ver'));};});
+}
+function verOrg(id){
+  var o=ORG[id];if(o[0]!==sis)return;
+  C.querySelectorAll('.org').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-o')===id);});
+  det.querySelectorAll('[data-ver]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-ver')===id);});
+  document.getElementById('org-txt').innerHTML='<h3>'+o[2]+' '+o[1]+'</h3><p>'+o[3]+'</p>';
+  vistos[id]=1;if(Object.keys(vistos).length>=12)BIO.marcarSeccion('cuerpo-sec');
+}
+C.querySelectorAll('.org').forEach(function(g){
+  g.addEventListener('click',function(){verOrg(g.getAttribute('data-o'));});
+  g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();verOrg(g.getAttribute('data-o'));}});
+});
+var sb=document.getElementById('sist-btns');
+sb.innerHTML=Object.keys(SIS).map(function(s){return '<button class="chip" data-s="'+s+'">'+SIS[s][0]+'</button>';}).join('');
+sb.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){verSis(b.getAttribute('data-s'));};});
+verSis('digestivo');
+
+/* ═══ Recorridos ═══ */
+var REC={
+ bocado:{b:'🍌 El viaje de un bocado',col:'#e07a3f',ver:['boca','esofago','estomago','higado','pancreas','intdelgado','intgrueso'],
+  p:[[150,82,'👄 <b>Boca.</b> Masticas un bocado de arepa. Los dientes lo trituran y la saliva empieza a romper el almidón. Tragas el <b>bolo</b>.'],
+     [150,150,'⬇️ <b>Esófago.</b> Ondas de contracción (peristaltismo) empujan el bolo hacia abajo en unos 8 segundos.'],
+     [172,226,'🫃 <b>Estómago.</b> El ácido y las enzimas lo revuelven 2 a 4 horas. El bolo se vuelve <b>quimo</b>, una papilla.'],
+     [150,286,'🌀 <b>Intestino delgado.</b> La bilis del hígado y el jugo del páncreas terminan la digestión. Los nutrientes pasan a la sangre por las vellosidades.'],
+     [176,318,'🔁 <b>Intestino grueso.</b> Se absorbe el agua que queda y las bacterias de la microbiota fermentan la fibra.'],
+     [116,268,'🚽 <b>Recto y ano.</b> Lo que no se digirió sale como heces. El viaje completo dura entre 24 y 72 horas.']]},
+ oxigeno:{b:'🫁 El viaje del oxígeno',col:'#3a6ea5',ver:['nariz','traquea','pulmones','corazon','arterias','venas'],
+  p:[[150,64,'👃 <b>Nariz.</b> Una molécula de oxígeno entra con el aire, que se calienta y se filtra.'],
+     [150,122,'🦴 <b>Tráquea y bronquios.</b> Baja por la tráquea y se desvía por un bronquio hacia un pulmón.'],
+     [124,178,'🫁 <b>Alvéolo pulmonar.</b> Atraviesa la pared delgadísima del alvéolo y entra a la sangre, donde la atrapa la <b>hemoglobina</b> de un glóbulo rojo.'],
+     [160,188,'❤️ <b>Corazón.</b> La sangre oxigenada llega al lado izquierdo del corazón, que la bombea con fuerza a la aorta.'],
+     [114,470,'🦵 <b>Músculo de la pierna.</b> Por las arterias llega a los capilares del músculo. Allí la mitocondria usa el oxígeno para sacar energía de la glucosa. Se produce CO₂.'],
+     [102,520,'🔵 <b>De regreso.</b> El CO₂ vuelve por las venas al corazón, luego a los pulmones… y sale cuando exhalas. ¡Una vuelta completa tarda cerca de un minuto!']]}
+};
+var rs=document.getElementById('rec-svg'),rk='bocado',ri=0,anim=null;
+document.getElementById('rec-btns').innerHTML=Object.keys(REC).map(function(k){return '<button class="chip" data-r="'+k+'">'+REC[k].b+'</button>';}).join('');
+document.querySelectorAll('[data-r]').forEach(function(b){b.onclick=function(){iniciar(b.getAttribute('data-r'));};});
+function iniciar(k){
+  rk=k;ri=0;var R=REC[k];
+  document.querySelectorAll('[data-r]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-r')===k);});
+  rs.innerHTML=SIL+R.ver.map(function(id){return ORG[id][4];}).join('')+
+   '<polyline id="rec-ruta" points="" fill="none" stroke="'+R.col+'" stroke-width="3" stroke-dasharray="5 5"/>'+
+   '<circle id="rec-pt" r="9" fill="'+R.col+'" stroke="#fff" stroke-width="3"><animate attributeName="r" values="8;11;8" dur="1.2s" repeatCount="indefinite"/></circle>';
+  pintarRec();
+}
+function pintarRec(){var p=REC[rk].p[0],pt=document.getElementById('rec-pt');pt.setAttribute('cx',p[0]);pt.setAttribute('cy',p[1]);mover(0);}
+// animación suave entre paradas
+function mover(d){var R=REC[rk];ri=Math.max(0,Math.min(R.p.length-1,ri+d));
+  var pt=document.getElementById('rec-pt'),p=R.p[ri],x0=+pt.getAttribute('cx'),y0=+pt.getAttribute('cy'),t0=performance.now();
+  if(anim)cancelAnimationFrame(anim);
+  (function paso(t){var k=Math.min(1,(t-t0)/700);k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;pt.setAttribute('cx',x0+(p[0]-x0)*k);pt.setAttribute('cy',y0+(p[1]-y0)*k);if(k<1)anim=requestAnimationFrame(paso);})(t0);
+  document.getElementById('rec-ruta').setAttribute('points',R.p.slice(0,ri+1).map(function(q){return q[0]+','+q[1];}).join(' '));
+  document.getElementById('rec-cap').innerHTML=p[2];
+  document.getElementById('rec-n').textContent='Parada '+(ri+1)+' de '+R.p.length;
+  document.getElementById('rec-ant').disabled=ri===0;document.getElementById('rec-sig').disabled=ri===R.p.length-1;
+  if(ri===R.p.length-1)BIO.marcarSeccion('recorridos');
+}
+document.getElementById('rec-sig').onclick=function(){mover(1);};
+document.getElementById('rec-ant').onclick=function(){mover(-1);};
+iniciar('bocado');
+
+/* ═══ Funciones vitales ═══ */
+BIO.clasificar(document.getElementById('clas-func'),{
+  cajas:[{id:'nut',titulo:'🍽️ Nutrición'},{id:'rel',titulo:'⚡ Relación'},{id:'rep',titulo:'👶 Reproducción'}],
+  fichas:[
+   {t:'Digestivo',caja:'nut',exp:'obtiene los nutrientes de los alimentos.'},
+   {t:'Respiratorio',caja:'nut',exp:'consigue el oxígeno para sacar energía de los nutrientes.',pista:'El oxígeno sirve para obtener energía de los alimentos.'},
+   {t:'Circulatorio',caja:'nut',exp:'reparte nutrientes y oxígeno a las células.',pista:'Reparte lo que obtienen el digestivo y el respiratorio.'},
+   {t:'Excretor',caja:'nut',exp:'elimina los desechos que deja la nutrición de las células.',pista:'Elimina los desechos que quedan después de usar los nutrientes.'},
+   {t:'Nervioso',caja:'rel',exp:'percibe el ambiente y coordina las respuestas.'},
+   {t:'Endocrino',caja:'rel',exp:'coordina el cuerpo con hormonas.'},
+   {t:'Locomotor',caja:'rel',exp:'permite responder con movimiento.',pista:'Huir de un peligro o acercarse al alimento es una respuesta al ambiente.'},
+   {t:'Reproductor',caja:'rep',exp:'produce gametos para originar nuevos individuos.'}
+  ]});
+})();
+</script>
+<script src="text-zoom.js?v=1"></script>
+<script src="narracion.js?v=1"></script>
+<script src="pwa-install.js?v=1"></script>
+</body>
+</html>
