@@ -16,6 +16,7 @@
   --cn-bg:#f5faf6;
   --cn-surf:#ffffff;
   --cn-tx:#10261a;
+  --cn-navy:#0f2a5f;      /* azul del logo («Nom») */
   --cn-dim:#3c5446;
   --cn-brd:#d6e8dc;
   --cn-ok:#15803d; --cn-ok-l:#dcfce7;
@@ -38,12 +39,14 @@ img,svg{max-width:100%}
 a{color:var(--cn-brand)}
 button{font-family:inherit}
 :focus-visible{outline:3px solid var(--cn-naranja);outline-offset:2px}
+[hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* ── Menú superior ── */
-.site-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--cn-brand-d);padding:0 18px;min-height:48px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.22)}
+.site-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0f2a5f;border-bottom:4px solid;border-image:linear-gradient(90deg,#1565d8 0 25%,#3cc11f 25% 50%,#f6c400 50% 75%,#ee1b7d 75% 100%) 1;padding:0 18px;min-height:48px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.22)}
 .site-nav .nav-brand{display:flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:1rem;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
-.site-nav .nav-brand b{color:#9be3a8}
+.site-nav .nav-brand b{color:#fff}.site-nav .nav-brand .bio{color:#6fdc4f}
+.site-nav .nav-brand img{width:32px;height:32px;border-radius:8px;background:#fff}
 .site-nav .nav-links{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .site-nav .nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;font-weight:600;padding:6px 9px;border-radius:8px;display:flex;align-items:center;gap:5px}
 .site-nav .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
@@ -216,7 +219,7 @@ input[type=range]{accent-color:var(--cn-brand);width:180px}
 select,input[type=text],input[type=number]{font:inherit;border:1.5px solid var(--cn-brd);border-radius:10px;padding:7px 10px;background:#fff;color:var(--cn-tx)}
 
 /* ── Pie ── */
-.site-foot{background:var(--cn-brand-d);color:rgba(255,255,255,.8);padding:22px 20px;text-align:center;font-size:.84rem}
+.site-foot{background:#0f2a5f;color:rgba(255,255,255,.8);padding:22px 20px;text-align:center;font-size:.84rem}
 .site-foot b{color:#fff}
 .site-foot a{color:#9be3a8}
 .sig{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 0}

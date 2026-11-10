@@ -45,7 +45,7 @@ function marcarSeccion(id){
 function armarMenu(){
   var nav=document.querySelector('.site-nav');
   if(nav&&!nav.children.length){
-    nav.innerHTML='<a class="nav-brand" href="index.html"><span aria-hidden="true">🌿</span>Bio<b>Nom</b></a><div class="nav-links">'+
+    nav.innerHTML='<a class="nav-brand" href="index.html"><img src="icons/icon-192.png" alt="" width="32" height="32"><span><span class="bio">Bio</span><b>Nom</b></span></a><div class="nav-links">'+
       MODULOS.map(function(m){return '<a href="'+m.href+'"'+(actual&&m.id===actual.id?' class="active" aria-current="page"':'')+' title="'+m.full+'"><span aria-hidden="true">'+m.ico+'</span><span class="full">'+m.txt+'</span></a>';}).join('')+'</div>';
   }
   if(!document.querySelector('.bot-nav')){

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reinos y clasificación — BioNom</title>
+<meta name="description" content="Cómo se clasifican los seres vivos: taxonomía, nombre científico, tres dominios, cinco reinos y una clave dicotómica interactiva.">
+<meta name="theme-color" content="#14532d">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=1">
+<style>
+.taxo{display:grid;gap:6px}
+.taxo .fila{display:grid;grid-template-columns:120px repeat(3,minmax(0,1fr));gap:6px;align-items:stretch}
+.taxo .fila>div{border-radius:10px;padding:7px 10px;font-size:.9rem;background:#fff;border:1px solid var(--cn-brd);transition:background .3s,opacity .3s}
+.taxo .rango{font-weight:800;color:var(--cn-brand-d);background:var(--cn-brand-l)!important}
+.taxo .comp{background:#fff7ec!important;border-color:#f5c58c!important;font-weight:700}
+.taxo .oculta{opacity:.15}
+.taxo .cab>div{font-weight:800;text-align:center;background:var(--cn-brand-d)!important;color:#fff}
+@media(max-width:600px){.taxo .fila{grid-template-columns:86px repeat(3,minmax(0,1fr));font-size:.8rem}.taxo .fila>div{padding:5px 6px;font-size:.78rem}}
+.hist-cls{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.hist-cls .gr{flex:1;min-width:120px;border-radius:12px;padding:10px;text-align:center;font-weight:800;border:2px solid;animation:aparece .4s ease}
+.hist-cls .gr small{display:block;font-weight:500;font-size:.78rem}
+.reino-c{border-top:6px solid;transition:opacity .25s,transform .25s}
+.reino-c .e{font-size:2.2rem}
+.reino-c dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:.88rem;margin-top:8px}
+.reino-c dt{font-weight:800;color:var(--cn-dim)}
+.reino-c.apagado{opacity:.25;transform:scale(.97)}
+.reino-c.prendido{box-shadow:0 0 0 3px var(--cn-naranja),var(--cn-sh-h)}
+.clave-d{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px}
+@media(max-width:760px){.clave-d{grid-template-columns:1fr}}
+.org-sel{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.org-sel button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:10px 6px;cursor:pointer;font-weight:700;font-size:.85rem}
+.org-sel button .e{display:block;font-size:2rem}
+.org-sel button.on{border-color:var(--cn-naranja);background:#fff7ec}
+.org-sel button.hecho{border-color:var(--cn-ok)}
+.ruta{display:grid;gap:8px}
+.ruta .pr{background:#fff;border:1.5px solid var(--cn-brd);border-radius:12px;padding:10px 12px;animation:aparece .3s ease}
+.ruta .pr .bt{display:flex;gap:8px;margin-top:8px}
+.ruta .pr.resp{opacity:.7}
+.ruta .res{background:var(--cn-ok-l);border:2px solid var(--cn-ok);border-radius:12px;padding:12px;font-size:1.05rem;animation:aparece .3s ease}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">🍄 Nivel del organismo</span>
+    <h1>Reinos: ordenar la diversidad de la vida</h1>
+    <p>Se conocen cerca de <b>2 millones</b> de especies y faltan muchas por descubrir. Para estudiarlas, los biólogos las agrupan según lo que tienen en común. Aquí aprenderás a <b>nombrar</b> a un ser vivo, a ubicarlo en su <b>reino</b> y a usar una <b>clave</b> como lo hace un científico.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Nivel: organismo</a>
+  </header>
+  <nav class="toc" aria-label="En esta página">
+    <strong>En esta página</strong>
+    <a href="#taxonomia">🪜 Taxonomía</a>
+    <a href="#nombre">🏷️ Nombre científico</a>
+    <a href="#historia">📜 ¿Cuántos reinos?</a>
+    <a href="#reinos">👑 Los cinco reinos</a>
+    <a href="#clave">🔑 Clave dicotómica</a>
+    <a href="#clasifica">🎯 Clasifica</a>
+  </nav>
+
+  <section class="sec" id="taxonomia">
+    <h2><span class="n">01</span> La escalera de la clasificación</h2>
+    <p class="lead">La <span class="term" data-def="Ciencia que nombra, describe y clasifica a los seres vivos. Su padre es Carl von Linneo (1707-1778).">taxonomía</span> agrupa a los seres vivos en categorías, de la más amplia a la más específica. Cuanto más bajas en la escalera, <b>más se parecen</b> los organismos del grupo. Avanza paso a paso y mira hasta dónde llegan juntos un ser humano, un jaguar y un frailejón.</p>
+    <div class="card">
+      <div class="taxo" id="taxo"></div>
+      <div class="ctrl" style="justify-content:space-between"><span id="taxo-txt" style="font-weight:600" aria-live="polite"></span><span><button type="button" class="cn-btn" id="taxo-ant">⬆ Subir</button> <button type="button" class="cn-btn cn-btn--primary" id="taxo-sig">Bajar un escalón ⬇</button></span></div>
+    </div>
+    <div class="dato">Para recordar el orden: <b>Do</b>ña <b>Rei</b>na <b>Fi</b>na <b>Cla</b>ra <b>Or</b>dena <b>Fa</b>milias <b>Gé</b>neros <b>Es</b>pecies → Dominio, Reino, Filo, Clase, Orden, Familia, Género, Especie.</div>
+    <div class="chequeo" data-ok="2" data-exp="La especie es la categoría más específica: sus miembros pueden reproducirse entre sí y tener crías fértiles.">
+      <div class="q">¿En qué categoría los organismos se parecen MÁS entre sí?</div>
+      <div class="ops"><button class="op" data-por="El reino es muy amplio: en el reino animal están desde una esponja hasta tú.">Reino</button><button class="op" data-por="La familia está más abajo que el reino, pero todavía hay dos escalones más específicos.">Familia</button><button class="op">Especie</button><button class="op" data-por="El dominio es la categoría MÁS amplia de todas.">Dominio</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="nombre">
+    <h2><span class="n">02</span> El nombre científico</h2>
+    <p class="lead">El jaguar se llama «tigre» en los Llanos, «otorongo» en Perú y <i>jaguar</i> en inglés. Para que todos los científicos del mundo se entiendan, Linneo inventó el <b>sistema binomial</b>: cada especie tiene un nombre de <b>dos palabras en latín</b>.</p>
+    <div class="pasos" data-titulo="Las reglas">
+      <div class="paso" data-t="Dos palabras"><h3>1. Dos palabras</h3><p>La primera es el <b>género</b> y la segunda es el <b>epíteto específico</b>. Juntas forman el nombre de la especie: <i>Panthera onca</i> (jaguar).</p></div>
+      <div class="paso" data-t="Mayúscula"><h3>2. Mayúscula solo en el género</h3><p>El género empieza con <b>mayúscula</b> y la segunda palabra va <b>toda en minúscula</b>: <i>Homo sapiens</i>, nunca <i>Homo Sapiens</i>.</p></div>
+      <div class="paso" data-t="Cursiva"><h3>3. Cursiva o subrayado</h3><p>Impreso va en <i>cursiva</i>. Si lo escribes a mano en el cuaderno, lo <u>subrayas</u> (cada palabra por separado).</p></div>
+      <div class="paso" data-t="Abreviar"><h3>4. Se puede abreviar el género</h3><p>Después de escribirlo completo una vez, el género se abrevia con su inicial: <i>P. onca</i>. La segunda palabra nunca se escribe sola.</p></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="Género con mayúscula, especie en minúscula y las dos en cursiva.">
+      <div class="q">¿Cuál está bien escrito? (es el oso de anteojos)</div>
+      <div class="ops"><button class="op" data-por="La segunda palabra va en minúscula.">Tremarctos Ornatus</button><button class="op"><i>Tremarctos ornatus</i></button><button class="op" data-por="El género va con mayúscula inicial.">tremarctos ornatus</button><button class="op" data-por="Falta la cursiva (o el subrayado).">Tremarctos ornatus, en letra normal</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="historia">
+    <h2><span class="n">03</span> ¿Cuántos reinos hay? Depende de lo que se sabía</h2>
+    <p class="lead">Cada vez que un instrumento nuevo mostró algo nuevo, la clasificación cambió. Toca cada propuesta en orden.</p>
+    <div class="chips" id="hc-btn"></div>
+    <div class="card" style="margin-top:12px"><p id="hc-txt" aria-live="polite"></p><div class="hist-cls" id="hc-grp"></div></div>
+  </section>
+
+  <section class="sec" id="reinos">
+    <h2><span class="n">04</span> Los cinco reinos</h2>
+    <p class="lead">En el colegio usamos los cinco reinos de Whittaker. Toca una característica para ver <b>qué reinos la tienen</b>, y toca cada tarjeta para leer sus ejemplos colombianos.</p>
+    <div class="chips" id="filtros" role="group" aria-label="Características"></div>
+    <p id="filtro-txt" style="margin:8px 0;font-weight:600;min-height:1.6em" aria-live="polite"></p>
+    <div class="grid g3" id="reinos-g"></div>
+    <div class="dato">Los <b>virus</b> no están en ningún reino: no son células, no tienen metabolismo propio y solo se multiplican dentro de las células de otro ser vivo.</div>
+    <div class="dato col">Colombia es el <b>segundo país más biodiverso</b> del mundo y el primero en especies de <b>aves</b> (más de 1900) y de <b>orquídeas</b> (más de 4200).</div>
+  </section>
+
+  <section class="sec" id="clave">
+    <h2><span class="n">05</span> Clave dicotómica: clasifica como un científico</h2>
+    <p class="lead">Una <b>clave dicotómica</b> hace preguntas de dos opciones (sí o no). Cada respuesta te lleva a otra pregunta, hasta llegar al grupo. Escoge un organismo, lee su ficha y responde.</p>
+    <div class="clave-d">
+      <div><div class="org-sel" id="org-sel"></div><div class="card" id="org-ficha" style="margin-top:12px" aria-live="polite"></div></div>
+      <div class="ruta" id="ruta" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="clasifica">
+    <h2><span class="n">06</span> Reto: ¿a qué reino pertenece?</h2>
+    <p class="lead">Lleva cada organismo a su reino. Toca la ficha y luego la caja.</p>
+    <div class="card" id="clas-reinos"></div>
+    <div class="sig"><a href="celula.html"><small>← Anterior</small><b>🔬 La célula</b></a><a class="der" href="sistemas.html"><small>Siguiente →</small><b>🫀 Sistemas del cuerpo</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=1"></script>
+<script>
+(function(){
+/* ═══ Taxonomía ═══ */
+var TAX=[['Dominio','Eukarya','Eukarya','Eukarya'],['Reino','Animalia','Animalia','Plantae'],['Filo','Chordata','Chordata','Magnoliophyta'],['Clase','Mammalia','Mammalia','Magnoliopsida'],['Orden','Primates','Carnivora','Asterales'],['Familia','Hominidae','Felidae','Asteraceae'],['Género','<i>Homo</i>','<i>Panthera</i>','<i>Espeletia</i>'],['Especie','<i>H. sapiens</i>','<i>P. onca</i>','<i>E. grandiflora</i>']];
+var DESC=['Dominio: los tres tienen células con núcleo (eucariotas). Aquí están todos juntos.','Reino: el frailejón se separa; es una planta. Humano y jaguar siguen juntos: animales.','Filo: humano y jaguar tienen médula espinal (cordados).','Clase: los dos son mamíferos: tienen pelo y alimentan a sus crías con leche.','Orden: aquí se separan. Somos primates; el jaguar es carnívoro.','Familia: cada uno sigue su camino. El jaguar es de la familia de los gatos (félidos).','Género: el frailejón pertenece al género <i>Espeletia</i>, que solo vive en los páramos.','Especie: cada uno es único. Llegamos al final de la escalera.'];
+var tk=0,taxo=document.getElementById('taxo');
+function pintarTaxo(){
+  var h='<div class="fila cab"><div>Categoría</div><div>🧑 Humano</div><div>🐆 Jaguar</div><div>🌼 Frailejón</div></div>';
+  TAX.forEach(function(f,i){
+    var comp=function(a,b){return f[a]===f[b];};
+    h+='<div class="fila"><div class="rango">'+f[0]+'</div>'+[1,2,3].map(function(c){var compartido=(c<3&&comp(1,2))||(comp(1,3)&&comp(2,3));return '<div class="'+(i>tk?'oculta':(compartido&&i===tk?'comp':''))+'">'+(i>tk?'?':f[c])+'</div>';}).join('')+'</div>';
+  });
+  taxo.innerHTML=h;
+  document.getElementById('taxo-txt').innerHTML=DESC[tk];
+  document.getElementById('taxo-ant').disabled=tk===0;document.getElementById('taxo-sig').disabled=tk===TAX.length-1;
+  if(tk===TAX.length-1)BIO.marcarSeccion('taxonomia');
+}
+document.getElementById('taxo-sig').onclick=function(){tk++;pintarTaxo();};
+document.getElementById('taxo-ant').onclick=function(){tk--;pintarTaxo();};
+pintarTaxo();
+
+/* ═══ Historia de la clasificación ═══ */
+var HC=[
+ {b:'1735 · Linneo: 2 reinos',t:'<b>Carl von Linneo</b> divide la vida en lo que se mueve y come (animales) y lo que no se mueve (plantas). Los hongos y las bacterias quedaban con las plantas.',g:[['🐾 Animalia','animales','#c2410c'],['🌿 Plantae','plantas, hongos, bacterias','#2e7d4f']]},
+ {b:'1866 · Haeckel: 3 reinos',t:'<b>Ernst Haeckel</b>, con el microscopio, nota que muchos seres de una sola célula no son ni plantas ni animales. Crea el reino <b>Protista</b>.',g:[['🐾 Animalia','','#c2410c'],['🌿 Plantae','incluye hongos','#2e7d4f'],['🦠 Protista','unicelulares','#7b4bb7']]},
+ {b:'1969 · Whittaker: 5 reinos',t:'<b>Robert Whittaker</b>, con el microscopio electrónico, separa a los seres sin núcleo (<b>Monera</b>) y saca a los hongos de las plantas (<b>Fungi</b>), porque no hacen fotosíntesis y absorben su alimento.',g:[['🦠 Monera','sin núcleo','#64748b'],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
+ {b:'1990 · Woese: 3 dominios',t:'<b>Carl Woese</b> compara el ARN de los ribosomas y descubre que las «bacterias» son en realidad dos grupos muy distintos: <b>Bacteria</b> y <b>Archaea</b>. Crea una categoría por encima del reino: el <b>dominio</b>.',g:[['🦠 Bacteria','bacterias comunes','#64748b'],['🌋 Archaea','arqueas, viven en lugares extremos','#b45309'],['🧫 Eukarya','protistas, hongos, plantas y animales','#1a7fb5']]}
+];
+var hb=document.getElementById('hc-btn');
+hb.innerHTML=HC.map(function(h,i){return '<button class="chip" data-i="'+i+'">'+h.b+'</button>';}).join('');
+function verHC(i){var h=HC[i];hb.querySelectorAll('.chip').forEach(function(b,j){b.classList.toggle('on',j===i);});
+  document.getElementById('hc-txt').innerHTML=h.t;
+  document.getElementById('hc-grp').innerHTML=h.g.map(function(g){return '<div class="gr" style="border-color:'+g[2]+';color:'+g[2]+';background:'+g[2]+'14">'+g[0]+(g[1]?'<small>'+g[1]+'</small>':'')+'</div>';}).join('');
+  if(i===HC.length-1)BIO.marcarSeccion('historia');}
+hb.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){verHC(+b.getAttribute('data-i'));};});verHC(0);
+
+/* ═══ Cinco reinos ═══ */
+var R=[
+ {id:'monera',n:'Monera',e:'🦠',c:'#64748b',cel:'Procariota (sin núcleo)',num:'Unicelulares',nut:'Autótrofos o heterótrofos',pared:'Sí (peptidoglucano)',rep:'Asexual (bipartición)',ej:'Bacterias del yogur (<i>Lactobacillus</i>), <i>E. coli</i> del intestino, cianobacterias de las lagunas.',f:{nucleo:0,foto:1,pluri:0,pared:1,mueve:1,hetero:1}},
+ {id:'protista',n:'Protista',e:'🫧',c:'#7b4bb7',cel:'Eucariota',num:'Casi todos unicelulares; algunas algas son pluricelulares',nut:'Autótrofos (algas) o heterótrofos (protozoos)',pared:'Algunos',rep:'Asexual y sexual',ej:'Ameba, paramecio, el plasmodio que causa la malaria en el Pacífico y la Amazonia, algas del mar.',f:{nucleo:1,foto:1,pluri:1,pared:1,mueve:1,hetero:1}},
+ {id:'fungi',n:'Fungi (hongos)',e:'🍄',c:'#a16207',cel:'Eucariota',num:'Unicelulares (levaduras) o pluricelulares (con hifas)',nut:'Heterótrofos por <b>absorción</b>: digieren afuera y absorben',pared:'Sí (quitina)',rep:'Esporas (asexual y sexual)',ej:'Champiñones, levadura del pan y de la chicha, moho del pan, hongos de los cafetales (roya).',f:{nucleo:1,foto:0,pluri:1,pared:1,mueve:0,hetero:1}},
+ {id:'plantae',n:'Plantae (plantas)',e:'🌿',c:'#2e7d4f',cel:'Eucariota',num:'Pluricelulares, con tejidos',nut:'Autótrofos: <b>fotosíntesis</b>',pared:'Sí (celulosa)',rep:'Sexual (semillas, esporas) y asexual',ej:'Frailejón, palma de cera (árbol nacional), orquídea <i>Cattleya trianae</i> (flor nacional), musgos y helechos.',f:{nucleo:1,foto:1,pluri:1,pared:1,mueve:0,hetero:0}},
+ {id:'animalia',n:'Animalia (animales)',e:'🐾',c:'#c2410c',cel:'Eucariota',num:'Pluricelulares, con tejidos',nut:'Heterótrofos por <b>ingestión</b>: comen a otros seres',pared:'No',rep:'Sobre todo sexual',ej:'Cóndor de los Andes, jaguar, rana dorada del Chocó, coral del Caribe, hormiga culona.',f:{nucleo:1,foto:0,pluri:1,pared:0,mueve:1,hetero:1}}
+];
+var FIL=[['nucleo','🎯 Tiene núcleo'],['foto','🌞 Hay fotosíntesis'],['pluri','🧩 Hay pluricelulares'],['pared','🧱 Hay pared celular'],['hetero','🍽️ Hay heterótrofos'],['mueve','🏃 Hay seres que se desplazan']];
+document.getElementById('reinos-g').innerHTML=R.map(function(r){return '<div class="card reino-c" data-r="'+r.id+'" style="border-top-color:'+r.c+'"><span class="e">'+r.e+'</span><h3 style="color:'+r.c+'">'+r.n+'</h3><dl><dt>Célula</dt><dd>'+r.cel+'</dd><dt>N.º de células</dt><dd>'+r.num+'</dd><dt>Nutrición</dt><dd>'+r.nut+'</dd><dt>Pared</dt><dd>'+r.pared+'</dd><dt>Reproducción</dt><dd>'+r.rep+'</dd></dl><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand)">🇨🇴 Ejemplos</summary><p style="font-size:.9rem;margin-top:4px">'+r.ej+'</p></details></div>';}).join('');
+var fsel=null,fil=document.getElementById('filtros');
+fil.innerHTML=FIL.map(function(f){return '<button class="chip" data-f="'+f[0]+'">'+f[1]+'</button>';}).join('');
+var usados={};
+fil.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){
+  var f=b.getAttribute('data-f');fsel=fsel===f?null:f;usados[f]=1;
+  fil.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-f')===fsel);});
+  document.querySelectorAll('.reino-c').forEach(function(c){var r=R.filter(function(x){return x.id===c.getAttribute('data-r');})[0];c.classList.toggle('apagado',!!fsel&&!r.f[fsel]);c.classList.toggle('prendido',!!fsel&&!!r.f[fsel]);});
+  var si=R.filter(function(r){return fsel&&r.f[fsel];}).map(function(r){return r.n.split(' ')[0];});
+  document.getElementById('filtro-txt').textContent=fsel?b.textContent+': '+si.join(', ')+' ('+si.length+' de 5)':'';
+  if(Object.keys(usados).length>=4)BIO.marcarSeccion('reinos');
+};});
+
+/* ═══ Clave dicotómica ═══ */
+var PREG={
+ p1:{q:'¿Sus células tienen núcleo?',si:'p2',no:'R:monera'},
+ p2:{q:'¿Hace fotosíntesis (tiene clorofila)?',si:'p3',no:'p4'},
+ p3:{q:'¿Es pluricelular con tejidos y órganos (raíz, tallo, hojas) y se desarrolla a partir de un embrión?',si:'R:plantae',no:'R:protista'},
+ p4:{q:'¿Tiene pared de quitina y se alimenta absorbiendo nutrientes que digiere por fuera de su cuerpo?',si:'R:fungi',no:'p5'},
+ p5:{q:'¿Es pluricelular, con tejidos, y se alimenta comiéndose a otros seres vivos?',si:'R:animalia',no:'R:protista'}
+};
+var ORGS=[
+ {n:'Champiñón',e:'🍄',d:'Crece sobre materia en descomposición. Sus células tienen núcleo y pared de quitina; no tiene clorofila. Libera enzimas que digieren la materia muerta y luego absorbe los nutrientes.',r:{p1:1,p2:0,p4:1}},
+ {n:'Cianobacteria',e:'🟢',d:'Forma una nata verde en las lagunas. Es una sola célula sin núcleo, pero tiene clorofila y hace fotosíntesis.',r:{p1:0}},
+ {n:'Ameba',e:'🫧',d:'Vive en el agua de los charcos. Es una sola célula con núcleo. No tiene clorofila ni pared; envuelve a otros microorganismos para comérselos.',r:{p1:1,p2:0,p4:0,p5:0}},
+ {n:'Frailejón',e:'🌼',d:'Planta del páramo, con raíz, tallo y hojas peludas. Sus células tienen núcleo, pared de celulosa y cloroplastos. Nace de una semilla con un embrión.',r:{p1:1,p2:1,p3:1}},
+ {n:'Colibrí',e:'🐦',d:'Ave que se alimenta del néctar de las flores y de insectos pequeños. Tiene muchísimas células con núcleo, sin pared, organizadas en tejidos y órganos.',r:{p1:1,p2:0,p4:0,p5:1}},
+ {n:'Alga euglena',e:'🧪',d:'Vive en aguas dulces. Es una sola célula con núcleo y cloroplastos: hace fotosíntesis, pero no tiene tejidos, ni raíz, ni hojas.',r:{p1:1,p2:1,p3:0}},
+ {n:'Levadura',e:'🍞',d:'Hace crecer el pan. Es una sola célula con núcleo y pared de quitina. No hace fotosíntesis: absorbe el azúcar de la masa.',r:{p1:1,p2:0,p4:1}},
+ {n:'Coral',e:'🪸',d:'Parece una roca o una planta, pero tiene células con núcleo sin pared, tejidos y tentáculos con los que atrapa y come plancton.',r:{p1:1,p2:0,p4:0,p5:1}}
+];
+var RN={monera:'🦠 Reino Monera',protista:'🫧 Reino Protista',fungi:'🍄 Reino Fungi',plantae:'🌿 Reino Plantae',animalia:'🐾 Reino Animalia'};
+var osel=document.getElementById('org-sel'),ruta=document.getElementById('ruta'),hechos={};
+osel.innerHTML=ORGS.map(function(o,i){return '<button type="button" data-i="'+i+'"><span class="e">'+o.e+'</span>'+o.n+'</button>';}).join('');
+function empezar(i){
+  var o=ORGS[i];osel.querySelectorAll('button').forEach(function(b,j){b.classList.toggle('on',j===i);});
+  document.getElementById('org-ficha').innerHTML='<h3>'+o.e+' '+o.n+'</h3><p>'+o.d+'</p>';
+  ruta.innerHTML='';preguntar('p1',o,i);
+}
+function preguntar(id,o,i){
+  var p=PREG[id],d=document.createElement('div');d.className='pr';
+  d.innerHTML='<b>'+p.q+'</b><div class="bt"><button type="button" class="cn-btn">✔ Sí</button><button type="button" class="cn-btn">✘ No</button></div><div class="msg" style="margin-top:6px;font-size:.9rem"></div>';
+  ruta.appendChild(d);
+  var bs=d.querySelectorAll('.bt button');
+  [1,0].forEach(function(v,k){bs[k].onclick=function(){
+    if(o.r[id]!==v){d.querySelector('.msg').innerHTML='❌ Vuelve a leer la ficha de '+o.n+'. ¿Seguro que la respuesta es «'+(v?'sí':'no')+'»?';return;}
+    bs[0].disabled=bs[1].disabled=true;bs[k].classList.add('cn-btn--primary');d.classList.add('resp');d.querySelector('.msg').textContent='';
+    var sig=v?p.si:p.no;
+    if(sig.indexOf('R:')===0){var r=document.createElement('div');r.className='res';r.innerHTML='🎉 <b>'+o.n+'</b> pertenece al <b>'+RN[sig.slice(2)]+'</b>.';ruta.appendChild(r);hechos[i]=1;osel.children[i].classList.add('hecho');if(Object.keys(hechos).length>=4)BIO.marcarSeccion('clave');}
+    else preguntar(sig,o,i);
+  };});
+}
+osel.querySelectorAll('button').forEach(function(b){b.onclick=function(){empezar(+b.getAttribute('data-i'));};});
+ruta.innerHTML='<div class="card" style="text-align:center;color:var(--cn-dim)">👈 Escoge un organismo para empezar la clave.</div>';
+
+/* ═══ Clasificador ═══ */
+BIO.clasificar(document.getElementById('clas-reinos'),{
+  cajas:R.map(function(r){return {id:r.id,titulo:r.e+' '+r.n.split(' ')[0]};}),
+  fichas:[
+   {t:'Bacteria del yogur',caja:'monera'},{t:'Cianobacteria',caja:'monera',pista:'Hace fotosíntesis, pero no tiene núcleo.'},
+   {t:'Paramecio',caja:'protista'},{t:'Plasmodio de la malaria',caja:'protista',pista:'Es unicelular con núcleo, y no es un hongo.'},
+   {t:'Moho del pan',caja:'fungi'},{t:'Roya del café',caja:'fungi',pista:'Es un hongo que ataca las hojas del cafeto.'},
+   {t:'Palma de cera',caja:'plantae'},{t:'Musgo',caja:'plantae'},
+   {t:'Rana dorada',caja:'animalia'},{t:'Esponja de mar',caja:'animalia',pista:'Aunque no se mueve, come filtrando el agua y no tiene pared celular.'}
+  ]});
+})();
+</script>
+<script src="text-zoom.js?v=1"></script>
+<script src="narracion.js?v=1"></script>
+<script src="pwa-install.js?v=1"></script>
+</body>
+</html>
