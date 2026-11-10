@@ -6,6 +6,29 @@
 
 ---
 
+## Versión 2.6 — 10 de noviembre de 2026 · Cuadrícula de cuaderno en las preguntas abiertas
+
+### Contexto
+El docente pidió que las preguntas abiertas tuvieran cuadrícula, igual que en ChromaNom, en lugar de renglones.
+
+### Cambios
+- **`docente-app.js`:** las preguntas abiertas llevan una cuadrícula de cuaderno (cuadros de 18,9 px, unos 5 mm), en lugar de renglones. Aplica a:
+  - análisis e indagación de los talleres y de la sesión 3 de la guía;
+  - las preguntas abiertas de la evaluación;
+  - las preguntas para activar de la sesión 1 y la síntesis de la sesión 2.
+
+  Como en ChromaNom, después de paginar la cuadrícula se estira, un cuadro a la vez y en ronda (máximo 26 cuadros), hasta llenar el espacio libre de la hoja. Si una hoja no tiene cuadrículas y le sobra espacio, se agrega abajo un recuadro de «Notas» («Borrador (no se califica)» en las evaluaciones). Verdadero o falso y respuesta corta siguen con su renglón.
+- **`docente.html`:** estilos `.cuad` (los mismos de ChromaNom, también al imprimir) y `.notas-tit`.
+- **Versión:** `?v=12` y `bionom-v23`.
+
+### Verificación
+Con Playwright se generaron evaluación, taller y guía con un tema y con los 10 temas. Las cuadrículas llenan la hoja, ninguna hoja se desborda y no hay errores.
+
+### Pendiente
+Ninguno.
+
+---
+
 ## Versión 2.5 — 10 de noviembre de 2026 · Selección múltiple a doble columna en evaluaciones, talleres y guías
 
 ### Contexto

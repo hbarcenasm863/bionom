@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=11">
+<link rel="stylesheet" href="bio.css?v=12">
 <style>
 .grupos-r{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
 .grupos-r button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:8px 4px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--cn-tx)}
@@ -239,9 +239,9 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=11"></script>
-<script src="cuerpo.js?v=11"></script>
-<script src="repro-anim.js?v=11"></script>
+<script src="bio.js?v=12"></script>
+<script src="cuerpo.js?v=12"></script>
+<script src="repro-anim.js?v=12"></script>
 <script>
 (function(){
 var sp=CUERPO.sp,esc=BIO.esc;
@@ -436,8 +436,8 @@ mb.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){var i=+
   document.getElementById('mi-'+i).innerHTML=(ok?'✅ ':'❌ ')+'<b>'+(m[1]?'Realidad.':'Mito.')+'</b> '+m[2];mb.querySelectorAll('[data-m="'+i+'"]').forEach(function(x){x.disabled=true;});if(ok)mOk++;if(mOk>=4)BIO.marcarSeccion('its');};});
 })();
 </script>
-<script src="text-zoom.js?v=11"></script>
-<script src="narracion.js?v=11"></script>
-<script src="pwa-install.js?v=11"></script>
+<script src="text-zoom.js?v=12"></script>
+<script src="narracion.js?v=12"></script>
+<script src="pwa-install.js?v=12"></script>
 </body>
 </html>

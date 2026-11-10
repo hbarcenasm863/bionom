@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=11">
-<link rel="stylesheet" href="actividades.css?v=11">
+<link rel="stylesheet" href="bio.css?v=12">
+<link rel="stylesheet" href="actividades.css?v=12">
 <style>
 .panel[hidden]{display:none!important}
 .dtabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 18px}
@@ -88,6 +88,11 @@
 .hoja .cols2>.blq{break-inside:avoid;page-break-inside:avoid;-webkit-column-break-inside:avoid;display:inline-block;width:100%}
 .hoja .cols2 .pq ol{grid-template-columns:1fr}
 .hoja .sq{border-bottom:1px solid #ccc;padding-bottom:5px}
+/* cuadrícula de cuaderno para las preguntas abiertas (igual que ChromaNom) */
+.hoja .cuad{border:1px solid #8fb1d6;border-radius:3px;margin-top:4px;background-color:#fff;
+  background-image:linear-gradient(#cddff2 1px,transparent 1px),linear-gradient(90deg,#cddff2 1px,transparent 1px);
+  background-size:18.9px 18.9px;background-position:-1px -1px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.hoja .notas-tit{font:700 12px Outfit,sans-serif;color:#4a5f73;text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
 .hoja .sq .ctx{font-style:italic;background:#f3f6f4;border-left:3px solid #2e7d4f;padding:3px 7px;margin-bottom:3px}
 .hoja .ins-act{font:italic 12px 'STIX Two Text',serif;margin:0 0 4px}
 .hoja .burb-t{border-collapse:collapse;font:12px Outfit,sans-serif;margin:0 auto}
@@ -350,21 +355,21 @@
 <div id="ah-print-root" aria-hidden="true"></div>
 <div id="sp-print-root" aria-hidden="true"></div>
 <div id="ex-print-root" aria-hidden="true"></div>
-<script src="bio.js?v=11"></script>
-<script src="banco.js?v=11"></script>
-<script src="ahorcado-datos.js?v=11"></script>
-<script src="docente-datos.js?v=11"></script>
+<script src="bio.js?v=12"></script>
+<script src="banco.js?v=12"></script>
+<script src="ahorcado-datos.js?v=12"></script>
+<script src="docente-datos.js?v=12"></script>
 <script>
 /* Ajustes de BioNom para extras.js: textos de biología y criptograma con el código genético. */
 window.EXTRAS_SITIO={area:'biología',adj:'biológico',cripto:'codon'};
 </script>
-<script src="retos.js?v=11"></script>
-<script src="ahorcado.js?v=11"></script>
-<script src="sopa.js?v=11"></script>
-<script src="extras.js?v=11"></script>
-<script src="laberinto.js?v=11"></script>
-<script src="crucigrama.js?v=11"></script>
-<script src="docente-app.js?v=11"></script>
+<script src="retos.js?v=12"></script>
+<script src="ahorcado.js?v=12"></script>
+<script src="sopa.js?v=12"></script>
+<script src="extras.js?v=12"></script>
+<script src="laberinto.js?v=12"></script>
+<script src="crucigrama.js?v=12"></script>
+<script src="docente-app.js?v=12"></script>
 <script>
 /* ── pestañas ── */
 (function(){
@@ -381,7 +386,7 @@ document.querySelectorAll('.dtabs [data-p]').forEach(function(b){b.onclick=funct
   if((p==='cr'||p==='mp'||p==='dt')&&window.EXTRAS)window.EXTRAS.render(p);};});
 })();
 </script>
-<script src="text-zoom.js?v=11"></script>
-<script src="pwa-install.js?v=11"></script>
+<script src="text-zoom.js?v=12"></script>
+<script src="pwa-install.js?v=12"></script>
 </body>
 </html>

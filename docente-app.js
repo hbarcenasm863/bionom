@@ -79,6 +79,11 @@ function preguntasEval(c,v){
 /* ── bloques HTML (un bloque no se parte entre hojas) ── */
 var L='ABCD';
 function lineas(k){return '<div class="lineas">'+'<i></i>'.repeat(k)+'</div>';}
+/* Cuadrícula de cuaderno para las preguntas abiertas, igual que ChromaNom:
+   cuadros de 18,9 px (≈ 5 mm). Después de paginar se estira para ocupar el
+   espacio libre de cada hoja (llenarHoja). */
+var CUADRO=18.9;
+function cuad(n){return '<div class="cuad" style="height:'+(n*CUADRO).toFixed(1)+'px"></div>';}
 function bloquesBanco(P,c,clave,n0){
   var B=[],n=n0||0;
   function sec(t,arr,fn){arr.forEach(function(x,i){B.push((i===0?'<h3>'+t+'</h3>':'')+fn(x));});}
@@ -87,7 +92,7 @@ function bloquesBanco(P,c,clave,n0){
   if(P.vf.length)sec('Verdadero (V) o falso (F): si es falsa, corrígela',P.vf,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div><span class="vf">'+(clave?'<span class="okc">'+(x.a?'✔ V':'✔ F')+'</span>':'V &nbsp; F')+'</span>'+esc(x.q)+(clave?'<div class="exp">'+x.exp+'</div>':lineas(1))+'</div></div>';});
   if(P.esc.length)sec('Responde con una palabra o frase corta',P.esc,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div class="okc">'+esc(x.a[0])+'</div><div class="exp">'+x.exp+'</div>':lineas(1))+'</div></div>';});
   if(P.ord.length)sec('Ordena: escribe 1, 2, 3… en cada casilla',P.ord,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<div class="ord-cajas">'+x.mez.map(function(o){return '<span>'+(clave?'<b>'+(x.ok.indexOf(o)+1)+'</b> ':'')+esc(o)+'</span>';}).join('')+'</div>'+(clave?'<div class="exp">'+x.exp+'</div>':'')+'</div></div>';});
-  if(P.ab.length)sec('Análisis e indagación',P.ab,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div class="exp">Respuesta abierta: valore la claridad de la explicación, el uso correcto de los conceptos y las evidencias.</div>':lineas(5))+'</div></div>';});
+  if(P.ab.length)sec('Análisis e indagación',P.ab,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div class="exp">Respuesta abierta: valore la claridad de la explicación, el uso correcto de los conceptos y las evidencias.</div>':cuad(5))+'</div></div>';});
   return {B:B,n:n};
 }
 function bloquesActividades(c,v){
@@ -103,7 +108,7 @@ function bloquesEval(E,c,clave){
   var B=[],n=0;
   if(E.saber.length)B.push('<h3>Selección múltiple con única respuesta (tipo Saber 11)</h3>');
   E.saber.forEach(function(x,i){n++;B.push('<div class="pq sq"><span class="n">'+n+'.</span><div>'+(x.ctx?'<div class="ctx">'+esc(x.ctx)+'</div>':'')+'<b>'+esc(x.q)+'</b><ol class="col1">'+x.ops.map(function(o,j){return '<li data-l="'+L[j]+'"'+(clave&&j===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&j===x.a?' ✔':'')+'</li>';}).join('')+'</ol></div></div>');});
-  E.ab.forEach(function(x,i){n++;B.push((i===0?'<h3>Preguntas abiertas</h3>':'')+'<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div class="exp">Respuesta abierta: valore la claridad, el uso de los conceptos y las evidencias.</div>':lineas(6))+'</div></div>');});
+  E.ab.forEach(function(x,i){n++;B.push((i===0?'<h3>Preguntas abiertas</h3>':'')+'<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div class="exp">Respuesta abierta: valore la claridad, el uso de los conceptos y las evidencias.</div>':cuad(6))+'</div></div>');});
   if(c.burbujas&&E.saber.length&&!clave){
     var filas=E.saber.map(function(x,i){return '<tr><td>'+(i+1)+'</td>'+[0,1,2,3].map(function(j){return '<td><span class="burb">'+L[j]+'</span></td>';}).join('')+'</tr>';});
     // la hoja de respuestas va en bloques de 15 filas para que quepa
@@ -123,12 +128,12 @@ function bloquesGuia(c,clave){
     if((pr.curiosos||[]).length)B.push('<h3>¿Sabías que…?</h3><ul class="lista">'+pr.curiosos.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>');
     if((pr.contexto||[]).length)B.push('<h3>La biología en contexto</h3><ul class="lista ctxl">'+pr.contexto.map(function(x){return '<li><b>'+esc(x.amb)+':</b> '+x.t+'</li>';}).join('')+'</ul>');
     if((pr.cotidianos||[]).length)B.push('<h3>En la vida diaria</h3><ul class="lista">'+pr.cotidianos.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>');
-    (pr.activacion||[]).forEach(function(x,i){B.push((i===0?'<h3>Para pensar antes de empezar</h3>':'')+'<div class="pq"><span class="n">'+(i+1)+'.</span><div>'+esc(x)+(clave?'<div class="exp">Respuesta personal: sirve para conocer las ideas previas.</div>':lineas(3))+'</div></div>');});
+    (pr.activacion||[]).forEach(function(x,i){B.push((i===0?'<h3>Para pensar antes de empezar</h3>':'')+'<div class="pq"><span class="n">'+(i+1)+'.</span><div>'+esc(x)+(clave?'<div class="exp">Respuesta personal: sirve para conocer las ideas previas.</div>':cuad(3))+'</div></div>');});
     var inf=t.info||{};
     B.push('<h2 class="ses">Sesión 2 · Información</h2>');
     (inf.lectura||[]).forEach(function(p,i){B.push((i===0?'<h3>Lectura</h3>':'')+'<p class="lect">'+p+'</p>');});
     if(inf.esquema)B.push('<h3>Mapa de ideas</h3>'+esquemaHTML(inf.esquema));
-    B.push('<div class="pq"><span class="n">✎</span><div>Escribe con tus palabras las tres ideas más importantes de la lectura.'+(clave?'<div class="exp">Respuesta personal.</div>':lineas(4))+'</div></div>');
+    B.push('<div class="pq"><span class="n">✎</span><div>Escribe con tus palabras las tres ideas más importantes de la lectura.'+(clave?'<div class="exp">Respuesta personal.</div>':cuad(4))+'</div></div>');
   });
   B.push('<h2 class="ses">Sesión 3 · Trabajo práctico</h2>');
   B=B.concat(bloquesBanco(preguntasBanco(c,0),c,clave).B).concat(bloquesActividades(c,0));
@@ -150,6 +155,24 @@ function cabecera(c,v,clave,primera,parte,nv){
     (clave?'<div class="hoja-ins clave-ins">🔒 Solo para el docente · Código '+esc(c.seed)+(nv>1?' · versión '+(v+1):'')+'. Las explicaciones en verde ayudan a retroalimentar.</div>'
       :'<div class="hoja-datos"><span>Nombre:</span><span>Curso:</span><span>Fecha:</span></div><div class="hoja-ins">'+(parte==='eval'?'Lee con atención. Trabaja de forma individual.'+(c.burbujas?' Marca tus respuestas en la hoja de respuestas.':''):parte==='guia'?'Desarrolla cada sesión en orden. Puedes apoyarte en los módulos de BioNom.':'Lee con atención cada pregunta. Puedes apoyarte en los módulos de BioNom.')+'</div>');
 }
+/* Reparte el espacio libre de la hoja entre las cuadrículas, un cuadro a la
+   vez y en ronda (tope de 26 cuadros cada una), como en ChromaNom. Si la
+   hoja no tiene cuadrículas y sobra espacio, agrega un recuadro de notas. */
+function llenarHoja(c,parte){
+  function libre(){var u=c.lastElementChild;if(!u)return c.clientHeight;return c.getBoundingClientRect().bottom-u.getBoundingClientRect().bottom-3;}
+  var areas=[].slice.call(c.querySelectorAll('.cuad'));
+  if(!areas.length){
+    var n=Math.floor((libre()-30)/CUADRO);if(n<4)return;
+    var w=document.createElement('div');w.className='blq';
+    w.innerHTML='<div class="notas-tit">'+(parte==='eval'?'Borrador (no se califica)':'Notas')+'</div>'+cuad(n);
+    c.appendChild(w);
+    while(c.scrollHeight>c.clientHeight+1&&n>2){n--;w.querySelector('.cuad').style.height=(n*CUADRO).toFixed(1)+'px';}
+    return;
+  }
+  var pasos=Math.floor(libre()/CUADRO),k=0,hechos=[];
+  while(pasos>0&&k<400){var a=areas[k%areas.length];k++;if(parseFloat(a.style.height)>=26*CUADRO)continue;a.style.height=(parseFloat(a.style.height)+CUADRO).toFixed(1)+'px';hechos.push(a);pasos--;}
+  while(c.scrollHeight>c.clientHeight+1&&hechos.length){var g=hechos.pop();g.style.height=(parseFloat(g.style.height)-CUADRO).toFixed(1)+'px';}
+}
 function paginar(B,c,v,clave,parte,nv){
   var med=$('medidor');
   function hojaVacia(primera){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,primera,parte,nv)+'<div class="hoja-cuerpo"></div>'+pie(99,99)+'</div>';}
@@ -169,6 +192,7 @@ function paginar(B,c,v,clave,parte,nv){
       if(cuerpo.scrollHeight>cuerpo.clientHeight+1&&puestos){dest.removeChild(d);if(enCols&&!dest.children.length)cuerpo.removeChild(dest);break;}
       puestos++;i++;
     }
+    llenarHoja(cuerpo,parte);
     out.push({primera:pag===0,html:cuerpo.innerHTML});pag++;if(!B.length)break;
   }
   med.innerHTML='';
