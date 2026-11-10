@@ -26,7 +26,7 @@
 .ejemplos span{font-weight:700;font-size:.9rem;color:var(--cn-dim)}
 .mapa-wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:20px;align-items:start}
 @media(max-width:860px){.mapa-wrap{grid-template-columns:1fr}}
-.mapa{background:linear-gradient(180deg,#e9f6ff 0%,#eef9ef 38%,#fff8ec 70%,#f4eefc 100%);border:1px solid var(--cn-brd);border-radius:22px;box-shadow:var(--cn-sh);padding:6px;position:relative;overflow:hidden}
+.mapa{background:linear-gradient(180deg,#f4eefc 0%,#eaf5fc 25%,#fff8ec 55%,#eef9ef 100%);border:1px solid var(--cn-brd);border-radius:22px;box-shadow:var(--cn-sh);padding:6px;position:relative;overflow:hidden}
 .mapa svg{display:block;width:100%;height:auto}
 .nodo{cursor:pointer}
 .nodo circle.fondo{fill:#fff;stroke-width:4;transition:r .2s}
@@ -86,7 +86,7 @@
       <button class="chip" data-ej="jaguar">🐆 Un jaguar</button>
     </div>
     <div class="mapa-wrap">
-      <div class="mapa"><svg id="mapa-svg" viewBox="0 0 560 1460" role="group" aria-label="Niveles de organización, de abajo (átomo) hacia arriba (biosfera)"></svg></div>
+      <div class="mapa"><svg id="mapa-svg" viewBox="0 0 560 1390" role="group" aria-label="Niveles de organización, de arriba (átomo) hacia abajo (biosfera)"></svg></div>
       <aside class="panel"><div class="det" id="det" aria-live="polite"></div></aside>
     </div>
   </section>
@@ -115,11 +115,11 @@
    banda: químico, celular, organismo o ecológico.
    ej: ejemplo de ese nivel para cada recorrido (humano, frailejón, jaguar). */
 var NIVELES=[
- {id:'atomo',n:'Átomo',ico:'⚛️',banda:'quimico',tam:'0,1 nm',
+ {id:'atomo',n:'Átomo',ico:'⚛️',banda:'quimico',tam:'0,1 nm',ext:[{href:'https://hbarcenasm863.github.io/ionom/atomo.html',ico:'⚛️',full:'IonNom · Teoría atómica'}],
   def:'La unidad más pequeña de un elemento químico. Los seres vivos están hechos sobre todo de <b>C, H, O, N, P y S</b> (los bioelementos).',
   emerge:'Un átomo solo no está vivo: tiene propiedades químicas, pero no se alimenta ni se reproduce.',
   ej:{humano:['🫁','El oxígeno (O) que respiras: es el 65 % de la masa de tu cuerpo.'],frailejon:['🌬️','El carbono (C) que el frailejón toma del aire como CO₂.'],jaguar:['🩸','El hierro (Fe) de la sangre del jaguar, que atrapa el oxígeno.']}},
- {id:'molecula',n:'Molécula',ico:'🧪',banda:'quimico',tam:'1–100 nm',
+ {id:'molecula',n:'Molécula',ico:'🧪',banda:'quimico',tam:'1–100 nm',ext:[{href:'https://hbarcenasm863.github.io/chromanom/biomoleculas.html',ico:'🧬',full:'ChromaNom · Biomoléculas'}],
   def:'Dos o más átomos unidos por enlaces. Las <b>biomoléculas</b> (carbohidratos, lípidos, proteínas y ácidos nucleicos como el ADN) forman todas las estructuras vivas.',
   emerge:'Las moléculas guardan información (ADN) o aceleran reacciones (enzimas), pero todavía no hay vida.',
   ej:{humano:['🧬','El ADN de tus células, con las instrucciones para fabricarte.'],frailejon:['🟢','La clorofila, que captura la luz del sol para la fotosíntesis.'],jaguar:['🐾','La melanina, el pigmento oscuro de las manchas (rosetas) de su piel.']}},
@@ -175,10 +175,10 @@ var BANDAS={quimico:['Nivel químico','#7b4bb7','#f4eefc'],celular:['Nivel celul
 (function(){
 var svg=document.getElementById('mapa-svg'),det=document.getElementById('det'),NS='http://www.w3.org/2000/svg';
 var ej='humano',sel=null;
-var H=1460,PASO=104,BASE=H-80;
+var PASO=104,TOPE=66;
 // posiciones en zigzag de abajo (átomo) hacia arriba (biosfera)
-var XS=[140,280,420,280];
-NIVELES.forEach(function(n,i){n.x=XS[i%4];n.y=BASE-i*PASO;});
+var XS=[150,290,430,290];
+NIVELES.forEach(function(n,i){n.x=XS[i%4];n.y=TOPE+i*PASO;});
 function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
 function modulosDe(id){return BIO.MODULOS.filter(function(m){return m.niveles&&m.niveles.indexOf(id)>=0;});}
 
@@ -188,9 +188,9 @@ function dibujar(){
   var porBanda={};
   NIVELES.forEach(function(n){(porBanda[n.banda]=porBanda[n.banda]||[]).push(n);});
   Object.keys(porBanda).forEach(function(b){
-    var ns=porBanda[b],top=ns[ns.length-1].y-PASO/2,bot=ns[0].y+PASO/2,c=BANDAS[b];
+    var ns=porBanda[b],top=ns[0].y-PASO/2,bot=ns[ns.length-1].y+PASO/2,c=BANDAS[b];
     svg.appendChild(el('rect',{x:8,y:top,width:544,height:bot-top,rx:18,fill:c[2],stroke:c[1],'stroke-opacity':.25}));
-    var t=el('text',{x:20,y:top+22,'class':'banda-lbl',fill:c[1]},c[0]);svg.appendChild(t);
+    var cy=(top+bot)/2,t=el('text',{x:34,y:cy,'class':'banda-lbl',fill:c[1],'text-anchor':'middle',transform:'rotate(-90 34 '+cy+')'},c[0]);svg.appendChild(t);
   });
   // camino
   var d='M'+NIVELES[0].x+' '+NIVELES[0].y;
@@ -198,9 +198,9 @@ function dibujar(){
   svg.appendChild(el('path',{d:d,fill:'none',stroke:'#fff',"stroke-width":18,'stroke-linecap':'round'}));
   svg.appendChild(el('path',{d:d,fill:'none',stroke:'#9bbfa7',"stroke-width":5,'stroke-dasharray':'2 12','stroke-linecap':'round'}));
   // línea «aquí empieza la vida» entre organelo y célula
-  var c=NIVELES.filter(function(n){return n.vida;})[0],yv=c.y+PASO/2;
-  svg.appendChild(el('line',{x1:20,x2:540,y1:yv,y2:yv,stroke:'#f08c1e','stroke-width':3,'stroke-dasharray':'8 6'}));
-  var tv=el('text',{x:540,y:yv-8,'text-anchor':'end',fill:'#b45309',style:'font:800 14px Outfit'},'⬆ aquí empieza la vida');svg.appendChild(tv);
+  var c=NIVELES.filter(function(n){return n.vida;})[0],yv=c.y-PASO/2;
+  svg.appendChild(el('line',{x1:52,x2:540,y1:yv,y2:yv,stroke:'#f08c1e','stroke-width':3,'stroke-dasharray':'8 6'}));
+  var tv=el('text',{x:540,y:yv+20,'text-anchor':'end',fill:'#b45309',style:'font:800 14px Outfit'},'⬇ aquí empieza la vida');svg.appendChild(tv);
   // nodos
   NIVELES.forEach(function(n,i){
     var g=el('g',{'class':'nodo'+(sel===n?' on':''),tabindex:0,role:'button','aria-label':n.n+' (nivel '+(i+1)+')'});
@@ -228,8 +228,9 @@ function elegir(n,desplazar){
     '<h3>'+n.ico+' '+n.n+'</h3><p>'+n.def+'</p>'+
     '<div class="clave" style="margin:10px 0"><b>Ejemplo:</b> '+e[1]+'</div>'+
     '<p style="font-size:.92rem;color:var(--cn-dim)"><b>¿Qué aparece de nuevo?</b> '+n.emerge+'</p>'+
-    (ms.length?'<div class="mods"><b style="font-size:.85rem">Lo estudias en:</b>'+ms.map(function(m){return '<a href="'+m.href+'"><span class="e">'+m.ico+'</span>'+m.full+(BIO.visitas[m.id]?'<span class="v">✓ visitado</span>':'')+'</a>';}).join('')+'</div>':'')+
-    '<div class="nav-niv"><button type="button" class="cn-btn" id="niv-ant" '+(i===0?'disabled':'')+'>⬇ Más pequeño</button><button type="button" class="cn-btn cn-btn--primary" id="niv-sig" '+(i===NIVELES.length-1?'disabled':'')+'>Más grande ⬆</button></div>';
+    ((ms.length||n.ext)?'<div class="mods"><b style="font-size:.85rem">Lo estudias en:</b>'+ms.map(function(m){return '<a href="'+m.href+'"><span class="e">'+m.ico+'</span>'+m.full+(BIO.visitas[m.id]?'<span class="v">✓ visitado</span>':'')+'</a>';}).join('')+
+      (n.ext||[]).map(function(m){return '<a href="'+m.href+'" target="_blank" rel="noopener"><span class="e">'+m.ico+'</span>'+m.full+'<span class="v" style="color:var(--cn-azul)">↗ otro sitio</span></a>';}).join('')+'</div>':'')+
+    '<div class="nav-niv"><button type="button" class="cn-btn" id="niv-ant" '+(i===0?'disabled':'')+'>⬆ Más pequeño</button><button type="button" class="cn-btn cn-btn--primary" id="niv-sig" '+(i===NIVELES.length-1?'disabled':'')+'>Más grande ⬇</button></div>';
   document.getElementById('niv-ant').onclick=function(){elegir(NIVELES[i-1]);};
   document.getElementById('niv-sig').onclick=function(){elegir(NIVELES[i+1]);};
   if(desplazar&&window.innerWidth<=860)det.scrollIntoView({behavior:'smooth',block:'start'});
@@ -239,7 +240,7 @@ document.querySelectorAll('[data-ej]').forEach(function(b){b.addEventListener('c
   ej=b.getAttribute('data-ej');elegir(sel||NIVELES[0]);
 });});
 dibujar();
-det.innerHTML='<div class="vacio"><div style="font-size:3rem">👆</div><b>Toca un nivel del mapa</b><br>Empieza abajo, por el <b>átomo</b>, y sube hasta la <b>biosfera</b>. Usa los botones de arriba para seguir el ejemplo de tu cuerpo, de un frailejón o de un jaguar.</div>';
+det.innerHTML='<div class="vacio"><div style="font-size:3rem">👆</div><b>Toca un nivel del mapa</b><br>Empieza arriba, por el <b>átomo</b>, y baja hasta la <b>biosfera</b>. Usa los botones de arriba para seguir el ejemplo de tu cuerpo, de un frailejón o de un jaguar.</div>';
 
 // progreso
 var mods=BIO.MODULOS.filter(function(m){return m.niveles;}),vis=mods.filter(function(m){return BIO.visitas[m.id];}).length;
