@@ -277,6 +277,7 @@ window.DETECTIVE=[
  ['Sebastián dijo que las bacterias pertenecen al reino Monera porque no tienen núcleo.','Sebastián dijo que las bacterias pertenecen al reino Plantae porque no tienen núcleo.'],
  'Al final vieron un oso de anteojos en un afiche y escribieron su nombre científico.',
  ['Lo escribieron Tremarctos ornatus: el género con mayúscula y la especie con minúscula.','Lo escribieron tremarctos Ornatus: el género con minúscula y la especie con mayúscula.'],
+ 'De regreso, la guía repasó lo que habían aprendido.',
  ['Recordaron que la categoría más específica es la especie.','Recordaron que la categoría más específica es el reino.'],
  ['La guía contó que Woese propuso los tres dominios: Bacteria, Archaea y Eukarya.','La guía contó que Linneo propuso los tres dominios: Bacteria, Archaea y Eukarya.'],
  ['También dijo que Colombia es el primer país en especies de aves.','También dijo que Colombia es el último país en especies de aves.']]],
