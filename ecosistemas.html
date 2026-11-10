@@ -60,6 +60,7 @@
     <a href="#energia">🔺 Energía</a>
     <a href="#ciclos">♻️ Ciclos</a>
     <a href="#relaciones">🤝 Relaciones</a>
+    <a href="#nicho">🏠 Nicho y adaptaciones</a>
     <a href="#poblaciones">📈 Poblaciones</a>
   </nav>
 
@@ -122,9 +123,10 @@
   <section class="sec" id="ciclos">
     <h2><span class="n">05</span> Los ciclos de la materia</h2>
     <p class="lead">La <b>energía fluye</b> (entra con el Sol y sale como calor), pero la <b>materia se recicla</b>: los mismos átomos de agua, carbono y nitrógeno circulan una y otra vez. Avanza paso a paso.</p>
-    <div class="tabs" data-alcambiar="cambioCiclo"><button class="chip on" data-tab="c-agua">💧 Ciclo del agua</button><button class="chip" data-tab="c-carb">🌫️ Ciclo del carbono</button></div>
+    <div class="tabs" data-alcambiar="cambioCiclo"><button class="chip on" data-tab="c-agua">💧 Ciclo del agua</button><button class="chip" data-tab="c-carb">🌫️ Ciclo del carbono</button><button class="chip" data-tab="c-nitr">🫘 Ciclo del nitrógeno</button></div>
     <div class="tab-p" id="c-agua"></div>
     <div class="tab-p" id="c-carb"></div>
+    <div class="tab-p" id="c-nitr"></div>
   </section>
 
   <section class="sec" id="relaciones">
@@ -142,8 +144,22 @@
     <div class="card" id="clas-rel"></div>
   </section>
 
+  <section class="sec" id="nicho">
+    <h2><span class="n">07</span> Hábitat, nicho y adaptaciones</h2>
+    <p class="lead">El <b>hábitat</b> es el lugar donde vive una especie: su «dirección». El <b>nicho ecológico</b> es su papel en el ecosistema: qué come, cuándo está activa, dónde anida, quién se la come. Es su «profesión». Dos especies pueden compartir el hábitat, pero si tienen el mismo nicho compiten hasta que una desplaza a la otra.</p>
+    <div class="grid g3">
+      <div class="card"><h3>🦆 Pato andino</h3><p>Humedal de la Sabana. Se sumerge y come plantas acuáticas e insectos del fondo.</p></div>
+      <div class="card"><h3>🪶 Garza</h3><p>El mismo humedal. Camina por la orilla y caza peces y ranas con su pico de lanza.</p></div>
+      <div class="card"><h3>🐦 Tingua bogotana</h3><p>El mismo humedal. Camina sobre la vegetación flotante y come semillas e invertebrados entre los juncos.</p></div>
+    </div>
+    <p style="margin-top:8px">Las tres comparten el <b>hábitat</b>, pero cada una tiene un <b>nicho</b> distinto: por eso pueden convivir.</p>
+    <h3 style="margin-top:18px">Las adaptaciones</h3>
+    <p>Una <b>adaptación</b> es una característica, seleccionada durante muchas generaciones, que ayuda a sobrevivir y a reproducirse en un ambiente. Puede ser <b>morfológica</b> (de la forma del cuerpo), <b>fisiológica</b> (del funcionamiento interno) o <b>conductual</b> (del comportamiento). Clasifica estas adaptaciones de especies de Colombia.</p>
+    <div class="card" id="clas-adap"></div>
+  </section>
+
   <section class="sec" id="poblaciones">
-    <h2><span class="n">07</span> ¿Cómo crece una población?</h2>
+    <h2><span class="n">08</span> ¿Cómo crece una población?</h2>
     <p class="lead">Si una población tuviera comida y espacio sin límite, crecería cada vez más rápido (<b>crecimiento exponencial</b>, curva en J). Pero los recursos se acaban: la población se estabiliza en la <b>capacidad de carga</b> del ambiente (curva en S). Cambia los valores.</p>
     <div class="card">
       <div class="ctrl"><label>Capacidad de carga <input type="range" id="pk" min="200" max="1000" step="50" value="600"> <b id="pk-v"></b></label><label>Tasa de crecimiento <input type="range" id="pr" min="0.1" max="0.8" step="0.05" value="0.35"> <b id="pr-v"></b></label></div>
@@ -261,15 +277,31 @@ var CIC={
  carb:{svg:paisaje()+'<g transform="translate(318 236)"><rect x="-26" y="-22" width="52" height="30" fill="#7a7f87"/><rect x="10" y="-52" width="10" height="34" fill="#5f646b"/><circle cx="16" cy="-62" r="8" fill="#9aa"/><circle cx="24" cy="-76" r="10" fill="#bbb"/></g><g transform="translate(560 240)"><ellipse rx="16" ry="10" fill="#c2410c"/><circle cx="14" cy="-6" r="6" fill="#c2410c"/></g><text x="500" y="300" style="font:700 11px Outfit" fill="#fff">restos → hongos</text><text x="380" y="352" style="font:700 11px Outfit" fill="#fff">⛏️ petróleo y carbón (fósiles)</text>'+
    '<text x="250" y="120" style="font:800 16px Outfit" fill="#495057">CO₂ en el aire</text>'+
    flecha('foto','M330 128 C420 150 480 170 500 182','#2f9e44','Fotosíntesis',420,150)+flecha('resp','M548 228 C560 180 460 140 360 125','#e8590c','Respiración',505,160)+flecha('desc','M520 280 C470 240 420 160 330 132','#8a5a2b','Descomposición',420,262)+flecha('comb','M336 168 C334 150 326 138 312 128','#495057','Combustión',340,150)+flecha('ocean','M240 274 C240 210 250 160 270 128','#1971c2','Disolución en el mar',172,248)+flecha('alim','M520 205 C535 215 545 222 552 232','#c2410c','Alimentación',528,198),
-  p:[['foto','🌿 Fotosíntesis','Las plantas toman CO₂ del aire y, con la energía del Sol, lo convierten en glucosa. Así el carbono entra a los seres vivos.'],['alim','🐄 Alimentación','Cuando un animal se come una planta, el carbono pasa a su cuerpo.'],['resp','💨 Respiración','Todos los seres vivos, también las plantas, «queman» glucosa en sus mitocondrias y devuelven CO₂ al aire.'],['desc','🍄 Descomposición','Hongos y bacterias descomponen los restos y liberan su carbono como CO₂. Los restos enterrados por millones de años formaron el petróleo y el carbón.'],['comb','🏭 Combustión','Al quemar petróleo, gasolina, carbón o bosques, devolvemos al aire en pocos años el carbono que estuvo guardado millones. Ese exceso de CO₂ aumenta el efecto invernadero y calienta el planeta.'],['ocean','🌊 Océanos','El mar disuelve mucho CO₂; los corales y moluscos lo usan para sus esqueletos. Demasiado CO₂ vuelve el mar más ácido.']]}
+  p:[['foto','🌿 Fotosíntesis','Las plantas toman CO₂ del aire y, con la energía del Sol, lo convierten en glucosa. Así el carbono entra a los seres vivos.'],['alim','🐄 Alimentación','Cuando un animal se come una planta, el carbono pasa a su cuerpo.'],['resp','💨 Respiración','Todos los seres vivos, también las plantas, «queman» glucosa en sus mitocondrias y devuelven CO₂ al aire.'],['desc','🍄 Descomposición','Hongos y bacterias descomponen los restos y liberan su carbono como CO₂. Los restos enterrados por millones de años formaron el petróleo y el carbón.'],['comb','🏭 Combustión','Al quemar petróleo, gasolina, carbón o bosques, devolvemos al aire en pocos años el carbono que estuvo guardado millones. Ese exceso de CO₂ aumenta el efecto invernadero y calienta el planeta.'],['ocean','🌊 Océanos','El mar disuelve mucho CO₂; los corales y moluscos lo usan para sus esqueletos. Demasiado CO₂ vuelve el mar más ácido.']]},
+ nitr:{svg:paisaje()+'<text x="280" y="112" style="font:800 15px Outfit" fill="#495057">N₂ en el aire (78 %)</text>'+
+   '<path d="M190 70 L176 100 L188 100 L172 132" stroke="#f5c542" stroke-width="4" fill="none"/>'+
+   '<g transform="translate(440 214)"><path d="M0 0 L0 -40 M0 -28 C-14 -36 -22 -30 -24 -24 C-14 -22 -6 -24 0 -28 M0 -36 C12 -46 22 -40 24 -34 C12 -32 6 -32 0 -36" stroke="#2f7d3a" stroke-width="3" fill="#57b05f"/><path d="M0 0 L-10 22 M0 0 L8 24 M0 0 L0 26" stroke="#8a5a2b" stroke-width="2"/><circle cx="-8" cy="16" r="3.5" fill="#e07a5f"/><circle cx="6" cy="18" r="3.5" fill="#e07a5f"/><circle cx="0" cy="22" r="3" fill="#e07a5f"/><text x="12" y="34" style="font:700 10px Outfit" fill="#fff">nódulos</text></g>'+
+   '<g transform="translate(540 236)"><ellipse rx="18" ry="11" fill="#fff" stroke="#555"/><circle cx="-6" cy="-2" r="4" fill="#333"/><circle cx="16" cy="-8" r="7" fill="#fff" stroke="#555"/></g>'+
+   '<g transform="translate(330 268)"><rect x="-14" y="-12" width="28" height="18" rx="3" fill="#d9c9a4" stroke="#8a6d3b"/><text x="0" y="1" text-anchor="middle" style="font:800 7px Outfit" fill="#5b4a2b">ABONO</text></g>'+
+   '<text x="420" y="330" style="font:700 11px Outfit" fill="#fff">bacterias del suelo: NH₃ → NO₃⁻</text>'+
+   flecha('fij','M320 118 C380 140 420 160 436 186','#7b4bb7','Fijación',376,140)+flecha('ray','M200 120 C230 150 260 190 300 230','#d4a017','Rayos',214,170)+
+   flecha('amon','M530 250 C500 280 470 300 440 314','#8a5a2b','Descomposición',470,272)+flecha('nitri','M400 320 C410 300 420 280 432 258','#0c8599','Nitrificación',340,300)+
+   flecha('asim','M446 208 C470 200 505 210 526 226','#2f9e44','Alimentación',470,196)+flecha('desn','M360 330 C320 280 300 170 300 120','#e8590c','Desnitrificación',230,262)+flecha('fert','M330 256 C350 250 380 250 410 270','#495057','Fertilizantes',318,246),
+  p:[['fij','🫘 Fijación del nitrógeno','El aire tiene 78 % de nitrógeno (N₂), pero ni las plantas ni los animales lo pueden usar así. Unas bacterias (como <i>Rhizobium</i>, que vive en los nódulos de las raíces del fríjol, la arveja y otras leguminosas) lo convierten en amoníaco. Por eso los campesinos alternan maíz y fríjol: el fríjol abona el suelo.'],
+     ['ray','⚡ Los rayos','La energía de los rayos también rompe el N₂ y forma compuestos de nitrógeno que la lluvia lleva al suelo.'],
+     ['nitri','🦠 Nitrificación','Otras bacterias del suelo transforman el amoníaco en nitratos (NO₃⁻), la forma que las plantas absorben mejor por sus raíces.'],
+     ['asim','🐄 Asimilación y alimentación','Las plantas usan el nitrógeno para fabricar proteínas y ADN. Los animales lo obtienen al comer plantas o a otros animales.'],
+     ['amon','🍄 Descomposición','Los descomponedores degradan excrementos, orina y restos, y devuelven el nitrógeno al suelo como amoníaco.'],
+     ['desn','💨 Desnitrificación','En suelos sin oxígeno (pantanos, arrozales), algunas bacterias convierten los nitratos otra vez en N₂ que regresa al aire. El ciclo se cierra.'],
+     ['fert','🧪 Los fertilizantes','El ser humano fabrica fertilizantes nitrogenados. Usados en exceso, la lluvia los arrastra a ríos y lagos, las algas crecen sin control y el agua se queda sin oxígeno (eutrofización): mueren los peces.']]}
 };
-function montarCiclo(k){var C=CIC[k],box=document.getElementById(k==='agua'?'c-agua':'c-carb');if(box.children.length)return;
+function montarCiclo(k){var C=CIC[k],box=document.getElementById('c-'+k);if(box.children.length)return;
   box.innerHTML='<div class="ciclo-wrap ciclo"><svg viewBox="0 0 600 380" aria-hidden="true">'+(DEF_C+C.svg).replace(/(id="|url\(#)(cielo2|mar|tierra|pc)\b/g,'$1'+k+'-$2')+'</svg><div><div class="det" style="min-height:0" id="cic-'+k+'" aria-live="polite"></div><div class="ctrl"><button type="button" class="cn-btn" data-c="-1">← Antes</button><button type="button" class="cn-btn cn-btn--primary" data-c="1">Siguiente →</button><span class="marcador" id="cn-'+k+'"></span></div></div></div>';
   var i=0;function ver(){var p=C.p[i];box.querySelectorAll('.fl').forEach(function(f){f.classList.toggle('on',f.getAttribute('data-f')===p[0]);});
     document.getElementById('cic-'+k).innerHTML='<h3>'+p[1]+'</h3><p>'+p[2]+'</p>';document.getElementById('cn-'+k).textContent=(i+1)+' de '+C.p.length;
     box.querySelector('[data-c="-1"]').disabled=i===0;box.querySelector('[data-c="1"]').disabled=i===C.p.length-1;if(i===C.p.length-1)BIO.marcarSeccion('ciclos');}
   box.querySelectorAll('[data-c]').forEach(function(b){b.onclick=function(){i+=+b.getAttribute('data-c');ver();};});ver();}
-window.cambioCiclo=function(t){montarCiclo(t==='c-agua'?'agua':'carb');};
+window.cambioCiclo=function(t){montarCiclo(t.slice(2));};
 montarCiclo('agua');
 
 /* ═══ 6. Relaciones ═══ */
@@ -299,6 +331,21 @@ function graf(){var K=+pk.value,r=+pr.value,cv=document.getElementById('pob'),c=
   c.strokeStyle='#b42318';c.lineWidth=3;c.beginPath();for(var t=0;t<=T;t+=0.25){var v=N0*Math.exp(r*t);if(v>Y){break;}if(t)c.lineTo(X(t),Yp(v));else c.moveTo(X(t),Yp(v));}c.stroke();
   c.strokeStyle='#2e7d4f';c.beginPath();for(t=0;t<=T;t+=0.25){v=K/(1+(K-N0)/N0*Math.exp(-r*t));if(t)c.lineTo(X(t),Yp(v));else c.moveTo(X(t),Yp(v));}c.stroke();}
 pk.oninput=pr.oninput=function(){graf();BIO.marcarSeccion('poblaciones');};graf();
+
+/* ═══ Adaptaciones ═══ */
+BIO.clasificar(document.getElementById('clas-adap'),{
+  cajas:[{id:'mor',titulo:'🦴 Morfológica'},{id:'fis',titulo:'⚙️ Fisiológica'},{id:'con',titulo:'🧠 Conductual'}],
+  fichas:[
+   {t:'Pelos blancos del frailejón contra el frío',caja:'mor',exp:'es parte de la forma de la hoja.'},
+   {t:'Raíces zancos del mangle',caja:'mor',exp:'lo sostienen en el lodo blando.'},
+   {t:'El mangle elimina la sal por sus hojas',caja:'fis',exp:'es un proceso interno.',pista:'No se ve en la forma: es un proceso que ocurre dentro de la planta.'},
+   {t:'Colores brillantes de la rana venenosa',caja:'mor',exp:'advierten a los depredadores (aposematismo).',pista:'Es una característica que se ve en su cuerpo.'},
+   {t:'Colibrí que baja su temperatura de noche para ahorrar energía',caja:'fis',exp:'se llama torpor.'},
+   {t:'Ojos y nariz del chigüiro en la parte alta de la cabeza',caja:'mor',exp:'puede ver y respirar casi sumergido.'},
+   {t:'Ballenas jorobadas que migran al Pacífico a tener sus crías',caja:'con',exp:'es un comportamiento: la migración.'},
+   {t:'Oso de anteojos que cambia de dieta según la temporada',caja:'con'},
+   {t:'Cactus de la Tatacoa que abre sus estomas de noche',caja:'fis',exp:'así pierde menos agua.',pista:'Es un cambio en el funcionamiento de la planta.'}
+  ]});
 })();
 </script>
 <script src="text-zoom.js?v=2"></script>
