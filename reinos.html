@@ -31,6 +31,11 @@
 .reino-c dt{font-weight:800;color:var(--cn-dim)}
 .reino-c.apagado{opacity:.25;transform:scale(.97)}
 .reino-c.prendido{box-shadow:0 0 0 3px var(--cn-naranja),var(--cn-sh-h)}
+.mon-vis{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:stretch}
+.mon-vis .gr{flex:1;min-width:96px;border-radius:12px;padding:10px 6px;text-align:center;font-weight:800;border:2px solid;font-size:.9rem;animation:aparece .45s ease}
+.mon-vis .gr small{display:block;font-weight:500;font-size:.74rem;margin-top:2px}
+.mon-vis .dom{flex-basis:100%;display:flex;gap:8px;flex-wrap:wrap}
+.mon-vis .dom>b{flex-basis:100%;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
 .clave-d{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px}
 @media(max-width:760px){.clave-d{grid-template-columns:1fr}}
 .org-sel{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
@@ -59,6 +64,7 @@
     <a href="#taxonomia">🪜 Taxonomía</a>
     <a href="#nombre">🏷️ Nombre científico</a>
     <a href="#historia">📜 ¿Cuántos reinos?</a>
+    <a href="#monera">🌋 Monera: ¿uno o dos?</a>
     <a href="#reinos">👑 Los cinco reinos</a>
     <a href="#clave">🔑 Clave dicotómica</a>
     <a href="#clasifica">🎯 Clasifica</a>
@@ -100,9 +106,46 @@
     <div class="card" style="margin-top:12px"><p id="hc-txt" aria-live="polite"></p><div class="hist-cls" id="hc-grp"></div></div>
   </section>
 
+  <section class="sec" id="monera">
+    <h2><span class="n">04</span> Monera: ¿un reino o dos?</h2>
+    <p class="lead">En el modelo de cinco reinos, <b>todas</b> las células sin núcleo van juntas en <b>Monera</b>. Pero en 1977 Carl Woese comparó el ARN de sus ribosomas y encontró que había <b>dos grupos tan distintos entre sí como una bacteria lo es de un ser humano</b>: las <b>eubacterias</b> («bacterias verdaderas») y las <b>arqueas</b> (antes llamadas arqueobacterias). Toca los botones para ver cómo se parte el reino.</p>
+    <div class="card">
+      <div class="chips" role="group" aria-label="Modelo de clasificación"><button class="chip on" data-mod="5">👑 Modelo de 5 reinos</button><button class="chip" data-mod="6">✂️ Modelo de 6 reinos</button><button class="chip" data-mod="3">🌳 Tres dominios</button></div>
+      <div class="mon-vis" id="mon-vis" aria-live="polite"></div>
+      <p id="mon-txt" style="margin-top:10px"></p>
+    </div>
+    <h3 style="margin-top:20px">¿En qué se diferencian?</h3>
+    <p>Por fuera se ven casi iguales: diminutas, sin núcleo y sin organelos con membrana. La diferencia está en su química y en sus genes.</p>
+    <div class="tbl-wrap"><table class="t">
+      <tr><th>Característica</th><th>🦠 Eubacterias (Bacteria)</th><th>🌋 Arqueas (Archaea)</th><th>🧫 Eucariotas</th></tr>
+      <tr><td><b>Núcleo</b></td><td>No</td><td>No</td><td>Sí</td></tr>
+      <tr><td><b>Pared celular</b></td><td>Con <b>peptidoglucano</b> (por eso las afecta la penicilina)</td><td><b>Sin</b> peptidoglucano: la penicilina no les hace nada</td><td>Celulosa (plantas), quitina (hongos) o ninguna (animales)</td></tr>
+      <tr><td><b>Lípidos de la membrana</b></td><td>Unidos por enlaces <b>éster</b>, como los nuestros</td><td>Unidos por enlaces <b>éter</b>, muy resistentes al calor y al ácido</td><td>Enlaces éster</td></tr>
+      <tr><td><b>ADN con histonas</b></td><td>No</td><td>Sí, en muchas</td><td>Sí</td></tr>
+      <tr><td><b>Maquinaria para leer los genes</b></td><td>Sencilla</td><td>Compleja, <b>parecida a la nuestra</b></td><td>Compleja</td></tr>
+      <tr><td><b>¿Causan enfermedades?</b></td><td>Algunas (tuberculosis, cólera); la mayoría son inofensivas o útiles</td><td>No se conoce ninguna arquea que enferme a las personas</td><td>—</td></tr>
+      <tr><td><b>Dónde viven</b></td><td>En todas partes: suelo, agua, tu piel, tu intestino</td><td>Famosas por los lugares <b>extremos</b>, pero también en el suelo, el mar y el intestino</td><td>—</td></tr>
+    </table></div>
+    <div class="clave">Aunque no tienen núcleo, las <b>arqueas están más emparentadas con nosotros</b> (los eucariotas) que con las bacterias. Por eso Woese no las dejó en un solo reino: creó por encima de los reinos una categoría nueva, el <b>dominio</b>.</div>
+    <h3 style="margin-top:20px">Las arqueas extremófilas</h3>
+    <div class="grid g3">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">♨️</span><b>Termófilas</b><small>aman el calor</small></div><div class="bk">Viven en aguas termales y fuentes volcánicas a más de 80 °C, donde las proteínas de otros seres se «cocinarían».</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🧂</span><b>Halófilas</b><small>aman la sal</small></div><div class="bk">Viven en salinas y lagos con 10 veces más sal que el mar. Algunas tienen pigmentos que tiñen el agua de <b>rosado o rojo</b>.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🐄</span><b>Metanógenas</b><small>producen metano</small></div><div class="bk">Viven sin oxígeno: en pantanos, en el fondo de los arrozales y en el estómago de las vacas. Producen <b>gas metano</b>, un gas de efecto invernadero.</div></div></div>
+    </div>
+    <div class="dato col">En Colombia hay arqueas en las <b>aguas termales</b> de Paipa (Boyacá) y de los volcanes del Ruiz y del Puracé, en las <b>salinas de Manaure</b> (La Guajira) y de Zipaquirá, y en el estómago de las vacas de la ganadería del Caribe y los Llanos.</div>
+    <h3 style="margin-top:20px">🎯 ¿Eubacteria, arquea o las dos?</h3>
+    <p>Toca una ficha y luego la caja donde va.</p>
+    <div class="card" id="clas-monera"></div>
+    <div class="chequeo" data-ok="2" data-exp="Las dos son procariotas (sin núcleo). Lo que las separa es la química de su pared y de su membrana y sus genes: por eso se necesitó comparar su ARN para descubrirlo.">
+      <div class="q">¿Por qué durante tanto tiempo se clasificó a arqueas y eubacterias en el mismo reino Monera?</div>
+      <div class="ops"><button class="op" data-por="No: hay arqueas en el suelo y en el mar, y eubacterias en lugares extremos.">Porque viven en los mismos lugares.</button><button class="op" data-por="No: ninguna arquea conocida causa enfermedades.">Porque las dos causan enfermedades.</button><button class="op">Porque al microscopio se ven iguales: las dos son procariotas, sin núcleo.</button><button class="op" data-por="No: las arqueas no tienen peptidoglucano en su pared.">Porque las dos tienen pared de peptidoglucano.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="reinos">
-    <h2><span class="n">04</span> Los cinco reinos</h2>
-    <p class="lead">En el colegio usamos los cinco reinos de Whittaker. Toca una característica para ver <b>qué reinos la tienen</b>, y toca cada tarjeta para leer sus ejemplos colombianos.</p>
+    <h2><span class="n">05</span> Los cinco reinos</h2>
+    <p class="lead">En el colegio usamos los cinco reinos de Whittaker (recuerda que en el modelo de seis reinos Monera se divide en eubacterias y arqueas). Toca una característica para ver <b>qué reinos la tienen</b>, y toca cada tarjeta para leer sus ejemplos colombianos.</p>
     <div class="chips" id="filtros" role="group" aria-label="Características"></div>
     <p id="filtro-txt" style="margin:8px 0;font-weight:600;min-height:1.6em" aria-live="polite"></p>
     <div class="grid g3" id="reinos-g"></div>
@@ -111,7 +154,7 @@
   </section>
 
   <section class="sec" id="clave">
-    <h2><span class="n">05</span> Clave dicotómica: clasifica como un científico</h2>
+    <h2><span class="n">06</span> Clave dicotómica: clasifica como un científico</h2>
     <p class="lead">Una <b>clave dicotómica</b> hace preguntas de dos opciones (sí o no). Cada respuesta te lleva a otra pregunta, hasta llegar al grupo. Escoge un organismo, lee su ficha y responde.</p>
     <div class="clave-d">
       <div><div class="org-sel" id="org-sel"></div><div class="card" id="org-ficha" style="margin-top:12px" aria-live="polite"></div></div>
@@ -120,7 +163,7 @@
   </section>
 
   <section class="sec" id="clasifica">
-    <h2><span class="n">06</span> Reto: ¿a qué reino pertenece?</h2>
+    <h2><span class="n">07</span> Reto: ¿a qué reino pertenece?</h2>
     <p class="lead">Lleva cada organismo a su reino. Toca la ficha y luego la caja.</p>
     <div class="card" id="clas-reinos"></div>
     <div class="sig"><a href="celula.html"><small>← Anterior</small><b>🔬 La célula</b></a><a class="der" href="sistemas.html"><small>Siguiente →</small><b>🫀 Sistemas del cuerpo</b></a></div>
@@ -154,6 +197,7 @@ var HC=[
  {b:'1735 · Linneo: 2 reinos',t:'<b>Carl von Linneo</b> divide la vida en lo que se mueve y come (animales) y lo que no se mueve (plantas). Los hongos y las bacterias quedaban con las plantas.',g:[['🐾 Animalia','animales','#c2410c'],['🌿 Plantae','plantas, hongos, bacterias','#2e7d4f']]},
  {b:'1866 · Haeckel: 3 reinos',t:'<b>Ernst Haeckel</b>, con el microscopio, nota que muchos seres de una sola célula no son ni plantas ni animales. Crea el reino <b>Protista</b>.',g:[['🐾 Animalia','','#c2410c'],['🌿 Plantae','incluye hongos','#2e7d4f'],['🦠 Protista','unicelulares','#7b4bb7']]},
  {b:'1969 · Whittaker: 5 reinos',t:'<b>Robert Whittaker</b>, con el microscopio electrónico, separa a los seres sin núcleo (<b>Monera</b>) y saca a los hongos de las plantas (<b>Fungi</b>), porque no hacen fotosíntesis y absorben su alimento.',g:[['🦠 Monera','sin núcleo','#64748b'],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
+ {b:'1977 · Woese: 6 reinos',t:'<b>Carl Woese</b> compara el ARN de los ribosomas de muchas «bacterias» y descubre que Monera esconde dos grupos muy distintos. Lo divide en <b>Eubacteria</b> y <b>Archaebacteria</b>.',g:[['🦠 Eubacteria','bacterias verdaderas','#64748b'],['🌋 Archaebacteria','arqueas','#b45309'],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
  {b:'1990 · Woese: 3 dominios',t:'<b>Carl Woese</b> compara el ARN de los ribosomas y descubre que las «bacterias» son en realidad dos grupos muy distintos: <b>Bacteria</b> y <b>Archaea</b>. Crea una categoría por encima del reino: el <b>dominio</b>.',g:[['🦠 Bacteria','bacterias comunes','#64748b'],['🌋 Archaea','arqueas, viven en lugares extremos','#b45309'],['🧫 Eukarya','protistas, hongos, plantas y animales','#1a7fb5']]}
 ];
 var hb=document.getElementById('hc-btn');
@@ -163,6 +207,35 @@ function verHC(i){var h=HC[i];hb.querySelectorAll('.chip').forEach(function(b,j)
   document.getElementById('hc-grp').innerHTML=h.g.map(function(g){return '<div class="gr" style="border-color:'+g[2]+';color:'+g[2]+';background:'+g[2]+'14">'+g[0]+(g[1]?'<small>'+g[1]+'</small>':'')+'</div>';}).join('');
   if(i===HC.length-1)BIO.marcarSeccion('historia');}
 hb.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){verHC(+b.getAttribute('data-i'));};});verHC(0);
+
+/* ═══ Monera: uno o dos ═══ */
+var MOD={
+ '5':{g:[['🦠 Monera','eubacterias y arqueas juntas','#64748b',1],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']],t:'<b>Cinco reinos (Whittaker, 1969).</b> Todas las procariotas en un solo reino, Monera, porque al microscopio se ven parecidas.'},
+ '6':{g:[['🦠 Eubacteria','bacterias verdaderas','#64748b',1],['🌋 Archaebacteria','arqueas','#b45309',1],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']],t:'<b>Seis reinos (Woese, 1977).</b> Monera se parte en dos reinos: Eubacteria y Archaebacteria. Es el modelo de muchos libros de texto.'},
+ '3':{d:[['Dominio Bacteria','#64748b',[['🦠 Eubacterias','','#64748b',1]]],['Dominio Archaea','#b45309',[['🌋 Arqueas','','#b45309',1]]],['Dominio Eukarya','#1a7fb5',[['🫧 Protistas','','#7b4bb7'],['🍄 Hongos','','#a16207'],['🌿 Plantas','','#2e7d4f'],['🐾 Animales','','#c2410c']]]],t:'<b>Tres dominios (Woese, 1990).</b> Por encima de los reinos: dos dominios de procariotas (Bacteria y Archaea) y uno con todos los seres con núcleo (Eukarya). Las arqueas quedan más cerca de Eukarya que de Bacteria.'}
+};
+function grHTML(g){return '<div class="gr" style="border-color:'+g[2]+';color:'+g[2]+';background:'+g[2]+(g[3]?'26':'0d')+(g[3]?';box-shadow:0 0 0 3px '+g[2]+'33':'')+'">'+g[0]+(g[1]?'<small>'+g[1]+'</small>':'')+'</div>';}
+var monVis={};
+function verMod(k){var m=MOD[k];monVis[k]=1;
+  document.querySelectorAll('[data-mod]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-mod')===k);});
+  document.getElementById('mon-vis').innerHTML=m.g?m.g.map(grHTML).join(''):m.d.map(function(d){return '<div class="dom" style="flex:'+d[2].length+';flex-basis:auto;min-width:'+(d[2].length*100)+'px;border:2px dashed '+d[1]+';border-radius:14px;padding:8px"><b style="color:'+d[1]+'">'+d[0]+'</b>'+d[2].map(grHTML).join('')+'</div>';}).join('');
+  document.getElementById('mon-txt').innerHTML=m.t;}
+document.querySelectorAll('[data-mod]').forEach(function(b){b.onclick=function(){verMod(b.getAttribute('data-mod'));};});
+verMod('5');
+BIO.clasificar(document.getElementById('clas-monera'),{
+  cajas:[{id:'eu',titulo:'🦠 Solo eubacterias'},{id:'ar',titulo:'🌋 Solo arqueas'},{id:'am',titulo:'🤝 Las dos'}],
+  fichas:[
+   {t:'No tienen núcleo',caja:'am',exp:'las dos son procariotas.',pista:'¿Alguna de las dos tiene núcleo?'},
+   {t:'Tienen ribosomas',caja:'am',exp:'todas las células tienen ribosomas.',pista:'Todas las células fabrican proteínas.'},
+   {t:'Pared con peptidoglucano',caja:'eu',exp:'por eso la penicilina las ataca.'},
+   {t:'Membrana con enlaces éter',caja:'ar',exp:'es lo que las hace tan resistentes.'},
+   {t:'La penicilina no las afecta',caja:'ar',exp:'no tienen peptidoglucano.',pista:'La penicilina ataca el peptidoglucano de la pared.'},
+   {t:'Causan la tuberculosis',caja:'eu',exp:'no se conocen arqueas que causen enfermedades.'},
+   {t:'Producen metano en las vacas',caja:'ar',exp:'son las arqueas metanógenas.'},
+   {t:'Viven en las salinas de Manaure',caja:'ar',exp:'son arqueas halófilas.'},
+   {t:'Hacen el yogur',caja:'eu',exp:'los lactobacilos son eubacterias.'},
+   {t:'ADN circular sin núcleo',caja:'am',exp:'las dos tienen un cromosoma circular en el nucleoide.',pista:'Piensa en cómo guardan el ADN las procariotas.'}
+  ]});
 
 /* ═══ Cinco reinos ═══ */
 var R=[
