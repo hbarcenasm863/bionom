@@ -498,7 +498,7 @@ const DT = {
    historias salen del grupo de cada tema (ACT_TEMA_GRUPO o
    AHORCADO_GRUPOS); con la misma semilla base, la versión v toma otra
    ventana del mazo, otra historia y otros recuadros en blanco. */
-const TIPOS_TALLER = [['sp', '🔎 Sopa de letras', '8 palabras con pista'], ['ah', '🪢 Ahorcado con pistas', '4 palabras'], ['cr', GEN ? '🔐 Criptograma genético' : '🔐 Criptograma químico', '2 frases'], ['mp', '🗺️ Mapa conceptual con huecos', '1 mapa'], ['dt', '🕵️ Detective ' + SITIO.adj, '1 historia con 4 errores']];
+const TIPOS_TALLER = [['sp', '🔎 Sopa de letras', '8 palabras con pista'], ['ah', '🔠 Ahorcado con pistas', '4 palabras'], ['cr', GEN ? '🔐 Criptograma genético' : '🔐 Criptograma químico', '2 frases'], ['mp', '🗺️ Mapa conceptual con huecos', '1 mapa'], ['dt', '🕵️ Detective ' + SITIO.adj, '1 historia con 4 errores']];
 const largo = s => sinTilde(String(s).toUpperCase()).replace(/[^A-ZÑ]/g, '').length;
 function gruposDeTemas(ids){
   const m = window.ACT_TEMA_GRUPO || {}, out = [];

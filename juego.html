@@ -90,7 +90,7 @@
       <button type="button" class="seccion on" data-s="preg"><span class="e">❓</span>Preguntas<small>3 intentos con pistas en cada una</small></button>
       <button type="button" class="seccion" data-s="cruci"><span class="e">🔤</span>Crucigrama<small>10 palabras · unos 10 min</small></button>
       <button type="button" class="seccion" data-s="sopa"><span class="e">🔍</span>Sopa de letras<small>10 palabras · unos 7 min</small></button>
-      <button type="button" class="seccion" data-s="ah"><span class="e">🪢</span>Ahorcado<small>10 palabras · tiempo según la palabra</small></button>
+      <button type="button" class="seccion" data-s="ah"><span class="e">🔠</span>Ahorcado<small>10 palabras · tiempo según la palabra</small></button>
     </div>
     <div id="cant-box">
     <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">3 · ¿Cuántas preguntas?</h2>
@@ -187,7 +187,7 @@ var SEC='preg';
 var NOTA_SEC={
   cruci:'🔤 <b>Crucigrama de 10 palabras.</b> Tienes 3 comprobaciones: después de cada una, las palabras que siguen mal reciben una pista nueva. Al final se explica cada palabra.',
   sopa:'🔍 <b>Sopa de letras de 10 palabras.</b> No ves la palabra, ves su pista: piénsala y búscala. Puedes pedir hasta 3 pistas por palabra. Al final se explica cada palabra.',
-  ah:'🪢 <b>Ahorcado de 10 palabras.</b> Cada palabra tiene su propio tiempo (más largo si la palabra es más difícil) y 3 pistas que aparecen a medida que fallas letras.'
+  ah:'🔠 <b>Ahorcado de 10 palabras.</b> Cada palabra tiene su propio tiempo (más largo si la palabra es más difícil) y 3 pistas que aparecen a medida que fallas letras.'
 };
 $('secciones').querySelectorAll('.seccion').forEach(function(b){b.onclick=function(){SEC=b.getAttribute('data-s');
   $('secciones').querySelectorAll('.seccion').forEach(function(x){x.classList.toggle('on',x===b);});

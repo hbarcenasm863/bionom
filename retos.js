@@ -755,7 +755,7 @@ R.ahorcado = function(el, item, o){
   var base = function(ch){ return ch === 'Ñ' ? 'Ñ' : sinTilde(ch); };
   var B = pal.split('').map(base).join('');
   var seg = o.segundos || R.tiempo('ahorcado', [item]);
-  el.innerHTML = '<div class="rt-box rt-ah"><div class="rt-cab"><b>🪢 Ahorcado</b><span class="rt-reloj"></span></div><div class="rt-ah-cuerpo"></div><div class="rt-msg" aria-live="polite"></div><div class="rt-final"></div></div>';
+  el.innerHTML = '<div class="rt-box rt-ah"><div class="rt-cab"><b>🔠 Ahorcado</b><span class="rt-reloj"></span></div><div class="rt-ah-cuerpo"></div><div class="rt-msg" aria-live="polite"></div><div class="rt-final"></div></div>';
   var box = el.querySelector('.rt-ah'), cuerpo = box.querySelector('.rt-ah-cuerpo'), msg = box.querySelector('.rt-msg');
   function dibujo(f){
     var p = ['<circle cx="100" cy="44" r="12"/>','<line x1="100" y1="56" x2="100" y2="90"/>','<line x1="100" y1="64" x2="84" y2="80"/>','<line x1="100" y1="64" x2="116" y2="80"/>','<line x1="100" y1="90" x2="88" y2="112"/>','<line x1="100" y1="90" x2="112" y2="112"/>'];
