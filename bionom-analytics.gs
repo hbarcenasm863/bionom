@@ -113,6 +113,7 @@ const RETO_META_PCT = 80;
 // reacción), así que la lista refleja eso.
 const TEMAS_PRINCIPALES = [
   'La célula',
+  'División celular',
   'Reinos y clasificación',
   'Sistemas del cuerpo',
   'Reproducción',

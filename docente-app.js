@@ -132,7 +132,9 @@ function bloquesGuia(c,clave){
   B=B.concat(bloquesBanco(preguntasBanco(c,0),c,clave).B).concat(bloquesActividades(c,0));
   B.push('<h2 class="ses">Sesión 4 · Evaluación</h2>');
   var puedo=[];ts.forEach(function(t){(t.puedo||[]).forEach(function(p){puedo.push(p);});});
-  if(puedo.length)B.push('<h3>Autoevaluación</h3><table class="auto-t"><thead><tr><th>Puedo…</th><th>Lo logro</th><th>Con ayuda</th><th>Aún no</th></tr></thead><tbody>'+puedo.map(function(p){return '<tr><td>'+esc(p)+'</td><td></td><td></td><td></td></tr>';}).join('')+'</tbody></table>');
+  // la tabla va en bloques de 12 filas: con muchos temas no cabría en una hoja
+  var cab='<table class="auto-t"><thead><tr><th>Puedo…</th><th>Lo logro</th><th>Con ayuda</th><th>Aún no</th></tr></thead><tbody>';
+  for(var k=0;k<puedo.length;k+=12)B.push((k===0?'<h3>Autoevaluación</h3>':'')+cab+puedo.slice(k,k+12).map(function(p){return '<tr><td>'+esc(p)+'</td><td></td><td></td><td></td></tr>';}).join('')+'</tbody></table>');
   B.push('<p class="ins-act">La evaluación está en las hojas siguientes.</p>');
   return B;
 }

@@ -72,11 +72,11 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 | `celula.html`, `division.html`, `reinos.html`, `sistemas.html`, `reproduccion.html`, `genetica.html`, `evolucion.html`, `ecosistemas.html`, `regiones.html`, `ambiente.html` | Módulos de contenido. `cuerpo.js` dibuja el cuerpo humano; `fondo-plantas.svg` es el fondo de plantas de Colombia. |
 | `mapa-colombia.js` | Contornos simplificados de las regiones naturales y departamentos (de los límites del DANE/MGN 2018). La franja del Pacífico en Valle, Cauca y Nariño es aproximada. |
 | `repro-anim.js` | Animaciones con volumen de `reproduccion.html` (`ANIM.montar(el,'nombre')` o `<div data-anim="nombre">`). Cada paso dibuja la escena según su avance; los degradados llevan nombres únicos por animación. |
-| `banco.js` | Banco de preguntas del juego y del generador (`BANCO_BIO`), al menos 40 por tema. Cada pregunta lleva `p` (2 pistas: general y concreta, sin la respuesta) y `exp` (explicación completa). Al final, `BIO_AJ` agrega pistas a preguntas existentes y `BIO_NUEVAS` agrega preguntas. |
+| `banco.js` | Banco de preguntas del juego y del generador (`BANCO_BIO`), al menos 40 por tema y al menos 40 cortas por tema para los laberintos (opciones de hasta 36 caracteres o verdadero/falso). Cada pregunta lleva `p` (2 pistas: general y concreta, sin la respuesta) y `exp` (explicación completa). Al final, `BIO_AJ` agrega pistas a preguntas existentes y `BIO_NUEVAS` agrega preguntas. |
 | `retos.js` | Reglas comunes de los juegos de los tres sitios (mismo archivo en ChromaNom e IonNom): 3 intentos con pistas progresivas, crucigrama y sopa de letras de 10 palabras, ahorcado y tiempos según la dificultad. No tiene bancos: cada sitio le pasa los suyos. |
 | `juego.html` | Juego con Modo Libre y Modo Estudiante. |
 | `docente.html` | Panel docente con 10 pestañas: Guías de 4 sesiones, Talleres y Evaluaciones tipo Saber 11 (`docente-app.js`, contenido en `docente-datos.js`), Laberintos (`laberinto.js`, copia del de ChromaNom con preguntas de `banco.js`), Crucigramas (`crucigrama.js`, armado con `retos.js`), Ahorcado y Sopa (`ahorcado.js`, `sopa.js`), Criptograma genético, Mapa conceptual y Detective biológico (`extras.js`, el mismo archivo de ChromaNom e IonNom, con `window.EXTRAS_SITIO`). No tiene pestaña de orientaciones: los pasos del Modo Estudiante están en `README.md`. |
-| `docente-datos.js` | Solo contenido del panel docente: `TEMAS` (sesión 1 de aprendizajes previos, sesión 2 con lectura y mapa de ideas, autoevaluación «Puedo…»), `SABER` (10 preguntas tipo Saber 11 por tema; la primera opción es la correcta en el archivo), `ABIERTAS` y `window.DETECTIVE` (una historia por tema con 8 frases dudosas). |
+| `docente-datos.js` | Solo contenido del panel docente: `TEMAS` (sesión 1 de aprendizajes previos, sesión 2 con lectura y mapa de ideas, autoevaluación «Puedo…»), `SABER` (40 preguntas tipo Saber 11 por tema; la primera opción es la correcta en el archivo), `ABIERTAS` (40 por tema) y `window.DETECTIVE` (5 historias por tema, cada una con 8 frases dudosas). Lo agregado en la versión 2.4 está al final del archivo, dentro de un bloque que hace `push`. |
 | `bionom-analytics.gs` | Backend de Google Apps Script del Modo Estudiante (copiado de IonNom). |
 
 ## Regla de contenido
@@ -84,3 +84,17 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 Las fórmulas químicas que aparezcan (por ejemplo en biomoléculas) siguen la
 regla de los otros sitios: nunca con ramas entre paréntesis; usar fórmula
 molecular (C₆H₁₂O₆) o figuras.
+
+## Meta de contenido del panel docente
+
+Cada tema (los 10 de `TEMAS_JUEGO`, incluida División celular) debe tener **al
+menos 40** de cada cosa:
+- preguntas del Juego y 40 cortas para los laberintos (`banco.js`);
+- preguntas tipo Saber 11 y preguntas abiertas (`docente-datos.js`);
+- palabras con 3 pistas para ahorcado, sopa, crucigrama y criptograma
+  (`ahorcado-datos.js`). Una palabra no se repite en todo el banco y su
+  pista 1 es corta (palabra + pista 1 ≤ 95 caracteres, por el criptograma);
+- 40 frases dudosas en el detective (5 historias de 8; máximo 3 por párrafo).
+Si se agrega un tema, también hay que sumarlo a `TEMAS_PRINCIPALES` de
+`bionom-analytics.gs` (y redesplegarlo) y a las casillas del laberinto en
+`docente.html`.

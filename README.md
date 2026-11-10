@@ -20,7 +20,7 @@ Se publica con GitHub Pages y se puede instalar como aplicación (PWA).
 | `ecosistemas.html` | Ecosistemas | Bióticos y abióticos, cadenas y red trófica, pirámide de energía, ciclos del agua, del carbono y del nitrógeno, relaciones, nicho y adaptaciones, poblaciones. |
 | `regiones.html` | Ecosistemas de Colombia | Mapa interactivo de las regiones naturales con 22 lugares, tipos de ecosistema, pisos térmicos, especies amenazadas y reto. |
 | `ambiente.html` | Ambiente y cambio climático | Efecto invernadero, datos de CO₂, causas en Colombia, consecuencias por región, El Niño y La Niña, océanos, energías, huella de carbono, mitigación y adaptación. |
-| `juego.html` | Juego | 372 preguntas de 4 tipos (al menos 40 por tema) con 3 intentos y pistas, crucigrama, sopa de letras y ahorcado. Modo libre (el Modo Estudiante está desactivado hasta 2027). |
+| `juego.html` | Juego | 536 preguntas de 4 tipos en 10 temas (al menos 40 por tema) con 3 intentos y pistas, crucigrama, sopa de letras y ahorcado. Modo libre (el Modo Estudiante está desactivado hasta 2027). |
 | `docente.html` | Docente | Guías de 4 sesiones, talleres, evaluaciones tipo Saber 11, laberintos, crucigramas, ahorcado, sopa de letras, criptograma genético, mapa conceptual y detective biológico, con versiones y clave. |
 
 ## Modo Estudiante

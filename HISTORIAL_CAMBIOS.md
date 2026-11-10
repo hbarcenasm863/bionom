@@ -6,6 +6,58 @@
 
 ---
 
+## Versión 2.4 — 10 de noviembre de 2026 · 40 o más en cada sección del panel docente, por tema; División celular como tema
+
+### Contexto
+El docente pidió aumentar las preguntas de cada tema y de cada sección del panel docente a **al menos 40**. Pidió además que fueran de nivel adecuado para secundaria y que se relacionaran directamente con lo que enseña cada módulo de BioNom.
+
+### Cambios
+- **División celular pasa a ser tema**, ya que es un módulo del sitio (versión 2.2). Queda en el Juego, en las guías (sesiones 1 y 2, mapa de ideas y «Puedo…»), en todas las pestañas del panel y en `bionom-analytics.gs`.
+- **Cuántas hay ahora en cada uno de los 10 temas:**
+
+  | Sección | Antes por tema | Ahora por tema |
+  |---|---|---|
+  | Preguntas del Juego (talleres y guías) | 41-42 | 45-66 (536 en total) |
+  | Preguntas cortas para el laberinto | 16-32 | 40-42 |
+  | Preguntas tipo Saber 11 | 10 | 40 (400 en total) |
+  | Preguntas abiertas | 3 | 40 (400 en total) |
+  | Palabras de ahorcado, sopa, crucigrama y criptograma | 10-12 | 40 (400 en total) |
+  | Detective | 1 historia de 8 frases dudosas | 5 historias = 40 frases dudosas |
+
+  - Las preguntas nuevas del Juego también tienen 2 pistas y explicación completa.
+  - Cada palabra nueva tiene 3 pistas, y ninguna palabra se repite en todo el banco.
+  - Todo sale de las secciones de cada módulo (por ejemplo, en Célula: historia, partes, transporte, ósmosis, laboratorio de las papas y fotosíntesis).
+- **Archivos:**
+  - `banco.js`: tema nuevo en `TEMAS_JUEGO` y preguntas nuevas al final.
+  - `ahorcado-datos.js`: grupo nuevo y palabras al final.
+  - `docente-datos.js`: tema División celular, Saber 11, abiertas y detective al final.
+  - `juego.html`: enlace «Repasar en División celular».
+  - `docente.html`: casilla de División celular en el laberinto.
+  - `docente-app.js`: la autoevaluación se parte en bloques de 12 filas, porque con los 10 temas juntos no cabía en una hoja.
+  - `bionom-analytics.gs`: «División celular» en `TEMAS_PRINCIPALES`.
+- **`CLAUDE.md`:** queda escrita la meta de 40 por tema y sección, y qué hay que tocar si se agrega un tema.
+- **Versión:** `?v=10` y `bionom-v21`.
+
+### Verificación
+Con Playwright, en cada uno de los 10 temas:
+- La evaluación con 30 preguntas Saber y 10 versiones no desborda ninguna hoja.
+- El laberinto se arma.
+- El crucigrama tiene 40 palabras y el detective 5 historias.
+- La guía con los 10 temas juntos (23 hojas) tampoco desborda.
+- El Juego funciona con el tema División celular, también en crucigrama.
+- No hay errores en ninguna página.
+
+Un control automático también revisó:
+- Que no hubiera palabras ni preguntas repetidas.
+- Que ninguna pista dijera la respuesta.
+- Que las historias tuvieran 8 frases dudosas, con máximo 3 por párrafo.
+
+### Pendiente
+- **`bionom-analytics.gs`** cambió (tema nuevo). Como el Modo Estudiante está desactivado hasta 2027, no hace falta hacer nada ahora. Cuando se active, hay que copiar el `.gs` actualizado al editor de Apps Script y crear una nueva versión de la implementación.
+- El mapa conceptual sigue siendo uno por tema. Cada versión deja en blanco recuadros distintos, con miles de combinaciones posibles.
+
+---
+
 ## Versión 2.3 — 10 de noviembre de 2026 · Panel docente completo como el de IonNom y ChromaNom; sin Orientaciones
 
 ### Contexto
