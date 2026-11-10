@@ -71,6 +71,7 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 | `index.html` | Mapa interactivo de los 13 niveles de organización. |
 | `celula.html`, `reinos.html`, `sistemas.html`, `reproduccion.html`, `genetica.html`, `evolucion.html`, `ecosistemas.html`, `regiones.html`, `ambiente.html` | Módulos de contenido. `cuerpo.js` dibuja el cuerpo humano; `fondo-plantas.svg` es el fondo de plantas de Colombia. |
 | `mapa-colombia.js` | Contornos simplificados de las regiones naturales y departamentos (de los límites del DANE/MGN 2018). La franja del Pacífico en Valle, Cauca y Nariño es aproximada. |
+| `repro-anim.js` | Animaciones con volumen de `reproduccion.html` (`ANIM.montar(el,'nombre')` o `<div data-anim="nombre">`). Cada paso dibuja la escena según su avance; los degradados llevan nombres únicos por animación. |
 | `banco.js` | Banco de preguntas del juego y del generador (`BANCO_BIO`), al menos 40 por tema. Cada pregunta lleva `p` (2 pistas: general y concreta, sin la respuesta) y `exp` (explicación completa). Al final, `BIO_AJ` agrega pistas a preguntas existentes y `BIO_NUEVAS` agrega preguntas. |
 | `retos.js` | Reglas comunes de los juegos de los tres sitios (mismo archivo en ChromaNom e IonNom): 3 intentos con pistas progresivas, crucigrama y sopa de letras de 10 palabras, ahorcado y tiempos según la dificultad. No tiene bancos: cada sitio le pasa los suyos. |
 | `juego.html` | Juego con Modo Libre y Modo Estudiante. |

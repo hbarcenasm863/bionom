@@ -6,6 +6,58 @@
 
 ---
 
+## Versión 2.1 — 10 de noviembre de 2026 · Reproducción animada y desarrollo embrionario
+
+### Contexto
+Al docente la explicación de «¿Cómo se reproduce cada grupo?» le pareció
+sosa: pidió una animación que muestre lo básico del proceso. También pidió:
+- Explicar los tipos de desarrollo embrionario con sus ventajas y
+  desventajas.
+- Acompañar el paso de la flor al fruto con imágenes de un caso real.
+
+### Cambios
+- **`repro-anim.js` (nuevo):** motor de animaciones con volumen. No son
+  modelos 3D reales: se descartaron porque necesitarían una librería pesada
+  que no funciona sin internet en la app instalada.
+  - Dibujos en SVG con degradados de luz, brillos y sombras.
+  - Cada animación avanza sola paso a paso, con un texto por paso.
+  - Botones ⏮ ⏸ ⏭ y puntos para saltar a un paso.
+  - Solo se mueve cuando está en pantalla.
+  - Respeta la opción «reducir movimiento» del sistema.
+  - 25 animaciones:
+    - Una por cada uno de los 18 grupos: bacterias, protistas, hongos,
+      musgos, helechos, gimnospermas, angiospermas, poríferos, cnidarios,
+      platelmintos, moluscos, artrópodos, equinodermos, peces, anfibios,
+      reptiles, aves y mamíferos.
+    - Café (de la flor al fruto).
+    - Etapas del embrión (cigoto, segmentación, mórula, blástula, gástrula
+      con sus tres capas).
+    - Ovíparo, ovovivíparo, vivíparo, desarrollo directo e indirecto.
+  - Cada animación usa nombres de degradado propios. Si se comparten, una
+    animación escondida en otra pestaña deja sin color a las demás: así pasó
+    al probar.
+- **`reproduccion.html`:**
+  - «En cada grupo»: al tocar un grupo se ve su animación y debajo la
+    explicación; arranca con Bacterias.
+  - Nueva sección **03 El desarrollo embrionario**: animación de las primeras
+    etapas y tabla de las tres capas. Pestañas Ovíparo, Ovovivíparo y
+    Vivíparo, y luego Directo e Indirecto, cada una con su animación,
+    ejemplos, ventajas y desventajas, más un chequeo rápido.
+  - Las tarjetas «Conceptos de la reproducción sexual» se cambiaron por
+    «Fecundación externa / interna», porque el resto ya lo cubre la sección
+    nueva.
+  - «De la flor al fruto»: el texto del paso a paso se cambió por el caso real
+    del café (floración, polinización, fecundación, la cereza que madura en
+    unos 8 meses y los granos que son las semillas), con animación y lista.
+  - Las secciones siguientes se renumeraron (04 a 09).
+- **Versiones:** `bionom-v17` y `?v=7`; `repro-anim.js` agregado al caché.
+
+### Verificación
+Con Playwright:
+- Se dibujaron los 97 pasos de las 25 animaciones y se revisaron en imagen.
+- La página no tiene errores y no se desborda en computador (1366 px) ni en
+  celular (390 px).
+
 ## Versión 2 — 10 de noviembre de 2026 · Juego: 3 intentos con pistas, 40 preguntas por tema, crucigrama, sopa y ahorcado
 
 ### Contexto
