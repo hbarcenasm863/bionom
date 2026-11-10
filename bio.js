@@ -57,9 +57,11 @@ function armarMenu(){
     document.body.appendChild(b);
     b.querySelector('#bot-mas').addEventListener('click',function(){
       var o=document.createElement('div');o.className='mas-menu';
-      o.innerHTML='<div class="caja" role="dialog" aria-label="Todos los módulos">'+MODULOS.map(function(m){
+      o.innerHTML='<div class="mm-caja" role="dialog" aria-label="Todos los módulos">'+MODULOS.map(function(m){
         return '<a href="'+m.href+'"><span style="font-size:1.3rem">'+m.ico+'</span>'+m.full+(visitas[m.id]?' <span style="color:var(--cn-ok)">✓</span>':'')+'</a>';}).join('')+'</div>';
-      o.addEventListener('click',function(e){if(e.target===o)o.remove();});
+      var tz=document.getElementById('text-zoom-widget'),caja=o.querySelector('.mm-caja');
+      if(tz){var t=document.createElement('div');t.className='tz-t';t.textContent='Tamaño de la letra';caja.appendChild(t);caja.appendChild(tz);}
+      o.addEventListener('click',function(e){if(e.target===o){if(tz)document.body.appendChild(tz);o.remove();}});
       document.body.appendChild(o);
     });
   }

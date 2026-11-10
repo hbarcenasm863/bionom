@@ -64,9 +64,12 @@ button{font-family:inherit}
   .bot-nav a.active{color:var(--cn-brand)}
 }
 .mas-menu{position:fixed;inset:0;z-index:130;background:rgba(0,0,0,.45);display:flex;align-items:flex-end}
-.mas-menu .caja{background:#fff;width:100%;border-radius:18px 18px 0 0;padding:16px 14px calc(18px + env(safe-area-inset-bottom));max-height:80vh;overflow:auto}
+.mas-menu .mm-caja{background:#fff;width:100%;border-radius:18px 18px 0 0;padding:16px 14px calc(18px + env(safe-area-inset-bottom));max-height:80vh;overflow:auto}
 .mas-menu a{display:flex;gap:10px;align-items:center;padding:11px 10px;border-radius:10px;color:var(--cn-tx);text-decoration:none;font-weight:600}
 .mas-menu a:hover{background:var(--cn-brand-l)}
+@media(max-width:640px){body>#text-zoom-widget{display:none!important}}
+.mas-menu #text-zoom-widget{position:static!important;display:flex!important;margin:10px auto 0;width:max-content;box-shadow:none}
+.mas-menu .tz-t{font-size:.8rem;font-weight:800;color:var(--cn-dim);text-align:center;margin-top:12px}
 
 /* ── Estructura ── */
 .app{max-width:1120px;width:100%;margin:0 auto;padding:0 20px 56px;flex:1}
