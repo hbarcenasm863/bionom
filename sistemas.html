@@ -51,6 +51,9 @@
     <a href="#cuerpo-sec">🧍 El cuerpo por dentro</a>
     <a href="#recorridos">🚂 Recorridos</a>
     <a href="#equipo">🤝 Trabajo en equipo</a>
+    <a href="#inmune">🛡️ Defensas</a>
+    <a href="#homeostasis">⚖️ Homeostasis</a>
+    <a href="#reproduccion">👶 Reproducción</a>
     <a href="#funciones">🎯 Funciones vitales</a>
   </nav>
 
@@ -127,8 +130,67 @@
     </div>
   </section>
 
+  <section class="sec" id="inmune">
+    <h2><span class="n">06</span> El sistema inmune: tres líneas de defensa</h2>
+    <p class="lead">Todos los días entran a tu cuerpo millones de bacterias y virus. El sistema inmune los detiene con tres barreras, una detrás de otra. Puedes ver sus órganos en la figura de arriba, en el botón «🛡️ Inmune».</p>
+    <div class="pasos" data-titulo="Las defensas">
+      <div class="paso" data-t="1.ª"><h3>🧱 Primera línea: las barreras</h3><p>La <b>piel</b> es una muralla. Las <b>mucosas</b> de la nariz y la garganta atrapan microbios con moco; las lágrimas y la saliva tienen enzimas que los destruyen; el <b>ácido del estómago</b> mata a muchos de los que tragas.</p></div>
+      <div class="paso" data-t="2.ª"><h3>🔥 Segunda línea: la defensa innata</h3><p>Si un microbio entra (por ejemplo, por una herida), llegan glóbulos blancos llamados <b>fagocitos</b> que se lo «comen» (fagocitosis). La zona se pone roja, caliente e hinchada: es la <b>inflamación</b>. La <b>fiebre</b> también ayuda, porque a muchos microbios no les gusta el calor. Actúa igual contra cualquier invasor.</p></div>
+      <div class="paso" data-t="3.ª"><h3>🎯 Tercera línea: la defensa adaptativa</h3><p>Los <b>linfocitos</b> reconocen a cada invasor en particular. Los linfocitos B fabrican <b>anticuerpos</b>, proteínas que se pegan al microbio y lo marcan para destruirlo; los linfocitos T atacan a las células infectadas. Lo mejor: quedan <b>células de memoria</b> que lo recuerdan por años.</p></div>
+      <div class="paso" data-t="Vacunas"><h3>💉 Las vacunas</h3><p>Una vacuna le presenta al sistema inmune un microbio muerto, debilitado o solo una parte de él (o las instrucciones en ARNm para fabricarla). El cuerpo produce memoria <b>sin enfermarse</b>. Si luego llega el microbio de verdad, la respuesta es rápida y fuerte.</p></div>
+    </div>
+    <h3 style="margin-top:18px">📈 Compara: primera infección y segunda (o con vacuna)</h3>
+    <div class="card">
+      <canvas id="anti" width="900" height="240" style="width:100%;height:auto;background:#fff;border:1px solid var(--cn-brd);border-radius:12px" aria-label="Anticuerpos en la sangre según los días"></canvas>
+      <div class="ctrl"><button type="button" class="cn-btn" id="an-1">🦠 Primera infección</button><button type="button" class="cn-btn cn-btn--primary" id="an-2">💉 Con memoria (vacuna)</button></div>
+      <p id="an-t" aria-live="polite"></p>
+    </div>
+    <div class="dato">Los <b>antibióticos</b> solo sirven contra bacterias, no contra virus como el de la gripa. Tomarlos sin necesidad ayuda a que aparezcan bacterias resistentes.</div>
+  </section>
+
+  <section class="sec" id="homeostasis">
+    <h2><span class="n">07</span> La homeostasis: mantener el equilibrio</h2>
+    <p class="lead">Aunque afuera haga calor o frío, aunque comas mucho o nada, tu cuerpo mantiene casi constantes la temperatura (unos 37 °C), el agua y el azúcar de la sangre. Eso es la <b>homeostasis</b>, y la logran juntos los sistemas nervioso, endocrino, circulatorio y excretor. Controla tú el azúcar de la sangre.</p>
+    <div class="card">
+      <div class="ctrl"><button type="button" class="cn-btn" id="h-comer">🍞 Comer arepa con chocolate</button><button type="button" class="cn-btn" id="h-ejer">🏃 Hacer ejercicio</button><button type="button" class="cn-btn" id="h-esp">⏩ Esperar una hora</button><label><input type="checkbox" id="h-diab"> Sin insulina (diabetes tipo 1)</label></div>
+      <canvas id="gluc" width="900" height="240" style="width:100%;height:auto;background:#fff;border:1px solid var(--cn-brd);border-radius:12px" aria-label="Azúcar en la sangre"></canvas>
+      <p id="h-t" aria-live="polite" style="margin-top:8px"></p>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>🥵 Si hace calor</h3><p>El hipotálamo (en el cerebro) lo detecta: los vasos de la piel se dilatan (te pones rojo) y sudas. Al evaporarse, el sudor enfría el cuerpo.</p></div>
+      <div class="card"><h3>🥶 Si hace frío</h3><p>Los vasos de la piel se cierran para no perder calor, se te pone la «piel de gallina» y los músculos tiemblan (escalofrío) para producir calor.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="reproduccion">
+    <h2><span class="n">08</span> La reproducción: la continuidad de la vida</h2>
+    <p class="lead">Ningún ser vivo es eterno: la especie continúa porque los individuos se reproducen. Hay dos grandes formas.</p>
+    <div class="grid g2">
+      <div class="card" style="border-top:6px solid #e0a024"><h3>🧬 Asexual</h3><p>Un solo progenitor; sin gametos. Los hijos son <b>clones</b> idénticos. Es rápida y no necesita pareja, pero toda la población es igual: una enfermedad puede acabar con todos.</p></div>
+      <div class="card" style="border-top:6px solid #7b4bb7"><h3>💞 Sexual</h3><p>Dos progenitores que aportan <b>gametos</b> (hechos por meiosis). Los hijos combinan genes de ambos: hay <b>variabilidad</b>, que ayuda a la especie a adaptarse a los cambios. Es más lenta y gasta más energía.</p></div>
+    </div>
+    <h3 style="margin-top:18px">Formas de reproducción asexual</h3>
+    <div class="grid g3">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">➗</span><b>Bipartición</b><small>toca para voltear</small></div><div class="bk">La célula se parte en dos iguales. Bacterias y amebas: ¡una bacteria puede dividirse cada 20 minutos!</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🫧</span><b>Gemación</b><small>toca para voltear</small></div><div class="bk">Le sale una «yema» que crece y se separa. Así se reproducen las levaduras del pan y la hidra.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🍄</span><b>Esporulación</b><small>toca para voltear</small></div><div class="bk">Se forman esporas que el viento o el agua llevan lejos. Hongos, musgos y helechos.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">⭐</span><b>Fragmentación</b><small>toca para voltear</small></div><div class="bk">Un trozo del cuerpo regenera un individuo completo: estrellas de mar y planarias.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🥔</span><b>Reproducción vegetativa</b><small>toca para voltear</small></div><div class="bk">Partes de la planta originan otra: la papa por sus tubérculos, la caña por esquejes, la fresa por estolones y el plátano por sus «hijuelos».</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🌺</span><b>Y las flores…</b><small>toca para voltear</small></div><div class="bk">Son el órgano de reproducción <b>sexual</b> de las plantas: el polen (gameto masculino) llega al óvulo gracias al viento, a las abejas o a los colibríes. Del óvulo fecundado sale la semilla.</div></div></div>
+    </div>
+    <h3 style="margin-top:18px">🎯 ¿Sexual o asexual?</h3>
+    <div class="card" id="clas-rep"></div>
+    <h3 style="margin-top:18px">👶 La reproducción humana y el desarrollo del embrión</h3>
+    <p>En los seres humanos la fecundación es <b>interna</b>: el espermatozoide (23 cromosomas) se une con el óvulo (23 cromosomas) en la trompa de Falopio y forma el <b>cigoto</b>, con 46. Desde ahí, por mitosis, se forma un nuevo ser humano. Mueve el control semana a semana.</p>
+    <div class="card">
+      <input type="range" id="sem" min="0" max="9" value="0" style="width:100%" aria-label="Semana del embarazo">
+      <div id="sem-t" class="lado" style="margin-top:10px;align-items:center" aria-live="polite"></div>
+    </div>
+    <div class="dato">Cuidar la <b>salud sexual y reproductiva</b> es también biología: conocer el propio cuerpo, decidir de forma informada y responsable, prevenir el embarazo temprano y las infecciones de transmisión sexual. Si tienes dudas, puedes hablar con orientación escolar o con el servicio de salud amigable para adolescentes de tu EPS.</div>
+  </section>
+
   <section class="sec" id="funciones">
-    <h2><span class="n">06</span> Las tres funciones vitales</h2>
+    <h2><span class="n">09</span> Las tres funciones vitales</h2>
     <p class="lead">Todo ser vivo cumple tres funciones: <b>nutrición</b> (obtener materia y energía), <b>relación</b> (percibir el ambiente y responder) y <b>reproducción</b> (originar nuevos individuos). Ubica cada sistema en la función que más le corresponde.</p>
     <div class="card" id="clas-func"></div>
     <div class="sig"><a href="reinos.html"><small>← Anterior</small><b>🍄 Reinos</b></a><a class="der" href="genetica.html"><small>Siguiente →</small><b>🧬 Genética</b></a></div>
@@ -175,6 +237,11 @@ var ORG={
  costillas:['oseo','Costillas','🧺','12 pares de huesos curvos que forman una jaula para <b>proteger el corazón y los pulmones</b>.'],
  pelvis:['oseo','Pelvis','🦋','Huesos de la cadera que sostienen los órganos del abdomen y unen la columna con las piernas.'],
  extremidades:['oseo','Huesos de brazos y piernas','🦵','Funcionan como <b>palancas</b> que los músculos jalan. El <b>fémur</b> (muslo) es el hueso más largo y fuerte del cuerpo.'],
+ amigdalas:['inmune','Amígdalas','🛡️','Grupos de tejido linfático a la entrada de la garganta: atrapan los microbios que entran con el aire y los alimentos.'],
+ timo:['inmune','Timo','🎓','Glándula detrás del esternón donde «se entrenan» los linfocitos T para reconocer a los invasores sin atacar al propio cuerpo. Es grande en la niñez y se reduce en el adulto.'],
+ bazo:['inmune','Bazo','🩸','Filtra la sangre, destruye los glóbulos rojos viejos y guarda glóbulos blancos listos para defender.'],
+ ganglios:['inmune','Ganglios y vasos linfáticos','🟢','Los vasos linfáticos recogen el líquido de los tejidos y lo pasan por los ganglios, donde los glóbulos blancos revisan si hay microbios. Por eso se inflaman («se hacen bolitas» en el cuello) cuando tienes una infección.'],
+ medulaosea:['inmune','Médula ósea','🦴','Tejido blando dentro de los huesos largos donde nacen todas las células de la sangre: glóbulos rojos, plaquetas y glóbulos blancos.'],
  musculos:['oseo','Músculos esqueléticos','💪','Más de 600 músculos unidos a los huesos por <b>tendones</b>. Solo pueden jalar (no empujar), por eso trabajan en pares: bíceps y tríceps.'],
  vesicula:['digestivo','Vesícula biliar','🟢','Pequeña bolsa bajo el hígado que <b>guarda la bilis</b> y la suelta al intestino cuando comes alimentos grasosos.']
 };
@@ -185,7 +252,8 @@ var SIS={
  excretor:['💧 Excretor','#b9922a','Elimina los desechos del metabolismo (como la urea) y mantiene el equilibrio de agua y sales.'],
  nervioso:['⚡ Nervioso','#d4a017','Recibe información, la procesa y coordina las respuestas del cuerpo con mensajes eléctricos muy rápidos.'],
  endocrino:['🧪 Endocrino','#8e44ad','Coordina el cuerpo con <b>hormonas</b>, mensajeros químicos que viajan por la sangre. Más lento que el nervioso, pero de efecto duradero.'],
- oseo:['🦴 Locomotor','#7a6a4f','Huesos y músculos: sostienen el cuerpo, protegen los órganos y permiten el movimiento.']
+ oseo:['🦴 Locomotor','#7a6a4f','Huesos y músculos: sostienen el cuerpo, protegen los órganos y permiten el movimiento.'],
+ inmune:['🛡️ Inmune','#2e9a5a','Defiende al cuerpo de microbios y células dañadas. Sus soldados son los <b>glóbulos blancos</b>, que nacen en la médula ósea y patrullan la sangre y la linfa.']
 };
 var sis='digestivo',vistos={},verNombres=false,orgSel=null;
 var K=CUERPO.ORG;
@@ -208,7 +276,7 @@ function guias(){
       var xb=l==='izq'?Math.min(g.a[0]-6,58):Math.max(g.a[0]+6,242);
       h+='<path d="M'+g.a[0]+' '+g.a[1]+' L'+xb+' '+g.y+' L'+xc+' '+g.y+'" fill="none" stroke="'+(on?'#f08c1e':'#557')+'" stroke-width="'+(on?1.6:1)+'"/>'+
         '<circle cx="'+g.a[0]+'" cy="'+g.a[1]+'" r="'+(on?3.4:2.4)+'" fill="'+(on?'#f08c1e':'#334')+'" stroke="#fff" stroke-width="1"/>'+
-        '<text x="'+(l==='izq'?xc-4:xc+4)+'" y="'+(g.y+4)+'" text-anchor="'+(l==='izq'?'end':'start')+'" style="font:'+(on?800:600)+' 11.5px Outfit" fill="'+(on?'#b45309':'#10261a')+'">'+({extremidades:'Brazos y piernas',piel:'Piel (sudor)',ojos:'Sentidos',insulina:'Páncreas',suprarrenales:'Suprarrenales',nariz:'Nariz'}[g.id]||ORG[g.id][1].replace(/ \(.*\)/,''))+'</text>';
+        '<text x="'+(l==='izq'?xc-4:xc+4)+'" y="'+(g.y+4)+'" text-anchor="'+(l==='izq'?'end':'start')+'" style="font:'+(on?800:600)+' 11.5px Outfit" fill="'+(on?'#b45309':'#10261a')+'">'+({medulaosea:'Médula ósea',ganglios:'Ganglios linfáticos',extremidades:'Brazos y piernas',piel:'Piel (sudor)',ojos:'Sentidos',insulina:'Páncreas',suprarrenales:'Suprarrenales',nariz:'Nariz'}[g.id]||ORG[g.id][1].replace(/ \(.*\)/,''))+'</text>';
     });
   });
   document.getElementById('guias').innerHTML=h;
@@ -299,6 +367,75 @@ BIO.clasificar(document.getElementById('clas-func'),{
    {t:'Locomotor',caja:'rel',exp:'permite responder con movimiento.',pista:'Huir de un peligro o acercarse al alimento es una respuesta al ambiente.'},
    {t:'Reproductor',caja:'rep',exp:'produce gametos para originar nuevos individuos.'}
   ]});
+
+/* ═══ Anticuerpos: respuesta primaria y secundaria ═══ */
+var curvas=[];
+function grafAnti(){var cv=document.getElementById('anti'),c=cv.getContext('2d'),W=900,H=240,px=40,py=24,D=30;
+  c.clearRect(0,0,W,H);c.font='12px Outfit';c.fillStyle='#3c5446';c.strokeStyle='#d6e8dc';
+  for(var d=0;d<=D;d+=5){var x=px+(W-px-14)*d/D;c.beginPath();c.moveTo(x,py);c.lineTo(x,H-py);c.stroke();c.fillText(d+' d',x-8,H-6);}
+  c.fillText('anticuerpos',4,16);
+  curvas.forEach(function(k){c.strokeStyle=k.col;c.lineWidth=3;c.beginPath();
+    for(var t=0;t<=D;t+=0.25){var v=k.A*Math.exp(-Math.pow((t-k.pico)/k.ancho,2));var x=px+(W-px-14)*t/D,y=H-py-(H-2*py)*v;if(t)c.lineTo(x,y);else c.moveTo(x,y);}c.stroke();
+    c.fillStyle=k.col;c.fillText(k.nom,px+(W-px-14)*k.pico/D-30,H-py-(H-2*py)*k.A-8);});}
+document.getElementById('an-1').onclick=function(){curvas=[{A:0.3,pico:12,ancho:5,col:'#c0392b',nom:'1.ª vez'}];grafAnti();
+  document.getElementById('an-t').innerHTML='La primera vez el cuerpo tarda <b>1 a 2 semanas</b> en producir suficientes anticuerpos, y en ese tiempo te enfermas.';};
+document.getElementById('an-2').onclick=function(){curvas=[{A:0.3,pico:12,ancho:5,col:'#c0392b',nom:'1.ª vez'},{A:0.95,pico:5,ancho:4,col:'#2e7d4f',nom:'con memoria'}];grafAnti();
+  document.getElementById('an-t').innerHTML='Con memoria (por una infección anterior o por una vacuna) la respuesta es <b>más rápida y mucho más fuerte</b>: el microbio es eliminado antes de que te enfermes.';BIO.marcarSeccion('inmune');};
+grafAnti();
+
+/* ═══ Homeostasis: azúcar en la sangre ═══ */
+var G=[90],H=['—'],hora=0;
+function pasoG(comida,ejer){
+  var g=G[G.length-1],diab=document.getElementById('h-diab').checked,horm='—';
+  if(comida)g+=70;if(ejer)g-=35;
+  if(g>110&&!diab){var b=(g-100)*0.55;g-=b;horm='💉 insulina';}
+  else if(g>110&&diab){g-=(g-100)*0.05;horm='⚠️ sin insulina';}
+  if(g<75){g+=(85-g)*0.6;horm='🍬 glucagón';}
+  if(!comida&&!ejer)g+=(90-g)*0.1;
+  g=Math.max(40,Math.min(320,g));G.push(g);H.push(horm);if(G.length>14){G.shift();H.shift();}hora++;
+  var msg=comida?'Comiste: la glucosa de los carbohidratos pasa a la sangre y sube el azúcar.':ejer?'El ejercicio: los músculos gastan glucosa y el azúcar baja.':'Pasa una hora.';
+  if(horm==='💉 insulina')msg+=' El <b>páncreas</b> detecta el exceso y libera <b>insulina</b>: las células toman la glucosa y el hígado la guarda como glucógeno. El azúcar vuelve a lo normal.';
+  if(horm==='🍬 glucagón')msg+=' El páncreas libera <b>glucagón</b>: el hígado suelta glucosa guardada y el azúcar sube a lo normal.';
+  if(horm==='⚠️ sin insulina')msg+=' Sin insulina la glucosa no entra a las células y se queda en la sangre: <b>hiperglucemia</b>. Por eso las personas con diabetes tipo 1 se aplican insulina.';
+  document.getElementById('h-t').innerHTML=msg;grafG();if(hora>=4)BIO.marcarSeccion('homeostasis');
+}
+function grafG(){var cv=document.getElementById('gluc'),c=cv.getContext('2d'),W=900,Hh=240,px=50,py=20,M=320;
+  c.clearRect(0,0,W,Hh);function Y(v){return Hh-py-(Hh-2*py)*v/M;}
+  c.fillStyle='#e7f6ec';c.fillRect(px,Y(110),W-px-10,Y(70)-Y(110));c.fillStyle='#2e7d4f';c.font='12px Outfit';c.fillText('zona normal',px+6,Y(110)+14);
+  c.fillStyle='#3c5446';[0,100,200,300].forEach(function(v){c.fillText(v,8,Y(v)+4);});c.fillText('mg/dL',8,12);
+  var n=G.length;c.strokeStyle='#c0392b';c.lineWidth=3;c.beginPath();G.forEach(function(v,i){var x=px+(W-px-30)*i/13;if(i)c.lineTo(x,Y(v));else c.moveTo(x,Y(v));});c.stroke();
+  G.forEach(function(v,i){var x=px+(W-px-30)*i/13;c.fillStyle='#c0392b';c.beginPath();c.arc(x,Y(v),4,0,7);c.fill();if(H[i]!=='—'){c.fillStyle='#14532d';c.font='11px Outfit';c.fillText(H[i],x-24,Y(v)-10);}});}
+document.getElementById('h-comer').onclick=function(){pasoG(true,false);};document.getElementById('h-ejer').onclick=function(){pasoG(false,true);};document.getElementById('h-esp').onclick=function(){pasoG(false,false);};
+grafG();document.getElementById('h-t').textContent='Empieza en 90 mg/dL, en ayunas. Come, haz ejercicio o espera y mira cómo responde tu cuerpo.';
+
+/* ═══ Reproducción ═══ */
+BIO.clasificar(document.getElementById('clas-rep'),{
+  cajas:[{id:'asx',titulo:'🧬 Asexual'},{id:'sex',titulo:'💞 Sexual'}],
+  fichas:[
+   {t:'Sembrar un pedazo de caña',caja:'asx',exp:'es un esqueje: reproducción vegetativa.'},
+   {t:'Una bacteria que se parte en dos',caja:'asx'},
+   {t:'Ranas que ponen huevos en el agua y el macho los fecunda',caja:'sex',exp:'fecundación externa.'},
+   {t:'Colibrí que lleva polen de flor en flor',caja:'sex',exp:'ayuda a la polinización, el paso previo a la fecundación de las plantas.'},
+   {t:'Levadura con una yema',caja:'asx'},
+   {t:'Tortuga caná que entierra huevos en la playa',caja:'sex'},
+   {t:'Papa que brota de un tubérculo',caja:'asx'},
+   {t:'Ballena jorobada que nace en el Pacífico',caja:'sex',exp:'los mamíferos tienen fecundación interna.'}
+  ]});
+var SEM=[
+ ['Día 1','🔬','Cigoto','El óvulo fecundado: una sola célula con 46 cromosomas. Empieza a dividirse por mitosis mientras baja por la trompa.'],
+ ['Semana 1','⚪','Blastocisto','Una esfera hueca de unas 100 células llega al útero y se implanta en su pared.'],
+ ['Semana 4','🌱','Tamaño de una semilla de amapola','Se forman el tubo neural (futuro cerebro y médula) y el corazón, que ya empieza a latir.'],
+ ['Semana 6','🫘','Tamaño de una lenteja','Aparecen los esbozos de brazos y piernas. Se forman los ojos.'],
+ ['Semana 8','🫐','Tamaño de una frambuesa','Todos los órganos principales ya están formados. Termina la etapa de <b>embrión</b> y empieza la de <b>feto</b>.'],
+ ['Semana 12','🍋','Tamaño de un limón','Ya mueve los dedos y se pueden ver sus órganos sexuales en una ecografía.'],
+ ['Semana 20','🍌','Tamaño de un banano','La madre empieza a sentir sus movimientos. Escucha sonidos.'],
+ ['Semana 28','🍆','Tamaño de una berenjena','Abre los ojos. Los pulmones siguen madurando.'],
+ ['Semana 36','🍈','Tamaño de un melón','Gana peso rápidamente: acumula grasa para regular su temperatura.'],
+ ['Semana 40','🍉','Tamaño de una sandía (unos 50 cm)','Nacimiento. Los pulmones ya pueden respirar aire.']
+];
+var sem=document.getElementById('sem');
+function verSem(){var e=SEM[+sem.value];document.getElementById('sem-t').innerHTML='<div style="font-size:5rem;text-align:center">'+e[1]+'</div><div><b style="font-family:var(--cn-mono);color:var(--cn-naranja)">'+e[0]+'</b><h3>'+e[2]+'</h3><p>'+e[3]+'</p></div>';if(+sem.value===9)BIO.marcarSeccion('reproduccion');}
+sem.oninput=verSem;verSem();
 })();
 </script>
 <script src="text-zoom.js?v=2"></script>

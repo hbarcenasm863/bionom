@@ -34,7 +34,7 @@ var DEFS='<defs>'+
  '<linearGradient id="g-piel" x1="0" x2="1"><stop offset="0" stop-color="#ecd2bf"/><stop offset=".5" stop-color="#f7e6d8"/><stop offset="1" stop-color="#e8cab5"/></linearGradient>'+
  rg('g-pulmon','#fbd0d8','#d97c91')+rg('g-corazon','#f0625f','#9e1b1f')+rg('g-higado','#b9614a','#6e2d20')+rg('g-estomago','#f7c0a6','#d4785c')+
  rg('g-rinon','#c4504a','#6f1f1c')+rg('g-vejiga','#fbe6a2','#d9ad3c')+rg('g-cerebro','#fbd3dc','#d98aa0')+rg('g-glandula','#d7b8ee','#8a4fbf')+
- rg('g-pancreas','#fbe0a8','#e0a84a')+rg('g-vesicula','#a8d48c','#4f8f2e')+rg('g-musculo','#ea8b84','#a8423c')+rg('g-intestino','#fde1d3','#f2b59c')+
+ rg('g-pancreas','#fbe0a8','#e0a84a')+rg('g-linfa','#c8efb0','#3f9e3a')+rg('g-bazo','#c06a8a','#6e2a45')+rg('g-vesicula','#a8d48c','#4f8f2e')+rg('g-musculo','#ea8b84','#a8423c')+rg('g-intestino','#fde1d3','#f2b59c')+
  '<linearGradient id="g-hueso" x1="0" x2="1"><stop offset="0" stop-color="#e7dcc4"/><stop offset=".5" stop-color="#fbf6ea"/><stop offset="1" stop-color="#dfd2b6"/></linearGradient>'+
  '<filter id="f-sombra" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2.4" flood-color="#5b3a26" flood-opacity=".22"/></filter>'+
  '<filter id="f-suave"><feGaussianBlur stdDeviation="1.2"/></filter>'+
@@ -192,6 +192,15 @@ org('extremidades','oseo',[122,420],[
   s+=fibras([[186,380],[176,420],[172,446]]);
   org('musculos','oseo',[186,404],s);
 })();
+
+/* INMUNE */
+org('amigdalas','inmune',[124,84],'<ellipse cx="144" cy="84" rx="4" ry="5.5" fill="url(#g-linfa)" stroke="#2f7d2a" stroke-width="1"/><ellipse cx="156" cy="84" rx="4" ry="5.5" fill="url(#g-linfa)" stroke="#2f7d2a" stroke-width="1"/>');
+org('timo','inmune',[176,128],pf(sp([[150,118],[157,122],[159,136],[153,144],[150,140],[147,144],[141,136],[143,122]],true),'url(#g-linfa)','#2f7d2a',1.1));
+org('bazo','inmune',[206,238],'<g filter="url(#f-sombra)">'+pf(sp([[190,226],[200,224],[205,236],[200,252],[191,256],[188,244]],true),'url(#g-bazo)','#4a1a2e',1.2)+'</g>');
+(function(){var V=[[[150,96],[136,108],[112,124],[100,150]],[[150,96],[164,108],[188,124],[200,150]],[[150,150],[150,250],[150,300]],[[150,300],[132,330],[126,400],[124,470]],[[150,300],[168,330],[174,400],[176,470]],[[106,150],[90,200],[82,260]],[[194,150],[210,200],[218,260]]];
+  var G=[[140,98],[160,98],[136,104],[164,104],[108,148],[112,154],[192,148],[188,154],[132,330],[138,336],[168,330],[162,336],[150,262],[146,280],[154,280]];
+  org('ganglios','inmune',[96,152],V.map(function(r){return linea(sp(r,false),'#7cc46a',1.3,' opacity=".85"');}).join('')+G.map(function(q){return '<ellipse cx="'+q[0]+'" cy="'+q[1]+'" rx="3.4" ry="2.6" fill="url(#g-linfa)" stroke="#2f7d2a" stroke-width=".8"/>';}).join(''));})();
+org('medulaosea','inmune',[118,400],'<g opacity=".95">'+linea('M126 346 C124 390 123 430 122 462','#b7a580',8)+linea('M126 346 C124 390 123 430 122 462','#e46a6a',4.5)+linea('M174 346 C176 390 177 430 178 462','#b7a580',8)+linea('M174 346 C176 390 177 430 178 462','#e46a6a',4.5)+'</g>');
 
 /* ── figura completa ── */
 function svg(ids){
