@@ -6,6 +6,58 @@
 
 ---
 
+## Versión 2.1 — 10 de noviembre de 2026 · Panel docente completo como el de IonNom y ChromaNom; sin Orientaciones
+
+### Contexto
+El docente sentía el modo docente de BioNom incompleto frente a IonNom y ChromaNom: le faltaban las actividades interactivas y los tipos de documento que tienen los otros sitios. También pidió quitar la pestaña de Orientaciones.
+
+### Cambios
+- **`docente.html`:** se rehízo con 10 pestañas, como los otros sitios.
+  - 📘 Guías, ✏️ Talleres y 📝 Evaluaciones.
+  - 🧭 Laberintos, 🔤 Crucigramas, 🔠 Ahorcado y 🔍 Sopa de letras.
+  - 🔐 Criptograma, 🗺️ Mapa conceptual y 🕵️ Detective biológico.
+  - **Se quitó la pestaña Orientaciones.** Los pasos para activar el Modo Estudiante pasaron a `README.md`, para no perderlos, y `juego.html` remite allí.
+- **`docente-app.js`** (nuevo): la lógica de guías, talleres y evaluaciones, con varias versiones, código para repetir hojas, hoja carta paginada y hojas de clave para el docente.
+  - **Guía de 4 sesiones:**
+    - Sesión 1, aprendizajes previos: ¿sabías que…?, la biología en contexto local, nacional y global, la vida diaria y preguntas para activar.
+    - Sesión 2, información: lectura, mapa de ideas y síntesis.
+    - Sesión 3, trabajo práctico: preguntas del Juego y actividades.
+    - Sesión 4: autoevaluación «Puedo…».
+    - La evaluación tipo Saber 11 va en hojas aparte, una versión distinta para cada fila.
+  - **Taller:** selección múltiple, verdadero o falso, respuesta corta, ordenar y análisis. Además, actividades dentro del taller: sopa de letras, ahorcado, criptograma genético, mapa conceptual con huecos y detective.
+  - **Evaluación tipo Saber 11:** preguntas con contexto colombiano y 4 opciones barajadas por versión, más preguntas abiertas. Lleva hoja de respuestas de burbujas y clave.
+- **`docente-datos.js`** (nuevo, solo contenido de biología) para los 9 temas:
+  - Sesión 1 y Sesión 2 (4 párrafos de lectura y mapa de ideas) y los «Puedo…» de la autoevaluación.
+  - **90 preguntas tipo Saber 11** (10 por tema).
+  - Preguntas abiertas. Las que estaban dentro de `docente.html` se movieron aquí y se agregaron las de Reproducción.
+  - **9 historias del detective biológico**: una por tema, con 8 frases dudosas y como máximo 3 por párrafo.
+- **`laberinto.js`** (nuevo): copia del de ChromaNom con un solo modo. Cada casilla es una pregunta corta del Juego (selección múltiple o verdadero/falso). Se puede imprimir con versiones y clave, jugar en pantalla y verificar la ruta de un estudiante.
+- **`crucigrama.js`** (nuevo): crucigramas de 6 a 14 palabras con las palabras de `ahorcado-datos.js`.
+  - Las pistas pueden ser la 1, la 2 o la 3, o un banco de palabras.
+  - Hojas con versiones y clave.
+  - Modo clase que se resuelve en pantalla con las 3 comprobaciones del Juego.
+- **`extras.js`** (nuevo en BioNom; es el mismo archivo de ChromaNom e IonNom):
+  - Ahora acepta `window.EXTRAS_SITIO` para cambiar los textos a «biología» y «detective biológico».
+  - En BioNom, el **criptograma genético** cifra cada letra como un codón del ARN mensajero; se descifra con la tabla del código genético y el código de una letra de los aminoácidos. La tabla puede ir impresa en la hoja. Las letras que no son código de ningún aminoácido (B, J, O, U, X, Z, Ñ) se regalan.
+  - Sin ese ajuste, ChromaNom e IonNom siguen exactamente igual.
+- **`retos.js`:** nueva función `RETOS.armarCrucigrama` con azar con semilla, para que el mismo código dé el mismo crucigrama. Se cambió el ícono del ahorcado por 🔠, porque 🪢 es un emoji nuevo que no se ve en Windows.
+- **`actividades.css`:** estilos de la casilla de codón y de la tabla del código genético.
+- **Versión:** `?v=7` y `bionom-v16`, con los 5 archivos nuevos en la caché y sin repetidos.
+- **`README.md` y `CLAUDE.md`:** arquitectura del panel docente y pasos del Modo Estudiante.
+
+### Verificación
+Con Playwright se revisaron las 10 pestañas, con hojas y sin errores.
+- La guía con los 9 temas (22 hojas), el taller con todas las actividades y la evaluación no desbordan ninguna hoja.
+- El laberinto se arma con cada uno de los 9 temas.
+- Funcionan los modos clase de crucigrama, criptograma, detective y laberinto.
+- ChromaNom e IonNom siguen mostrando «Criptograma químico» y «Detective químico» sin errores.
+
+### Pendiente
+- Ningún paso manual: no se tocó `bionom-analytics.gs`.
+- Las palabras de ahorcado, crucigrama, sopa y criptograma siguen siendo 10-12 por tema. Si el docente quiere más variedad en 20 versiones, conviene ampliar `ahorcado-datos.js`.
+
+---
+
 ## Versión 2 — 10 de noviembre de 2026 · Juego: 3 intentos con pistas, 40 preguntas por tema, crucigrama, sopa y ahorcado
 
 ### Contexto
