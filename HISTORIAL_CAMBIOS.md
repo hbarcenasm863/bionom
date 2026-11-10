@@ -6,6 +6,28 @@
 
 ---
 
+## Versión 2.10 — 10 de noviembre de 2026 · Un pollito de verdad al nacer del huevo
+
+### Contexto
+En la animación «Ovíparo» de Reproducción, el docente notó que lo que salía
+del huevo no parecía la cría de un ave: era solo una bola amarilla.
+
+### Cambios (`repro-anim.js`)
+- **Nuevo dibujo `pollito()`:** cuerpo, cabeza con plumón, pico, ojo con
+  brillo, ala que se abre y patas, todo con volumen.
+- **Cáscara rota en tres piezas:** la parte de abajo, el borde dentado
+  delante del pollito y el casquete de arriba, que sale volando y gira.
+- **Paso 3 de «Ovíparo»:** primero el huevo tiembla y se agrieta; después el
+  pollito se asoma, crece y abre el ala mientras el casquete cae. El texto
+  ahora menciona el «diente de huevo».
+- **Paso 4 de «Aves»:** el mismo pollito nace en el nido y el padre llega a
+  darle de comer.
+- **Versión:** `repro-anim.js?v=9`.
+
+### Verificación
+Con Playwright se tomaron capturas al inicio, la mitad y el final de los dos
+pasos. No hay errores.
+
 ## Versión 2.9 — 10 de noviembre de 2026 · Reinos: mapa de la clasificación en árbol
 
 ### Contexto

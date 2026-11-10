@@ -161,12 +161,25 @@ A.reptiles={fondo:'playa',pasos:[
  ['Los tapa con arena. La cáscara impide que el huevo se seque: el embrión crece sin agua.',function(p,t){var o='<rect x="96" y="150" width="110" height="46" rx="8" fill="#d9bf86" opacity=".9"/>';for(var i=0;i<10;i++)o+=ball(116+(i%5)*16,162+Math.floor(i/5)*16,7,'#f6f2e6')+ball(118+(i%5)*16,163+Math.floor(i/5)*16,1+3*p,'#9a7a4a');return o+tortuga(L(150,300,p),L(130,160,p),1.1,L(0,40,p))+tx(150,140,'🌡 más calor → más hembras','#7a3a10',11);}],
  ['A los dos meses las crías rompen la cáscara.',function(p,t){var o='<rect x="96" y="150" width="110" height="46" rx="8" fill="#d9bf86" opacity=".9"/>';for(var i=0;i<10;i++){var x=116+(i%5)*16,y=162+Math.floor(i/5)*16+Math.sin(t*10+i)*1.2*p;o+=ball(x,y,7,'#f6f2e6')+grieta(x,y,.6,p);}return o;}],
  ['Las tortuguitas corren hacia el mar. Pocas llegan a adultas: por eso hay que proteger sus playas.',function(p,t){var o='';for(var i=0;i<5;i++)o+=tortuga(L(130+i*16,290,cl(p*1.2-i*.05)),176-i*8,.4,70);return o;}]]};
+function pollito(x,y,s,t,ab,sinPatas){ // pollito con volumen; ab: 0 alas pegadas → 1 alas abiertas
+  var w=Math.sin((t||0)*6)*.6;
+  return g('translate('+f(x)+' '+f(y)+') scale('+f(s)+')',
+   (sinPatas?'':ln('M-5 16 L-6 26 M-6 26 l-4 2 M-6 26 l2 3 M-6 26 l4 1 M5 16 L6 26 M6 26 l-4 1 M6 26 l2 3 M6 26 l4 2','#f2a541',2))+
+   ell(0,4,17,14,'#f7d34b')+
+   ell(-13,4,7,10,'#efc22e',-25-25*(ab||0)+w*10)+
+   ball(4,-14,11,'#f9dc5c')+
+   ln('M-2 -24 q2 -6 5 -2 M2 -25 q4 -5 6 0','#f2b632',1.6)+
+   pa('M13 -16 L22 -13 L13 -10Z','#f08c1e')+
+   '<circle cx="9" cy="-17" r="2.2" fill="#1a1a1a"/><circle cx="9.7" cy="-17.7" r=".7" fill="#fff"/>');}
+function cascaraAbajo(x,y){return '<ellipse cx="'+f(x)+'" cy="'+f(y+6)+'" rx="24" ry="18" fill="'+G('#f4ecd8')+'" stroke="'+S('#f4ecd8')+'"/>';}
+function cascaraBorde(x,y){return '<path d="M'+f(x-24)+' '+f(y)+' l6 -8 l6 6 l6 -8 l6 6 l6 -8 l6 6 l6 -8 l6 8 L'+f(x+24)+' '+f(y+10)+' Q'+f(x)+' '+f(y+18)+' '+f(x-24)+' '+f(y+10)+'Z" fill="'+G('#f4ecd8')+'" stroke="'+S('#f4ecd8')+'"/>';}
+function cascaraArriba(x,y,rot){return g('translate('+f(x)+' '+f(y)+') rotate('+f(rot)+')','<path d="M-24 0 A24 26 0 0 1 24 0 l-6 6 l-6 -6 l-6 6 l-6 -6 l-6 6 l-6 -6 l-6 6Z" fill="'+G('#f4ecd8')+'" stroke="'+S('#f4ecd8')+'"/>');}
 function nido(){return pa('M110 150 C120 182 240 182 250 150 C230 160 130 160 110 150Z','#8a5a2b')+ln('M112 152 L130 160 M150 166 L170 158 M200 166 L220 158 M240 152 L226 162','#5e3a1a',2);}
 A.aves={fondo:'tierra',pasos:[
  ['Después de la fecundación interna, la hembra pone huevos de cáscara dura en el nido.',function(p,t){return nido()+(p>.2?huevo(160,146,1.2):'')+(p>.6?huevo(196,146,1.2,null,10):'');}],
  ['Los padres incuban los huevos: les dan calor con su cuerpo.',function(p,t){var o=nido()+huevo(160,146,1.2)+huevo(196,146,1.2,null,10)+ave(178,L(60,120,p),1.2,'#5d7fa8');for(var i=0;i<3;i++)o+=ln('M'+f(150+i*22)+' 100 q6 -8 0 -16 q-6 -8 0 -16','#f08c1e',2,.6*p);return o;}],
  ['Adentro, el embrión se alimenta de la yema. Al final, el pollito rompe la cáscara con el pico.',function(p,t){var w=Math.sin(t*14)*4*p;return nido()+huevo(178,144,1.5,null,w)+grieta(178,140,1.2,p);}],
- ['Nace el polluelo y sus padres lo alimentan hasta que puede volar.',function(p,t){return nido()+ell(178,148,18,8,'#f4ecd8')+ball(178,L(146,128,p),14,'#f5d36b')+pa('M190 '+f(L(146,128,p))+' L200 '+f(L(149,131,p))+' L190 '+f(L(152,134,p))+'Z','#f2a541')+'<circle cx="184" cy="'+f(L(143,125,p))+'" r="2" fill="#111"/>'+ave(270,90,1,'#5d7fa8');}]]};
+ ['Nace el polluelo y sus padres lo alimentan hasta que puede volar.',function(p,t){var b=seg(p,0,.5);return nido()+cascaraAbajo(178,142)+pollito(178,L(146,122,b),1.05,t,b,true)+cascaraBorde(178,138)+cascaraArriba(L(178,214,b),L(118,150,b),L(0,150,b))+ave(L(300,250,seg(p,.4,1)),L(70,96,seg(p,.4,1)),1,'#5d7fa8')+(p>.8?ball(222,108,3,'#8bc34a'):'');}]]};
 function utero(x,y,r,emb){return '<circle cx="'+f(x)+'" cy="'+f(y)+'" r="'+f(r)+'" fill="#f8c8d0" stroke="#d9798d" stroke-width="2" opacity=".95"/>'+ell(x-r*.5,y-r*.55,r*.35,r*.2,'#c0607a')+ln('M'+f(x-r*.45)+' '+f(y-r*.45)+' Q'+f(x-r*.1)+' '+f(y)+' '+f(x+r*.05)+' '+f(y+r*.05),'#c0607a',2)+ball(x+r*.15,y+r*.15,emb,'#f2b29a');}
 A.mamiferos={fondo:'tierra',pasos:[
  ['La fecundación es interna. El embrión se implanta en el útero de la madre.',function(p,t){return mamifero(170,128,1.3)+utero(160,128,24,4+3*p);}],
@@ -201,7 +214,9 @@ A.embrion={fondo:'micro',pasos:[
 A.oviparo={fondo:'tierra',pasos:[
  ['La madre pone el huevo afuera de su cuerpo.',function(p,t){return ave(110,120,1.1,'#c0392b')+huevo(L(130,220,p),L(130,170,p),1.6);}],
  ['El embrión crece dentro del huevo alimentándose de la yema, que se va gastando.',function(p,t){return '<ellipse cx="220" cy="140" rx="34" ry="44" fill="#fbf6ea" stroke="#c9b48a" stroke-width="2"/>'+ball(220,L(140,156,p),L(22,8,p),'#f5c542')+ball(L(220,214,p),L(140,128,p),L(4,20,p),'#f2b29a');}],
- ['La cría rompe la cáscara y nace.',function(p,t){return huevo(220,150,2.4,null,Math.sin(t*12)*4*(1-p))+grieta(220,140,2,cl(p*2))+(p>.5?ball(220,L(150,118,seg(p,.5,1)),16,'#f5d36b'):'');}]]};
+ ['La cría rompe la cáscara con su «diente de huevo» y nace un pollito.',function(p,t){var a=seg(p,0,.35),b=seg(p,.35,1);
+   if(b===0)return huevo(220,150,2.4,null,Math.sin(t*14)*4)+grieta(220,140,2,a);
+   return cascaraAbajo(220,160)+pollito(220,L(168,138,b),L(.8,1.25,b),t,b,true)+cascaraBorde(220,156)+cascaraArriba(L(220,268,b),L(130,176,b),L(0,160,b));}]]};
 A.ovoviviparo={fondo:'agua',pasos:[
  ['Los huevos se quedan dentro del cuerpo de la madre (por ejemplo, en algunos tiburones y en la boa).',function(p,t){var o=pez(180,110,3,'#7d8fa0',t*.3);for(var i=0;i<4;i++)o+=ball(150+i*14,116,6,'#f9d29a',.9);return o;}],
  ['Cada embrión se alimenta de la yema de su huevo, no de la madre.',function(p,t){var o=pez(180,110,3,'#7d8fa0',t*.3);for(var i=0;i<4;i++)o+=ball(150+i*14,116,6,'#f9d29a',.9)+ball(150+i*14,117,1+3*p,'#3b2a1a');return o;}],
