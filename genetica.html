@@ -65,6 +65,17 @@
 .etq-fila{font-size:.78rem;font-weight:800;color:var(--cn-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:8px}
 .tabla-cod{font:600 .74rem var(--cn-mono)}
 .tabla-cod td,.tabla-cod th{padding:3px 5px!important}
+#meio,#pedi{width:100%;height:auto}
+.gam{display:inline-flex;gap:4px;font:800 1rem var(--cn-mono);background:#fff7ec;border:1.5px solid #f5c58c;border-radius:10px;padding:4px 10px;margin:3px}
+#pedi .per{cursor:pointer}
+#pedi .per.on rect,#pedi .per.on circle{stroke:#f08c1e;stroke-width:4}
+.histo{display:flex;align-items:flex-end;gap:4px;height:170px;padding:6px;border-bottom:2px solid #10261a}
+.histo div{flex:1;border-radius:6px 6px 0 0;display:flex;align-items:flex-end;justify-content:center;font:700 .7rem var(--cn-mono);color:#fff;transition:height .4s}
+.bio-card{border-left:6px solid var(--cn-azul)}
+.votos{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.lados{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+@media(max-width:640px){.lados{grid-template-columns:1fr}}
+.lados>div{border-radius:12px;padding:10px 12px;font-size:.92rem}
 </style>
 </head>
 <body>
@@ -82,11 +93,15 @@
     <a href="#mendel">🌱 Mendel</a>
     <a href="#punnett">🔲 Punnett</a>
     <a href="#dihibrido">🧮 Dihíbrido</a>
+    <a href="#meiosis">✂️ Meiosis</a>
     <a href="#otras">🩸 Más allá de Mendel</a>
+    <a href="#genealogias">🌳 Genealogías</a>
     <strong>Molecular</strong>
     <a href="#adn">🧬 ADN</a>
     <a href="#proteinas">🏭 Del gen a la proteína</a>
+    <a href="#arn">📜 ARN y replicación</a>
     <a href="#mutaciones">⚠️ Mutaciones</a>
+    <a href="#biotecnologia">🧪 Biotecnología</a>
   </nav>
 
   <!-- ═══ CONCEPTOS ═══ -->
@@ -168,11 +183,31 @@
     <div class="clave"><b>3.ª ley de Mendel (transmisión independiente):</b> los alelos de genes distintos se reparten en los gametos sin depender unos de otros. Por eso, en AaBb × AaBb, aparece la proporción <b>9 : 3 : 3 : 1</b>.</div>
   </section>
 
+  <!-- ═══ MEIOSIS ═══ -->
+  <section class="sec" id="meiosis">
+    <h2><span class="n">05</span> La meiosis: el porqué de las leyes de Mendel</h2>
+    <p class="lead">Las células de tu cuerpo tienen los cromosomas en <b>parejas</b> (una copia de tu mamá y otra de tu papá): son <b>diploides (2n)</b>. Los óvulos y espermatozoides solo llevan <b>uno de cada pareja</b>: son <b>haploides (n)</b>. La división que los produce es la <b>meiosis</b>. Esta célula es AaBb: sigue los alelos.</p>
+    <div class="card lado" style="align-items:center">
+      <svg id="meio" viewBox="0 0 360 250" aria-hidden="true"></svg>
+      <div><div class="chips" id="mfases" style="margin-bottom:8px"></div><div id="mfase-t" aria-live="polite"></div>
+        <div class="ctrl"><button type="button" class="cn-btn" id="mf-ant">← Antes</button><button type="button" class="cn-btn cn-btn--primary" id="mf-sig">Siguiente →</button><button type="button" class="cn-btn" id="mf-gir">🎲 Otra orientación</button></div></div>
+    </div>
+    <div class="tbl-wrap" style="margin-top:14px"><table class="t">
+      <tr><th></th><th>Mitosis</th><th>Meiosis</th></tr>
+      <tr><td><b>¿Para qué?</b></td><td>Crecer, reparar, reproducción asexual</td><td>Formar gametos (óvulos, espermatozoides, polen)</td></tr>
+      <tr><td><b>Divisiones</b></td><td>Una</td><td>Dos seguidas (meiosis I y II)</td></tr>
+      <tr><td><b>Células hijas</b></td><td>2, idénticas a la madre</td><td>4, distintas entre sí</td></tr>
+      <tr><td><b>Cromosomas</b></td><td>Se conservan (2n → 2n; 46 → 46)</td><td>Se reducen a la mitad (2n → n; 46 → 23)</td></tr>
+      <tr><td><b>Entrecruzamiento</b></td><td>No</td><td>Sí: los cromosomas de cada pareja intercambian trozos</td></tr>
+    </table></div>
+    <div class="clave">La <b>segregación</b> de Mendel ocurre cuando se separan las parejas de cromosomas en la meiosis I: cada gameto recibe un solo alelo de cada gen. La <b>transmisión independiente</b> ocurre porque cada pareja se orienta al azar en la metafase I. Toca «Otra orientación» y mira cómo cambian los gametos.</div>
+  </section>
+
   <!-- ═══ MÁS ALLÁ DE MENDEL ═══ -->
   <section class="sec" id="otras">
-    <h2><span class="n">05</span> Más allá de Mendel</h2>
+    <h2><span class="n">06</span> Más allá de Mendel</h2>
     <p class="lead">No todos los genes funcionan con un dominante y un recesivo. Explora tres casos famosos.</p>
-    <div class="tabs"><button class="chip on" data-tab="o-inc">🌸 Dominancia incompleta</button><button class="chip" data-tab="o-abo">🩸 Grupos sanguíneos</button><button class="chip" data-tab="o-sex">👁️ Ligada al sexo</button></div>
+    <div class="tabs"><button class="chip on" data-tab="o-inc">🌸 Dominancia incompleta</button><button class="chip" data-tab="o-abo">🩸 Grupos sanguíneos</button><button class="chip" data-tab="o-sex">👁️ Ligada al sexo</button><button class="chip" data-tab="o-poli">📏 Poligénica y ambiente</button></div>
     <div class="tab-p card" id="o-inc">
       <p>En la flor <b>don Diego de noche</b> (<i>Mirabilis jalapa</i>), ningún alelo domina: al cruzar roja (RR) con blanca (BB) los hijos salen <b>rosados</b> (RB), una mezcla intermedia.</p>
       <div class="padres" id="inc-padres"></div><div id="inc-tab"></div><div id="inc-prop"></div>
@@ -186,11 +221,31 @@
       <p>El <b>daltonismo</b> (no distinguir bien el rojo del verde) se debe a un alelo recesivo (X<sup>d</sup>) que está en el <b>cromosoma X</b>. Las mujeres tienen XX y los hombres XY: a un hombre le basta un X<sup>d</sup> para ser daltónico, porque el Y no tiene ese gen. Por eso es mucho más frecuente en hombres.</p>
       <div class="padres" id="sex-padres"></div><div id="sex-tab"></div><div id="sex-prop"></div>
     </div>
+    <div class="tab-p card" id="o-poli">
+      <p>El cuadro de Punnett funciona para rasgos que dependen de <b>un gen</b> con alelos claros. Pero la estatura, el color de la piel o el peso dependen de <b>muchos genes</b> que suman su efecto (<b>herencia poligénica</b>), y además del <b>ambiente</b>. Aumenta el número de genes y mira cómo los fenotipos dejan de ser «dos categorías» y forman una <b>curva de campana</b>.</p>
+      <div class="ctrl"><label>Número de genes <input type="range" id="ngen" min="1" max="5" value="1"> <b id="ngen-v">1</b></label></div>
+      <div class="histo" id="histo"></div><p style="font-size:.85rem;color:var(--cn-dim);text-align:center">← menos alelos «suma» · más alelos «suma» → (hijos de dos padres heterocigotos en todos los genes)</p>
+      <div class="grid g2" style="margin-top:10px">
+        <div class="dato" style="margin:0">El <b>ambiente</b> también cuenta: dos gemelos idénticos pueden tener estaturas distintas si uno se alimenta mejor. Las hortensias con los mismos genes dan flores azules en suelos ácidos y rosadas en suelos básicos.</div>
+        <div class="dato ojo" style="margin:0">Límites del cuadro de Punnett: no sirve para rasgos de muchos genes, para genes que viajan juntos en el mismo cromosoma, ni predice qué pasará exactamente en una familia: solo da <b>probabilidades</b>.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ GENEALOGÍAS ═══ -->
+  <section class="sec" id="genealogias">
+    <h2><span class="n">07</span> Genealogías: genética de familias reales</h2>
+    <p class="lead">En las personas no se pueden hacer cruces de prueba. Los genetistas estudian <b>árboles genealógicos</b>: los cuadrados son hombres, los círculos mujeres y la figura rellena indica que tiene el rasgo. Este es un caso de <b>albinismo</b>, un rasgo <b>recesivo</b> (a) que impide fabricar melanina. <b>Toca a cada persona</b> y deduce su genotipo.</p>
+    <div class="lado">
+      <div class="fig"><svg id="pedi" viewBox="0 0 420 300" role="group" aria-label="Árbol genealógico"></svg></div>
+      <div class="det" id="pedi-det" aria-live="polite"><div class="vacio">👆 Toca una persona del árbol.</div></div>
+    </div>
   </section>
 
   <!-- ═══ ADN ═══ -->
   <section class="sec" id="adn">
-    <h2><span class="n">06</span> El ADN: la molécula de la herencia</h2>
+    <h2><span class="n">08</span> El ADN: la molécula de la herencia</h2>
     <p class="lead">Mendel hablaba de «factores» sin saber de qué estaban hechos. Casi un siglo después se descubrió que los genes son trozos de <b>ADN</b> (ácido desoxirribonucleico).</p>
     <div class="pasos" data-titulo="Descubriendo el ADN">
       <div class="paso" data-t="1869"><h3>1869 · Friedrich Miescher</h3><p>Extrae del núcleo de los glóbulos blancos (del pus de vendajes) una sustancia ácida rica en fósforo: la llama <b>nucleína</b>. Era el ADN.</p></div>
@@ -215,9 +270,26 @@
     <div class="dato">Si estiraras el ADN de una sola de tus células mediría unos <b>2 metros</b>. Cabe en un núcleo de 6 µm porque está enrollado alrededor de proteínas (histonas) y súper compactado en <b>cromosomas</b>. Tú tienes 46 cromosomas: 23 de tu mamá y 23 de tu papá.</div>
   </section>
 
+  <!-- ═══ ARN Y REPLICACIÓN ═══ -->
+  <section class="sec" id="arn">
+    <h2><span class="n">09</span> El ARN y la copia del ADN</h2>
+    <p class="lead">El ADN tiene dos cadenas; el <b>ARN</b> tiene <b>una sola</b>, su azúcar es la ribosa y usa <b>uracilo (U)</b> en vez de timina. Hay varios tipos de ARN, y cada uno tiene un trabajo distinto.</p>
+    <div class="grid g3">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">📨</span><b>ARN mensajero (ARNm)</b><small>toca para voltear</small></div><div class="bk">Copia la receta de un gen en el núcleo y la lleva hasta los ribosomas. Las vacunas de ARNm contra la COVID-19 funcionan con este tipo de ARN.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🚚</span><b>ARN de transferencia (ARNt)</b><small>toca para voltear</small></div><div class="bk">Tiene forma de trébol. En un extremo carga un aminoácido y en el otro un «anticodón» que encaja con el codón del ARNm. Así lleva cada aminoácido a su lugar.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🏭</span><b>ARN ribosomal (ARNr)</b><small>toca para voltear</small></div><div class="bk">Junto con proteínas forma los ribosomas y es el que une los aminoácidos entre sí. Es el ARN más abundante de la célula.</div></div></div>
+    </div>
+    <h3 style="margin-top:18px">¿Cómo se copia el ADN antes de que la célula se divida?</h3>
+    <div class="pasos" data-titulo="Replicación">
+      <div class="paso" data-t="Abrir"><h3>1. Se abre la doble hélice</h3><p>Una enzima, la <b>helicasa</b>, rompe los puentes entre las bases y separa las dos cadenas como si abriera una cremallera.</p></div>
+      <div class="paso" data-t="Copiar"><h3>2. Cada cadena sirve de molde</h3><p>La <b>ADN polimerasa</b> recorre cada cadena vieja y le pone enfrente los nucleótidos complementarios: A con T y C con G. Comete apenas un error por cada mil millones de letras.</p></div>
+      <div class="paso" data-t="Resultado"><h3>3. Dos moléculas iguales</h3><p>Cada ADN nuevo tiene <b>una cadena vieja y una nueva</b>: por eso se dice que la replicación es <b>semiconservativa</b>. Una molécula va para cada célula hija.</p></div>
+    </div>
+  </section>
+
   <!-- ═══ DEL GEN A LA PROTEÍNA ═══ -->
   <section class="sec" id="proteinas">
-    <h2><span class="n">07</span> Del gen a la proteína</h2>
+    <h2><span class="n">10</span> Del gen a la proteína</h2>
     <p class="lead">El ADN no sale del núcleo, pero las proteínas se fabrican en los ribosomas del citoplasma. ¿Cómo viaja la información? Con una copia: el <b>ARN mensajero</b>. Es el llamado <b>dogma central</b>: <b>ADN → ARN → proteína</b>. Avanza paso a paso con un trozo real del gen de la hemoglobina.</p>
     <div class="card">
       <div class="chips" style="margin-bottom:10px"><button class="chip on" id="pr-trans">1️⃣ Transcripción (núcleo)</button><button class="chip" id="pr-tradu">2️⃣ Traducción (ribosoma)</button></div>
@@ -236,7 +308,7 @@
 
   <!-- ═══ MUTACIONES ═══ -->
   <section class="sec" id="mutaciones">
-    <h2><span class="n">08</span> Mutaciones: cuando cambia una letra</h2>
+    <h2><span class="n">11</span> Mutaciones: cuando cambia una letra</h2>
     <p class="lead">Una <b>mutación</b> es un cambio en la secuencia del ADN. Toca cualquier letra del ARNm para cambiarla, o usa los botones, y mira qué le pasa a la proteína.</p>
     <div class="card">
       <div class="ctrl"><button type="button" class="cn-btn" id="mu-falci">🩸 Anemia falciforme</button><button type="button" class="cn-btn" id="mu-ins">➕ Insertar una letra</button><button type="button" class="cn-btn" id="mu-del">➖ Borrar una letra</button><button type="button" class="cn-btn" id="mu-reset">🔄 Original</button></div>
@@ -246,9 +318,29 @@
       <div class="mut-res" id="mu-res" aria-live="polite"></div>
     </div>
     <div class="dato">La <b>anemia falciforme</b> se debe a cambiar <b>una sola letra</b>: GAG → GUG. El aminoácido ácido glutámico se cambia por valina y la hemoglobina se pega formando fibras que deforman los glóbulos rojos en forma de hoz. Es más frecuente en poblaciones afrodescendientes, como en el Pacífico y el Caribe colombianos.</div>
+    <h3 style="margin-top:18px">¿Qué causa las mutaciones?</h3>
+    <p>Algunas ocurren por errores al azar cuando se copia el ADN. Otras las provocan <b>agentes mutágenos</b>:</p>
+    <div class="grid g3" style="margin-top:8px">
+      <div class="card"><h3>☀️ Radiación</h3><p>Los rayos ultravioleta del sol (por eso el bloqueador), los rayos X en exceso y la radiactividad.</p></div>
+      <div class="card"><h3>🚬 Sustancias químicas</h3><p>El humo del tabaco, el benceno, el asbesto y algunas sustancias que se forman al quemar o ahumar mucho los alimentos, o los nitritos de muchas carnes procesadas.</p></div>
+      <div class="card"><h3>🦠 Algunos virus</h3><p>Como el virus del papiloma humano (VPH), que puede causar cáncer de cuello uterino. Por eso existe una vacuna para niñas y niños.</p></div>
+    </div>
+    <div class="dato">No todas las mutaciones son malas: la mayoría no tiene efecto y algunas son <b>ventajosas</b>. Son la fuente de la variabilidad sobre la que actúa la evolución.</div>
     <div class="chequeo" data-ok="1" data-exp="Al insertar o borrar una letra, todos los codones que siguen se leen corridos: cambia casi toda la proteína. Por eso suelen ser mutaciones más graves.">
       <div class="q">¿Por qué una inserción suele ser más grave que cambiar una letra por otra?</div>
       <div class="ops"><button class="op" data-por="No: la cantidad de ADN añadida es mínima (una letra).">Porque agrega mucho ADN.</button><button class="op">Porque corre el marco de lectura y cambian todos los codones siguientes.</button><button class="op" data-por="Las sustituciones también pueden ocurrir en cualquier parte.">Porque solo ocurre en el núcleo.</button></div>
+    </div>
+  </section>
+
+  <!-- ═══ BIOTECNOLOGÍA ═══ -->
+  <section class="sec" id="biotecnologia">
+    <h2><span class="n">12</span> Biotecnología: ¿hasta dónde debemos llegar?</h2>
+    <p class="lead">La <b>biotecnología</b> usa seres vivos o sus moléculas para producir algo útil. Hacer pan o yogur ya es biotecnología; hoy además podemos <b>leer, cortar y pegar genes</b>. Eso trae grandes beneficios y preguntas éticas difíciles. Lee cada técnica, piensa tu posición y luego mira los argumentos de los dos lados.</p>
+    <div class="grid g2" id="biotec"></div>
+    <div class="dato col">En Colombia se siembran desde hace años algunas variedades transgénicas de <b>maíz</b> y <b>algodón</b>, y se cultivan claveles azules transgénicos para exportar. El <b>ICA</b> decide qué organismos modificados se pueden sembrar, siguiendo el <b>Protocolo de Cartagena</b> sobre seguridad de la biotecnología. Medicina Legal usa pruebas de ADN para identificar a personas desaparecidas.</div>
+    <div class="chequeo" data-ok="2" data-exp="Es el principio del ADN recombinante: el gen humano de la insulina se inserta en bacterias, que la fabrican en grandes cantidades.">
+      <div class="q">La insulina que usan muchas personas con diabetes se produce hoy…</div>
+      <div class="ops"><button class="op" data-por="Antes se extraía del páncreas de cerdos y vacas, pero ya no es la forma principal.">extrayéndola del páncreas de vacas.</button><button class="op" data-por="Las plantas no fabrican insulina humana por sí solas.">sembrando plantas que la producen naturalmente.</button><button class="op">en bacterias a las que se les insertó el gen humano de la insulina.</button></div>
     </div>
     <div class="sig"><a href="sistemas.html"><small>← Anterior</small><b>🫀 Sistemas</b></a><a class="der" href="evolucion.html"><small>Siguiente →</small><b>🦎 Evolución</b></a></div>
   </section>
@@ -512,6 +604,112 @@ document.getElementById('mu-ins').onclick=function(){mu.splice(10,0,'G');pintarM
 document.getElementById('mu-del').onclick=function(){if(mu.length>6){mu.splice(10,1);pintarMu();}};
 document.getElementById('mu-reset').onclick=function(){mu=ARN0.split('');pintarMu();};
 pintarMu();
+
+/* ═══ Meiosis ═══ */
+var MAT='#e5484d',PAT='#3e8ed0',ori=0,mk=0;
+function cr(x,y,col,alelo,largo,doble,cruce){ // cromosoma vertical; doble = dos cromátidas
+  var h=largo,w=6,s='';
+  function una(dx,c2){return '<rect x="'+(x+dx-w/2)+'" y="'+(y-h/2)+'" width="'+w+'" height="'+h+'" rx="3" fill="'+col+'"/>'+(c2?'<rect x="'+(x+dx-w/2)+'" y="'+(y+h/2-h*0.35)+'" width="'+w+'" height="'+(h*0.35)+'" rx="3" fill="'+c2+'"/>':'');}
+  if(doble){s+=una(-4)+una(4,cruce||null);s+='<circle cx="'+x+'" cy="'+y+'" r="3" fill="#333"/>';}else s+=una(0,cruce||null);
+  s+='<text x="'+(x+(doble?12:8))+'" y="'+(y-h/2+12)+'" style="font:800 12px JetBrains Mono" fill="#10261a">'+alelo+'</text>';
+  return s;
+}
+function cel(x,y,rx,ry,dentro,borde){return '<ellipse cx="'+x+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'" fill="#fff4ee" stroke="'+(borde||'#e07a5f')+'" stroke-width="3"/>'+dentro;}
+var MF=[
+ ['Célula 2n','Una célula diploide con <b>dos parejas</b> de cromosomas homólogos: uno de cada pareja vino de la madre (rojo) y otro del padre (azul). Su genotipo es <b>AaBb</b>.'],
+ ['Copia del ADN','Antes de empezar, cada cromosoma se copia: queda formado por dos cromátidas hermanas idénticas.'],
+ ['Profase I','Los homólogos se juntan en parejas y pueden <b>intercambiar trozos</b> (entrecruzamiento). Así se mezclan los genes de la madre y del padre en un mismo cromosoma.'],
+ ['Metafase I','Las <b>parejas</b> se alinean en el centro. Cada pareja se orienta <b>al azar</b>: el rojo puede quedar a la izquierda o a la derecha, sin depender de la otra pareja.'],
+ ['Meiosis I','Se separan los <b>homólogos</b>: cada célula recibe uno de cada pareja. ¡Aquí se separan los alelos A y a (segregación)! Las células ya son haploides (n).'],
+ ['Meiosis II','Se separan las cromátidas hermanas, como en una mitosis. Resultan <b>4 gametos</b> con un solo alelo de cada gen.']
+];
+function dibMei(k){
+  var s='',L=60,C=42;
+  var p1=[[MAT,'A'],[PAT,'a']],p2=[[MAT,'B'],[PAT,'b']];
+  var izq2=ori?p2[1]:p2[0],der2=ori?p2[0]:p2[1];
+  if(k<=3){
+    var d='';
+    if(k===0)d=cr(150,110,MAT,'A',L)+cr(175,110,PAT,'a',L)+cr(205,118,MAT,'B',C)+cr(228,118,PAT,'b',C);
+    if(k===1)d=cr(140,110,MAT,'A',L,1)+cr(170,110,PAT,'a',L,1)+cr(205,118,MAT,'B',C,1)+cr(232,118,PAT,'b',C,1);
+    if(k===2)d=cr(150,110,MAT,'A',L,1,PAT)+cr(166,110,PAT,'a',L,1,MAT)+cr(205,118,MAT,'B',C,1)+cr(221,118,PAT,'b',C,1)+'<text x="180" y="62" text-anchor="middle" style="font:700 11px Outfit" fill="#b45309">entrecruzamiento</text>';
+    if(k===3)d='<line x1="180" y1="40" x2="180" y2="200" stroke="#999" stroke-dasharray="4 4"/>'+cr(168,85,MAT,'A',L,1,PAT)+cr(192,85,PAT,'a',L,1,MAT)+cr(168,160,izq2[0],izq2[1],C,1)+cr(192,160,der2[0],der2[1],C,1);
+    s+=cel(180,120,140,100,d);
+  }
+  if(k===4){
+    s+=cel(95,120,80,90,cr(85,90,MAT,'A',L,1,PAT)+cr(100,160,izq2[0],izq2[1],C,1));
+    s+=cel(265,120,80,90,cr(255,90,PAT,'a',L,1,MAT)+cr(270,160,der2[0],der2[1],C,1));
+  }
+  if(k===5){
+    var g=[['A',izq2[1],MAT,izq2[0]],['A',izq2[1],MAT,izq2[0]],['a',der2[1],PAT,der2[0]],['a',der2[1],PAT,der2[0]]];
+    g.forEach(function(q,i){var x=50+i*87;s+=cel(x,110,38,52,cr(x-8,98,q[2],q[0],L*0.8,0,i%2?null:(q[2]===MAT?PAT:MAT))+cr(x+10,118,q[3],q[1],C*0.8,0))+'<text x="'+x+'" y="190" text-anchor="middle" style="font:800 16px JetBrains Mono" fill="#14532d">'+q[0]+q[1]+'</text>';});
+    s+='<text x="180" y="226" text-anchor="middle" style="font:700 12px Outfit" fill="#3c5446">4 gametos haploides (n)</text>';
+  }
+  s+='<text x="180" y="246" text-anchor="middle" style="font:800 14px Outfit" fill="#14532d">'+MF[k][0]+'</text>';
+  return s;
+}
+var mfz=document.getElementById('mfases');mfz.innerHTML=MF.map(function(f,i){return '<button class="chip" data-m="'+i+'">'+(i+1)+'. '+f[0]+'</button>';}).join('');
+var giros=0;
+function verMei(k){mk=k;document.getElementById('meio').innerHTML=dibMei(k);
+  var g=ori?['Ab','aB']:['AB','ab'];
+  document.getElementById('mfase-t').innerHTML='<h3>'+MF[k][0]+'</h3><p>'+MF[k][1]+'</p>'+(k>=3?'<p style="margin-top:6px">Con esta orientación los gametos serán: '+g.map(function(x){return '<span class="gam">'+x+'</span>';}).join('')+'</p>':'');
+  mfz.querySelectorAll('.chip').forEach(function(b,i){b.classList.toggle('on',i===k);});
+  document.getElementById('mf-ant').disabled=k===0;document.getElementById('mf-sig').disabled=k===5;document.getElementById('mf-gir').hidden=k<3;
+  if(k===5&&giros>0)BIO.marcarSeccion('meiosis');}
+mfz.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){verMei(+b.getAttribute('data-m'));};});
+document.getElementById('mf-sig').onclick=function(){verMei(mk+1);};document.getElementById('mf-ant').onclick=function(){verMei(mk-1);};
+document.getElementById('mf-gir').onclick=function(){ori=1-ori;giros++;verMei(mk);};
+verMei(0);
+
+/* ═══ Genealogía ═══ */
+var PER={
+ 'I-1':{x:170,y:50,h:1,af:0,gt:'Aa',r:'Es normal, así que tiene al menos una A. Pero tuvo una hija albina (aa), que recibió una «a» de cada padre: él tiene que ser <b>Aa</b> (portador).'},
+ 'I-2':{x:250,y:50,h:0,af:0,gt:'Aa',r:'Igual que su esposo: es normal y tiene una hija aa, así que es <b>Aa</b>.'},
+ 'II-1':{x:120,y:150,h:0,af:1,gt:'aa',r:'Es albina y el albinismo es recesivo: solo se manifiesta con dos alelos recesivos. Es <b>aa</b>.'},
+ 'II-2':{x:210,y:150,h:1,af:0,gt:'?',r:'Es normal e hijo de Aa × Aa: puede ser AA (1/3) o Aa (2/3). Con estos datos <b>no se puede saber</b>; solo que tiene al menos una A.'},
+ 'II-3':{x:300,y:150,h:0,af:0,gt:'?',r:'Como su hermano: normal, hija de Aa × Aa. Puede ser AA o Aa: <b>no se puede saber</b>.'},
+ 'II-4':{x:40,y:150,h:1,af:0,gt:'Aa',r:'Llegó de otra familia. Es normal, pero tuvo una hija albina con una mujer aa: tuvo que darle una «a». Es <b>Aa</b>.'},
+ 'III-1':{x:50,y:250,h:1,af:0,gt:'Aa',r:'Es normal, pero su madre es aa y le pasó una «a» sí o sí. Es <b>Aa</b>.'},
+ 'III-2':{x:140,y:250,h:0,af:1,gt:'aa',r:'Es albina: <b>aa</b>. Recibió una «a» de su madre y otra de su padre.'}
+};
+var resP={};
+function pintarPed(){
+  var s='<g stroke="#557" stroke-width="2" fill="none"><path d="M188 50 L232 50 M210 50 L210 110 M120 110 L300 110 M120 110 L120 132 M210 110 L210 132 M300 110 L300 132"/><path d="M58 150 L102 150 M80 150 L80 210 M50 210 L140 210 M50 210 L50 232 M140 210 L140 232"/></g>';
+  ['I','II','III'].forEach(function(g,i){s+='<text x="0" y="'+(30+i*100)+'" style="font:800 14px Outfit" fill="#3c5446">'+g+'</text>';});
+  Object.keys(PER).forEach(function(id){var p=PER[id],f=p.af?'#14532d':'#fff',lab=resP[id]?resP[id]:'';
+    s+='<g class="per" data-id="'+id+'" tabindex="0" role="button" aria-label="'+id+'">'+(p.h?'<rect x="'+(p.x-18)+'" y="'+(p.y-18)+'" width="36" height="36" fill="'+f+'" stroke="#10261a" stroke-width="2.5"/>':'<circle cx="'+p.x+'" cy="'+p.y+'" r="18" fill="'+f+'" stroke="#10261a" stroke-width="2.5"/>')+
+     '<text x="'+p.x+'" y="'+(p.y+34)+'" text-anchor="middle" style="font:700 11px Outfit" fill="#3c5446">'+id+'</text>'+(lab?'<text x="'+p.x+'" y="'+(p.y+5)+'" text-anchor="middle" style="font:800 12px JetBrains Mono" fill="'+(p.af?'#fff':'#15803d')+'">'+lab+'</text>':'')+'</g>';});
+  s+='<g transform="translate(300 255)" style="font:600 11px Outfit"><rect x="0" y="-10" width="12" height="12" fill="#fff" stroke="#10261a"/><text x="16" y="0">hombre</text><circle cx="66" cy="-4" r="6" fill="#fff" stroke="#10261a"/><text x="76" y="0">mujer</text><rect x="0" y="8" width="12" height="12" fill="#14532d"/><text x="16" y="18">albino(a)</text></g>';
+  var svg=document.getElementById('pedi');svg.innerHTML=s;
+  svg.querySelectorAll('.per').forEach(function(g){g.onclick=function(){verPer(g.getAttribute('data-id'));};g.onkeydown=function(e){if(e.key==='Enter')verPer(g.getAttribute('data-id'));};});
+}
+function verPer(id){var p=PER[id],d=document.getElementById('pedi-det');
+  document.querySelectorAll('#pedi .per').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-id')===id);});
+  d.innerHTML='<h3>Persona '+id+' · '+(p.h?'hombre':'mujer')+(p.af?' albino(a)':' de pigmentación normal')+'</h3><p>¿Cuál es su genotipo?</p><div class="chips" style="margin:8px 0">'+['AA','Aa','aa','?'].map(function(g){return '<button class="chip" data-g="'+g+'">'+(g==='?'?'No se puede saber (AA o Aa)':g)+'</button>';}).join('')+'</div><p id="ped-fb" aria-live="polite"></p>';
+  d.querySelectorAll('[data-g]').forEach(function(b){b.onclick=function(){var ok=b.getAttribute('data-g')===p.gt;
+    document.getElementById('ped-fb').innerHTML=(ok?'✅ ':'❌ Todavía no. ')+(ok?p.r:'Piensa: ¿qué alelos tuvo que dar a sus hijos o recibir de sus padres?');
+    if(ok){resP[id]=p.gt==='?'?'A_':p.gt;pintarPed();if(Object.keys(resP).length>=6)BIO.marcarSeccion('genealogias');}};});}
+pintarPed();
+
+/* ═══ Herencia poligénica ═══ */
+var ng=document.getElementById('ngen');
+function comb(n,k){var r=1;for(var i=1;i<=k;i++)r=r*(n-k+i)/i;return r;}
+function histo(){var n=+ng.value,m=2*n,tot=Math.pow(2,m),mx=0,v=[];document.getElementById('ngen-v').textContent=n;
+  for(var k=0;k<=m;k++){v.push(comb(m,k)/tot);mx=Math.max(mx,v[k]);}
+  document.getElementById('histo').innerHTML=v.map(function(p,k){var t=k/m,col='hsl('+(30)+','+(40+20*t)+'%,'+(78-48*t)+'%)';return '<div style="height:'+(p/mx*100)+'%;background:'+col+'" title="'+k+' alelos «suma»: '+(p*100).toFixed(1)+' %">'+(m<=6?(p*100).toFixed(0)+'%':'')+'</div>';}).join('');}
+ng.oninput=function(){histo();BIO.marcarSeccion('otras');};histo();
+
+/* ═══ Biotecnología ═══ */
+var BT=[
+ ['🌽','Transgénicos (ADN recombinante)','Se toma un gen de una especie y se inserta en otra. El maíz Bt lleva un gen de una bacteria que lo hace resistente a ciertas plagas; las bacterias con el gen humano producen insulina.','Menos plaguicidas, más cosecha, medicamentos baratos (insulina, vacunas).','Posible cruce con variedades nativas de maíz, dependencia de semillas de grandes empresas, efectos ecológicos a largo plazo. ¿Quién decide qué se siembra?'],
+ ['🐑','Clonación','Se pasa el núcleo de una célula adulta a un óvulo sin núcleo y se obtiene un individuo genéticamente idéntico. Así nació la oveja Dolly (1996). La clonación terapéutica busca producir tejidos, no individuos.','Reproducir animales valiosos o en peligro de extinción; obtener tejidos para trasplantes.','Muchos intentos fallan; los clones pierden variabilidad genética. La clonación reproductiva de humanos está prohibida en casi todo el mundo.'],
+ ['💉','Terapia génica y CRISPR','Se corrige o reemplaza un gen defectuoso en las células de una persona. CRISPR es una «tijera molecular» que permite editar el ADN con mucha precisión.','Curar enfermedades hereditarias como algunas anemias o cegueras, que antes no tenían tratamiento.','Es muy costosa; ¿quién podrá pagarla? Editar embriones podría pasar los cambios a toda la descendencia: ¿dónde está el límite entre curar y «mejorar» personas?'],
+ ['👶','Reproducción asistida','La fecundación in vitro une óvulo y espermatozoide en el laboratorio y luego implanta el embrión en el útero.','Permite tener hijos a parejas con problemas de fertilidad.','¿Qué hacer con los embriones que sobran? ¿Se debe permitir escoger características de los hijos?'],
+ ['🔍','Pruebas de ADN','Se comparan regiones del ADN que varían mucho entre personas.','Identificar a víctimas y desaparecidos, resolver delitos, pruebas de paternidad, diagnosticar enfermedades.','Privacidad: ¿quién guarda tu información genética y para qué la puede usar (bancos, seguros, empleadores)?']
+];
+document.getElementById('biotec').innerHTML=BT.map(function(b,i){return '<div class="card bio-card"><h3>'+b[0]+' '+b[1]+'</h3><p>'+b[2]+'</p><div class="votos"><b style="align-self:center;font-size:.85rem">¿Tú qué piensas?</b><button class="chip" data-v="'+i+'">👍 A favor</button><button class="chip" data-v="'+i+'">🤔 Tengo dudas</button><button class="chip" data-v="'+i+'">👎 En contra</button></div><div class="lados" id="bt-'+i+'" hidden><div style="background:#e7f6ec"><b>✅ Beneficios</b><br>'+b[3]+'</div><div style="background:#fff3f2"><b>⚠️ Riesgos y preguntas éticas</b><br>'+b[4]+'</div></div></div>';}).join('');
+var votos=0;
+document.querySelectorAll('#biotec [data-v]').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-v');b.parentNode.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b);});
+  var l=document.getElementById('bt-'+i);if(l.hidden){l.hidden=false;votos++;}if(votos>=3)BIO.marcarSeccion('biotecnologia');};});
 })();
 </script>
 <script src="text-zoom.js?v=2"></script>
