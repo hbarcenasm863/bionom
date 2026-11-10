@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 .pant{display:none;animation:aparece .3s ease}.pant.on{display:block}
 .modos{display:inline-flex;background:#e9f1ec;border-radius:999px;padding:4px;margin-bottom:14px}
@@ -54,6 +54,15 @@
 .res-top .pct{font:800 3.4rem var(--cn-mono);color:var(--cn-brand-d)}
 .repaso li{margin:8px 0}
 .envio{margin-top:12px;padding:10px 14px;border-radius:12px;background:#eef7fd;font-weight:600}
+.secciones{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin:12px 0}
+.seccion{border:2px solid var(--cn-brd);background:#fff;border-radius:16px;padding:12px 10px;text-align:center;cursor:pointer;font-weight:800;color:var(--cn-brand-d);font-size:1rem}
+.seccion .e{font-size:1.8rem;display:block}.seccion small{display:block;font-weight:500;color:var(--cn-dim);font-size:.75rem}
+.seccion.on{border-color:var(--cn-naranja);background:#fff7ec;box-shadow:0 0 0 3px rgba(240,140,30,.25)}
+.nota-sec{background:#f2f7fd;border-radius:12px;padding:10px 14px;font-size:.92rem;margin:4px 0 16px}
+.op-j.descartada{opacity:.55;text-decoration:line-through}
+.fb-j.pista{display:block;background:none;border:0;padding:0}
+.ord-zona .hueco{display:inline-block;min-width:34px;height:34px;border:1.5px dashed var(--cn-brd);border-radius:10px}
+.ord-zona .ficha.fija{background:var(--cn-ok-l);border-color:var(--cn-ok);cursor:default}
 </style>
 </head>
 <body>
@@ -76,8 +85,18 @@
     <div class="bienv" id="bienv" hidden><b>👋 Hola, <span id="b-nom"></span></b><br><small id="b-cur"></small><div class="stats" id="b-stats"></div></div>
     <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d);margin-top:18px">1 · Escoge el tema</h2>
     <div class="temas" id="temas"></div>
-    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">2 · ¿Cuántas preguntas?</h2>
+    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">2 · ¿Cómo quieres jugar?</h2>
+    <div class="secciones" id="secciones">
+      <button type="button" class="seccion on" data-s="preg"><span class="e">❓</span>Preguntas<small>3 intentos con pistas en cada una</small></button>
+      <button type="button" class="seccion" data-s="cruci"><span class="e">🔤</span>Crucigrama<small>10 palabras · unos 10 min</small></button>
+      <button type="button" class="seccion" data-s="sopa"><span class="e">🔍</span>Sopa de letras<small>10 palabras · unos 7 min</small></button>
+      <button type="button" class="seccion" data-s="ah"><span class="e">🪢</span>Ahorcado<small>10 palabras · tiempo según la palabra</small></button>
+    </div>
+    <div id="cant-box">
+    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">3 · ¿Cuántas preguntas?</h2>
     <div class="chips" id="cant" style="margin:10px 0 18px"><button class="chip" data-n="10">10</button><button class="chip on" data-n="20">20</button><button class="chip" data-n="30">30</button></div>
+    </div>
+    <p class="nota-sec" id="nota-sec" hidden></p>
     <button type="button" class="cn-btn cn-btn--primary" id="jugar" style="font-size:1.1rem;padding:12px 28px">▶ ¡Jugar!</button>
     <p id="jugar-err" class="err" aria-live="polite"></p>
   </section>
@@ -106,8 +125,10 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
-<script src="banco.js?v=3"></script>
+<script src="bio.js?v=4"></script>
+<script src="banco.js?v=4"></script>
+<script src="ahorcado-datos.js?v=4"></script>
+<script src="retos.js?v=4"></script>
 <script>
 (function(){
 'use strict';
@@ -117,7 +138,7 @@ var APPS_SCRIPT_URL='';
 var TEMAS=window.TEMAS_JUEGO,BANCO=window.BANCO_BIO;
 var NOM_T={};TEMAS.forEach(function(t){NOM_T[t[0]]=t[1];});
 var PAG_T={celula:'celula.html',reinos:'reinos.html',sistemas:'sistemas.html',genetica:'genetica.html',evolucion:'evolucion.html',ecosistemas:'ecosistemas.html',colombia:'regiones.html',ambiente:'ambiente.html'};
-var BUCKET={mc:'mc',vf:'id',ord:'drag',esc:'write'};
+var BUCKET={mc:'mc',vf:'id',ord:'drag',esc:'write',cruci:'write',sopa:'id',ah:'write'};
 var $=function(i){return document.getElementById(i);};
 var MODO='libre',EST={cod:'',nom:'',cur:'',ok:false},tema='todos',cant=20,ST=null,enviado=false;
 function pant(id){['p-inicio','p-preg','p-res'].forEach(function(p){$(p).classList.toggle('on',p===id);});scrollTo(0,0);
@@ -157,70 +178,160 @@ tbox.querySelectorAll('.tema').forEach(function(b){b.onclick=function(){tema=b.g
 var pt=new URLSearchParams(location.search).get('tema');if(pt&&tbox.querySelector('[data-t="'+pt+'"]'))tbox.querySelector('[data-t="'+pt+'"]').click();
 $('cant').querySelectorAll('.chip').forEach(function(b){b.onclick=function(){cant=+b.getAttribute('data-n');$('cant').querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b);});};});
 
+/* ── sección de juego ── */
+var SEC='preg';
+var NOTA_SEC={
+  cruci:'🔤 <b>Crucigrama de 10 palabras.</b> Tienes 3 comprobaciones: después de cada una, las palabras que siguen mal reciben una pista nueva. Al final se explica cada palabra.',
+  sopa:'🔍 <b>Sopa de letras de 10 palabras.</b> No ves la palabra, ves su pista: piénsala y búscala. Puedes pedir hasta 3 pistas por palabra. Al final se explica cada palabra.',
+  ah:'🪢 <b>Ahorcado de 10 palabras.</b> Cada palabra tiene su propio tiempo (más largo si la palabra es más difícil) y 3 pistas que aparecen a medida que fallas letras.'
+};
+$('secciones').querySelectorAll('.seccion').forEach(function(b){b.onclick=function(){SEC=b.getAttribute('data-s');
+  $('secciones').querySelectorAll('.seccion').forEach(function(x){x.classList.toggle('on',x===b);});
+  $('cant-box').hidden=SEC!=='preg';$('nota-sec').hidden=SEC==='preg';$('nota-sec').innerHTML=NOTA_SEC[SEC]||'';};});
+var BANCO_PAL=window.BANCO_AHORCADO||[];
+function gruposTema(){return tema==='todos'?null:[tema];}
+
 /* ── partida ── */
 $('jugar').onclick=function(){
   $('jugar-err').textContent='';
   if(MODO==='est'&&!EST.ok){$('jugar-err').textContent='Primero escribe tu código de estudiante (o cambia a Modo libre).';return;}
-  var n=MODO==='est'?20:cant,pool=tema==='todos'?BANCO:BANCO.filter(function(q){return q.t===tema;});
-  var qs=BIO.barajar(pool);
-  if(tema==='todos'){ // reparte los temas de forma pareja
-    var porT={};qs.forEach(function(q){(porT[q.t]=porT[q.t]||[]).push(q);});var ks=Object.keys(porT),out=[],i=0;
-    while(out.length<Math.min(n,qs.length)){var k=ks[i%ks.length];if(porT[k].length)out.push(porT[k].shift());i++;}qs=BIO.barajar(out);
-  }else{while(qs.length<n)qs=qs.concat(BIO.barajar(pool));qs=qs.slice(0,n);}
-  ST={qs:qs,i:0,ok:0,pts:0,racha:0,err:{mc:0,drag:0,id:0,write:0},errT:{},okT:{},fallos:[],sesion:'B'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)};
+  var qs;
+  if(SEC==='preg'){
+    var n=MODO==='est'?20:cant,pool=tema==='todos'?BANCO:BANCO.filter(function(q){return q.t===tema;});
+    qs=BIO.barajar(pool);
+    if(tema==='todos'){ // reparte los temas de forma pareja
+      var porT={};qs.forEach(function(q){(porT[q.t]=porT[q.t]||[]).push(q);});var ks=Object.keys(porT),out=[],i=0;
+      while(out.length<Math.min(n,qs.length)){var k=ks[i%ks.length];if(porT[k].length)out.push(porT[k].shift());i++;}qs=BIO.barajar(out);
+    }else{while(qs.length<n)qs=qs.concat(BIO.barajar(pool));qs=qs.slice(0,n);}
+  }else if(SEC==='ah'){
+    qs=RETOS.elegir(BANCO_PAL,10,{grupos:gruposTema()}).map(function(it){return {k:'ah',t:it.grupo,it:it,q:'Adivina la palabra de '+(NOM_T[it.grupo]||'biología')+'.',exp:it.pistas.join(' ')};});
+  }else{
+    qs=[{k:SEC,t:tema==='todos'?'todos':tema,q:SEC==='cruci'?'Crucigrama de 10 palabras':'Sopa de letras de 10 palabras'}];
+  }
+  ST={sec:SEC,qs:qs,i:0,ok:0,pts:0,racha:0,reg:[],err:{mc:0,drag:0,id:0,write:0},errT:{},okT:{},fallos:[],sesion:'B'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)};
   enviado=false;pant('p-preg');mostrar();
 };
-function mostrar(){
-  var q=ST.qs[ST.i];
-  $('q-tema').textContent=NOM_T[q.t];$('q-num').textContent='Pregunta '+(ST.i+1)+' de '+ST.qs.length;
+function cab(q){
+  $('q-tema').textContent=NOM_T[q.t]||(q.t==='todos'?'Todos los temas':'');
+  var tot=ST.sec==='cruci'||ST.sec==='sopa'?'':'Pregunta '+(ST.i+1)+' de '+ST.qs.length;
+  $('q-num').textContent=ST.sec==='ah'?'Palabra '+(ST.i+1)+' de '+ST.qs.length:tot;
   $('q-pts').textContent='⭐ '+ST.pts+(ST.racha>=3?'  🔥'+ST.racha:'');
   $('q-bar').style.width=(ST.i/ST.qs.length*100)+'%';
-  $('q-txt').textContent=q.q;$('q-fb').className='fb-j';$('q-fb').innerHTML='';$('sig').hidden=true;
-  var R=$('q-resp');
-  if(q.k==='mc'){var orden=BIO.barajar(q.ops.map(function(o,i){return i;}));
-    R.innerHTML='<div class="ops-j">'+orden.map(function(i,j){return '<button type="button" class="op-j" data-i="'+i+'"><span class="l">'+'ABCD'[j]+'</span>'+BIO.esc(q.ops[i])+'</button>';}).join('')+'</div>';
-    R.querySelectorAll('.op-j').forEach(function(b){b.onclick=function(){var ok=+b.getAttribute('data-i')===q.a;R.querySelectorAll('.op-j').forEach(function(x){x.disabled=true;if(+x.getAttribute('data-i')===q.a)x.classList.add('ok');});if(!ok)b.classList.add('mal');resolver(ok,q.ops[q.a]);};});}
-  else if(q.k==='vf'){R.innerHTML='<div class="vf"><button type="button" class="op-j" data-v="1">✔ Verdadero</button><button type="button" class="op-j" data-v="0">✘ Falso</button></div>';
-    R.querySelectorAll('.op-j').forEach(function(b){b.onclick=function(){var v=b.getAttribute('data-v')==='1',ok=v===q.a;R.querySelectorAll('.op-j').forEach(function(x){x.disabled=true;if((x.getAttribute('data-v')==='1')===q.a)x.classList.add('ok');});if(!ok)b.classList.add('mal');resolver(ok,q.a?'Verdadero':'Falso');};});}
-  else if(q.k==='esc'){R.innerHTML='<input type="text" class="esc-in" id="esc" autocomplete="off" placeholder="Escribe tu respuesta"><div style="margin-top:10px"><button type="button" class="cn-btn cn-btn--primary" id="esc-ok">Responder</button></div>';
-    var inp=$('esc');inp.focus();function env(){var v=norm(inp.value);if(!v)return;var ok=q.a.some(function(x){return norm(x)===v;});inp.disabled=true;$('esc-ok').disabled=true;resolver(ok,q.a[0]);}
-    $('esc-ok').onclick=env;inp.onkeydown=function(e){if(e.key==='Enter')env();};}
-  else if(q.k==='ord'){var sel=[],resto=BIO.barajar(q.ops);
-    R.innerHTML='<p style="font-size:.9rem;color:var(--cn-dim)">Toca los elementos en orden. Toca uno ya ubicado para devolverlo.</p><div class="ord-zona" id="oz"></div><div class="pool" id="op"></div><div style="margin-top:10px"><button type="button" class="cn-btn cn-btn--primary" id="ord-ok" disabled>Revisar orden</button></div>';
-    function pintar(){$('oz').innerHTML=sel.map(function(x,i){return '<span class="n">'+(i+1)+'.</span><button type="button" class="ficha" data-x="'+i+'">'+BIO.esc(x)+'</button>';}).join('');
-      $('op').innerHTML=resto.map(function(x,i){return '<button type="button" class="ficha" data-r="'+i+'">'+BIO.esc(x)+'</button>';}).join('');
-      $('oz').querySelectorAll('[data-x]').forEach(function(b){b.onclick=function(){resto.push(sel.splice(+b.getAttribute('data-x'),1)[0]);pintar();};});
-      $('op').querySelectorAll('[data-r]').forEach(function(b){b.onclick=function(){sel.push(resto.splice(+b.getAttribute('data-r'),1)[0]);pintar();};});
-      $('ord-ok').disabled=resto.length>0;}
-    pintar();$('ord-ok').onclick=function(){var ok=sel.join('|')===q.ops.join('|');R.querySelectorAll('button').forEach(function(b){b.disabled=true;});resolver(ok,q.ops.join(' → '));};}
+  $('q-fb').className='fb-j';$('q-fb').innerHTML='';$('sig').hidden=true;
 }
-function resolver(ok,correcta){
+/* Pistas de la pregunta: las propias (campo p) y, si no hay, las que salen
+   de su explicación con la respuesta tapada (reglas comunes de retos.js). */
+function pistasDe(q,correcta){
+  return RETOS.pistas({resp:[].concat(correcta,q.k==='esc'?q.a:[]),exp:q.exp,extra:q.p||[],
+    general:'Piensa en lo que viste en el módulo «'+(NOM_T[q.t]||'')+'» de BioNom.'});
+}
+function correctaDe(q){return q.k==='mc'?q.ops[q.a]:q.k==='vf'?(q.a?'Verdadero':'Falso'):q.k==='esc'?q.a[0]:q.ops.join(' → ');}
+function mostrar(){
+  var q=ST.qs[ST.i];cab(q);
+  var R=$('q-resp');
+  if(q.k==='cruci'||q.k==='sopa'){
+    $('q-txt').textContent='';R.innerHTML='<div id="mini"></div>';
+    var fn=q.k==='cruci'?RETOS.crucigrama:RETOS.sopa;
+    var juego=fn($('mini'),BANCO_PAL,{n:10,grupos:gruposTema(),onFin:function(r){
+      r.resultados.forEach(function(x){registrar(x.ok,{t:x.item.grupo,q:(q.k==='cruci'?'Crucigrama: ':'Sopa de letras: ')+x.item.txt,exp:x.item.pistas.join(' '),k:q.k},x.puntos);});
+      $('q-pts').textContent='⭐ '+ST.pts;
+      var s=$('sig');s.hidden=false;s.textContent='Ver resultados 🏁';
+    }});
+    if(!juego){var s=$('sig');s.hidden=false;s.textContent='Volver';}
+    return;
+  }
+  if(q.k==='ah'){
+    $('q-txt').textContent=q.q;R.innerHTML='<div id="mini"></div>';
+    RETOS.ahorcado($('mini'),q.it,{onFin:function(r){registrar(r.ok,q,r.puntos);siguienteBtn();}});
+    return;
+  }
+  $('q-txt').textContent=q.q;
+  var correcta=correctaDe(q),pistas=pistasDe(q,correcta),intento=1,elegidas=[];
+  var maxI=q.k==='vf'?1:q.k==='mc'?RETOS.maxIntentos(q.ops.length):3;
+  // Error: si quedan intentos, muestra la pista que toca; si no, cierra la pregunta.
+  function fallo(dada,extra){
+    if(dada!=null&&elegidas.indexOf(dada)<0)elegidas.push(dada);
+    if(intento>=maxI){terminar(false);return false;}
+    var fb=$('q-fb');fb.className='fb-j pista';
+    fb.innerHTML=RETOS.cajaPista(intento,maxI,pistas[Math.min(intento,pistas.length)-1],extra);
+    intento++;return true;
+  }
+  function terminar(ok){resolver(ok,correcta,ok?RETOS.puntos(intento,10):0,{intentos:intento,elegidas:elegidas});}
+  if(q.k==='mc'){var orden=BIO.barajar(q.ops.map(function(o,i){return i;}));
+    R.innerHTML='<p style="font-size:.85rem;color:var(--cn-dim);margin:-6px 0 8px">Tienes '+maxI+' intentos. Si te equivocas, recibes una pista.</p><div class="ops-j">'+orden.map(function(i,j){return '<button type="button" class="op-j" data-i="'+i+'"><span class="l">'+'ABCDEF'[j]+'</span>'+BIO.esc(q.ops[i])+'</button>';}).join('')+'</div>';
+    R.querySelectorAll('.op-j').forEach(function(b){b.onclick=function(){
+      var ok=+b.getAttribute('data-i')===q.a;
+      if(ok){R.querySelectorAll('.op-j').forEach(function(x){x.disabled=true;});b.classList.add('ok');terminar(true);return;}
+      b.classList.add('mal','descartada');b.disabled=true;
+      if(!fallo(q.ops[+b.getAttribute('data-i')],'«'+BIO.esc(q.ops[+b.getAttribute('data-i')])+'» no es la respuesta.')){
+        R.querySelectorAll('.op-j').forEach(function(x){x.disabled=true;if(+x.getAttribute('data-i')===q.a)x.classList.add('ok');});
+      }};});}
+  else if(q.k==='vf'){R.innerHTML='<div class="vf"><button type="button" class="op-j" data-v="1">✔ Verdadero</button><button type="button" class="op-j" data-v="0">✘ Falso</button></div>';
+    R.querySelectorAll('.op-j').forEach(function(b){b.onclick=function(){var v=b.getAttribute('data-v')==='1',ok=v===q.a;R.querySelectorAll('.op-j').forEach(function(x){x.disabled=true;if((x.getAttribute('data-v')==='1')===q.a)x.classList.add('ok');});if(!ok){b.classList.add('mal');elegidas.push(v?'Verdadero':'Falso');}terminar(ok);};});}
+  else if(q.k==='esc'){R.innerHTML='<p style="font-size:.85rem;color:var(--cn-dim);margin:-6px 0 8px">Tienes 3 intentos. No importan las tildes ni las mayúsculas.</p><input type="text" class="esc-in" id="esc" autocomplete="off" placeholder="Escribe tu respuesta"><div style="margin-top:10px"><button type="button" class="cn-btn cn-btn--primary" id="esc-ok">Responder</button></div>';
+    var inp=$('esc');inp.focus();
+    function env(){var v=norm(inp.value);if(!v)return;var ok=q.a.some(function(x){return norm(x)===v;});
+      if(ok){inp.disabled=true;$('esc-ok').disabled=true;terminar(true);return;}
+      var w=q.a[0],extra=intento===2?'La respuesta tiene '+w.split(' ').length+(w.indexOf(' ')>=0?' palabras':' palabra')+' y empieza por «'+w.charAt(0).toUpperCase()+'».':'';
+      var dada=inp.value.trim();
+      if(fallo(dada,extra)){inp.value='';inp.focus();}else{inp.disabled=true;$('esc-ok').disabled=true;}}
+    $('esc-ok').onclick=env;inp.onkeydown=function(e){if(e.key==='Enter')env();};}
+  else if(q.k==='ord'){var N=q.ops.length,slot=new Array(N).fill(null),fijo=new Array(N).fill(false),resto=BIO.barajar(q.ops);
+    R.innerHTML='<p style="font-size:.9rem;color:var(--cn-dim)">Toca los elementos en orden. Toca uno ya ubicado para devolverlo. Tienes 3 intentos.</p><div class="ord-zona" id="oz"></div><div class="pool" id="op"></div><div style="margin-top:10px"><button type="button" class="cn-btn cn-btn--primary" id="ord-ok" disabled>Revisar orden</button></div>';
+    function pintar(){$('oz').innerHTML=slot.map(function(x,i){return '<span class="n">'+(i+1)+'.</span>'+(x==null?'<span class="hueco"></span>':'<button type="button" class="ficha'+(fijo[i]?' fija':'')+'" data-x="'+i+'">'+BIO.esc(x)+'</button>');}).join('');
+      $('op').innerHTML=resto.map(function(x,i){return '<button type="button" class="ficha" data-r="'+i+'">'+BIO.esc(x)+'</button>';}).join('');
+      $('oz').querySelectorAll('[data-x]').forEach(function(b){b.onclick=function(){var i=+b.getAttribute('data-x');if(fijo[i])return;resto.push(slot[i]);slot[i]=null;pintar();};});
+      $('op').querySelectorAll('[data-r]').forEach(function(b){b.onclick=function(){var i=slot.indexOf(null);if(i<0)return;slot[i]=resto.splice(+b.getAttribute('data-r'),1)[0];pintar();};});
+      $('ord-ok').disabled=resto.length>0;}
+    pintar();$('ord-ok').onclick=function(){
+      var bien=slot.map(function(x,i){return x===q.ops[i];}),nb=bien.filter(Boolean).length;
+      if(nb===N){R.querySelectorAll('button').forEach(function(b){b.disabled=true;});terminar(true);return;}
+      // pista 1: cuántos están bien; pista 2: se quedan fijos los que están bien
+      var extra=intento===1?'Tienes '+nb+' de '+N+' en su lugar.':'Los '+nb+' que estaban bien quedaron fijos (en verde); reordena los demás.';
+      if(fallo(slot.join(' → '),extra)){
+        if(intento===3){slot.forEach(function(x,i){if(bien[i])fijo[i]=true;else{resto.push(x);slot[i]=null;}});}
+        pintar();
+      }else R.querySelectorAll('button').forEach(function(b){b.disabled=true;});
+    };}
+}
+function registrar(ok,q,pts){
+  var nt=NOM_T[q.t]||q.t;
+  ST.reg.push({ok:ok,t:q.t,k:q.k});
+  if(ok){ST.ok++;ST.racha++;ST.pts+=pts+(ST.racha>=3&&q.k!=='cruci'&&q.k!=='sopa'?5:0);ST.okT[nt]=(ST.okT[nt]||0)+1;}
+  else{ST.racha=0;ST.err[BUCKET[q.k]||'mc']++;ST.errT[nt]=(ST.errT[nt]||0)+1;ST.fallos.push(q);}
+}
+function siguienteBtn(){var s=$('sig');s.hidden=false;s.textContent=ST.i===ST.qs.length-1?'Ver resultados 🏁':'Siguiente →';s.focus();
+  $('q-pts').textContent='⭐ '+ST.pts+(ST.racha>=3?'  🔥'+ST.racha:'');}
+function resolver(ok,correcta,pts,info){
   var q=ST.qs[ST.i],fb=$('q-fb');
-  if(ok){ST.ok++;ST.racha++;ST.pts+=10+(ST.racha>=3?5:0);ST.okT[NOM_T[q.t]]=(ST.okT[NOM_T[q.t]]||0)+1;fb.className='fb-j ok';fb.innerHTML='<b>✅ ¡Correcto!</b> '+q.exp;}
-  else{ST.racha=0;ST.err[BUCKET[q.k]]++;ST.errT[NOM_T[q.t]]=(ST.errT[NOM_T[q.t]]||0)+1;ST.fallos.push(q);fb.className='fb-j mal';fb.innerHTML='<b>❌ La respuesta era:</b> '+BIO.esc(correcta)+'<br>'+q.exp;}
-  $('q-pts').textContent='⭐ '+ST.pts+(ST.racha>=3?'  🔥'+ST.racha:'');
-  var s=$('sig');s.hidden=false;s.textContent=ST.i===ST.qs.length-1?'Ver resultados 🏁':'Siguiente →';s.focus();
+  registrar(ok,q,pts);
+  fb.className='fb-j '+(ok?'ok':'mal');
+  fb.innerHTML=(ok?'<b>✅ ¡Correcto! +'+pts+' puntos</b>':'<b>❌ No era esa.</b>')
+    +RETOS.cajaExplicacion({ok:ok,intentos:info.intentos,correcta:BIO.esc(correcta),exp:q.exp,elegidas:info.elegidas.map(BIO.esc)});
+  siguienteBtn();
 }
 $('sig').onclick=function(){ST.i++;if(ST.i<ST.qs.length)mostrar();else fin();};
 $('salir').onclick=function(){if(!confirm('¿Salir de la partida? Se perderá el avance'+(MODO==='est'?' (se registrará como partida abandonada).':'.')))return;enviar('abandono');ST=null;pant('p-inicio');};
-window.addEventListener('pagehide',function(){if(ST&&ST.i>0&&ST.i<ST.qs.length)enviar('abandono');});
+window.addEventListener('pagehide',function(){if(ST&&ST.reg.length>0&&ST.i<ST.qs.length)enviar('abandono');});
 
 function nivel(p){return p>=90?'Experto':p>=70?'Avanzado':p>=50?'Intermedio':'En formación';}
+var NOM_SEC={preg:'preguntas',cruci:'palabras del crucigrama',sopa:'palabras de la sopa',ah:'palabras'};
 function fin(){
-  var n=ST.qs.length,p=Math.round(ST.ok/n*100);
+  var n=ST.reg.length||1,p=Math.round(ST.ok/n*100);
   $('r-emoji').textContent=p>=90?'🏆':p>=70?'🌟':p>=50?'💪':'📚';$('r-pct').textContent=p+' %';
-  $('r-txt').innerHTML='Acertaste <b>'+ST.ok+' de '+n+'</b> preguntas · '+ST.pts+' puntos · Nivel: <b>'+nivel(p)+'</b>';
-  var ts={};ST.qs.forEach(function(q){var t=NOM_T[q.t];ts[t]=ts[t]||[0,0];ts[t][1]++;});Object.keys(ST.okT).forEach(function(t){ts[t][0]=ST.okT[t];});
+  $('r-txt').innerHTML='Acertaste <b>'+ST.ok+' de '+ST.reg.length+'</b> '+NOM_SEC[ST.sec]+' · '+ST.pts+' puntos · Nivel: <b>'+nivel(p)+'</b>';
+  var ts={};ST.reg.forEach(function(r){var t=NOM_T[r.t]||r.t;ts[t]=ts[t]||[0,0];ts[t][1]++;if(r.ok)ts[t][0]++;});
   $('r-temas').innerHTML='<div class="barras" style="display:grid;gap:6px">'+Object.keys(ts).map(function(t){var v=ts[t][0]/ts[t][1];return '<div style="display:grid;grid-template-columns:150px 1fr 50px;gap:8px;align-items:center;font-size:.88rem"><span>'+t+'</span><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+v*100+'%;background:'+(v>=.7?'#2e7d4f':v>=.5?'#e0a024':'#c0392b')+'"></i></span><b>'+ts[t][0]+'/'+ts[t][1]+'</b></div>';}).join('')+'</div>';
-  $('r-fallos').innerHTML=ST.fallos.length?ST.fallos.map(function(q){return '<li><b>'+BIO.esc(q.q)+'</b><br><small>'+q.exp+' <a href="'+PAG_T[q.t]+'">Repasar en '+NOM_T[q.t]+' →</a></small></li>';}).join(''):'<li>¡No fallaste ninguna! 🎉</li>';
-  pant('p-res');enviar('fin');
+  $('r-fallos').innerHTML=ST.fallos.length?ST.fallos.map(function(q){return '<li><b>'+BIO.esc(q.q)+'</b><br><small>'+q.exp+(PAG_T[q.t]?' <a href="'+PAG_T[q.t]+'">Repasar en '+NOM_T[q.t]+' →</a>':'')+'</small></li>';}).join(''):'<li>¡No fallaste ninguna! 🎉</li>';
+  ST.i=ST.qs.length;pant('p-res');enviar('fin');
 }
+var NOM_SEC_HOJA={preg:'',cruci:' · Crucigrama',sopa:' · Sopa de letras',ah:' · Ahorcado'};
 function payload(razon){
-  var n=ST.qs.length,resp=razon==='fin'?n:ST.i,p=resp?Math.round(ST.ok/resp*100):0,un=tema!=='todos';
-  return {sesion:ST.sesion,trigger:razon,razon:razon,codigo:EST.cod,nombre:EST.nom,curso:EST.cur,grupo:un?NOM_T[tema]:'Todos los temas',nivel:nivel(p),
+  var n=razon==='fin'?ST.reg.length:Math.max(ST.reg.length,ST.qs.length),resp=ST.reg.length,p=resp?Math.round(ST.ok/resp*100):0,un=tema!=='todos';
+  return {sesion:ST.sesion,trigger:razon,razon:razon,codigo:EST.cod,nombre:EST.nom,curso:EST.cur,grupo:(un?NOM_T[tema]:'Todos los temas')+NOM_SEC_HOJA[ST.sec],nivel:nivel(p),
     correctas:ST.ok,total:n,total_preguntas:n,respondidas:resp,puntaje:ST.pts,pct:p,porcentaje:p,
     errores_mc:ST.err.mc,errores_drag:ST.err.drag,errores_id:ST.err.id,errores_write:ST.err.write,tiempo_agotado:0,
-    errores_por_tema:ST.errT,aciertos_por_tema:un?ST.okT:{},moleculas_falladas:ST.fallos.map(function(q){return q.q.slice(0,60);}),
+    errores_por_tema:ST.errT,aciertos_por_tema:un?ST.okT:{},moleculas_falladas:ST.fallos.map(function(q){return String(q.q).slice(0,60);}),
     timestamp:new Date().toISOString()};
 }
 function enviar(razon){
@@ -237,7 +348,7 @@ function enviar(razon){
 $('otra').onclick=function(){pant('p-inicio');};
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>
