@@ -6,6 +6,34 @@
 
 ---
 
+## Versión 2.8 — 10 de noviembre de 2026 · Reinos: el modelo de 7 reinos
+
+### Contexto
+El docente pidió agregar en Reinos la otra división de la que se habla: la de
+7 reinos.
+
+### Cambios (`reinos.html`)
+- **Historia de la clasificación:** nuevo botón «2015 · Ruggiero y
+  Cavalier-Smith: 7 reinos». Son Bacteria, Archaea, Protozoa, Chromista,
+  Fungi, Plantae y Animalia; es la clasificación del Catálogo de la Vida.
+- **Sección «Monera: ¿un reino o dos?»:**
+  - Nuevo botón «Modelo de 7 reinos» en la comparación de modelos.
+  - Nueva tarjeta «¿Y el modelo de 7 reinos?»: explica por qué Protista era
+    un «cajón de sastre» y cómo se parte en Protozoa (amebas, euglenas,
+    tripanosoma del Chagas) y Chromista (algas pardas, diatomeas, paramecio,
+    plasmodio y la gota de la papa, *Phytophthora*), y que la ciencia se
+    corrige con nuevas evidencias.
+- **Reto «¿A qué reino pertenece?»:**
+  - Se escoge entre 5, 6 o 7 reinos.
+  - Con 7 aparecen las cajas Bacteria, Archaea, Protozoa y Chromista.
+  - Se agregaron ameba, tripanosoma y diatomea; ahora son 15 fichas.
+- La introducción de «Los cinco reinos» menciona también el modelo de 7.
+
+### Verificación
+Con Playwright, en computador y celular:
+- Sin errores.
+- El reto con 7 reinos se resolvió completo: 15 de 15, sin errores.
+
 ## Versión 2.7 — 10 de noviembre de 2026 · La cuadrícula ya no llena media hoja ni la hoja entera
 
 ### Contexto
