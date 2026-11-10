@@ -123,7 +123,8 @@ detective:[
  'Después cruzaron entre sí las plantas de la primera generación.',
  ['Obtuvieron 3 amarillas por cada verde.','Obtuvieron 3 verdes por cada amarilla.'],
  ['El verde reapareció porque es un rasgo recesivo que estaba escondido.','El verde reapareció porque el ambiente cambió el color.'],
- ['El profesor concluyó que cada planta recibe un alelo de cada padre.','El profesor concluyó que cada planta recibe cuatro alelos de cada padre.']]],
+ ['El profesor concluyó que cada planta recibe un alelo de cada padre.','El profesor concluyó que cada planta recibe cuatro alelos de cada padre.'],
+ ['Y que la proporción 3 a 1 se predice con el cuadro de Punnett.','Y que la proporción 3 a 1 se predice con la tabla periódica.']]],
 ['El grupo sanguíneo de la familia',[
  'En la donación de sangre del colegio, Felipe preguntó por el grupo sanguíneo de su familia.',
  ['Su mamá es de grupo O, con genotipo ii.','Su mamá es de grupo O, con genotipo IᴬIᴮ.'],
@@ -131,6 +132,7 @@ detective:[
  'Felipe hizo el cuadro de Punnett.',
  ['Los hijos solo pueden ser de grupo A o de grupo B.','Los hijos solo pueden ser de grupo O o de grupo AB.'],
  ['Felipe es de grupo A, con genotipo Iᴬi.','Felipe es de grupo A, con genotipo ii.'],
+ ['Su hermana es de grupo B, con genotipo Iᴮi.','Su hermana es de grupo B, con genotipo IᴬIᴮ.'],
  'La enfermera explicó cómo se dona sangre.',
  ['Las personas de grupo O negativo son donantes universales de glóbulos rojos.','Las personas de grupo AB son donantes universales de glóbulos rojos.'],
  ['Antes de una transfusión siempre se revisa la compatibilidad.','Antes de una transfusión nunca hace falta revisar el grupo.'],
