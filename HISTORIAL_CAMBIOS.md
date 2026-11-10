@@ -6,6 +6,30 @@
 
 ---
 
+## Versión 2.7 — 10 de noviembre de 2026 · La cuadrícula ya no llena media hoja ni la hoja entera
+
+### Contexto
+El docente pidió evitar hojas que queden con media página, o la página entera, solo de cuadrícula.
+
+### Cambios
+- **`docente-app.js` (`llenarHoja`):** la cuadrícula de las preguntas abiertas sigue creciendo para usar el espacio libre, ahora con límites:
+  - Cada cuadrícula crece como máximo hasta **10 cuadros** (unos 5 cm); antes eran 26, casi media hoja.
+  - Entre todas no pasan del **45 % del alto** de la hoja. Si una hoja trae muchas preguntas abiertas, cada una conserva su espacio mínimo, pero no crece más.
+  - En las hojas sin preguntas abiertas, el recuadro de «Notas» o «Borrador» tiene como máximo **5 cuadros** y solo aparece si caben al menos 3. Antes llenaba todo el espacio vacío, y por eso aparecían hojas casi enteras de cuadrícula.
+  - El espacio que sobra queda en blanco.
+- **Versión:** `?v=13` y `bionom-v24`.
+
+### Verificación
+Con Playwright se revisaron, una por una, las hojas de evaluación, taller y guía con cada uno de los 10 temas, con 3 temas y con los 10 juntos, en tres configuraciones (pocas, muchas y ninguna pregunta abierta, con y sin actividades).
+- Antes, 143 hojas tenían más del 40 % de cuadrícula, con casos de hasta 84 %.
+- Ahora ninguna hoja pasa del 50 %, salvo una hoja de evaluación con 6 preguntas abiertas seguidas, donde cada una conserva su espacio mínimo para responder.
+- Ninguna hoja se desborda y no hay errores.
+
+### Pendiente
+Ninguno.
+
+---
+
 ## Versión 2.6 — 10 de noviembre de 2026 · Cuadrícula de cuaderno en las preguntas abiertas
 
 ### Contexto

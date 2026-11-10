@@ -156,22 +156,37 @@ function cabecera(c,v,clave,primera,parte,nv){
       :'<div class="hoja-datos"><span>Nombre:</span><span>Curso:</span><span>Fecha:</span></div><div class="hoja-ins">'+(parte==='eval'?'Lee con atención. Trabaja de forma individual.'+(c.burbujas?' Marca tus respuestas en la hoja de respuestas.':''):parte==='guia'?'Desarrolla cada sesión en orden. Puedes apoyarte en los módulos de BioNom.':'Lee con atención cada pregunta. Puedes apoyarte en los módulos de BioNom.')+'</div>');
 }
 /* Reparte el espacio libre de la hoja entre las cuadrículas, un cuadro a la
-   vez y en ronda (tope de 26 cuadros cada una), como en ChromaNom. Si la
-   hoja no tiene cuadrículas y sobra espacio, agrega un recuadro de notas. */
+   vez y en ronda, como en ChromaNom, pero con límites para que ninguna hoja
+   quede llena de cuadrícula:
+   - cada cuadrícula crece como máximo hasta 10 cuadros (≈ 5 cm);
+   - entre todas no pasan del 45 % del alto de la hoja (si ya traen más por
+     ser muchas preguntas abiertas, no crecen);
+   - si la hoja no tiene preguntas abiertas, el recuadro de notas tiene como
+     máximo 5 cuadros y solo se pone si caben al menos 3. El resto queda en
+     blanco. */
+var MAX_CUADROS=10,MAX_NOTAS=5,TOPE_HOJA=0.45;
 function llenarHoja(c,parte){
   function libre(){var u=c.lastElementChild;if(!u)return c.clientHeight;return c.getBoundingClientRect().bottom-u.getBoundingClientRect().bottom-3;}
-  var areas=[].slice.call(c.querySelectorAll('.cuad'));
+  var H=c.clientHeight,areas=[].slice.call(c.querySelectorAll('.cuad'));
   if(!areas.length){
-    var n=Math.floor((libre()-30)/CUADRO);if(n<4)return;
+    var n=Math.min(MAX_NOTAS,Math.floor((libre()-30)/CUADRO));if(n<3)return;
     var w=document.createElement('div');w.className='blq';
     w.innerHTML='<div class="notas-tit">'+(parte==='eval'?'Borrador (no se califica)':'Notas')+'</div>'+cuad(n);
     c.appendChild(w);
     while(c.scrollHeight>c.clientHeight+1&&n>2){n--;w.querySelector('.cuad').style.height=(n*CUADRO).toFixed(1)+'px';}
+    if(c.scrollHeight>c.clientHeight+1)c.removeChild(w);
     return;
   }
-  var pasos=Math.floor(libre()/CUADRO),k=0,hechos=[];
-  while(pasos>0&&k<400){var a=areas[k%areas.length];k++;if(parseFloat(a.style.height)>=26*CUADRO)continue;a.style.height=(parseFloat(a.style.height)+CUADRO).toFixed(1)+'px';hechos.push(a);pasos--;}
-  while(c.scrollHeight>c.clientHeight+1&&hechos.length){var g=hechos.pop();g.style.height=(parseFloat(g.style.height)-CUADRO).toFixed(1)+'px';}
+  var alto=function(a){return parseFloat(a.style.height);};
+  var total=function(){return areas.reduce(function(t,a){return t+alto(a);},0);};
+  var pasos=Math.floor(libre()/CUADRO),k=0,hechos=[],guarda=0;
+  while(pasos>0&&guarda++<400){
+    var a=areas[k%areas.length];k++;
+    if(total()+CUADRO>TOPE_HOJA*H)break;
+    if(alto(a)>=MAX_CUADROS*CUADRO){if(areas.every(function(x){return alto(x)>=MAX_CUADROS*CUADRO;}))break;continue;}
+    a.style.height=(alto(a)+CUADRO).toFixed(1)+'px';hechos.push(a);pasos--;
+  }
+  while(c.scrollHeight>c.clientHeight+1&&hechos.length){var g=hechos.pop();g.style.height=(alto(g)-CUADRO).toFixed(1)+'px';}
 }
 function paginar(B,c,v,clave,parte,nv){
   var med=$('medidor');
