@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=7">
+<link rel="stylesheet" href="bio.css?v=9">
 <style>
 .grupos-r{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
 .grupos-r button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:8px 4px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--cn-tx)}
@@ -37,6 +37,21 @@
 .its .card{padding:14px}
 .its .card h3{font-size:1rem}
 .its .ag{font:800 .72rem Outfit;text-transform:uppercase;letter-spacing:.08em}
+.anim{background:#fff;border:1px solid var(--cn-brd);border-radius:16px;overflow:hidden;box-shadow:var(--cn-sh)}
+.anim .an-esc svg{display:block;width:100%;height:auto}
+.anim .an-txt{padding:10px 14px 4px;min-height:3.4em;font-size:.97rem;font-weight:600;color:var(--cn-tx)}
+.anim .an-ctl{display:flex;gap:6px;align-items:center;padding:4px 12px 12px}
+.anim .an-ctl button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--cn-brd);background:#fff;cursor:pointer;font-size:.95rem}
+.anim .an-ctl button:hover{border-color:var(--cn-brand)}
+.an-dots{display:flex;gap:6px;margin-left:auto}
+.an-dots i{width:11px;height:11px;border-radius:50%;background:#d6e8dc;cursor:pointer}
+.an-dots i.visto{background:#9bcfae}.an-dots i.on{background:var(--cn-brand)}
+#grupos .lado{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.gr-info{padding:12px 4px 0}
+.dev-pc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+@media(max-width:560px){.dev-pc{grid-template-columns:1fr}}
+.dev-pc>div{border-radius:12px;padding:10px 12px;font-size:.92rem}
+.dev-pc ul{padding-left:1.1em;margin-top:4px}
 .aviso-s{background:#eef7fd;border:1.5px solid #9ccbea;border-radius:14px;padding:12px 16px;margin:14px 0}
 </style>
 </head>
@@ -48,12 +63,13 @@
     <h1>Reproducción: la continuidad de la vida</h1>
     <p>Ningún ser vivo vive para siempre; la especie continúa porque los individuos se reproducen. Aquí verás las dos grandes formas de reproducción, cómo lo hace cada grupo de seres vivos, cómo funciona el sistema reproductor humano y cómo cuidar tu salud sexual y reproductiva.</p>
     <a class="nivel-chip" href="index.html">🗺️ Mapa de niveles</a>
-    <a class="nivel-chip" href="genetica.html#meiosis">✂️ La meiosis, en Genética</a>
+    <a class="nivel-chip" href="division.html#meiosis">✂️ Repasa la meiosis</a>
   </header>
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#tipos">🧬 Tipos</a>
     <a href="#grupos">🌍 En cada grupo</a>
+    <a href="#desarrollo">🥚 Desarrollo embrionario</a>
     <a href="#flor">🌺 La flor</a>
     <a href="#humano">🧑 Sistema reproductor</a>
     <a href="#ciclo">📅 Ciclo menstrual</a>
@@ -79,11 +95,10 @@
       <div class="flip"><div class="in"><div class="fr"><span class="e">🥔</span><b>Reproducción vegetativa</b><small>toca para voltear</small></div><div class="bk">Tallos, raíces u hojas originan una planta nueva: la papa por tubérculos, la caña por esquejes, la fresa por estolones, el plátano por «hijuelos» y la yuca por estacas.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">🐝</span><b>Partenogénesis</b><small>toca para voltear</small></div><div class="bk">Un óvulo se desarrolla sin ser fecundado. Así nacen los zánganos (machos) de las abejas y algunos pulgones, lagartijas y peces.</div></div></div>
     </div>
-    <h3 style="margin-top:18px">Conceptos de la reproducción sexual</h3>
-    <div class="grid g3">
-      <div class="card"><h3>🌊 Fecundación externa o interna</h3><p><b>Externa:</b> los gametos se unen en el agua (peces, la mayoría de anfibios, corales). <b>Interna:</b> dentro del cuerpo de la hembra (reptiles, aves, mamíferos, insectos).</p></div>
-      <div class="card"><h3>🥚 Ovíparos, ovovivíparos y vivíparos</h3><p><b>Ovíparos:</b> el embrión se desarrolla en un huevo fuera de la madre (aves, la mayoría de reptiles). <b>Ovovivíparos:</b> el huevo se queda dentro hasta eclosionar (algunos tiburones y serpientes). <b>Vivíparos:</b> el embrión se nutre de la madre (casi todos los mamíferos).</p></div>
-      <div class="card"><h3>🐸 Desarrollo directo o indirecto</h3><p><b>Directo:</b> la cría nace parecida al adulto (aves, mamíferos). <b>Indirecto:</b> pasa por larvas y una <b>metamorfosis</b> (renacuajo → rana; oruga → crisálida → mariposa).</p></div>
+    <h3 style="margin-top:18px">¿Dónde se unen los gametos?</h3>
+    <div class="grid g2">
+      <div class="card"><h3>🌊 Fecundación externa</h3><p>Los gametos se unen afuera del cuerpo, casi siempre en el agua: peces, la mayoría de anfibios, corales, estrellas de mar. Se sueltan miles de gametos porque la mayoría se pierde.</p></div>
+      <div class="card"><h3>🤝 Fecundación interna</h3><p>Los gametos se unen dentro del cuerpo de la hembra: insectos, reptiles, aves y mamíferos. Se producen menos gametos, pero es más seguro y permite vivir lejos del agua.</p></div>
     </div>
     <div class="dato">Un organismo <b>hermafrodita</b> tiene órganos masculinos y femeninos a la vez, como la lombriz de tierra, los caracoles y muchas plantas con flores. Aun así, la mayoría se cruza con otro individuo para tener más variabilidad.</div>
   </section>
@@ -91,34 +106,71 @@
   <!-- ═══ GRUPOS ═══ -->
   <section class="sec" id="grupos">
     <h2><span class="n">02</span> ¿Cómo se reproduce cada grupo?</h2>
-    <p class="lead">Cada reino y cada filo tiene sus estrategias. Toca un grupo.</p>
+    <p class="lead">Cada reino y cada filo tiene sus estrategias. Toca un grupo y mira la animación paso a paso.</p>
     <div class="lado">
       <div class="grupos-r" id="gr"></div>
-      <div class="det" id="gr-t" aria-live="polite"><div class="vacio">👆 Toca un grupo para ver cómo se reproduce.</div></div>
+      <div id="gr-t"><div id="gr-anim"></div><div class="gr-info" id="gr-info" aria-live="polite"></div></div>
     </div>
     <h3 style="margin-top:18px">🎯 Clasifica</h3>
     <div class="card" id="clas-tipo"></div>
   </section>
 
+  <!-- ═══ DESARROLLO EMBRIONARIO ═══ -->
+  <section class="sec" id="desarrollo">
+    <h2><span class="n">03</span> El desarrollo embrionario</h2>
+    <p class="lead">Después de la fecundación, el cigoto se divide una y otra vez hasta formar un embrión. Las primeras etapas son muy parecidas en todos los animales.</p>
+    <div class="lado">
+      <div data-anim="embrion"></div>
+      <div class="card"><h3>Las primeras etapas</h3><ol><li><b>Cigoto:</b> una sola célula.</li><li><b>Segmentación:</b> divisiones rápidas por mitosis.</li><li><b>Mórula:</b> bolita maciza de células.</li><li><b>Blástula:</b> esfera hueca.</li><li><b>Gástrula:</b> se forman tres capas que darán origen a todos los órganos.</li></ol>
+        <div class="tbl-wrap" style="margin-top:10px"><table class="t"><tr><th>Capa</th><th>Forma</th></tr><tr><td><b style="color:#2f6f9e">●</b> Ectodermo</td><td>Piel, pelo, uñas, sistema nervioso</td></tr><tr><td><b style="color:#c0392b">●</b> Mesodermo</td><td>Músculos, huesos, corazón, sangre, riñones</td></tr><tr><td><b style="color:#c99a00">●</b> Endodermo</td><td>Revestimiento del intestino, pulmones, hígado</td></tr></table></div></div>
+    </div>
+    <h3 style="margin-top:20px">¿Dónde se desarrolla el embrión?</h3>
+    <p>Hay tres estrategias. Cada una tiene ventajas y desventajas. Toca cada una.</p>
+    <div class="tabs"><button class="chip on" data-tab="d-ovi">🥚 Ovíparo</button><button class="chip" data-tab="d-ovovi">🦈 Ovovivíparo</button><button class="chip" data-tab="d-vivi">🤱 Vivíparo</button></div>
+    <div class="tab-p" id="d-ovi"><div class="lado"><div data-anim="oviparo"></div><div><p>El embrión se desarrolla en un <b>huevo afuera de la madre</b> y se alimenta de la yema. <b>Ejemplos:</b> aves, la mayoría de reptiles y peces, anfibios, insectos, el ornitorrinco.</p>
+      <div class="dev-pc"><div style="background:#e7f6ec"><b>✅ Ventajas</b><ul><li>La madre no carga el peso del embrión y puede seguir moviéndose y alimentándose.</li><li>Puede poner muchos huevos a la vez.</li><li>Gasta menos energía por cada cría.</li></ul></div><div style="background:#fff3f2"><b>⚠️ Desventajas</b><ul><li>Los huevos quedan expuestos a depredadores, al frío o a la sequía.</li><li>Muchos no sobreviven.</li><li>En las aves, los padres deben incubarlos.</li></ul></div></div></div></div></div>
+    <div class="tab-p" id="d-ovovi"><div class="lado"><div data-anim="ovoviviparo"></div><div><p>El huevo se queda <b>dentro del cuerpo de la madre</b>, pero el embrión se alimenta de la yema, no de la madre. Los huevos eclosionan adentro y nacen crías vivas. <b>Ejemplos:</b> algunos tiburones y rayas, la boa, algunas víboras y el pez guppy.</p>
+      <div class="dev-pc"><div style="background:#e7f6ec"><b>✅ Ventajas</b><ul><li>Los huevos están protegidos de depredadores y del clima.</li><li>Las crías nacen más desarrolladas que de un huevo puesto afuera.</li></ul></div><div style="background:#fff3f2"><b>⚠️ Desventajas</b><ul><li>La madre carga los huevos: se mueve más lento y está más expuesta.</li><li>Nacen menos crías.</li></ul></div></div></div></div></div>
+    <div class="tab-p" id="d-vivi"><div class="lado"><div data-anim="viviparo"></div><div><p>El embrión se desarrolla <b>dentro de la madre</b> y se alimenta de ella, en los placentarios a través de la <b>placenta</b>. <b>Ejemplos:</b> casi todos los mamíferos. En los <b>marsupiales</b>, como la chucha, la cría nace muy pequeña y termina de crecer en una bolsa.</p>
+      <div class="dev-pc"><div style="background:#e7f6ec"><b>✅ Ventajas</b><ul><li>Máxima protección y temperatura constante.</li><li>La cría recibe alimento y oxígeno todo el tiempo.</li><li>Las crías sobreviven más.</li></ul></div><div style="background:#fff3f2"><b>⚠️ Desventajas</b><ul><li>Pocas crías y embarazos largos.</li><li>La madre gasta mucha energía y corre riesgos.</li><li>Después de nacer, las crías necesitan cuidados por mucho tiempo.</li></ul></div></div></div></div></div>
+    <h3 style="margin-top:20px">Después de nacer: ¿directo o indirecto?</h3>
+    <div class="tabs"><button class="chip on" data-tab="d-dir">🐣 Directo</button><button class="chip" data-tab="d-ind">🦋 Indirecto (metamorfosis)</button></div>
+    <div class="tab-p" id="d-dir"><div class="lado"><div data-anim="directo"></div><div><p>La cría nace <b>parecida a sus padres</b> y solo crece. <b>Ejemplos:</b> aves, reptiles, mamíferos, arañas.</p>
+      <div class="dev-pc"><div style="background:#e7f6ec"><b>✅ Ventajas</b><ul><li>No pasa por etapas frágiles de transformación.</li><li>Desde pequeña puede vivir como sus padres.</li></ul></div><div style="background:#fff3f2"><b>⚠️ Desventajas</b><ul><li>Crías y adultos comen lo mismo y viven en el mismo lugar: compiten entre ellos.</li><li>El huevo o el embarazo necesitan más reservas.</li></ul></div></div></div></div></div>
+    <div class="tab-p" id="d-ind"><div class="lado"><div data-anim="indirecto"></div><div><p>La cría nace como una <b>larva</b>, muy distinta del adulto, y se transforma por <b>metamorfosis</b>. <b>Ejemplos:</b> mariposas (oruga → crisálida → adulto), ranas (renacuajo → rana), moscas y escarabajos.</p>
+      <div class="dev-pc"><div style="background:#e7f6ec"><b>✅ Ventajas</b><ul><li>Larvas y adultos comen cosas distintas y viven en lugares distintos: no compiten.</li><li>La larva se especializa en comer y crecer; el adulto, en reproducirse y dispersarse.</li></ul></div><div style="background:#fff3f2"><b>⚠️ Desventajas</b><ul><li>Durante la metamorfosis (por ejemplo, en la crisálida) el animal no puede huir.</li><li>Necesita ambientes distintos en cada etapa: si se daña uno, por ejemplo una charca, toda la especie sufre.</li></ul></div></div></div></div></div>
+    <div class="chequeo" data-ok="1" data-exp="El tiburón toro y la boa son ovovivíparos: los huevos eclosionan dentro de la madre, pero el embrión se alimenta de la yema.">
+      <div class="q">Las crías de la boa nacen vivas, pero cada una se alimentó de la yema de su huevo dentro de la madre. La boa es…</div>
+      <div class="ops"><button class="op" data-por="Si fuera ovípara, los huevos se pondrían afuera.">ovípara.</button><button class="op">ovovivípara.</button><button class="op" data-por="En los vivíparos el embrión se alimenta de la madre, por ejemplo con la placenta.">vivípara.</button></div>
+    </div>
+  </section>
+
   <!-- ═══ FLOR ═══ -->
   <section class="sec" id="flor">
-    <h2><span class="n">03</span> La flor: el órgano reproductor de las plantas</h2>
-    <p class="lead">Toca cada parte de la flor. Luego sigue paso a paso de la polinización al fruto.</p>
+    <h2><span class="n">04</span> La flor: el órgano reproductor de las plantas</h2>
+    <p class="lead">Toca cada parte de la flor. Luego mira, con un caso real, cómo una flor de café se convierte en fruto.</p>
     <div class="anat">
       <div class="fig"><svg id="flor-svg" viewBox="0 0 400 320" role="group" aria-label="Partes de la flor"></svg></div>
       <div class="det" id="flor-t" aria-live="polite"><div class="vacio">👆 Toca una parte de la flor.</div></div>
     </div>
-    <div class="pasos" data-titulo="De la flor al fruto" style="margin-top:14px">
-      <div class="paso" data-t="Polinización"><h3>1. Polinización</h3><p>El polen pasa de la antera al estigma. Lo llevan el viento, el agua o animales <b>polinizadores</b>: abejas, mariposas, murciélagos y colibríes. Colombia tiene más de 160 especies de colibríes, que son polinizadores clave en los Andes.</p></div>
-      <div class="paso" data-t="Tubo"><h3>2. El tubo polínico</h3><p>El grano de polen germina sobre el estigma y forma un tubo que baja por el estilo hasta el óvulo, llevando los gametos masculinos.</p></div>
-      <div class="paso" data-t="Fecundación"><h3>3. Fecundación</h3><p>Un gameto masculino fecunda a la oosfera y forma el <b>embrión</b>; otro se une a otras células del óvulo y forma el <b>endospermo</b>, la reserva de alimento de la semilla (doble fecundación).</p></div>
-      <div class="paso" data-t="Semilla y fruto"><h3>4. Semilla y fruto</h3><p>El óvulo se convierte en <b>semilla</b> y el ovario crece y se transforma en <b>fruto</b>, que protege las semillas y ayuda a dispersarlas. Una mazorca, un aguacate y una guanábana son frutos.</p></div>
+    <h3 style="margin-top:18px">De la flor al fruto: un caso real, el café</h3>
+    <p>El café que se cultiva en el Eje Cafetero, Huila, Cauca, Nariño o la Sierra Nevada pasa por estos pasos. Mira la animación.</p>
+    <div class="lado" style="margin-top:10px">
+      <div data-anim="cafe"></div>
+      <div class="card"><ol>
+        <li><b>Floración:</b> unos días después de las lluvias, el cafeto florece.</li>
+        <li><b>Polinización:</b> el polen llega al estigma; en el café arábica la misma flor se poliniza, con ayuda de abejas.</li>
+        <li><b>Fecundación:</b> el tubo polínico lleva los gametos masculinos hasta los óvulos.</li>
+        <li><b>Fruto:</b> el ovario se transforma en la cereza, que madura en unos 8 meses.</li>
+        <li><b>Semillas:</b> los óvulos fecundados son los granos de café; de ellos nacen nuevas plantas.</li></ol>
+        <div class="dato col" style="margin-bottom:0">La <b>flor</b> se vuelve <b>fruto</b> (la cereza) y los <b>óvulos</b> se vuelven <b>semillas</b> (los granos). Lo mismo pasa en el aguacate, el mango o la mazorca: cada grano de maíz es un fruto con su semilla.</div>
+      </div>
     </div>
   </section>
 
   <!-- ═══ SISTEMA REPRODUCTOR HUMANO ═══ -->
   <section class="sec" id="humano">
-    <h2><span class="n">04</span> El sistema reproductor humano</h2>
+    <h2><span class="n">05</span> El sistema reproductor humano</h2>
     <p class="lead">Durante la <b>pubertad</b> (más o menos entre los 9 y los 15 años) las hormonas sexuales hacen madurar el sistema reproductor. Cada persona tiene su propio ritmo y todos los cambios son normales. Toca cada órgano.</p>
     <div class="chips" style="margin-bottom:10px"><button class="chip on" data-sx="fem">♀ Sistema femenino</button><button class="chip" data-sx="mas">♂ Sistema masculino</button></div>
     <div class="anat">
@@ -133,7 +185,7 @@
 
   <!-- ═══ CICLO MENSTRUAL ═══ -->
   <section class="sec" id="ciclo">
-    <h2><span class="n">05</span> El ciclo menstrual</h2>
+    <h2><span class="n">06</span> El ciclo menstrual</h2>
     <p class="lead">Cada mes, las hormonas preparan al útero para un posible embarazo. Un ciclo dura en promedio <b>28 días</b>, aunque es normal que varíe entre 21 y 35, sobre todo en los primeros años. Mueve el control día por día.</p>
     <div class="card">
       <canvas id="ciclo-c" width="900" height="260" aria-label="Hormonas y grosor del endometrio durante el ciclo"></canvas>
@@ -145,7 +197,7 @@
 
   <!-- ═══ EMBARAZO ═══ -->
   <section class="sec" id="embarazo">
-    <h2><span class="n">06</span> Fecundación, embarazo y parto</h2>
+    <h2><span class="n">07</span> Fecundación, embarazo y parto</h2>
     <div class="pasos" data-titulo="De la fecundación al parto">
       <div class="paso" data-t="Fecundación"><h3>1. Fecundación</h3><p>Ocurre en la <b>trompa de Falopio</b>: de millones de espermatozoides solo uno entra al óvulo. Se forma el <b>cigoto</b>, con 46 cromosomas.</p></div>
       <div class="paso" data-t="Implantación"><h3>2. Implantación</h3><p>El cigoto se divide por mitosis mientras baja hacia el útero. Hacia el día 7 se implanta en el endometrio. Ahí empieza el embarazo y se suspende la menstruación.</p></div>
@@ -163,7 +215,7 @@
 
   <!-- ═══ ANTICONCEPCIÓN ═══ -->
   <section class="sec" id="anticoncepcion">
-    <h2><span class="n">07</span> Métodos anticonceptivos</h2>
+    <h2><span class="n">08</span> Métodos anticonceptivos</h2>
     <p class="lead">Los métodos anticonceptivos permiten decidir si tener hijos y cuándo. Funcionan de distintas maneras: impiden que el espermatozoide llegue al óvulo, impiden la ovulación o impiden la implantación. Las barras muestran la <b>efectividad con el uso típico</b> (como los usa la gente en la vida real, con olvidos y errores). Toca uno.</p>
     <div class="card"><div class="efi" id="efi"></div><div id="efi-t" style="margin-top:12px" aria-live="polite"></div></div>
     <div class="clave">🛡️ <b>Solo el condón</b> (masculino o femenino) protege contra las infecciones de transmisión sexual. Por eso se recomienda la <b>doble protección</b>: el condón junto con otro método.</div>
@@ -176,7 +228,7 @@
 
   <!-- ═══ ITS ═══ -->
   <section class="sec" id="its">
-    <h2><span class="n">08</span> Infecciones de transmisión sexual (ITS)</h2>
+    <h2><span class="n">09</span> Infecciones de transmisión sexual (ITS)</h2>
     <p class="lead">Las ITS se transmiten por contacto sexual y algunas también por la sangre o de la madre al bebé. Las causan virus, bacterias, protozoos u hongos. Muchas <b>no dan síntomas</b> al principio, por eso es importante consultar y hacerse pruebas.</p>
     <div class="chips" id="its-f" style="margin-bottom:10px"><button class="chip on" data-a="todas">Todas</button><button class="chip" data-a="virus">🦠 Virus</button><button class="chip" data-a="bacteria">🧫 Bacterias</button><button class="chip" data-a="protozoo">🔬 Protozoos</button></div>
     <div class="its" id="its-g"></div>
@@ -187,43 +239,46 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=7"></script>
-<script src="cuerpo.js?v=7"></script>
+<script src="bio.js?v=9"></script>
+<script src="cuerpo.js?v=9"></script>
+<script src="repro-anim.js?v=9"></script>
 <script>
 (function(){
 var sp=CUERPO.sp,esc=BIO.esc;
 /* ═══ Grupos ═══ */
 var GR=[
  ['sep','Microorganismos y hongos'],
- ['🦠','Bacterias','asexual','Bipartición: una bacteria se parte en dos. También intercambian plásmidos por <b>conjugación</b>, una forma de pasar genes sin reproducirse.','Las bacterias del yogur.'],
- ['💧','Protistas','ambas','Las amebas y paramecios se dividen por bipartición; el paramecio también hace conjugación. Muchas algas alternan fases asexuales y sexuales.','El plasmodio de la malaria se reproduce asexualmente en la sangre y sexualmente dentro del mosquito.'],
- ['🍄','Hongos','ambas','Esporas, asexuales o sexuales; las levaduras hacen gemación. Los champiñones son el «fruto» que produce las esporas.','La levadura de la chicha y del pan.'],
+ ['🦠','Bacterias','asexual','Bipartición: una bacteria se parte en dos. También intercambian plásmidos por <b>conjugación</b>, una forma de pasar genes sin reproducirse.','Las bacterias del yogur.','bacterias'],
+ ['💧','Protistas','ambas','Las amebas y paramecios se dividen por bipartición; el paramecio también hace conjugación. Muchas algas alternan fases asexuales y sexuales.','El plasmodio de la malaria se reproduce asexualmente en la sangre y sexualmente dentro del mosquito.','protistas'],
+ ['🍄','Hongos','ambas','Esporas, asexuales o sexuales; las levaduras hacen gemación. Los champiñones son el «fruto» que produce las esporas.','La levadura de la chicha y del pan.','hongos'],
  ['sep','Plantas'],
- ['🌿','Musgos (briofitos)','ambas','Alternan una generación que produce gametos y otra que produce esporas. Necesitan agua para que el gameto masculino nade hasta el femenino.','Los musgos del páramo, que retienen agua como esponjas.'],
- ['🌱','Helechos (pteridofitos)','ambas','Producen esporas en los <b>soros</b> (puntos cafés bajo las hojas). De la espora sale una plantita que forma gametos; también necesitan agua.','Los helechos arborescentes de los bosques andinos.'],
- ['🌲','Gimnospermas','sexual','Semillas «desnudas», sin fruto, en conos o piñas. El polen viaja con el viento.','El pino colombiano o romerón (<i>Retrophyllum</i>), en peligro.'],
- ['🌺','Angiospermas','ambas','Plantas con <b>flor</b>: polinización, fecundación, semilla dentro de un <b>fruto</b>. Muchas también se propagan de forma vegetativa.','La orquídea Cattleya trianae, el café, el maíz, la papa.'],
+ ['🌿','Musgos (briofitos)','ambas','Alternan una generación que produce gametos y otra que produce esporas. Necesitan agua para que el gameto masculino nade hasta el femenino.','Los musgos del páramo, que retienen agua como esponjas.','musgos'],
+ ['🌱','Helechos (pteridofitos)','ambas','Producen esporas en los <b>soros</b> (puntos cafés bajo las hojas). De la espora sale una plantita que forma gametos; también necesitan agua.','Los helechos arborescentes de los bosques andinos.','helechos'],
+ ['🌲','Gimnospermas','sexual','Semillas «desnudas», sin fruto, en conos o piñas. El polen viaja con el viento.','El pino colombiano o romerón (<i>Retrophyllum</i>), en peligro.','gimnospermas'],
+ ['🌺','Angiospermas','ambas','Plantas con <b>flor</b>: polinización, fecundación, semilla dentro de un <b>fruto</b>. Muchas también se propagan de forma vegetativa.','La orquídea Cattleya trianae, el café, el maíz, la papa.','angiospermas'],
  ['sep','Animales invertebrados'],
- ['🧽','Poríferos (esponjas)','ambas','Gemación y fragmentación; sexualmente, muchas son hermafroditas y sueltan gametos al agua.','Las esponjas de los arrecifes del Caribe.'],
- ['🐠','Cnidarios','ambas','Los pólipos se reproducen por gemación y forman colonias (corales); las medusas se reproducen sexualmente. Muchos corales hacen un desove masivo una vez al año.','Los corales de San Andrés.'],
- ['🐛','Platelmintos y anélidos','ambas','La planaria se regenera de un fragmento. Las lombrices de tierra son hermafroditas, pero se cruzan con otra lombriz (fecundación cruzada).','La lombriz roja californiana del compostaje.'],
- ['🐌','Moluscos','sexual','Fecundación interna o externa; muchos caracoles son hermafroditas. Ponen huevos.','El caracol pala del Caribe.'],
- ['🦋','Artrópodos','sexual','Fecundación interna, huevos y muchos con <b>metamorfosis</b>. Las abejas tienen partenogénesis: los zánganos nacen de óvulos sin fecundar.','Las más de 3600 especies de mariposas de Colombia.'],
- ['⭐','Equinodermos','ambas','Fecundación externa; las estrellas de mar pueden regenerarse a partir de un brazo.','Los erizos y estrellas de los arrecifes.'],
+ ['🧽','Poríferos (esponjas)','ambas','Gemación y fragmentación; sexualmente, muchas son hermafroditas y sueltan gametos al agua.','Las esponjas de los arrecifes del Caribe.','poriferos'],
+ ['🐠','Cnidarios','ambas','Los pólipos se reproducen por gemación y forman colonias (corales); las medusas se reproducen sexualmente. Muchos corales hacen un desove masivo una vez al año.','Los corales de San Andrés.','cnidarios'],
+ ['🐛','Platelmintos y anélidos','ambas','La planaria se regenera de un fragmento. Las lombrices de tierra son hermafroditas, pero se cruzan con otra lombriz (fecundación cruzada).','La lombriz roja californiana del compostaje.','platelmintos'],
+ ['🐌','Moluscos','sexual','Fecundación interna o externa; muchos caracoles son hermafroditas. Ponen huevos.','El caracol pala del Caribe.','moluscos'],
+ ['🦋','Artrópodos','sexual','Fecundación interna, huevos y muchos con <b>metamorfosis</b>. Las abejas tienen partenogénesis: los zánganos nacen de óvulos sin fecundar.','Las más de 3600 especies de mariposas de Colombia.','artropodos'],
+ ['⭐','Equinodermos','ambas','Fecundación externa; las estrellas de mar pueden regenerarse a partir de un brazo.','Los erizos y estrellas de los arrecifes.','equinodermos'],
  ['sep','Animales vertebrados'],
- ['🐟','Peces','sexual','Casi todos con fecundación externa y miles de huevos. Algunos tiburones son ovovivíparos. En el caballito de mar, el macho incuba los huevos.','Los bocachicos que suben por los ríos en la «subienda» para desovar.'],
- ['🐸','Anfibios','sexual','Fecundación casi siempre externa en el agua; desarrollo indirecto: huevo → renacuajo → adulto (metamorfosis).','La rana venenosa carga a sus renacuajos en la espalda hasta pozos de agua en las bromelias.'],
- ['🐢','Reptiles','sexual','Fecundación interna y <b>huevo amniota</b> con cáscara, que no se seca en tierra. En las tortugas, la temperatura de la arena decide si nacen machos o hembras.','La tortuga caná desova en las playas del Chocó y La Guajira.'],
- ['🐦','Aves','sexual','Fecundación interna, huevos con cáscara dura que los padres incuban. Desarrollo directo.','El cóndor pone un solo huevo cada dos años: por eso se recupera tan despacio.'],
- ['🐻','Mamíferos','sexual','Fecundación interna. Casi todos son <b>vivíparos placentarios</b>; los marsupiales (zarigüeya o chucha) terminan el desarrollo en una bolsa, y los monotremas (ornitorrinco) ponen huevos. Todos amamantan.','La chucha o zarigüeya, el único marsupial común en Colombia.']
+ ['🐟','Peces','sexual','Casi todos con fecundación externa y miles de huevos. Algunos tiburones son ovovivíparos. En el caballito de mar, el macho incuba los huevos.','Los bocachicos que suben por los ríos en la «subienda» para desovar.','peces'],
+ ['🐸','Anfibios','sexual','Fecundación casi siempre externa en el agua; desarrollo indirecto: huevo → renacuajo → adulto (metamorfosis).','La rana venenosa carga a sus renacuajos en la espalda hasta pozos de agua en las bromelias.','anfibios'],
+ ['🐢','Reptiles','sexual','Fecundación interna y <b>huevo amniota</b> con cáscara, que no se seca en tierra. En las tortugas, la temperatura de la arena decide si nacen machos o hembras.','La tortuga caná desova en las playas del Chocó y La Guajira.','reptiles'],
+ ['🐦','Aves','sexual','Fecundación interna, huevos con cáscara dura que los padres incuban. Desarrollo directo.','El cóndor pone un solo huevo cada dos años: por eso se recupera tan despacio.','aves'],
+ ['🐻','Mamíferos','sexual','Fecundación interna. Casi todos son <b>vivíparos placentarios</b>; los marsupiales (zarigüeya o chucha) terminan el desarrollo en una bolsa, y los monotremas (ornitorrinco) ponen huevos. Todos amamantan.','La chucha o zarigüeya, el único marsupial común en Colombia.','mamiferos']
 ];
 var BADGE={asexual:['🧬 Asexual','#e0a024'],sexual:['💞 Sexual','#7b4bb7'],ambas:['🧬💞 Asexual y sexual','#2e7d4f']};
 var gb=document.getElementById('gr'),vG={};
 gb.innerHTML=GR.map(function(g,i){return g[0]==='sep'?'<div class="sep">'+g[1]+'</div>':'<button type="button" data-i="'+i+'"><span class="e">'+g[0]+'</span>'+g[1]+'</button>';}).join('');
 gb.querySelectorAll('button').forEach(function(b){b.onclick=function(){var g=GR[+b.getAttribute('data-i')],bd=BADGE[g[2]];vG[g[1]]=1;
   gb.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
-  document.getElementById('gr-t').innerHTML='<h3>'+g[0]+' '+g[1]+'</h3><p class="badges"><span class="tag" style="background:'+bd[1]+'22">'+bd[0]+'</span></p><p style="margin-top:8px">'+g[3]+'</p><p style="margin-top:8px"><b><span class="co" role="img" aria-label="Colombia"></span> Ejemplo:</b> '+g[4]+'</p>';
+  document.getElementById('gr-info').innerHTML='<h3>'+g[0]+' '+g[1]+'</h3><p class="badges"><span class="tag" style="background:'+bd[1]+'22">'+bd[0]+'</span></p><p style="margin-top:8px">'+g[3]+'</p><p style="margin-top:8px"><b><span class="co"></span> Ejemplo:</b> '+g[4]+'</p>';
+  ANIM.montar(document.getElementById('gr-anim'),g[5]);
   if(Object.keys(vG).length>=8)BIO.marcarSeccion('grupos');};});
+gb.querySelector('button').click();
 BIO.clasificar(document.getElementById('clas-tipo'),{
   cajas:[{id:'ext',titulo:'🌊 Fecundación externa'},{id:'int',titulo:'🤰 Fecundación interna'},{id:'asx',titulo:'🧬 Asexual'}],
   fichas:[{t:'Bocachico desovando en el río',caja:'ext'},{t:'Rana dorada',caja:'ext',pista:'Los anfibios suelen fecundar en el agua.'},{t:'Tortuga caná',caja:'int'},{t:'Cóndor',caja:'int'},{t:'Chucha (zarigüeya)',caja:'int'},{t:'Levadura con una yema',caja:'asx'},{t:'Planaria que se regenera',caja:'asx'},{t:'Corales en desove masivo',caja:'ext',pista:'Sueltan óvulos y espermatozoides al agua.'},{t:'Fresa por estolones',caja:'asx'}]});
@@ -381,8 +436,8 @@ mb.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){var i=+
   document.getElementById('mi-'+i).innerHTML=(ok?'✅ ':'❌ ')+'<b>'+(m[1]?'Realidad.':'Mito.')+'</b> '+m[2];mb.querySelectorAll('[data-m="'+i+'"]').forEach(function(x){x.disabled=true;});if(ok)mOk++;if(mOk>=4)BIO.marcarSeccion('its');};});
 })();
 </script>
-<script src="text-zoom.js?v=7"></script>
-<script src="narracion.js?v=7"></script>
-<script src="pwa-install.js?v=7"></script>
+<script src="text-zoom.js?v=9"></script>
+<script src="narracion.js?v=9"></script>
+<script src="pwa-install.js?v=9"></script>
 </body>
 </html>

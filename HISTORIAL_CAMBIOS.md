@@ -6,7 +6,7 @@
 
 ---
 
-## Versión 2.1 — 10 de noviembre de 2026 · Panel docente completo como el de IonNom y ChromaNom; sin Orientaciones
+## Versión 2.3 — 10 de noviembre de 2026 · Panel docente completo como el de IonNom y ChromaNom; sin Orientaciones
 
 ### Contexto
 El docente sentía el modo docente de BioNom incompleto frente a IonNom y ChromaNom: le faltaban las actividades interactivas y los tipos de documento que tienen los otros sitios. También pidió quitar la pestaña de Orientaciones.
@@ -42,8 +42,9 @@ El docente sentía el modo docente de BioNom incompleto frente a IonNom y Chroma
   - Sin ese ajuste, ChromaNom e IonNom siguen exactamente igual.
 - **`retos.js`:** nueva función `RETOS.armarCrucigrama` con azar con semilla, para que el mismo código dé el mismo crucigrama. Se cambió el ícono del ahorcado por 🔠, porque 🪢 es un emoji nuevo que no se ve en Windows.
 - **`actividades.css`:** estilos de la casilla de codón y de la tabla del código genético.
-- **Versión:** `?v=7` y `bionom-v16`, con los 5 archivos nuevos en la caché y sin repetidos.
+- **Versión:** `?v=9` y `bionom-v20`, con los 5 archivos nuevos en la caché y sin repetidos.
 - **`README.md` y `CLAUDE.md`:** arquitectura del panel docente y pasos del Modo Estudiante.
+- Esta sesión trabajó en paralelo con las versiones 2.1 (Reproducción animada) y 2.2 (módulo División celular). Sus cambios se conservaron; esta versión solo suma el panel docente.
 
 ### Verificación
 Con Playwright se revisaron las 10 pestañas, con hojas y sin errores.
@@ -57,6 +58,101 @@ Con Playwright se revisaron las 10 pestañas, con hojas y sin errores.
 - Las palabras de ahorcado, crucigrama, sopa y criptograma siguen siendo 10-12 por tema. Si el docente quiere más variedad en 20 versiones, conviene ampliar `ahorcado-datos.js`.
 
 ---
+## Versión 2.2 — 10 de noviembre de 2026 · Módulo propio de división celular
+
+### Contexto
+El docente consideró que la mitosis y la meiosis deben tener su propia
+sección, después de La célula y antes de Reproducción.
+
+### Cambios
+- **`division.html` (nuevo): «División celular: mitosis y meiosis».** Va en el
+  menú justo después de La célula. Tiene siete secciones:
+  1. **Cromosomas:**
+     - Cromosoma interactivo: cromátidas, centrómero, brazos, genes y ADN
+       enrollado.
+     - Cariotipo humano de 23 parejas (mujer XX / hombre XY), con 2n y n.
+     - Chequeo rápido.
+  2. **Ciclo celular:** diagrama circular G1, S, G2 y M, que se toca, con los
+     puntos de control.
+  3. **Mitosis:** la animación por fases que estaba en La célula, el truco
+     «ProMeAnaTe», para qué sirve y un chequeo.
+  4. **Citocinesis:** animación del surco en la célula animal y de la placa
+     celular en la vegetal.
+  5. **Meiosis:** la animación con los alelos A, a, B y b que estaba en
+     Genética (con «Otra orientación»), su relación con Mendel y las
+     combinaciones posibles.
+  6. **Mitosis vs. meiosis:** tabla y clasificador.
+  7. **Cuando la división falla:** cáncer y síndrome de Down (no disyunción),
+     con un cariotipo con trisomía 21.
+- **`celula.html`:** la sección 10 queda como tarjeta que lleva al módulo
+  nuevo. Su «Siguiente» ahora es División celular.
+- **`genetica.html`:** la sección 05 queda como la idea clave «La meiosis
+  explica las leyes de Mendel», con enlace a la meiosis paso a paso.
+- **Otros archivos:**
+  - `reinos.html`: su «Anterior» ahora es División celular.
+  - `reproduccion.html`: enlaza a `division.html#meiosis`.
+  - `bio.js`: el menú incluye el módulo.
+  - `index.html`: la portada tiene la tarjeta del módulo.
+  - `sw.js`: el caché incluye la página.
+- **Versiones:** `bionom-v19` y `?v=8`.
+
+### Verificación
+Con Playwright:
+- Revisión de la sintaxis de todos los scripts de las páginas tocadas.
+- Capturas de cada sección en computador y celular.
+- No hay errores ni desbordes.
+
+## Versión 2.1 — 10 de noviembre de 2026 · Reproducción animada y desarrollo embrionario
+
+### Contexto
+Al docente la explicación de «¿Cómo se reproduce cada grupo?» le pareció
+sosa: pidió una animación que muestre lo básico del proceso. También pidió:
+- Explicar los tipos de desarrollo embrionario con sus ventajas y
+  desventajas.
+- Acompañar el paso de la flor al fruto con imágenes de un caso real.
+
+### Cambios
+- **`repro-anim.js` (nuevo):** motor de animaciones con volumen. No son
+  modelos 3D reales: se descartaron porque necesitarían una librería pesada
+  que no funciona sin internet en la app instalada.
+  - Dibujos en SVG con degradados de luz, brillos y sombras.
+  - Cada animación avanza sola paso a paso, con un texto por paso.
+  - Botones ⏮ ⏸ ⏭ y puntos para saltar a un paso.
+  - Solo se mueve cuando está en pantalla.
+  - Respeta la opción «reducir movimiento» del sistema.
+  - 25 animaciones:
+    - Una por cada uno de los 18 grupos: bacterias, protistas, hongos,
+      musgos, helechos, gimnospermas, angiospermas, poríferos, cnidarios,
+      platelmintos, moluscos, artrópodos, equinodermos, peces, anfibios,
+      reptiles, aves y mamíferos.
+    - Café (de la flor al fruto).
+    - Etapas del embrión (cigoto, segmentación, mórula, blástula, gástrula
+      con sus tres capas).
+    - Ovíparo, ovovivíparo, vivíparo, desarrollo directo e indirecto.
+  - Cada animación usa nombres de degradado propios. Si se comparten, una
+    animación escondida en otra pestaña deja sin color a las demás: así pasó
+    al probar.
+- **`reproduccion.html`:**
+  - «En cada grupo»: al tocar un grupo se ve su animación y debajo la
+    explicación; arranca con Bacterias.
+  - Nueva sección **03 El desarrollo embrionario**: animación de las primeras
+    etapas y tabla de las tres capas. Pestañas Ovíparo, Ovovivíparo y
+    Vivíparo, y luego Directo e Indirecto, cada una con su animación,
+    ejemplos, ventajas y desventajas, más un chequeo rápido.
+  - Las tarjetas «Conceptos de la reproducción sexual» se cambiaron por
+    «Fecundación externa / interna», porque el resto ya lo cubre la sección
+    nueva.
+  - «De la flor al fruto»: el texto del paso a paso se cambió por el caso real
+    del café (floración, polinización, fecundación, la cereza que madura en
+    unos 8 meses y los granos que son las semillas), con animación y lista.
+  - Las secciones siguientes se renumeraron (04 a 09).
+- **Versiones:** `bionom-v17` y `?v=7`; `repro-anim.js` agregado al caché.
+
+### Verificación
+Con Playwright:
+- Se dibujaron los 97 pasos de las 25 animaciones y se revisaron en imagen.
+- La página no tiene errores y no se desborda en computador (1366 px) ni en
+  celular (390 px).
 
 ## Versión 2 — 10 de noviembre de 2026 · Juego: 3 intentos con pistas, 40 preguntas por tema, crucigrama, sopa y ahorcado
 

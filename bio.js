@@ -15,6 +15,7 @@
 var MODULOS=[
   {id:'inicio',href:'index.html',ico:'🗺️',txt:'Mapa',full:'Mapa de niveles'},
   {id:'celula',href:'celula.html',ico:'🔬',txt:'Célula',full:'La célula',niveles:['molecula','organelo','celula']},
+  {id:'division',href:'division.html',ico:'✂️',txt:'División',full:'División celular: mitosis y meiosis',niveles:['celula','organismo']},
   {id:'reinos',href:'reinos.html',ico:'🍄',txt:'Reinos',full:'Reinos y clasificación',niveles:['organismo']},
   {id:'sistemas',href:'sistemas.html',ico:'❤️',txt:'Sistemas',full:'Sistemas del cuerpo',niveles:['tejido','organo','sistema','organismo']},
   {id:'reproduccion',href:'reproduccion.html',ico:'👶',txt:'Reproducción',full:'Reproducción',niveles:['celula','organo','sistema','organismo','poblacion']},

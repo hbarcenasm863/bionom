@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=7">
+<link rel="stylesheet" href="bio.css?v=9">
 <style>
 .fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
@@ -94,7 +94,7 @@
     <a href="#mendel">🌱 Mendel</a>
     <a href="#punnett">🔲 Punnett</a>
     <a href="#dihibrido">🧮 Dihíbrido</a>
-    <a href="#meiosis">✂️ Meiosis</a>
+    <a href="#meiosis">✂️ Meiosis y Mendel</a>
     <a href="#otras">🔴 Más allá de Mendel</a>
     <a href="#genealogias">🌳 Genealogías</a>
     <strong>Molecular</strong>
@@ -186,22 +186,9 @@
 
   <!-- ═══ MEIOSIS ═══ -->
   <section class="sec" id="meiosis">
-    <h2><span class="n">05</span> La meiosis: el porqué de las leyes de Mendel</h2>
-    <p class="lead">Las células de tu cuerpo tienen los cromosomas en <b>parejas</b> (una copia de tu mamá y otra de tu papá): son <b>diploides (2n)</b>. Los óvulos y espermatozoides solo llevan <b>uno de cada pareja</b>: son <b>haploides (n)</b>. La división que los produce es la <b>meiosis</b>. Esta célula es AaBb: sigue los alelos.</p>
-    <div class="card lado" style="align-items:center">
-      <svg id="meio" viewBox="0 0 360 250" aria-hidden="true"></svg>
-      <div><div class="chips" id="mfases" style="margin-bottom:8px"></div><div id="mfase-t" aria-live="polite"></div>
-        <div class="ctrl"><button type="button" class="cn-btn" id="mf-ant">← Antes</button><button type="button" class="cn-btn cn-btn--primary" id="mf-sig">Siguiente →</button><button type="button" class="cn-btn" id="mf-gir">🎲 Otra orientación</button></div></div>
-    </div>
-    <div class="tbl-wrap" style="margin-top:14px"><table class="t">
-      <tr><th></th><th>Mitosis</th><th>Meiosis</th></tr>
-      <tr><td><b>¿Para qué?</b></td><td>Crecer, reparar, reproducción asexual</td><td>Formar gametos (óvulos, espermatozoides, polen)</td></tr>
-      <tr><td><b>Divisiones</b></td><td>Una</td><td>Dos seguidas (meiosis I y II)</td></tr>
-      <tr><td><b>Células hijas</b></td><td>2, idénticas a la madre</td><td>4, distintas entre sí</td></tr>
-      <tr><td><b>Cromosomas</b></td><td>Se conservan (2n → 2n; 46 → 46)</td><td>Se reducen a la mitad (2n → n; 46 → 23)</td></tr>
-      <tr><td><b>Entrecruzamiento</b></td><td>No</td><td>Sí: los cromosomas de cada pareja intercambian trozos</td></tr>
-    </table></div>
-    <div class="clave">La <b>segregación</b> de Mendel ocurre cuando se separan las parejas de cromosomas en la meiosis I: cada gameto recibe un solo alelo de cada gen. La <b>transmisión independiente</b> ocurre porque cada pareja se orienta al azar en la metafase I. Toca «Otra orientación» y mira cómo cambian los gametos.</div>
+    <h2><span class="n">05</span> La meiosis explica las leyes de Mendel</h2>
+    <div class="clave">La <b>segregación</b> de Mendel ocurre cuando se separan las parejas de cromosomas en la meiosis I: cada gameto recibe un solo alelo de cada gen. La <b>transmisión independiente</b> ocurre porque cada pareja se orienta al azar en la metafase I.</div>
+    <a class="card" href="division.html#meiosis" style="display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--cn-tx)"><span style="font-size:2.6rem">✂️</span><span><b style="color:var(--cn-brand-d);font-size:1.15rem">Ver la meiosis paso a paso →</b><br><small style="color:var(--cn-dim)">En el módulo División celular: sigue los alelos A, a, B y b hasta los gametos.</small></span></a>
   </section>
 
   <!-- ═══ MÁS ALLÁ DE MENDEL ═══ -->
@@ -347,7 +334,7 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=7"></script>
+<script src="bio.js?v=9"></script>
 <script>
 (function(){
 var esc=BIO.esc;
@@ -606,60 +593,7 @@ document.getElementById('mu-del').onclick=function(){if(mu.length>6){mu.splice(1
 document.getElementById('mu-reset').onclick=function(){mu=ARN0.split('');pintarMu();};
 pintarMu();
 
-/* ═══ Meiosis ═══ */
-var MAT='#e5484d',PAT='#3e8ed0',ori=0,mk=0;
-function cr(x,y,col,alelo,largo,doble,cruce){ // cromosoma vertical; doble = dos cromátidas
-  var h=largo,w=6,s='';
-  function una(dx,c2){return '<rect x="'+(x+dx-w/2)+'" y="'+(y-h/2)+'" width="'+w+'" height="'+h+'" rx="3" fill="'+col+'"/>'+(c2?'<rect x="'+(x+dx-w/2)+'" y="'+(y+h/2-h*0.35)+'" width="'+w+'" height="'+(h*0.35)+'" rx="3" fill="'+c2+'"/>':'');}
-  if(doble){s+=una(-4)+una(4,cruce||null);s+='<circle cx="'+x+'" cy="'+y+'" r="3" fill="#333"/>';}else s+=una(0,cruce||null);
-  s+='<text x="'+(x+(doble?12:8))+'" y="'+(y-h/2+12)+'" style="font:800 12px JetBrains Mono" fill="#10261a">'+alelo+'</text>';
-  return s;
-}
-function cel(x,y,rx,ry,dentro,borde){return '<ellipse cx="'+x+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'" fill="#fff4ee" stroke="'+(borde||'#e07a5f')+'" stroke-width="3"/>'+dentro;}
-var MF=[
- ['Célula 2n','Una célula diploide con <b>dos parejas</b> de cromosomas homólogos: uno de cada pareja vino de la madre (rojo) y otro del padre (azul). Su genotipo es <b>AaBb</b>.'],
- ['Copia del ADN','Antes de empezar, cada cromosoma se copia: queda formado por dos cromátidas hermanas idénticas.'],
- ['Profase I','Los homólogos se juntan en parejas y pueden <b>intercambiar trozos</b> (entrecruzamiento). Así se mezclan los genes de la madre y del padre en un mismo cromosoma.'],
- ['Metafase I','Las <b>parejas</b> se alinean en el centro. Cada pareja se orienta <b>al azar</b>: el rojo puede quedar a la izquierda o a la derecha, sin depender de la otra pareja.'],
- ['Meiosis I','Se separan los <b>homólogos</b>: cada célula recibe uno de cada pareja. ¡Aquí se separan los alelos A y a (segregación)! Las células ya son haploides (n).'],
- ['Meiosis II','Se separan las cromátidas hermanas, como en una mitosis. Resultan <b>4 gametos</b> con un solo alelo de cada gen.']
-];
-function dibMei(k){
-  var s='',L=60,C=42;
-  var p1=[[MAT,'A'],[PAT,'a']],p2=[[MAT,'B'],[PAT,'b']];
-  var izq2=ori?p2[1]:p2[0],der2=ori?p2[0]:p2[1];
-  if(k<=3){
-    var d='';
-    if(k===0)d=cr(150,110,MAT,'A',L)+cr(175,110,PAT,'a',L)+cr(205,118,MAT,'B',C)+cr(228,118,PAT,'b',C);
-    if(k===1)d=cr(140,110,MAT,'A',L,1)+cr(170,110,PAT,'a',L,1)+cr(205,118,MAT,'B',C,1)+cr(232,118,PAT,'b',C,1);
-    if(k===2)d=cr(150,110,MAT,'A',L,1,PAT)+cr(166,110,PAT,'a',L,1,MAT)+cr(205,118,MAT,'B',C,1)+cr(221,118,PAT,'b',C,1)+'<text x="180" y="62" text-anchor="middle" style="font:700 11px Outfit" fill="#b45309">entrecruzamiento</text>';
-    if(k===3)d='<line x1="180" y1="40" x2="180" y2="200" stroke="#999" stroke-dasharray="4 4"/>'+cr(168,85,MAT,'A',L,1,PAT)+cr(192,85,PAT,'a',L,1,MAT)+cr(168,160,izq2[0],izq2[1],C,1)+cr(192,160,der2[0],der2[1],C,1);
-    s+=cel(180,120,140,100,d);
-  }
-  if(k===4){
-    s+=cel(95,120,80,90,cr(85,90,MAT,'A',L,1,PAT)+cr(100,160,izq2[0],izq2[1],C,1));
-    s+=cel(265,120,80,90,cr(255,90,PAT,'a',L,1,MAT)+cr(270,160,der2[0],der2[1],C,1));
-  }
-  if(k===5){
-    var g=[['A',izq2[1],MAT,izq2[0]],['A',izq2[1],MAT,izq2[0]],['a',der2[1],PAT,der2[0]],['a',der2[1],PAT,der2[0]]];
-    g.forEach(function(q,i){var x=50+i*87;s+=cel(x,110,38,52,cr(x-8,98,q[2],q[0],L*0.8,0,i%2?null:(q[2]===MAT?PAT:MAT))+cr(x+10,118,q[3],q[1],C*0.8,0))+'<text x="'+x+'" y="190" text-anchor="middle" style="font:800 16px JetBrains Mono" fill="#14532d">'+q[0]+q[1]+'</text>';});
-    s+='<text x="180" y="226" text-anchor="middle" style="font:700 12px Outfit" fill="#3c5446">4 gametos haploides (n)</text>';
-  }
-  s+='<text x="180" y="246" text-anchor="middle" style="font:800 14px Outfit" fill="#14532d">'+MF[k][0]+'</text>';
-  return s;
-}
-var mfz=document.getElementById('mfases');mfz.innerHTML=MF.map(function(f,i){return '<button class="chip" data-m="'+i+'">'+(i+1)+'. '+f[0]+'</button>';}).join('');
-var giros=0;
-function verMei(k){mk=k;document.getElementById('meio').innerHTML=dibMei(k);
-  var g=ori?['Ab','aB']:['AB','ab'];
-  document.getElementById('mfase-t').innerHTML='<h3>'+MF[k][0]+'</h3><p>'+MF[k][1]+'</p>'+(k>=3?'<p style="margin-top:6px">Con esta orientación los gametos serán: '+g.map(function(x){return '<span class="gam">'+x+'</span>';}).join('')+'</p>':'');
-  mfz.querySelectorAll('.chip').forEach(function(b,i){b.classList.toggle('on',i===k);});
-  document.getElementById('mf-ant').disabled=k===0;document.getElementById('mf-sig').disabled=k===5;document.getElementById('mf-gir').hidden=k<3;
-  if(k===5&&giros>0)BIO.marcarSeccion('meiosis');}
-mfz.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){verMei(+b.getAttribute('data-m'));};});
-document.getElementById('mf-sig').onclick=function(){verMei(mk+1);};document.getElementById('mf-ant').onclick=function(){verMei(mk-1);};
-document.getElementById('mf-gir').onclick=function(){ori=1-ori;giros++;verMei(mk);};
-verMei(0);
+
 
 /* ═══ Genealogía ═══ */
 var PER={
@@ -713,8 +647,8 @@ document.querySelectorAll('#biotec [data-v]').forEach(function(b){b.onclick=func
   var l=document.getElementById('bt-'+i);if(l.hidden){l.hidden=false;votos++;}if(votos>=3)BIO.marcarSeccion('biotecnologia');};});
 })();
 </script>
-<script src="text-zoom.js?v=7"></script>
-<script src="narracion.js?v=7"></script>
-<script src="pwa-install.js?v=7"></script>
+<script src="text-zoom.js?v=9"></script>
+<script src="narracion.js?v=9"></script>
+<script src="pwa-install.js?v=9"></script>
 </body>
 </html>
