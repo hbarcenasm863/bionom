@@ -47,6 +47,14 @@
 @media(max-width:760px){.pisos{grid-template-columns:1fr}}
 #monta{width:100%;height:auto}
 .eco-card .e{font-size:2rem}
+.uicn{display:flex;border-radius:12px;overflow:hidden;margin:10px 0}
+.uicn div{flex:1;text-align:center;padding:8px 2px;font:800 .78rem Outfit;color:#fff;transition:transform .2s,box-shadow .2s;position:relative}
+.uicn div small{display:block;font-weight:500;font-size:.62rem}
+.uicn div.on{transform:scale(1.08);box-shadow:0 0 0 3px #10261a;z-index:1;border-radius:8px}
+.esp{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.esp button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:10px 6px;cursor:pointer;font-weight:700;font-size:.85rem}
+.esp button .e{display:block;font-size:2rem}
+.esp button.on{border-color:var(--cn-naranja);background:#fff7ec}
 </style>
 </head>
 <body>
@@ -64,6 +72,7 @@
     <a href="#mapa">🗺️ Mapa interactivo</a>
     <a href="#tipos">🌿 Tipos de ecosistema</a>
     <a href="#pisos">⛰️ Pisos térmicos</a>
+    <a href="#amenazadas">🆘 Especies amenazadas</a>
     <a href="#reto">🎯 ¿Dónde lo encuentro?</a>
   </nav>
 
@@ -99,8 +108,25 @@
     <div class="dato col">Bogotá está a unos <b>2600 m</b> y tiene una temperatura media de 14 °C; Girardot, a solo 130 km, está a 290 m y tiene 28 °C. ¡14 grados de diferencia solo por la altura!</div>
   </section>
 
+  <section class="sec" id="amenazadas">
+    <h2><span class="n">04</span> Especies amenazadas y cómo protegerlas</h2>
+    <p class="lead">Ser el segundo país más biodiverso también es una responsabilidad: Colombia tiene cientos de especies en peligro. La <b>UICN</b> (Unión Internacional para la Conservación de la Naturaleza) clasifica el riesgo de extinción de cada especie en categorías. Toca una especie.</p>
+    <div class="uicn" id="uicn" aria-hidden="true"></div>
+    <div class="esp" id="esp"></div>
+    <div class="card" id="esp-t" style="margin-top:10px" aria-live="polite"></div>
+    <h3 style="margin-top:18px">¿Qué estrategias de conservación funcionan?</h3>
+    <div class="grid g3">
+      <div class="card"><h3>🏞️ Áreas protegidas</h3><p>Parques nacionales, santuarios y reservas de la sociedad civil protegen ecosistemas completos, no solo una especie.</p></div>
+      <div class="card"><h3>🌳 Corredores biológicos</h3><p>Franjas de bosque que conectan áreas aisladas para que las poblaciones se crucen y no pierdan variabilidad genética.</p></div>
+      <div class="card"><h3>🚫 No al tráfico de fauna</h3><p>No comprar animales silvestres como mascotas ni productos hechos con ellos. Si ves tráfico, se denuncia ante la autoridad ambiental.</p></div>
+      <div class="card"><h3>🌱 Restauración</h3><p>Sembrar especies nativas, recuperar rondas de ríos y humedales y controlar las especies invasoras.</p></div>
+      <div class="card"><h3>🔬 Investigación y monitoreo</h3><p>Contar cuántos individuos quedan, estudiar su genética y criar en cautiverio para reintroducir, como se hace con el caimán del Orinoco.</p></div>
+      <div class="card"><h3>🤝 Comunidades</h3><p>Las comunidades indígenas, afro y campesinas que viven en los territorios son las mejores guardianas cuando participan y se benefician de la conservación.</p></div>
+    </div>
+  </section>
+
   <section class="sec" id="reto">
-    <h2><span class="n">04</span> Reto: ¿dónde lo encuentro?</h2>
+    <h2><span class="n">05</span> Reto: ¿dónde lo encuentro?</h2>
     <p class="lead">Lee la pista y toca en el mapa de arriba la <b>región</b> correcta.</p>
     <p>Son 8 preguntas al azar. Al empezar, la pregunta aparece encima del mapa.</p>
     <button type="button" class="cn-btn cn-btn--primary" id="reto-btn">▶ Empezar reto</button>
@@ -282,6 +308,31 @@ function responder(r){
 document.getElementById('reto-btn').onclick=function(){reto={q:BIO.barajar(PREG).slice(0,8),i:0,pts:0};document.getElementById('reto-pts').textContent=0;document.getElementById('reto-tot').textContent=8;document.getElementById('reto-fb').textContent='Toca la región en el mapa.';document.getElementById('reto-bar').hidden=false;
   document.getElementById('mapa').scrollIntoView({behavior:'smooth'});sigReto();};
 document.getElementById('reto-salir').onclick=function(){reto=null;document.getElementById('reto-bar').hidden=true;};
+
+/* ═══ Especies amenazadas ═══ */
+var CAT=[['LC','Preocupación menor','#3c9a5f'],['NT','Casi amenazada','#9bbf3c'],['VU','Vulnerable','#e8c02a'],['EN','En peligro','#f08c1e'],['CR','En peligro crítico','#d64535'],['EW','Extinta en estado silvestre','#6b3fa0'],['EX','Extinta','#222']];
+document.getElementById('uicn').innerHTML=CAT.map(function(c){return '<div data-c="'+c[0]+'" style="background:'+c[2]+'">'+c[0]+'<small>'+c[1]+'</small></div>';}).join('');
+var ESP=[
+ ['🐻','Oso de anteojos','VU','Andina','El único oso de Suramérica. Pierde su bosque andino y páramo por la ganadería y los cultivos, y a veces lo cazan por atacar ganado.','Proteger páramos y bosques andinos; corredores entre parques como Chingaza y Sumapaz.'],
+ ['🐊','Caimán del Orinoco','CR','Orinoquía','Puede medir 6 m. Fue cazado por miles para vender su piel en el siglo XX. Quedan muy pocos en libertad.','Cría en cautiverio (Estación Roberto Franco en Villavicencio) y liberación en ríos protegidos.'],
+ ['🐒','Tití cabeciblanco','CR','Caribe','Endémico de Colombia. Su bosque seco fue talado casi por completo y lo capturan para venderlo como mascota.','Restaurar bosque seco, corredores y campañas contra el tráfico.'],
+ ['🐸','Rana dorada','EN','Pacífica','Solo vive en un pequeño sector del Chocó. Es uno de los animales más venenosos del mundo. Su bosque se pierde por minería y tala.','Proteger su hábitat y controlar la minería ilegal.'],
+ ['🐬','Delfín rosado','EN','Amazonía','Se enreda en redes de pesca, lo afecta el mercurio de la minería y a veces lo matan para usarlo como carnada.','Pesca responsable, monitoreo en lagos de Tarapoto y control del mercurio.'],
+ ['🌴','Palma de cera','EN','Andina','El árbol nacional. Antes se cortaban sus hojas para el Domingo de Ramos y su bosque se convirtió en potreros, donde las palmas viejas no se reproducen.','Prohibición del uso de sus hojas y siembra de nuevas palmas en bosque.'],
+ ['🐢','Tortuga carey','CR','Caribe e Insular','Fue cazada por su caparazón para hacer adornos. Sus playas de anidación se urbanizan y se llenan de plástico.','Proteger playas de anidación y no comprar artesanías de carey.'],
+ ['🐾','Danta de montaña','EN','Andina','Vive en bosques altos y páramos y dispersa semillas. La cazan y pierde hábitat.','Corredores entre áreas protegidas de los Andes.'],
+ ['🦅','Cóndor de los Andes','VU','Andina','Ave del escudo nacional. En Colombia quedan muy pocos; muere envenenado por carnadas y por cacería.','Reintroducción de cóndores y educación con ganaderos. En Colombia se considera en peligro crítico.'],
+ ['🐆','Jaguar','NT','Amazonía, Orinoquía, Pacífica, Caribe','El felino más grande de América. Pierde territorio por la deforestación y lo matan por conflictos con el ganado.','Corredores de conservación y apoyo a ganaderos para proteger su ganado sin matar jaguares.']
+];
+var eb=document.getElementById('esp'),vistE={};
+eb.innerHTML=ESP.map(function(e,i){return '<button type="button" data-i="'+i+'"><span class="e">'+e[0]+'</span>'+e[1]+'</button>';}).join('');
+function verE(i){var e=ESP[i],c=CAT.filter(function(x){return x[0]===e[2];})[0];vistE[i]=1;
+  eb.querySelectorAll('button').forEach(function(b,j){b.classList.toggle('on',j===i);});
+  document.querySelectorAll('#uicn [data-c]').forEach(function(d){d.classList.toggle('on',d.getAttribute('data-c')===e[2]);});
+  document.getElementById('esp-t').innerHTML='<h3>'+e[0]+' '+e[1]+'</h3><p><span class="tag" style="background:'+c[2]+';color:#fff">'+c[0]+' · '+c[1]+'</span><span class="tag">'+e[3]+'</span></p><p style="margin-top:8px"><b>¿Por qué está amenazada?</b> '+e[4]+'</p><p style="margin-top:6px"><b>¿Qué se hace para protegerla?</b> '+e[5]+'</p>';
+  if(Object.keys(vistE).length>=5)BIO.marcarSeccion('amenazadas');}
+eb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verE(+b.getAttribute('data-i'));};});
+document.getElementById('esp-t').innerHTML='<p class="vacio" style="padding:10px">👆 Toca una especie para ver su categoría y por qué está amenazada.</p>';
 })();
 </script>
 <script src="text-zoom.js?v=2"></script>
