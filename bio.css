@@ -177,6 +177,8 @@ button{font-family:inherit}
 .fig svg{display:block;width:100%;height:auto}
 .fig .ayuda{font-size:.82rem;color:var(--cn-dim);text-align:center;margin-top:6px}
 .zona{cursor:pointer;transition:filter .15s,opacity .15s}
+.zona:focus{outline:none}
+.zona:focus-visible{filter:drop-shadow(0 0 4px rgba(240,140,30,.9))}
 .zona:hover,.zona.on{filter:brightness(1.12) drop-shadow(0 0 4px rgba(240,140,30,.9))}
 .det{background:#fff;border:1px solid var(--cn-brd);border-radius:var(--cn-r);padding:18px 20px;box-shadow:var(--cn-sh);min-height:200px}
 .det h3{display:flex;gap:8px;align-items:center;font-size:1.25rem}

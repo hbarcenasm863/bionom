@@ -115,6 +115,7 @@ const TEMAS_PRINCIPALES = [
   'La célula',
   'Reinos y clasificación',
   'Sistemas del cuerpo',
+  'Reproducción',
   'Genética',
   'Evolución',
   'Ecosistemas',

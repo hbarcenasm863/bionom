@@ -17,6 +17,7 @@ var MODULOS=[
   {id:'celula',href:'celula.html',ico:'🔬',txt:'Célula',full:'La célula',niveles:['molecula','organelo','celula']},
   {id:'reinos',href:'reinos.html',ico:'🍄',txt:'Reinos',full:'Reinos y clasificación',niveles:['organismo']},
   {id:'sistemas',href:'sistemas.html',ico:'🫀',txt:'Sistemas',full:'Sistemas del cuerpo',niveles:['tejido','organo','sistema','organismo']},
+  {id:'reproduccion',href:'reproduccion.html',ico:'👶',txt:'Reproducción',full:'Reproducción',niveles:['celula','organo','sistema','organismo','poblacion']},
   {id:'genetica',href:'genetica.html',ico:'🧬',txt:'Genética',full:'Genética mendeliana y molecular',niveles:['molecula','celula','organismo']},
   {id:'evolucion',href:'evolucion.html',ico:'🦎',txt:'Evolución',full:'Evolución',niveles:['poblacion','organismo']},
   {id:'ecosistemas',href:'ecosistemas.html',ico:'🌳',txt:'Ecosistemas',full:'Ecosistemas',niveles:['poblacion','comunidad','ecosistema','bioma','biosfera']},

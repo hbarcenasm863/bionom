@@ -6,10 +6,20 @@
    Las tildes no cuentan al adivinar; la Ñ es una letra aparte.
    ═════════════════════════════════════════════════════════════════════ */
 window.AHORCADO_SITIO='BioNom';
-window.AHORCADO_GRUPOS=[["celula","🔬 La célula",["celula"]],["reinos","🍄 Reinos y clasificación",["reinos"]],["sistemas","🫀 Sistemas del cuerpo",["sistemas"]],["genetica","🧬 Genética",["genetica"]],["evolucion","🦎 Evolución",["evolucion"]],["ecosistemas","🌳 Ecosistemas",["ecosistemas"]],["colombia","🇨🇴 Ecosistemas de Colombia",["colombia"]],["ambiente","🌍 Ambiente y cambio climático",["ambiente"]]];
+window.AHORCADO_GRUPOS=[["celula","🔬 La célula",["celula"]],["reinos","🍄 Reinos y clasificación",["reinos"]],["sistemas","🫀 Sistemas del cuerpo",["sistemas"]],["reproduccion","👶 Reproducción",["reproduccion"]],["genetica","🧬 Genética",["genetica"]],["evolucion","🦎 Evolución",["evolucion"]],["ecosistemas","🌳 Ecosistemas",["ecosistemas"]],["colombia","🇨🇴 Ecosistemas de Colombia",["colombia"]],["ambiente","🌍 Ambiente y cambio climático",["ambiente"]]];
 window.HOJA_TITULOS={sopa:'Sopa de letras de biología',ahorcado:'Ahorcado de biología'};
 window.HOJA_SITIO={logo:'icons/logo.png',marca:'icons/marca-bionom.png',nombre:'BioNom',pie:'<span class="m">Bio<b>Nom</b> · Biología por niveles de organización</span><span>© 2026 Harvey Bárcenas Morales · Licencia CC BY-NC 4.0</span>'};
 window.BANCO_AHORCADO=[
+["GEMACIÓN","reproduccion","Forma de reproducción asexual.","Le sale una yema al organismo.","Así se reproducen las levaduras."],
+["POLINIZACIÓN","reproduccion","Paso previo a la fecundación de las plantas.","La hacen abejas, colibríes y el viento.","Llevar el polen al estigma."],
+["ESTAMBRE","reproduccion","Parte de la flor.","Formado por antera y filamento.","Órgano masculino de la flor."],
+["OVARIO","reproduccion","Órgano reproductor femenino.","En la flor se convierte en fruto.","En la mujer madura un óvulo al mes."],
+["TESTÍCULO","reproduccion","Órgano reproductor masculino.","Está dentro del escroto.","Produce espermatozoides y testosterona."],
+["ENDOMETRIO","reproduccion","Capa del útero.","Se engrosa cada mes.","Se desprende en la menstruación."],
+["OVULACIÓN","reproduccion","Momento del ciclo menstrual.","Ocurre hacia el día 14.","El ovario suelta un óvulo."],
+["PLACENTA","reproduccion","Órgano del embarazo.","Une a la madre con el bebé.","Intercambia nutrientes y oxígeno."],
+["CONDÓN","reproduccion","Método anticonceptivo de barrera.","Hay masculino y femenino.","El único que también protege de las ITS."],
+["METAMORFOSIS","reproduccion","Tipo de desarrollo indirecto.","Ocurre en ranas y mariposas.","De renacuajo a rana."],
 ["CÉLULA","celula","Unidad básica de todos los seres vivos.","Hooke le puso el nombre al ver el corcho.","Puede ser procariota o eucariota."],
 ["NÚCLEO","celula","Estructura que guarda el ADN en las eucariotas.","Está rodeado por una doble membrana con poros.","La «alcaldía» de la célula."],
 ["MITOCONDRIA","celula","Organelo que obtiene energía de la glucosa.","Hace la respiración celular.","La «central eléctrica» de la célula."],

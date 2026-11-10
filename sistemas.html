@@ -163,37 +163,16 @@
   </section>
 
   <section class="sec" id="reproduccion">
-    <h2><span class="n">08</span> La reproducción: la continuidad de la vida</h2>
-    <p class="lead">Ningún ser vivo es eterno: la especie continúa porque los individuos se reproducen. Hay dos grandes formas.</p>
-    <div class="grid g2">
-      <div class="card" style="border-top:6px solid #e0a024"><h3>🧬 Asexual</h3><p>Un solo progenitor; sin gametos. Los hijos son <b>clones</b> idénticos. Es rápida y no necesita pareja, pero toda la población es igual: una enfermedad puede acabar con todos.</p></div>
-      <div class="card" style="border-top:6px solid #7b4bb7"><h3>💞 Sexual</h3><p>Dos progenitores que aportan <b>gametos</b> (hechos por meiosis). Los hijos combinan genes de ambos: hay <b>variabilidad</b>, que ayuda a la especie a adaptarse a los cambios. Es más lenta y gasta más energía.</p></div>
-    </div>
-    <h3 style="margin-top:18px">Formas de reproducción asexual</h3>
-    <div class="grid g3">
-      <div class="flip"><div class="in"><div class="fr"><span class="e">➗</span><b>Bipartición</b><small>toca para voltear</small></div><div class="bk">La célula se parte en dos iguales. Bacterias y amebas: ¡una bacteria puede dividirse cada 20 minutos!</div></div></div>
-      <div class="flip"><div class="in"><div class="fr"><span class="e">🫧</span><b>Gemación</b><small>toca para voltear</small></div><div class="bk">Le sale una «yema» que crece y se separa. Así se reproducen las levaduras del pan y la hidra.</div></div></div>
-      <div class="flip"><div class="in"><div class="fr"><span class="e">🍄</span><b>Esporulación</b><small>toca para voltear</small></div><div class="bk">Se forman esporas que el viento o el agua llevan lejos. Hongos, musgos y helechos.</div></div></div>
-      <div class="flip"><div class="in"><div class="fr"><span class="e">⭐</span><b>Fragmentación</b><small>toca para voltear</small></div><div class="bk">Un trozo del cuerpo regenera un individuo completo: estrellas de mar y planarias.</div></div></div>
-      <div class="flip"><div class="in"><div class="fr"><span class="e">🥔</span><b>Reproducción vegetativa</b><small>toca para voltear</small></div><div class="bk">Partes de la planta originan otra: la papa por sus tubérculos, la caña por esquejes, la fresa por estolones y el plátano por sus «hijuelos».</div></div></div>
-      <div class="flip"><div class="in"><div class="fr"><span class="e">🌺</span><b>Y las flores…</b><small>toca para voltear</small></div><div class="bk">Son el órgano de reproducción <b>sexual</b> de las plantas: el polen (gameto masculino) llega al óvulo gracias al viento, a las abejas o a los colibríes. Del óvulo fecundado sale la semilla.</div></div></div>
-    </div>
-    <h3 style="margin-top:18px">🎯 ¿Sexual o asexual?</h3>
-    <div class="card" id="clas-rep"></div>
-    <h3 style="margin-top:18px">👶 La reproducción humana y el desarrollo del embrión</h3>
-    <p>En los seres humanos la fecundación es <b>interna</b>: el espermatozoide (23 cromosomas) se une con el óvulo (23 cromosomas) en la trompa de Falopio y forma el <b>cigoto</b>, con 46. Desde ahí, por mitosis, se forma un nuevo ser humano. Mueve el control semana a semana.</p>
-    <div class="card">
-      <input type="range" id="sem" min="0" max="9" value="0" style="width:100%" aria-label="Semana del embarazo">
-      <div id="sem-t" class="lado" style="margin-top:10px;align-items:center" aria-live="polite"></div>
-    </div>
-    <div class="dato">Cuidar la <b>salud sexual y reproductiva</b> es también biología: conocer el propio cuerpo, decidir de forma informada y responsable, prevenir el embarazo temprano y las infecciones de transmisión sexual. Si tienes dudas, puedes hablar con orientación escolar o con el servicio de salud amigable para adolescentes de tu EPS.</div>
+    <h2><span class="n">08</span> La reproducción</h2>
+    <p class="lead">La función de reproducción tiene su propio módulo: tipos de reproducción en cada grupo de seres vivos, la flor, el sistema reproductor humano, el ciclo menstrual, el embarazo, los métodos anticonceptivos y las infecciones de transmisión sexual.</p>
+    <a class="card" href="reproduccion.html" style="display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--cn-tx)"><span style="font-size:2.6rem">👶</span><span><b style="color:var(--cn-brand-d);font-size:1.15rem">Ir al módulo de Reproducción →</b><br><small style="color:var(--cn-dim)">Asexual y sexual · grupos · flor · sistema reproductor · embarazo · anticoncepción · ITS</small></span></a>
   </section>
 
   <section class="sec" id="funciones">
     <h2><span class="n">09</span> Las tres funciones vitales</h2>
     <p class="lead">Todo ser vivo cumple tres funciones: <b>nutrición</b> (obtener materia y energía), <b>relación</b> (percibir el ambiente y responder) y <b>reproducción</b> (originar nuevos individuos). Ubica cada sistema en la función que más le corresponde.</p>
     <div class="card" id="clas-func"></div>
-    <div class="sig"><a href="reinos.html"><small>← Anterior</small><b>🍄 Reinos</b></a><a class="der" href="genetica.html"><small>Siguiente →</small><b>🧬 Genética</b></a></div>
+    <div class="sig"><a href="reinos.html"><small>← Anterior</small><b>🍄 Reinos</b></a><a class="der" href="reproduccion.html"><small>Siguiente →</small><b>👶 Reproducción</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
@@ -408,34 +387,7 @@ function grafG(){var cv=document.getElementById('gluc'),c=cv.getContext('2d'),W=
 document.getElementById('h-comer').onclick=function(){pasoG(true,false);};document.getElementById('h-ejer').onclick=function(){pasoG(false,true);};document.getElementById('h-esp').onclick=function(){pasoG(false,false);};
 grafG();document.getElementById('h-t').textContent='Empieza en 90 mg/dL, en ayunas. Come, haz ejercicio o espera y mira cómo responde tu cuerpo.';
 
-/* ═══ Reproducción ═══ */
-BIO.clasificar(document.getElementById('clas-rep'),{
-  cajas:[{id:'asx',titulo:'🧬 Asexual'},{id:'sex',titulo:'💞 Sexual'}],
-  fichas:[
-   {t:'Sembrar un pedazo de caña',caja:'asx',exp:'es un esqueje: reproducción vegetativa.'},
-   {t:'Una bacteria que se parte en dos',caja:'asx'},
-   {t:'Ranas que ponen huevos en el agua y el macho los fecunda',caja:'sex',exp:'fecundación externa.'},
-   {t:'Colibrí que lleva polen de flor en flor',caja:'sex',exp:'ayuda a la polinización, el paso previo a la fecundación de las plantas.'},
-   {t:'Levadura con una yema',caja:'asx'},
-   {t:'Tortuga caná que entierra huevos en la playa',caja:'sex'},
-   {t:'Papa que brota de un tubérculo',caja:'asx'},
-   {t:'Ballena jorobada que nace en el Pacífico',caja:'sex',exp:'los mamíferos tienen fecundación interna.'}
-  ]});
-var SEM=[
- ['Día 1','🔬','Cigoto','El óvulo fecundado: una sola célula con 46 cromosomas. Empieza a dividirse por mitosis mientras baja por la trompa.'],
- ['Semana 1','⚪','Blastocisto','Una esfera hueca de unas 100 células llega al útero y se implanta en su pared.'],
- ['Semana 4','🌱','Tamaño de una semilla de amapola','Se forman el tubo neural (futuro cerebro y médula) y el corazón, que ya empieza a latir.'],
- ['Semana 6','🫘','Tamaño de una lenteja','Aparecen los esbozos de brazos y piernas. Se forman los ojos.'],
- ['Semana 8','🫐','Tamaño de una frambuesa','Todos los órganos principales ya están formados. Termina la etapa de <b>embrión</b> y empieza la de <b>feto</b>.'],
- ['Semana 12','🍋','Tamaño de un limón','Ya mueve los dedos y se pueden ver sus órganos sexuales en una ecografía.'],
- ['Semana 20','🍌','Tamaño de un banano','La madre empieza a sentir sus movimientos. Escucha sonidos.'],
- ['Semana 28','🍆','Tamaño de una berenjena','Abre los ojos. Los pulmones siguen madurando.'],
- ['Semana 36','🍈','Tamaño de un melón','Gana peso rápidamente: acumula grasa para regular su temperatura.'],
- ['Semana 40','🍉','Tamaño de una sandía (unos 50 cm)','Nacimiento. Los pulmones ya pueden respirar aire.']
-];
-var sem=document.getElementById('sem');
-function verSem(){var e=SEM[+sem.value];document.getElementById('sem-t').innerHTML='<div style="font-size:5rem;text-align:center">'+e[1]+'</div><div><b style="font-family:var(--cn-mono);color:var(--cn-naranja)">'+e[0]+'</b><h3>'+e[2]+'</h3><p>'+e[3]+'</p></div>';if(+sem.value===9)BIO.marcarSeccion('reproduccion');}
-sem.oninput=verSem;verSem();
+
 })();
 </script>
 <script src="text-zoom.js?v=3"></script>

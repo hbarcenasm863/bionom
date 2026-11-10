@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reproducción — BioNom</title>
+<meta name="description" content="Reproducción asexual y sexual, cómo se reproduce cada grupo de seres vivos, la flor, el sistema reproductor humano, ciclo menstrual, embarazo, métodos anticonceptivos e infecciones de transmisión sexual.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=3">
+<style>
+.grupos-r{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
+.grupos-r button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:8px 4px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--cn-tx)}
+.grupos-r button .e{display:block;font-size:1.8rem}
+.grupos-r button.on{border-color:var(--cn-naranja);background:#fff7ec}
+.grupos-r .sep{grid-column:1/-1;font:800 .75rem Outfit;letter-spacing:.1em;text-transform:uppercase;color:var(--cn-brand);margin-top:6px}
+.badges .tag{font-size:.78rem}
+.anat{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:820px){.anat{grid-template-columns:1fr}}
+.anat svg{width:100%;height:auto}
+.anat .zona{cursor:pointer}
+.anat .zona.on{filter:drop-shadow(0 0 5px rgba(240,140,30,.9))}
+#ciclo-c{width:100%;height:auto;background:#fff;border:1px solid var(--cn-brd);border-radius:12px}
+.fase-dia{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.fase-dia .d{font:800 2rem var(--cn-mono);color:#b5527a}
+.efi{display:grid;gap:6px}
+.efi .f{display:grid;grid-template-columns:minmax(150px,1.2fr) 2fr 60px 40px;gap:8px;align-items:center;font-size:.9rem;padding:4px 6px;border-radius:8px;cursor:pointer}
+.efi .f:hover,.efi .f.on{background:#f3f8f4}
+.efi .t{height:16px;background:#eef3ef;border-radius:999px;overflow:hidden}
+.efi .t i{display:block;height:100%;border-radius:999px}
+.its{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.its .card{padding:14px}
+.its .card h3{font-size:1rem}
+.its .ag{font:800 .72rem Outfit;text-transform:uppercase;letter-spacing:.08em}
+.aviso-s{background:#eef7fd;border:1.5px solid #9ccbea;border-radius:14px;padding:12px 16px;margin:14px 0}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">👶 Niveles: célula → sistema → organismo → población</span>
+    <h1>Reproducción: la continuidad de la vida</h1>
+    <p>Ningún ser vivo vive para siempre; la especie continúa porque los individuos se reproducen. Aquí verás las dos grandes formas de reproducción, cómo lo hace cada grupo de seres vivos, cómo funciona el sistema reproductor humano y cómo cuidar tu salud sexual y reproductiva.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Mapa de niveles</a>
+    <a class="nivel-chip" href="genetica.html#meiosis">✂️ La meiosis, en Genética</a>
+  </header>
+  <nav class="toc" aria-label="En esta página">
+    <strong>En esta página</strong>
+    <a href="#tipos">🧬 Tipos</a>
+    <a href="#grupos">🌍 En cada grupo</a>
+    <a href="#flor">🌺 La flor</a>
+    <a href="#humano">🧍 Sistema reproductor</a>
+    <a href="#ciclo">📅 Ciclo menstrual</a>
+    <a href="#embarazo">🤰 Embarazo</a>
+    <a href="#anticoncepcion">🛡️ Anticoncepción</a>
+    <a href="#its">🩺 ITS</a>
+  </nav>
+
+  <!-- ═══ TIPOS ═══ -->
+  <section class="sec" id="tipos">
+    <h2><span class="n">01</span> Reproducción asexual y sexual</h2>
+    <p class="lead">Hay dos estrategias, y cada una tiene ventajas.</p>
+    <div class="grid g2">
+      <div class="card" style="border-top:6px solid #e0a024"><h3>🧬 Asexual</h3><p>Un solo progenitor, sin gametos ni fecundación; las nuevas células se forman por <b>mitosis</b>. Los hijos son <b>clones</b>. <b>Ventajas:</b> es rápida y no necesita pareja. <b>Desventaja:</b> no hay variabilidad: una enfermedad o un cambio del ambiente puede acabar con todos.</p></div>
+      <div class="card" style="border-top:6px solid #7b4bb7"><h3>💞 Sexual</h3><p>Dos progenitores producen <b>gametos</b> por <b>meiosis</b> (óvulos y espermatozoides, o el polen y la oosfera en las plantas), que se unen en la <b>fecundación</b>. <b>Ventaja:</b> los hijos combinan genes y hay <b>variabilidad</b>. <b>Desventaja:</b> es más lenta y gasta más energía.</p></div>
+    </div>
+    <h3 style="margin-top:18px">Formas de reproducción asexual</h3>
+    <div class="grid g3">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">➗</span><b>Bipartición o fisión</b><small>toca para voltear</small></div><div class="bk">La célula copia su ADN y se parte en dos iguales. Bacterias, amebas y paramecios. ¡Algunas bacterias se dividen cada 20 minutos!</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🫧</span><b>Gemación</b><small>toca para voltear</small></div><div class="bk">Sale una «yema» que crece y se separa, o se queda unida formando colonias. Levaduras, hidras, esponjas y corales.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🍄</span><b>Esporulación</b><small>toca para voltear</small></div><div class="bk">Se producen esporas resistentes que el viento o el agua dispersan. Hongos, mohos, musgos y helechos.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">⭐</span><b>Fragmentación y regeneración</b><small>toca para voltear</small></div><div class="bk">Un trozo del cuerpo origina un individuo completo. Estrellas de mar, planarias y algunas esponjas.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🥔</span><b>Reproducción vegetativa</b><small>toca para voltear</small></div><div class="bk">Tallos, raíces u hojas originan una planta nueva: la papa por tubérculos, la caña por esquejes, la fresa por estolones, el plátano por «hijuelos» y la yuca por estacas.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🐝</span><b>Partenogénesis</b><small>toca para voltear</small></div><div class="bk">Un óvulo se desarrolla sin ser fecundado. Así nacen los zánganos (machos) de las abejas y algunos pulgones, lagartijas y peces.</div></div></div>
+    </div>
+    <h3 style="margin-top:18px">Conceptos de la reproducción sexual</h3>
+    <div class="grid g3">
+      <div class="card"><h3>🌊 Fecundación externa o interna</h3><p><b>Externa:</b> los gametos se unen en el agua (peces, la mayoría de anfibios, corales). <b>Interna:</b> dentro del cuerpo de la hembra (reptiles, aves, mamíferos, insectos).</p></div>
+      <div class="card"><h3>🥚 Ovíparos, ovovivíparos y vivíparos</h3><p><b>Ovíparos:</b> el embrión se desarrolla en un huevo fuera de la madre (aves, la mayoría de reptiles). <b>Ovovivíparos:</b> el huevo se queda dentro hasta eclosionar (algunos tiburones y serpientes). <b>Vivíparos:</b> el embrión se nutre de la madre (casi todos los mamíferos).</p></div>
+      <div class="card"><h3>🐸 Desarrollo directo o indirecto</h3><p><b>Directo:</b> la cría nace parecida al adulto (aves, mamíferos). <b>Indirecto:</b> pasa por larvas y una <b>metamorfosis</b> (renacuajo → rana; oruga → crisálida → mariposa).</p></div>
+    </div>
+    <div class="dato">Un organismo <b>hermafrodita</b> tiene órganos masculinos y femeninos a la vez, como la lombriz de tierra, los caracoles y muchas plantas con flores. Aun así, la mayoría se cruza con otro individuo para tener más variabilidad.</div>
+  </section>
+
+  <!-- ═══ GRUPOS ═══ -->
+  <section class="sec" id="grupos">
+    <h2><span class="n">02</span> ¿Cómo se reproduce cada grupo?</h2>
+    <p class="lead">Cada reino y cada filo tiene sus estrategias. Toca un grupo.</p>
+    <div class="lado">
+      <div class="grupos-r" id="gr"></div>
+      <div class="det" id="gr-t" aria-live="polite"><div class="vacio">👆 Toca un grupo para ver cómo se reproduce.</div></div>
+    </div>
+    <h3 style="margin-top:18px">🎯 Clasifica</h3>
+    <div class="card" id="clas-tipo"></div>
+  </section>
+
+  <!-- ═══ FLOR ═══ -->
+  <section class="sec" id="flor">
+    <h2><span class="n">03</span> La flor: el órgano reproductor de las plantas</h2>
+    <p class="lead">Toca cada parte de la flor. Luego sigue paso a paso de la polinización al fruto.</p>
+    <div class="anat">
+      <div class="fig"><svg id="flor-svg" viewBox="0 0 400 320" role="group" aria-label="Partes de la flor"></svg></div>
+      <div class="det" id="flor-t" aria-live="polite"><div class="vacio">👆 Toca una parte de la flor.</div></div>
+    </div>
+    <div class="pasos" data-titulo="De la flor al fruto" style="margin-top:14px">
+      <div class="paso" data-t="Polinización"><h3>1. Polinización</h3><p>El polen pasa de la antera al estigma. Lo llevan el viento, el agua o animales <b>polinizadores</b>: abejas, mariposas, murciélagos y colibríes. Colombia tiene más de 160 especies de colibríes, que son polinizadores clave en los Andes.</p></div>
+      <div class="paso" data-t="Tubo"><h3>2. El tubo polínico</h3><p>El grano de polen germina sobre el estigma y forma un tubo que baja por el estilo hasta el óvulo, llevando los gametos masculinos.</p></div>
+      <div class="paso" data-t="Fecundación"><h3>3. Fecundación</h3><p>Un gameto masculino fecunda a la oosfera y forma el <b>embrión</b>; otro se une a otras células del óvulo y forma el <b>endospermo</b>, la reserva de alimento de la semilla (doble fecundación).</p></div>
+      <div class="paso" data-t="Semilla y fruto"><h3>4. Semilla y fruto</h3><p>El óvulo se convierte en <b>semilla</b> y el ovario crece y se transforma en <b>fruto</b>, que protege las semillas y ayuda a dispersarlas. Una mazorca, un aguacate y una guanábana son frutos.</p></div>
+    </div>
+  </section>
+
+  <!-- ═══ SISTEMA REPRODUCTOR HUMANO ═══ -->
+  <section class="sec" id="humano">
+    <h2><span class="n">04</span> El sistema reproductor humano</h2>
+    <p class="lead">Durante la <b>pubertad</b> (más o menos entre los 9 y los 15 años) las hormonas sexuales hacen madurar el sistema reproductor. Cada persona tiene su propio ritmo y todos los cambios son normales. Toca cada órgano.</p>
+    <div class="chips" style="margin-bottom:10px"><button class="chip on" data-sx="fem">♀ Sistema femenino</button><button class="chip" data-sx="mas">♂ Sistema masculino</button></div>
+    <div class="anat">
+      <div class="fig"><svg id="sr-svg" viewBox="0 0 400 320" role="group" aria-label="Sistema reproductor"></svg><div class="ayuda">Esquema en vista frontal</div></div>
+      <div class="det" id="sr-t" aria-live="polite"></div>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>♀ Gametos femeninos</h3><p>Al nacer, los ovarios ya tienen cerca de un millón de óvulos inmaduros. Desde la pubertad, normalmente madura <b>un óvulo por mes</b> (ovulación). Cada óvulo lleva 23 cromosomas, uno de ellos un <b>X</b>.</p></div>
+      <div class="card"><h3>♂ Gametos masculinos</h3><p>Desde la pubertad, los testículos producen <b>millones de espermatozoides cada día</b>. Cada uno lleva 23 cromosomas: la mitad lleva un <b>X</b> y la otra mitad un <b>Y</b>. Por eso el espermatozoide define el sexo cromosómico del bebé.</p></div>
+    </div>
+  </section>
+
+  <!-- ═══ CICLO MENSTRUAL ═══ -->
+  <section class="sec" id="ciclo">
+    <h2><span class="n">05</span> El ciclo menstrual</h2>
+    <p class="lead">Cada mes, las hormonas preparan al útero para un posible embarazo. Un ciclo dura en promedio <b>28 días</b>, aunque es normal que varíe entre 21 y 35, sobre todo en los primeros años. Mueve el control día por día.</p>
+    <div class="card">
+      <canvas id="ciclo-c" width="900" height="260" aria-label="Hormonas y grosor del endometrio durante el ciclo"></canvas>
+      <input type="range" id="dia" min="1" max="28" value="1" style="width:100%;margin-top:8px" aria-label="Día del ciclo">
+      <div class="fase-dia" id="dia-t" aria-live="polite"></div>
+    </div>
+    <div class="dato">La menstruación es un proceso natural y saludable. Si es muy dolorosa, muy abundante o se ausenta por varios meses, vale la pena consultar al servicio de salud.</div>
+  </section>
+
+  <!-- ═══ EMBARAZO ═══ -->
+  <section class="sec" id="embarazo">
+    <h2><span class="n">06</span> Fecundación, embarazo y parto</h2>
+    <div class="pasos" data-titulo="De la fecundación al parto">
+      <div class="paso" data-t="Fecundación"><h3>1. Fecundación</h3><p>Ocurre en la <b>trompa de Falopio</b>: de millones de espermatozoides solo uno entra al óvulo. Se forma el <b>cigoto</b>, con 46 cromosomas.</p></div>
+      <div class="paso" data-t="Implantación"><h3>2. Implantación</h3><p>El cigoto se divide por mitosis mientras baja hacia el útero. Hacia el día 7 se implanta en el endometrio. Ahí empieza el embarazo y se suspende la menstruación.</p></div>
+      <div class="paso" data-t="Placenta"><h3>3. Placenta y cordón umbilical</h3><p>Se forman la <b>placenta</b>, que intercambia nutrientes, oxígeno y desechos entre la madre y el bebé sin que sus sangres se mezclen, y el <b>cordón umbilical</b>. El bebé flota en el líquido amniótico.</p></div>
+      <div class="paso" data-t="Parto"><h3>4. Parto</h3><p>Hacia la semana 40, el útero se contrae, el cuello uterino se dilata y el bebé sale. Después sale la placenta. La leche materna es el mejor alimento durante los primeros 6 meses.</p></div>
+    </div>
+    <h3 style="margin-top:18px">Semana a semana</h3>
+    <div class="card">
+      <input type="range" id="sem" min="0" max="9" value="0" style="width:100%" aria-label="Semana del embarazo">
+      <div id="sem-t" class="lado" style="margin-top:10px;align-items:center" aria-live="polite"></div>
+    </div>
+    <div class="dato ojo">El alcohol, el cigarrillo y otras drogas pasan a través de la placenta y pueden causar daños graves al bebé, sobre todo en las primeras semanas, cuando se forman los órganos. Por eso el control prenatal empieza lo antes posible.</div>
+    <div class="aviso-s">💬 Un embarazo en la adolescencia tiene más riesgos para la salud de la madre y del bebé y puede cambiar el proyecto de vida. Conocer el cuerpo y los métodos anticonceptivos ayuda a decidir de manera informada y responsable.</div>
+  </section>
+
+  <!-- ═══ ANTICONCEPCIÓN ═══ -->
+  <section class="sec" id="anticoncepcion">
+    <h2><span class="n">07</span> Métodos anticonceptivos</h2>
+    <p class="lead">Los métodos anticonceptivos permiten decidir si tener hijos y cuándo. Funcionan de distintas maneras: impiden que el espermatozoide llegue al óvulo, impiden la ovulación o impiden la implantación. Las barras muestran la <b>efectividad con el uso típico</b> (como los usa la gente en la vida real, con olvidos y errores). Toca uno.</p>
+    <div class="card"><div class="efi" id="efi"></div><div id="efi-t" style="margin-top:12px" aria-live="polite"></div></div>
+    <div class="clave">🛡️ <b>Solo el condón</b> (masculino o femenino) protege contra las infecciones de transmisión sexual. Por eso se recomienda la <b>doble protección</b>: el condón junto con otro método.</div>
+    <div class="dato col">En Colombia, los adolescentes tienen derecho a recibir asesoría y métodos anticonceptivos gratuitos y confidenciales en los <b>servicios de salud amigables para adolescentes y jóvenes</b> de su EPS. La decisión de iniciar la vida sexual debe ser libre, informada, responsable y con consentimiento.</div>
+    <div class="chequeo" data-ok="2" data-exp="La pastilla de emergencia es solo para emergencias (por ejemplo, si se rompe el condón): no reemplaza a un método regular y no protege de infecciones.">
+      <div class="q">¿Cuál afirmación es correcta?</div>
+      <div class="ops"><button class="op" data-por="Las pastillas evitan el embarazo, pero no protegen de las ITS.">Las pastillas anticonceptivas protegen del VIH.</button><button class="op" data-por="Es uno de los métodos menos efectivos.">El método del ritmo es tan efectivo como el implante.</button><button class="op">La pastilla de emergencia no debe usarse como método regular.</button></div>
+    </div>
+  </section>
+
+  <!-- ═══ ITS ═══ -->
+  <section class="sec" id="its">
+    <h2><span class="n">08</span> Infecciones de transmisión sexual (ITS)</h2>
+    <p class="lead">Las ITS se transmiten por contacto sexual y algunas también por la sangre o de la madre al bebé. Las causan virus, bacterias, protozoos u hongos. Muchas <b>no dan síntomas</b> al principio, por eso es importante consultar y hacerse pruebas.</p>
+    <div class="chips" id="its-f" style="margin-bottom:10px"><button class="chip on" data-a="todas">Todas</button><button class="chip" data-a="virus">🦠 Virus</button><button class="chip" data-a="bacteria">🧫 Bacterias</button><button class="chip" data-a="protozoo">🔬 Protozoos</button></div>
+    <div class="its" id="its-g"></div>
+    <h3 style="margin-top:18px">¿Mito o realidad?</h3>
+    <div class="card" id="mitos"></div>
+    <div class="clave">Prevención: información, <b>condón</b> en todas las relaciones, <b>vacunas</b> (VPH y hepatitis B), pruebas periódicas, no compartir agujas y consultar ante cualquier síntoma. Las ITS por bacterias y protozoos se curan con tratamiento; las causadas por virus se controlan, y algunas se previenen con vacunas.</div>
+    <div class="sig"><a href="sistemas.html"><small>← Anterior</small><b>🫀 Sistemas</b></a><a class="der" href="genetica.html"><small>Siguiente →</small><b>🧬 Genética</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=3"></script>
+<script src="cuerpo.js?v=3"></script>
+<script>
+(function(){
+var sp=CUERPO.sp,esc=BIO.esc;
+/* ═══ Grupos ═══ */
+var GR=[
+ ['sep','Microorganismos y hongos'],
+ ['🦠','Bacterias','asexual','Bipartición: una bacteria se parte en dos. También intercambian plásmidos por <b>conjugación</b>, una forma de pasar genes sin reproducirse.','Las bacterias del yogur.'],
+ ['🫧','Protistas','ambas','Las amebas y paramecios se dividen por bipartición; el paramecio también hace conjugación. Muchas algas alternan fases asexuales y sexuales.','El plasmodio de la malaria se reproduce asexualmente en la sangre y sexualmente dentro del mosquito.'],
+ ['🍄','Hongos','ambas','Esporas, asexuales o sexuales; las levaduras hacen gemación. Los champiñones son el «fruto» que produce las esporas.','La levadura de la chicha y del pan.'],
+ ['sep','Plantas'],
+ ['🌿','Musgos (briofitos)','ambas','Alternan una generación que produce gametos y otra que produce esporas. Necesitan agua para que el gameto masculino nade hasta el femenino.','Los musgos del páramo, que retienen agua como esponjas.'],
+ ['🌱','Helechos (pteridofitos)','ambas','Producen esporas en los <b>soros</b> (puntos cafés bajo las hojas). De la espora sale una plantita que forma gametos; también necesitan agua.','Los helechos arborescentes de los bosques andinos.'],
+ ['🌲','Gimnospermas','sexual','Semillas «desnudas», sin fruto, en conos o piñas. El polen viaja con el viento.','El pino colombiano o romerón (<i>Retrophyllum</i>), en peligro.'],
+ ['🌺','Angiospermas','ambas','Plantas con <b>flor</b>: polinización, fecundación, semilla dentro de un <b>fruto</b>. Muchas también se propagan de forma vegetativa.','La orquídea Cattleya trianae, el café, el maíz, la papa.'],
+ ['sep','Animales invertebrados'],
+ ['🧽','Poríferos (esponjas)','ambas','Gemación y fragmentación; sexualmente, muchas son hermafroditas y sueltan gametos al agua.','Las esponjas de los arrecifes del Caribe.'],
+ ['🪸','Cnidarios','ambas','Los pólipos se reproducen por gemación y forman colonias (corales); las medusas se reproducen sexualmente. Muchos corales hacen un desove masivo una vez al año.','Los corales de San Andrés.'],
+ ['🪱','Platelmintos y anélidos','ambas','La planaria se regenera de un fragmento. Las lombrices de tierra son hermafroditas, pero se cruzan con otra lombriz (fecundación cruzada).','La lombriz roja californiana del compostaje.'],
+ ['🐌','Moluscos','sexual','Fecundación interna o externa; muchos caracoles son hermafroditas. Ponen huevos.','El caracol pala del Caribe.'],
+ ['🦋','Artrópodos','sexual','Fecundación interna, huevos y muchos con <b>metamorfosis</b>. Las abejas tienen partenogénesis: los zánganos nacen de óvulos sin fecundar.','Las más de 3600 especies de mariposas de Colombia.'],
+ ['⭐','Equinodermos','ambas','Fecundación externa; las estrellas de mar pueden regenerarse a partir de un brazo.','Los erizos y estrellas de los arrecifes.'],
+ ['sep','Animales vertebrados'],
+ ['🐟','Peces','sexual','Casi todos con fecundación externa y miles de huevos. Algunos tiburones son ovovivíparos. En el caballito de mar, el macho incuba los huevos.','Los bocachicos que suben por los ríos en la «subienda» para desovar.'],
+ ['🐸','Anfibios','sexual','Fecundación casi siempre externa en el agua; desarrollo indirecto: huevo → renacuajo → adulto (metamorfosis).','La rana venenosa carga a sus renacuajos en la espalda hasta pozos de agua en las bromelias.'],
+ ['🐢','Reptiles','sexual','Fecundación interna y <b>huevo amniota</b> con cáscara, que no se seca en tierra. En las tortugas, la temperatura de la arena decide si nacen machos o hembras.','La tortuga caná desova en las playas del Chocó y La Guajira.'],
+ ['🐦','Aves','sexual','Fecundación interna, huevos con cáscara dura que los padres incuban. Desarrollo directo.','El cóndor pone un solo huevo cada dos años: por eso se recupera tan despacio.'],
+ ['🐻','Mamíferos','sexual','Fecundación interna. Casi todos son <b>vivíparos placentarios</b>; los marsupiales (zarigüeya o chucha) terminan el desarrollo en una bolsa, y los monotremas (ornitorrinco) ponen huevos. Todos amamantan.','La chucha o zarigüeya, el único marsupial común en Colombia.']
+];
+var BADGE={asexual:['🧬 Asexual','#e0a024'],sexual:['💞 Sexual','#7b4bb7'],ambas:['🧬💞 Asexual y sexual','#2e7d4f']};
+var gb=document.getElementById('gr'),vG={};
+gb.innerHTML=GR.map(function(g,i){return g[0]==='sep'?'<div class="sep">'+g[1]+'</div>':'<button type="button" data-i="'+i+'"><span class="e">'+g[0]+'</span>'+g[1]+'</button>';}).join('');
+gb.querySelectorAll('button').forEach(function(b){b.onclick=function(){var g=GR[+b.getAttribute('data-i')],bd=BADGE[g[2]];vG[g[1]]=1;
+  gb.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
+  document.getElementById('gr-t').innerHTML='<h3>'+g[0]+' '+g[1]+'</h3><p class="badges"><span class="tag" style="background:'+bd[1]+'22">'+bd[0]+'</span></p><p style="margin-top:8px">'+g[3]+'</p><p style="margin-top:8px"><b>🇨🇴 Ejemplo:</b> '+g[4]+'</p>';
+  if(Object.keys(vG).length>=8)BIO.marcarSeccion('grupos');};});
+BIO.clasificar(document.getElementById('clas-tipo'),{
+  cajas:[{id:'ext',titulo:'🌊 Fecundación externa'},{id:'int',titulo:'🫄 Fecundación interna'},{id:'asx',titulo:'🧬 Asexual'}],
+  fichas:[{t:'Bocachico desovando en el río',caja:'ext'},{t:'Rana dorada',caja:'ext',pista:'Los anfibios suelen fecundar en el agua.'},{t:'Tortuga caná',caja:'int'},{t:'Cóndor',caja:'int'},{t:'Chucha (zarigüeya)',caja:'int'},{t:'Levadura con una yema',caja:'asx'},{t:'Planaria que se regenera',caja:'asx'},{t:'Corales en desove masivo',caja:'ext',pista:'Sueltan óvulos y espermatozoides al agua.'},{t:'Fresa por estolones',caja:'asx'}]});
+
+/* ═══ La flor ═══ */
+function z(id,inner,ax,ay){return '<g class="zona" data-z="'+id+'" tabindex="0" role="button">'+inner+'</g>';}
+var FLOR={
+ petalos:['🌸 Pétalos','Hojas modificadas de colores (la <b>corola</b>). Atraen a los polinizadores con su color y su olor.'],
+ sepalos:['🍃 Sépalos','Hojitas verdes en la base (el <b>cáliz</b>) que protegen la flor cuando es un botón.'],
+ antera:['🟡 Antera','Parte de arriba del estambre: produce los granos de <b>polen</b>, que llevan los gametos masculinos.'],
+ filamento:['🧵 Filamento','«Palito» que sostiene la antera. Antera + filamento = <b>estambre</b>, el órgano masculino.'],
+ estigma:['🎯 Estigma','Punta pegajosa del pistilo donde se queda pegado el polen.'],
+ estilo:['🪈 Estilo','Tubo que une el estigma con el ovario. Por él baja el tubo polínico.'],
+ ovario:['🫛 Ovario','Base del pistilo que guarda los óvulos. Después de la fecundación se convierte en el <b>fruto</b>. Estigma + estilo + ovario = <b>pistilo</b>, el órgano femenino.'],
+ ovulos:['⚪ Óvulos','Contienen la oosfera (el gameto femenino). Fecundados, se convierten en <b>semillas</b>.'],
+ nectar:['🍯 Nectarios','Producen néctar, el premio dulce para colibríes, abejas y mariposas.'],
+ pedunculo:['🌿 Pedúnculo y receptáculo','Tallito que sostiene la flor y base donde se insertan todas sus partes.']
+};
+function dibFlor(){var s='<defs><radialGradient id="pet" cx="40%" cy="30%" r="80%"><stop offset="0" stop-color="#ffd6e6"/><stop offset="1" stop-color="#e2669a"/></radialGradient><linearGradient id="pis" x1="0" x2="1"><stop offset="0" stop-color="#9bd17b"/><stop offset=".5" stop-color="#c6eba8"/><stop offset="1" stop-color="#7cbf5f"/></linearGradient></defs>';
+  s+=z('pedunculo','<path d="M200 318 L200 250" stroke="#4f8a32" stroke-width="10" stroke-linecap="round"/><path d="M168 252 Q200 236 232 252 Q220 266 200 266 Q180 266 168 252Z" fill="#7cbf5f" stroke="#3f6b22"/>');
+  s+=z('sepalos','<path d="M170 250 C130 252 104 236 96 214 C126 214 154 226 176 244Z M230 250 C270 252 296 236 304 214 C274 214 246 226 224 244Z" fill="#8bc34a" stroke="#4f7d22" stroke-width="1.5"/>');
+  s+=z('petalos','<path d="M176 246 C110 230 60 170 70 100 C120 110 160 170 186 236Z" fill="url(#pet)" stroke="#b5527a" stroke-width="1.6"/><path d="M224 246 C290 230 340 170 330 100 C280 110 240 170 214 236Z" fill="url(#pet)" stroke="#b5527a" stroke-width="1.6"/><path d="M150 230 C110 180 104 120 130 70 C150 110 170 170 180 230Z M250 230 C290 180 296 120 270 70 C250 110 230 170 220 230Z" fill="url(#pet)" stroke="#b5527a" stroke-width="1.4" opacity=".8"/>');
+  s+=z('nectar','<ellipse cx="180" cy="242" rx="7" ry="4" fill="#f5c542" stroke="#b8860b"/><ellipse cx="220" cy="242" rx="7" ry="4" fill="#f5c542" stroke="#b8860b"/>');
+  s+=z('ovario','<path d="M178 246 C176 214 186 196 200 196 C214 196 224 214 222 246 Z" fill="url(#pis)" stroke="#3f6b22" stroke-width="1.6"/>');
+  s+=z('ovulos','<g fill="#fff" stroke="#3f6b22" stroke-width="1"><ellipse cx="194" cy="222" rx="4" ry="5"/><ellipse cx="206" cy="222" rx="4" ry="5"/><ellipse cx="194" cy="236" rx="4" ry="5"/><ellipse cx="206" cy="236" rx="4" ry="5"/></g>');
+  s+=z('estilo','<path d="M200 196 L200 110" stroke="#7cbf5f" stroke-width="8" stroke-linecap="round"/>');
+  s+=z('estigma','<path d="M186 108 Q200 92 214 108 Q200 116 186 108Z" fill="#5fa83e" stroke="#3f6b22" stroke-width="1.4"/>');
+  [[164,120,'M188 230 Q170 180 164 128'],[236,120,'M212 230 Q230 180 236 128'],[146,146,'M186 236 Q160 196 146 154'],[254,146,'M214 236 Q240 196 254 154']].forEach(function(e){
+    s+=z('filamento','<path d="'+e[2]+'" stroke="#e8d9a8" stroke-width="3" fill="none"/>');
+    s+=z('antera','<ellipse cx="'+e[0]+'" cy="'+e[1]+'" rx="6" ry="10" fill="#f2b632" stroke="#a6740a" stroke-width="1.2"/><circle cx="'+(e[0]+8)+'" cy="'+(e[1]-8)+'" r="2" fill="#f2b632"/>');});
+  return s;}
+var fs=document.getElementById('flor-svg');fs.innerHTML=dibFlor();
+var vF={};
+fs.querySelectorAll('.zona').forEach(function(g){g.onclick=function(){var k=g.getAttribute('data-z'),f=FLOR[k];vF[k]=1;fs.querySelectorAll('.zona').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-z')===k);});
+  document.getElementById('flor-t').innerHTML='<h3>'+f[0]+'</h3><p>'+f[1]+'</p>';if(Object.keys(vF).length>=7)BIO.marcarSeccion('flor');};g.onkeydown=function(e){if(e.key==='Enter')g.onclick();};});
+
+/* ═══ Sistema reproductor humano ═══ */
+var DEFS='<defs><radialGradient id="rp" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fbd0d8"/><stop offset="1" stop-color="#d9798d"/></radialGradient><radialGradient id="rp2" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#f6b3c2"/><stop offset="1" stop-color="#b9566e"/></radialGradient><radialGradient id="ov" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fde8d2"/><stop offset="1" stop-color="#e2a96b"/></radialGradient><radialGradient id="ve" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fbe6a2"/><stop offset="1" stop-color="#d9ad3c"/></radialGradient><filter id="sh"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity=".2"/></filter></defs>';
+function tubo(d,w,a,b){return '<path d="'+d+'" fill="none" stroke="'+a+'" stroke-width="'+(w+2.5)+'" stroke-linecap="round"/><path d="'+d+'" fill="none" stroke="'+b+'" stroke-width="'+w+'" stroke-linecap="round"/>';}
+var FEM={
+ ovarios:['🥚 Ovarios','Dos glándulas del tamaño de una almendra. Guardan y hacen madurar los <b>óvulos</b> (un óvulo al mes, desde la pubertad) y producen las hormonas <b>estrógenos y progesterona</b>.',
+   '<ellipse cx="88" cy="150" rx="24" ry="15" fill="url(#ov)" stroke="#b07a3a" stroke-width="1.4"/><ellipse cx="312" cy="150" rx="24" ry="15" fill="url(#ov)" stroke="#b07a3a" stroke-width="1.4"/><g fill="#fff" stroke="#c99a5a" stroke-width=".8"><circle cx="80" cy="146" r="4"/><circle cx="94" cy="154" r="3"/><circle cx="318" cy="146" r="4"/><circle cx="304" cy="155" r="3"/></g>'],
+ trompas:['〰️ Trompas de Falopio','Dos tubos de unos 10 cm que recogen el óvulo con sus <b>fimbrias</b> (flecos) y lo llevan al útero. Aquí ocurre la <b>fecundación</b>.',
+   tubo(sp([[156,96],[128,86],[100,96],[78,118],[66,138]],false),7,'#b9566e','#f2a7b8')+tubo(sp([[244,96],[272,86],[300,96],[322,118],[334,138]],false),7,'#b9566e','#f2a7b8')+'<path d="M66 138 l-10 6 M66 138 l-8 12 M66 138 l-2 14 M66 138 l4 13 M334 138 l10 6 M334 138 l8 12 M334 138 l2 14 M334 138 l-4 13" stroke="#d9798d" stroke-width="2.6" stroke-linecap="round"/>'],
+ utero:['🍐 Útero','Órgano muscular hueco del tamaño de una pera. Su capa interna, el <b>endometrio</b>, se engrosa cada mes; si no hay embarazo, se desprende con la menstruación. Durante el embarazo, el bebé crece aquí: ¡puede estirarse hasta 500 veces su volumen!',
+   '<g filter="url(#sh)"><path d="'+sp([[156,90],[200,74],[244,90],[258,130],[240,176],[216,204],[184,204],[160,176],[142,130]],true)+'" fill="url(#rp)" stroke="#a9455e" stroke-width="1.6"/></g>'],
+ endometrio:['🩸 Endometrio','La capa interna del útero, llena de vasos sanguíneos. Se prepara para recibir al embrión; si no llega, se desprende: es la <b>menstruación</b>.',
+   '<path d="'+sp([[170,100],[200,94],[230,100],[214,150],[206,176],[194,176],[186,150]],true)+'" fill="#e88aa0" stroke="#a9455e" stroke-width="1.2"/>'],
+ cuello:['⭕ Cuello uterino','La parte baja y estrecha del útero, que se comunica con la vagina. Se dilata durante el parto. El virus del papiloma (VPH) puede causar cáncer aquí: por eso existen la vacuna y la citología.',
+   '<path d="M184 204 L216 204 L212 230 L188 230Z" fill="url(#rp2)" stroke="#a9455e" stroke-width="1.4"/>'],
+ vagina:['🕳️ Vagina','Conducto elástico de unos 8 a 10 cm que va del cuello uterino al exterior. Por aquí sale la menstruación y nace el bebé en un parto vaginal.',
+   '<path d="M188 230 L212 230 L218 300 Q200 308 182 300Z" fill="#f6c6cf" stroke="#a9455e" stroke-width="1.4"/><path d="M200 234 L200 300" stroke="#e88aa0" stroke-width="2"/>']
+};
+var MAS={
+ testiculos:['⚪ Testículos','Dos glándulas dentro del escroto. Producen los <b>espermatozoides</b> (millones cada día) y la hormona <b>testosterona</b>. Están fuera del abdomen porque necesitan unos 2 °C menos que el resto del cuerpo.',
+   '<ellipse cx="156" cy="262" rx="22" ry="28" fill="url(#ov)" stroke="#b07a3a" stroke-width="1.4"/><ellipse cx="244" cy="262" rx="22" ry="28" fill="url(#ov)" stroke="#b07a3a" stroke-width="1.4"/>'],
+ escroto:['👝 Escroto','Bolsa de piel que protege a los testículos y regula su temperatura: se acerca o se aleja del cuerpo según haga frío o calor.',
+   '<path d="'+sp([[120,236],[156,226],[200,236],[244,226],[280,236],[284,280],[250,306],[200,296],[150,306],[116,280]],true)+'" fill="#f3d9c6" stroke="#c9a48b" stroke-width="1.5"/>'],
+ epididimo:['🌀 Epidídimo','Tubo enrollado sobre cada testículo donde los espermatozoides maduran y se guardan.',
+   '<path d="M138 248 C130 230 150 226 162 236 C168 244 160 252 150 248" fill="none" stroke="#c97b5a" stroke-width="6" stroke-linecap="round"/><path d="M262 248 C270 230 250 226 238 236 C232 244 240 252 250 248" fill="none" stroke="#c97b5a" stroke-width="6" stroke-linecap="round"/>'],
+ deferentes:['➰ Conductos deferentes','Tubos que llevan los espermatozoides desde el epidídimo hasta la uretra. Al cortarlos en una <b>vasectomía</b> se obtiene un método anticonceptivo permanente.',
+   tubo(sp([[142,240],[128,200],[134,140],[160,108],[188,112],[196,124]],false),4,'#8a5a2b','#e0b080')+tubo(sp([[258,240],[272,200],[266,140],[240,108],[212,112],[204,124]],false),4,'#8a5a2b','#e0b080')],
+ vejiga:['💧 Vejiga urinaria','No es parte del sistema reproductor, pero está al lado: guarda la orina, que también sale por la uretra (nunca al mismo tiempo que el semen).',
+   '<path d="'+sp([[164,60],[200,48],[236,60],[244,90],[222,110],[178,110],[156,90]],true)+'" fill="url(#ve)" stroke="#a07d23" stroke-width="1.4"/>'],
+ vesiculas:['🫐 Vesículas seminales','Glándulas que producen un líquido rico en azúcar (fructosa) que da energía a los espermatozoides.',
+   '<path d="'+sp([[150,96],[166,90],[180,104],[176,120],[160,118]],true)+'" fill="#d9b8e8" stroke="#7b4bb7" stroke-width="1.3"/><path d="'+sp([[250,96],[234,90],[220,104],[224,120],[240,118]],true)+'" fill="#d9b8e8" stroke="#7b4bb7" stroke-width="1.3"/>'],
+ prostata:['🌰 Próstata','Glándula del tamaño de una nuez debajo de la vejiga. Su líquido, junto con el de las vesículas y los espermatozoides, forma el <b>semen</b>. Con la edad puede crecer: los hombres adultos deben hacerse controles.',
+   '<path d="'+sp([[176,118],[200,112],[224,118],[226,138],[200,148],[174,138]],true)+'" fill="#c8a07a" stroke="#7a5230" stroke-width="1.4"/>'],
+ uretra:['〰️ Uretra','Conducto que pasa por la próstata y el pene y lleva al exterior la orina o el semen.',
+   '<path d="M200 104 L200 114 M200 146 L200 262" stroke="#e8a13a" stroke-width="3.2"/>'],
+ pene:['🔻 Pene','Órgano por donde pasa la uretra. Tiene tejido esponjoso que se llena de sangre (erección) para la relación sexual.',
+   '<path d="M186 150 L214 150 L214 252 Q214 268 200 268 Q186 268 186 252Z" fill="#efc9b0" stroke="#b98d72" stroke-width="1.5"/><path d="M186 244 Q200 236 214 244" stroke="#b98d72" stroke-width="1.2" fill="none"/>']
+};
+var srT=document.getElementById('sr-t'),svgR=document.getElementById('sr-svg'),sx='fem',vR={};
+function pintarSR(){var O=sx==='fem'?FEM:MAS,ord=sx==='fem'?['ovarios','trompas','utero','endometrio','cuello','vagina']:['escroto','testiculos','epididimo','vejiga','vesiculas','deferentes','prostata','pene','uretra'];
+  svgR.innerHTML=DEFS+'<rect width="400" height="320" fill="#fff" opacity="0"/>'+ord.map(function(k){return z(k,O[k][2]);}).join('');
+  svgR.querySelectorAll('.zona').forEach(function(g){g.onclick=function(){var k=g.getAttribute('data-z');vR[sx+k]=1;svgR.querySelectorAll('.zona').forEach(function(x){x.classList.toggle('on',x===g);});
+    srT.innerHTML='<h3>'+O[k][0]+'</h3><p>'+O[k][1]+'</p>';if(Object.keys(vR).length>=10)BIO.marcarSeccion('humano');};g.onkeydown=function(e){if(e.key==='Enter')g.onclick();};});
+  srT.innerHTML='<p style="color:var(--cn-dim)">Órganos: '+ord.map(function(k){return '<button type="button" class="chip" style="min-height:30px;padding:3px 10px;margin:2px" data-o="'+k+'">'+O[k][0]+'</button>';}).join('')+'</p>';
+  srT.querySelectorAll('[data-o]').forEach(function(b){b.onclick=function(){svgR.querySelector('[data-z="'+b.getAttribute('data-o')+'"]').onclick();};});}
+document.querySelectorAll('[data-sx]').forEach(function(b){b.onclick=function(){sx=b.getAttribute('data-sx');document.querySelectorAll('[data-sx]').forEach(function(x){x.classList.toggle('on',x===b);});pintarSR();};});
+pintarSR();
+
+/* ═══ Ciclo menstrual ═══ */
+function hormonas(d){var g=function(x,m,s){return Math.exp(-Math.pow((x-m)/s,2));};
+  return {fsh:0.35+0.45*g(d,3,4)+0.4*g(d,13.5,1.2),lh:0.12+0.95*g(d,14,1),est:0.15+0.75*g(d,12.5,3)+0.35*g(d,21,3.5),pro:0.06+0.85*g(d,21.5,4),endo:d<=5?0.6-d*0.1:d<=14?0.1+(d-5)*0.06:Math.min(1,0.64+(d-14)*0.03)};}
+var CUR=[['fsh','FSH','#1a7fb5'],['lh','LH','#7b4bb7'],['est','Estrógenos','#e07a3f'],['pro','Progesterona','#2e9a5a']];
+function grafCiclo(dia){var cv=document.getElementById('ciclo-c'),c=cv.getContext('2d'),W=900,H=260,px=40,py=20,hb=40;
+  function X(d){return px+(W-px-20)*(d-1)/27;}
+  c.clearRect(0,0,W,H);
+  c.fillStyle='#fde4e8';c.fillRect(X(1),py,X(5)-X(1),H-py-hb-10);c.fillStyle='#e7f6ec';c.fillRect(X(10),py,X(15.5)-X(10),H-py-hb-10);
+  c.fillStyle='#b5527a';c.font='700 12px Outfit';c.fillText('menstruación',X(1)+4,py+14);c.fillStyle='#2e7d4f';c.fillText('días fértiles',X(10)+4,py+14);
+  CUR.forEach(function(k){c.strokeStyle=k[2];c.lineWidth=2.6;c.beginPath();for(var d=1;d<=28;d+=0.25){var v=hormonas(d)[k[0]],x=X(d),y=H-hb-14-(H-hb-py-24)*v;if(d===1)c.moveTo(x,y);else c.lineTo(x,y);}c.stroke();
+});
+  CUR.forEach(function(k,i){var lx=X(17)+i*92;c.fillStyle=k[2];c.fillRect(lx,py+2,14,4);c.font='700 12px Outfit';c.fillText(k[1],lx+18,py+8);});
+  // endometrio
+  for(var d=1;d<=28;d+=0.5){var e=hormonas(d).endo;c.fillStyle='rgba(217,121,141,'+(0.35+e*0.5)+')';c.fillRect(X(d),H-6-hb*e,X(d+0.5)-X(d)+1,hb*e);}
+  c.fillStyle='#3c5446';c.font='11px Outfit';c.fillText('grosor del endometrio',X(1),H-hb-14+10);
+  [1,7,14,21,28].forEach(function(d){c.fillText('día '+d,X(d)-14,H-hb-16+0);});
+  c.strokeStyle='#10261a';c.lineWidth=2;c.setLineDash([4,4]);c.beginPath();c.moveTo(X(dia),py);c.lineTo(X(dia),H-4);c.stroke();c.setLineDash([]);}
+var dia=document.getElementById('dia');
+function verDia(){var d=+dia.value,t;
+  if(d<=5)t=['🩸 Fase menstrual','El endometrio que no se usó se desprende y sale con algo de sangre por la vagina: es la <b>menstruación</b>, que dura de 3 a 7 días. Al mismo tiempo, la hormona FSH empieza a hacer madurar folículos en el ovario.'];
+  else if(d<=12)t=['🌱 Fase folicular','Un folículo del ovario madura y produce <b>estrógenos</b>, que reconstruyen y engruesan el endometrio.'];
+  else if(d<=15)t=['🥚 Ovulación','Un pico de la hormona <b>LH</b> hace que el folículo se rompa y suelte el óvulo hacia la trompa (hacia el día 14 en un ciclo de 28 días). El óvulo vive unas 24 horas y los espermatozoides hasta 5 días: por eso los días fértiles son varios.'];
+  else t=['🛏️ Fase lútea','El folículo vacío se convierte en el <b>cuerpo lúteo</b>, que produce <b>progesterona</b> para mantener el endometrio listo. Si no hay embarazo, el cuerpo lúteo se deshace, bajan las hormonas y empieza una nueva menstruación.'];
+  document.getElementById('dia-t').innerHTML='<span class="d">Día '+d+'</span><div style="flex:1;min-width:240px"><h3>'+t[0]+'</h3><p>'+t[1]+'</p></div>';grafCiclo(d);if(d>=20)BIO.marcarSeccion('ciclo');}
+dia.oninput=verDia;verDia();
+
+/* ═══ Embarazo semana a semana ═══ */
+var SEM=[['Día 1','🔬','Cigoto','El óvulo fecundado: una sola célula con 46 cromosomas. Empieza a dividirse por mitosis mientras baja por la trompa.'],['Semana 1','⚪','Blastocisto','Una esfera hueca de unas 100 células llega al útero y se implanta en el endometrio.'],['Semana 4','🌱','Tamaño de una semilla de amapola','Se forman el tubo neural (futuro cerebro y médula) y el corazón, que empieza a latir.'],['Semana 6','🫘','Tamaño de una lenteja','Aparecen los esbozos de brazos y piernas y se forman los ojos.'],['Semana 8','🫐','Tamaño de una frambuesa','Todos los órganos principales ya están formados. Termina la etapa de <b>embrión</b> y empieza la de <b>feto</b>. Es el periodo más sensible al alcohol y a los medicamentos.'],['Semana 12','🍋','Tamaño de un limón · fin del 1.er trimestre','Mueve los dedos; en una ecografía se ven sus órganos sexuales.'],['Semana 20','🍌','Tamaño de un banano · 2.º trimestre','La madre siente sus movimientos. Escucha sonidos y reconoce la voz de su madre.'],['Semana 28','🍆','Tamaño de una berenjena · 3.er trimestre','Abre los ojos. Los pulmones siguen madurando.'],['Semana 36','🍈','Tamaño de un melón','Gana peso rápidamente y se acomoda, casi siempre cabeza abajo, para el parto.'],['Semana 40','🍉','Unos 50 cm y 3 kg','Nacimiento. Los pulmones ya pueden respirar aire.']];
+var sem=document.getElementById('sem');
+function verSem(){var e=SEM[+sem.value];document.getElementById('sem-t').innerHTML='<div style="font-size:5rem;text-align:center">'+e[1]+'</div><div><b style="font-family:var(--cn-mono);color:var(--cn-naranja)">'+e[0]+'</b><h3>'+e[2]+'</h3><p>'+e[3]+'</p></div>';if(+sem.value===9)BIO.marcarSeccion('embarazo');}
+sem.oninput=verSem;verSem();
+
+/* ═══ Anticoncepción ═══ */
+var MET=[
+ ['Implante subdérmico','Hormonal de larga duración',99.9,0,'Varilla pequeña bajo la piel del brazo que libera una hormona e impide la ovulación. Dura de 3 a 5 años. Muy usado por adolescentes en Colombia.'],
+ ['DIU (dispositivo intrauterino)','De larga duración',99.2,0,'Pequeño dispositivo en forma de T que un profesional coloca en el útero. Puede ser de cobre o con hormona. Dura de 3 a 10 años.'],
+ ['Vasectomía y ligadura de trompas','Permanentes',99.5,0,'Cirugías que cortan los conductos deferentes o las trompas. Son definitivas: se piensan para quien ya no quiere tener hijos.'],
+ ['Inyección','Hormonal',96,0,'Inyección mensual o trimestral que impide la ovulación.'],
+ ['Pastillas anticonceptivas','Hormonal',93,0,'Se toman todos los días a la misma hora. Olvidarlas disminuye su efectividad.'],
+ ['Condón masculino','De barrera',87,1,'Funda de látex que impide que el semen entre a la vagina. <b>También protege de las ITS.</b> Debe usarse durante toda la relación y uno nuevo cada vez.'],
+ ['Condón femenino','De barrera',79,1,'Funda que se coloca dentro de la vagina. <b>También protege de las ITS.</b>'],
+ ['Método del ritmo (calendario)','Natural',77,0,'Evitar las relaciones en los días fértiles. Es poco confiable, sobre todo en adolescentes, cuyos ciclos son irregulares.'],
+ ['Coito interrumpido («retiro»)','No recomendado',80,0,'Es muy poco confiable: antes de eyacular puede salir líquido con espermatozoides.'],
+ ['Pastilla de emergencia','Solo para emergencias',85,0,'Evita cerca del 85 % de los embarazos si se toma lo antes posible (hasta 72 horas) después de una relación sin protección o si falló el método. No es abortiva, no es un método regular y no protege de ITS.']
+];
+var ef=document.getElementById('efi');
+ef.innerHTML='<div class="f" style="cursor:default;font-weight:800;color:var(--cn-dim);font-size:.8rem"><span>Método</span><span>Efectividad con uso típico</span><span></span><span>ITS</span></div>'+MET.map(function(m,i){var col=m[2]>=99?'#2e7d4f':m[2]>=90?'#7cb342':m[2]>=85?'#e0a024':'#d64535';
+  return '<div class="f" data-i="'+i+'" tabindex="0" role="button"><span><b>'+m[0]+'</b><br><small style="color:var(--cn-dim)">'+m[1]+'</small></span><span class="t"><i style="width:'+m[2]+'%;background:'+col+'"></i></span><b>'+String(m[2]).replace('.',',')+' %</b><span title="¿Protege de ITS?">'+(m[3]?'🛡️':'—')+'</span></div>';}).join('');
+var vM={};
+ef.querySelectorAll('.f[data-i]').forEach(function(f){f.onclick=function(){var m=MET[+f.getAttribute('data-i')];vM[m[0]]=1;ef.querySelectorAll('.f').forEach(function(x){x.classList.toggle('on',x===f);});
+  document.getElementById('efi-t').innerHTML='<h3>'+m[0]+'</h3><p>'+m[4]+'</p><p style="margin-top:6px;font-size:.9rem">De cada 100 personas que lo usan durante un año, cerca de <b>'+Math.round(100-m[2])+'</b> quedan en embarazo.</p>';if(Object.keys(vM).length>=4)BIO.marcarSeccion('anticoncepcion');};f.onkeydown=function(e){if(e.key==='Enter')f.onclick();};});
+
+/* ═══ ITS ═══ */
+var ITS=[
+ ['VIH (virus de inmunodeficiencia humana)','virus','Ataca a los linfocitos del sistema inmune. Sin tratamiento lleva al <b>sida</b>. No tiene cura, pero con medicamentos antirretrovirales la persona vive una vida larga y no transmite el virus si su carga viral es indetectable.','Condón, no compartir agujas, prueba gratuita, PrEP (pastilla preventiva).'],
+ ['VPH (virus del papiloma humano)','virus','La ITS más común. Muchas veces no da síntomas; algunos tipos producen verrugas y otros pueden causar <b>cáncer de cuello uterino</b>, de pene, ano o garganta años después.','<b>Vacuna gratuita</b> en Colombia para niñas y niños desde los 9 años; condón; citología.'],
+ ['Herpes genital','virus','Ampollas dolorosas que aparecen y desaparecen. No tiene cura, pero hay tratamiento para los brotes.','Condón; evitar el contacto durante los brotes.'],
+ ['Hepatitis B','virus','Infecta el hígado; puede volverse crónica y causar cirrosis o cáncer de hígado. También se transmite por la sangre y de la madre al bebé.','<b>Vacuna</b> (incluida en el esquema de los bebés en Colombia), condón.'],
+ ['Sífilis','bacteria','Empieza con una llaga indolora (chancro); si no se trata, afecta la piel, el corazón y el cerebro. En el embarazo pasa al bebé (sífilis congénita).','Se cura con <b>penicilina</b>. Prueba en el control prenatal; condón.'],
+ ['Gonorrea','bacteria','Secreción y ardor al orinar; en muchas mujeres no da síntomas. Sin tratamiento puede causar infertilidad.','Se cura con antibióticos; condón.'],
+ ['Clamidia','bacteria','Con frecuencia no da síntomas, pero puede dañar las trompas de Falopio y causar infertilidad.','Se cura con antibióticos; pruebas periódicas; condón.'],
+ ['Tricomoniasis','protozoo','La causa un protozoo (<i>Trichomonas</i>). Picazón, flujo y ardor.','Se cura con medicamento; tratar también a la pareja; condón.']
+];
+var AG={virus:['🦠 Virus','#c0392b'],bacteria:['🧫 Bacteria','#1a7fb5'],protozoo:['🔬 Protozoo','#7b4bb7']};
+function verITS(f){document.getElementById('its-g').innerHTML=ITS.filter(function(x){return f==='todas'||x[1]===f;}).map(function(x){var a=AG[x[1]];return '<div class="card" style="border-top:5px solid '+a[1]+'"><span class="ag" style="color:'+a[1]+'">'+a[0]+'</span><h3>'+x[0]+'</h3><p style="font-size:.9rem">'+x[2]+'</p><p style="font-size:.88rem;margin-top:6px"><b>Prevención y tratamiento:</b> '+x[3]+'</p></div>';}).join('');}
+document.querySelectorAll('#its-f [data-a]').forEach(function(b){b.onclick=function(){document.querySelectorAll('#its-f [data-a]').forEach(function(x){x.classList.toggle('on',x===b);});verITS(b.getAttribute('data-a'));};});
+verITS('todas');
+var MITOS=[['Si una persona se ve sana, no puede tener una ITS.',false,'Muchas ITS no dan síntomas durante años. La única forma de saberlo es con una prueba.'],['El condón usado correctamente protege del VIH y de la mayoría de las ITS.',true,'Es el único método que protege a la vez del embarazo y de las ITS.'],['Las pastillas anticonceptivas protegen de las ITS.',false,'Solo evitan el embarazo.'],['El VIH se transmite por un abrazo, un beso o por compartir el baño.',false,'Solo se transmite por relaciones sexuales sin protección, por sangre (agujas) o de la madre al bebé.'],['La vacuna contra el VPH previene varios tipos de cáncer.',true,'Por eso se aplica gratis desde los 9 años.'],['Las ITS causadas por bacterias, como la sífilis, se pueden curar.',true,'Con antibióticos, si se diagnostican a tiempo.']];
+var mb=document.getElementById('mitos'),mOk=0;
+mb.innerHTML=MITOS.map(function(m,i){return '<div style="padding:8px 0;border-bottom:1px solid var(--cn-brd)"><b>'+(i+1)+'. '+m[0]+'</b><div class="chips" style="margin-top:6px"><button class="chip" data-m="'+i+'" data-v="1">✔ Realidad</button><button class="chip" data-m="'+i+'" data-v="0">✘ Mito</button></div><p id="mi-'+i+'" style="font-size:.9rem;margin-top:4px"></p></div>';}).join('');
+mb.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){var i=+b.getAttribute('data-m'),m=MITOS[i],ok=(b.getAttribute('data-v')==='1')===m[1];
+  document.getElementById('mi-'+i).innerHTML=(ok?'✅ ':'❌ ')+'<b>'+(m[1]?'Realidad.':'Mito.')+'</b> '+m[2];mb.querySelectorAll('[data-m="'+i+'"]').forEach(function(x){x.disabled=true;});if(ok)mOk++;if(mOk>=4)BIO.marcarSeccion('its');};});
+})();
+</script>
+<script src="text-zoom.js?v=3"></script>
+<script src="narracion.js?v=3"></script>
+<script src="pwa-install.js?v=3"></script>
+</body>
+</html>

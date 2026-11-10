@@ -11,7 +11,7 @@
    bionom-analytics.gs.
    ════════════════════════════════════════════════════════════════════════ */
 window.TEMAS_JUEGO=[
- ['celula','La célula','🔬'],['reinos','Reinos y clasificación','🍄'],['sistemas','Sistemas del cuerpo','🫀'],
+ ['celula','La célula','🔬'],['reinos','Reinos y clasificación','🍄'],['sistemas','Sistemas del cuerpo','🫀'],['reproduccion','Reproducción','👶'],
  ['genetica','Genética','🧬'],['evolucion','Evolución','🦎'],['ecosistemas','Ecosistemas','🌳'],['colombia','Ecosistemas de Colombia','🇨🇴'],['ambiente','Ambiente y cambio climático','🌍']
 ];
 window.BANCO_BIO=[
@@ -237,5 +237,26 @@ window.BANCO_BIO=[
 {t:'ambiente',k:'mc',q:'Los rellenos sanitarios producen metano porque…',ops:['la basura orgánica se pudre sin oxígeno','el plástico se quema','tienen muchas plantas','el agua se evapora'],a:0,exp:'Separar y compostar lo orgánico lo reduce.'},
 {t:'ambiente',k:'esc',q:'¿Cómo se llama la cantidad de gases de efecto invernadero que producen las actividades de una persona?',a:['huella de carbono','la huella de carbono','huella ecologica de carbono'],exp:'La huella de carbono.'},
 {t:'ambiente',k:'mc',q:'¿Qué comunidades son más vulnerables al cambio climático?',ops:['Las que tienen más dinero','Las rurales, pobres y que dependen directamente de la naturaleza','Las que viven en edificios altos','Ninguna'],a:1,exp:'Por eso la adaptación debe empezar por ellas.'},
-{t:'ambiente',k:'ord',q:'Ordena la cadena de causas:',ops:['Se tala la selva','Sale CO₂ a la atmósfera','Aumenta el efecto invernadero','Sube la temperatura del planeta'],exp:'Por eso proteger la Amazonia es una acción contra el cambio climático.'}
+{t:'ambiente',k:'ord',q:'Ordena la cadena de causas:',ops:['Se tala la selva','Sale CO₂ a la atmósfera','Aumenta el efecto invernadero','Sube la temperatura del planeta'],exp:'Por eso proteger la Amazonia es una acción contra el cambio climático.'},
+/* ───────── REPRODUCCIÓN ───────── */
+{t:'reproduccion',k:'mc',q:'¿Qué ventaja tiene la reproducción asexual?',ops:['Produce mucha variabilidad','Es rápida y no necesita pareja','Necesita gametos','Siempre es más lenta'],a:1,exp:'Pero los hijos son clones y no hay variabilidad.'},
+{t:'reproduccion',k:'mc',q:'Las levaduras y las hidras se reproducen por:',ops:['bipartición','gemación','esporulación','partenogénesis'],a:1,exp:'Les sale una yema que se separa.'},
+{t:'reproduccion',k:'mc',q:'Los zánganos de las abejas nacen de óvulos sin fecundar. Esto es:',ops:['gemación','partenogénesis','fragmentación','conjugación'],a:1,exp:'La partenogénesis.'},
+{t:'reproduccion',k:'mc',q:'¿Qué grupo de plantas forma semillas desnudas en conos o piñas?',ops:['Musgos','Helechos','Gimnospermas','Angiospermas'],a:2,exp:'Como los pinos y el romerón.'},
+{t:'reproduccion',k:'mc',q:'Los helechos producen esporas en unos puntos cafés bajo sus hojas llamados:',ops:['soros','estambres','conos','frutos'],a:0,exp:'Los soros.'},
+{t:'reproduccion',k:'mc',q:'¿Cuál es la parte de la flor que produce el polen?',ops:['Estigma','Ovario','Antera','Sépalo'],a:2,exp:'La antera está en la punta del estambre.'},
+{t:'reproduccion',k:'mc',q:'Después de la fecundación, el ovario de la flor se convierte en…',ops:['la semilla','el fruto','la raíz','el polen'],a:1,exp:'Y los óvulos se convierten en semillas.'},
+{t:'reproduccion',k:'mc',q:'Los anfibios como las ranas tienen casi siempre fecundación…',ops:['interna','externa','asexual','por esporas'],a:1,exp:'En el agua, y luego un desarrollo con metamorfosis.'},
+{t:'reproduccion',k:'mc',q:'El huevo amniota con cáscara apareció en los…',ops:['peces','anfibios','reptiles','insectos'],a:2,exp:'Permitió reproducirse lejos del agua.'},
+{t:'reproduccion',k:'mc',q:'La chucha o zarigüeya es un mamífero…',ops:['placentario','marsupial','monotrema','ovíparo'],a:1,exp:'Termina su desarrollo en una bolsa.'},
+{t:'reproduccion',k:'mc',q:'¿Dónde se producen los óvulos?',ops:['En el útero','En los ovarios','En las trompas','En la vagina'],a:1,exp:'Normalmente madura uno al mes.'},
+{t:'reproduccion',k:'mc',q:'¿Dónde se producen los espermatozoides?',ops:['En la próstata','En los testículos','En la vejiga','En las vesículas seminales'],a:1,exp:'Millones cada día desde la pubertad.'},
+{t:'reproduccion',k:'mc',q:'La capa del útero que se desprende en la menstruación es el…',ops:['endometrio','cuello uterino','ovario','folículo'],a:0,exp:'Se engrosa cada mes para recibir un posible embrión.'},
+{t:'reproduccion',k:'mc',q:'En un ciclo de 28 días, la ovulación ocurre aproximadamente el día…',ops:['1','7','14','28'],a:2,exp:'Por un pico de la hormona LH.'},
+{t:'reproduccion',k:'mc',q:'¿Qué órgano intercambia nutrientes y oxígeno entre la madre y el bebé?',ops:['El cordón umbilical solo','La placenta','El ovario','La vejiga'],a:1,exp:'Sin que se mezclen sus sangres.'},
+{t:'reproduccion',k:'mc',q:'¿Cuál es el único método anticonceptivo que también protege de las ITS?',ops:['Pastillas','Implante','Condón','DIU'],a:2,exp:'Por eso se recomienda la doble protección.'},
+{t:'reproduccion',k:'vf',q:'La pastilla de emergencia se puede usar como método anticonceptivo regular.',a:false,exp:'Es solo para emergencias.'},
+{t:'reproduccion',k:'mc',q:'¿Qué infección de transmisión sexual se puede prevenir con una vacuna gratuita desde los 9 años?',ops:['Sífilis','Gonorrea','VPH','Clamidia'],a:2,exp:'El VPH puede causar cáncer de cuello uterino.'},
+{t:'reproduccion',k:'mc',q:'¿Qué tipo de microorganismo causa la sífilis?',ops:['Un virus','Una bacteria','Un hongo','Un protozoo'],a:1,exp:'Por eso se cura con penicilina.'},
+{t:'reproduccion',k:'vf',q:'Una persona puede tener una ITS sin tener síntomas.',a:true,exp:'Por eso son importantes las pruebas.'}
 ];
