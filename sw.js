@@ -3,7 +3,7 @@
 // JS y CSS: red primero. Íconos y fuentes: stale-while-revalidate (rápido y se
 // autoactualiza en segundo plano). Todo funciona offline como respaldo.
 
-const CACHE = 'bionom-v10';
+const CACHE = 'bionom-v11';
 const FONT_CACHE = 'bionom-fonts-v1';
 
 const ASSETS = [
@@ -36,7 +36,9 @@ const ASSETS = [
   './icons/icon-512.png',
   './icons/icon-180.png',
   './icons/favicon-32.png',
-  './icons/logo.webp'
+  './icons/logo.webp',
+  './icons/marca-bionom.png',
+  './fondo-plantas.svg'
 ];
 
 // Instalar: guardar todos los archivos en caché.

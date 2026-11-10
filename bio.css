@@ -34,7 +34,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--cn-bg);color:var(--cn-tx);font-family:var(--cn-sans);font-size:1rem;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+body{background-color:var(--cn-bg);color:var(--cn-tx);font-family:var(--cn-sans);font-size:1rem;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
 img,svg{max-width:100%}
 a{color:var(--cn-brand)}
 button{font-family:inherit}
@@ -234,3 +234,14 @@ select,input[type=text],input[type=number]{font:inherit;border:1.5px solid var(-
 
 @media print{.site-nav,.bot-nav,.toc,.site-foot,.narr-btn,#tz-btn,#pwa-install-btn{display:none!important}body{background:#fff}.card,.fig,.det{box-shadow:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ── Fondo: plantas propias de Colombia en trazo fino (fondo-plantas.svg) ──
+   Igual que el fondo de moléculas de ChromaNom: una sola capa fija (#bio-bg,
+   la inserta bio.js), más visible en los bordes y casi transparente en el
+   centro, donde está el texto. */
+body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.10),transparent 60%),radial-gradient(700px 600px at 110% 5%,rgba(21,101,216,.06),transparent 60%),radial-gradient(800px 700px at 105% 105%,rgba(238,27,125,.05),transparent 60%),radial-gradient(700px 600px at -5% 100%,rgba(246,196,0,.07),transparent 60%);background-attachment:fixed}
+#bio-bg{position:fixed;inset:0;background:url(fondo-plantas.svg) left -30px top 20px/760px auto repeat;opacity:.55;z-index:-1;pointer-events:none;
+  -webkit-mask-image:radial-gradient(ellipse 68% 72% at 50% 44%,rgba(0,0,0,.06) 0%,rgba(0,0,0,.12) 52%,rgba(0,0,0,.6) 74%,#000 100%);
+          mask-image:radial-gradient(ellipse 68% 72% at 50% 44%,rgba(0,0,0,.06) 0%,rgba(0,0,0,.12) 52%,rgba(0,0,0,.6) 74%,#000 100%)}
+@media (max-width:640px){#bio-bg{opacity:.35;background-size:540px auto;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 40%,rgba(0,0,0,.5) 70%,#000 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 40%,rgba(0,0,0,.5) 70%,#000 100%)}}
+@media print{body{background-image:none}#bio-bg{display:none!important}}

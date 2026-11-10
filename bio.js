@@ -240,6 +240,7 @@ function montarTodo(raiz){montarChequeos(raiz);montarPasos(raiz);montarFlips(rai
 window.BIO={MODULOS:MODULOS,actual:actual,visitas:visitas,secciones:secciones,leer:leer,guardar:guardar,marcarSeccion:marcarSeccion,
   montar:montarTodo,clasificar:clasificar,barajar:barajar,esc:esc};
 
+if(!document.getElementById('bio-bg')){var bg=document.createElement('div');bg.id='bio-bg';bg.setAttribute('aria-hidden','true');document.body.insertBefore(bg,document.body.firstChild);}
 armarMenu();
 montarTodo();
 montarToc();

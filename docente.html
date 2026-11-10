@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=2">
-<link rel="stylesheet" href="actividades.css?v=2">
+<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="actividades.css?v=3">
 <style>
 .panel[hidden]{display:none!important}
 .dtabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 18px}
@@ -34,7 +34,7 @@
 /* ── hoja carta: 816 × 1056 px ── */
 .hoja{width:816px;height:1056px;box-sizing:border-box;padding:36px 46px 28px;margin:0 auto 18px;background:#fff;color:#111;box-shadow:0 2px 14px rgba(13,34,51,.18);display:flex;flex-direction:column;overflow:hidden;position:relative;font-family:'STIX Two Text','Times New Roman',serif;font-size:13.5px;line-height:1.4}
 .hoja *{box-sizing:border-box}
-.hoja .wm{position:absolute;left:50%;top:52%;width:440px;transform:translate(-50%,-50%);opacity:.45;pointer-events:none}
+.hoja .wm{position:absolute;left:50%;top:54%;width:56%;transform:translate(-50%,-50%);opacity:.07;pointer-events:none;z-index:5}
 .hoja-cab{display:flex;align-items:center;gap:12px;border-bottom:2px solid #0f2a5f;padding-bottom:6px;margin-bottom:8px}
 .hoja-cab img{height:52px}
 .hoja-cab .tt{flex:1}
@@ -224,11 +224,11 @@
 <div id="print-root" aria-hidden="true"></div>
 <div id="ah-print-root" aria-hidden="true"></div>
 <div id="sp-print-root" aria-hidden="true"></div>
-<script src="bio.js?v=2"></script>
-<script src="banco.js?v=2"></script>
-<script src="ahorcado-datos.js?v=2"></script>
-<script src="ahorcado.js?v=2"></script>
-<script src="sopa.js?v=2"></script>
+<script src="bio.js?v=3"></script>
+<script src="banco.js?v=3"></script>
+<script src="ahorcado-datos.js?v=3"></script>
+<script src="ahorcado.js?v=3"></script>
+<script src="sopa.js?v=3"></script>
 <script>
 (function(){
 'use strict';
@@ -294,14 +294,14 @@ function cabecera(c,v,clave,primera){
 /* paginación: mide cada bloque con el ancho real de la hoja */
 function paginar(B,c,v,clave){
   var med=$('medidor');
-  function hojaVacia(primera){return '<div class="hoja"><img class="wm" src="icons/marca-agua.png" alt="">'+cabecera(c,v,clave,primera)+'<div class="hoja-cuerpo"></div><div class="hoja-pie"><span>BioNom · Biología por niveles de organización</span><span class="pie-n"></span></div></div>';}
+  function hojaVacia(primera){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,primera)+'<div class="hoja-cuerpo"></div><div class="hoja-pie"><span>BioNom · Biología por niveles de organización</span><span class="pie-n"></span></div></div>';}
   var out=[],i=0,pag=0;
   while(i<B.length||pag===0){
     med.innerHTML=hojaVacia(pag===0);var cuerpo=med.querySelector('.hoja-cuerpo'),disp=cuerpo.clientHeight,usado=0,puestos=[];
     while(i<B.length){var d=document.createElement('div');d.className='blq';d.innerHTML=B[i];cuerpo.appendChild(d);var h=d.offsetHeight;if(usado+h>disp&&puestos.length){cuerpo.removeChild(d);break;}usado+=h;puestos.push(B[i]);i++;}
     out.push({primera:pag===0,html:puestos.map(function(b){return '<div class="blq">'+b+'</div>';}).join('')});pag++;if(!B.length)break;
   }
-  return out.map(function(p,k){return '<div class="hoja"><img class="wm" src="icons/marca-agua.png" alt="">'+cabecera(c,v,clave,p.primera)+'<div class="hoja-cuerpo">'+p.html+'</div><div class="hoja-pie"><span>BioNom · Biología por niveles de organización · © 2026 Harvey Bárcenas Morales · CC BY-NC 4.0</span><span>Página '+(k+1)+' de '+out.length+'</span></div></div>';}).join('');
+  return out.map(function(p,k){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,p.primera)+'<div class="hoja-cuerpo">'+p.html+'</div><div class="hoja-pie"><span>BioNom · Biología por niveles de organización · © 2026 Harvey Bárcenas Morales · CC BY-NC 4.0</span><span>Página '+(k+1)+' de '+out.length+'</span></div></div>';}).join('');
 }
 function documento(c,v,clave){return paginar(bloques(preguntas(c,v),c,clave),c,v,clave);}
 function llenarVersiones(){var n=cfg().nver,s=$('g-vsel'),k=+s.value||0;s.innerHTML='';for(var i=0;i<n;i++)s.insertAdjacentHTML('beforeend','<option value="'+i+'">Versión '+(i+1)+'</option>');s.innerHTML+='<option value="k">Respuestas de la versión 1</option>';s.value=k<n?k:0;}
@@ -321,7 +321,7 @@ llenarVersiones();
 (document.fonts?Promise.all(['13.5px "STIX Two Text"','bold 13.5px "STIX Two Text"','italic 12px "STIX Two Text"','800 13px Outfit','12px Outfit'].map(function(f){return document.fonts.load(f);})).catch(function(){}):Promise.resolve()).then(pintar);
 })();
 </script>
-<script src="text-zoom.js?v=2"></script>
-<script src="pwa-install.js?v=2"></script>
+<script src="text-zoom.js?v=3"></script>
+<script src="pwa-install.js?v=3"></script>
 </body>
 </html>
