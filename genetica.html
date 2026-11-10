@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Genética mendeliana y molecular — BioNom</title>
+<meta name="description" content="Mendel, alelos, cuadro de Punnett interactivo, cruces dihíbridos, grupos sanguíneos, ADN, del gen a la proteína y mutaciones.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=2">
+<style>
+.alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
+.alelo-sel{display:flex;gap:6px;justify-content:center}
+.alelo-sel button{width:52px;height:52px;border-radius:50%;border:3px solid var(--cn-brd);background:#fff;font:800 1.5rem var(--cn-mono);cursor:pointer;color:var(--cn-brand-d)}
+.alelo-sel button.on{border-color:var(--cn-naranja);background:#fff7ec}
+.cromo{display:flex;gap:18px;justify-content:center;align-items:flex-end}
+.cromo .c{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.78rem;font-weight:700;color:var(--cn-dim)}
+.cromo .barra{width:22px;height:110px;border-radius:11px;background:linear-gradient(90deg,#8e6fc7,#b9a0e6,#8e6fc7);position:relative}
+.cromo .barra i{position:absolute;left:-4px;right:-4px;top:44px;height:16px;border-radius:4px;background:#f08c1e;color:#fff;font:800 .8rem var(--cn-mono);display:grid;place-items:center;font-style:normal}
+.res-gen{text-align:center}
+.res-gen .gt{font:800 2rem var(--cn-mono);color:var(--cn-brand-d)}
+.ptab{border-collapse:separate;border-spacing:5px;margin:8px auto}
+.ptab th{font:800 1.05rem var(--cn-mono);color:var(--cn-brand-d);padding:4px 8px;background:var(--cn-brand-l);border-radius:8px;min-width:46px}
+.ptab th.esq{background:none}
+.ptab td{width:74px;height:74px;border-radius:12px;border:2px solid var(--cn-brd);text-align:center;vertical-align:middle;font:800 1rem var(--cn-mono);cursor:pointer;background:#fff;transition:background .2s,transform .15s;position:relative}
+.ptab td:hover{transform:scale(1.04)}
+.ptab td.ok{border-color:var(--cn-ok)}
+.ptab td.mal{border-color:var(--cn-err);background:var(--cn-err-l)}
+.ptab td svg{display:block;margin:2px auto 0}
+.ptab.chica td{width:52px;height:52px;font-size:.82rem;cursor:default}
+.ptab.chica td:hover{transform:none}
+.barras{display:grid;gap:6px;margin-top:10px}
+.barras .b{display:grid;grid-template-columns:150px 1fr 60px;gap:8px;align-items:center;font-size:.9rem}
+.barras .b .t{height:20px;background:#eef3ef;border-radius:999px;overflow:hidden}
+.barras .b .t i{display:block;height:100%;border-radius:999px;transition:width .6s}
+.pun-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:820px){.pun-wrap{grid-template-columns:1fr}}
+.padres{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:8px}
+.padres .p{text-align:center;font-weight:700}
+.padres .x{font-size:1.6rem;font-weight:900;color:var(--cn-dim)}
+.adn-wrap{overflow-x:auto;padding-bottom:6px}
+.adn{display:inline-grid;grid-auto-flow:column;gap:4px}
+.adn .par{display:grid;grid-template-rows:auto 26px auto;gap:2px;justify-items:center}
+.base{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font:800 1.15rem var(--cn-mono);color:#fff;border:0;cursor:pointer}
+.base.vacia{background:#fff;border:2px dashed var(--cn-brd);color:var(--cn-dim)}
+.base.sel{outline:3px solid var(--cn-naranja)}
+.b-A{background:#e5484d}.b-T{background:#3e8ed0}.b-U{background:#9b59b6}.b-C{background:#f0a020}.b-G{background:#2e9a5a}
+.puente{width:3px;height:26px;background:repeating-linear-gradient(#999 0 3px,transparent 3px 6px)}
+.teclas{display:flex;gap:8px;justify-content:center;margin:10px 0}
+.teclas button{width:54px;height:54px;font-size:1.3rem}
+.codones{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.codon{display:flex;gap:1px;padding:3px;border-radius:10px;border:2px solid transparent}
+.codon.on{border-color:var(--cn-naranja);background:#fff7ec}
+.codon .base{width:30px;height:32px;font-size:.95rem;cursor:default}
+.prot{display:flex;flex-wrap:wrap;gap:4px;align-items:center;min-height:52px;padding:8px;background:#f7fbf8;border-radius:12px;border:1px solid var(--cn-brd)}
+.aa{min-width:50px;height:42px;border-radius:21px;display:grid;place-items:center;font:800 .82rem Outfit;color:#fff;padding:0 8px;animation:aparece .35s ease}
+.aa.stop{background:#555!important}
+.aa.cambio{outline:3px solid var(--cn-err);outline-offset:2px}
+.mut-res{margin-top:10px;padding:10px 14px;border-radius:12px;font-weight:600}
+.etq-fila{font-size:.78rem;font-weight:800;color:var(--cn-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:8px}
+.tabla-cod{font:600 .74rem var(--cn-mono)}
+.tabla-cod td,.tabla-cod th{padding:3px 5px!important}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">🧬 Niveles molecular, celular y del organismo</span>
+    <h1>Genética: por qué te pareces a tu familia</h1>
+    <p>Tienes los ojos de tu mamá o la risa de tu abuelo porque heredaste sus <b>genes</b>. Primero verás las leyes que descubrió <b>Mendel</b> con arvejas y aprenderás a predecir cruces con el <b>cuadro de Punnett</b>. Después bajarás al nivel molecular: qué es el <b>ADN</b> y cómo sus letras se convierten en <b>proteínas</b>.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Niveles: molécula → célula → organismo</a>
+  </header>
+  <nav class="toc" aria-label="En esta página">
+    <strong>Mendeliana</strong>
+    <a href="#conceptos">🔤 Conceptos</a>
+    <a href="#mendel">🌱 Mendel</a>
+    <a href="#punnett">🔲 Punnett</a>
+    <a href="#dihibrido">🧮 Dihíbrido</a>
+    <a href="#otras">🩸 Más allá de Mendel</a>
+    <strong>Molecular</strong>
+    <a href="#adn">🧬 ADN</a>
+    <a href="#proteinas">🏭 Del gen a la proteína</a>
+    <a href="#mutaciones">⚠️ Mutaciones</a>
+  </nav>
+
+  <!-- ═══ CONCEPTOS ═══ -->
+  <section class="sec" id="conceptos">
+    <h2><span class="n">01</span> El vocabulario de la herencia</h2>
+    <p class="lead">Un <span class="term" data-def="Fragmento de ADN con la información para una característica, por ejemplo el color de la semilla.">gen</span> puede venir en versiones distintas llamadas <span class="term" data-def="Cada una de las formas de un mismo gen: el alelo «amarillo» y el alelo «verde» del gen del color de la semilla.">alelos</span>. Tú recibes <b>dos alelos de cada gen</b>: uno de tu mamá y uno de tu papá, cada uno en un cromosoma. Escoge los dos alelos de una arveja y mira qué pasa.</p>
+    <div class="card">
+      <div class="chips" id="rasgo-sel" role="group" aria-label="Característica" style="justify-content:center;margin-bottom:12px"></div>
+      <div class="alelos">
+        <div><div class="etq-fila" style="text-align:center">Alelo de la madre</div><div class="alelo-sel" id="al-m"></div></div>
+        <div class="cromo" aria-hidden="true"><div class="c"><div class="barra"><i id="cr-m">A</i></div>madre</div><div class="c"><div class="barra"><i id="cr-p">a</i></div>padre</div></div>
+        <div><div class="etq-fila" style="text-align:center">Alelo del padre</div><div class="alelo-sel" id="al-p"></div></div>
+      </div>
+      <div class="lado" style="margin-top:14px;align-items:center">
+        <div class="res-gen" id="res-gen" aria-live="polite"></div>
+        <div id="res-exp" style="font-size:.96rem"></div>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🔠</span><b>Dominante y recesivo</b><small>toca para voltear</small></div><div class="bk">El alelo <b>dominante</b> (mayúscula) se manifiesta aunque haya uno solo. El <b>recesivo</b> (minúscula) solo se ve si hay dos iguales.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">👯</span><b>Homocigoto y heterocigoto</b><small>toca para voltear</small></div><div class="bk"><b>Homocigoto</b>: los dos alelos iguales (AA o aa). <b>Heterocigoto</b>: dos alelos distintos (Aa). «Homo» = igual; «hetero» = diferente.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🧾</span><b>Genotipo y fenotipo</b><small>toca para voltear</small></div><div class="bk"><b>Genotipo</b>: las letras, los alelos que tienes (Aa). <b>Fenotipo</b>: lo que se ve o se mide (semilla amarilla). Dos genotipos distintos pueden dar el mismo fenotipo.</div></div></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="Las dos tienen al menos un alelo A dominante, así que se ven amarillas: mismo fenotipo, distinto genotipo.">
+      <div class="q">Una arveja AA y una Aa (A = amarillo, a = verde)…</div>
+      <div class="ops"><button class="op" data-por="Mira el color: las dos tienen al menos un alelo dominante.">tienen distinto fenotipo.</button><button class="op">tienen el mismo fenotipo pero distinto genotipo.</button><button class="op" data-por="AA y Aa no son las mismas letras: el genotipo es distinto.">tienen el mismo genotipo.</button></div>
+    </div>
+  </section>
+
+  <!-- ═══ MENDEL ═══ -->
+  <section class="sec" id="mendel">
+    <h2><span class="n">02</span> Mendel y sus arvejas</h2>
+    <p class="lead"><b>Gregor Mendel</b> (1822-1884) era un monje que cultivó cerca de <b>28 000 plantas de arveja</b> en el huerto de su monasterio, en la actual República Checa. Escogió la arveja porque crece rápido, tiene características fáciles de ver y él podía controlar quién se cruzaba con quién. Repite su experimento paso a paso.</p>
+    <div class="pasos" data-titulo="El experimento" data-alcambiar="pasoMendel">
+      <div class="paso" data-t="P"><div class="lado"><div><h3>1. Generación P (parental)</h3><p>Cruza una planta de <b>raza pura</b> de semillas <b>amarillas</b> (AA) con una de raza pura de semillas <b>verdes</b> (aa). «Raza pura» quiere decir que, cruzada consigo misma, siempre da lo mismo.</p></div><div class="fig" id="men-1"></div></div></div>
+      <div class="paso" data-t="F1"><div class="lado"><div><h3>2. Primera generación filial (F1)</h3><p><b>¡Todas las semillas salen amarillas!</b> El verde parece haber desaparecido. Todas son <b>Aa</b>: el alelo amarillo domina sobre el verde.</p><p><b>1.ª ley de Mendel (uniformidad):</b> al cruzar dos razas puras distintas, todos los hijos son iguales.</p></div><div class="fig" id="men-2"></div></div></div>
+      <div class="paso" data-t="F2"><div class="lado"><div><h3>3. Segunda generación filial (F2)</h3><p>Mendel cruza las plantas F1 entre sí (Aa × Aa) y… <b>¡reaparece el verde!</b> De cada 4 semillas, unas 3 son amarillas y 1 verde. Mendel contó 6022 amarillas y 2001 verdes: <b>3 a 1</b>.</p></div><div class="fig" id="men-3"></div></div></div>
+      <div class="paso" data-t="Ley"><div class="lado"><div><h3>4. La explicación</h3><p><b>2.ª ley de Mendel (segregación):</b> los dos alelos de cada gen se <b>separan</b> al formar los gametos (óvulos y polen). Cada gameto lleva un solo alelo, y al unirse vuelven a formar parejas al azar.</p><p>El verde nunca se perdió: estaba escondido en las plantas Aa.</p></div><div class="fig" id="men-4"></div></div></div>
+    </div>
+  </section>
+
+  <!-- ═══ PUNNETT ═══ -->
+  <section class="sec" id="punnett">
+    <h2><span class="n">03</span> El cuadro de Punnett</h2>
+    <p class="lead">Es una tabla para predecir los hijos de un cruce. Arriba van los alelos que puede dar un padre en sus gametos y a la izquierda los del otro. Cada casilla es una combinación posible. <b>Escoge los padres y llena tú las casillas</b>: tócalas para cambiar las letras y luego revisa.</p>
+    <div class="card">
+      <div class="padres" id="pun-padres"></div>
+      <div class="pun-wrap">
+        <div style="text-align:center">
+          <div id="pun-tab"></div>
+          <div class="ctrl" style="justify-content:center"><button type="button" class="cn-btn cn-btn--primary" id="pun-rev">✔ Revisar</button><button type="button" class="cn-btn" id="pun-sol">👀 Ver solución</button></div>
+          <p id="pun-fb" aria-live="polite" style="font-weight:600"></p>
+        </div>
+        <div>
+          <h3>Proporciones esperadas</h3>
+          <div id="pun-prop" aria-live="polite"><p style="color:var(--cn-dim)">Aparecen cuando el cuadro esté completo.</p></div>
+          <h3 style="margin-top:16px">🎲 ¿Y en la vida real?</h3>
+          <p style="font-size:.92rem">Las proporciones son <b>probabilidades</b>: con pocos hijos el resultado puede variar mucho. Simula cruces y compara.</p>
+          <div class="ctrl"><button type="button" class="cn-btn" data-sim="4">4 hijos</button><button type="button" class="cn-btn" data-sim="100">100 hijos</button><button type="button" class="cn-btn" data-sim="8023">8023 (como Mendel)</button></div>
+          <div id="pun-sim" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="Aa × aa da 2 casillas Aa y 2 casillas aa: la mitad (50 %) de probabilidad de semilla verde.">
+      <div class="q">Si cruzas una arveja Aa con una aa, ¿qué probabilidad hay de que una semilla sea verde?</div>
+      <div class="ops"><button class="op" data-por="Haz el cuadro: hay más de una casilla aa.">25 %</button><button class="op" data-por="Hay casillas Aa, que se ven amarillas.">100 %</button><button class="op">50 %</button><button class="op" data-por="Hay casillas aa: sí pueden salir verdes.">0 %</button></div>
+    </div>
+  </section>
+
+  <!-- ═══ DIHÍBRIDO ═══ -->
+  <section class="sec" id="dihibrido">
+    <h2><span class="n">04</span> Dos características a la vez</h2>
+    <p class="lead">Mendel también siguió el <b>color</b> (A amarillo, a verde) y la <b>forma</b> (B lisa, b rugosa) al mismo tiempo. Con dos genes, cada gameto lleva un alelo de cada gen y el cuadro crece a 4 × 4. Cambia los padres y observa.</p>
+    <div class="card">
+      <div class="padres" id="di-padres"></div>
+      <div style="overflow-x:auto" id="di-tab"></div>
+      <div id="di-prop"></div>
+    </div>
+    <div class="clave"><b>3.ª ley de Mendel (transmisión independiente):</b> los alelos de genes distintos se reparten en los gametos sin depender unos de otros. Por eso, en AaBb × AaBb, aparece la proporción <b>9 : 3 : 3 : 1</b>.</div>
+  </section>
+
+  <!-- ═══ MÁS ALLÁ DE MENDEL ═══ -->
+  <section class="sec" id="otras">
+    <h2><span class="n">05</span> Más allá de Mendel</h2>
+    <p class="lead">No todos los genes funcionan con un dominante y un recesivo. Explora tres casos famosos.</p>
+    <div class="tabs"><button class="chip on" data-tab="o-inc">🌸 Dominancia incompleta</button><button class="chip" data-tab="o-abo">🩸 Grupos sanguíneos</button><button class="chip" data-tab="o-sex">👁️ Ligada al sexo</button></div>
+    <div class="tab-p card" id="o-inc">
+      <p>En la flor <b>don Diego de noche</b> (<i>Mirabilis jalapa</i>), ningún alelo domina: al cruzar roja (RR) con blanca (BB) los hijos salen <b>rosados</b> (RB), una mezcla intermedia.</p>
+      <div class="padres" id="inc-padres"></div><div id="inc-tab"></div><div id="inc-prop"></div>
+    </div>
+    <div class="tab-p card" id="o-abo">
+      <p>El gen del grupo sanguíneo tiene <b>tres alelos</b>: I<sup>A</sup>, I<sup>B</sup> e i. I<sup>A</sup> e I<sup>B</sup> son <b>codominantes</b> (si están juntos se expresan los dos: grupo AB) y los dos dominan sobre i (grupo O = ii). Escoge el genotipo de los padres.</p>
+      <div class="padres" id="abo-padres"></div><div id="abo-tab"></div><div id="abo-prop"></div>
+      <div class="dato col">En Colombia el grupo más común es el <b>O</b> (alrededor del 60 % de las personas), seguido del <b>A</b>. Por eso los bancos de sangre siempre piden donantes O.</div>
+    </div>
+    <div class="tab-p card" id="o-sex">
+      <p>El <b>daltonismo</b> (no distinguir bien el rojo del verde) se debe a un alelo recesivo (X<sup>d</sup>) que está en el <b>cromosoma X</b>. Las mujeres tienen XX y los hombres XY: a un hombre le basta un X<sup>d</sup> para ser daltónico, porque el Y no tiene ese gen. Por eso es mucho más frecuente en hombres.</p>
+      <div class="padres" id="sex-padres"></div><div id="sex-tab"></div><div id="sex-prop"></div>
+    </div>
+  </section>
+
+  <!-- ═══ ADN ═══ -->
+  <section class="sec" id="adn">
+    <h2><span class="n">06</span> El ADN: la molécula de la herencia</h2>
+    <p class="lead">Mendel hablaba de «factores» sin saber de qué estaban hechos. Casi un siglo después se descubrió que los genes son trozos de <b>ADN</b> (ácido desoxirribonucleico).</p>
+    <div class="pasos" data-titulo="Descubriendo el ADN">
+      <div class="paso" data-t="1869"><h3>1869 · Friedrich Miescher</h3><p>Extrae del núcleo de los glóbulos blancos (del pus de vendajes) una sustancia ácida rica en fósforo: la llama <b>nucleína</b>. Era el ADN.</p></div>
+      <div class="paso" data-t="1944"><h3>1944 · Avery, MacLeod y McCarty</h3><p>Demuestran que el ADN, y no las proteínas, es la molécula que transmite la información hereditaria entre bacterias.</p></div>
+      <div class="paso" data-t="1950"><h3>1950 · Erwin Chargaff</h3><p>Mide las bases del ADN de muchas especies y encuentra una regla: siempre hay <b>tanta A como T</b> y <b>tanta C como G</b>.</p></div>
+      <div class="paso" data-t="1952"><h3>1952 · Rosalind Franklin</h3><p>Con rayos X obtiene la famosa <b>«Foto 51»</b>, que muestra que el ADN tiene forma de hélice. Su trabajo fue clave, pero durante años no recibió el reconocimiento que merecía.</p></div>
+      <div class="paso" data-t="1953"><h3>1953 · Watson y Crick</h3><p>Con los datos de Chargaff y de Franklin proponen el modelo de la <b>doble hélice</b>: dos cadenas enrolladas, como una escalera de caracol, unidas por sus bases.</p></div>
+    </div>
+    <h3 style="margin-top:20px">¿Cómo está hecho?</h3>
+    <div class="grid g2">
+      <div class="card"><p>El ADN es una cadena de <span class="term" data-def="La unidad del ADN: un grupo fosfato + un azúcar (desoxirribosa) + una base nitrogenada.">nucleótidos</span>. Cada nucleótido tiene un <b>fosfato</b>, un azúcar llamado <b>desoxirribosa</b> y una de cuatro <b>bases</b>: <span class="base b-A" style="display:inline-grid;width:26px;height:26px">A</span> adenina, <span class="base b-T" style="display:inline-grid;width:26px;height:26px">T</span> timina, <span class="base b-C" style="display:inline-grid;width:26px;height:26px">C</span> citosina y <span class="base b-G" style="display:inline-grid;width:26px;height:26px">G</span> guanina.</p></div>
+      <div class="card"><p>Las dos cadenas son <b>complementarias</b>: frente a una <b>A</b> siempre va una <b>T</b>, y frente a una <b>C</b> siempre va una <b>G</b>. Fosfato y azúcar forman los «pasamanos» de la escalera; las parejas de bases, los «peldaños».</p></div>
+    </div>
+    <h3 style="margin-top:20px">🧩 Completa la cadena complementaria</h3>
+    <p>Toca una casilla vacía de la cadena de abajo y escoge la base que va frente a la de arriba.</p>
+    <div class="card">
+      <div class="adn-wrap"><div class="adn" id="adn-esc"></div></div>
+      <div class="teclas" id="adn-teclas"><button type="button" class="base b-A">A</button><button type="button" class="base b-T">T</button><button type="button" class="base b-C">C</button><button type="button" class="base b-G">G</button></div>
+      <p id="adn-fb" style="text-align:center;font-weight:600" aria-live="polite"></p>
+      <div style="text-align:center"><button type="button" class="cn-btn" id="adn-otra">🔄 Otra cadena</button></div>
+    </div>
+    <div class="dato">Si estiraras el ADN de una sola de tus células mediría unos <b>2 metros</b>. Cabe en un núcleo de 6 µm porque está enrollado alrededor de proteínas (histonas) y súper compactado en <b>cromosomas</b>. Tú tienes 46 cromosomas: 23 de tu mamá y 23 de tu papá.</div>
+  </section>
+
+  <!-- ═══ DEL GEN A LA PROTEÍNA ═══ -->
+  <section class="sec" id="proteinas">
+    <h2><span class="n">07</span> Del gen a la proteína</h2>
+    <p class="lead">El ADN no sale del núcleo, pero las proteínas se fabrican en los ribosomas del citoplasma. ¿Cómo viaja la información? Con una copia: el <b>ARN mensajero</b>. Es el llamado <b>dogma central</b>: <b>ADN → ARN → proteína</b>. Avanza paso a paso con un trozo real del gen de la hemoglobina.</p>
+    <div class="card">
+      <div class="chips" style="margin-bottom:10px"><button class="chip on" id="pr-trans">1️⃣ Transcripción (núcleo)</button><button class="chip" id="pr-tradu">2️⃣ Traducción (ribosoma)</button></div>
+      <div class="etq-fila">ADN · cadena molde (la que se lee)</div><div class="codones" id="pr-molde"></div>
+      <div class="etq-fila">ARN mensajero</div><div class="codones" id="pr-arn"></div>
+      <div class="etq-fila">Proteína (cadena de aminoácidos)</div><div class="prot" id="pr-prot"></div>
+      <p id="pr-txt" style="margin-top:10px;min-height:3em" aria-live="polite"></p>
+      <div class="ctrl"><button type="button" class="cn-btn cn-btn--primary" id="pr-paso">Siguiente paso ▶</button><button type="button" class="cn-btn" id="pr-todo">⏩ Todo</button><button type="button" class="cn-btn" id="pr-reset">🔄 Reiniciar</button></div>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>📝 Transcripción</h3><p>En el núcleo, una enzima (la ARN polimerasa) abre el ADN y copia una de sus cadenas en ARN, siguiendo la complementariedad. En el ARN no hay T: en su lugar va <b>U (uracilo)</b>. Frente a una A del ADN se pone una U.</p></div>
+      <div class="card"><h3>🔧 Traducción</h3><p>En el ribosoma, el ARNm se lee de <b>tres en tres</b> letras. Cada trío es un <b>codón</b> y corresponde a un aminoácido. Siempre empieza en <b>AUG</b> (metionina) y termina en un codón de parada (UAA, UAG o UGA).</p></div>
+    </div>
+    <details class="card" style="margin-top:12px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand-d)">📖 Ver la tabla del código genético</summary><div class="tbl-wrap" style="margin-top:10px" id="tabla-cod"></div></details>
+  </section>
+
+  <!-- ═══ MUTACIONES ═══ -->
+  <section class="sec" id="mutaciones">
+    <h2><span class="n">08</span> Mutaciones: cuando cambia una letra</h2>
+    <p class="lead">Una <b>mutación</b> es un cambio en la secuencia del ADN. Toca cualquier letra del ARNm para cambiarla, o usa los botones, y mira qué le pasa a la proteína.</p>
+    <div class="card">
+      <div class="ctrl"><button type="button" class="cn-btn" id="mu-falci">🩸 Anemia falciforme</button><button type="button" class="cn-btn" id="mu-ins">➕ Insertar una letra</button><button type="button" class="cn-btn" id="mu-del">➖ Borrar una letra</button><button type="button" class="cn-btn" id="mu-reset">🔄 Original</button></div>
+      <div class="etq-fila">ARNm (toca una letra para cambiarla)</div><div class="codones" id="mu-arn"></div>
+      <div class="etq-fila">Proteína original</div><div class="prot" id="mu-orig"></div>
+      <div class="etq-fila">Proteína con la mutación</div><div class="prot" id="mu-prot"></div>
+      <div class="mut-res" id="mu-res" aria-live="polite"></div>
+    </div>
+    <div class="dato">La <b>anemia falciforme</b> se debe a cambiar <b>una sola letra</b>: GAG → GUG. El aminoácido ácido glutámico se cambia por valina y la hemoglobina se pega formando fibras que deforman los glóbulos rojos en forma de hoz. Es más frecuente en poblaciones afrodescendientes, como en el Pacífico y el Caribe colombianos.</div>
+    <div class="chequeo" data-ok="1" data-exp="Al insertar o borrar una letra, todos los codones que siguen se leen corridos: cambia casi toda la proteína. Por eso suelen ser mutaciones más graves.">
+      <div class="q">¿Por qué una inserción suele ser más grave que cambiar una letra por otra?</div>
+      <div class="ops"><button class="op" data-por="No: la cantidad de ADN añadida es mínima (una letra).">Porque agrega mucho ADN.</button><button class="op">Porque corre el marco de lectura y cambian todos los codones siguientes.</button><button class="op" data-por="Las sustituciones también pueden ocurrir en cualquier parte.">Porque solo ocurre en el núcleo.</button></div>
+    </div>
+    <div class="sig"><a href="sistemas.html"><small>← Anterior</small><b>🫀 Sistemas</b></a><a class="der" href="evolucion.html"><small>Siguiente →</small><b>🦎 Evolución</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=2"></script>
+<script>
+(function(){
+var esc=BIO.esc;
+/* ═══ Arvejas dibujadas ═══ */
+var uid=0;
+function arveja(col,liso,tam){
+  tam=tam||40;uid++;var c=col==='am'?['#fff3a8','#e7c21c','#a88a0a']:['#d6f0a6','#7cb83a','#4a7a1c'];
+  var path;
+  if(liso)path='<circle cx="20" cy="20" r="16" fill="url(#ar'+uid+')" stroke="'+c[2]+'" stroke-width="1.2"/>';
+  else{var p='';for(var a=0;a<360;a+=18){var r=15+(a%36?-2.4:1.2);p+=(p?'L':'M')+(20+r*Math.cos(a*Math.PI/180)).toFixed(1)+' '+(20+r*Math.sin(a*Math.PI/180)).toFixed(1);}
+    path='<path d="'+p+'Z" fill="url(#ar'+uid+')" stroke="'+c[2]+'" stroke-width="1.2" stroke-linejoin="round"/><path d="M12 16 Q20 12 28 17 M11 24 Q20 21 29 25" stroke="'+c[2]+'" stroke-width=".9" fill="none" opacity=".6"/>';}
+  return '<svg width="'+tam+'" height="'+tam+'" viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="ar'+uid+'" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></radialGradient></defs>'+path+'<ellipse cx="14" cy="13" rx="4" ry="2.5" fill="#fff" opacity=".55"/></svg>';
+}
+function flor(col,tam){tam=tam||40;var c={pu:['#c48ee8','#7d3cb5'],bl:['#ffffff','#c9c9d6'],ro:['#ff8a8a','#c0242a'],rs:['#ffc2d6','#e0709a']}[col];var p='';
+  for(var i=0;i<5;i++){var a=i*72;p+='<ellipse cx="20" cy="10" rx="7" ry="10" transform="rotate('+a+' 20 20)" fill="'+c[0]+'" stroke="'+c[1]+'" stroke-width="1"/>';}
+  return '<svg width="'+tam+'" height="'+tam+'" viewBox="0 0 40 40" aria-hidden="true">'+p+'<circle cx="20" cy="20" r="4.5" fill="#f5c542" stroke="#b8860b"/></svg>';}
+
+/* ═══ 1. Conceptos ═══ */
+var RASGOS={
+ color:{n:'🟡 Color de la semilla',L:'A',dom:'amarilla',rec:'verde',dib:function(d){return arveja(d?'am':'ve',true,90);}},
+ forma:{n:'⚪ Forma de la semilla',L:'B',dom:'lisa',rec:'rugosa',dib:function(d){return arveja('am',d,90);}},
+ flor:{n:'🌸 Color de la flor',L:'P',dom:'púrpura',rec:'blanca',dib:function(d){return flor(d?'pu':'bl',90);}}
+};
+var rasgo='color',am='A',ap='a';
+var rs=document.getElementById('rasgo-sel');
+rs.innerHTML=Object.keys(RASGOS).map(function(k){return '<button class="chip" data-ra="'+k+'">'+RASGOS[k].n+'</button>';}).join('');
+rs.querySelectorAll('[data-ra]').forEach(function(b){b.onclick=function(){var R=RASGOS[b.getAttribute('data-ra')],viejo=RASGOS[rasgo].L;rasgo=b.getAttribute('data-ra');
+  am=am===viejo?R.L:R.L.toLowerCase();ap=ap===viejo?R.L:R.L.toLowerCase();pintarAl();};});
+var vistosAl={};
+function pintarAl(){
+  var R=RASGOS[rasgo],L=R.L,l=L.toLowerCase();
+  rs.querySelectorAll('[data-ra]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-ra')===rasgo);});
+  ['m','p'].forEach(function(q){var v=q==='m'?am:ap,box=document.getElementById('al-'+q);
+    box.innerHTML=[L,l].map(function(x){return '<button type="button" class="'+(x===v?'on':'')+'" aria-label="Alelo '+x+'">'+x+'</button>';}).join('');
+    box.querySelectorAll('button').forEach(function(b){b.onclick=function(){if(q==='m')am=b.textContent;else ap=b.textContent;pintarAl();};});
+    document.getElementById('cr-'+q).textContent=v;});
+  var gt=[am,ap].sort(function(x,y){return x===L?-1:y===L?1:0;}).join(''),dom=gt.indexOf(L)>=0,tipo=gt===L+L?'Homocigoto dominante':gt===l+l?'Homocigoto recesivo':'Heterocigoto';
+  vistosAl[gt]=1;if(Object.keys(vistosAl).length>=3)BIO.marcarSeccion('conceptos');
+  document.getElementById('res-gen').innerHTML=R.dib(dom)+'<div class="gt">'+gt+'</div><b>'+tipo+'</b>';
+  document.getElementById('res-exp').innerHTML='<p><b>Genotipo:</b> '+gt+' · <b>Fenotipo:</b> '+(rasgo==='flor'?'flor ':'semilla ')+(dom?R.dom:R.rec)+'.</p><p style="margin-top:6px">'+
+    (gt===L+L?'Los dos alelos son dominantes ('+L+'): se ve '+R.dom+'.':gt===l+l?'Los dos alelos son recesivos ('+l+'): <b>solo así</b> se ve '+R.rec+'.':'Hay un alelo de cada tipo. El dominante ('+L+') tapa al recesivo ('+l+'), así que se ve '+R.dom+'. Pero el alelo '+l+' sigue ahí y puede pasar a los hijos.')+'</p>';
+}
+pintarAl();
+
+/* ═══ 2. Mendel ═══ */
+function fila(arr){return '<div style="display:flex;gap:4px;justify-content:center;flex-wrap:wrap">'+arr.join('')+'</div>';}
+function rot(t){return '<div style="text-align:center;font:800 .85rem var(--cn-mono);color:var(--cn-dim);margin:4px 0">'+t+'</div>';}
+document.getElementById('men-1').innerHTML=rot('P: AA × aa')+fila([arveja('am',true,60),'<span style="font-size:2rem;align-self:center">×</span>',arveja('ve',true,60)]);
+document.getElementById('men-2').innerHTML=rot('F1: todas Aa')+fila([1,2,3,4,5,6].map(function(){return arveja('am',true,44);}));
+var f2=[];for(var i=0;i<12;i++)f2.push(arveja(i%4===3?'ve':'am',true,40));
+document.getElementById('men-3').innerHTML=rot('F2: 3 amarillas : 1 verde')+fila(f2);
+document.getElementById('men-4').innerHTML=rot('Aa × Aa')+'<div id="men-pun"></div>';
+
+/* ═══ Punnett genérico ═══ */
+function tabla(g1,g2,celda,clase){
+  var h='<table class="ptab'+(clase?' '+clase:'')+'"><tr><th class="esq"></th>'+g2.map(function(g){return '<th>'+g+'</th>';}).join('')+'</tr>';
+  g1.forEach(function(a,i){h+='<tr><th>'+a+'</th>'+g2.map(function(b,j){return celda(a,b,i,j);}).join('')+'</tr>';});return h+'</table>';
+}
+function ordenar(a,b){return (a===a.toUpperCase()&&b!==b.toUpperCase())?a+b:(b===b.toUpperCase()&&a!==a.toUpperCase())?b+a:[a,b].sort().join('');}
+document.getElementById('men-pun').innerHTML=tabla(['A','a'],['A','a'],function(a,b){var g=ordenar(a,b);return '<td style="cursor:default">'+arveja(g.indexOf('A')>=0?'am':'ve',true,30)+'<div style="font-size:.8rem">'+g+'</div></td>';},'chica');
+window.pasoMendel=function(k){if(k===3)BIO.marcarSeccion('mendel');};
+
+function barras(items){ // items: [etiqueta, valor 0-1, color, texto]
+  return '<div class="barras">'+items.map(function(it){return '<div class="b"><span>'+it[0]+'</span><span class="t"><i style="width:'+(it[1]*100).toFixed(1)+'%;background:'+it[2]+'"></i></span><b>'+it[3]+'</b></div>';}).join('')+'</div>';
+}
+function selector(id,ops,val,fn){return '<label class="p">'+id+'<br><select data-sel="'+id+'">'+ops.map(function(o){return '<option value="'+o[0]+'"'+(o[0]===val?' selected':'')+'>'+o[1]+'</option>';}).join('')+'</select></label>';}
+
+/* ═══ 3. Punnett monohíbrido con práctica ═══ */
+var P1='Aa',P2='Aa',resp={},GEN=['AA','Aa','aa'];
+var OPS_M=[['AA','AA · amarilla pura'],['Aa','Aa · amarilla híbrida'],['aa','aa · verde']];
+function pintarPadres(){
+  var c=document.getElementById('pun-padres');
+  c.innerHTML='<div class="p">'+arveja(P1.indexOf('A')>=0?'am':'ve',true,50)+'<br>'+selector('Madre',OPS_M,P1)+'</div><span class="x">×</span><div class="p">'+arveja(P2.indexOf('A')>=0?'am':'ve',true,50)+'<br>'+selector('Padre',OPS_M,P2)+'</div>';
+  c.querySelectorAll('select').forEach(function(s){s.onchange=function(){if(s.getAttribute('data-sel')==='Madre')P1=s.value;else P2=s.value;resp={};pintarPadres();pintarPun(false);};});
+}
+function pintarPun(sol){
+  var g1=P1.split(''),g2=P2.split('');
+  document.getElementById('pun-tab').innerHTML=tabla(g1,g2,function(a,b,i,j){
+    var k=i+'-'+j,v=sol?ordenar(a,b):resp[k];
+    return '<td data-k="'+k+'" data-ok="'+ordenar(a,b)+'" tabindex="0" role="button" aria-label="Casilla">'+(v?(arveja(v.indexOf('A')>=0?'am':'ve',true,30)+'<div>'+v+'</div>'):'<span style="color:#bbb">?</span>')+'</td>';});
+  document.getElementById('pun-tab').querySelectorAll('td').forEach(function(td){
+    function cic(){var k=td.getAttribute('data-k'),v=resp[k];resp[k]=GEN[(GEN.indexOf(v)+1)%3];pintarPun(false);document.getElementById('pun-fb').textContent='';}
+    td.onclick=cic;td.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();cic();}};});
+  if(sol){[0,1].forEach(function(i){[0,1].forEach(function(j){resp[i+'-'+j]=ordenar(g1[i],g2[j]);});});proporciones();}
+}
+function proporciones(){
+  var g1=P1.split(''),g2=P2.split(''),cnt={};g1.forEach(function(a){g2.forEach(function(b){var g=ordenar(a,b);cnt[g]=(cnt[g]||0)+1;});});
+  var am=(cnt.AA||0)+(cnt.Aa||0),ve=cnt.aa||0;
+  document.getElementById('pun-prop').innerHTML='<p><b>Genotipos:</b> '+GEN.filter(function(g){return cnt[g];}).map(function(g){return g+' '+cnt[g]+'/4 ('+cnt[g]*25+' %)';}).join(' · ')+'</p>'+
+    barras([['🟡 Amarillas',am/4,'#e7c21c',am*25+' %'],['🟢 Verdes',ve/4,'#7cb83a',ve*25+' %']])+
+    '<p style="margin-top:6px;font-size:.9rem"><b>Proporción fenotípica:</b> '+(am&&ve?am+' amarilla'+(am>1?'s':'')+' : '+ve+' verde'+(ve>1?'s':''):am?'todas amarillas':'todas verdes')+'.</p>';
+  BIO.marcarSeccion('punnett');
+}
+document.getElementById('pun-rev').onclick=function(){
+  var tds=document.querySelectorAll('#pun-tab td'),bien=0,llen=0;
+  tds.forEach(function(td){var v=resp[td.getAttribute('data-k')];if(v)llen++;var ok=v===td.getAttribute('data-ok');if(ok)bien++;td.classList.toggle('ok',ok);td.classList.toggle('mal',!!v&&!ok);});
+  var fb=document.getElementById('pun-fb');
+  if(llen<4)fb.textContent='Llena las 4 casillas: toca cada una hasta que muestre la combinación correcta.';
+  else if(bien===4){fb.innerHTML='✅ ¡Perfecto! Cada casilla junta un alelo de la madre (fila) y uno del padre (columna).';proporciones();}
+  else fb.innerHTML='❌ Tienes '+bien+' de 4. En cada casilla combina la letra de su fila con la de su columna.';
+};
+document.getElementById('pun-sol').onclick=function(){pintarPun(true);document.getElementById('pun-fb').textContent='';};
+document.querySelectorAll('[data-sim]').forEach(function(b){b.onclick=function(){
+  var n=+b.getAttribute('data-sim'),am=0;for(var i=0;i<n;i++){var g=P1[Math.random()<.5?0:1]+P2[Math.random()<.5?0:1];if(g.indexOf('A')>=0)am++;}
+  var esp=(function(){var c=0;P1.split('').forEach(function(a){P2.split('').forEach(function(x){if((a+x).indexOf('A')>=0)c++;});});return c/4;})();
+  document.getElementById('pun-sim').innerHTML=barras([['🟡 Amarillas',am/n,'#e7c21c',am],['🟢 Verdes',(n-am)/n,'#7cb83a',n-am]])+
+    '<p style="font-size:.9rem;margin-top:6px">Salieron '+(am/n*100).toFixed(1)+' % amarillas; el cuadro predice '+(esp*100)+' %. '+(n<10?'Con tan pocos hijos la diferencia puede ser grande: vuelve a simular.':'Con muchos hijos el resultado se acerca a lo esperado.')+'</p>';
+};});
+pintarPadres();pintarPun(false);
+
+/* ═══ 4. Dihíbrido ═══ */
+var D1='AaBb',D2='AaBb';
+var OPS_D=['AABB','AaBb','AABb','AaBB','aabb','Aabb','aaBb'].map(function(g){return [g,g];});
+function gametos(g){var a=g.slice(0,2).split(''),b=g.slice(2).split(''),r=[];a.forEach(function(x){b.forEach(function(y){r.push(x+y);});});return r;}
+var FEN={AB:['Amarilla lisa','#f6e27a'],Ab:['Amarilla rugosa','#f4c96a'],aB:['Verde lisa','#b8e08a'],ab:['Verde rugosa','#8fc46a']};
+function fenD(g){return (g.indexOf('A')>=0?'A':'a')+(g.indexOf('B')>=0?'B':'b');}
+function pintarDi(){
+  var c=document.getElementById('di-padres');
+  c.innerHTML=selector('Madre',OPS_D,D1)+'<span class="x">×</span>'+selector('Padre',OPS_D,D2);
+  c.querySelectorAll('select').forEach(function(s){s.onchange=function(){if(s.getAttribute('data-sel')==='Madre')D1=s.value;else D2=s.value;pintarDi();};});
+  var g1=gametos(D1),g2=gametos(D2),cnt={};
+  document.getElementById('di-tab').innerHTML=tabla(g1,g2,function(a,b){
+    var g=ordenar(a[0],b[0])+ordenar(a[1],b[1]),f=fenD(g);cnt[f]=(cnt[f]||0)+1;
+    return '<td style="cursor:default;background:'+FEN[f][1]+'55" title="'+FEN[f][0]+'">'+arveja(f[0]==='A'?'am':'ve',f[1]==='B',26)+'<div style="font-size:.74rem">'+g+'</div></td>';},'chica');
+  var orden=['AB','Ab','aB','ab'].filter(function(f){return cnt[f];});
+  document.getElementById('di-prop').innerHTML=barras(orden.map(function(f){return [FEN[f][0],cnt[f]/16,FEN[f][1].replace('55',''),cnt[f]+'/16'];}))+
+    '<p style="margin-top:6px"><b>Proporción:</b> '+orden.map(function(f){return cnt[f];}).join(' : ')+'</p>';
+}
+pintarDi();
+
+/* ═══ 5. Otros tipos de herencia ═══ */
+// dominancia incompleta
+var I1='RB',I2='RB';
+function colI(g){return g==='RR'?'ro':g==='BB'?'bl':'rs';}
+var NOM_I={ro:'Roja',bl:'Blanca',rs:'Rosada'};
+function pintarInc(){
+  var c=document.getElementById('inc-padres'),OPS=[['RR','RR · roja'],['RB','RB · rosada'],['BB','BB · blanca']];
+  c.innerHTML='<div class="p">'+flor(colI(I1),44)+'<br>'+selector('Madre',OPS,I1)+'</div><span class="x">×</span><div class="p">'+flor(colI(I2),44)+'<br>'+selector('Padre',OPS,I2)+'</div>';
+  c.querySelectorAll('select').forEach(function(s){s.onchange=function(){if(s.getAttribute('data-sel')==='Madre')I1=s.value;else I2=s.value;pintarInc();};});
+  var cnt={};
+  document.getElementById('inc-tab').innerHTML=tabla(I1.split(''),I2.split(''),function(a,b){var g=[a,b].sort().reverse().join('');g=g==='BR'?'RB':g;var k=colI(g);cnt[k]=(cnt[k]||0)+1;return '<td style="cursor:default">'+flor(k,30)+'<div>'+g+'</div></td>';},'chica');
+  document.getElementById('inc-prop').innerHTML=barras(['ro','rs','bl'].filter(function(k){return cnt[k];}).map(function(k){return [NOM_I[k],cnt[k]/4,{ro:'#e04848',rs:'#f09ab8',bl:'#c9c9d6'}[k],cnt[k]*25+' %'];}));
+}
+pintarInc();
+// grupos ABO
+var A1='AO',A2='BO';
+var ABO_OPS=[['AA','A (IᴬIᴬ)'],['AO','A (Iᴬi)'],['BB','B (IᴮIᴮ)'],['BO','B (Iᴮi)'],['AB','AB (IᴬIᴮ)'],['OO','O (ii)']];
+var SIMB={A:'Iᴬ',B:'Iᴮ',O:'i'};
+function grupo(a,b){var s=[a,b];if(s.indexOf('A')>=0&&s.indexOf('B')>=0)return 'AB';if(s.indexOf('A')>=0)return 'A';if(s.indexOf('B')>=0)return 'B';return 'O';}
+var COL_G={A:'#e5484d',B:'#3e8ed0',AB:'#9b59b6',O:'#2e9a5a'};
+function pintarAbo(){
+  var c=document.getElementById('abo-padres');
+  c.innerHTML=selector('Madre',ABO_OPS,A1)+'<span class="x">×</span>'+selector('Padre',ABO_OPS,A2);
+  c.querySelectorAll('select').forEach(function(s){s.onchange=function(){if(s.getAttribute('data-sel')==='Madre')A1=s.value;else A2=s.value;pintarAbo();};});
+  var cnt={};
+  document.getElementById('abo-tab').innerHTML=tabla(A1.split('').map(function(x){return SIMB[x];}),A2.split('').map(function(x){return SIMB[x];}),function(a,b,i,j){
+    var g=grupo(A1[i],A2[j]);cnt[g]=(cnt[g]||0)+1;return '<td style="cursor:default;background:'+COL_G[g]+'22"><b style="color:'+COL_G[g]+';font-size:1.1rem">'+g+'</b><div style="font-size:.7rem">'+a+b+'</div></td>';},'chica');
+  document.getElementById('abo-prop').innerHTML=barras(['A','B','AB','O'].filter(function(g){return cnt[g];}).map(function(g){return ['Grupo '+g,cnt[g]/4,COL_G[g],cnt[g]*25+' %'];}));
+}
+pintarAbo();
+// daltonismo
+var X1='XDXd',X2='XDY';
+var M_OPS=[['XDXD','Mujer de visión normal (XᴰXᴰ)'],['XDXd','Mujer portadora (XᴰXᵈ)'],['XdXd','Mujer daltónica (XᵈXᵈ)']];
+var H_OPS=[['XDY','Hombre de visión normal (XᴰY)'],['XdY','Hombre daltónico (XᵈY)']];
+function cromS(s){return s.replace(/XD/g,'Xᴰ').replace(/Xd/g,'Xᵈ');}
+function pintarSex(){
+  var c=document.getElementById('sex-padres');
+  c.innerHTML=selector('Madre',M_OPS,X1)+'<span class="x">×</span>'+selector('Padre',H_OPS,X2);
+  c.querySelectorAll('select').forEach(function(s){s.onchange=function(){if(s.getAttribute('data-sel')==='Madre')X1=s.value;else X2=s.value;pintarSex();};});
+  var gm=[X1.slice(0,2),X1.slice(2)],gp=[X2.slice(0,2),X2.slice(2)],res=[];
+  document.getElementById('sex-tab').innerHTML=tabla(gm.map(cromS),gp.map(cromS),function(a,b,i,j){
+    var m=gm[i],p=gp[j],hombre=p==='Y',dalt=hombre?m==='Xd':(m==='Xd'&&p==='Xd'),port=!hombre&&!dalt&&(m==='Xd'||p==='Xd');
+    var t=hombre?(dalt?'👦 daltónico':'👦 normal'):(dalt?'👧 daltónica':port?'👧 portadora':'👧 normal');res.push(t);
+    return '<td style="cursor:default;background:'+(dalt?'#fee4e2':port?'#fff7ec':'#e7f6ec')+'"><div style="font-size:.78rem">'+cromS(m)+(hombre?'Y':cromS(p))+'</div><div style="font:700 .66rem Outfit">'+t+'</div></td>';},'chica');
+  var h=res.filter(function(t){return t.indexOf('👦')===0;}),hd=h.filter(function(t){return t.indexOf('daltónico')>0;}).length,mu=res.filter(function(t){return t.indexOf('👧')===0;}),md=mu.filter(function(t){return t.indexOf('daltónica')>0;}).length;
+  document.getElementById('sex-prop').innerHTML='<p style="margin-top:8px">De los <b>hijos varones</b>, '+(hd/h.length*100)+' % serían daltónicos. De las <b>hijas</b>, '+(md/mu.length*100)+' % serían daltónicas'+(mu.some(function(t){return t.indexOf('portadora')>0;})?' (y algunas portadoras, que ven bien pero pueden pasar el alelo)':'')+'.</p>';
+}
+pintarSex();
+
+/* ═══ 6. ADN: cadena complementaria ═══ */
+var COMP={A:'T',T:'A',C:'G',G:'C'},cad=[],resA=[],selA=0;
+function nuevaCad(){cad=[];resA=[];for(var i=0;i<10;i++){cad.push('ATCG'[Math.floor(Math.random()*4)]);resA.push(null);}selA=0;pintarAdn();document.getElementById('adn-fb').textContent='';}
+function pintarAdn(){
+  var e=document.getElementById('adn-esc');
+  e.innerHTML=cad.map(function(b,i){var r=resA[i];return '<div class="par"><span class="base b-'+b+'" style="cursor:default">'+b+'</span><span class="puente"></span><button type="button" data-i="'+i+'" class="base '+(r?'b-'+r:'vacia')+(i===selA?' sel':'')+'" aria-label="Posición '+(i+1)+'">'+(r||'?')+'</button></div>';}).join('');
+  e.querySelectorAll('button').forEach(function(b){b.onclick=function(){selA=+b.getAttribute('data-i');pintarAdn();};});
+}
+document.querySelectorAll('#adn-teclas button').forEach(function(b){b.onclick=function(){
+  var x=b.textContent,fb=document.getElementById('adn-fb');
+  if(COMP[cad[selA]]!==x){fb.innerHTML='❌ Frente a <b>'+cad[selA]+'</b> no va <b>'+x+'</b>. Recuerda: A con T y C con G.';return;}
+  resA[selA]=x;fb.innerHTML='✅ '+cad[selA]+' – '+x;
+  var sig=resA.indexOf(null);if(sig<0){fb.innerHTML='🎉 ¡Cadena completa! Así se copia el ADN antes de que la célula se divida: cada cadena sirve de molde para la otra.';BIO.marcarSeccion('adn');}else selA=sig;
+  pintarAdn();
+};});
+document.getElementById('adn-otra').onclick=nuevaCad;nuevaCad();
+
+/* ═══ 7. Código genético y traducción ═══ */
+var B1='UUUUUUUUUUUUUUUUCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAGGGGGGGGGGGGGGGG',B2='UUUUCCCCAAAAGGGG',B3='UCAG',AAS='FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
+var CODIGO={};for(var k=0;k<64;k++)CODIGO[B1[k]+B2[k%16]+B3[k%4]]=AAS[k];
+var AA={F:['Phe','Fenilalanina'],L:['Leu','Leucina'],I:['Ile','Isoleucina'],M:['Met','Metionina (inicio)'],V:['Val','Valina'],S:['Ser','Serina'],P:['Pro','Prolina'],T:['Thr','Treonina'],A:['Ala','Alanina'],Y:['Tyr','Tirosina'],H:['His','Histidina'],Q:['Gln','Glutamina'],N:['Asn','Asparagina'],K:['Lys','Lisina'],D:['Asp','Ácido aspártico'],E:['Glu','Ácido glutámico'],C:['Cys','Cisteína'],W:['Trp','Triptófano'],R:['Arg','Arginina'],G:['Gly','Glicina'],'*':['FIN','Parada']};
+var PAL_AA={M:'#2e7d4f',V:'#1a7fb5',H:'#7b4bb7',L:'#c2410c',T:'#0e7490',P:'#a16207',E:'#be123c',K:'#4338ca',D:'#9d174d',G:'#047857',A:'#b45309',S:'#0369a1',F:'#6d28d9',I:'#c026d3',Y:'#15803d',Q:'#ea580c',N:'#0891b2',C:'#ca8a04',W:'#7c2d12',R:'#1d4ed8'};
+function colAA(a){return PAL_AA[a]||'#555';}
+function aaHTML(a,extra){return '<span class="aa'+(a==='*'?' stop':'')+(extra||'')+'" style="background:'+colAA(a)+'" title="'+AA[a][1]+'">'+AA[a][0]+'</span>';}
+function traducir(arn){var p=[];for(var i=0;i+2<arn.length;i+=3){var a=CODIGO[arn.substr(i,3)];p.push(a);if(a==='*')break;}return p;}
+// tabla
+(function(){var h='<table class="t tabla-cod"><tr><th>1.ª \\ 2.ª</th>'+'UCAG'.split('').map(function(b){return '<th>'+b+'</th>';}).join('')+'</tr>';
+  'UCAG'.split('').forEach(function(a){h+='<tr><th>'+a+'</th>';'UCAG'.split('').forEach(function(b){h+='<td>'+'UCAG'.split('').map(function(c){var x=CODIGO[a+b+c];return a+b+c+' '+AA[x][0];}).join('<br>')+'</td>';});h+='</tr>';});
+  document.getElementById('tabla-cod').innerHTML=h+'</table>';})();
+// gen de la beta-globina (inicio) con un codón de parada añadido
+var CODIF='ATGGTGCATCTGACTCCTGAGGAGAAGTAA';
+var ARN0=CODIF.replace(/T/g,'U'),MOLDE=CODIF.split('').map(function(b){return COMP[b];}).join('');
+var fase=0,pos=0;// fase 0: transcripción (pos = letras copiadas); fase 1: traducción (pos = codones leídos)
+function codHTML(sec,hasta,act,tipo){var h='';for(var i=0;i<sec.length;i+=3){var on=act===i/3;h+='<div class="codon'+(on?' on':'')+'">';for(var j=i;j<i+3;j++){var b=sec[j];h+=(hasta==null||j<hasta)?'<span class="base b-'+b+'">'+b+'</span>':'<span class="base vacia">·</span>';}h+='</div>';}return h;}
+function pintarPr(){
+  var tot=ARN0.length/3;
+  document.getElementById('pr-trans').classList.toggle('on',fase===0);document.getElementById('pr-tradu').classList.toggle('on',fase===1);
+  document.getElementById('pr-molde').innerHTML=codHTML(MOLDE,null,fase===0&&pos<ARN0.length?Math.floor(pos/3):-1);
+  document.getElementById('pr-arn').innerHTML=codHTML(ARN0,fase===0?pos:null,fase===1&&pos<tot?pos:-1);
+  var prot=fase===1?traducir(ARN0).slice(0,pos):[];
+  document.getElementById('pr-prot').innerHTML=prot.length?prot.map(function(a){return aaHTML(a);}).join('<span style="color:#999">–</span>'):'<span style="color:var(--cn-dim);font-size:.9rem">Todavía no hay proteína.</span>';
+  var t;
+  if(fase===0){t=pos===0?'La ARN polimerasa se pega al gen. Toca «Siguiente paso» para copiar el ADN molde de tres en tres letras.':pos<ARN0.length?'Copiando: frente a cada base del molde se pone su complementaria. Frente a <b>A</b> se pone <b>U</b>, no T.':'✅ El ARNm está listo. Sale del núcleo por un poro y llega a un ribosoma. Toca «Siguiente paso» para traducirlo.';}
+  else{var c=ARN0.substr((pos-1)*3,3),a=CODIGO[c];t=pos===0?'El ribosoma busca el codón de inicio AUG.':a==='*'?'🛑 Codón <b>'+c+'</b>: es de parada. La proteína se suelta y se pliega. ¡Listo!':'Codón <b>'+c+'</b> → '+AA[a][1]+'. Un ARN de transferencia trae ese aminoácido y el ribosoma lo une a la cadena.';}
+  document.getElementById('pr-txt').innerHTML=t;
+  var fin=fase===1&&pos>=traducir(ARN0).length;document.getElementById('pr-paso').disabled=fin;
+  if(fin)BIO.marcarSeccion('proteinas');
+}
+document.getElementById('pr-paso').onclick=function(){if(fase===0){if(pos<ARN0.length)pos+=3;else{fase=1;pos=0;}}else pos++;pintarPr();};
+document.getElementById('pr-todo').onclick=function(){fase=1;pos=traducir(ARN0).length;pintarPr();};
+document.getElementById('pr-reset').onclick=function(){fase=0;pos=0;pintarPr();};
+document.getElementById('pr-trans').onclick=function(){fase=0;pos=0;pintarPr();};
+document.getElementById('pr-tradu').onclick=function(){fase=1;pos=0;pintarPr();};
+pintarPr();
+
+/* ═══ 8. Mutaciones ═══ */
+var mu=ARN0.split('');
+var PROT0=traducir(ARN0);
+document.getElementById('mu-orig').innerHTML=PROT0.map(function(a){return aaHTML(a);}).join('');
+function pintarMu(){
+  var arn=mu.join(''),prot=traducir(arn);
+  var h='';for(var i=0;i<arn.length;i+=3){h+='<div class="codon">';for(var j=i;j<Math.min(i+3,arn.length);j++)h+='<button type="button" class="base b-'+arn[j]+'" data-j="'+j+'" title="Cambiar">'+arn[j]+'</button>';h+='</div>';}
+  var el=document.getElementById('mu-arn');el.innerHTML=h;
+  el.querySelectorAll('button').forEach(function(b){b.style.cursor='pointer';b.onclick=function(){var j=+b.getAttribute('data-j');mu[j]='UCAG'['UCAG'.indexOf(mu[j])===3?0:'UCAG'.indexOf(mu[j])+1];pintarMu();};});
+  document.getElementById('mu-prot').innerHTML=prot.map(function(a,i){return aaHTML(a,PROT0[i]!==a?' cambio':'');}).join('');
+  var dif=prot.filter(function(a,i){return a!==PROT0[i];}).length+Math.abs(prot.length-PROT0.length),r=document.getElementById('mu-res'),t,bg;
+  if(arn===ARN0){t='Secuencia original: aún no hay mutación.';bg='#f3f8f4';}
+  else if(arn.length!==ARN0.length){t='🔀 <b>Mutación por '+(arn.length>ARN0.length?'inserción':'deleción')+':</b> se corrió el <b>marco de lectura</b>. Desde ese punto todos los codones cambian: '+dif+' diferencias en la proteína.';bg='#fee4e2';}
+  else if(dif===0){t='🤫 <b>Mutación silenciosa:</b> cambió el ARN, pero el codón nuevo significa el mismo aminoácido (el código genético es redundante). La proteína no cambia.';bg='#e7f6ec';}
+  else if(prot[prot.length-1]==='*'&&prot.length<PROT0.length){t='🛑 <b>Mutación sin sentido:</b> apareció un codón de parada antes de tiempo. La proteína queda incompleta y casi nunca funciona.';bg='#fee4e2';}
+  else{t='🔁 <b>Mutación de cambio de sentido:</b> cambió un aminoácido. Según cuál sea, la proteína puede funcionar igual, un poco peor… o mal, como en la anemia falciforme.';bg='#fff7ec';}
+  r.innerHTML=t;r.style.background=bg;if(arn!==ARN0)BIO.marcarSeccion('mutaciones');
+}
+document.getElementById('mu-falci').onclick=function(){mu=ARN0.split('');mu[19]='U';pintarMu();};
+document.getElementById('mu-ins').onclick=function(){mu.splice(10,0,'G');pintarMu();};
+document.getElementById('mu-del').onclick=function(){if(mu.length>6){mu.splice(10,1);pintarMu();}};
+document.getElementById('mu-reset').onclick=function(){mu=ARN0.split('');pintarMu();};
+pintarMu();
+})();
+</script>
+<script src="text-zoom.js?v=2"></script>
+<script src="narracion.js?v=2"></script>
+<script src="pwa-install.js?v=2"></script>
+</body>
+</html>
