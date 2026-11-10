@@ -6,13 +6,27 @@ teoría muy interactivas, juego con Modo Libre y Modo Estudiante, generador
 docente y PWA instalable. Todo se organiza alrededor del **mapa de niveles de
 organización** de la portada (`index.html`).
 
+## Regla 0: leer primero `HISTORIAL_CAMBIOS.md`
+
+Al empezar **cualquier** sesión en este repositorio, Claude lee primero
+`HISTORIAL_CAMBIOS.md` (empezando por la versión más reciente) antes de tocar
+código o responder sobre el proyecto. Ahí está todo lo hecho, lo pendiente y los
+pasos manuales.
+
+## Push a `main`
+
+El docente estableció (10-11-2026) que hacer **push a `main` está autorizado**:
+cuando una tarea queda lista y probada, Claude hace commit y push a `main` sin
+volver a preguntar. Si en una sesión el docente indica otra cosa, se respeta lo
+que diga en esa sesión.
+
 ## Regla obligatoria: registrar cada sesión en `HISTORIAL_CAMBIOS.md`
 
 Al terminar cada sesión que modifique archivos, Claude DEBE, sin que se lo
 pidan:
 
-1. Agregar una entrada nueva **arriba de todas** en `HISTORIAL_CAMBIOS.md`
-   con: fecha, contexto (qué pidió el docente y por qué), cambios por archivo
+1. Agregar una entrada nueva **arriba de todas** en `HISTORIAL_CAMBIOS.md`,
+   con número de versión (1.1, 1.2… o 2 si el cambio es grande), fecha, contexto (qué pidió el docente y por qué), cambios por archivo
    o tema, pasos manuales pendientes y lo que quedó sin resolver.
 2. Dejar los cambios y la entrada en `main` (este repositorio no usa pull
    requests como flujo normal).
@@ -39,7 +53,9 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 - **Service worker y `?v=`.** Los `.js` y `.css` locales se piden con
   `?v=N` en todas las páginas y `sw.js` los sirve «red primero». Si se agrega
   un archivo o cambia mucho un CSS/JS, subir `CACHE` en `sw.js`
-  (`bionom-v1` → `bionom-v2`) y el `?v=` de las páginas en el mismo commit.
+  (por ejemplo `bionom-v12` → `bionom-v13`) y el `?v=` de las páginas en el
+  mismo commit. No repetir archivos en `ASSETS`: un archivo repetido hace
+  fallar la instalación de la app.
 
 ## Arquitectura
 
@@ -48,7 +64,7 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 | `bio.css` | Estilos comunes y componentes (`.chequeo`, `.pasos`, `.flip`, `.tabs`, `.term`, `.fig`/`.det`, `.tl`, clasificador). Usa los nombres de clase de ChromaNom (`.cn-page-head`, `.sec`, `.cn-btn`) para que funcionen `narracion.js` y `actividades.css`. |
 | `bio.js` | Menú, barra inferior del celular, pie, progreso en `localStorage` (`bionom_visitas`, `bionom_secciones`), montaje de componentes y `BIO.clasificar()`. La lista `MODULOS` dice qué niveles de organización estudia cada módulo: la usa el mapa de la portada. |
 | `index.html` | Mapa interactivo de los 13 niveles de organización. |
-| `celula.html`, `reinos.html`, `sistemas.html`, `genetica.html`, `evolucion.html`, `ecosistemas.html`, `regiones.html` | Módulos de contenido. |
+| `celula.html`, `reinos.html`, `sistemas.html`, `reproduccion.html`, `genetica.html`, `evolucion.html`, `ecosistemas.html`, `regiones.html`, `ambiente.html` | Módulos de contenido. `cuerpo.js` dibuja el cuerpo humano; `fondo-plantas.svg` es el fondo de plantas de Colombia. |
 | `mapa-colombia.js` | Contornos simplificados de las regiones naturales y departamentos (de los límites del DANE/MGN 2018). La franja del Pacífico en Valle, Cauca y Nariño es aproximada. |
 | `banco.js` | Banco de preguntas del juego y del generador (`BANCO_BIO`). |
 | `juego.html` | Juego con Modo Libre y Modo Estudiante. |
