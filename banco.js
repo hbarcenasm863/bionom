@@ -12,7 +12,7 @@
    ════════════════════════════════════════════════════════════════════════ */
 window.TEMAS_JUEGO=[
  ['celula','La célula','🔬'],['reinos','Reinos y clasificación','🍄'],['sistemas','Sistemas del cuerpo','🫀'],
- ['genetica','Genética','🧬'],['evolucion','Evolución','🦎'],['ecosistemas','Ecosistemas','🌳'],['colombia','Ecosistemas de Colombia','🇨🇴']
+ ['genetica','Genética','🧬'],['evolucion','Evolución','🦎'],['ecosistemas','Ecosistemas','🌳'],['colombia','Ecosistemas de Colombia','🇨🇴'],['ambiente','Ambiente y cambio climático','🌍']
 ];
 window.BANCO_BIO=[
 /* ───────── LA CÉLULA ───────── */
@@ -167,5 +167,75 @@ window.BANCO_BIO=[
 {t:'colombia',k:'esc',q:'¿Cómo se llama la planta típica del páramo, de hojas peludas?',a:['frailejon','frailejón','frailejones','el frailejon','el frailejón'],exp:'El frailejón (Espeletia).'},
 {t:'colombia',k:'mc',q:'Chiribiquete, el parque nacional más grande del país, es famoso por:',ops:['sus playas','sus tepuyes y pinturas rupestres','sus glaciares','sus salinas'],a:1,exp:'Patrimonio de la Humanidad.'},
 {t:'colombia',k:'vf',q:'El desierto de la Tatacoa es en realidad un bosque seco tropical muy erosionado.',a:true,exp:'Por eso tiene cactus y fósiles de La Venta.'},
-{t:'colombia',k:'mc',q:'¿Por qué Colombia tiene tantos ecosistemas diferentes?',ops:['Por estar en el trópico, tener dos océanos y las tres cordilleras','Porque es un país muy frío','Porque no tiene montañas','Porque está en el polo sur'],a:0,exp:'Ubicación tropical, dos mares y relieve de los Andes.'}
+{t:'colombia',k:'mc',q:'¿Por qué Colombia tiene tantos ecosistemas diferentes?',ops:['Por estar en el trópico, tener dos océanos y las tres cordilleras','Porque es un país muy frío','Porque no tiene montañas','Porque está en el polo sur'],a:0,exp:'Ubicación tropical, dos mares y relieve de los Andes.'},
+/* ───────── AMPLIACIÓN: célula ───────── */
+{t:'celula',k:'mc',q:'El paso de sustancias en contra de su diferencia de concentración, gastando ATP, se llama:',ops:['difusión simple','ósmosis','transporte activo','difusión facilitada'],a:2,exp:'Por ejemplo, la bomba de sodio y potasio.'},
+{t:'celula',k:'mc',q:'Un glóbulo blanco que envuelve y se «come» a una bacteria hace:',ops:['exocitosis','endocitosis (fagocitosis)','ósmosis','difusión'],a:1,exp:'La membrana envuelve a la bacteria en una vesícula.'},
+{t:'celula',k:'mc',q:'En el laboratorio de las papas, la concentración de azúcar es la variable…',ops:['dependiente','independiente','controlada','de error'],a:1,exp:'Es la que el investigador cambia a propósito.'},
+{t:'celula',k:'mc',q:'¿Qué gas libera la fase luminosa de la fotosíntesis?',ops:['CO₂','N₂','O₂','Metano'],a:2,exp:'Al romperse el agua se libera oxígeno.'},
+{t:'celula',k:'mc',q:'¿Dónde se arma la glucosa a partir del CO₂ (ciclo de Calvin)?',ops:['En los tilacoides','En el estroma del cloroplasto','En la mitocondria','En el núcleo'],a:1,exp:'Usa el ATP y el NADPH de la fase luminosa.'},
+{t:'celula',k:'mc',q:'¿Cuántos ATP se obtienen aproximadamente de una glucosa en la respiración celular con oxígeno?',ops:['2','10','Cerca de 36','Más de 500'],a:2,exp:'Sin oxígeno (fermentación) solo se obtienen 2.'},
+{t:'celula',k:'ord',q:'Ordena las fases de la mitosis:',ops:['Profase','Metafase','Anafase','Telofase'],exp:'Después viene la citocinesis.'},
+{t:'celula',k:'vf',q:'En la anafase se separan las cromátidas hermanas hacia los polos de la célula.',a:true,exp:'Cada copia viaja a un polo.'},
+{t:'celula',k:'mc',q:'El cáncer se produce cuando…',ops:['las células dejan de dividirse','las células se dividen sin control','las células pierden la membrana','entra un virus a todas las células'],a:1,exp:'Fallan los puntos de control del ciclo celular.'},
+/* ───────── AMPLIACIÓN: sistemas ───────── */
+{t:'sistemas',k:'mc',q:'Los anticuerpos los fabrican los…',ops:['glóbulos rojos','linfocitos B','plaquetas','fagocitos'],a:1,exp:'Se pegan al microbio y lo marcan para destruirlo.'},
+{t:'sistemas',k:'mc',q:'¿Por qué funcionan las vacunas?',ops:['Matan todos los virus del cuerpo','Generan células de memoria sin causar la enfermedad','Son antibióticos','Aumentan los glóbulos rojos'],a:1,exp:'Si llega el microbio real, la respuesta es rápida y fuerte.'},
+{t:'sistemas',k:'vf',q:'Los antibióticos sirven para curar la gripa, que es causada por un virus.',a:false,exp:'Los antibióticos solo actúan contra bacterias.'},
+{t:'sistemas',k:'mc',q:'Después de comer, el azúcar de la sangre sube y el páncreas libera:',ops:['glucagón','insulina','adrenalina','tiroxina'],a:1,exp:'La insulina hace que las células tomen la glucosa.'},
+{t:'sistemas',k:'esc',q:'¿Cómo se llama la capacidad del cuerpo de mantener estables la temperatura, el agua y el azúcar?',a:['homeostasis','la homeostasis'],exp:'La homeostasis.'},
+{t:'sistemas',k:'mc',q:'La papa que brota de un tubérculo es un ejemplo de reproducción:',ops:['sexual','asexual vegetativa','por esporas','por gemación'],a:1,exp:'Origina un clon de la planta madre.'},
+{t:'sistemas',k:'mc',q:'¿Qué ventaja tiene la reproducción sexual?',ops:['Es más rápida','Produce hijos con variabilidad genética','No necesita gametos','Produce clones'],a:1,exp:'La variabilidad ayuda a adaptarse.'},
+{t:'sistemas',k:'mc',q:'¿Dónde ocurre normalmente la fecundación en los seres humanos?',ops:['En el útero','En la trompa de Falopio','En el ovario','En la vagina'],a:1,exp:'Luego el cigoto baja y se implanta en el útero.'},
+{t:'sistemas',k:'mc',q:'¿Hacia qué semana del embarazo termina la etapa de embrión y empieza la de feto?',ops:['Semana 2','Semana 8','Semana 20','Semana 36'],a:1,exp:'Hacia la semana 8 ya están formados los órganos principales.'},
+/* ───────── AMPLIACIÓN: genética ───────── */
+{t:'genetica',k:'mc',q:'¿Cuántas células hijas produce la meiosis?',ops:['1','2','4','8'],a:2,exp:'Cuatro células haploides, distintas entre sí.'},
+{t:'genetica',k:'mc',q:'Una célula humana con 46 cromosomas hace meiosis. ¿Cuántos tendrá cada gameto?',ops:['46','92','23','12'],a:2,exp:'La meiosis reduce los cromosomas a la mitad.'},
+{t:'genetica',k:'mc',q:'La transmisión independiente de Mendel se explica porque en la metafase I…',ops:['las parejas de cromosomas se orientan al azar','el ADN se copia','los cromosomas desaparecen','la célula muere'],a:0,exp:'Cada pareja se orienta sin depender de la otra.'},
+{t:'genetica',k:'mc',q:'¿Qué tipo de ARN lleva los aminoácidos al ribosoma?',ops:['ARN mensajero','ARN de transferencia','ARN ribosomal','ADN'],a:1,exp:'Tiene un anticodón que encaja con el codón.'},
+{t:'genetica',k:'mc',q:'La replicación del ADN es semiconservativa porque cada molécula nueva tiene…',ops:['dos cadenas nuevas','dos cadenas viejas','una cadena vieja y una nueva','solo una cadena'],a:2,exp:'Cada cadena vieja sirve de molde.'},
+{t:'genetica',k:'mc',q:'Dos padres sin albinismo tienen una hija albina. ¿Cuál es el genotipo de los padres?',ops:['AA y AA','Aa y Aa','aa y aa','AA y aa'],a:1,exp:'Ambos son portadores: cada uno le dio una a.'},
+{t:'genetica',k:'mc',q:'La estatura depende de muchos genes y de la alimentación. Esto es herencia…',ops:['mendeliana simple','poligénica e influida por el ambiente','ligada al sexo','codominante'],a:1,exp:'Por eso forma una curva de campana.'},
+{t:'genetica',k:'mc',q:'¿Cuál de estos es un agente mutágeno?',ops:['El agua','La radiación ultravioleta del sol','La fibra de las frutas','El oxígeno del aire en reposo'],a:1,exp:'Por eso hay que protegerse del sol.'},
+{t:'genetica',k:'mc',q:'Un organismo al que se le insertó un gen de otra especie es:',ops:['un clon','un transgénico','un híbrido natural','un mutante por radiación'],a:1,exp:'Como el maíz Bt o las bacterias que producen insulina.'},
+{t:'genetica',k:'mc',q:'La oveja Dolly fue el primer mamífero obtenido por…',ops:['fecundación in vitro','clonación','terapia génica','selección artificial'],a:1,exp:'A partir de una célula adulta, en 1996.'},
+/* ───────── AMPLIACIÓN: evolución ───────── */
+{t:'evolucion',k:'mc',q:'El cambio al azar de las frecuencias de los alelos, más fuerte en poblaciones pequeñas, se llama:',ops:['selección natural','deriva genética','mutación dirigida','selección artificial'],a:1,exp:'Por pura suerte algunos alelos desaparecen.'},
+{t:'evolucion',k:'mc',q:'El maíz se obtuvo a partir del teosinte mediante:',ops:['selección natural','selección artificial','deriva genética','clonación'],a:1,exp:'Los agricultores escogieron las mejores plantas durante miles de años.'},
+{t:'evolucion',k:'mc',q:'¿En qué continente apareció el Homo sapiens?',ops:['América','Europa','África','Asia'],a:2,exp:'Hace unos 300 000 años.'},
+{t:'evolucion',k:'mc',q:'¿Qué homínido dominó el fuego y salió primero de África?',ops:['Australopithecus','Homo habilis','Homo erectus','Sahelanthropus'],a:2,exp:'Homo erectus, hace unos 1,9 millones de años.'},
+{t:'evolucion',k:'mc',q:'Los hipopótamos del Magdalena medio son una especie…',ops:['endémica','invasora','extinta','nativa'],a:1,exp:'Fueron traídos y se multiplican sin depredadores.'},
+{t:'evolucion',k:'ord',q:'Ordena las eras geológicas de la más antigua a la más reciente:',ops:['Precámbrico','Paleozoico','Mesozoico','Cenozoico'],exp:'Los dinosaurios vivieron en el Mesozoico.'},
+/* ───────── AMPLIACIÓN: ecosistemas ───────── */
+{t:'ecosistemas',k:'mc',q:'¿Qué organismos convierten el nitrógeno del aire en una forma que las plantas pueden usar?',ops:['Hongos de sombrero','Bacterias de los nódulos de las leguminosas','Las vacas','Los peces'],a:1,exp:'Como Rhizobium en las raíces del fríjol.'},
+{t:'ecosistemas',k:'mc',q:'El exceso de fertilizantes que llega a un lago produce:',ops:['más oxígeno','eutrofización','más peces','agua más limpia'],a:1,exp:'Crecen algas sin control y el agua se queda sin oxígeno.'},
+{t:'ecosistemas',k:'mc',q:'El nicho ecológico de una especie es…',ops:['el lugar donde vive','su papel en el ecosistema','su nombre científico','su tamaño'],a:1,exp:'Qué come, cuándo está activa, quién se la come…'},
+{t:'ecosistemas',k:'mc',q:'Los pelos del frailejón que lo protegen del frío son una adaptación…',ops:['conductual','fisiológica','morfológica','artificial'],a:2,exp:'Es parte de la forma de la planta.'},
+{t:'ecosistemas',k:'mc',q:'La migración de las ballenas jorobadas al Pacífico colombiano es una adaptación…',ops:['morfológica','fisiológica','conductual','genética artificial'],a:2,exp:'Es un comportamiento.'},
+/* ───────── AMPLIACIÓN: Colombia ───────── */
+{t:'colombia',k:'mc',q:'En la escala de la UICN, ¿cuál es la categoría de mayor riesgo para una especie que todavía vive en estado silvestre?',ops:['Vulnerable','En peligro','En peligro crítico','Casi amenazada'],a:2,exp:'Después solo siguen «extinta en estado silvestre» y «extinta».'},
+{t:'colombia',k:'mc',q:'¿Qué especie de Colombia está en peligro crítico y se cría en cautiverio para liberarla en los ríos de los Llanos?',ops:['Oso de anteojos','Caimán del Orinoco','Jaguar','Chigüiro'],a:1,exp:'Fue cazado por su piel en el siglo XX.'},
+{t:'colombia',k:'mc',q:'Un corredor biológico sirve para…',ops:['construir carreteras','conectar áreas de bosque para que las poblaciones no queden aisladas','criar ganado','sembrar monocultivos'],a:1,exp:'Así se mantiene la variabilidad genética.'},
+{t:'colombia',k:'vf',q:'Comprar un mico o una guacamaya como mascota ayuda a conservarlos.',a:false,exp:'Alimenta el tráfico de fauna, una de las causas de su amenaza.'},
+/* ───────── AMBIENTE Y CAMBIO CLIMÁTICO ───────── */
+{t:'ambiente',k:'mc',q:'¿Cuál de estos es un gas de efecto invernadero?',ops:['Oxígeno','Nitrógeno','Dióxido de carbono','Helio'],a:2,exp:'También el metano y el óxido nitroso.'},
+{t:'ambiente',k:'vf',q:'Sin ningún efecto invernadero la Tierra sería mucho más fría.',a:true,exp:'Estaría a unos −18 °C. El problema es aumentarlo.'},
+{t:'ambiente',k:'mc',q:'¿Cuál es la principal fuente de gases de efecto invernadero en Colombia?',ops:['El transporte aéreo','La deforestación, el cambio de uso del suelo y la ganadería','Los volcanes','Las playas'],a:1,exp:'En el mundo, en cambio, es quemar combustibles fósiles.'},
+{t:'ambiente',k:'mc',q:'¿Qué gas producen las vacas al digerir el pasto?',ops:['Oxígeno','Metano','Ozono','Hidrógeno'],a:1,exp:'El metano calienta mucho más que el CO₂ en sus primeros años.'},
+{t:'ambiente',k:'mc',q:'Actualmente el CO₂ de la atmósfera está en aproximadamente:',ops:['280 ppm','320 ppm','Más de 420 ppm','1000 ppm'],a:2,exp:'Antes de la industria era cerca de 280 ppm.'},
+{t:'ambiente',k:'mc',q:'Durante El Niño, en Colombia suele haber…',ops:['más lluvias e inundaciones','sequías, incendios y riesgo de racionamiento','nieve en las ciudades','el mismo clima'],a:1,exp:'Llueve menos y bajan los embalses.'},
+{t:'ambiente',k:'mc',q:'Durante La Niña, en Colombia suele haber…',ops:['sequías','inundaciones y deslizamientos','incendios en los páramos','menos lluvias'],a:1,exp:'En 2010-2011 afectó a más de tres millones de personas.'},
+{t:'ambiente',k:'mc',q:'¿Por qué el blanqueamiento de los corales es un problema?',ops:['Los corales se vuelven más bonitos','Los corales pierden las algas que los alimentan y pueden morir','Los corales crecen más','No es un problema'],a:1,exp:'Lo causa el calentamiento del agua.'},
+{t:'ambiente',k:'mc',q:'El mar se acidifica porque…',ops:['absorbe CO₂ que forma ácido carbónico','le cae lluvia dulce','los peces producen ácido','sube la temperatura del Sol'],a:0,exp:'Y a los corales y moluscos les cuesta formar sus conchas.'},
+{t:'ambiente',k:'mc',q:'¿Cuál es una fuente de energía renovable?',ops:['Carbón','Gasolina','Viento','Gas natural'],a:2,exp:'La Guajira tiene excelentes vientos para energía eólica.'},
+{t:'ambiente',k:'mc',q:'La mayor parte de la electricidad de Colombia viene de:',ops:['centrales nucleares','hidroeléctricas','paneles solares','quemar leña'],a:1,exp:'Por eso El Niño puede causar racionamientos.'},
+{t:'ambiente',k:'mc',q:'Detener la deforestación para reducir las emisiones es una acción de:',ops:['mitigación','adaptación','resiliencia','extinción'],a:0,exp:'Mitigar es atacar la causa.'},
+{t:'ambiente',k:'mc',q:'Sembrar cultivos resistentes a la sequía es una acción de:',ops:['mitigación','adaptación','contaminación','deforestación'],a:1,exp:'Prepararse para el clima que viene.'},
+{t:'ambiente',k:'mc',q:'¿Qué está pasando con los glaciares de Colombia?',ops:['Están creciendo','Se están derritiendo y quedan solo seis nevados con glaciar','Se formaron hace poco','No existen'],a:1,exp:'Se ha perdido cerca del 90 % del área glaciar desde el siglo XIX.'},
+{t:'ambiente',k:'mc',q:'¿Qué acción reduce tu huella de carbono?',ops:['Ir en carro para trayectos cortos','Comer más carne de res','Caminar o usar la bicicleta','Dejar las luces encendidas'],a:2,exp:'Y además es buena para la salud.'},
+{t:'ambiente',k:'vf',q:'El Niño y La Niña los causa directamente el ser humano.',a:false,exp:'Son fenómenos naturales del Pacífico, pero el calentamiento global los está haciendo más intensos.'},
+{t:'ambiente',k:'mc',q:'Los rellenos sanitarios producen metano porque…',ops:['la basura orgánica se pudre sin oxígeno','el plástico se quema','tienen muchas plantas','el agua se evapora'],a:0,exp:'Separar y compostar lo orgánico lo reduce.'},
+{t:'ambiente',k:'esc',q:'¿Cómo se llama la cantidad de gases de efecto invernadero que producen las actividades de una persona?',a:['huella de carbono','la huella de carbono','huella ecologica de carbono'],exp:'La huella de carbono.'},
+{t:'ambiente',k:'mc',q:'¿Qué comunidades son más vulnerables al cambio climático?',ops:['Las que tienen más dinero','Las rurales, pobres y que dependen directamente de la naturaleza','Las que viven en edificios altos','Ninguna'],a:1,exp:'Por eso la adaptación debe empezar por ellas.'},
+{t:'ambiente',k:'ord',q:'Ordena la cadena de causas:',ops:['Se tala la selva','Sale CO₂ a la atmósfera','Aumenta el efecto invernadero','Sube la temperatura del planeta'],exp:'Por eso proteger la Amazonia es una acción contra el cambio climático.'}
 ];

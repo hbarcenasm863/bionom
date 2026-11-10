@@ -119,6 +119,7 @@ const TEMAS_PRINCIPALES = [
   'Evolución',
   'Ecosistemas',
   'Ecosistemas de Colombia',
+  'Ambiente y cambio climático',
   'Todos los temas'
 ];
 
