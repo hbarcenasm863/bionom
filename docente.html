@@ -118,7 +118,7 @@
     </div>
     <div class="barra-g">
       <button type="button" class="cn-btn cn-btn--secondary" id="g-otra">🎲 Otras preguntas</button>
-      <label class="opt"><input type="checkbox" id="g-clave" checked> <span>Incluir hojas de respuestas</span></label>
+      <label class="opt"><input type="checkbox" id="g-clave"> <span>Incluir hojas de respuestas</span></label>
       <button type="button" class="cn-btn cn-btn--primary" id="g-imp">🖨️ Imprimir / Guardar PDF</button>
       <span id="g-info" style="font-size:.85rem;color:var(--cn-dim)" aria-live="polite"></span>
     </div>
@@ -278,8 +278,8 @@ function preguntas(c,v){
 function bloques(P,c,clave){
   var B=[],n=0,L='abcd';
   function sec(t,arr,fn){arr.forEach(function(x,i){B.push((i===0?'<h3>'+t+'</h3>':'')+fn(x));});}
-  if(P.mc.length)sec('I. Selección múltiple con única respuesta',P.mc,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<ol>'+x.ops.map(function(o,i){return '<li data-l="'+L[i]+'"'+(clave&&i===x.a?' style="font-weight:800;text-decoration:underline"':'')+'>'+esc(o)+'</li>';}).join('')+'</ol></div></div>';});
-  if(P.vf.length)sec('II. Verdadero (V) o falso (F)'+(c.tipo==='evaluacion'?' — corrige las falsas':''),P.vf,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div><span class="vf">'+(clave?(x.a?'<u>V</u>':'<u>F</u>'):'V &nbsp; F')+'</span>'+esc(x.q)+(c.tipo==='evaluacion'&&!clave?'<div class="lineas"><i></i></div>':'')+(clave?'<div style="font-size:12px;color:#2e7d4f">'+x.exp+'</div>':'')+'</div></div>';});
+  if(P.mc.length)sec('I. Selección múltiple con única respuesta',P.mc,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<ol>'+x.ops.map(function(o,i){return '<li data-l="'+L[i]+'"'+(clave&&i===x.a?' style="font-weight:800;color:#15803d"':'')+'>'+esc(o)+(clave&&i===x.a?' ✔':'')+'</li>';}).join('')+'</ol></div></div>';});
+  if(P.vf.length)sec('II. Verdadero (V) o falso (F)'+(c.tipo==='evaluacion'?' — corrige las falsas':''),P.vf,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div><span class="vf">'+(clave?'<span style="color:#15803d">'+(x.a?'✔ V':'✔ F')+'</span>':'V &nbsp; F')+'</span>'+esc(x.q)+(c.tipo==='evaluacion'&&!clave?'<div class="lineas"><i></i></div>':'')+(clave?'<div style="font-size:12px;color:#2e7d4f">'+x.exp+'</div>':'')+'</div></div>';});
   if(P.esc.length)sec('III. Responde con una palabra o frase corta',P.esc,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div style="color:#2e7d4f;font-weight:700">'+esc(x.a[0])+'</div>':'<div class="lineas"><i></i></div>')+'</div></div>';});
   if(P.ord.length)sec('IV. Ordena: escribe 1, 2, 3… en cada casilla',P.ord,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<div class="ord-cajas">'+x.mez.map(function(o){return '<span>'+(clave?'<b>'+(x.ok.indexOf(o)+1)+'</b> ':'')+esc(o)+'</span>';}).join('')+'</div></div></div>';});
   if(P.ab.length)sec('V. Análisis e indagación',P.ab,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div style="font-size:12px;color:#2e7d4f">Respuesta abierta: valore la claridad de la explicación, el uso de los conceptos y de las evidencias.</div>':'<div class="lineas">'+'<i></i>'.repeat(c.tipo==='evaluacion'?6:5)+'</div>')+'</div></div>';});
@@ -289,7 +289,7 @@ function cabecera(c,v,clave,primera){
   var tit=c.tit||(c.tipo==='evaluacion'?'Evaluación de biología':'Taller de biología');
   if(!primera)return '<div class="hoja-mini"><span>'+esc(tit)+' · versión '+(v+1)+(clave?' · RESPUESTAS':'')+'</span><span>'+esc(c.col)+'</span></div>';
   return '<div class="hoja-cab"><img src="icons/logo.webp" alt=""><div class="tt"><div class="t1">'+esc(tit)+(clave?' — HOJA DE RESPUESTAS':'')+'</div><div class="t2">'+[c.col,c.doc&&('Docente: '+c.doc),c.cur&&('Curso: '+c.cur),'Temas: '+c.temas.map(function(t){return TEMAS_N[t];}).join(', ')].filter(Boolean).map(esc).join(' · ')+'</div></div><div class="ver">V'+(v+1)+'</div></div>'+
-    (clave?'<div class="hoja-ins">Código '+esc(c.seed)+' · versión '+(v+1)+'. Las explicaciones ayudan a retroalimentar a los estudiantes.</div>':'<div class="hoja-datos"><span>Nombre:</span><span>Curso:</span><span>Fecha:</span></div><div class="hoja-ins">Lee con atención cada pregunta. '+(c.tipo==='evaluacion'?'Trabaja de forma individual.':'Puedes apoyarte en los módulos de BioNom.')+'</div>');
+    (clave?'<div class="hoja-ins" style="background:#fff3f2;color:#7a1d14;font-style:normal;font-weight:700">🔒 Solo para el docente · Código '+esc(c.seed)+' · versión '+(v+1)+'. Las explicaciones en verde ayudan a retroalimentar.</div>':'<div class="hoja-datos"><span>Nombre:</span><span>Curso:</span><span>Fecha:</span></div><div class="hoja-ins">Lee con atención cada pregunta. '+(c.tipo==='evaluacion'?'Trabaja de forma individual.':'Puedes apoyarte en los módulos de BioNom.')+'</div>');
 }
 /* paginación: mide cada bloque con el ancho real de la hoja */
 function paginar(B,c,v,clave){
