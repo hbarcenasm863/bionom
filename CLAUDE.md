@@ -74,7 +74,8 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 | `banco.js` | Banco de preguntas del juego y del generador (`BANCO_BIO`), al menos 40 por tema. Cada pregunta lleva `p` (2 pistas: general y concreta, sin la respuesta) y `exp` (explicación completa). Al final, `BIO_AJ` agrega pistas a preguntas existentes y `BIO_NUEVAS` agrega preguntas. |
 | `retos.js` | Reglas comunes de los juegos de los tres sitios (mismo archivo en ChromaNom e IonNom): 3 intentos con pistas progresivas, crucigrama y sopa de letras de 10 palabras, ahorcado y tiempos según la dificultad. No tiene bancos: cada sitio le pasa los suyos. |
 | `juego.html` | Juego con Modo Libre y Modo Estudiante. |
-| `docente.html` | Generador de talleres y evaluaciones, ahorcado y sopa de letras (`ahorcado.js`, `sopa.js` y `actividades.css` vienen de ChromaNom; las palabras están en `ahorcado-datos.js`). |
+| `docente.html` | Panel docente con 10 pestañas: Guías de 4 sesiones, Talleres y Evaluaciones tipo Saber 11 (`docente-app.js`, contenido en `docente-datos.js`), Laberintos (`laberinto.js`, copia del de ChromaNom con preguntas de `banco.js`), Crucigramas (`crucigrama.js`, armado con `retos.js`), Ahorcado y Sopa (`ahorcado.js`, `sopa.js`), Criptograma genético, Mapa conceptual y Detective biológico (`extras.js`, el mismo archivo de ChromaNom e IonNom, con `window.EXTRAS_SITIO`). No tiene pestaña de orientaciones: los pasos del Modo Estudiante están en `README.md`. |
+| `docente-datos.js` | Solo contenido del panel docente: `TEMAS` (sesión 1 de aprendizajes previos, sesión 2 con lectura y mapa de ideas, autoevaluación «Puedo…»), `SABER` (10 preguntas tipo Saber 11 por tema; la primera opción es la correcta en el archivo), `ABIERTAS` y `window.DETECTIVE` (una historia por tema con 8 frases dudosas). |
 | `bionom-analytics.gs` | Backend de Google Apps Script del Modo Estudiante (copiado de IonNom). |
 
 ## Regla de contenido
