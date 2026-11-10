@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BioNom — Biología por niveles de organización</title>
+<meta name="description" content="Biología interactiva para bachillerato: célula, reinos, sistemas, genética, evolución y ecosistemas de Colombia, organizados en un mapa de niveles de organización.">
+<meta name="theme-color" content="#14532d">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=1">
+<style>
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end}
+.prog{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--cn-brd);border-radius:var(--cn-r);padding:12px 16px;box-shadow:var(--cn-sh)}
+.prog svg{width:64px;height:64px}
+.prog b{display:block;color:var(--cn-brand-d)}
+.prog small{color:var(--cn-dim)}
+@media(max-width:700px){.hero{grid-template-columns:1fr}}
+
+.ejemplos{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0 14px}
+.ejemplos span{font-weight:700;font-size:.9rem;color:var(--cn-dim)}
+.mapa-wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:20px;align-items:start}
+@media(max-width:860px){.mapa-wrap{grid-template-columns:1fr}}
+.mapa{background:linear-gradient(180deg,#e9f6ff 0%,#eef9ef 38%,#fff8ec 70%,#f4eefc 100%);border:1px solid var(--cn-brd);border-radius:22px;box-shadow:var(--cn-sh);padding:6px;position:relative;overflow:hidden}
+.mapa svg{display:block;width:100%;height:auto}
+.nodo{cursor:pointer}
+.nodo circle.fondo{fill:#fff;stroke-width:4;transition:r .2s}
+.nodo:hover circle.fondo,.nodo:focus circle.fondo{stroke:#f08c1e}
+.nodo.on circle.fondo{stroke:#f08c1e;stroke-width:6}
+.nodo .ico{font-size:30px;pointer-events:none}
+.nodo .lbl{font:800 17px Outfit,sans-serif;fill:#10261a;pointer-events:none}
+.nodo .tam{font:600 12px 'JetBrains Mono',monospace;fill:#3c5446;pointer-events:none}
+.nodo .chk{font:900 15px Outfit;fill:#15803d;pointer-events:none}
+.nodo:focus{outline:none}
+.banda-lbl{font:800 13px Outfit;letter-spacing:.14em;text-transform:uppercase}
+.pulso{animation:pulso 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulso{50%{opacity:.25;transform:scale(1.25)}}
+
+.panel{position:sticky;top:64px}
+.panel .det{min-height:420px}
+.zoom-box{height:150px;border-radius:14px;margin:0 0 12px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 50%,#ffffff 0%,#e7f6ec 70%)}
+.zoom-box .grande{font-size:76px;animation:zoomin .6s cubic-bezier(.2,1.4,.4,1)}
+.zoom-box .esc{position:absolute;bottom:8px;right:10px;font:700 .8rem var(--cn-mono);background:#fff;padding:2px 8px;border-radius:999px;border:1px solid var(--cn-brd)}
+.zoom-box .ej{position:absolute;top:8px;left:10px;font-weight:800;font-size:.8rem;background:#fff;padding:2px 10px;border-radius:999px;border:1px solid var(--cn-brd)}
+@keyframes zoomin{from{transform:scale(.2);opacity:0}to{transform:none;opacity:1}}
+.mods{display:grid;gap:8px;margin-top:12px}
+.mods a{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;border:1.5px solid var(--cn-brd);text-decoration:none;color:var(--cn-tx);font-weight:700}
+.mods a:hover{border-color:var(--cn-brand);background:var(--cn-brand-l)}
+.mods a .e{font-size:1.4rem}
+.mods a .v{margin-left:auto;color:var(--cn-ok);font-size:.8rem}
+.nav-niv{display:flex;justify-content:space-between;margin-top:12px}
+
+.ordenar .slot{display:flex;gap:6px;flex-wrap:wrap;min-height:46px;padding:8px;border:2px dashed var(--cn-brd);border-radius:12px;background:#fff;margin-bottom:10px;align-items:center}
+.ordenar .slot .ficha{cursor:pointer}
+.modulos-g a.mod{display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:var(--cn-r);background:#fff;border:1px solid var(--cn-brd);box-shadow:var(--cn-sh);text-decoration:none;color:var(--cn-tx);position:relative}
+.modulos-g a.mod:hover{box-shadow:var(--cn-sh-h);border-color:var(--cn-brand);transform:translateY(-2px)}
+.modulos-g a.mod .e{font-size:2rem}
+.modulos-g a.mod b{color:var(--cn-brand-d);font-size:1.05rem}
+.modulos-g a.mod small{color:var(--cn-dim)}
+.modulos-g a.mod .v{position:absolute;top:10px;right:12px;color:var(--cn-ok);font-weight:800;font-size:.78rem}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head hero">
+    <div>
+      <span class="kicker">🌿 Biología · Bachillerato</span>
+      <h1>De un átomo a toda la biosfera</h1>
+      <p>La vida se organiza en <b>niveles</b>: cada uno se forma con piezas del nivel anterior y tiene propiedades nuevas que las piezas solas no tienen. Toca cualquier nivel del mapa para ver qué es, un ejemplo real y qué módulo de BioNom lo estudia.</p>
+    </div>
+    <div class="prog" id="prog" aria-live="polite"></div>
+  </header>
+
+  <section class="sec" id="mapa" aria-label="Mapa de niveles de organización">
+    <div class="ejemplos" role="group" aria-label="Ejemplo para recorrer los niveles">
+      <span>Recorre los niveles con:</span>
+      <button class="chip on" data-ej="humano">🧑 Tu cuerpo</button>
+      <button class="chip" data-ej="frailejon">🌼 Un frailejón</button>
+      <button class="chip" data-ej="jaguar">🐆 Un jaguar</button>
+    </div>
+    <div class="mapa-wrap">
+      <div class="mapa"><svg id="mapa-svg" viewBox="0 0 560 1460" role="group" aria-label="Niveles de organización, de abajo (átomo) hacia arriba (biosfera)"></svg></div>
+      <aside class="panel"><div class="det" id="det" aria-live="polite"></div></aside>
+    </div>
+  </section>
+
+  <section class="sec" id="ordenar">
+    <h2><span class="n">◆</span> Reto: ordena los niveles</h2>
+    <p class="lead">Toca los niveles <b>del más pequeño al más grande</b>. Si te equivocas, la ficha tiembla y puedes volver a intentar.</p>
+    <div class="ordenar card">
+      <div class="slot" id="ord-ok" aria-label="Tu orden"></div>
+      <div class="pool" id="ord-pool"></div>
+      <p id="ord-fb" style="margin-top:10px;font-weight:600" aria-live="polite"></p>
+      <button type="button" class="cn-btn" id="ord-reset" style="margin-top:8px">🔄 Otra vez</button>
+    </div>
+  </section>
+
+  <section class="sec" id="modulos">
+    <h2><span class="n">◆</span> Módulos</h2>
+    <p class="lead">Cada módulo explica con figuras que se tocan, explicaciones paso a paso, chequeos rápidos y narración en voz alta. Al final de todos, el <b>Juego</b> repasa todo lo visto.</p>
+    <div class="grid g3 modulos-g" id="mods-g"></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+
+<script>
+/* ── Datos de los niveles ──
+   banda: químico, celular, organismo o ecológico.
+   ej: ejemplo de ese nivel para cada recorrido (humano, frailejón, jaguar). */
+var NIVELES=[
+ {id:'atomo',n:'Átomo',ico:'⚛️',banda:'quimico',tam:'0,1 nm',
+  def:'La unidad más pequeña de un elemento químico. Los seres vivos están hechos sobre todo de <b>C, H, O, N, P y S</b> (los bioelementos).',
+  emerge:'Un átomo solo no está vivo: tiene propiedades químicas, pero no se alimenta ni se reproduce.',
+  ej:{humano:['🫁','El oxígeno (O) que respiras: es el 65 % de la masa de tu cuerpo.'],frailejon:['🌬️','El carbono (C) que el frailejón toma del aire como CO₂.'],jaguar:['🩸','El hierro (Fe) de la sangre del jaguar, que atrapa el oxígeno.']}},
+ {id:'molecula',n:'Molécula',ico:'🧪',banda:'quimico',tam:'1–100 nm',
+  def:'Dos o más átomos unidos por enlaces. Las <b>biomoléculas</b> (carbohidratos, lípidos, proteínas y ácidos nucleicos como el ADN) forman todas las estructuras vivas.',
+  emerge:'Las moléculas guardan información (ADN) o aceleran reacciones (enzimas), pero todavía no hay vida.',
+  ej:{humano:['🧬','El ADN de tus células, con las instrucciones para fabricarte.'],frailejon:['🟢','La clorofila, que captura la luz del sol para la fotosíntesis.'],jaguar:['🐾','La melanina, el pigmento oscuro de las manchas (rosetas) de su piel.']}},
+ {id:'organelo',n:'Organelo',ico:'🫘',banda:'celular',tam:'0,2–10 µm',
+  def:'Estructura dentro de la célula que cumple una función especial, como un «órgano pequeño»: núcleo, mitocondria, cloroplasto, ribosoma…',
+  emerge:'Cada organelo hace un trabajo, pero ninguno sobrevive solo fuera de la célula.',
+  ej:{humano:['🔋','Las mitocondrias de tus músculos, que liberan energía de la glucosa.'],frailejon:['🍃','Los cloroplastos de sus hojas, donde ocurre la fotosíntesis.'],jaguar:['🎯','El núcleo de sus células, que guarda el ADN.']}},
+ {id:'celula',n:'Célula',ico:'🦠',banda:'celular',tam:'1–100 µm',vida:true,
+  def:'La <b>unidad básica de la vida</b>: el nivel más pequeño que está vivo. Se nutre, crece, responde y se reproduce. Hay organismos de una sola célula (unicelulares).',
+  emerge:'¡Aquí aparece la vida! La célula hace todo lo que define a un ser vivo.',
+  ej:{humano:['🔴','Un glóbulo rojo, que lleva oxígeno por la sangre.'],frailejon:['🟩','Una célula de la hoja, con pared celular y cloroplastos.'],jaguar:['⚡','Una neurona, que manda mensajes eléctricos para cazar.']}},
+ {id:'tejido',n:'Tejido',ico:'🧱',banda:'organismo',tam:'mm',
+  def:'Grupo de células parecidas que trabajan juntas en la misma función: tejido muscular, nervioso, epitelial, conectivo; en las plantas, xilema, floema, epidermis…',
+  emerge:'Muchas células juntas pueden hacer algo que una sola no: por ejemplo, contraerse con fuerza.',
+  ej:{humano:['💪','El tejido muscular cardíaco, que nunca deja de contraerse.'],frailejon:['🧶','La epidermis con pelos que lo protege del frío del páramo.'],jaguar:['🦴','El tejido óseo de su mandíbula, una de las más fuertes de los felinos.']}},
+ {id:'organo',n:'Órgano',ico:'🫀',banda:'organismo',tam:'cm',
+  def:'Estructura formada por varios tejidos distintos que cumplen juntos una función: corazón, pulmón, hoja, raíz…',
+  emerge:'El corazón bombea sangre: ningún tejido solo lo logra.',
+  ej:{humano:['❤️','Tu corazón: músculo, nervios, vasos y tejido conectivo trabajando juntos.'],frailejon:['🌿','Su hoja peluda y gruesa, que guarda agua y lo protege del frío.'],jaguar:['👁️','Sus ojos, que ven muy bien de noche.']}},
+ {id:'sistema',n:'Sistema',ico:'🩺',banda:'organismo',tam:'m',
+  def:'Conjunto de órganos que trabajan coordinados para una función amplia: digestión, circulación, respiración…',
+  emerge:'El sistema circulatorio reparte oxígeno a todo el cuerpo, algo que el corazón solo no podría.',
+  ej:{humano:['🩸','El sistema circulatorio: corazón, arterias, venas y capilares.'],frailejon:['🌱','El sistema de raíces y tallo que lleva agua y nutrientes por toda la planta.'],jaguar:['🏃','El sistema locomotor: huesos y músculos para saltar sobre su presa.']}},
+ {id:'organismo',n:'Organismo',ico:'🧍',banda:'organismo',tam:'µm–30 m',
+  def:'Un ser vivo completo e independiente. Puede ser unicelular (una bacteria) o pluricelular (tú, un árbol). Se clasifican en <b>reinos</b>.',
+  emerge:'Todos los sistemas coordinados forman un individuo capaz de vivir y reproducirse.',
+  ej:{humano:['🧑','Tú: un organismo del reino animal, especie <i>Homo sapiens</i>.'],frailejon:['🌼','Un frailejón (<i>Espeletia</i>): una planta que solo crece en los páramos.'],jaguar:['🐆','Un jaguar (<i>Panthera onca</i>), el felino más grande de América.']}},
+ {id:'poblacion',n:'Población',ico:'👥',banda:'ecologico',tam:'km',
+  def:'Todos los individuos de la <b>misma especie</b> que viven en el mismo lugar al mismo tiempo y pueden reproducirse entre sí.',
+  emerge:'Una población tiene propiedades que un individuo no: densidad, natalidad, mortalidad… y <b>evoluciona</b>.',
+  ej:{humano:['🏙️','Las personas que viven en tu municipio.'],frailejon:['🌼🌼','Todos los frailejones del páramo de Sumapaz.'],jaguar:['🐆🐆','Los jaguares del Parque Nacional Chiribiquete.']}},
+ {id:'comunidad',n:'Comunidad',ico:'🦜',banda:'ecologico',tam:'km',
+  def:'Todas las <b>poblaciones de distintas especies</b> que conviven en un lugar y se relacionan: se comen, compiten, se ayudan…',
+  emerge:'Aparecen las relaciones entre especies: depredación, competencia, mutualismo, cadenas alimenticias.',
+  ej:{humano:['🐦','Personas, palomas, árboles, perros y bacterias de tu barrio.'],frailejon:['🐻','Frailejones, musgos, colibríes y osos de anteojos del páramo.'],jaguar:['🦜','Jaguares, dantas, guacamayas, monos y ceibas de la selva.']}},
+ {id:'ecosistema',n:'Ecosistema',ico:'🏞️',banda:'ecologico',tam:'km–cientos de km',
+  def:'La comunidad (factores <b>bióticos</b>) más el ambiente físico donde vive (factores <b>abióticos</b>: agua, suelo, luz, temperatura) y sus intercambios de materia y energía.',
+  emerge:'La energía fluye y la materia se recicla: el ecosistema funciona como un todo.',
+  ej:{humano:['💧','Un humedal de la Sabana de Bogotá, con su agua, suelo y clima.'],frailejon:['⛰️','El páramo de Sumapaz: el más grande del mundo, con su frío, niebla y suelos que guardan agua.'],jaguar:['🌳','La selva húmeda del Amazonas, con su lluvia constante y su calor.']}},
+ {id:'bioma',n:'Bioma',ico:'🌎',banda:'ecologico',tam:'miles de km',
+  def:'Conjunto de ecosistemas parecidos que comparten clima, vegetación y fauna en grandes regiones del planeta: selva tropical, desierto, sabana, tundra…',
+  emerge:'El clima marca el tipo de vida: en zonas con clima parecido aparecen ecosistemas parecidos.',
+  ej:{humano:['🌲','El bosque andino, donde vive buena parte de los colombianos.'],frailejon:['🏔️','Los páramos de alta montaña tropical (solo en Colombia, Venezuela, Ecuador, Perú y Costa Rica).'],jaguar:['🌴','El bosque tropical húmedo, que cubre la Amazonia.']}},
+ {id:'biosfera',n:'Biosfera',ico:'🌍',banda:'ecologico',tam:'~20 km de espesor',
+  def:'Toda la parte de la Tierra donde hay vida: océanos, tierra y aire. Incluye a todos los seres vivos y su relación con el planeta.',
+  emerge:'Todos los ecosistemas están conectados: el agua, el carbono y el oxígeno circulan por todo el planeta.',
+  ej:{humano:['🌍','Tú compartes el oxígeno que producen las algas del mar y las selvas.'],frailejon:['💦','El agua que guarda el páramo llega a millones de personas y al mar.'],jaguar:['🌍','La Amazonia regula el clima y las lluvias de todo el planeta.']}}
+];
+var BANDAS={quimico:['Nivel químico','#7b4bb7','#f4eefc'],celular:['Nivel celular','#1a7fb5','#eaf5fc'],organismo:['Nivel del organismo','#c2410c','#fff6ec'],ecologico:['Nivel ecológico','#2e7d4f','#eaf7ee']};
+</script>
+<script src="bio.js?v=1"></script>
+<script>
+(function(){
+var svg=document.getElementById('mapa-svg'),det=document.getElementById('det'),NS='http://www.w3.org/2000/svg';
+var ej='humano',sel=null;
+var H=1460,PASO=104,BASE=H-80;
+// posiciones en zigzag de abajo (átomo) hacia arriba (biosfera)
+var XS=[140,280,420,280];
+NIVELES.forEach(function(n,i){n.x=XS[i%4];n.y=BASE-i*PASO;});
+function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
+function modulosDe(id){return BIO.MODULOS.filter(function(m){return m.niveles&&m.niveles.indexOf(id)>=0;});}
+
+function dibujar(){
+  svg.innerHTML='';
+  // bandas de fondo
+  var porBanda={};
+  NIVELES.forEach(function(n){(porBanda[n.banda]=porBanda[n.banda]||[]).push(n);});
+  Object.keys(porBanda).forEach(function(b){
+    var ns=porBanda[b],top=ns[ns.length-1].y-PASO/2,bot=ns[0].y+PASO/2,c=BANDAS[b];
+    svg.appendChild(el('rect',{x:8,y:top,width:544,height:bot-top,rx:18,fill:c[2],stroke:c[1],'stroke-opacity':.25}));
+    var t=el('text',{x:20,y:top+22,'class':'banda-lbl',fill:c[1]},c[0]);svg.appendChild(t);
+  });
+  // camino
+  var d='M'+NIVELES[0].x+' '+NIVELES[0].y;
+  for(var i=1;i<NIVELES.length;i++){var a=NIVELES[i-1],b=NIVELES[i];var my=(a.y+b.y)/2;d+=' C'+a.x+' '+my+' '+b.x+' '+my+' '+b.x+' '+b.y;}
+  svg.appendChild(el('path',{d:d,fill:'none',stroke:'#fff',"stroke-width":18,'stroke-linecap':'round'}));
+  svg.appendChild(el('path',{d:d,fill:'none',stroke:'#9bbfa7',"stroke-width":5,'stroke-dasharray':'2 12','stroke-linecap':'round'}));
+  // línea «aquí empieza la vida» entre organelo y célula
+  var c=NIVELES.filter(function(n){return n.vida;})[0],yv=c.y+PASO/2;
+  svg.appendChild(el('line',{x1:20,x2:540,y1:yv,y2:yv,stroke:'#f08c1e','stroke-width':3,'stroke-dasharray':'8 6'}));
+  var tv=el('text',{x:540,y:yv-8,'text-anchor':'end',fill:'#b45309',style:'font:800 14px Outfit'},'⬆ aquí empieza la vida');svg.appendChild(tv);
+  // nodos
+  NIVELES.forEach(function(n,i){
+    var g=el('g',{'class':'nodo'+(sel===n?' on':''),tabindex:0,role:'button','aria-label':n.n+' (nivel '+(i+1)+')'});
+    var col=BANDAS[n.banda][1];
+    if(i===0&&!sel)g.appendChild(el('circle',{cx:n.x,cy:n.y,r:44,fill:col,opacity:.35,'class':'pulso'}));
+    g.appendChild(el('circle',{cx:n.x,cy:n.y,r:36,stroke:col,'class':'fondo'}));
+    g.appendChild(el('text',{x:n.x,y:n.y+11,'text-anchor':'middle','class':'ico'},n.ico));
+    var der=n.x<=280; // etiqueta a la derecha salvo en la columna derecha
+    var lx=n.x+(der?48:-48),an=der?'start':'end';
+    g.appendChild(el('text',{x:lx,y:n.y-2,'text-anchor':an,'class':'lbl'},(i+1)+'. '+n.n));
+    g.appendChild(el('text',{x:lx,y:n.y+16,'text-anchor':an,'class':'tam'},n.tam));
+    var hecho=modulosDe(n.id).some(function(m){return BIO.visitas[m.id];});
+    if(hecho)g.appendChild(el('text',{x:n.x+24,y:n.y-24,'class':'chk'},'✓'));
+    n.g=g;
+    g.addEventListener('click',function(){elegir(n,true);});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();elegir(n,true);}});
+    svg.appendChild(g);
+  });
+}
+function elegir(n,desplazar){
+  sel=n;NIVELES.forEach(function(x){x.g.classList.toggle('on',x===n);});var pu=svg.querySelector('.pulso');if(pu)pu.remove();
+  var i=NIVELES.indexOf(n),e=n.ej[ej],ms=modulosDe(n.id);
+  det.innerHTML='<div class="zoom-box" style="background:radial-gradient(circle,#fff 0%,'+BANDAS[n.banda][2]+' 75%)"><span class="ej">'+document.querySelector('[data-ej].on').textContent+'</span><span class="grande">'+e[0]+'</span><span class="esc">tamaño: '+n.tam+'</span></div>'+
+    '<span class="tag" style="background:'+BANDAS[n.banda][2]+';color:'+BANDAS[n.banda][1]+'">'+BANDAS[n.banda][0]+' · nivel '+(i+1)+' de '+NIVELES.length+'</span>'+
+    '<h3>'+n.ico+' '+n.n+'</h3><p>'+n.def+'</p>'+
+    '<div class="clave" style="margin:10px 0"><b>Ejemplo:</b> '+e[1]+'</div>'+
+    '<p style="font-size:.92rem;color:var(--cn-dim)"><b>¿Qué aparece de nuevo?</b> '+n.emerge+'</p>'+
+    (ms.length?'<div class="mods"><b style="font-size:.85rem">Lo estudias en:</b>'+ms.map(function(m){return '<a href="'+m.href+'"><span class="e">'+m.ico+'</span>'+m.full+(BIO.visitas[m.id]?'<span class="v">✓ visitado</span>':'')+'</a>';}).join('')+'</div>':'')+
+    '<div class="nav-niv"><button type="button" class="cn-btn" id="niv-ant" '+(i===0?'disabled':'')+'>⬇ Más pequeño</button><button type="button" class="cn-btn cn-btn--primary" id="niv-sig" '+(i===NIVELES.length-1?'disabled':'')+'>Más grande ⬆</button></div>';
+  document.getElementById('niv-ant').onclick=function(){elegir(NIVELES[i-1]);};
+  document.getElementById('niv-sig').onclick=function(){elegir(NIVELES[i+1]);};
+  if(desplazar&&window.innerWidth<=860)det.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('[data-ej]').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('[data-ej]').forEach(function(x){x.classList.toggle('on',x===b);});
+  ej=b.getAttribute('data-ej');elegir(sel||NIVELES[0]);
+});});
+dibujar();
+det.innerHTML='<div class="vacio"><div style="font-size:3rem">👆</div><b>Toca un nivel del mapa</b><br>Empieza abajo, por el <b>átomo</b>, y sube hasta la <b>biosfera</b>. Usa los botones de arriba para seguir el ejemplo de tu cuerpo, de un frailejón o de un jaguar.</div>';
+
+// progreso
+var mods=BIO.MODULOS.filter(function(m){return m.niveles;}),vis=mods.filter(function(m){return BIO.visitas[m.id];}).length;
+var pct=vis/mods.length,R=26,C=2*Math.PI*R;
+document.getElementById('prog').innerHTML='<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="'+R+'" fill="none" stroke="#e1efe5" stroke-width="8"/><circle cx="32" cy="32" r="'+R+'" fill="none" stroke="#2e7d4f" stroke-width="8" stroke-linecap="round" stroke-dasharray="'+(C*pct)+' '+C+'" transform="rotate(-90 32 32)"/><text x="32" y="37" text-anchor="middle" style="font:800 15px Outfit;fill:#14532d">'+vis+'/'+mods.length+'</text></svg><div><b>Tu recorrido</b><small>'+(vis?'Módulos visitados en este dispositivo':'Aún no has abierto ningún módulo')+'</small></div>';
+
+// tarjetas de módulos
+document.getElementById('mods-g').innerHTML=BIO.MODULOS.filter(function(m){return m.id!=='inicio';}).map(function(m){
+  var desc={celula:'Historia del descubrimiento, tipos de célula y sus partes en una célula que se toca.',reinos:'Cómo se clasifican los seres vivos: dominios, los 5 reinos y una clave para clasificar.',sistemas:'Del tejido al sistema: recorre el cuerpo humano y cómo se coordinan sus sistemas.',genetica:'Mendel y sus guisantes, el cuadro de Punnett, el ADN y cómo se fabrica una proteína.',evolucion:'Lamarck, Darwin, las evidencias y una simulación de selección natural.',ecosistemas:'Componentes, cadenas y redes tróficas, flujo de energía, ciclos y relaciones.',regiones:'Mapa interactivo: los ecosistemas de cada región natural de Colombia.',juego:'Repaso con preguntas de todos los temas. Modo libre y Modo Estudiante.',docente:'Talleres, evaluaciones, ahorcado y sopa de letras para imprimir o proyectar.'}[m.id];
+  return '<a class="mod" href="'+m.href+'"><span class="e">'+m.ico+'</span><b>'+m.full+'</b><small>'+desc+'</small>'+(BIO.visitas[m.id]?'<span class="v">✓ visitado</span>':'')+'</a>';
+}).join('');
+
+// reto de ordenar
+var pool=document.getElementById('ord-pool'),ok=document.getElementById('ord-ok'),fb=document.getElementById('ord-fb');
+function reto(){
+  ok.innerHTML='';fb.textContent='';var k=0,err=0;
+  pool.innerHTML='';
+  BIO.barajar(NIVELES).forEach(function(n){
+    var f=document.createElement('button');f.type='button';f.className='ficha';f.textContent=n.ico+' '+n.n;
+    f.addEventListener('click',function(){
+      if(NIVELES.indexOf(n)===k){f.classList.add('ok');ok.appendChild(f);k++;f.disabled=true;
+        fb.textContent=k===NIVELES.length?'🎉 ¡Perfecto! Ordenaste los 13 niveles con '+err+' error(es).':'Bien. ¿Cuál sigue después de «'+n.n+'»?';
+        if(k===NIVELES.length)BIO.marcarSeccion('ordenar');
+      }else{err++;f.classList.remove('mal');void f.offsetWidth;f.classList.add('mal');fb.textContent='❌ «'+n.n+'» no es el que sigue. Piensa: ¿qué se forma con el último que ubicaste?';}
+    });
+    pool.appendChild(f);
+  });
+}
+document.getElementById('ord-reset').addEventListener('click',reto);
+reto();
+})();
+</script>
+<script src="text-zoom.js?v=1"></script>
+<script src="narracion.js?v=1"></script>
+<script src="pwa-install.js?v=1"></script>
+</body>
+</html>
