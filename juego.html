@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Juego de repaso — BioNom</title>
+<meta name="description" content="Juego de repaso de biología: célula, reinos, sistemas, genética, evolución, ecosistemas y Colombia. Modo libre y Modo Estudiante.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=2">
+<style>
+.pant{display:none;animation:aparece .3s ease}.pant.on{display:block}
+.modos{display:inline-flex;background:#e9f1ec;border-radius:999px;padding:4px;margin-bottom:14px}
+.modos button{border:0;background:none;padding:9px 18px;border-radius:999px;font-weight:800;color:var(--cn-dim);cursor:pointer;font-size:.92rem}
+.modos button.on{background:#fff;color:var(--cn-brand-d);box-shadow:var(--cn-sh)}
+.login{max-width:440px}
+.login input{font:800 1.3rem var(--cn-mono);letter-spacing:.2em;width:100%;text-align:center;padding:10px}
+.err{color:var(--cn-err);font-weight:700;margin-top:6px}
+.bienv{background:var(--cn-brand-l);border:1.5px solid var(--cn-brand);border-radius:14px;padding:12px 16px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.stats div{background:#fff;border-radius:10px;padding:6px 12px;font-size:.85rem}
+.stats b{display:block;font:800 1.15rem var(--cn-mono);color:var(--cn-brand-d)}
+.temas{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin:12px 0}
+.tema{border:2px solid var(--cn-brd);background:#fff;border-radius:16px;padding:14px 10px;text-align:center;cursor:pointer;font-weight:800;color:var(--cn-brand-d)}
+.tema .e{font-size:2rem;display:block}
+.tema small{display:block;font-weight:500;color:var(--cn-dim);font-size:.75rem}
+.tema.on{border-color:var(--cn-naranja);background:#fff7ec;box-shadow:0 0 0 3px rgba(240,140,30,.25)}
+.barra-p{height:10px;background:#e3eee7;border-radius:999px;overflow:hidden;margin:8px 0 14px}
+.barra-p i{display:block;height:100%;background:linear-gradient(90deg,var(--cn-verde),var(--cn-brand));transition:width .4s}
+.jtop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.jtop .pts{font:800 1rem var(--cn-mono);color:var(--cn-brand-d)}
+.preg{font-size:1.25rem;font-weight:700;margin:6px 0 14px;line-height:1.4}
+.ops-j{display:grid;gap:10px}
+.op-j{text-align:left;border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:13px 16px;font-size:1.02rem;cursor:pointer;color:var(--cn-tx);font-weight:600;display:flex;gap:10px;align-items:center}
+.op-j .l{flex:0 0 30px;height:30px;border-radius:50%;background:var(--cn-brand-l);display:grid;place-items:center;font-weight:800;color:var(--cn-brand-d)}
+.op-j:hover:not([disabled]){border-color:var(--cn-brand)}
+.op-j.ok{background:var(--cn-ok-l);border-color:var(--cn-ok)}
+.op-j.mal{background:var(--cn-err-l);border-color:var(--cn-err)}
+.vf{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vf .op-j{justify-content:center;font-size:1.15rem;padding:18px}
+.esc-in{width:100%;font-size:1.1rem;padding:12px}
+.ord-zona{min-height:56px;border:2px dashed var(--cn-brd);border-radius:14px;padding:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px;background:#fbfdfb}
+.ord-zona .ficha{cursor:pointer}
+.ord-zona .n{font:800 .78rem var(--cn-mono);color:var(--cn-dim);margin-right:-2px}
+.fb-j{margin-top:14px;border-radius:14px;padding:12px 16px;display:none}
+.fb-j.ok{display:block;background:var(--cn-ok-l);border:1.5px solid var(--cn-ok)}
+.fb-j.mal{display:block;background:var(--cn-err-l);border:1.5px solid var(--cn-err)}
+.res-top{text-align:center}
+.res-top .pct{font:800 3.4rem var(--cn-mono);color:var(--cn-brand-d)}
+.repaso li{margin:8px 0}
+.envio{margin-top:12px;padding:10px 14px;border-radius:12px;background:#eef7fd;font-weight:600}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <!-- ══ INICIO ══ -->
+  <section class="pant on" id="p-inicio">
+    <header class="cn-page-head" data-sin-narracion>
+      <span class="kicker">🎮 Repaso</span>
+      <h1>Juego de biología</h1>
+      <p>Preguntas de todos los módulos de BioNom, con la explicación de cada respuesta. En el <b>Modo Estudiante</b> tus resultados le llegan a tu docente.</p>
+    </header>
+    <div class="modos" role="tablist"><button type="button" class="on" id="m-libre" role="tab">🕹️ Modo libre</button><button type="button" id="m-est" role="tab">🎓 Modo Estudiante</button></div>
+    <div class="card login" id="login" hidden>
+      <label for="cod" style="font-weight:800">Escribe tu código de estudiante</label>
+      <input type="text" id="cod" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="000000" style="margin-top:8px">
+      <button type="button" class="cn-btn cn-btn--primary" id="cod-btn" style="margin-top:10px;width:100%">Entrar →</button>
+      <div class="err" id="cod-err" aria-live="polite"></div>
+    </div>
+    <div class="bienv" id="bienv" hidden><b>👋 Hola, <span id="b-nom"></span></b><br><small id="b-cur"></small><div class="stats" id="b-stats"></div></div>
+    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d);margin-top:18px">1 · Escoge el tema</h2>
+    <div class="temas" id="temas"></div>
+    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">2 · ¿Cuántas preguntas?</h2>
+    <div class="chips" id="cant" style="margin:10px 0 18px"><button class="chip" data-n="10">10</button><button class="chip on" data-n="20">20</button><button class="chip" data-n="30">30</button></div>
+    <button type="button" class="cn-btn cn-btn--primary" id="jugar" style="font-size:1.1rem;padding:12px 28px">▶ ¡Jugar!</button>
+    <p id="jugar-err" class="err" aria-live="polite"></p>
+  </section>
+
+  <!-- ══ PREGUNTA ══ -->
+  <section class="pant" id="p-preg" aria-live="polite">
+    <div class="jtop" style="margin-top:20px"><span class="tag" id="q-tema"></span><span class="pts" id="q-pts"></span><button type="button" class="cn-btn" id="salir" style="min-height:34px;padding:4px 12px">✕ Salir</button></div>
+    <div class="barra-p"><i id="q-bar"></i></div>
+    <div class="card">
+      <div style="font-weight:800;color:var(--cn-dim);font-size:.85rem" id="q-num"></div>
+      <div class="preg" id="q-txt"></div>
+      <div id="q-resp"></div>
+      <div class="fb-j" id="q-fb"></div>
+      <div style="margin-top:14px;text-align:right"><button type="button" class="cn-btn cn-btn--primary" id="sig" hidden>Siguiente →</button></div>
+    </div>
+  </section>
+
+  <!-- ══ RESULTADOS ══ -->
+  <section class="pant" id="p-res">
+    <div class="card res-top" style="margin-top:24px"><div id="r-emoji" style="font-size:3.4rem"></div><div class="pct" id="r-pct"></div><p id="r-txt" style="font-size:1.1rem"></p><div class="envio" id="r-envio" hidden></div></div>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card"><h3>📊 Por tema</h3><div id="r-temas"></div></div>
+      <div class="card"><h3>🔁 Para repasar</h3><ul class="repaso" id="r-fallos"></ul></div>
+    </div>
+    <div class="ctrl" style="justify-content:center;margin-top:16px"><button type="button" class="cn-btn cn-btn--primary" id="otra">🔄 Jugar otra vez</button><a class="cn-btn" href="index.html">🗺️ Volver al mapa</a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=2"></script>
+<script src="banco.js?v=2"></script>
+<script>
+(function(){
+'use strict';
+/* URL de la aplicación web de bionom-analytics.gs (Implementar → Aplicación web).
+   Mientras esté vacía, el Modo Estudiante avisa que el registro no está conectado. */
+var APPS_SCRIPT_URL='';
+var TEMAS=window.TEMAS_JUEGO,BANCO=window.BANCO_BIO;
+var NOM_T={};TEMAS.forEach(function(t){NOM_T[t[0]]=t[1];});
+var PAG_T={celula:'celula.html',reinos:'reinos.html',sistemas:'sistemas.html',genetica:'genetica.html',evolucion:'evolucion.html',ecosistemas:'ecosistemas.html',colombia:'regiones.html',ambiente:'ambiente.html'};
+var BUCKET={mc:'mc',vf:'id',ord:'drag',esc:'write'};
+var $=function(i){return document.getElementById(i);};
+var MODO='libre',EST={cod:'',nom:'',cur:'',ok:false},tema='todos',cant=20,ST=null,enviado=false;
+function pant(id){['p-inicio','p-preg','p-res'].forEach(function(p){$(p).classList.toggle('on',p===id);});scrollTo(0,0);
+  var bn=document.querySelector('.bot-nav');if(bn)bn.style.display=id==='p-preg'?'none':'';}
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9ñ ]/g,' ').replace(/\s+/g,' ').trim();}
+// 110106 → «11°01» (grado, curso); mismo formato que IonNom y ChromaNom
+function curso(c){return parseInt(c.slice(0,2),10)+'°'+c.slice(2,4);}
+
+/* ── modos ── */
+$('m-libre').onclick=function(){MODO='libre';$('m-libre').classList.add('on');$('m-est').classList.remove('on');$('login').hidden=true;$('bienv').hidden=true;};
+$('m-est').onclick=function(){MODO='est';$('m-est').classList.add('on');$('m-libre').classList.remove('on');if(EST.ok)$('bienv').hidden=false;else $('login').hidden=false;
+  if(!APPS_SCRIPT_URL)$('cod-err').textContent='⚠️ Tu docente todavía no ha conectado el registro de resultados. Por ahora juega en Modo libre.';};
+$('cod').addEventListener('keydown',function(e){if(e.key==='Enter')$('cod-btn').click();});
+$('cod-btn').onclick=function(){
+  var c=$('cod').value.trim(),err=$('cod-err');err.textContent='';
+  if(!/^\d{6}$/.test(c)){err.textContent='El código tiene 6 números.';return;}
+  if(!APPS_SCRIPT_URL){err.textContent='⚠️ El registro de resultados aún no está conectado. Avísale a tu docente.';return;}
+  var b=$('cod-btn');b.disabled=true;b.textContent='Verificando…';
+  fetch(APPS_SCRIPT_URL+'?accion=validarCodigo&codigo='+encodeURIComponent(c)).then(function(r){return r.json();}).then(function(d){
+    b.disabled=false;b.textContent='Entrar →';
+    if(!d||!d.ok||!d.existe){err.textContent='Código no encontrado. Verifica con tu docente.';return;}
+    EST={cod:c,nom:d.nombre,cur:curso(c),ok:true};
+    $('login').hidden=true;$('bienv').hidden=false;$('b-nom').textContent=EST.nom;$('b-cur').textContent='Curso '+EST.cur+' · Código '+c;
+    cargarStats();
+  }).catch(function(){b.disabled=false;b.textContent='Entrar →';err.textContent='No se pudo verificar el código. Revisa tu conexión e intenta de nuevo.';});
+};
+function cargarStats(){var box=$('b-stats');box.innerHTML='<small>Cargando tus estadísticas…</small>';
+  fetch(APPS_SCRIPT_URL+'?accion=stats&nombre='+encodeURIComponent(EST.nom)+'&curso='+encodeURIComponent(EST.cur)).then(function(r){return r.json();}).then(function(d){
+    if(!d||!d.ok||!d.existe){box.innerHTML='<small>Aún no tienes partidas registradas. ¡Esta será la primera!</small>';return;}
+    box.innerHTML='<div><b>'+(d.numSesionesPeriodo||0)+'</b>partidas en el periodo</div><div><b>'+(d.totalPreguntasPeriodo||0)+'</b>preguntas</div><div><b>'+(d.pctGlobalPeriodo||0)+' %</b>de acierto</div><div><b>'+(Math.round((+d.notaJuego||0)*10)/10).toFixed(1)+'</b>nota del juego</div>';
+  }).catch(function(){box.innerHTML='';});}
+
+/* ── temas ── */
+var tbox=$('temas');
+tbox.innerHTML='<button type="button" class="tema on" data-t="todos"><span class="e">🌍</span>Todos los temas<small>'+BANCO.length+' preguntas</small></button>'+TEMAS.map(function(t){var n=BANCO.filter(function(q){return q.t===t[0];}).length;return '<button type="button" class="tema" data-t="'+t[0]+'"><span class="e">'+t[2]+'</span>'+t[1]+'<small>'+n+' preguntas</small></button>';}).join('');
+tbox.querySelectorAll('.tema').forEach(function(b){b.onclick=function(){tema=b.getAttribute('data-t');tbox.querySelectorAll('.tema').forEach(function(x){x.classList.toggle('on',x===b);});};});
+var pt=new URLSearchParams(location.search).get('tema');if(pt&&tbox.querySelector('[data-t="'+pt+'"]'))tbox.querySelector('[data-t="'+pt+'"]').click();
+$('cant').querySelectorAll('.chip').forEach(function(b){b.onclick=function(){cant=+b.getAttribute('data-n');$('cant').querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b);});};});
+
+/* ── partida ── */
+$('jugar').onclick=function(){
+  $('jugar-err').textContent='';
+  if(MODO==='est'&&!EST.ok){$('jugar-err').textContent='Primero escribe tu código de estudiante (o cambia a Modo libre).';return;}
+  var n=MODO==='est'?20:cant,pool=tema==='todos'?BANCO:BANCO.filter(function(q){return q.t===tema;});
+  var qs=BIO.barajar(pool);
+  if(tema==='todos'){ // reparte los temas de forma pareja
+    var porT={};qs.forEach(function(q){(porT[q.t]=porT[q.t]||[]).push(q);});var ks=Object.keys(porT),out=[],i=0;
+    while(out.length<Math.min(n,qs.length)){var k=ks[i%ks.length];if(porT[k].length)out.push(porT[k].shift());i++;}qs=BIO.barajar(out);
+  }else{while(qs.length<n)qs=qs.concat(BIO.barajar(pool));qs=qs.slice(0,n);}
+  ST={qs:qs,i:0,ok:0,pts:0,racha:0,err:{mc:0,drag:0,id:0,write:0},errT:{},okT:{},fallos:[],sesion:'B'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)};
+  enviado=false;pant('p-preg');mostrar();
+};
+function mostrar(){
+  var q=ST.qs[ST.i];
+  $('q-tema').textContent=NOM_T[q.t];$('q-num').textContent='Pregunta '+(ST.i+1)+' de '+ST.qs.length;
+  $('q-pts').textContent='⭐ '+ST.pts+(ST.racha>=3?'  🔥'+ST.racha:'');
+  $('q-bar').style.width=(ST.i/ST.qs.length*100)+'%';
+  $('q-txt').textContent=q.q;$('q-fb').className='fb-j';$('q-fb').innerHTML='';$('sig').hidden=true;
+  var R=$('q-resp');
+  if(q.k==='mc'){var orden=BIO.barajar(q.ops.map(function(o,i){return i;}));
+    R.innerHTML='<div class="ops-j">'+orden.map(function(i,j){return '<button type="button" class="op-j" data-i="'+i+'"><span class="l">'+'ABCD'[j]+'</span>'+BIO.esc(q.ops[i])+'</button>';}).join('')+'</div>';
+    R.querySelectorAll('.op-j').forEach(function(b){b.onclick=function(){var ok=+b.getAttribute('data-i')===q.a;R.querySelectorAll('.op-j').forEach(function(x){x.disabled=true;if(+x.getAttribute('data-i')===q.a)x.classList.add('ok');});if(!ok)b.classList.add('mal');resolver(ok,q.ops[q.a]);};});}
+  else if(q.k==='vf'){R.innerHTML='<div class="vf"><button type="button" class="op-j" data-v="1">✔ Verdadero</button><button type="button" class="op-j" data-v="0">✘ Falso</button></div>';
+    R.querySelectorAll('.op-j').forEach(function(b){b.onclick=function(){var v=b.getAttribute('data-v')==='1',ok=v===q.a;R.querySelectorAll('.op-j').forEach(function(x){x.disabled=true;if((x.getAttribute('data-v')==='1')===q.a)x.classList.add('ok');});if(!ok)b.classList.add('mal');resolver(ok,q.a?'Verdadero':'Falso');};});}
+  else if(q.k==='esc'){R.innerHTML='<input type="text" class="esc-in" id="esc" autocomplete="off" placeholder="Escribe tu respuesta"><div style="margin-top:10px"><button type="button" class="cn-btn cn-btn--primary" id="esc-ok">Responder</button></div>';
+    var inp=$('esc');inp.focus();function env(){var v=norm(inp.value);if(!v)return;var ok=q.a.some(function(x){return norm(x)===v;});inp.disabled=true;$('esc-ok').disabled=true;resolver(ok,q.a[0]);}
+    $('esc-ok').onclick=env;inp.onkeydown=function(e){if(e.key==='Enter')env();};}
+  else if(q.k==='ord'){var sel=[],resto=BIO.barajar(q.ops);
+    R.innerHTML='<p style="font-size:.9rem;color:var(--cn-dim)">Toca los elementos en orden. Toca uno ya ubicado para devolverlo.</p><div class="ord-zona" id="oz"></div><div class="pool" id="op"></div><div style="margin-top:10px"><button type="button" class="cn-btn cn-btn--primary" id="ord-ok" disabled>Revisar orden</button></div>';
+    function pintar(){$('oz').innerHTML=sel.map(function(x,i){return '<span class="n">'+(i+1)+'.</span><button type="button" class="ficha" data-x="'+i+'">'+BIO.esc(x)+'</button>';}).join('');
+      $('op').innerHTML=resto.map(function(x,i){return '<button type="button" class="ficha" data-r="'+i+'">'+BIO.esc(x)+'</button>';}).join('');
+      $('oz').querySelectorAll('[data-x]').forEach(function(b){b.onclick=function(){resto.push(sel.splice(+b.getAttribute('data-x'),1)[0]);pintar();};});
+      $('op').querySelectorAll('[data-r]').forEach(function(b){b.onclick=function(){sel.push(resto.splice(+b.getAttribute('data-r'),1)[0]);pintar();};});
+      $('ord-ok').disabled=resto.length>0;}
+    pintar();$('ord-ok').onclick=function(){var ok=sel.join('|')===q.ops.join('|');R.querySelectorAll('button').forEach(function(b){b.disabled=true;});resolver(ok,q.ops.join(' → '));};}
+}
+function resolver(ok,correcta){
+  var q=ST.qs[ST.i],fb=$('q-fb');
+  if(ok){ST.ok++;ST.racha++;ST.pts+=10+(ST.racha>=3?5:0);ST.okT[NOM_T[q.t]]=(ST.okT[NOM_T[q.t]]||0)+1;fb.className='fb-j ok';fb.innerHTML='<b>✅ ¡Correcto!</b> '+q.exp;}
+  else{ST.racha=0;ST.err[BUCKET[q.k]]++;ST.errT[NOM_T[q.t]]=(ST.errT[NOM_T[q.t]]||0)+1;ST.fallos.push(q);fb.className='fb-j mal';fb.innerHTML='<b>❌ La respuesta era:</b> '+BIO.esc(correcta)+'<br>'+q.exp;}
+  $('q-pts').textContent='⭐ '+ST.pts+(ST.racha>=3?'  🔥'+ST.racha:'');
+  var s=$('sig');s.hidden=false;s.textContent=ST.i===ST.qs.length-1?'Ver resultados 🏁':'Siguiente →';s.focus();
+}
+$('sig').onclick=function(){ST.i++;if(ST.i<ST.qs.length)mostrar();else fin();};
+$('salir').onclick=function(){if(!confirm('¿Salir de la partida? Se perderá el avance'+(MODO==='est'?' (se registrará como partida abandonada).':'.')))return;enviar('abandono');ST=null;pant('p-inicio');};
+window.addEventListener('pagehide',function(){if(ST&&ST.i>0&&ST.i<ST.qs.length)enviar('abandono');});
+
+function nivel(p){return p>=90?'Experto':p>=70?'Avanzado':p>=50?'Intermedio':'En formación';}
+function fin(){
+  var n=ST.qs.length,p=Math.round(ST.ok/n*100);
+  $('r-emoji').textContent=p>=90?'🏆':p>=70?'🌟':p>=50?'💪':'📚';$('r-pct').textContent=p+' %';
+  $('r-txt').innerHTML='Acertaste <b>'+ST.ok+' de '+n+'</b> preguntas · '+ST.pts+' puntos · Nivel: <b>'+nivel(p)+'</b>';
+  var ts={};ST.qs.forEach(function(q){var t=NOM_T[q.t];ts[t]=ts[t]||[0,0];ts[t][1]++;});Object.keys(ST.okT).forEach(function(t){ts[t][0]=ST.okT[t];});
+  $('r-temas').innerHTML='<div class="barras" style="display:grid;gap:6px">'+Object.keys(ts).map(function(t){var v=ts[t][0]/ts[t][1];return '<div style="display:grid;grid-template-columns:150px 1fr 50px;gap:8px;align-items:center;font-size:.88rem"><span>'+t+'</span><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+v*100+'%;background:'+(v>=.7?'#2e7d4f':v>=.5?'#e0a024':'#c0392b')+'"></i></span><b>'+ts[t][0]+'/'+ts[t][1]+'</b></div>';}).join('')+'</div>';
+  $('r-fallos').innerHTML=ST.fallos.length?ST.fallos.map(function(q){return '<li><b>'+BIO.esc(q.q)+'</b><br><small>'+q.exp+' <a href="'+PAG_T[q.t]+'">Repasar en '+NOM_T[q.t]+' →</a></small></li>';}).join(''):'<li>¡No fallaste ninguna! 🎉</li>';
+  pant('p-res');enviar('fin');
+}
+function payload(razon){
+  var n=ST.qs.length,resp=razon==='fin'?n:ST.i,p=resp?Math.round(ST.ok/resp*100):0,un=tema!=='todos';
+  return {sesion:ST.sesion,trigger:razon,razon:razon,codigo:EST.cod,nombre:EST.nom,curso:EST.cur,grupo:un?NOM_T[tema]:'Todos los temas',nivel:nivel(p),
+    correctas:ST.ok,total:n,total_preguntas:n,respondidas:resp,puntaje:ST.pts,pct:p,porcentaje:p,
+    errores_mc:ST.err.mc,errores_drag:ST.err.drag,errores_id:ST.err.id,errores_write:ST.err.write,tiempo_agotado:0,
+    errores_por_tema:ST.errT,aciertos_por_tema:un?ST.okT:{},moleculas_falladas:ST.fallos.map(function(q){return q.q.slice(0,60);}),
+    timestamp:new Date().toISOString()};
+}
+function enviar(razon){
+  if(MODO!=='est'||!EST.ok||!APPS_SCRIPT_URL||enviado||!ST)return;enviado=true;
+  var d=payload(razon),box=$('r-envio');
+  if(razon==='abandono'){if(navigator.sendBeacon)navigator.sendBeacon(APPS_SCRIPT_URL,JSON.stringify(d));return;}
+  box.hidden=false;box.textContent='📤 Enviando tus resultados a tu docente…';
+  (function intentar(k){
+    fetch(APPS_SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d),keepalive:true})
+    .then(function(r){return r.json();}).then(function(x){if(x&&x.ok)box.textContent='✅ Resultados enviados a tu docente.';else throw 0;})
+    .catch(function(){if(k<2){box.textContent='⏳ Reintentando el envío…';setTimeout(function(){intentar(k+1);},1500*(k+1));}else box.textContent='⚠️ No se pudieron enviar los resultados. Toma una captura de pantalla y muéstrasela a tu docente.';});
+  })(0);
+}
+$('otra').onclick=function(){pant('p-inicio');};
+})();
+</script>
+<script src="text-zoom.js?v=2"></script>
+<script src="pwa-install.js?v=2"></script>
+</body>
+</html>
