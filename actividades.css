@@ -652,3 +652,13 @@
 .dtc .dt-fija{cursor:default}.dtc .dt-fija:hover{background:none}
 .dtc .dt-dud{cursor:pointer}
 .dt-okf{display:inline-block;font-size:.8em;font-weight:800;color:#475569;background:#e2e8f0;border-radius:6px;padding:0 6px;margin-left:4px}
+
+/* ── BioNom: criptograma genético (extras.js con EXTRAS_SITIO.cripto='codon') ── */
+.cr-c.cr-cod{width:calc(34px*var(--f,1))}
+.cr-c.cr-cod i{font-size:calc(9.5px*var(--f,1));letter-spacing:-.02em}
+.exc .cr-c.cr-cod{width:46px}.exc .cr-c.cr-cod i{font-size:12px}
+.cr-tgen{width:100%;border-collapse:collapse;margin-top:10px;font:calc(9.5px*var(--f,1))/1.35 var(--mono,monospace);color:#0d2d42}
+.cr-tgen caption{font:700 calc(11px*var(--f,1)) Outfit,sans-serif;text-align:left;padding-bottom:3px;color:#0d4a73}
+.cr-tgen td{border:1px solid #9fb4c4;padding:2px 4px;vertical-align:top}
+.cr-tgen span{display:block;white-space:nowrap}
+.cr-tgen b{color:#b45309}
