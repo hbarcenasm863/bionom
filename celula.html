@@ -12,11 +12,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=13">
+<link rel="stylesheet" href="bio.css?v=14">
 <style>
-.hist-card{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center}
+.hist-card{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:16px;align-items:center}
 .hist-card .ilu{font-size:4rem;text-align:center;background:var(--cn-brand-l);border-radius:16px;padding:10px 0}
 .hist-card .anio{font-family:var(--cn-mono);font-weight:800;color:var(--cn-naranja)}
+.hist-card .foto img{max-height:250px;object-fit:contain;background:#f4f1ea}
 @media(max-width:560px){.hist-card{grid-template-columns:1fr}.hist-card .ilu{font-size:3rem}}
 .escala{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center}
 @media(max-width:640px){.escala{grid-template-columns:1fr}}
@@ -285,6 +286,8 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
+<script src="fotos-datos.js?v=1"></script>
+<script src="fotos.js?v=1"></script>
 <script src="bio.js?v=13"></script>
 <script>
 (function(){
@@ -292,22 +295,22 @@ var esc=BIO.esc;
 /* ═══ Historia ═══ */
 var HIST=[
  {a:'1590',ico:'🔭',q:'Zacharias y Hans Janssen',d:'Fabricantes holandeses de lentes que unen dos lentes en un tubo: el primer <b>microscopio compuesto</b>. Aumentaba unas 10 veces.',c:'Por primera vez se pudo ver más allá de lo que alcanza el ojo.'},
- {a:'1665',ico:'🍂',q:'Robert Hooke',d:'Observa una lámina delgada de <b>corcho</b> y ve muchas cavidades, como las celdas de un panal. Las llama <b>«células»</b> (del latín <i>cellula</i>, celdilla). Lo publica en su libro <i>Micrographia</i>.',c:'Nace la palabra «célula», aunque lo que vio eran paredes de células muertas.'},
- {a:'1674',ico:'🔎',q:'Anton van Leeuwenhoek',d:'Comerciante de telas que pulía sus propias lentes, de hasta 270 aumentos. En gotas de agua de charco y en el sarro de los dientes ve seres diminutos moviéndose: los llama <b>«animálculos»</b>. Eran bacterias y protozoos.',c:'Se descubren los microorganismos: las primeras células vivas observadas.'},
+ {a:'1665',ico:'🍂',q:'Robert Hooke',f:['hooke','El corcho que dibujó Hooke en <i>Micrographia</i>'],d:'Observa una lámina delgada de <b>corcho</b> y ve muchas cavidades, como las celdas de un panal. Las llama <b>«células»</b> (del latín <i>cellula</i>, celdilla). Lo publica en su libro <i>Micrographia</i>.',c:'Nace la palabra «célula», aunque lo que vio eran paredes de células muertas.'},
+ {a:'1674',ico:'🔎',q:'Anton van Leeuwenhoek',f:['leeuw','Leeuwenhoek pintado por Jan Verkolje'],d:'Comerciante de telas que pulía sus propias lentes, de hasta 270 aumentos. En gotas de agua de charco y en el sarro de los dientes ve seres diminutos moviéndose: los llama <b>«animálculos»</b>. Eran bacterias y protozoos.',c:'Se descubren los microorganismos: las primeras células vivas observadas.'},
  {a:'1831',ico:'🌸',q:'Robert Brown',d:'Estudiando células de orquídeas, describe una estructura redonda y oscura que aparecía en todas: el <b>núcleo</b>.',c:'Se empieza a ver que la célula tiene partes internas.'},
  {a:'1838',ico:'🌿',q:'Matthias Schleiden',d:'Botánico alemán que concluye que <b>todas las plantas</b> están formadas por células.',c:'Primera mitad de la teoría celular.'},
- {a:'1839',ico:'🐸',q:'Theodor Schwann',d:'Zoólogo alemán que demuestra que <b>también los animales</b> están formados por células. Junto con Schleiden propone que la célula es la unidad de todos los seres vivos.',c:'Nace la teoría celular.'},
- {a:'1855',ico:'🧫',q:'Rudolf Virchow',d:'Médico alemán que afirma: <b>«Omnis cellula e cellula»</b>, toda célula proviene de otra célula. Explicó así cómo crecen los tejidos y algunas enfermedades.',c:'Se completa la teoría celular: las células no aparecen de la nada.'},
- {a:'1862',ico:'⚗️',q:'Louis Pasteur',d:'Con sus frascos de cuello de cisne demuestra que los microorganismos <b>no aparecen solos</b> en el caldo: llegan del aire.',c:'Cae la teoría de la generación espontánea.'},
- {a:'1931',ico:'⚡',q:'Ernst Ruska y Max Knoll',d:'Construyen el <b>microscopio electrónico</b>, que usa electrones en vez de luz y aumenta más de un millón de veces.',c:'Se pueden ver los organelos por dentro, los ribosomas y los virus.'},
- {a:'1967',ico:'🤝',q:'Lynn Margulis',d:'Propone la <b>teoría endosimbiótica</b>: las mitocondrias y los cloroplastos fueron bacterias que vivieron dentro de otra célula y se volvieron parte de ella.',c:'Explica el origen de la célula eucariota.'}
+ {a:'1839',ico:'🐸',q:'Theodor Schwann',f:['schwann','Theodor Schwann'],d:'Zoólogo alemán que demuestra que <b>también los animales</b> están formados por células. Junto con Schleiden propone que la célula es la unidad de todos los seres vivos.',c:'Nace la teoría celular.'},
+ {a:'1855',ico:'🧫',q:'Rudolf Virchow',f:['virchow','Rudolf Virchow'],d:'Médico alemán que afirma: <b>«Omnis cellula e cellula»</b>, toda célula proviene de otra célula. Explicó así cómo crecen los tejidos y algunas enfermedades.',c:'Se completa la teoría celular: las células no aparecen de la nada.'},
+ {a:'1862',ico:'⚗️',q:'Louis Pasteur',f:['pasteur','Louis Pasteur fotografiado por Nadar'],d:'Con sus frascos de cuello de cisne demuestra que los microorganismos <b>no aparecen solos</b> en el caldo: llegan del aire.',c:'Cae la teoría de la generación espontánea.'},
+ {a:'1931',ico:'⚡',q:'Ernst Ruska y Max Knoll',f:['ruska','Microscopio electrónico de Ruska (Deutsches Museum, Múnich)'],d:'Construyen el <b>microscopio electrónico</b>, que usa electrones en vez de luz y aumenta más de un millón de veces.',c:'Se pueden ver los organelos por dentro, los ribosomas y los virus.'},
+ {a:'1967',ico:'🤝',q:'Lynn Margulis',f:['margulis','Lynn Margulis en 2005'],d:'Propone la <b>teoría endosimbiótica</b>: las mitocondrias y los cloroplastos fueron bacterias que vivieron dentro de otra célula y se volvieron parte de ella.',c:'Explica el origen de la célula eucariota.'}
 ];
 var tl=document.getElementById('tl'),card=document.getElementById('tl-card');
 tl.innerHTML=HIST.map(function(h,i){return '<button type="button" class="tl-it" role="tab" data-i="'+i+'"><div class="pt">'+(i+1)+'</div><div class="a">'+h.a+'</div><div class="n">'+h.q+'</div></button>';}).join('');
 function verHist(i){
   var h=HIST[i];
   tl.querySelectorAll('.tl-it').forEach(function(b,j){b.classList.toggle('on',j===i);b.setAttribute('aria-selected',j===i);});
-  card.innerHTML='<div class="ilu" aria-hidden="true">'+h.ico+'</div><div><div class="anio">'+h.a+'</div><h3>'+h.q+'</h3><p>'+h.d+'</p><p style="margin-top:6px;color:var(--cn-brand-d)"><b>¿Qué cambió?</b> '+h.c+'</p>'+
+  card.innerHTML=(h.f?FOTO(h.f[0],h.f[1]):'<div class="ilu" aria-hidden="true">'+h.ico+'</div>')+'<div><div class="anio">'+h.a+'</div><h3>'+h.q+'</h3><p>'+h.d+'</p><p style="margin-top:6px;color:var(--cn-brand-d)"><b>¿Qué cambió?</b> '+h.c+'</p>'+
     '<div style="display:flex;gap:8px;margin-top:10px"><button type="button" class="cn-btn" '+(i===0?'disabled':'')+' data-m="-1">← Antes</button><button type="button" class="cn-btn cn-btn--primary" '+(i===HIST.length-1?'disabled':'')+' data-m="1">Después →</button></div></div>';
   card.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){verHist(i+ +b.getAttribute('data-m'));};});
   if(i===HIST.length-1)BIO.marcarSeccion('historia');

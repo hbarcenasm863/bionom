@@ -6,6 +6,62 @@
 
 ---
 
+## Versión 2.11 — 10 de noviembre de 2026 · Fotos reales con cita APA y embriones humanos ilustrados
+
+**Contexto.** El docente pidió quitar la comparación con objetos (emojis) en
+«Semana a semana» del embarazo y mostrar cómo se ve de verdad el desarrollo
+embrionario humano en sus etapas más importantes. Luego preguntó si se podían
+usar imágenes gratuitas de bancos como Pixabay, pidió revisar todo el sitio
+para ver qué imágenes podían cambiarse, buscar otros bancos gratuitos, poner
+la cita APA debajo de cada imagen y dejar como regla usar imágenes de bancos
+libres cuando sea posible.
+
+**Red del entorno.** Se habilitaron Wikimedia Commons, Openverse, iNaturalist
+y Flickr. Pixabay quedó habilitado pero no se pudo usar: bloquea programas
+automáticos y su buscador pide una clave de API (lo mismo pasa con Unsplash y
+Pexels).
+
+**Cambios.**
+- `embrion-fig.js` (nuevo): 14 ilustraciones del embrión y el feto humanos
+  (cigoto, blastocisto, semanas 4 a 40, fecundación, implantación, placenta,
+  parto) con tamaño y peso reales. Reemplazan los emojis de «Semana a semana»
+  y acompañan los pasos «De la fecundación al parto».
+- `fotos.js` y `fotos-datos.js` (nuevos), carpeta `img/fotos/` (52 fotos,
+  3,8 MB): componente de foto con la **cita APA debajo** (autor, año, título,
+  tipo, fuente, URL y licencia CC).
+- `reproduccion.html`: en «Semana a semana» cada etapa muestra la ilustración
+  y debajo «Así se ve en realidad» (cigoto, blastocisto, embriones de 5 y 7
+  semanas, ecografías de 12, 20 y 32 semanas, recién nacido). En «El desarrollo
+  embrionario», fotos al microscopio de cigoto, 8 células y blastocisto. Se
+  recortó el encabezado de las ecografías (una mostraba el nombre de la
+  paciente). No se usaron fotos de placenta por ser sangrientas.
+- `celula.html`: la línea del tiempo muestra el corcho de *Micrographia*,
+  Leeuwenhoek, Schwann, Virchow, Pasteur, el microscopio de Ruska y Margulis.
+  Schleiden quedó con emoji: no se encontró un retrato con licencia libre.
+- `evolucion.html`: Lamarck, Cuvier, el viaje del Beagle, Wallace, la portada
+  de *El origen de las especies* y Mendel en la línea del tiempo; retratos de
+  Lamarck y Darwin en la comparación de la jirafa; fotos de las dos formas de
+  la polilla *Biston betularia* en la simulación.
+- `genetica.html`: retrato de Mendel.
+- `reinos.html`: foto de un organismo en cada tarjeta de reino y en el mapa en
+  árbol (bacteria, arquea, paramecio, diatomea, hongo, frailejón, jaguar).
+- `regiones.html`: las tarjetas de ecosistemas ahora muestran una foto real
+  de Colombia (Nevado del Ruiz, páramo de Iguaque, Salento, Apaporis, bosque
+  seco de La Guajira, Tatacoa, Vichada, manglar, San Andrés, Ciénaga Grande);
+  también al tocar un ecosistema en el mapa. Cada especie amenazada muestra su
+  foto (iNaturalist y Flickr).
+- `bio.css` (estilos `.foto`, `.fotos`), `sw.js` (`bionom-v26`, nuevos
+  archivos), `?v=14` en todas las páginas.
+- `CLAUDE.md`: nueva **regla de imágenes** (bancos libres, licencias aceptadas,
+  cita APA obligatoria y cómo agregar fotos).
+
+**Verificación.** Playwright a 1366 y 390 px en las seis páginas: sin errores,
+sin desbordes, todas las fotos cargan con su cita.
+
+**Pendiente.** Se puede seguir agregando fotos en otros módulos (sistemas,
+ecosistemas, ambiente, división celular) siguiendo la regla. Recargar con
+Ctrl+F5 para ver los cambios.
+
 ## Versión 2.10 — 10 de noviembre de 2026 · Un pollito de verdad al nacer del huevo
 
 ### Contexto

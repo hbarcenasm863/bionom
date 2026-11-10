@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=13">
+<link rel="stylesheet" href="bio.css?v=14">
 <style>
 .jir{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:700px){.jir{grid-template-columns:1fr}}
@@ -50,6 +50,7 @@
 .homi .ma{font:800 .8rem var(--cn-mono);color:var(--cn-naranja)}
 .cereb{height:16px;border-radius:999px;background:linear-gradient(90deg,#e9a3b3,#b5527a);transition:width .5s}
 .anio-ev .f{font:800 1.1rem var(--cn-mono);color:var(--cn-naranja)}
+.hist-ev{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:16px;align-items:center}.hist-ev .foto img{max-height:250px;object-fit:contain;background:#f4f1ea}@media(max-width:560px){.hist-ev{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -85,6 +86,7 @@
   <section class="sec" id="jirafas">
     <h2><span class="n">02</span> El cuello de la jirafa: Lamarck vs. Darwin</h2>
     <p class="lead">Las dos teorías intentan explicar lo mismo, pero de manera muy diferente. Avanza al mismo tiempo en las dos columnas.</p>
+    <div class="fotos mini" style="margin-bottom:12px"><div data-foto="lamarck" data-pie="Jean-Baptiste Lamarck (1744-1829)" data-cls="cont"></div><div data-foto="darwin" data-pie="Charles Darwin (1809-1882)" data-cls="cont"></div></div>
     <div class="jir">
       <div class="col"><h3>Lamarck · Francia, 1809</h3><svg id="jl" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jl-t"></p></div>
       <div class="col"><h3>Darwin · Inglaterra, 1859</h3><svg id="jd" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jd-t"></p></div>
@@ -100,6 +102,7 @@
   <section class="sec" id="seleccion">
     <h2><span class="n">03</span> Simulación: ¡eres un pájaro!</h2>
     <p class="lead">En Inglaterra, en el siglo XIX, las fábricas llenaron de hollín los troncos de los árboles. La polilla del abedul (<i>Biston betularia</i>) tiene una forma <b>clara</b> y una <b>oscura</b>. Tú eres un pájaro: <b>toca las polillas que veas</b> para comértelas. Cada generación tienes 10 picotazos. Las que sobrevivan se reproducen.</p>
+    <div class="fotos mini" style="margin-bottom:12px"><div data-foto="biston1" data-pie="Forma clara: se confunde con los líquenes del tronco"></div><div data-foto="biston2" data-pie="Forma oscura: se confunde con el hollín"></div></div>
     <div class="card">
       <div class="sim-bar">
         <div class="chips" role="group" aria-label="Tronco"><button class="chip on" data-tronco="limpio">🌳 Tronco limpio (con líquenes)</button><button class="chip" data-tronco="hollin">🏭 Tronco con hollín</button></div>
@@ -219,18 +222,20 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
+<script src="fotos-datos.js?v=1"></script>
+<script src="fotos.js?v=1"></script>
 <script src="bio.js?v=13"></script>
 <script>
 (function(){
 /* ═══ 1. Línea del tiempo de ideas ═══ */
 var ID=[
  {a:'Antigüedad',ico:'📜',q:'Fijismo',d:'Las especies fueron creadas como son y <b>no cambian</b>. Era la idea dominante en Europa hasta el siglo XVIII.'},
- {a:'1809',ico:'🦒',q:'Jean-Baptiste Lamarck',d:'Primera teoría completa de evolución: el <b>uso y desuso</b> desarrolla o atrofia los órganos, y esos <b>caracteres adquiridos se heredan</b>. Acertó en que las especies cambian; se equivocó en el mecanismo.'},
- {a:'1812',ico:'🦴',q:'Georges Cuvier · Catastrofismo',d:'Estudiando fósiles, Cuvier acepta que muchas especies se <b>extinguieron</b> por grandes catástrofes (inundaciones), pero cree que las especies que quedan no cambian.'},
- {a:'1835',ico:'🚢',q:'Charles Darwin en el Beagle',d:'Durante un viaje de 5 años alrededor del mundo, Darwin observa fósiles en Suramérica y los pinzones y tortugas de las Galápagos. Empieza a pensar que las especies se transforman.'},
- {a:'1858',ico:'🤝',q:'Alfred Russel Wallace',d:'Trabajando en la Amazonia y en Indonesia, Wallace llega por su cuenta a la misma idea de Darwin. Presentan juntos la teoría de la <b>selección natural</b>.'},
- {a:'1859',ico:'📖',q:'«El origen de las especies»',d:'Darwin publica su libro: los individuos de una población son diferentes; nacen más de los que pueden sobrevivir; los que tienen variaciones ventajosas sobreviven y se reproducen más; así cambian las especies.'},
- {a:'1865',ico:'🌱',q:'Gregor Mendel',d:'Publica sus experimentos con arvejas y descubre las leyes de la herencia. Nadie le presta atención hasta 1900.'},
+ {a:'1809',ico:'🦒',q:'Jean-Baptiste Lamarck',f:['lamarck','Jean-Baptiste Lamarck'],d:'Primera teoría completa de evolución: el <b>uso y desuso</b> desarrolla o atrofia los órganos, y esos <b>caracteres adquiridos se heredan</b>. Acertó en que las especies cambian; se equivocó en el mecanismo.'},
+ {a:'1812',ico:'🦴',q:'Georges Cuvier · Catastrofismo',f:['cuvier','Georges Cuvier'],d:'Estudiando fósiles, Cuvier acepta que muchas especies se <b>extinguieron</b> por grandes catástrofes (inundaciones), pero cree que las especies que quedan no cambian.'},
+ {a:'1835',ico:'🚢',q:'Charles Darwin en el Beagle',f:['beagle','Darwin, el HMS Beagle y la ruta de su viaje'],d:'Durante un viaje de 5 años alrededor del mundo, Darwin observa fósiles en Suramérica y los pinzones y tortugas de las Galápagos. Empieza a pensar que las especies se transforman.'},
+ {a:'1858',ico:'🤝',q:'Alfred Russel Wallace',f:['wallace','Alfred Russel Wallace en 1889'],d:'Trabajando en la Amazonia y en Indonesia, Wallace llega por su cuenta a la misma idea de Darwin. Presentan juntos la teoría de la <b>selección natural</b>.'},
+ {a:'1859',ico:'📖',q:'«El origen de las especies»',f:['origen','Portada de la primera edición (1859)'],d:'Darwin publica su libro: los individuos de una población son diferentes; nacen más de los que pueden sobrevivir; los que tienen variaciones ventajosas sobreviven y se reproducen más; así cambian las especies.'},
+ {a:'1865',ico:'🌱',q:'Gregor Mendel',f:['mendel','Gregor Mendel'],d:'Publica sus experimentos con arvejas y descubre las leyes de la herencia. Nadie le presta atención hasta 1900.'},
  {a:'1940',ico:'🧬',q:'Teoría sintética (neodarwinismo)',d:'Se une la selección natural de Darwin con la genética de Mendel: la variación viene de las <b>mutaciones</b> y de la mezcla de genes en la reproducción sexual.'},
  {a:'1953',ico:'📶',q:'Watson, Crick y Franklin',d:'Se descubre la estructura de doble hélice del ADN: por fin se entiende cómo se copian y heredan los genes.'},
  {a:'2003',ico:'📚',q:'Proyecto Genoma Humano',d:'Se termina de leer la secuencia completa del ADN humano: unos 3000 millones de letras y cerca de 20 000 genes.'},
@@ -239,7 +244,7 @@ var ID=[
 var tl=document.getElementById('tl'),card=document.getElementById('tl-card');
 tl.innerHTML=ID.map(function(h,i){return '<button type="button" class="tl-it" data-i="'+i+'"><div class="pt">'+(i+1)+'</div><div class="a" style="font-size:.75rem">'+h.a+'</div><div class="n">'+h.q.split(' · ')[0]+'</div></button>';}).join('');
 function ver(i){var h=ID[i];tl.querySelectorAll('.tl-it').forEach(function(b,j){b.classList.toggle('on',j===i);});
-  card.innerHTML='<div style="display:flex;gap:14px;align-items:center"><div style="font-size:3.2rem">'+h.ico+'</div><div><b style="color:var(--cn-naranja);font-family:var(--cn-mono)">'+h.a+'</b><h3>'+h.q+'</h3><p>'+h.d+'</p></div></div>';
+  card.innerHTML='<div class="hist-ev">'+(h.f?FOTO(h.f[0],h.f[1]):'<div style="font-size:3.2rem;text-align:center">'+h.ico+'</div>')+'<div><b style="color:var(--cn-naranja);font-family:var(--cn-mono)">'+h.a+'</b><h3>'+h.q+'</h3><p>'+h.d+'</p></div></div>';
   if(i===ID.length-1)BIO.marcarSeccion('ideas');}
 tl.querySelectorAll('.tl-it').forEach(function(b){b.onclick=function(){ver(+b.getAttribute('data-i'));};});ver(0);
 

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=13">
+<link rel="stylesheet" href="bio.css?v=14">
 <style>
 .taxo{display:grid;gap:6px}
 .taxo .fila{display:grid;grid-template-columns:120px repeat(3,minmax(0,1fr));gap:6px;align-items:stretch}
@@ -188,6 +188,8 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
+<script src="fotos-datos.js?v=1"></script>
+<script src="fotos.js?v=1"></script>
 <script src="bio.js?v=13"></script>
 <script>
 (function(){
@@ -284,9 +286,10 @@ function pintarArbol(k){
   if(arbSel&&sv.querySelector('[data-n="'+arbSel+'"]'))verNodo(arbSel);
   else t.innerHTML='<div class="vacio"><div style="font-size:2.4rem">👆</div>Toca una caja del mapa. Con <b>'+(k==='3'?'tres dominios':k+' reinos')+'</b> hay '+hojas.length+' reinos en la última fila.</div>';
 }
+var NF={monera:['r_bact','<i>Escherichia coli</i>: bacteria en forma de bastón'],eubac:['r_bact','<i>Escherichia coli</i>, una eubacteria'],dBac:['r_bact','<i>Escherichia coli</i>, una bacteria'],arq:['r_arq','<i>Halobacterium salinarum</i>, una arquea que vive en salinas'],dArq:['r_arq','<i>Halobacterium salinarum</i>, una arquea'],protista:['r_prot','<i>Paramecium caudatum</i>, protozoo ciliado'],protozoa:['r_prot','<i>Paramecium caudatum</i>, protozoo ciliado'],chromista:['r_alga','Diatomea: alga unicelular con caparazón de sílice'],fungi:['r_hongo','<i>Amanita muscaria</i>'],plantae:['r_plant','Frailejones en el Páramo del Sol (Antioquia)'],animalia:['r_anim','Jaguar (<i>Panthera onca</i>)']};
 function verNodo(id){var n=NODO[id];arbSel=id;arbVis[id]=1;
   document.querySelectorAll('#arbol .nd').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-n')===id);});
-  document.getElementById('arbol-t').innerHTML='<h3 style="color:'+n[2]+'">'+n[0]+' '+n[1]+'</h3><dl class="car">'+Object.keys(n[3]).map(function(k){return '<dt>'+k+'</dt><dd>'+n[3][k]+'</dd>';}).join('')+'</dl>';
+  document.getElementById('arbol-t').innerHTML='<h3 style="color:'+n[2]+'">'+n[0]+' '+n[1]+'</h3><dl class="car">'+Object.keys(n[3]).map(function(k){return '<dt>'+k+'</dt><dd>'+n[3][k]+'</dd>';}).join('')+'</dl>'+(NF[id]?FOTO(NF[id][0],NF[id][1]):'');
   if(Object.keys(arbVis).length>=6)BIO.marcarSeccion('monera');}
 function verMod(k){var m=MOD[k];monVis[k]=1;
   document.querySelectorAll('[data-mod]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-mod')===k);});
@@ -318,7 +321,7 @@ var R=[
  {id:'animalia',n:'Animalia (animales)',e:'🐾',c:'#c2410c',cel:'Eucariota',num:'Pluricelulares, con tejidos',nut:'Heterótrofos por <b>ingestión</b>: comen a otros seres',pared:'No',rep:'Sobre todo sexual',ej:'Cóndor de los Andes, jaguar, rana dorada del Chocó, coral del Caribe, hormiga culona.',f:{nucleo:1,foto:0,pluri:1,pared:0,mueve:1,hetero:1}}
 ];
 var FIL=[['nucleo','🎯 Tiene núcleo'],['foto','🌞 Hay fotosíntesis'],['pluri','🧩 Hay pluricelulares'],['pared','🧱 Hay pared celular'],['hetero','🍽️ Hay heterótrofos'],['mueve','🏃 Hay seres que se desplazan']];
-document.getElementById('reinos-g').innerHTML=R.map(function(r){return '<div class="card reino-c" data-r="'+r.id+'" style="border-top-color:'+r.c+'"><span class="e">'+r.e+'</span><h3 style="color:'+r.c+'">'+r.n+'</h3><dl><dt>Célula</dt><dd>'+r.cel+'</dd><dt>N.º de células</dt><dd>'+r.num+'</dd><dt>Nutrición</dt><dd>'+r.nut+'</dd><dt>Pared</dt><dd>'+r.pared+'</dd><dt>Reproducción</dt><dd>'+r.rep+'</dd></dl><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand)"><span class="co" role="img" aria-label="Colombia"></span> Ejemplos</summary><p style="font-size:.9rem;margin-top:4px">'+r.ej+'</p></details></div>';}).join('');
+document.getElementById('reinos-g').innerHTML=R.map(function(r){return '<div class="card reino-c" data-r="'+r.id+'" style="border-top-color:'+r.c+'"><span class="e">'+r.e+'</span><h3 style="color:'+r.c+'">'+r.n+'</h3>'+FOTO({monera:'r_bact',protista:'r_prot',fungi:'r_hongo',plantae:'r_plant',animalia:'r_anim'}[r.id],{monera:'<i>Escherichia coli</i>, una bacteria (microscopio electrónico)',protista:'<i>Paramecium</i>, un protozoo (microscopio)',fungi:'<i>Amanita muscaria</i>, un hongo',plantae:'Frailejones (<i>Espeletia</i>) en un páramo de Colombia',animalia:'Jaguar (<i>Panthera onca</i>)'}[r.id])+'<dl><dt>Célula</dt><dd>'+r.cel+'</dd><dt>N.º de células</dt><dd>'+r.num+'</dd><dt>Nutrición</dt><dd>'+r.nut+'</dd><dt>Pared</dt><dd>'+r.pared+'</dd><dt>Reproducción</dt><dd>'+r.rep+'</dd></dl><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand)"><span class="co" role="img" aria-label="Colombia"></span> Ejemplos</summary><p style="font-size:.9rem;margin-top:4px">'+r.ej+'</p></details></div>';}).join('');
 var fsel=null,fil=document.getElementById('filtros');
 fil.innerHTML=FIL.map(function(f){return '<button class="chip" data-f="'+f[0]+'">'+f[1]+'</button>';}).join('');
 var usados={};

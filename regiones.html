@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=13">
+<link rel="stylesheet" href="bio.css?v=14">
 <style>
 .mapa-co{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
 @media(max-width:860px){.mapa-co{grid-template-columns:1fr}}
@@ -47,6 +47,8 @@
 @media(max-width:760px){.pisos{grid-template-columns:1fr}}
 #monta{width:100%;height:auto}
 .eco-card .e{font-size:2rem}
+.eco-c{padding:10px;border-top-width:6px}.eco-c .foto{box-shadow:none;border:0}.eco-c .foto img{height:170px}.eco-c>p{font-size:.88rem;margin-top:6px}
+.esp-det{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:14px;align-items:start}@media(max-width:600px){.esp-det{grid-template-columns:1fr}}
 .uicn{display:flex;border-radius:12px;overflow:hidden;margin:10px 0}
 .uicn div{flex:1;text-align:center;padding:8px 2px;font:800 .78rem Outfit;color:#fff;transition:transform .2s,box-shadow .2s;position:relative}
 .uicn div small{display:block;font-weight:500;font-size:.62rem}
@@ -90,7 +92,7 @@
 
   <section class="sec" id="tipos">
     <h2><span class="n">02</span> Los ecosistemas, uno por uno</h2>
-    <p class="lead">Voltea cada tarjeta para conocer su clima, sus seres vivos y por qué es importante.</p>
+    <p class="lead">Mira cómo se ve cada uno en Colombia y conoce su clima, sus seres vivos y por qué es importante.</p>
     <div class="grid g3" id="eco-cards"></div>
   </section>
 
@@ -134,6 +136,8 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
+<script src="fotos-datos.js?v=1"></script>
+<script src="fotos.js?v=1"></script>
 <script src="bio.js?v=13"></script>
 <script src="mapa-colombia.js?v=13"></script>
 <script>
@@ -241,12 +245,13 @@ ley.querySelectorAll('[data-f]').forEach(function(b){b.onclick=function(){
   svg.querySelectorAll('.mk').forEach(function(m){m.classList.toggle('oculto',!!filtro&&m.getAttribute('data-e')!==filtro);});
   svg.querySelectorAll('.reg').forEach(function(p){p.classList.toggle('apag',!!filtro&&REG[p.getAttribute('data-r')].eco.indexOf(filtro)<0);});
   if(filtro){var e=ECO[filtro],rs=Object.keys(REG).filter(function(r){return REG[r].eco.indexOf(filtro)>=0;});
-    det.innerHTML='<div class="reg-cab" style="background:'+e.c+'"><h3>'+e.e+' '+e.n+'</h3></div><p>'+e.d+'</p><p style="margin-top:10px"><b>Se encuentra en:</b> '+rs.map(function(r){return REG[r].n.replace('Región ','');}).join(', ')+'.</p>';}
+    det.innerHTML='<div class="reg-cab" style="background:'+e.c+'"><h3>'+e.e+' '+e.n+'</h3></div>'+FOTO('p_'+k,PL[k]||'')+'<p style="margin-top:8px">'+e.d+'</p><p style="margin-top:10px"><b>Se encuentra en:</b> '+rs.map(function(r){return REG[r].n.replace('Región ','');}).join(', ')+'.</p>';}
 };});
 
 /* ═══ Tarjetas de ecosistemas ═══ */
+var PL={paramo:'Páramo de Iguaque (Boyacá)',nival:'Nevado del Ruiz',andino:'Bosque de niebla en Salento (Quindío)',humedo:'Reserva Yaigojé Apaporis (Amazonas y Vaupés)',seco:'Bosque seco en La Guajira',desierto:'Desierto de la Tatacoa (Huila)',sabana:'Laguna de La Primavera (Vichada)',manglar:'Manglar en Colombia',arrecife:'Peces del arrecife en San Andrés',humedal:'Palafitos en la Ciénaga Grande de Santa Marta'};
 document.getElementById('eco-cards').innerHTML=Object.keys(ECO).map(function(k){var e=ECO[k];
-  return '<div class="flip eco-card" style="min-height:190px"><div class="in" style="min-height:190px"><div class="fr" style="border-top:6px solid '+e.c+'"><span class="e">'+e.e+'</span><b>'+e.n+'</b><small>toca para voltear</small></div><div class="bk" style="background:'+e.c+';color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);font-size:.86rem">'+e.d+'</div></div></div>';}).join('');
+  return '<div class="card eco-c" style="border-top:6px solid '+e.c+'">'+FOTO('p_'+k,e.e+' '+e.n+(PL[k]?' · '+PL[k]:''))+'<p>'+e.d+'</p></div>';}).join('');
 BIO.montar(document.getElementById('eco-cards'));
 
 /* ═══ Pisos térmicos ═══ */
@@ -324,12 +329,13 @@ var ESP=[
  ['🦅','Cóndor de los Andes','VU','Andina','Ave del escudo nacional. En Colombia quedan muy pocos; muere envenenado por carnadas y por cacería.','Reintroducción de cóndores y educación con ganaderos. En Colombia se considera en peligro crítico.'],
  ['🐆','Jaguar','NT','Amazonía, Orinoquía, Pacífica, Caribe','El felino más grande de América. Pierde territorio por la deforestación y lo matan por conflictos con el ganado.','Corredores de conservación y apoyo a ganaderos para proteger su ganado sin matar jaguares.']
 ];
+var EK=["e_oso", "e_caiman", "e_titi", "e_rana", "e_delfin", "e_palma", "e_carey", "e_danta", "e_condor", "e_jaguar"];
 var eb=document.getElementById('esp'),vistE={};
 eb.innerHTML=ESP.map(function(e,i){return '<button type="button" data-i="'+i+'"><span class="e">'+e[0]+'</span>'+e[1]+'</button>';}).join('');
 function verE(i){var e=ESP[i],c=CAT.filter(function(x){return x[0]===e[2];})[0];vistE[i]=1;
   eb.querySelectorAll('button').forEach(function(b,j){b.classList.toggle('on',j===i);});
   document.querySelectorAll('#uicn [data-c]').forEach(function(d){d.classList.toggle('on',d.getAttribute('data-c')===e[2]);});
-  document.getElementById('esp-t').innerHTML='<h3>'+e[0]+' '+e[1]+'</h3><p><span class="tag" style="background:'+c[2]+';color:#fff">'+c[0]+' · '+c[1]+'</span><span class="tag">'+e[3]+'</span></p><p style="margin-top:8px"><b>¿Por qué está amenazada?</b> '+e[4]+'</p><p style="margin-top:6px"><b>¿Qué se hace para protegerla?</b> '+e[5]+'</p>';
+  document.getElementById('esp-t').innerHTML='<div class="esp-det">'+FOTO(EK[i],e[1])+'<div><h3>'+e[0]+' '+e[1]+'</h3><p><span class="tag" style="background:'+c[2]+';color:#fff">'+c[0]+' · '+c[1]+'</span><span class="tag">'+e[3]+'</span></p><p style="margin-top:8px"><b>¿Por qué está amenazada?</b> '+e[4]+'</p><p style="margin-top:6px"><b>¿Qué se hace para protegerla?</b> '+e[5]+'</p></div></div>';
   if(Object.keys(vistE).length>=5)BIO.marcarSeccion('amenazadas');}
 eb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verE(+b.getAttribute('data-i'));};});
 document.getElementById('esp-t').innerHTML='<p class="vacio" style="padding:10px">👆 Toca una especie para ver su categoría y por qué está amenazada.</p>';

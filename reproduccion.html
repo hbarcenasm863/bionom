@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=13">
+<link rel="stylesheet" href="bio.css?v=14">
 <style>
 .grupos-r{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
 .grupos-r button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:8px 4px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--cn-tx)}
@@ -124,6 +124,8 @@
       <div class="card"><h3>Las primeras etapas</h3><ol><li><b>Cigoto:</b> una sola célula.</li><li><b>Segmentación:</b> divisiones rápidas por mitosis.</li><li><b>Mórula:</b> bolita maciza de células.</li><li><b>Blástula:</b> esfera hueca.</li><li><b>Gástrula:</b> se forman tres capas que darán origen a todos los órganos.</li></ol>
         <div class="tbl-wrap" style="margin-top:10px"><table class="t"><tr><th>Capa</th><th>Forma</th></tr><tr><td><b style="color:#2f6f9e">●</b> Ectodermo</td><td>Piel, pelo, uñas, sistema nervioso</td></tr><tr><td><b style="color:#c0392b">●</b> Mesodermo</td><td>Músculos, huesos, corazón, sangre, riñones</td></tr><tr><td><b style="color:#c99a00">●</b> Endodermo</td><td>Revestimiento del intestino, pulmones, hígado</td></tr></table></div></div>
     </div>
+    <h3 style="margin-top:16px">Así se ven de verdad al microscopio</h3>
+    <div class="fotos"><div data-foto="cigoto" data-pie="Cigoto humano (día 1)"></div><div data-foto="em8" data-pie="Embrión de 8 células por segmentación (día 3)"></div><div data-foto="blasto" data-pie="Blastocisto (día 5): hueco por dentro"></div></div>
     <h3 style="margin-top:20px">¿Dónde se desarrolla el embrión?</h3>
     <p>Hay tres estrategias. Cada una tiene ventajas y desventajas. Toca cada una.</p>
     <div class="tabs"><button class="chip on" data-tab="d-ovi">🥚 Ovíparo</button><button class="chip" data-tab="d-ovovi">🦈 Ovovivíparo</button><button class="chip" data-tab="d-vivi">🤱 Vivíparo</button></div>
@@ -199,10 +201,10 @@
   <section class="sec" id="embarazo">
     <h2><span class="n">07</span> Fecundación, embarazo y parto</h2>
     <div class="pasos" data-titulo="De la fecundación al parto">
-      <div class="paso" data-t="Fecundación"><h3>1. Fecundación</h3><p>Ocurre en la <b>trompa de Falopio</b>: de millones de espermatozoides solo uno entra al óvulo. Se forma el <b>cigoto</b>, con 46 cromosomas.</p></div>
-      <div class="paso" data-t="Implantación"><h3>2. Implantación</h3><p>El cigoto se divide por mitosis mientras baja hacia el útero. Hacia el día 7 se implanta en el endometrio. Ahí empieza el embarazo y se suspende la menstruación.</p></div>
-      <div class="paso" data-t="Placenta"><h3>3. Placenta y cordón umbilical</h3><p>Se forman la <b>placenta</b>, que intercambia nutrientes, oxígeno y desechos entre la madre y el bebé sin que sus sangres se mezclen, y el <b>cordón umbilical</b>. El bebé flota en el líquido amniótico.</p></div>
-      <div class="paso" data-t="Parto"><h3>4. Parto</h3><p>Hacia la semana 40, el útero se contrae, el cuello uterino se dilata y el bebé sale. Después sale la placenta. La leche materna es el mejor alimento durante los primeros 6 meses.</p></div>
+      <div class="paso" data-t="Fecundación"><div class="lado" style="align-items:center"><div><h3>1. Fecundación</h3><p>Ocurre en la <b>trompa de Falopio</b>: de millones de espermatozoides solo uno entra al óvulo. Se forma el <b>cigoto</b>, con 46 cromosomas.</p></div><div data-emb="fecundacion"></div></div></div>
+      <div class="paso" data-t="Implantación"><div class="lado" style="align-items:center"><div><h3>2. Implantación</h3><p>El cigoto se divide por mitosis mientras baja hacia el útero. Hacia el día 7 se implanta en el endometrio. Ahí empieza el embarazo y se suspende la menstruación.</p></div><div data-emb="implantacion"></div></div></div>
+      <div class="paso" data-t="Placenta"><div class="lado" style="align-items:center"><div><h3>3. Placenta y cordón umbilical</h3><p>Se forman la <b>placenta</b>, que intercambia nutrientes, oxígeno y desechos entre la madre y el bebé sin que sus sangres se mezclen, y el <b>cordón umbilical</b>. El bebé flota en el líquido amniótico.</p></div><div data-emb="placenta"></div></div></div>
+      <div class="paso" data-t="Parto"><div class="lado" style="align-items:center"><div><h3>4. Parto</h3><p>Hacia la semana 40, el útero se contrae, el cuello uterino se dilata y el bebé sale. Después sale la placenta. La leche materna es el mejor alimento durante los primeros 6 meses.</p></div><div data-emb="parto"></div></div></div>
     </div>
     <h3 style="margin-top:18px">Semana a semana</h3>
     <div class="card">
@@ -239,9 +241,12 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
+<script src="fotos-datos.js?v=1"></script>
+<script src="fotos.js?v=1"></script>
 <script src="bio.js?v=13"></script>
 <script src="cuerpo.js?v=13"></script>
 <script src="repro-anim.js?v=9"></script>
+<script src="embrion-fig.js?v=1"></script>
 <script>
 (function(){
 var sp=CUERPO.sp,esc=BIO.esc;
@@ -389,9 +394,20 @@ function verDia(){var d=+dia.value,t;
 dia.oninput=verDia;verDia();
 
 /* ═══ Embarazo semana a semana ═══ */
-var SEM=[['Día 1','🔬','Cigoto','El óvulo fecundado: una sola célula con 46 cromosomas. Empieza a dividirse por mitosis mientras baja por la trompa.'],['Semana 1','⚪','Blastocisto','Una esfera hueca de unas 100 células llega al útero y se implanta en el endometrio.'],['Semana 4','🌱','Tamaño de una semilla de amapola','Se forman el tubo neural (futuro cerebro y médula) y el corazón, que empieza a latir.'],['Semana 6','🌰','Tamaño de una lenteja','Aparecen los esbozos de brazos y piernas y se forman los ojos.'],['Semana 8','🍇','Tamaño de una frambuesa','Todos los órganos principales ya están formados. Termina la etapa de <b>embrión</b> y empieza la de <b>feto</b>. Es el periodo más sensible al alcohol y a los medicamentos.'],['Semana 12','🍋','Tamaño de un limón · fin del 1.er trimestre','Mueve los dedos; en una ecografía se ven sus órganos sexuales.'],['Semana 20','🍌','Tamaño de un banano · 2.º trimestre','La madre siente sus movimientos. Escucha sonidos y reconoce la voz de su madre.'],['Semana 28','🍆','Tamaño de una berenjena · 3.er trimestre','Abre los ojos. Los pulmones siguen madurando.'],['Semana 36','🍈','Tamaño de un melón','Gana peso rápidamente y se acomoda, casi siempre cabeza abajo, para el parto.'],['Semana 40','🍉','Unos 50 cm y 3 kg','Nacimiento. Los pulmones ya pueden respirar aire.']];
+var SEM=[['Día 1','cigoto','Cigoto','El óvulo fecundado: una sola célula con 46 cromosomas. Empieza a dividirse por mitosis mientras baja por la trompa.'],
+ ['Semana 1','blasto','Blastocisto','Una esfera hueca de unas 100 células llega al útero y se implanta en el endometrio. Las células de adentro formarán al bebé; las de afuera, la placenta.'],
+ ['Semana 4','s4','Embrión en forma de C','Se forman el tubo neural (futuro cerebro y médula espinal) y el corazón, que ya empieza a latir. Tiene una pequeña cola.'],
+ ['Semana 6','s6','Ojos y extremidades','Aparecen los esbozos de brazos y piernas y se forman los ojos. El corazón late unas 110 veces por minuto.'],
+ ['Semana 8','s8','Fin de la etapa de embrión','Todos los órganos principales ya están formados y se ven los dedos. Desde ahora se llama <b>feto</b>. Es el periodo más sensible al alcohol, al cigarrillo y a los medicamentos.'],
+ ['Semana 12','s12','Fin del primer trimestre','Mueve brazos y piernas, aunque la madre aún no lo siente. En una ecografía se ven sus órganos sexuales.'],
+ ['Semana 20','s20','Segundo trimestre','La madre siente sus movimientos. Escucha sonidos y reconoce la voz de su madre.'],
+ ['Semana 28','s28','Tercer trimestre','Abre los ojos y duerme y despierta en ciclos. Los pulmones siguen madurando.'],
+ ['Semana 36','s36','Cabeza abajo','Gana peso rápidamente y casi siempre gira cabeza abajo para el parto.'],
+ ['Semana 40','s40','Listo para nacer','Ocupa todo el útero. Sus pulmones ya pueden respirar aire.']];
 var sem=document.getElementById('sem');
-function verSem(){var e=SEM[+sem.value];document.getElementById('sem-t').innerHTML='<div style="font-size:5rem;text-align:center">'+e[1]+'</div><div><b style="font-family:var(--cn-mono);color:var(--cn-naranja)">'+e[0]+'</b><h3>'+e[2]+'</h3><p>'+e[3]+'</p></div>';if(+sem.value===9)BIO.marcarSeccion('embarazo');}
+var SEMF={"cigoto": ["cigoto", "Cigoto humano real: se ven los dos núcleos (del óvulo y del espermatozoide) antes de unirse"], "blasto": ["blasto", "Blastocisto humano real de 5 días, visto al microscopio"], "s6": ["em5", "Embrión real de unas 5 semanas desde la fecundación (7.ª semana de embarazo)"], "s8": ["em7", "Embrión real de unas 7 semanas: ya se ven los dedos y la cara"], "s12": ["eco12", "Ecografía real a las 12 semanas: el feto mide unos 6,5 cm"], "s20": ["eco20", "Ecografía real a las 20 semanas: perfil del feto"], "s28": ["eco32", "Ecografía 3D real del rostro de un feto de 32 semanas"], "s40": ["bebe", "Un recién nacido"]};
+function verSem(){var e=SEM[+sem.value];document.getElementById('sem-t').innerHTML='<div>'+EMB.fig(e[1])+'</div><div><b style="font-family:var(--cn-mono);color:var(--cn-naranja)">'+e[0]+'</b><h3>'+e[2]+'</h3><p>'+e[3]+'</p>'+(SEMF[e[1]]?'<div style="margin-top:10px">'+FOTO(SEMF[e[1]][0],'Así se ve en realidad: '+SEMF[e[1]][1])+'</div>':'')+'</div>';if(+sem.value===9)BIO.marcarSeccion('embarazo');}
+document.querySelectorAll('[data-emb]').forEach(function(d){d.innerHTML=EMB.fig(d.getAttribute('data-emb'));});
 sem.oninput=verSem;verSem();
 
 /* ═══ Anticoncepción ═══ */

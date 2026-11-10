@@ -77,7 +77,38 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 | `juego.html` | Juego con Modo Libre y Modo Estudiante. |
 | `docente.html` | Panel docente con 10 pestañas: Guías de 4 sesiones, Talleres y Evaluaciones tipo Saber 11 (`docente-app.js`, contenido en `docente-datos.js`), Laberintos (`laberinto.js`, copia del de ChromaNom con preguntas de `banco.js`), Crucigramas (`crucigrama.js`, armado con `retos.js`), Ahorcado y Sopa (`ahorcado.js`, `sopa.js`), Criptograma genético, Mapa conceptual y Detective biológico (`extras.js`, el mismo archivo de ChromaNom e IonNom, con `window.EXTRAS_SITIO`). No tiene pestaña de orientaciones: los pasos del Modo Estudiante están en `README.md`. |
 | `docente-datos.js` | Solo contenido del panel docente: `TEMAS` (sesión 1 de aprendizajes previos, sesión 2 con lectura y mapa de ideas, autoevaluación «Puedo…»), `SABER` (40 preguntas tipo Saber 11 por tema; la primera opción es la correcta en el archivo), `ABIERTAS` (40 por tema) y `window.DETECTIVE` (5 historias por tema, cada una con 8 frases dudosas). Lo agregado en la versión 2.4 está al final del archivo, dentro de un bloque que hace `push`. |
+| `fotos.js`, `fotos-datos.js`, `img/fotos/` | Fotos reales de bancos libres con su cita APA debajo (`FOTO(clave,pie)`). Ver «Regla de imágenes». |
+| `embrion-fig.js` | Ilustraciones del desarrollo embrionario humano (`EMB.fig(clave)`) para «Semana a semana» y «De la fecundación al parto». |
 | `bionom-analytics.gs` | Backend de Google Apps Script del Modo Estudiante (copiado de IonNom). |
+
+## Regla de imágenes: fotos reales de bancos libres, siempre con cita APA
+
+Establecida por el docente (10-11-2026). Cuando una foto real explique mejor
+que un dibujo (organismos, ecosistemas y especies de Colombia, micrografías,
+embriones, ecografías, retratos de científicos, documentos históricos), usar
+imágenes de **bancos de imágenes libres** en vez de emojis o dibujos
+improvisados. Los esquemas interactivos y las animaciones se mantienen donde
+expliquen mejor un proceso.
+
+- **Fuentes** (dominios ya permitidos en el entorno): Wikimedia Commons
+  (`commons.wikimedia.org`, `upload.wikimedia.org`, `thumb.wikimedia.org`),
+  Openverse (`api.openverse.org`, buscador de imágenes Creative Commons que
+  incluye Flickr y Commons) e iNaturalist (`api.inaturalist.org`, ideal para
+  especies). Pixabay, Unsplash y Pexels piden clave de API: no se usan por
+  ahora. La API de Commons limita consultas seguidas (error 429): buscar con
+  Openverse y pedir a Commons solo los metadatos finales, en una consulta.
+- **Licencias aceptadas**: CC0, dominio público, CC BY y CC BY-SA. Evitar NC
+  y ND. Revisar cada foto antes de usarla (que sea lo que dice, sin nombres
+  de pacientes en ecografías, sin imágenes sangrientas para estudiantes).
+- **Cita APA debajo de cada imagen, siempre**: Autor. (Año). *Título*
+  [Fotografía]. Fuente. URL. Licencia. Para obras antiguas, el autor y el año
+  originales (Hooke, R. (1665)…); sin año conocido, «s. f.».
+- **Cómo se hace**: la foto se guarda en `img/fotos/<clave>.jpg` (máx. 800 px,
+  JPG calidad ~74) y sus datos en `fotos-datos.js` (`window.FOTOS_DATOS`:
+  autor, anio, titulo, tipo, fuente, url, lic, licUrl). En la página se usa
+  `FOTO('clave','pie de foto')` o `<div data-foto="clave" data-pie="..."></div>`
+  (cargar `fotos-datos.js` y `fotos.js` antes de `bio.js`). `fotos.js` arma
+  la figura con la cita APA debajo.
 
 ## Regla de contenido
 

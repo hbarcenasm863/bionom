@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=13">
+<link rel="stylesheet" href="bio.css?v=14">
 <style>
 .fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
@@ -136,6 +136,7 @@
   <section class="sec" id="mendel">
     <h2><span class="n">02</span> Mendel y sus arvejas</h2>
     <p class="lead"><b>Gregor Mendel</b> (1822-1884) era un monje que cultivó cerca de <b>28 000 plantas de arveja</b> en el huerto de su monasterio, en la actual República Checa. Escogió la arveja porque crece rápido, tiene características fáciles de ver y él podía controlar quién se cruzaba con quién. Repite su experimento paso a paso.</p>
+    <div class="fotos mini" style="margin-bottom:12px"><div data-foto="mendel" data-pie="Gregor Mendel (1822-1884)" data-cls="cont"></div></div>
     <div class="pasos" data-titulo="El experimento" data-alcambiar="pasoMendel">
       <div class="paso" data-t="P"><div class="lado"><div><h3>1. Generación P (parental)</h3><p>Cruza una planta de <b>raza pura</b> de semillas <b>amarillas</b> (AA) con una de raza pura de semillas <b>verdes</b> (aa). «Raza pura» quiere decir que, cruzada consigo misma, siempre da lo mismo.</p></div><div class="fig" id="men-1"></div></div></div>
       <div class="paso" data-t="F1"><div class="lado"><div><h3>2. Primera generación filial (F1)</h3><p><b>¡Todas las semillas salen amarillas!</b> El verde parece haber desaparecido. Todas son <b>Aa</b>: el alelo amarillo domina sobre el verde.</p><p><b>1.ª ley de Mendel (uniformidad):</b> al cruzar dos razas puras distintas, todos los hijos son iguales.</p></div><div class="fig" id="men-2"></div></div></div>
@@ -334,6 +335,8 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
+<script src="fotos-datos.js?v=1"></script>
+<script src="fotos.js?v=1"></script>
 <script src="bio.js?v=13"></script>
 <script>
 (function(){

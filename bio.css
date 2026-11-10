@@ -262,3 +262,14 @@ body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.1
   table.t{min-width:520px}
   .tbl-wrap::after{content:'desliza la tabla →';display:block;font-size:.74rem;font-weight:700;color:var(--cn-dim);text-align:right;padding:2px 8px}
 }
+/* Fotos reales con cita APA (fotos.js) */
+.foto{margin:0;background:#fff;border:1px solid var(--cn-brd);border-radius:var(--cn-r);overflow:hidden;box-shadow:var(--cn-sh)}
+.foto img{display:block;width:100%;height:auto;max-height:340px;object-fit:cover;background:#eef2ef}
+.foto.cont img{object-fit:contain}
+.foto figcaption{padding:8px 10px 9px;font-size:.88rem;line-height:1.35}
+.foto .pie{display:block;font-weight:600;margin-bottom:4px}
+.foto .apa{display:block;font-style:normal;font-size:.72rem;color:var(--cn-dim);line-height:1.35;overflow-wrap:anywhere;padding-left:1.4em;text-indent:-1.4em}
+.foto .apa a{color:inherit}
+.fotos.mini{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),280px))}
+.fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px;margin-top:12px}
+@media print{.foto{break-inside:avoid;box-shadow:none}}
