@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ecosistemas de Colombia — BioNom</title>
+<meta name="description" content="Mapa interactivo de las regiones naturales de Colombia y sus ecosistemas: páramos, selvas, manglares, sabanas, arrecifes, desiertos y bosques secos. Pisos térmicos.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=2">
+<style>
+.mapa-co{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:860px){.mapa-co{grid-template-columns:1fr}}
+.mapa-box{background:linear-gradient(160deg,#cfe8f7,#e6f3fb);border:1px solid var(--cn-brd);border-radius:20px;padding:6px;box-shadow:var(--cn-sh);position:relative}
+#co{display:block;width:100%;height:auto;max-height:82vh}
+#co .reg{cursor:pointer;stroke:#fff;stroke-width:2.2;transition:filter .2s,opacity .25s}
+#co .reg:hover{filter:brightness(1.08)}
+#co .reg.apag{opacity:.35}
+#co .reg.on{stroke:#0f2a5f;stroke-width:3.4}
+#co .reg:focus,#co .mk:focus{outline:none}
+#co .reg:focus-visible{stroke:#f08c1e;stroke-width:3.4}
+#co .mar{font:italic 700 15px Fraunces,serif;fill:#3b7fae;letter-spacing:.18em;pointer-events:none}
+#co .dep{fill:none;stroke:#ffffff;stroke-width:.7;opacity:.55;pointer-events:none}
+#co .mk{cursor:pointer}
+#co .mk circle.f{stroke:#fff;stroke-width:2.2;transition:r .2s}
+#co .mk:hover circle.f,#co .mk.on circle.f{r:15}
+#co .mk text{pointer-events:none;font-size:14px}
+#co .mk.oculto{display:none}
+#co .lbl-r{font:800 15px Outfit;fill:#10261a;paint-order:stroke;stroke:#ffffffcc;stroke-width:4;pointer-events:none;letter-spacing:.04em}
+.leyenda{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.leyenda .chip{font-size:.8rem;padding:4px 10px;min-height:32px}
+.panel-r{position:sticky;top:64px}
+.panel-r .det{min-height:460px}
+.reg-cab{border-radius:14px;padding:12px 14px;color:#fff;margin:-4px -6px 12px}
+.reg-cab h3{color:#fff;font-size:1.3rem}
+.mini{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:.9rem;margin:8px 0}
+.mini dt{font-weight:800;color:var(--cn-dim)}
+.lugar{display:flex;gap:8px;align-items:center;padding:7px 10px;border-radius:10px;border:1.5px solid var(--cn-brd);margin:4px 0;cursor:pointer;font-weight:600;font-size:.9rem;background:#fff;width:100%;text-align:left}
+.lugar:hover{border-color:var(--cn-brand);background:var(--cn-brand-l)}
+.reto-co{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#fff7ec;border:1.5px solid #f5c58c;border-radius:12px;padding:10px 14px;margin-bottom:10px}
+.pisos{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:center}
+@media(max-width:760px){.pisos{grid-template-columns:1fr}}
+#monta{width:100%;height:auto}
+.eco-card .e{font-size:2rem}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">🇨🇴 Niveles de ecosistema y bioma</span>
+    <h1>Los ecosistemas de Colombia</h1>
+    <p>Colombia tiene casi todos los ecosistemas del planeta en un solo país: nieves perpetuas, páramos, selvas, desiertos, sabanas, manglares y arrecifes de coral. La razón: está en la <b>zona tropical</b>, tiene <b>dos océanos</b> y los <b>Andes</b> la cruzan con tres cordilleras. Explora el mapa: toca una <b>región</b> o un <b>lugar</b> 📍.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Niveles: ecosistema → bioma</a>
+    <a class="nivel-chip" href="ecosistemas.html">🌳 Antes: ¿qué es un ecosistema?</a>
+  </header>
+  <nav class="toc" aria-label="En esta página">
+    <strong>En esta página</strong>
+    <a href="#mapa">🗺️ Mapa interactivo</a>
+    <a href="#tipos">🌿 Tipos de ecosistema</a>
+    <a href="#pisos">⛰️ Pisos térmicos</a>
+    <a href="#reto">🎯 ¿Dónde lo encuentro?</a>
+  </nav>
+
+  <section class="sec" id="mapa">
+    <h2><span class="n">01</span> Las seis regiones naturales</h2>
+    <p class="lead">Filtra por tipo de ecosistema para ver dónde se encuentra cada uno en el país.</p>
+    <div class="leyenda" id="ley" role="group" aria-label="Filtrar por ecosistema"></div>
+    <div class="reto-co" id="reto-bar" hidden><span><span id="reto-q" style="font-weight:700"></span><br><span id="reto-fb" aria-live="polite" style="font-size:.92rem"></span></span><span><b id="reto-pts">0</b> de <b id="reto-tot">0</b> <button type="button" class="cn-btn" id="reto-salir" style="min-height:32px;padding:4px 10px">Salir</button></span></div>
+    <div class="mapa-co">
+      <div class="mapa-box"><svg id="co" role="group" aria-label="Mapa de Colombia por regiones naturales"></svg></div>
+      <aside class="panel-r"><div class="det" id="det-r" aria-live="polite"></div></aside>
+    </div>
+    <p style="font-size:.8rem;color:var(--cn-dim);margin-top:8px">Mapa simplificado elaborado con los límites departamentales del DANE (2018). Los límites entre regiones naturales no siguen exactamente los departamentos; aquí se muestran de forma aproximada.</p>
+  </section>
+
+  <section class="sec" id="tipos">
+    <h2><span class="n">02</span> Los ecosistemas, uno por uno</h2>
+    <p class="lead">Voltea cada tarjeta para conocer su clima, sus seres vivos y por qué es importante.</p>
+    <div class="grid g3" id="eco-cards"></div>
+  </section>
+
+  <section class="sec" id="pisos">
+    <h2><span class="n">03</span> Los pisos térmicos: subir una montaña es como viajar hacia el polo</h2>
+    <p class="lead">En los Andes, la temperatura baja unos <b>6 °C por cada 1000 m</b> de altura. Por eso, en un mismo día, puedes pasar del calor del valle del Magdalena al frío del páramo. Mueve el control para subir la montaña.</p>
+    <div class="card pisos">
+      <svg id="monta" viewBox="0 0 400 300" aria-hidden="true"></svg>
+      <div>
+        <label for="alt" style="font-weight:800">Altura sobre el nivel del mar</label>
+        <input type="range" id="alt" min="0" max="5700" step="100" value="300" style="width:100%">
+        <div id="piso-info" aria-live="polite" style="margin-top:10px"></div>
+      </div>
+    </div>
+    <div class="dato col">Bogotá está a unos <b>2600 m</b> y tiene una temperatura media de 14 °C; Girardot, a solo 130 km, está a 290 m y tiene 28 °C. ¡14 grados de diferencia solo por la altura!</div>
+  </section>
+
+  <section class="sec" id="reto">
+    <h2><span class="n">04</span> Reto: ¿dónde lo encuentro?</h2>
+    <p class="lead">Lee la pista y toca en el mapa de arriba la <b>región</b> correcta.</p>
+    <p>Son 8 preguntas al azar. Al empezar, la pregunta aparece encima del mapa.</p>
+    <button type="button" class="cn-btn cn-btn--primary" id="reto-btn">▶ Empezar reto</button>
+    <div class="sig"><a href="ecosistemas.html"><small>← Anterior</small><b>🌳 Ecosistemas</b></a><a class="der" href="juego.html"><small>Siguiente →</small><b>🎮 Juego de repaso</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=2"></script>
+<script src="mapa-colombia.js?v=2"></script>
+<script>
+(function(){
+var M=window.MAPA_CO,P=M.proj;
+function xy(lon,lat){return [(lon-P.minx)*P.K*P.S+10,(P.maxy-lat)*P.S+10];}
+/* ═══ Tipos de ecosistema ═══ */
+var ECO={
+ nival:{n:'Nieves perpetuas (nival)',e:'❄️',c:'#7fb2d9',d:'Por encima de unos 4700 m. Hielo, roca y casi nada de vida. Los glaciares colombianos se están derritiendo muy rápido por el calentamiento global: quedan solo seis.'},
+ paramo:{n:'Páramo',e:'🌼',c:'#9b7fd1',d:'Entre 3000 y 4700 m. Frío, niebla y frailejones. Sus suelos y musgos funcionan como esponjas que guardan agua: de los páramos sale el agua de la mayoría de las ciudades. Colombia tiene cerca del 50 % de los páramos del mundo.'},
+ andino:{n:'Bosque andino y de niebla',e:'🌲',c:'#3f8f5a',d:'Entre 1000 y 3000 m, en las laderas. Árboles cubiertos de musgos, orquídeas y bromelias; neblina casi todo el día. Hogar del oso de anteojos y de la palma de cera.'},
+ humedo:{n:'Selva húmeda tropical',e:'🌴',c:'#1e7a3c',d:'Calor y lluvia todo el año. Árboles de más de 40 m en varios pisos y la mayor biodiversidad del planeta. En la Amazonia y el Pacífico (Chocó biogeográfico).'},
+ seco:{n:'Bosque seco tropical',e:'🌵',c:'#c9973b',d:'Cálido, con una larga temporada seca en la que muchos árboles pierden las hojas. Es uno de los ecosistemas más amenazados del país: queda menos del 8 % de lo que había.'},
+ desierto:{n:'Desierto',e:'🏜️',c:'#e2b465',d:'Muy poca lluvia. Cactus, cardones y animales que ahorran agua. El desierto de La Guajira es el más grande del país; la Tatacoa es en realidad un bosque seco muy erosionado.'},
+ sabana:{n:'Sabana (llanura)',e:'🌾',c:'#d4c04a',d:'Planicies de pastos con árboles dispersos y bosques de galería a lo largo de los ríos. Una temporada de lluvias que inunda y otra seca muy marcada. Típica de los Llanos Orientales.'},
+ manglar:{n:'Manglar',e:'🌿',c:'#2f8a7a',d:'Bosques en la orilla del mar, donde se mezcla agua dulce y salada. Sus raíces son guardería de peces y protegen la costa de las olas. Colombia tiene manglares en el Caribe y el Pacífico.'},
+ arrecife:{n:'Arrecife de coral',e:'🪸',c:'#ef6f6c',d:'Construidos por pequeños animales (pólipos) en aguas cálidas y claras. Las «selvas del mar»: albergan una cuarta parte de las especies marinas. Muy sensibles al calentamiento del agua.'},
+ humedal:{n:'Humedal, ciénaga y laguna',e:'💧',c:'#3b8fd6',d:'Terrenos cubiertos de agua de forma permanente o por temporadas. Regulan las inundaciones, filtran el agua y son refugio de aves migratorias.'}
+};
+/* ═══ Regiones ═══ */
+var REG={
+ caribe:{n:'Región Caribe',c:'#f2b33d',cl:'Cálida; de húmeda al sur a muy seca en La Guajira.',re:'Llanuras, ciénagas y la Sierra Nevada de Santa Marta, la montaña junto al mar más alta del mundo (5775 m).',eco:['seco','desierto','manglar','humedal','arrecife','paramo','nival'],fa:'Flamenco rosado, manatí, caimán aguja, tití cabeciblanco (solo vive en Colombia), cardones y trupillos.',am:'Deforestación del bosque seco, ganadería extensiva y contaminación de las ciénagas.',lab:[-74.6,9.4]},
+ andina:{n:'Región Andina',c:'#b5673d',cl:'Depende de la altura: todos los pisos térmicos, de cálido a nival.',re:'Las tres cordilleras (Occidental, Central y Oriental) y los valles del Magdalena y del Cauca.',eco:['andino','paramo','nival','seco','humedal'],fa:'Oso de anteojos, cóndor de los Andes, colibríes, frailejones, palma de cera (árbol nacional) y la orquídea Cattleya trianae (flor nacional).',am:'Es la región más poblada (cerca del 70 % de los colombianos). Expansión de cultivos y ganadería hacia los páramos, minería y crecimiento de ciudades.',lab:[-75.0,5.4]},
+ pacifica:{n:'Región Pacífica',c:'#2f9e6e',cl:'Cálida y de las más lluviosas del mundo: en Lloró (Chocó) caen más de 10 000 mm de lluvia al año.',re:'Llanura selvática entre la cordillera Occidental y el océano Pacífico, con la serranía del Baudó.',eco:['humedo','manglar','arrecife'],fa:'Rana dorada venenosa, ballenas jorobadas (llegan entre julio y octubre a tener sus crías), tortugas marinas y miles de especies que solo viven aquí.',am:'Minería ilegal de oro con mercurio, tala de madera y cultivos ilícitos.',lab:[-77.25,5.2]},
+ orinoquia:{n:'Región de la Orinoquía',c:'#e2775a',cl:'Cálida, con una temporada de lluvias que inunda las sabanas y otra seca muy marcada.',re:'Llanuras (los Llanos Orientales) atravesadas por grandes ríos que van al Orinoco; la serranía de la Macarena.',eco:['sabana','humedal','humedo'],fa:'Chigüiro, caimán del Orinoco (en peligro crítico), anaconda, garzas, palma de moriche y la planta acuática roja de Caño Cristales.',am:'Monocultivos (palma de aceite), quemas de sabana y explotación de petróleo.',lab:[-70.6,4.8]},
+ amazonia:{n:'Región de la Amazonía',c:'#3c8a3c',cl:'Cálida y húmeda todo el año.',re:'Llanura selvática con ríos enormes de aguas blancas y negras, y antiguas mesetas de roca (tepuyes) como las de Chiribiquete.',eco:['humedo','humedal'],fa:'Delfín rosado, jaguar, anaconda, danta, guacamayas, victoria regia y cientos de especies de peces.',am:'Deforestación para ganadería (praderización), cultivos ilícitos y minería ilegal. Ocupa cerca del 42 % del territorio nacional.',lab:[-71.6,0.3]},
+ insular:{n:'Región Insular',c:'#2b9ed9',cl:'Cálida y húmeda, con brisa marina.',re:'Islas del Caribe (San Andrés, Providencia y Santa Catalina) y del Pacífico (Gorgona y Malpelo).',eco:['arrecife','manglar','humedo'],fa:'Corales, peces loro, tortugas, cangrejo negro de Providencia y, en Malpelo, grandes bancos de tiburones martillo.',am:'Blanqueamiento del coral por el calentamiento del mar, basura plástica y pesca excesiva. San Andrés y Providencia forman la Reserva de Biosfera Seaflower.',lab:null}
+};
+/* ═══ Lugares (lon, lat) ═══ */
+var LUG=[
+ ['Páramo de Sumapaz','paramo','andina',-74.25,3.95,'El páramo más grande del mundo, en el Distrito Capital (Bogotá) y en Cundinamarca, Meta y Huila. Bosques enteros de frailejones.'],
+ ['Páramo de Chingaza','paramo','andina',-73.75,4.62,'De sus lagunas sale buena parte del agua que se toma en Bogotá.'],
+ ['Parque Nacional Los Nevados','nival','andina',-75.35,4.85,'Volcán Nevado del Ruiz, nevado de Santa Isabel y el del Tolima: glaciares, arenales y páramos.'],
+ ['Valle de Cocora','andino','andina',-75.48,4.64,'Palmas de cera de más de 50 m, el árbol nacional, entre bosques de niebla (Quindío).'],
+ ['Santuario Otún Quimbaya','andino','andina',-75.6,4.73,'Bosque de niebla de Risaralda donde viven monos aulladores y la pava caucana.'],
+ ['Desierto de la Tatacoa','seco','andina',-75.17,3.23,'Bosque seco muy erosionado en el Huila, con suelos rojos y grises. Tiene fósiles de hace 13 millones de años (La Venta).'],
+ ['Cañón del Chicamocha','seco','andina',-73.05,6.8,'Enclave seco en Santander: cactus y arbustos en un cañón de más de 2000 m de profundidad.'],
+ ['Laguna de la Cocha','humedal','andina',-77.15,1.1,'Gran laguna andina de Nariño, a 2760 m, rodeada de turberas; es humedal Ramsar.'],
+ ['Humedales de la Sabana de Bogotá','humedal','andina',-74.12,4.72,'Juan Amarillo, La Conejera y otros: refugio de la tingua bogotana y de aves migratorias.'],
+ ['Sierra Nevada de Santa Marta','nival','caribe',-73.7,10.85,'De la playa a la nieve en 42 km: tiene todos los pisos térmicos. Territorio de los pueblos arhuaco, kogui, wiwa y kankuamo.'],
+ ['Ciénaga Grande de Santa Marta','manglar','caribe',-74.45,10.85,'La laguna costera más grande del país: manglares, pescadores en palafitos y aves acuáticas.'],
+ ['Parque Tayrona','seco','caribe',-74.0,11.3,'Bosque seco que llega al mar, con playas y arrecifes.'],
+ ['Desierto de La Guajira','desierto','caribe',-72.2,12.0,'Dunas, cardones y el cabo de la Vela. Territorio del pueblo wayuu. En Manaure hay salinas.'],
+ ['Islas del Rosario','arrecife','caribe',-75.75,10.18,'Arrecifes coralinos frente a Cartagena, en un parque nacional marino.'],
+ ['Selvas del Chocó y Utría','humedo','pacifica',-77.35,6.05,'Selva húmeda que llega al mar. Ensenada de Utría: ballenas jorobadas entre julio y octubre.'],
+ ['Manglares de Sanquianga','manglar','pacifica',-78.25,2.6,'En Nariño: el área de manglar más grande del Pacífico colombiano.'],
+ ['Isla Gorgona','arrecife','insular',-78.18,2.97,'Isla del Pacífico con selva, arrecifes y tortugas marinas. Antigua cárcel, hoy parque nacional.'],
+ ['Caño Cristales','sabana','orinoquia',-73.79,2.26,'«El río de los cinco colores», en la serranía de la Macarena. El rojo es una planta acuática, <i>Macarenia clavigera</i>.'],
+ ['Sabanas inundables de Casanare','sabana','orinoquia',-71.6,5.6,'En invierno se inundan y se llenan de chigüiros, garzas y babillas.'],
+ ['Parque El Tuparro','sabana','orinoquia',-67.9,5.35,'Sabanas, rocas gigantes y raudales en el río Orinoco (Vichada).'],
+ ['Chiribiquete','humedo','amazonia',-72.7,0.6,'El parque nacional más grande de Colombia: selva y tepuyes con miles de pinturas rupestres. Patrimonio de la Humanidad.'],
+ ['Puerto Nariño y lagos de Tarapoto','humedal','amazonia',-70.38,-3.78,'Lagos del río Amazonas donde viven delfines rosados y grises.']
+];
+var svg=document.getElementById('co'),NS='http://www.w3.org/2000/svg';
+var W=M.w,H=M.h;svg.setAttribute('viewBox','0 0 '+W+' '+H);
+var h='<defs><filter id="sh"><feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-opacity=".25"/></filter></defs><g filter="url(#sh)">';
+Object.keys(M.reg).forEach(function(r){h+='<path class="reg" data-r="'+r+'" d="'+M.reg[r]+'" fill="'+REG[r].c+'" tabindex="0" role="button" aria-label="'+REG[r].n+'"/>';});
+h+='</g>';
+Object.keys(M.dep).forEach(function(c){h+='<path class="dep" d="'+M.dep[c][1]+'"/>';});
+// recuadro de San Andrés y Providencia
+h+='<g transform="translate(26 26)"><rect width="104" height="104" rx="12" fill="#e9f5fc" stroke="#7fb3d5" stroke-dasharray="5 4"/><g transform="translate(26 18) scale(.8)"><path class="reg" data-r="insular" d="'+M.sanandres+'" fill="'+REG.insular.c+'" tabindex="0" role="button" aria-label="Región Insular"/></g><text x="52" y="96" text-anchor="middle" style="font:700 10px Outfit" fill="#0b5c8a">San Andrés y Providencia</text></g>';
+Object.keys(REG).forEach(function(r){var L=REG[r].lab;if(!L)return;var p=xy(L[0],L[1]);h+='<text class="lbl-r" x="'+p[0]+'" y="'+p[1]+'" text-anchor="middle">'+REG[r].n.replace('Región de la ','').replace('Región ','').toUpperCase()+'</text>';});
+(function(){var c=xy(-76.2,12.2),pa=xy(-78.35,6.6);h+='<text class="mar" x="'+c[0]+'" y="'+c[1]+'">MAR CARIBE</text><text class="mar" transform="translate('+pa[0]+' '+pa[1]+') rotate(-72)" text-anchor="middle">OCÉANO PACÍFICO</text>';
+  var r=[W-70,H-70];h+='<g transform="translate('+r[0]+' '+r[1]+')"><circle r="24" fill="#ffffffcc" stroke="#7fb3d5"/><path d="M0 -18 L6 0 L0 -4 L-6 0Z" fill="#c0392b"/><path d="M0 18 L6 0 L0 4 L-6 0Z" fill="#7a8a99"/><text y="-26" text-anchor="middle" style="font:800 12px Outfit" fill="#0f2a5f">N</text></g>';
+  var e0=xy(-70,-3.2),e1=xy(-68,-3.2);h+='<g><line x1="'+e0[0]+'" x2="'+e1[0]+'" y1="'+(H-26)+'" y2="'+(H-26)+'" stroke="#0f2a5f" stroke-width="3"/><text x="'+((e0[0]+e1[0])/2)+'" y="'+(H-32)+'" text-anchor="middle" style="font:700 10px Outfit" fill="#0f2a5f">≈ 220 km</text></g>';})();
+LUG.forEach(function(l,i){var p=xy(l[3],l[4]),e=ECO[l[1]];h+='<g class="mk" data-i="'+i+'" data-e="'+l[1]+'" tabindex="0" role="button" aria-label="'+l[0]+'" transform="translate('+p[0].toFixed(1)+' '+p[1].toFixed(1)+')"><circle class="f" r="12" fill="'+e.c+'"/><text text-anchor="middle" y="5">'+e.e+'</text></g>';});
+svg.innerHTML=h;
+
+var det=document.getElementById('det-r'),filtro=null,regSel=null,vistas={};
+function verReg(r){
+  regSel=r;var R=REG[r];vistas[r]=1;if(Object.keys(vistas).length>=6)BIO.marcarSeccion('mapa');
+  svg.querySelectorAll('.reg').forEach(function(p){p.classList.toggle('on',p.getAttribute('data-r')===r);});
+  var lug=LUG.map(function(l,i){return [l,i];}).filter(function(x){return x[0][2]===r;});
+  det.innerHTML='<div class="reg-cab" style="background:'+R.c+'"><h3>'+R.n+'</h3></div>'+
+   '<dl class="mini"><dt>🌡️ Clima</dt><dd>'+R.cl+'</dd><dt>⛰️ Relieve</dt><dd>'+R.re+'</dd><dt>🐾 Seres vivos</dt><dd>'+R.fa+'</dd><dt>⚠️ Amenazas</dt><dd>'+R.am+'</dd></dl>'+
+   '<p style="font-weight:800;font-size:.85rem;margin-top:8px">Ecosistemas:</p><div>'+R.eco.map(function(e){return '<span class="tag" style="background:'+ECO[e].c+'22;color:#10261a">'+ECO[e].e+' '+ECO[e].n+'</span>';}).join('')+'</div>'+
+   (lug.length?'<p style="font-weight:800;font-size:.85rem;margin-top:10px">Lugares para conocer:</p>'+lug.map(function(x){return '<button type="button" class="lugar" data-i="'+x[1]+'">'+ECO[x[0][1]].e+' '+x[0][0]+'</button>';}).join(''):'');
+  det.querySelectorAll('.lugar').forEach(function(b){b.onclick=function(){verLug(+b.getAttribute('data-i'));};});
+}
+function verLug(i){
+  var l=LUG[i],e=ECO[l[1]],R=REG[l[2]];
+  svg.querySelectorAll('.mk').forEach(function(m){m.classList.toggle('on',+m.getAttribute('data-i')===i);});
+  svg.querySelectorAll('.reg').forEach(function(p){p.classList.toggle('on',p.getAttribute('data-r')===l[2]);});
+  det.innerHTML='<div class="reg-cab" style="background:'+e.c+'"><h3>'+e.e+' '+l[0]+'</h3></div><p><span class="tag">'+e.n+'</span><span class="tag">'+R.n+'</span></p><p style="margin-top:8px">'+l[5]+'</p>'+
+   '<div class="clave" style="margin-top:12px"><b>'+e.n+':</b> '+e.d+'</div><button type="button" class="cn-btn" id="vol-r">← Ver toda la '+R.n.toLowerCase()+'</button>';
+  document.getElementById('vol-r').onclick=function(){verReg(l[2]);};
+}
+svg.querySelectorAll('.reg').forEach(function(p){
+  p.addEventListener('click',function(){clicReg(p.getAttribute('data-r'));});
+  p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();clicReg(p.getAttribute('data-r'));}});
+});
+svg.querySelectorAll('.mk').forEach(function(m){
+  m.addEventListener('click',function(ev){ev.stopPropagation();if(reto)return clicReg(LUG[+m.getAttribute('data-i')][2]);verLug(+m.getAttribute('data-i'));});
+  m.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();verLug(+m.getAttribute('data-i'));}});
+});
+function clicReg(r){if(reto)return responder(r);verReg(r);}
+det.innerHTML='<div class="vacio"><div style="font-size:3rem">👆</div><b>Toca una región o un lugar del mapa</b><br>Usa los botones de arriba para ver dónde está cada tipo de ecosistema.</div>';
+
+// leyenda / filtro
+var ley=document.getElementById('ley');
+ley.innerHTML=Object.keys(ECO).map(function(k){return '<button class="chip" data-f="'+k+'">'+ECO[k].e+' '+ECO[k].n.split(' (')[0]+'</button>';}).join('');
+ley.querySelectorAll('[data-f]').forEach(function(b){b.onclick=function(){
+  var k=b.getAttribute('data-f');filtro=filtro===k?null:k;
+  ley.querySelectorAll('[data-f]').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-f')===filtro);});
+  svg.querySelectorAll('.mk').forEach(function(m){m.classList.toggle('oculto',!!filtro&&m.getAttribute('data-e')!==filtro);});
+  svg.querySelectorAll('.reg').forEach(function(p){p.classList.toggle('apag',!!filtro&&REG[p.getAttribute('data-r')].eco.indexOf(filtro)<0);});
+  if(filtro){var e=ECO[filtro],rs=Object.keys(REG).filter(function(r){return REG[r].eco.indexOf(filtro)>=0;});
+    det.innerHTML='<div class="reg-cab" style="background:'+e.c+'"><h3>'+e.e+' '+e.n+'</h3></div><p>'+e.d+'</p><p style="margin-top:10px"><b>Se encuentra en:</b> '+rs.map(function(r){return REG[r].n.replace('Región ','');}).join(', ')+'.</p>';}
+};});
+
+/* ═══ Tarjetas de ecosistemas ═══ */
+document.getElementById('eco-cards').innerHTML=Object.keys(ECO).map(function(k){var e=ECO[k];
+  return '<div class="flip eco-card" style="min-height:190px"><div class="in" style="min-height:190px"><div class="fr" style="border-top:6px solid '+e.c+'"><span class="e">'+e.e+'</span><b>'+e.n+'</b><small>toca para voltear</small></div><div class="bk" style="background:'+e.c+';color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);font-size:.86rem">'+e.d+'</div></div></div>';}).join('');
+BIO.montar(document.getElementById('eco-cards'));
+
+/* ═══ Pisos térmicos ═══ */
+var PISOS=[
+ [0,1000,'Cálido','> 24 °C','#e9a23b','Selva húmeda, bosque seco, sabanas.','Arroz, plátano, cacao, caña de azúcar, mango.','Girardot, Cali (en el límite), Barranquilla, Villavicencio.'],
+ [1000,2000,'Templado','18 a 24 °C','#c7b544','Bosque subandino.','Café, maíz, fríjol, cítricos.','Medellín, Bucaramanga, Armenia.'],
+ [2000,3000,'Frío','12 a 18 °C','#5f9e5a','Bosque andino y de niebla.','Papa, arveja, fresa, ganado de leche.','Bogotá, Tunja, Pasto.'],
+ [3000,4700,'Páramo','6 a 12 °C','#8a74c4','Páramo: frailejones, pajonales, lagunas.','Ninguno recomendado: hay que protegerlo porque produce agua.','No hay ciudades: es zona de conservación.'],
+ [4700,5800,'Nival (glacial)','< 6 °C','#cfe3f2','Nieves perpetuas y glaciares.','Ninguno.','Picos de la Sierra Nevada, el Ruiz, el Cocuy.']
+];
+var alt=document.getElementById('alt'),mon=document.getElementById('monta');
+function yAlt(a){return 270-a/5800*240;}
+function dibMonta(a){
+  var s='<defs><linearGradient id="cie" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe6f7"/><stop offset="1" stop-color="#f7fbff"/></linearGradient><clipPath id="mc"><path d="M0 280 L60 236 L110 190 L150 140 L180 80 L200 34 L220 76 L250 130 L300 186 L350 230 L400 270 L400 300 L0 300Z"/></clipPath></defs><rect width="400" height="300" fill="url(#cie)"/>';
+  s+='<g clip-path="url(#mc)">';PISOS.forEach(function(p){s+='<rect x="0" y="'+yAlt(p[1])+'" width="400" height="'+(yAlt(p[0])-yAlt(p[1]))+'" fill="'+p[4]+'"/>';});s+='</g>';
+  s+='<path d="M0 280 L60 236 L110 190 L150 140 L180 80 L200 34 L220 76 L250 130 L300 186 L350 230 L400 270" fill="none" stroke="#5b4a3a" stroke-width="2"/>';
+  PISOS.forEach(function(p){var y=yAlt(p[1]);s+='<line x1="0" x2="400" y1="'+y+'" y2="'+y+'" stroke="#fff" stroke-dasharray="3 4" opacity=".7"/><text x="6" y="'+(y+14)+'" style="font:700 11px Outfit" fill="#10261a">'+p[2]+'</text><text x="394" y="'+(y-3)+'" text-anchor="end" style="font:600 10px JetBrains Mono" fill="#3c5446">'+p[1]+' m</text>';});
+  var y=yAlt(a);
+  // marcador: un caminante sobre la ladera izquierda
+  var LAD=[[0,280],[60,236],[110,190],[150,140],[180,80],[200,34]],xm=0;
+  for(var i=1;i<LAD.length;i++){if(y>=LAD[i][1]&&y<=LAD[i-1][1]){var k=(LAD[i-1][1]-y)/(LAD[i-1][1]-LAD[i][1]);xm=LAD[i-1][0]+k*(LAD[i][0]-LAD[i-1][0]);break;}}
+  if(y>280)xm=0;
+  s+='<g transform="translate('+xm+' '+y+')"><line x1="0" y1="0" x2="0" y2="-26" stroke="#c0392b" stroke-width="2"/><path d="M0 -26 L16 -21 L0 -16Z" fill="#c0392b"/><circle r="4" fill="#c0392b" stroke="#fff" stroke-width="1.5"/></g>';
+  return s;
+}
+function verAlt(){
+  var a=+alt.value,p=PISOS.filter(function(q){return a>=q[0]&&a<q[1];})[0]||PISOS[4],T=(29.5-a*0.006).toFixed(0);
+  mon.innerHTML=dibMonta(a);
+  document.getElementById('piso-info').innerHTML='<h3 style="font-size:1.4rem"><span style="font-family:var(--cn-mono)">'+a+' m</span> · '+p[2]+'</h3><p><b>Temperatura aprox.:</b> '+T+' °C ('+p[3]+')</p><p><b>Ecosistemas:</b> '+p[5]+'</p><p><b>Cultivos:</b> '+p[6]+'</p><p><b>Ejemplos:</b> '+p[7]+'</p>';
+  if(a>=4700)BIO.marcarSeccion('pisos');
+}
+alt.oninput=verAlt;verAlt();
+
+/* ═══ Reto ═══ */
+var PREG=[
+ ['¿Dónde puedes ver ballenas jorobadas teniendo a sus crías?','pacifica'],
+ ['¿Dónde vive el delfín rosado?','amazonia'],
+ ['¿Dónde está el páramo más grande del mundo?','andina'],
+ ['¿Dónde está el río de los cinco colores, Caño Cristales?','orinoquia'],
+ ['¿Dónde queda el desierto más grande de Colombia?','caribe'],
+ ['¿Dónde está la Reserva de Biosfera Seaflower, con arrecifes de coral?','insular'],
+ ['¿Dónde viven más chigüiros, en sabanas que se inundan?','orinoquia'],
+ ['¿Dónde crece la palma de cera, el árbol nacional?','andina'],
+ ['¿Dónde está la Ciénaga Grande de Santa Marta, con sus manglares?','caribe'],
+ ['¿Dónde llueve más de 10 000 mm al año?','pacifica'],
+ ['¿Dónde están los tepuyes de Chiribiquete?','amazonia'],
+ ['¿Dónde vive el tití cabeciblanco, que solo existe en Colombia?','caribe']
+];
+var reto=null;
+function sigReto(){if(reto.i>=reto.q.length){document.getElementById('reto-q').innerHTML='🎉 ¡Terminaste! Obtuviste '+reto.pts+' de '+reto.q.length+'.';document.getElementById('reto-btn').textContent='🔄 Otra vez';if(reto.pts>=6)BIO.marcarSeccion('reto');reto=null;return;}
+  document.getElementById('reto-q').innerHTML='🎯 '+reto.q[reto.i][0];}
+function responder(r){
+  var q=reto.q[reto.i],fb=document.getElementById('reto-fb');
+  if(r===q[1]){reto.pts++;fb.innerHTML='✅ ¡Sí! Es la '+REG[r].n+'.';}
+  else fb.innerHTML='❌ No es la '+REG[r].n+'. Era la <b>'+REG[q[1]].n+'</b>.';
+  svg.querySelectorAll('.reg').forEach(function(p){p.classList.toggle('on',p.getAttribute('data-r')===q[1]);});
+  reto.i++;document.getElementById('reto-pts').textContent=reto.pts;setTimeout(sigReto,700);
+}
+document.getElementById('reto-btn').onclick=function(){reto={q:BIO.barajar(PREG).slice(0,8),i:0,pts:0};document.getElementById('reto-pts').textContent=0;document.getElementById('reto-tot').textContent=8;document.getElementById('reto-fb').textContent='Toca la región en el mapa.';document.getElementById('reto-bar').hidden=false;
+  document.getElementById('mapa').scrollIntoView({behavior:'smooth'});sigReto();};
+document.getElementById('reto-salir').onclick=function(){reto=null;document.getElementById('reto-bar').hidden=true;};
+})();
+</script>
+<script src="text-zoom.js?v=2"></script>
+<script src="narracion.js?v=2"></script>
+<script src="pwa-install.js?v=2"></script>
+</body>
+</html>
