@@ -6,6 +6,33 @@
 
 ---
 
+## Versión 2.9 — 10 de noviembre de 2026 · Reinos: mapa de la clasificación en árbol
+
+### Contexto
+El docente pidió que, al ver los modelos de 5, 6 y 7 reinos, la clasificación
+se muestre como un mapa con las divisiones, y que al tocar cada reino o
+dominio aparezcan sus características.
+
+### Cambios (`reinos.html`, sección «Monera: ¿un reino o dos?»)
+- **Mapa de la clasificación:** árbol en SVG debajo de los botones de modelo.
+  Cambia con el modelo elegido y sus cajas aparecen con una animación corta:
+  - **5 reinos:** Seres vivos → Procariotas / Eucariotas → reinos.
+  - **6 reinos:** Monera se parte en Eubacteria y Archaea.
+  - **7 reinos:** además, Protista se parte en Protozoa y Chromista.
+  - **3 dominios:** Seres vivos → Bacteria / Archaea / Eukarya → reinos.
+- **Al tocar una caja** (también con el teclado), el panel de al lado muestra
+  sus características: célula, número de células, nutrición, pared y ejemplos
+  colombianos. Son 15 cajas con ficha, entre reinos, dominios, procariotas y
+  eucariotas.
+- **En el celular:** el árbol se desliza de lado, con `svg.ancha` de
+  `bio.js`. La vista de cajas de «Tres dominios» ya no se sale de la pantalla.
+
+### Verificación
+Con Playwright se revisaron los cuatro modelos en computador y en celular:
+- Sin errores.
+- Sin desbordes.
+- Sin cajas encimadas.
+
 ## Versión 2.8 — 10 de noviembre de 2026 · Reinos: el modelo de 7 reinos
 
 ### Contexto

@@ -31,6 +31,17 @@
 .reino-c dt{font-weight:800;color:var(--cn-dim)}
 .reino-c.apagado{opacity:.25;transform:scale(.97)}
 .reino-c.prendido{box-shadow:0 0 0 3px var(--cn-naranja),var(--cn-sh-h)}
+.arbol-wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:14px;align-items:start;margin-top:8px}
+@media(max-width:900px){.arbol-wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){.mon-vis .dom{min-width:0!important;flex-basis:100%!important}}
+#arbol .nd{cursor:pointer}
+#arbol .nd:focus{outline:none}
+#arbol .nd rect{transition:filter .2s}
+#arbol .nd:hover rect,#arbol .nd.on rect{filter:drop-shadow(0 0 5px rgba(240,140,30,.95))}
+#arbol .ln{fill:none;stroke:#9fb7a8;stroke-width:2.2}
+#arbol .aparece{animation:aparece .5s ease both}
+#arbol-t .car{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:.9rem;margin-top:8px}
+#arbol-t .car dt{font-weight:800;color:var(--cn-dim)}
 .mon-vis{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:stretch}
 .mon-vis .gr{flex:1;min-width:96px;border-radius:12px;padding:10px 6px;text-align:center;font-weight:800;border:2px solid;font-size:.9rem;animation:aparece .45s ease}
 .mon-vis .gr small{display:block;font-weight:500;font-size:.74rem;margin-top:2px}
@@ -113,6 +124,9 @@
       <div class="chips" role="group" aria-label="Modelo de clasificación"><button class="chip on" data-mod="5">👑 Modelo de 5 reinos</button><button class="chip" data-mod="6">✂️ Modelo de 6 reinos</button><button class="chip" data-mod="7">🔀 Modelo de 7 reinos</button><button class="chip" data-mod="3">🌳 Tres dominios</button></div>
       <div class="mon-vis" id="mon-vis" aria-live="polite"></div>
       <p id="mon-txt" style="margin-top:10px"></p>
+      <h3 style="margin-top:16px">🗺️ Mapa de la clasificación</h3>
+      <p style="font-size:.92rem;color:var(--cn-dim)">Toca cualquier caja del mapa para ver sus características.</p>
+      <div class="arbol-wrap"><div class="fig" style="padding:6px"><svg id="arbol" class="ancha" viewBox="0 0 760 300" role="group" aria-label="Mapa de la clasificación"></svg></div><div class="det" id="arbol-t" aria-live="polite"></div></div>
     </div>
     <h3 style="margin-top:20px">¿En qué se diferencian?</h3>
     <p>Por fuera se ven casi iguales: diminutas, sin núcleo y sin organelos con membrana. La diferencia está en su química y en sus genes.</p>
@@ -222,10 +236,62 @@ var MOD={
 };
 function grHTML(g){return '<div class="gr" style="border-color:'+g[2]+';color:'+g[2]+';background:'+g[2]+(g[3]?'26':'0d')+(g[3]?';box-shadow:0 0 0 3px '+g[2]+'33':'')+'">'+g[0]+(g[1]?'<small>'+g[1]+'</small>':'')+'</div>';}
 var monVis={};
+
+/* ═══ Mapa de la clasificación (árbol) ═══ */
+var NODO={
+ vida:['🌍','Seres vivos','#14532d',{'Qué tienen en común':'Están hechos de células, se nutren, se relacionan y se reproducen.','Cuántos':'Se conocen cerca de 2 millones de especies; faltan muchas por descubrir.'}],
+ pro:['🔹','Procariotas','#475569',{'Célula':'Sin núcleo; el ADN está en el nucleoide.','Tamaño':'Muy pequeñas: 1 a 10 µm.','Organelos':'Sin organelos con membrana; solo ribosomas.'}],
+ eu:['🔸','Eucariotas','#1a7fb5',{'Célula':'Con núcleo rodeado de membrana.','Organelos':'Mitocondrias, retículo, Golgi y, en plantas y algas, cloroplastos.','Tamaño':'10 a 100 µm.'}],
+ monera:['🦠','Monera','#64748b',{'Célula':'Procariota.','N.º de células':'Unicelulares.','Nutrición':'Autótrofos o heterótrofos.','Ejemplos':'Bacterias del yogur, cianobacterias, arqueas.','Ojo':'Hoy se sabe que junta dos grupos muy distintos.'}],
+ eubac:['🦠','Eubacteria (Bacteria)','#64748b',{'Célula':'Procariota.','Pared':'Con peptidoglucano (la ataca la penicilina).','Membrana':'Lípidos con enlaces éster.','Ejemplos':'Lactobacilos del yogur, E. coli, cianobacterias, bacteria de la tuberculosis.'}],
+ arq:['🌋','Archaea (Archaebacteria)','#b45309',{'Célula':'Procariota.','Pared':'Sin peptidoglucano.','Membrana':'Lípidos con enlaces éter: resisten calor y sal.','Ejemplos':'Arqueas de las salinas de Manaure, de las aguas termales de Paipa y del estómago de las vacas (metanógenas).'}],
+ protista:['💧','Protista','#7b4bb7',{'Célula':'Eucariota.','N.º de células':'Casi todos unicelulares; algunas algas son pluricelulares.','Nutrición':'Autótrofos (algas) o heterótrofos (protozoos).','Ejemplos':'Ameba, paramecio, plasmodio de la malaria, algas.'}],
+ protozoa:['🦠','Protozoa','#7b4bb7',{'Célula':'Eucariota, casi siempre unicelular.','Nutrición':'Sobre todo heterótrofos; se mueven con pseudópodos o flagelos.','Ejemplos':'Amebas, euglenas, tripanosoma (enfermedad de Chagas).'}],
+ chromista:['🌊','Chromista','#0e7490',{'Célula':'Eucariota, unicelular o pluricelular.','Origen':'Su línea ganó cloroplastos al tragarse un alga roja.','Ejemplos':'Algas pardas (sargazo), diatomeas, paramecio, plasmodio de la malaria, gota de la papa (Phytophthora).'}],
+ fungi:['🍄','Fungi (hongos)','#a16207',{'Célula':'Eucariota.','N.º de células':'Unicelulares (levaduras) o pluricelulares (hifas).','Nutrición':'Heterótrofos por absorción.','Pared':'De quitina.','Ejemplos':'Champiñón, levadura del pan, moho, roya del café.'}],
+ plantae:['🌿','Plantae (plantas)','#2e7d4f',{'Célula':'Eucariota con cloroplastos.','N.º de células':'Pluricelulares, con tejidos.','Nutrición':'Autótrofos: fotosíntesis.','Pared':'De celulosa.','Ejemplos':'Frailejón, palma de cera, orquídea Cattleya trianae, musgos y helechos.'}],
+ animalia:['🐾','Animalia (animales)','#c2410c',{'Célula':'Eucariota sin pared celular.','N.º de células':'Pluricelulares, con tejidos.','Nutrición':'Heterótrofos por ingestión.','Ejemplos':'Cóndor, jaguar, rana dorada, coral, esponja de mar.'}],
+ dBac:['🦠','Dominio Bacteria','#64748b',{'Qué es':'Una de las tres grandes ramas de la vida. Agrupa a las bacterias «verdaderas».','Célula':'Procariota con pared de peptidoglucano.'}],
+ dArq:['🌋','Dominio Archaea','#b45309',{'Qué es':'La segunda rama de procariotas. Por sus genes, está más cerca de los eucariotas que de las bacterias.','Célula':'Procariota con membrana de enlaces éter.'}],
+ dEuk:['🧫','Dominio Eukarya','#1a7fb5',{'Qué es':'Todos los seres con núcleo.','Incluye':'Protistas (o Protozoa y Chromista), hongos, plantas y animales.'}]
+};
+var EUK5=['protista','fungi','plantae','animalia'],EUK7=['protozoa','chromista','fungi','plantae','animalia'];
+var ARBOL={
+ '5':['vida',[['pro',['monera']],['eu',EUK5]]],
+ '6':['vida',[['pro',['eubac','arq']],['eu',EUK5]]],
+ '7':['vida',[['pro',['eubac','arq']],['eu',EUK7]]],
+ '3':['vida',[['dBac',['eubac']],['dArq',['arq']],['dEuk',EUK7]]]
+};
+var arbSel=null,arbVis={};
+function cajaN(id,x,y,w,h,i){var n=NODO[id],c=n[2];var nom=n[1].replace(/ \(.*\)/,'').replace('Dominio ','');
+  return '<g class="nd aparece" data-n="'+id+'" tabindex="0" role="button" aria-label="'+n[1]+'" style="animation-delay:'+(i*60)+'ms"><rect x="'+(x-w/2)+'" y="'+(y-h/2)+'" width="'+w+'" height="'+h+'" rx="12" fill="'+c+'1f" stroke="'+c+'" stroke-width="2"/><text x="'+x+'" y="'+(y-3)+'" text-anchor="middle" style="font-size:17px">'+n[0]+'</text><text x="'+x+'" y="'+(y+15)+'" text-anchor="middle" style="font:800 12px Outfit" fill="'+c+'">'+nom+'</text></g>';}
+function pintarArbol(k){
+  var A=ARBOL[k],ramas=A[1],hojas=[];ramas.forEach(function(r){r[1].forEach(function(h){hojas.push(h);});});
+  var W=760,M0=78,n=hojas.length,dx=(W-M0-10)/n,o='',idx=0,yR=36,yM=128,yH=232,xs=[],xR=M0+(W-M0-10)/2;
+  hojas.forEach(function(h,i){xs.push(M0+dx*(i+.5));});
+  var pos=0,mids=[];
+  ramas.forEach(function(r){var a=pos,b=pos+r[1].length-1,xm=(xs[a]+xs[b])/2;mids.push(xm);
+    r[1].forEach(function(h,j){var x=xs[pos+j];o+='<path class="ln" d="M'+xm+' '+(yM+22)+' L'+xm+' '+(yM+48)+' L'+x+' '+(yM+48)+' L'+x+' '+(yH-26)+'"/>';});pos+=r[1].length;});
+  mids.forEach(function(xm){o+='<path class="ln" d="M'+xR+' '+(yR+22)+' L'+xR+' '+(yR+48)+' L'+xm+' '+(yR+48)+' L'+xm+' '+(yM-24)+'"/>';});
+  o+=cajaN(A[0],xR,yR,150,44,idx++);
+  ramas.forEach(function(r,i){o+=cajaN(r[0],mids[i],yM,Math.min(150,r[1].length*dx-8),46,idx++);});
+  var bw=Math.min(118,dx-8);hojas.forEach(function(h,i){o+=cajaN(h,xs[i],yH,bw,50,idx++);});
+  var rot=function(y,t1,t2){return '<text x="6" y="'+(t2?y-2:y+4)+'" style="font:800 10px Outfit;letter-spacing:.06em" fill="#3c5446">'+t1+'</text>'+(t2?'<text x="6" y="'+(y+11)+'" style="font:800 10px Outfit;letter-spacing:.06em" fill="#3c5446">'+t2+'</text>':'');};
+  o+=rot(yM,k==='3'?'DOMINIOS':'TIPO DE',k==='3'?'':'CÉLULA')+rot(yH,'REINOS','');
+  var sv=document.getElementById('arbol');sv.innerHTML=o;
+  sv.querySelectorAll('.nd').forEach(function(g){g.onclick=function(){verNodo(g.getAttribute('data-n'));};g.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();verNodo(g.getAttribute('data-n'));}};});
+  var t=document.getElementById('arbol-t');
+  if(arbSel&&sv.querySelector('[data-n="'+arbSel+'"]'))verNodo(arbSel);
+  else t.innerHTML='<div class="vacio"><div style="font-size:2.4rem">👆</div>Toca una caja del mapa. Con <b>'+(k==='3'?'tres dominios':k+' reinos')+'</b> hay '+hojas.length+' reinos en la última fila.</div>';
+}
+function verNodo(id){var n=NODO[id];arbSel=id;arbVis[id]=1;
+  document.querySelectorAll('#arbol .nd').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-n')===id);});
+  document.getElementById('arbol-t').innerHTML='<h3 style="color:'+n[2]+'">'+n[0]+' '+n[1]+'</h3><dl class="car">'+Object.keys(n[3]).map(function(k){return '<dt>'+k+'</dt><dd>'+n[3][k]+'</dd>';}).join('')+'</dl>';
+  if(Object.keys(arbVis).length>=6)BIO.marcarSeccion('monera');}
 function verMod(k){var m=MOD[k];monVis[k]=1;
   document.querySelectorAll('[data-mod]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-mod')===k);});
   document.getElementById('mon-vis').innerHTML=m.g?m.g.map(grHTML).join(''):m.d.map(function(d){return '<div class="dom" style="flex:'+d[2].length+';flex-basis:auto;min-width:'+(d[2].length*100)+'px;border:2px dashed '+d[1]+';border-radius:14px;padding:8px"><b style="color:'+d[1]+'">'+d[0]+'</b>'+d[2].map(grHTML).join('')+'</div>';}).join('');
-  document.getElementById('mon-txt').innerHTML=m.t;}
+  document.getElementById('mon-txt').innerHTML=m.t;pintarArbol(k);}
 document.querySelectorAll('[data-mod]').forEach(function(b){b.onclick=function(){verMod(b.getAttribute('data-mod'));};});
 verMod('5');
 BIO.clasificar(document.getElementById('clas-monera'),{
