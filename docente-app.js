@@ -148,16 +148,18 @@ function cabecera(c,v,clave,primera,parte,nv){
 }
 function paginar(B,c,v,clave,parte,nv){
   var med=$('medidor');
-  function hojaVacia(primera){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,primera,parte,nv)+'<div class="hoja-cuerpo"></div><div class="hoja-pie"><span>x</span><span>x</span></div></div>';}
+  function hojaVacia(primera){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,primera,parte,nv)+'<div class="hoja-cuerpo"></div>'+pie(99,99)+'</div>';}
+  var nom={guia:'Guía',eval:'Evaluación',taller:'Taller'}[parte];
+  // el pie se mide igual que se imprime (si no, la hoja real tiene menos espacio)
+  function pie(k,n){return '<div class="hoja-pie"><span>BioNom · Biología por niveles de organización · © 2026 Harvey Bárcenas Morales · CC BY-NC 4.0</span><span>'+nom+' — página '+k+' de '+n+'</span></div>';}
   var out=[],i=0,pag=0;
   while(i<B.length||pag===0){
     med.innerHTML=hojaVacia(pag===0);var cuerpo=med.querySelector('.hoja-cuerpo'),disp=cuerpo.clientHeight,usado=0,puestos=[];
-    while(i<B.length){var d=document.createElement('div');d.className='blq';d.innerHTML=B[i];cuerpo.appendChild(d);var h=d.offsetHeight;if(usado+h>disp&&puestos.length){cuerpo.removeChild(d);break;}usado+=h;puestos.push(B[i]);i++;}
+    while(i<B.length){var d=document.createElement('div');d.className='blq';d.innerHTML=B[i];cuerpo.appendChild(d);if(cuerpo.scrollHeight>cuerpo.clientHeight+1&&puestos.length){cuerpo.removeChild(d);break;}puestos.push(B[i]);i++;}
     out.push({primera:pag===0,html:puestos.map(function(b){return '<div class="blq">'+b+'</div>';}).join('')});pag++;if(!B.length)break;
   }
   med.innerHTML='';
-  var nom={guia:'Guía',eval:'Evaluación',taller:'Taller'}[parte];
-  return out.map(function(p,k){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,p.primera,parte,nv)+'<div class="hoja-cuerpo">'+p.html+'</div><div class="hoja-pie"><span>BioNom · Biología por niveles de organización · © 2026 Harvey Bárcenas Morales · CC BY-NC 4.0</span><span>'+nom+' — página '+(k+1)+' de '+out.length+'</span></div></div>';}).join('');
+  return out.map(function(p,k){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,p.primera,parte,nv)+'<div class="hoja-cuerpo">'+p.html+'</div>'+pie(k+1,out.length)+'</div>';}).join('');
 }
 /* Documento de una versión. La guía (sesiones 1 a 3) sale una sola vez; la
    evaluación sale una vez por versión. */

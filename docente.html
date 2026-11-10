@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=6">
-<link rel="stylesheet" href="actividades.css?v=6">
+<link rel="stylesheet" href="bio.css?v=7">
+<link rel="stylesheet" href="actividades.css?v=7">
 <style>
 .panel[hidden]{display:none!important}
 .dtabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 18px}
@@ -47,7 +47,7 @@
 .hoja-ins{font:italic 12px 'STIX Two Text',serif;background:#f3f6f4;border-radius:6px;padding:6px 10px;margin-bottom:8px}
 .hoja-cuerpo{flex:1;min-height:0;overflow:hidden;position:relative}
 .hoja-pie{display:flex;justify-content:space-between;font:9.5px Outfit,sans-serif;color:#555;border-top:1px solid #bbb;padding-top:4px;margin-top:6px}
-.blq{padding:0 0 9px;break-inside:avoid}
+.blq{padding:0 0 9px;break-inside:avoid;display:flow-root}
 .blq h3{font:800 13px Outfit,sans-serif;color:#0f2a5f;text-transform:uppercase;letter-spacing:.05em;margin:4px 0 6px;border-bottom:1px solid #cfdcd3;padding-bottom:2px}
 .pq{display:grid;grid-template-columns:24px 1fr;gap:4px}
 .pq .n{font-weight:700}
@@ -71,9 +71,45 @@
   body.g-printing .hoja{box-shadow:none;margin:0;height:1055px;break-after:page;page-break-after:always}
   body.g-printing .hoja:last-child{break-after:auto;page-break-after:auto}
 }
-.ori h3{margin-top:14px}
-.ori ol li,.ori ul li{margin:4px 0}
-.ori code{background:#eef3ef;border-radius:4px;padding:1px 5px;font-family:var(--cn-mono);font-size:.88em}
+/* ── guías, talleres y evaluaciones ── */
+#panel-gen .solo{display:none}
+#panel-gen[data-modo="guia"] .m-guia,#panel-gen[data-modo="taller"] .m-taller,#panel-gen[data-modo="eval"] .m-eval{display:block}
+#panel-gen[data-modo="guia"] label.m-guia,#panel-gen[data-modo="taller"] label.m-taller,#panel-gen[data-modo="eval"] label.m-eval{display:flex}
+.hoja h2.ses{font:800 15px Outfit,sans-serif;color:#fff;background:#0f2a5f;border-radius:6px;padding:5px 10px;margin:6px 0 4px}
+.hoja .ses-tit{font:italic 700 15px 'STIX Two Text',serif;color:#0f2a5f;margin-bottom:4px}
+.hoja .lista{margin:0 0 0 18px;padding:0}.hoja .lista li{margin:2px 0}
+.hoja .lect{margin:0 0 5px;text-align:justify;text-indent:16px}
+.hoja .exp{font-size:12px;color:#2e7d4f;margin-top:2px}
+.hoja .okc{color:#15803d;font-weight:700}
+.hoja .pq li.ok{font-weight:800;color:#15803d}
+.hoja .pq ol.col1{grid-template-columns:1fr}
+.hoja .sq .ctx{font-style:italic;background:#f3f6f4;border-left:3px solid #2e7d4f;padding:3px 7px;margin-bottom:3px}
+.hoja .ins-act{font:italic 12px 'STIX Two Text',serif;margin:0 0 4px}
+.hoja .burb-t{border-collapse:collapse;font:12px Outfit,sans-serif;margin:0 auto}
+.hoja .burb-t td{padding:2px 8px;text-align:center}
+.hoja .burb{display:inline-grid;place-items:center;width:20px;height:20px;border:1.4px solid #333;border-radius:50%;font-size:10px}
+.hoja .clave-l{font:13px 'JetBrains Mono',monospace;line-height:1.7}
+.hoja .clave-ins{background:#fff3f2;color:#7a1d14;font-style:normal;font-weight:700}
+.hoja .auto-t{width:100%;border-collapse:collapse;font:12px Outfit,sans-serif}
+.hoja .auto-t th,.hoja .auto-t td{border:1px solid #9aa9b5;padding:4px 6px;text-align:left}
+.hoja .auto-t th{background:#0f2a5f;color:#fff}.hoja .auto-t td+td{width:70px}
+.hoja .esq{border:1.5px solid #0f2a5f;border-radius:8px;padding:8px}
+.hoja .esq-r{margin:0 auto 6px;width:max-content;background:#0f2a5f;color:#fff;font:800 13px Outfit,sans-serif;border-radius:6px;padding:4px 12px}
+.hoja .esq-ramas{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:6px}
+.hoja .esq-t{background:#e3efe6;border:1.2px solid #2e7d4f;border-radius:6px;font:800 11.5px Outfit,sans-serif;text-align:center;padding:3px}
+.hoja .esq-i{border:1px dashed #8aa;border-radius:5px;font:11px Outfit,sans-serif;text-align:center;padding:2px;margin-top:4px}
+.hoja .act-tall{width:100%!important;height:auto!important;box-shadow:none!important;padding:0!important;margin:0!important;position:static!important}
+/* ── crucigrama (crucigrama.js) ── */
+.czb-grid{display:grid;gap:0;width:max-content;margin:6px auto 10px}
+.czb-grid span{width:calc(var(--cel)*var(--f,1));height:calc(var(--cel)*var(--f,1));position:relative}
+.czb-c{border:1.3px solid #0d2d42;margin:-.65px;background:#fff}
+.czb-c i{position:absolute;top:1px;left:2px;font:700 calc(9px*var(--f,1))/1 Outfit,sans-serif;color:#0d4a73}
+.czb-c b{display:grid;place-items:center;height:100%;font:800 calc(15px*var(--f,1)) 'JetBrains Mono',monospace;color:#0d4a73}
+.czb-pistas{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:calc(12.5px*var(--f,1))}
+.czb-pistas h4{margin:0 0 3px;font:800 13px Outfit,sans-serif;color:#0d4a73}
+.czb-pistas ol{list-style:none;margin:0;padding:0}.czb-pistas li{margin:2px 0}
+.czb-sol{color:#15803d;font-weight:800}
+.czb-banco{font-size:13px;line-height:1.8}
 </style>
 </head>
 <body>
@@ -82,47 +118,162 @@
   <header class="cn-page-head" data-sin-narracion>
     <span class="kicker">📘 Docente</span>
     <h1>Material para la clase</h1>
-    <p>Genere talleres y evaluaciones con preguntas de todos los módulos, en varias versiones para evitar la copia y con su hoja de respuestas. También hay ahorcado y sopa de letras para imprimir o proyectar.</p>
+    <p>Arme guías de 4 sesiones, talleres, evaluaciones tipo Saber 11, laberintos, crucigramas, ahorcados, sopas de letras, criptogramas genéticos, mapas conceptuales y casos del detective biológico, con las preguntas y palabras de BioNom. Todo con varias versiones para evitar la copia y con su clave.</p>
   </header>
   <div class="dtabs" role="tablist">
-    <button class="chip on" data-p="gen" role="tab">📝 Talleres y evaluaciones</button>
-    <button class="chip" data-p="ah" role="tab">🔤 Ahorcado</button>
+    <button class="chip on" data-p="gen" data-m="guia" role="tab">📘 Guías</button>
+    <button class="chip" data-p="gen" data-m="taller" role="tab">✏️ Talleres</button>
+    <button class="chip" data-p="gen" data-m="eval" role="tab">📝 Evaluaciones</button>
+    <button class="chip" data-p="lab" role="tab">🧭 Laberintos</button>
+    <button class="chip" data-p="cz" role="tab">🔤 Crucigramas</button>
+    <button class="chip" data-p="ah" role="tab">🪢 Ahorcado</button>
     <button class="chip" data-p="sp" role="tab">🔍 Sopa de letras</button>
-    <button class="chip" data-p="ori" role="tab">📖 Orientaciones</button>
+    <button class="chip" data-p="cr" role="tab">🔐 Criptograma</button>
+    <button class="chip" data-p="mp" role="tab">🗺️ Mapa conceptual</button>
+    <button class="chip" data-p="dt" role="tab">🕵️ Detective biológico</button>
   </div>
 
-  <!-- ══ GENERADOR ══ -->
-  <section class="panel" id="panel-gen">
+  <!-- ══ GUÍAS, TALLERES Y EVALUACIONES (docente-app.js + docente-datos.js) ══ -->
+  <section class="panel" id="panel-gen" data-modo="guia">
+    <div class="tipo-intro" id="g-intro"></div>
     <div class="gsec"><h2>1 · Temas</h2><div class="chks" id="g-temas"></div></div>
-    <div class="gsec"><h2>2 · Documento</h2>
+    <div class="gsec"><h2>2 · Contenido</h2>
       <div class="campos">
-        <label>Tipo <select id="g-tipo"><option value="taller">Taller</option><option value="evaluacion">Evaluación</option></select></label>
-        <label>Selección múltiple <input type="number" id="g-mc" min="0" max="30" value="8"></label>
-        <label>Verdadero o falso <input type="number" id="g-vf" min="0" max="15" value="4"></label>
-        <label>Respuesta corta <input type="number" id="g-esc" min="0" max="10" value="3"></label>
-        <label>Ordenar <input type="number" id="g-ord" min="0" max="6" value="1"></label>
-        <label>Análisis e indagación <input type="number" id="g-ab" min="0" max="6" value="2"></label>
+        <label class="solo m-guia m-taller">Selección múltiple <input type="number" id="g-mc" min="0" max="30" value="6"></label>
+        <label class="solo m-guia m-taller">Verdadero o falso <input type="number" id="g-vf" min="0" max="15" value="3"></label>
+        <label class="solo m-guia m-taller">Respuesta corta <input type="number" id="g-esc" min="0" max="10" value="2"></label>
+        <label class="solo m-guia m-taller">Ordenar <input type="number" id="g-ord" min="0" max="6" value="1"></label>
+        <label class="solo m-guia m-taller">Análisis e indagación <input type="number" id="g-ab" min="0" max="6" value="1"></label>
+        <label class="solo m-guia m-eval">Preguntas tipo Saber 11 <input type="number" id="g-saber" min="0" max="30" value="10"></label>
+        <label class="solo m-eval">Más selección múltiple del Juego <input type="number" id="g-mcE" min="0" max="20" value="4"></label>
+        <label class="solo m-guia m-eval">Preguntas abiertas <input type="number" id="g-abE" min="0" max="6" value="2"></label>
         <label>Versiones (1 a 10) <input type="number" id="g-nver" min="1" max="10" value="2"></label>
         <label>Ver en pantalla <select id="g-vsel"></select></label>
       </div>
-      <p class="ayuda" style="font-size:.82rem;color:var(--cn-dim);margin-top:8px">Las versiones tienen otras preguntas o el mismo grupo en otro orden. Con el mismo código salen siempre las mismas hojas, así puede volver a imprimirlas otro día.</p>
+      <div class="solo m-guia m-eval" style="margin-top:8px"><label class="opt"><input type="checkbox" id="g-burb" checked> <span><b>Hoja de respuestas de burbujas</b><small>Al final de la evaluación, para marcar A, B, C o D</small></span></label></div>
+      <div class="solo m-guia m-taller" style="margin-top:8px"><p style="font-weight:800;font-size:.85rem;margin:6px 0">Actividades dentro del documento</p><div class="chks" id="g-acts"></div></div>
+      <p class="ayuda" style="font-size:.82rem;color:var(--cn-dim);margin-top:8px">Las versiones traen otras preguntas o las mismas en otro orden, con las opciones barajadas. Con el mismo código salen siempre las mismas hojas, así puede volver a imprimirlas otro día.</p>
     </div>
     <div class="gsec"><h2>3 · Encabezado</h2>
       <div class="campos">
         <label>Colegio <input type="text" id="g-col" placeholder="Nombre del colegio"></label>
         <label>Docente <input type="text" id="g-doc" placeholder="Nombre del docente"></label>
         <label>Grado o curso <input type="text" id="g-cur" placeholder="Ej.: 8.°"></label>
-        <label>Título <input type="text" id="g-tit" placeholder="Taller de biología"></label>
+        <label>Título <input type="text" id="g-tit" placeholder="Se pone solo según el documento"></label>
         <label>Código (para repetir hojas) <input type="text" id="g-seed" maxlength="12"></label>
       </div>
     </div>
     <div class="barra-g">
       <button type="button" class="cn-btn cn-btn--secondary" id="g-otra">🎲 Otras preguntas</button>
-      <label class="opt"><input type="checkbox" id="g-clave"> <span>Incluir hojas de respuestas</span></label>
+      <label class="opt"><input type="checkbox" id="g-clave"> <span>Incluir hojas de clave (solo para el docente)</span></label>
       <button type="button" class="cn-btn cn-btn--primary" id="g-imp">🖨️ Imprimir / Guardar PDF</button>
       <span id="g-info" style="font-size:.85rem;color:var(--cn-dim)" aria-live="polite"></span>
     </div>
     <div id="vista-wrap"><div id="vista"></div></div>
+  </section>
+
+  <!-- ══════════════ LABERINTOS (laberinto.js) ══════════════ -->
+  <section class="panel act-panel" id="panel-lab" hidden>
+   <div id="lab-app" data-mode="fund">
+    <div class="tipo-intro"><strong>🧭 Laberinto</strong> Una hoja con casillas A, B, C…: en cada una el estudiante resuelve un ejercicio y sigue la flecha rotulada con su respuesta hasta llegar a FIN. Solo hay una ruta correcta; algunas casillas son trampas. Se puede imprimir o jugar en pantalla.</div>
+    <div class="act-sect">
+      <h2>1 · Temas</h2>
+      <p class="ayuda">Cada casilla es una pregunta corta del Juego de BioNom (selección múltiple o verdadero/falso).</p>
+      <div class="lab-only lab-fund">
+        <div class="act-chks" id="lab-fs-fund">
+          <label class="opt"><input type="checkbox" value="celula" checked> <span><b>La célula</b><small></small></span></label>
+          <label class="opt"><input type="checkbox" value="reinos" checked> <span><b>Reinos y clasificación</b><small></small></span></label>
+          <label class="opt"><input type="checkbox" value="sistemas" checked> <span><b>Sistemas del cuerpo</b><small></small></span></label>
+          <label class="opt"><input type="checkbox" value="reproduccion"> <span><b>Reproducción</b><small></small></span></label>
+          <label class="opt"><input type="checkbox" value="genetica"> <span><b>Genética</b><small></small></span></label>
+          <label class="opt"><input type="checkbox" value="evolucion"> <span><b>Evolución</b><small></small></span></label>
+          <label class="opt"><input type="checkbox" value="ecosistemas"> <span><b>Ecosistemas</b><small></small></span></label>
+          <label class="opt"><input type="checkbox" value="colombia"> <span><b>Ecosistemas de Colombia</b><small></small></span></label>
+          <label class="opt"><input type="checkbox" value="ambiente"> <span><b>Ambiente y cambio climático</b><small></small></span></label>
+        </div>
+      </div>
+    </div>
+    <div class="act-sect">
+      <h2>2 · Hoja y versiones</h2>
+      <div class="campos">
+        <label>Tamaño <select id="lab-size"><option value="3x3">3×3 · 8 casillas</option><option value="4x3" selected>4×3 · 11 casillas</option><option value="4x4">4×4 · 15 casillas</option><option value="5x4">5×4 · 19 casillas</option></select></label>
+        <label>Ejercicios hasta FIN <select id="lab-paradas"></select></label>
+        <label>Título <input type="text" id="lab-title" maxlength="40"></label>
+        <label>Versiones paralelas (1 a 40) <input type="number" inputmode="numeric" id="lab-nver" value="4" min="1" max="40" step="1"></label>
+        <label>Versión en pantalla <select id="lab-vsel"></select></label>
+      </div>
+      <p class="ayuda">Cada versión tiene ejercicios y ruta distintos. «Ejercicios hasta FIN» son las casillas que se resuelven en la ruta correcta; las demás son casillas trampa. La ruta solo avanza a la derecha, hacia abajo o en diagonal.</p>
+      <details class="act-adv"><summary>Volver a generar hojas de otro día</summary>
+        <p class="ayuda">Escriba el código que aparece en la hoja de clave para obtener exactamente las mismas hojas.</p>
+        <label class="campo">Código de la hoja de clave <input type="text" id="lab-seed" maxlength="20" autocomplete="off"></label>
+      </details>
+    </div>
+    <div class="act-bar">
+      <button type="button" class="cn-btn cn-btn--secondary" id="lab-btn-seed">🎲 Generar nuevo laberinto</button>
+      <div class="act-seg" id="lab-seg" role="group" aria-label="Vista">
+        <button type="button" data-view="sheet" class="on" aria-pressed="true">📄 Hoja</button>
+        <button type="button" data-view="play" aria-pressed="false">🎮 Jugar</button>
+        <button type="button" data-view="key" aria-pressed="false">🔑 Clave</button>
+      </div>
+      <button type="button" class="cn-btn cn-btn--secondary" id="lab-fs-btn" style="display:none">⛶ Pantalla completa</button>
+      <button type="button" class="cn-btn cn-btn--secondary" id="lab-restart2" style="display:none">↺ Reiniciar</button>
+      <button type="button" class="cn-btn cn-btn--primary" id="lab-btn-print">🖨️ Imprimir versiones</button>
+      <label class="opt act-inl"><input type="checkbox" id="lab-withkeys" checked> <span>con hojas de clave al final</span></label>
+    </div>
+    <div id="lab-playwrap">
+      <div id="lab-play-bar">
+        <img class="pb-logo" src="icons/logo.png" alt="BioNom">
+        <span id="lab-play-msg" aria-live="polite"></span>
+        <button type="button" id="lab-restart">↺ Reiniciar</button>
+        <button type="button" id="lab-fs-exit">✕ Salir de pantalla completa</button>
+      </div>
+      <div id="lab-verif" class="act-verif"></div>
+      <div id="lab-status" aria-live="polite">Cargando bancos…</div>
+      <div id="lab-girar" class="lab-girar" hidden role="status">
+        <span class="lg-ico" aria-hidden="true">📱↻</span>
+        <span><strong>Gira tu celular</strong> para jugar en horizontal: la casilla queda a un lado y el laberinto al otro.</span>
+        <button type="button" id="lab-girar-ok">Seguir en vertical</button>
+      </div>
+      <div class="lab-cuerpo">
+        <div id="lab-card" class="lab-card" hidden></div>
+        <div id="lab-stage"></div>
+      </div>
+    </div>
+    <div id="lab-routebox">
+      <b>Verificar la ruta de un estudiante:</b>
+      <input id="lab-routein" type="text" placeholder="Ej.: A E I J K FIN" aria-label="Ruta escrita por el estudiante">
+      <button type="button" class="cn-btn cn-btn--secondary" id="lab-routebtn">Comprobar</button>
+      <span id="lab-routemsg" aria-live="polite"></span>
+    </div>
+    <div id="lab-keybox"></div>
+   </div>
+  </section>
+
+  <!-- ══ CRUCIGRAMAS (crucigrama.js + retos.js + ahorcado-datos.js) ══ -->
+  <section class="panel act-panel" id="panel-cz" hidden>
+   <div id="cz-app">
+    <div class="tipo-intro"><strong>🔤 Crucigrama</strong> Con las palabras clave de BioNom y sus pistas. Las palabras quedan conectadas y sin palabras «accidentales» en los cruces. Hoja para imprimir con versiones y clave, o modo clase para resolverlo en pantalla con 3 comprobaciones.</div>
+    <div class="act-sect"><h2>1 · Temas</h2><div class="act-chks" id="cz-grupos"></div></div>
+    <div class="act-sect"><h2>2 · Crucigrama y hoja</h2>
+      <div class="campos">
+        <label>Número de palabras (6 a 14) <input type="number" inputmode="numeric" id="cz-n" value="10" min="6" max="14"></label>
+        <label>Pistas impresas <select id="cz-pista"><option value="1" selected>Pista 1 (la más general)</option><option value="2">Pista 2</option><option value="3">Pista 3 (la más reveladora)</option><option value="4">Sin pistas: banco de palabras</option></select></label>
+        <label>Título <input type="text" id="cz-title" maxlength="40" placeholder="Crucigrama de biología"></label>
+        <label>Versiones paralelas (1 a 40) <input type="number" inputmode="numeric" id="cz-nver" value="2" min="1" max="40"></label>
+        <label>Versión en pantalla <select id="cz-vsel"></select></label>
+      </div>
+      <details class="act-adv"><summary>Volver a generar hojas de otro día</summary><label class="campo">Código de la hoja de clave <input type="text" id="cz-seed" maxlength="20" autocomplete="off"></label></details>
+    </div>
+    <div class="act-bar">
+      <button type="button" class="cn-btn cn-btn--secondary" id="cz-btn-seed">🎲 Otro crucigrama</button>
+      <div class="act-seg" id="cz-seg" role="group" aria-label="Vista"><button type="button" data-view="sheet" class="on" aria-pressed="true">📄 Hoja</button><button type="button" data-view="key" aria-pressed="false">🔑 Clave</button><button type="button" data-view="play" aria-pressed="false">📽️ Modo clase</button></div>
+      <button type="button" class="cn-btn cn-btn--primary" id="cz-btn-print">🖨️ Imprimir versiones</button>
+      <label class="opt act-inl"><input type="checkbox" id="cz-withkeys" checked> <span>con hojas de clave al final</span></label>
+    </div>
+    <div id="cz-status" class="act-verif" aria-live="polite"></div>
+    <div id="cz-stage" class="ex-stage"></div>
+    <div id="cz-play" style="display:none"></div>
+   </div>
   </section>
 
   <!-- ══ AHORCADO (ahorcado.js + ahorcado-datos.js) ══ -->
@@ -181,148 +332,50 @@
    </div>
   </section>
 
-  <!-- ══ ORIENTACIONES ══ -->
-  <section class="panel ori" id="panel-ori" hidden>
-    <div class="card">
-      <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">Cómo usar BioNom en clase</h2>
-      <h3>🗺️ La idea central</h3>
-      <p>Todo el sitio se organiza con el <b>mapa de niveles de organización</b> de la portada: del átomo a la biosfera. Cada módulo indica qué niveles trabaja, y es buena práctica abrir y cerrar cada unidad volviendo al mapa para que el estudiante ubique dónde está.</p>
-      <h3>🧭 Una secuencia sugerida por sesión</h3>
-      <ol>
-        <li><b>Explorar (10 min):</b> los estudiantes tocan la figura interactiva o la simulación del tema antes de cualquier explicación y escriben qué observan y qué se preguntan.</li>
-        <li><b>Explicar (15 min):</b> se recorren juntos los «paso a paso» y se usa el botón 🔊 Escuchar para quienes lo necesiten.</li>
-        <li><b>Indagar (15 min):</b> los laboratorios virtuales (ósmosis con papas, campana de Priestley, polillas, deriva genética, CO₂…) piden hipótesis, variables, datos y conclusiones; se pueden registrar en el cuaderno como un informe corto.</li>
-        <li><b>Comprobar (5 min):</b> los «chequeos rápidos» dan retroalimentación inmediata.</li>
-        <li><b>Repasar (en casa):</b> el Juego, con el tema de la clase.</li>
-      </ol>
-      <h3>🔬 Competencias que se trabajan</h3>
-      <ul>
-        <li><b>Indagación:</b> hipótesis, variables independientes, dependientes y controladas, toma de datos con margen de error, gráficas y predicciones (laboratorio de las papas, Priestley, deriva genética, curva del CO₂).</li>
-        <li><b>Explicación de fenómenos:</b> modelos que se manipulan (célula, mitosis y meiosis, cuerpo humano, redes tróficas, ciclos, El Niño y La Niña).</li>
-        <li><b>Uso comprensivo del conocimiento:</b> clasificaciones, claves dicotómicas, cuadros de Punnett, genealogías y casos colombianos.</li>
-        <li><b>Educación ambiental:</b> cambio climático por regiones, huella de carbono y compromisos personales, especies amenazadas y debates sobre biotecnología.</li>
-      </ul>
-      <h3>🎓 Activar el Modo Estudiante (registro de resultados)</h3>
-      <div class="dato" style="margin-top:6px">Por ahora el Modo Estudiante está <b>desactivado</b>: el juego funciona solo en modo libre. Se configurará en 2027. Para activarlo, además de los pasos siguientes, hay que cambiar <code>MODO_ESTUDIANTE_ACTIVO</code> a <code>true</code> en <code>juego.html</code>.</div>
-      <ol>
-        <li>Abra <a href="https://script.google.com" target="_blank" rel="noopener">script.google.com</a> con su cuenta de Google y cree un proyecto nuevo.</li>
-        <li>Copie todo el contenido del archivo <code>bionom-analytics.gs</code> del repositorio y péguelo en el editor (reemplazando lo que haya).</li>
-        <li>Ajuste al inicio del archivo las fechas del periodo académico (<code>FECHA_INICIO_PERIODO</code> y <code>FECHA_FIN_PERIODO</code>).</li>
-        <li>Ejecute una vez la función <code>instalarActualizacionAutomatica</code> (▶ Ejecutar) y acepte los permisos. Se creará sola la hoja «BioNom — Registro de resultados» en su Drive.</li>
-        <li>En esa hoja, pestaña <b>Estudiantes</b>, escriba una fila por estudiante: Código (6 dígitos: grado, curso y número, por ejemplo 080312), Nombre y Curso.</li>
-        <li>En el editor: <b>Implementar → Nueva implementación → Aplicación web</b>, «Ejecutar como: yo» y «Quién tiene acceso: cualquier persona». Copie la URL que termina en <code>/exec</code>.</li>
-        <li>Esa URL se pega en <code>juego.html</code>, en la línea <code>var APPS_SCRIPT_URL=''</code>. Si se lo pide a Claude, él lo hace y lo sube.</li>
-        <li>Cada vez que se modifique el archivo <code>.gs</code> hay que volver a implementarlo: <b>Implementar → Administrar implementaciones → Editar → Nueva versión</b>.</li>
-      </ol>
-      <p>Las estadísticas por estudiante, por curso y por tema se recalculan solas cada 30 minutos (o con <code>recalcularAhora</code>).</p>
-      <h3>📱 Instalar como aplicación</h3>
-      <p>En el celular, el botón ⬇ Instalar del menú agrega BioNom a la pantalla de inicio. Después funciona sin internet, salvo el registro del Modo Estudiante.</p>
-    </div>
-  </section>
+  <!-- ══ CRIPTOGRAMA, MAPA CONCEPTUAL Y DETECTIVE (extras.js, el mismo de ChromaNom e IonNom) ══ -->
+  <section class="panel act-panel" id="panel-cr" hidden><div id="cr-app" class="ex-app" data-estilo="cn"></div></section>
+  <section class="panel act-panel" id="panel-mp" hidden><div id="mp-app" class="ex-app" data-estilo="cn"></div></section>
+  <section class="panel act-panel" id="panel-dt" hidden><div id="dt-app" class="ex-app" data-estilo="cn"></div></section>
 </main>
 <footer class="site-foot"></footer>
 <div id="medidor" aria-hidden="true"></div>
 <div id="print-root" aria-hidden="true"></div>
+<div id="lab-print-root" aria-hidden="true"></div>
 <div id="ah-print-root" aria-hidden="true"></div>
 <div id="sp-print-root" aria-hidden="true"></div>
-<script src="bio.js?v=6"></script>
-<script src="banco.js?v=6"></script>
-<script src="ahorcado-datos.js?v=6"></script>
-<script src="ahorcado.js?v=6"></script>
-<script src="sopa.js?v=6"></script>
+<div id="ex-print-root" aria-hidden="true"></div>
+<script src="bio.js?v=7"></script>
+<script src="banco.js?v=7"></script>
+<script src="ahorcado-datos.js?v=7"></script>
+<script src="docente-datos.js?v=7"></script>
 <script>
-(function(){
-'use strict';
-var $=function(i){return document.getElementById(i);};
-var esc=BIO.esc;
+/* Ajustes de BioNom para extras.js: textos de biología y criptograma con el código genético. */
+window.EXTRAS_SITIO={area:'biología',adj:'biológico',cripto:'codon'};
+</script>
+<script src="retos.js?v=7"></script>
+<script src="ahorcado.js?v=7"></script>
+<script src="sopa.js?v=7"></script>
+<script src="extras.js?v=7"></script>
+<script src="laberinto.js?v=7"></script>
+<script src="crucigrama.js?v=7"></script>
+<script src="docente-app.js?v=7"></script>
+<script>
 /* ── pestañas ── */
+(function(){
+var $=function(i){return document.getElementById(i);};
+var PANELES=['gen','lab','cz','ah','sp','cr','mp','dt'];
 document.querySelectorAll('.dtabs [data-p]').forEach(function(b){b.onclick=function(){var p=b.getAttribute('data-p');
   document.querySelectorAll('.dtabs [data-p]').forEach(function(x){x.classList.toggle('on',x===b);});
-  ['gen','ah','sp','ori'].forEach(function(k){$('panel-'+k).hidden=k!==p;});
-  if(p==='ah'&&window.AHORCADO)window.AHORCADO.render();if(p==='sp'&&window.SOPA)window.SOPA.render();if(p==='gen')pintar();};});
-
-/* ── preguntas de análisis e indagación (abiertas) ── */
-var ABIERTAS={
- celula:['Diseña un experimento para saber si la sal afecta el tamaño de una rodaja de pepino. Escribe tu hipótesis, la variable independiente, la dependiente y dos variables controladas.','Una planta se deja 3 días en un cuarto oscuro. Explica qué pasa con su fotosíntesis y su respiración, y qué le pasará al oxígeno del cuarto.','Explica con un ejemplo de la medicina por qué fue tan importante la teoría celular.'],
- reinos:['Construye una clave dicotómica de 3 preguntas para separar: champiñón, rosa, ameba y bacteria.','¿Por qué los científicos separaron a las arqueas de las bacterias si al microscopio se ven iguales? Explica con dos diferencias.','Escoge un organismo de tu región y escribe su clasificación desde el dominio hasta la especie (consulta su nombre científico).'],
- sistemas:['Explica cómo trabajan juntos los sistemas nervioso, endocrino y circulatorio cuando te asustas.','Dibuja el recorrido de un bocado de comida desde la boca hasta el intestino grueso e indica qué le pasa en cada órgano.','Una persona con diabetes tipo 1 no produce insulina. Explica qué le pasa al azúcar de su sangre después de comer y por qué.'],
- genetica:['Dos padres de grupo sanguíneo A tienen un hijo de grupo O. Escribe los genotipos de los padres y haz el cuadro de Punnett.','Explica por qué el cuadro de Punnett no sirve para predecir la estatura exacta de un hijo.','Escribe un argumento a favor y otro en contra de sembrar maíz transgénico en Colombia.'],
- evolucion:['Explica con el ejemplo de las bacterias y los antibióticos cómo actúa la selección natural.','¿Por qué una población pequeña de una especie endémica corre más riesgo de extinguirse? Usa los conceptos de deriva genética y variabilidad.','Compara cómo explicarían Lamarck y Darwin el pico largo de un colibrí.'],
- ecosistemas:['Dibuja una red trófica de un ecosistema de tu región con al menos 6 especies y predice qué pasa si desaparece el superdepredador.','Explica por qué en una cadena trófica rara vez hay más de 4 o 5 eslabones.','Explica la diferencia entre hábitat y nicho con un ejemplo de un humedal.'],
- colombia:['Escoge una especie amenazada de Colombia, explica por qué está amenazada y propone dos estrategias para conservarla.','¿Por qué los páramos son tan importantes para el agua de las ciudades? Propón una acción para protegerlos.','Explica por qué Colombia tiene tantos ecosistemas a pesar de estar toda en la zona tropical.'],
- ambiente:['Analiza la gráfica de CO₂ de los últimos 60 años: describe la tendencia y predice el valor de 2050. ¿Qué podría cambiar esa predicción?','Explica cómo afectan El Niño y La Niña a tu región y propone una acción de adaptación para tu barrio o colegio.','Calcula tu huella de carbono en BioNom y escribe tres compromisos realistas para reducirla.']
-};
-/* ── azar con semilla ── */
-function rng(str){var h=2166136261>>>0;for(var i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)>>>0;}var a=h||1;return function(){a=(a+0x6D2B79F5)|0;var t=Math.imul(a^(a>>>15),1|a);t=(t+Math.imul(t^(t>>>7),61|t))^t;return((t^(t>>>14))>>>0)/4294967296;};}
-function mezclar(a,r){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
-function nuevaSemilla(){return Math.random().toString(36).slice(2,8).toUpperCase();}
-var semilla=nuevaSemilla();
-
-/* ── temas ── */
-$('g-temas').innerHTML=window.TEMAS_JUEGO.map(function(t,i){var n=BANCO_BIO.filter(function(q){return q.t===t[0];}).length;return '<label class="opt"><input type="checkbox" value="'+t[0]+'"'+(i===0?' checked':'')+'> <span><b>'+t[2]+' '+t[1]+'</b><small>'+n+' preguntas</small></span></label>';}).join('');
-
-function cfg(){var temas=[].slice.call(document.querySelectorAll('#g-temas input:checked')).map(function(x){return x.value;});
-  var n=function(id,mx){return Math.max(0,Math.min(mx,parseInt($(id).value,10)||0));};
-  return {temas:temas,tipo:$('g-tipo').value,mc:n('g-mc',30),vf:n('g-vf',15),esc:n('g-esc',10),ord:n('g-ord',6),ab:n('g-ab',6),nver:Math.max(1,Math.min(10,n('g-nver',10))),
-    col:$('g-col').value.trim(),doc:$('g-doc').value.trim(),cur:$('g-cur').value.trim(),tit:$('g-tit').value.trim(),seed:($('g-seed').value.trim().toUpperCase()||semilla)};}
-var TEMAS_N={};window.TEMAS_JUEGO.forEach(function(t){TEMAS_N[t[0]]=t[1];});
-
-/* arma las preguntas de una versión */
-function preguntas(c,v){
-  var r=rng(c.seed+'-'+v),pool=BANCO_BIO.filter(function(q){return c.temas.indexOf(q.t)>=0;});
-  function tomar(k,n){var cand=mezclar(pool.filter(function(q){return q.k===k;}),r);return cand.slice(0,n);}
-  var ab=[];c.temas.forEach(function(t){(ABIERTAS[t]||[]).forEach(function(x){ab.push({t:t,q:x});});});
-  return {mc:tomar('mc',c.mc).map(function(q){var ord=mezclar(q.ops.map(function(o,i){return i;}),r);return {q:q.q,ops:ord.map(function(i){return q.ops[i];}),a:ord.indexOf(q.a),exp:q.exp};}),
-    vf:tomar('vf',c.vf),esc:tomar('esc',c.esc),ord:tomar('ord',c.ord).map(function(q){return {q:q.q,ok:q.ops,mez:mezclar(q.ops,r)};}),ab:mezclar(ab,r).slice(0,c.ab)};
-}
-/* bloques HTML indivisibles */
-function bloques(P,c,clave){
-  var B=[],n=0,L='abcd';
-  function sec(t,arr,fn){arr.forEach(function(x,i){B.push((i===0?'<h3>'+t+'</h3>':'')+fn(x));});}
-  if(P.mc.length)sec('I. Selección múltiple con única respuesta',P.mc,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<ol>'+x.ops.map(function(o,i){return '<li data-l="'+L[i]+'"'+(clave&&i===x.a?' style="font-weight:800;color:#15803d"':'')+'>'+esc(o)+(clave&&i===x.a?' ✔':'')+'</li>';}).join('')+'</ol></div></div>';});
-  if(P.vf.length)sec('II. Verdadero (V) o falso (F)'+(c.tipo==='evaluacion'?' — corrige las falsas':''),P.vf,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div><span class="vf">'+(clave?'<span style="color:#15803d">'+(x.a?'✔ V':'✔ F')+'</span>':'V &nbsp; F')+'</span>'+esc(x.q)+(c.tipo==='evaluacion'&&!clave?'<div class="lineas"><i></i></div>':'')+(clave?'<div style="font-size:12px;color:#2e7d4f">'+x.exp+'</div>':'')+'</div></div>';});
-  if(P.esc.length)sec('III. Responde con una palabra o frase corta',P.esc,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div style="color:#2e7d4f;font-weight:700">'+esc(x.a[0])+'</div>':'<div class="lineas"><i></i></div>')+'</div></div>';});
-  if(P.ord.length)sec('IV. Ordena: escribe 1, 2, 3… en cada casilla',P.ord,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<div class="ord-cajas">'+x.mez.map(function(o){return '<span>'+(clave?'<b>'+(x.ok.indexOf(o)+1)+'</b> ':'')+esc(o)+'</span>';}).join('')+'</div></div></div>';});
-  if(P.ab.length)sec('V. Análisis e indagación',P.ab,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div style="font-size:12px;color:#2e7d4f">Respuesta abierta: valore la claridad de la explicación, el uso de los conceptos y de las evidencias.</div>':'<div class="lineas">'+'<i></i>'.repeat(c.tipo==='evaluacion'?6:5)+'</div>')+'</div></div>';});
-  return B;
-}
-function cabecera(c,v,clave,primera){
-  var tit=c.tit||(c.tipo==='evaluacion'?'Evaluación de biología':'Taller de biología');
-  if(!primera)return '<div class="hoja-mini"><span>'+esc(tit)+' · versión '+(v+1)+(clave?' · RESPUESTAS':'')+'</span><span>'+esc(c.col)+'</span></div>';
-  return '<div class="hoja-cab"><img src="icons/logo.webp" alt=""><div class="tt"><div class="t1">'+esc(tit)+(clave?' — HOJA DE RESPUESTAS':'')+'</div><div class="t2">'+[c.col,c.doc&&('Docente: '+c.doc),c.cur&&('Curso: '+c.cur),'Temas: '+c.temas.map(function(t){return TEMAS_N[t];}).join(', ')].filter(Boolean).map(esc).join(' · ')+'</div></div><div class="ver">V'+(v+1)+'</div></div>'+
-    (clave?'<div class="hoja-ins" style="background:#fff3f2;color:#7a1d14;font-style:normal;font-weight:700">🔒 Solo para el docente · Código '+esc(c.seed)+' · versión '+(v+1)+'. Las explicaciones en verde ayudan a retroalimentar.</div>':'<div class="hoja-datos"><span>Nombre:</span><span>Curso:</span><span>Fecha:</span></div><div class="hoja-ins">Lee con atención cada pregunta. '+(c.tipo==='evaluacion'?'Trabaja de forma individual.':'Puedes apoyarte en los módulos de BioNom.')+'</div>');
-}
-/* paginación: mide cada bloque con el ancho real de la hoja */
-function paginar(B,c,v,clave){
-  var med=$('medidor');
-  function hojaVacia(primera){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,primera)+'<div class="hoja-cuerpo"></div><div class="hoja-pie"><span>BioNom · Biología por niveles de organización</span><span class="pie-n"></span></div></div>';}
-  var out=[],i=0,pag=0;
-  while(i<B.length||pag===0){
-    med.innerHTML=hojaVacia(pag===0);var cuerpo=med.querySelector('.hoja-cuerpo'),disp=cuerpo.clientHeight,usado=0,puestos=[];
-    while(i<B.length){var d=document.createElement('div');d.className='blq';d.innerHTML=B[i];cuerpo.appendChild(d);var h=d.offsetHeight;if(usado+h>disp&&puestos.length){cuerpo.removeChild(d);break;}usado+=h;puestos.push(B[i]);i++;}
-    out.push({primera:pag===0,html:puestos.map(function(b){return '<div class="blq">'+b+'</div>';}).join('')});pag++;if(!B.length)break;
-  }
-  return out.map(function(p,k){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,p.primera)+'<div class="hoja-cuerpo">'+p.html+'</div><div class="hoja-pie"><span>BioNom · Biología por niveles de organización · © 2026 Harvey Bárcenas Morales · CC BY-NC 4.0</span><span>Página '+(k+1)+' de '+out.length+'</span></div></div>';}).join('');
-}
-function documento(c,v,clave){return paginar(bloques(preguntas(c,v),c,clave),c,v,clave);}
-function llenarVersiones(){var n=cfg().nver,s=$('g-vsel'),k=+s.value||0;s.innerHTML='';for(var i=0;i<n;i++)s.insertAdjacentHTML('beforeend','<option value="'+i+'">Versión '+(i+1)+'</option>');s.innerHTML+='<option value="k">Respuestas de la versión 1</option>';s.value=k<n?k:0;}
-function escalar(){var w=$('vista-wrap').clientWidth-32,f=Math.min(1,w/816);$('vista').style.zoom=f;}
-function pintar(){var c=cfg();if(!c.temas.length){$('vista').innerHTML='<p style="padding:20px">Escoja al menos un tema.</p>';return;}
-  var vs=$('g-vsel').value,v=vs==='k'?0:+vs||0;$('vista').innerHTML=documento(c,v,vs==='k');escalar();
-  $('g-info').textContent='Código: '+c.seed+' · '+$('vista').querySelectorAll('.hoja').length+' hoja(s) por versión';}
-['g-tipo','g-mc','g-vf','g-esc','g-ord','g-ab','g-col','g-doc','g-cur','g-tit','g-seed'].forEach(function(id){$(id).addEventListener('input',pintar);});
-$('g-nver').addEventListener('input',function(){llenarVersiones();pintar();});$('g-vsel').addEventListener('change',pintar);
-$('g-temas').addEventListener('change',pintar);
-$('g-otra').onclick=function(){semilla=nuevaSemilla();$('g-seed').value='';pintar();};
-window.addEventListener('resize',escalar);
-$('g-imp').onclick=function(){var c=cfg(),h='';for(var v=0;v<c.nver;v++)h+=documento(c,v,false);if($('g-clave').checked)for(v=0;v<c.nver;v++)h+=documento(c,v,true);
-  $('print-root').innerHTML=h;document.body.classList.add('g-printing');setTimeout(function(){window.print();},250);};
-window.addEventListener('afterprint',function(){if(document.body.classList.contains('g-printing')){document.body.classList.remove('g-printing');$('print-root').innerHTML='';}});
-llenarVersiones();
-(document.fonts?Promise.all(['13.5px "STIX Two Text"','bold 13.5px "STIX Two Text"','italic 12px "STIX Two Text"','800 13px Outfit','12px Outfit'].map(function(f){return document.fonts.load(f);})).catch(function(){}):Promise.resolve()).then(pintar);
+  PANELES.forEach(function(k){$('panel-'+k).hidden=k!==p;});
+  if(p==='gen'&&window.DOC_GEN)window.DOC_GEN.modo(b.getAttribute('data-m'));
+  if(p==='lab'&&window.LABERINTO)window.LABERINTO.render();
+  if(p==='cz'&&window.CRUCI)window.CRUCI.render();
+  if(p==='ah'&&window.AHORCADO)window.AHORCADO.render();
+  if(p==='sp'&&window.SOPA)window.SOPA.render();
+  if((p==='cr'||p==='mp'||p==='dt')&&window.EXTRAS)window.EXTRAS.render(p);};});
 })();
 </script>
-<script src="text-zoom.js?v=6"></script>
-<script src="pwa-install.js?v=6"></script>
+<script src="text-zoom.js?v=7"></script>
+<script src="pwa-install.js?v=7"></script>
 </body>
 </html>
