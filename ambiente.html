@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ambiente y cambio climático — BioNom</title>
+<meta name="description" content="Efecto invernadero, causas y consecuencias del cambio climático en Colombia, El Niño y La Niña, océanos, energías renovables, huella de carbono y acciones de mitigación y adaptación.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=2">
+<style>
+.inv{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:center}
+@media(max-width:780px){.inv{grid-template-columns:1fr}}
+#tierra{width:100%;height:auto}
+.termo{font:800 2.2rem var(--cn-mono);color:#c0392b}
+#keel,#emis{width:100%;height:auto;background:#fff;border:1px solid var(--cn-brd);border-radius:12px}
+.reg-chips{margin-bottom:10px}
+.nino{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;align-items:center}
+@media(max-width:780px){.nino{grid-template-columns:1fr}}
+#pac{width:100%;height:auto;border-radius:14px}
+.huella label.q{display:block;font-weight:800;margin:12px 0 6px}
+.huella .chips .chip{font-size:.82rem}
+.medidor{height:22px;border-radius:999px;background:linear-gradient(90deg,#2e9a5a,#e8c02a,#d64535);position:relative;margin:10px 0}
+.medidor i{position:absolute;top:-6px;width:6px;height:34px;background:#10261a;border-radius:3px;transition:left .5s}
+.comp label{display:flex;gap:8px;align-items:flex-start;padding:6px 0;font-size:.95rem}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">🌍 Nivel de biosfera</span>
+    <h1>El ambiente y el cambio climático</h1>
+    <p>La biosfera funciona como un todo: lo que pasa en una selva, en una fábrica o en tu cocina termina afectando el clima de todo el planeta. Aquí entenderás <b>por qué</b> se está calentando la Tierra, <b>qué</b> le está pasando a Colombia y <b>qué</b> podemos hacer, empezando por ti.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Nivel: biosfera</a>
+  </header>
+  <nav class="toc" aria-label="En esta página">
+    <strong>En esta página</strong>
+    <a href="#invernadero">🌡️ Efecto invernadero</a>
+    <a href="#causas">🏭 Causas</a>
+    <a href="#consecuencias">🇨🇴 Consecuencias</a>
+    <a href="#nino">🌊 El Niño y La Niña</a>
+    <a href="#oceanos">🐠 Océanos</a>
+    <a href="#energias">⚡ Energías</a>
+    <a href="#huella">👣 Tu huella</a>
+    <a href="#acciones">✅ Qué hacer</a>
+  </nav>
+
+  <section class="sec" id="invernadero">
+    <h2><span class="n">01</span> El efecto invernadero</h2>
+    <p class="lead">La luz del Sol atraviesa la atmósfera y calienta el suelo y el mar. La Tierra devuelve ese calor como radiación infrarroja, pero algunos gases (<b>CO₂</b>, <b>metano</b>, <b>óxido nitroso</b> y vapor de agua) atrapan parte de él, como el vidrio de un invernadero. Sin ese efecto natural la Tierra estaría a −18 °C. El problema es que lo estamos <b>aumentando</b>. Mueve el control del CO₂.</p>
+    <div class="card inv">
+      <svg id="tierra" viewBox="0 0 400 300" aria-hidden="true"></svg>
+      <div>
+        <label for="co2" style="font-weight:800">CO₂ en la atmósfera (partes por millón)</label>
+        <input type="range" id="co2" min="280" max="800" step="10" value="280" style="width:100%">
+        <div id="co2-t" aria-live="polite" style="margin-top:8px"></div>
+      </div>
+    </div>
+    <h3 style="margin-top:18px">📈 Los datos: el CO₂ medido desde 1960</h3>
+    <p>Esta gráfica resume las mediciones del observatorio de Mauna Loa (Hawái), con valores aproximados. Toca «Predecir» y escoge cómo crees que seguirá la curva.</p>
+    <div class="card"><canvas id="keel" width="900" height="260" aria-label="CO₂ medido entre 1960 y 2024"></canvas>
+      <div class="ctrl"><b>Para 2050 predigo…</b><button class="chip" data-p="400">que baje a 400 ppm</button><button class="chip" data-p="430">que se quede en 430</button><button class="chip" data-p="490">que suba a unos 490</button></div><p id="keel-t" aria-live="polite"></p></div>
+  </section>
+
+  <section class="sec" id="causas">
+    <h2><span class="n">02</span> ¿Qué lo causa? El caso de Colombia</h2>
+    <p class="lead">En el mundo, la principal causa es quemar <b>combustibles fósiles</b> (petróleo, gas, carbón). En Colombia es distinto: la mayor parte de los gases de efecto invernadero sale del <b>cambio en el uso del suelo</b>: tumbar selva para potreros, la ganadería y la agricultura.</p>
+    <div class="card"><canvas id="emis" width="900" height="250" aria-label="Fuentes de gases de efecto invernadero en Colombia"></canvas>
+      <p style="font-size:.84rem;color:var(--cn-dim)">Porcentajes aproximados del inventario nacional de gases de efecto invernadero (IDEAM). Toca una barra.</p><p id="emis-t" aria-live="polite"></p></div>
+    <div class="grid g3" style="margin-top:12px">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🪓</span><b>Deforestación</b><small>toca para voltear</small></div><div class="bk">Al talar y quemar el bosque, el carbono guardado en los árboles sale como CO₂, y ese bosque deja de absorberlo. La mayor parte de la deforestación de Colombia ocurre en la Amazonia, para convertirla en potreros.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🐄</span><b>Ganadería</b><small>toca para voltear</small></div><div class="bk">Las vacas producen metano al digerir el pasto (gracias a arqueas de su estómago). El metano calienta cerca de 80 veces más que el CO₂ en sus primeros 20 años.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🚗</span><b>Transporte y energía</b><small>toca para voltear</small></div><div class="bk">Carros, buses, motos y fábricas que queman gasolina, diésel o carbón. Es la segunda fuente en Colombia y la primera en el mundo.</div></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="consecuencias">
+    <h2><span class="n">03</span> Las consecuencias en cada región de Colombia</h2>
+    <p class="lead">El calentamiento no afecta a todos por igual. Las comunidades más pobres y rurales, y los niños, niñas y adolescentes, son los más vulnerables. Escoge una región.</p>
+    <div class="chips reg-chips" id="regc"></div>
+    <div class="card" id="regc-t" aria-live="polite"></div>
+  </section>
+
+  <section class="sec" id="nino">
+    <h2><span class="n">04</span> El Niño y La Niña</h2>
+    <p class="lead">Cada pocos años cambia la temperatura del océano Pacífico tropical y eso altera las lluvias en Colombia. No los causa el cambio climático, pero el calentamiento los está volviendo <b>más intensos</b>. Cambia el estado del océano.</p>
+    <div class="card nino">
+      <svg id="pac" viewBox="0 0 420 240" aria-hidden="true"></svg>
+      <div><div class="chips" id="nn"><button class="chip" data-n="normal">🌤️ Normal</button><button class="chip" data-n="nino">🔥 El Niño</button><button class="chip" data-n="nina">🌧️ La Niña</button></div><div id="nn-t" style="margin-top:10px" aria-live="polite"></div></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="Con El Niño llueve menos y los embalses bajan: por eso hay riesgo de racionamientos de energía y agua, y de incendios forestales.">
+      <div class="q">En Colombia, durante El Niño suele haber…</div>
+      <div class="ops"><button class="op">sequías, incendios y riesgo de racionamiento de agua y energía.</button><button class="op" data-por="Eso es más típico de La Niña.">inundaciones y deslizamientos.</button><button class="op" data-por="Sí cambia: en buena parte del país llueve mucho menos.">el mismo clima de siempre.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="oceanos">
+    <h2><span class="n">05</span> Los océanos también cambian</h2>
+    <p class="lead">El mar absorbe cerca de una cuarta parte del CO₂ que emitimos y más del 90 % del calor extra. Eso nos protege… pero tiene un costo.</p>
+    <div class="grid g3">
+      <div class="card"><h3>🌡️ Se calienta</h3><p>El agua caliente estresa a los corales: expulsan las algas que viven en ellos y les dan color y alimento. Se ponen blancos (<b>blanqueamiento</b>) y pueden morir. Ya ha pasado en San Andrés y en las Islas del Rosario.</p></div>
+      <div class="card"><h3>🧪 Se acidifica</h3><p>El CO₂ disuelto forma ácido carbónico (H₂CO₃) y el pH del mar baja. Así a corales, caracoles y erizos les cuesta más fabricar sus conchas y esqueletos de carbonato de calcio.</p></div>
+      <div class="card"><h3>📏 Sube su nivel</h3><p>El agua se expande al calentarse y se derriten los glaciares y los polos. Las costas se erosionan: en el Caribe colombiano hay playas y casas que el mar ya se llevó.</p></div>
+    </div>
+    <div class="dato">Huracanes más intensos también son una señal: en 2020 el huracán Iota, de categoría 5, destruyó casi por completo la isla de Providencia.</div>
+  </section>
+
+  <section class="sec" id="energias">
+    <h2><span class="n">06</span> Energías renovables y no renovables</h2>
+    <p class="lead">Las <b>no renovables</b> se acaban porque tardaron millones de años en formarse (petróleo, gas, carbón) y al quemarlas liberan CO₂ y contaminantes que afectan la salud. Las <b>renovables</b> vienen de fuentes que se reponen (sol, viento, agua, calor de la Tierra). Clasifica.</p>
+    <div class="card" id="clas-en"></div>
+    <div class="dato col">Cerca de dos terceras partes de la electricidad de Colombia vienen de <b>hidroeléctricas</b>. Por eso, cuando El Niño seca los embalses, hay riesgo de racionamiento. La Guajira tiene uno de los mejores vientos y soles del continente para producir energía eólica y solar.</div>
+  </section>
+
+  <section class="sec" id="huella">
+    <h2><span class="n">07</span> Calcula tu huella de carbono</h2>
+    <p class="lead">La <b>huella de carbono</b> es la cantidad de gases de efecto invernadero que producen tus actividades. Responde con sinceridad: no es un examen. Al final escoge compromisos que sí puedas cumplir.</p>
+    <div class="card huella" id="hu"></div>
+    <div class="card" style="margin-top:10px"><div class="medidor"><i id="hu-m" style="left:0"></i></div><div id="hu-t" aria-live="polite"></div></div>
+    <h3 style="margin-top:16px">Mis compromisos</h3>
+    <div class="card comp" id="comp"></div>
+  </section>
+
+  <section class="sec" id="acciones">
+    <h2><span class="n">08</span> Mitigar, adaptarse y ser resilientes</h2>
+    <p class="lead">Frente al cambio climático hay tres tipos de acciones. <b>Mitigar</b> es reducir las emisiones (atacar la causa). <b>Adaptarse</b> es prepararse para los cambios que ya vienen. Ser <b>resiliente</b> es poder recuperarse rápido después de un desastre. Clasifica estas acciones.</p>
+    <div class="card" id="clas-acc"></div>
+    <div class="clave">Ninguna persona sola detiene el cambio climático, pero las decisiones de muchos sí cambian las cosas: en la casa, en el colegio, en el barrio y en lo que exigimos a los gobiernos. Un proyecto escolar de reforestación, de ahorro de agua o de reciclaje es ciencia aplicada.</div>
+    <div class="sig"><a href="regiones.html"><small>← Anterior</small><b>🇨🇴 Ecosistemas de Colombia</b></a><a class="der" href="juego.html"><small>Siguiente →</small><b>🎮 Juego de repaso</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=2"></script>
+<script>
+(function(){
+/* ═══ Efecto invernadero ═══ */
+var co2=document.getElementById('co2');
+function dibTierra(c){var k=(c-280)/520,s='<defs><radialGradient id="esp" cx="50%" cy="50%" r="70%"><stop offset="0" stop-color="#1b2a4a"/><stop offset="1" stop-color="#0b1326"/></radialGradient><radialGradient id="ti" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#6fc3ff"/><stop offset="1" stop-color="#1c5fa8"/></radialGradient><marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="context-stroke"/></marker></defs>';
+  s+='<rect width="400" height="300" fill="url(#esp)"/><circle cx="40" cy="40" r="26" fill="#ffd34d"/>';
+  s+='<path d="M0 300 L0 210 Q200 120 400 210 L400 300Z" fill="url(#ti)"/><path d="M40 236 C70 214 110 206 150 212 C170 222 160 240 130 248 C100 256 60 252 40 236Z M236 196 C262 184 300 186 328 200 C340 214 318 228 290 226 C262 224 240 214 236 196Z" fill="#4f9e5a" opacity=".55"/>';
+  s+='<path d="M0 205 Q200 100 400 205" fill="none" stroke="rgba(255,140,60,'+(0.15+k*0.6)+')" stroke-width="'+(14+k*30)+'"/>';
+  s+='<text x="200" y="104" text-anchor="middle" style="font:700 11px Outfit" fill="#ffb27a">capa de gases de efecto invernadero</text>';
+  // luz solar entrante
+  [90,150,210].forEach(function(x){s+='<path d="M'+(x-40)+' 40 L'+x+' 190" stroke="#ffd34d" stroke-width="3" marker-end="url(#fl)"/>';});
+  // calor que sale y que rebota
+  var sale=Math.max(1,3-Math.round(k*2.4));
+  for(var i=0;i<3;i++){var x=240+i*40;if(i<sale)s+='<path d="M'+x+' 190 L'+(x+30)+' 30" stroke="#ff7b54" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#fl)"/>';else s+='<path d="M'+x+' 190 L'+(x+14)+' 130 L'+(x+28)+' 190" stroke="#ff4d2e" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#fl)"/>';}
+  s+='<text x="60" y="120" style="font:700 11px Outfit" fill="#ffe08a">luz del Sol</text><text x="268" y="250" style="font:700 11px Outfit" fill="#ffd0c0">calor (infrarrojo)</text>';
+  return s;}
+function verCO2(){var c=+co2.value,dt=3*Math.log(c/280)/Math.log(2);
+  document.getElementById('tierra').innerHTML=dibTierra(c);
+  var hito=c<=290?'Nivel de antes de la Revolución Industrial (siglo XVIII).':c<=330?'Nivel de 1970.':c<=380?'Nivel del año 2005.':c<=430?'<b>Nivel actual</b> (más de 420 ppm): el más alto en al menos 800 000 años.':c<=560?'El doble que antes de la industria: puede ocurrir en este siglo si no cambiamos.':'Escenario extremo de emisiones muy altas.';
+  document.getElementById('co2-t').innerHTML='<div class="termo">+'+dt.toFixed(1).replace('.',',')+' °C</div><p>Calentamiento aproximado a largo plazo respecto a la era preindustrial.</p><p style="margin-top:6px">'+hito+'</p>'+(dt>1.5?'<p style="margin-top:6px;color:#b42318;font-weight:700">Por encima de 1,5 °C los científicos esperan daños graves: pérdida de casi todos los corales, más sequías e inundaciones, glaciares perdidos.</p>':'');
+  if(c>=420)BIO.marcarSeccion('invernadero');}
+co2.oninput=verCO2;verCO2();
+// curva de Keeling (valores aproximados)
+var KD=[[1960,317],[1965,320],[1970,326],[1975,331],[1980,339],[1985,346],[1990,354],[1995,361],[2000,369],[2005,380],[2010,390],[2015,401],[2020,414],[2024,424]];
+function grafK(pred){var cv=document.getElementById('keel'),c=cv.getContext('2d'),W=900,H=260,px=50,py=24,x0=1960,x1=2050,y0=300,y1=500;
+  function X(a){return px+(W-px-20)*(a-x0)/(x1-x0);}function Y(v){return H-py-(H-2*py)*(v-y0)/(y1-y0);}
+  c.clearRect(0,0,W,H);c.font='12px Outfit';c.strokeStyle='#d6e8dc';c.fillStyle='#3c5446';
+  [300,350,400,450,500].forEach(function(v){c.beginPath();c.moveTo(px,Y(v));c.lineTo(W-20,Y(v));c.stroke();c.fillText(v,8,Y(v)+4);});
+  [1960,1980,2000,2020,2040].forEach(function(a){c.fillText(a,X(a)-14,H-4);});c.fillText('ppm',8,14);
+  c.strokeStyle='#c0392b';c.lineWidth=3;c.beginPath();KD.forEach(function(d,i){if(i)c.lineTo(X(d[0]),Y(d[1]));else c.moveTo(X(d[0]),Y(d[1]));});c.stroke();
+  KD.forEach(function(d){c.fillStyle='#c0392b';c.beginPath();c.arc(X(d[0]),Y(d[1]),3.5,0,7);c.fill();});
+  if(pred){c.setLineDash([6,5]);c.strokeStyle='#1a7fb5';c.beginPath();c.moveTo(X(2024),Y(424));c.lineTo(X(2050),Y(pred));c.stroke();
+    c.strokeStyle='#2e7d4f';c.beginPath();c.moveTo(X(2024),Y(424));c.lineTo(X(2050),Y(490));c.stroke();c.setLineDash([]);
+    c.fillStyle='#1a7fb5';c.fillText('tu predicción',X(2050)-90,Y(pred)-8);c.fillStyle='#2e7d4f';c.fillText('si sigue la tendencia',X(2050)-130,Y(490)-8);}}
+grafK(0);
+document.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){var v=+b.getAttribute('data-p');document.querySelectorAll('[data-p]').forEach(function(x){x.classList.toggle('on',x===b);});grafK(v);
+  document.getElementById('keel-t').innerHTML=(v===490?'✅ Bien leído: ':'🤔 Mira la pendiente: ')+'en los últimos 20 años el CO₂ ha subido unas <b>2,4 ppm por año</b>. Si sigue así, en 2050 estaríamos cerca de 490 ppm. Que la curva baje depende de reducir las emisiones: los datos permiten predecir, pero el futuro depende de lo que hagamos.';};});
+
+/* ═══ Emisiones de Colombia ═══ */
+var EM=[['Uso del suelo, deforestación y ganadería',59,'#3f8f4a','Deforestación, potreros, ganadería (metano) y cultivos. Por eso detener la deforestación de la Amazonia es lo más importante que puede hacer Colombia.'],['Energía y transporte',31,'#e07a3f','Gasolina y diésel de carros, buses y camiones; gas y carbón en industrias y centrales térmicas.'],['Residuos',7,'#8a6d3b','Los rellenos sanitarios producen metano cuando la basura orgánica se pudre sin oxígeno. Separar y compostar lo reduce.'],['Procesos industriales',3,'#6b7280','Producción de cemento, acero y químicos.']];
+var emSel=-1;
+function grafE(){var cv=document.getElementById('emis'),c=cv.getContext('2d'),W=900,H=250;c.clearRect(0,0,W,H);
+  EM.forEach(function(e,i){var y=20+i*56,w=(W-300)*e[1]/60;c.fillStyle=e[2];c.globalAlpha=emSel<0||emSel===i?1:.35;c.beginPath();c.roundRect?c.roundRect(280,y,w,40,8):c.rect(280,y,w,40);c.fill();c.globalAlpha=1;
+    c.fillStyle='#10261a';c.font='600 14px Outfit';c.fillText(e[0],8,y+25);c.font='800 15px JetBrains Mono';c.fillText('~'+e[1]+' %',290+w,y+26);});}
+document.getElementById('emis').addEventListener('click',function(ev){var r=this.getBoundingClientRect(),y=(ev.clientY-r.top)*250/r.height,i=Math.floor((y-20)/56);if(i<0||i>3)return;emSel=i;grafE();document.getElementById('emis-t').innerHTML='<b>'+EM[i][0]+':</b> '+EM[i][3];BIO.marcarSeccion('causas');});
+grafE();
+
+/* ═══ Consecuencias por región ═══ */
+var RC={
+ 'Andina':['🏔️','Los <b>glaciares</b> se derriten: Colombia ha perdido cerca del 90 % de su área glaciar desde mediados del siglo XIX y solo quedan seis nevados con glaciar. Los <b>páramos</b> se calientan y se secan, y con ellos el agua de las ciudades. Más deslizamientos en temporadas de lluvia.','Familias en laderas y barrios en zonas de riesgo; campesinos que dependen de la lluvia.'],
+ 'Caribe':['🏖️','Sube el nivel del mar y se erosionan las playas; las ciénagas se salinizan. En La Guajira las sequías se alargan y escasea el agua para las comunidades wayuu.','Pescadores, comunidades costeras y la niñez wayuu, afectada por la desnutrición durante las sequías.'],
+ 'Pacífica':['🌊','Lluvias más intensas e inundaciones; el mar más caliente y ácido daña los arrecifes y afecta la pesca. Los manglares, que protegen la costa, se ven presionados.','Comunidades afrodescendientes e indígenas ribereñas que dependen del río y del mar.'],
+ 'Orinoquía':['🔥','Temporadas secas más largas y extremas: incendios en las sabanas, mortandad de chigüiros por falta de agua (como en Paz de Ariporo en 2014) y ríos muy bajos.','Comunidades indígenas y campesinas de la sabana y su ganado.'],
+ 'Amazonía':['🌳','Sequías récord bajan el caudal de los ríos y aíslan a las comunidades que dependen de ellos para moverse y pescar. Si la deforestación continúa, partes de la selva podrían convertirse en sabana.','Pueblos indígenas de la selva, que además son quienes mejor la conservan.'],
+ 'Insular':['🪸','Blanqueamiento de corales y huracanes más fuertes, como Iota (2020) en Providencia. El agua dulce de las islas es escasa y se contamina con agua de mar.','Las comunidades raizales de San Andrés y Providencia.']
+};
+var rc=document.getElementById('regc'),vistRC={};
+rc.innerHTML=Object.keys(RC).map(function(r){return '<button class="chip" data-r="'+r+'">'+RC[r][0]+' '+r+'</button>';}).join('');
+rc.querySelectorAll('[data-r]').forEach(function(b){b.onclick=function(){var r=b.getAttribute('data-r');vistRC[r]=1;rc.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b);});
+  document.getElementById('regc-t').innerHTML='<h3>'+RC[r][0]+' Región '+r+'</h3><p>'+RC[r][1]+'</p><p style="margin-top:8px"><b>💛 Más vulnerables:</b> '+RC[r][2]+'</p><p style="margin-top:8px;font-size:.92rem;color:var(--cn-dim)">Piensa: ¿qué necesitaría esa comunidad para estar más protegida? ¿Qué podría hacer tu colegio para apoyarla?</p>';
+  if(Object.keys(vistRC).length>=4)BIO.marcarSeccion('consecuencias');};});
+rc.querySelector('[data-r]').click();
+
+/* ═══ El Niño y La Niña ═══ */
+var NN={
+ normal:{agua:[150,'#e05a3a','#3b82c4'],viento:1,t:'<b>Condiciones normales.</b> Los vientos alisios soplan de este a oeste y empujan el agua caliente hacia Asia. Junto a Suramérica sube agua fría y rica en nutrientes: buena pesca.',ef:''},
+ nino:{agua:[300,'#e05a3a','#3b82c4'],viento:0,t:'<b>El Niño.</b> Los vientos se debilitan y el agua caliente se acerca a Suramérica.',ef:'<ul><li>🏜️ Menos lluvias en las regiones Andina y Caribe: sequías.</li><li>🔥 Incendios forestales.</li><li>⚡💧 Bajan los embalses: riesgo de racionamiento de energía y agua.</li><li>🦟 Más calor: aumentan el dengue y la malaria.</li><li>🌾 Pérdidas en cultivos y ganadería.</li></ul>'},
+ nina:{agua:[90,'#e05a3a','#3b82c4'],viento:2,t:'<b>La Niña.</b> Los vientos se refuerzan y el agua fría se extiende por el Pacífico.',ef:'<ul><li>🌧️ Muchas más lluvias en buena parte del país.</li><li>🏚️ Inundaciones y deslizamientos (en 2010-2011 afectó a más de tres millones de personas).</li><li>🌉 Daños en vías y viviendas; pérdidas de cosechas.</li></ul>'}
+};
+function verNN(k){var n=NN[k],w=n.agua[0];
+  document.querySelectorAll('[data-n]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-n')===k);});
+  var s='<defs><linearGradient id="agua" x1="0" x2="1"><stop offset="0" stop-color="#e05a3a"/><stop offset="'+(w/420).toFixed(2)+'" stop-color="#f08c5a"/><stop offset="'+Math.min(1,(w+80)/420).toFixed(2)+'" stop-color="#7fb3d5"/><stop offset="1" stop-color="#2f6fa8"/></linearGradient></defs>';
+  s+='<rect width="420" height="240" fill="#e7f3fb"/><rect x="0" y="130" width="420" height="110" fill="url(#agua)"/>';
+  s+='<text x="10" y="226" style="font:800 12px Outfit" fill="#fff">ASIA / AUSTRALIA</text><path d="M380 70 L420 40 L420 240 L390 240 Z" fill="#7cbf5f"/><text transform="translate(410 200) rotate(-90)" style="font:800 12px Outfit" fill="#fff">SURAMÉRICA 🇨🇴</text>';
+  for(var i=0;i<n.viento+1;i++)s+='<path d="M'+(330-i*10)+' '+(100-i*14)+' L'+(200-i*10)+' '+(100-i*14)+'" stroke="#555" stroke-width="'+(n.viento?2.5:1.5)+'" stroke-dasharray="'+(n.viento?'':'6 6')+'" marker-end="url(#fv)"/>';
+  s+='<defs><marker id="fv" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#555"/></marker></defs><text x="210" y="'+(76-n.viento*14)+'" style="font:700 11px Outfit" fill="#333">vientos alisios '+(n.viento===0?'débiles':n.viento===2?'fuertes':'')+'</text>';
+  [[60,40],[120,30],[180,46]].forEach(function(c,i){var x=k==='nino'?c[0]+180:c[0];s+='<g transform="translate('+x+' '+c[1]+')"><ellipse rx="26" ry="12" fill="#fff"/><ellipse cx="14" cy="-6" rx="16" ry="10" fill="#fff"/>'+(i<2?'<path d="M-8 14 l-4 10 M4 14 l-4 10" stroke="#3b82c4" stroke-width="2"/>':'')+'</g>';});
+  s+='<text x="12" y="150" style="font:700 11px Outfit" fill="#fff">agua caliente</text><text x="'+Math.min(300,w+70)+'" y="150" style="font:700 11px Outfit" fill="#fff">agua fría</text>';
+  document.getElementById('pac').innerHTML=s;
+  document.getElementById('nn-t').innerHTML='<p>'+n.t+'</p>'+(n.ef?'<p style="margin-top:6px"><b>En Colombia:</b></p>'+n.ef:'');
+  if(k!=='normal')BIO.marcarSeccion('nino');}
+document.querySelectorAll('[data-n]').forEach(function(b){b.onclick=function(){verNN(b.getAttribute('data-n'));};});verNN('normal');
+
+/* ═══ Energías ═══ */
+BIO.clasificar(document.getElementById('clas-en'),{
+  cajas:[{id:'ren',titulo:'♻️ Renovable'},{id:'nor',titulo:'⛽ No renovable'}],
+  fichas:[{t:'☀️ Paneles solares',caja:'ren'},{t:'💨 Parques eólicos de La Guajira',caja:'ren'},{t:'💧 Hidroeléctrica',caja:'ren',pista:'El agua de los ríos se repone con la lluvia.'},{t:'⛽ Gasolina',caja:'nor'},{t:'⛏️ Carbón del Cerrejón',caja:'nor'},{t:'🔥 Gas natural',caja:'nor',pista:'Es un combustible fósil, como el petróleo.'},{t:'🌋 Geotermia (calor de los volcanes)',caja:'ren'},{t:'🌾 Biogás de estiércol',caja:'ren',pista:'Se produce con desechos que se renuevan cada día.'}]});
+
+/* ═══ Huella de carbono ═══ */
+var HQ=[
+ ['¿Cómo vas al colegio casi siempre?',[['🚶 A pie o en bicicleta',0],['🚌 En bus o transporte público',1],['🏍️ En moto',2],['🚗 En carro particular',3]]],
+ ['¿Cuántos días a la semana comes carne de res?',[['Ninguno',0],['1 o 2',1],['3 a 5',2],['Todos los días',3]]],
+ ['¿Qué tan seguido comes paquetes, gaseosas y comida ultraprocesada?',[['Casi nunca',0],['A veces',1],['Casi todos los días',2],['Varias veces al día',3]]],
+ ['¿Apagan las luces y los aparatos cuando no los usan en tu casa?',[['Siempre',0],['Casi siempre',1],['A veces',2],['Casi nunca',3]]],
+ ['¿Separan la basura y reciclan?',[['Sí, siempre',0],['A veces',1],['Casi nunca',2],['Nunca',3]]],
+ ['¿Cuánto tardas en la ducha?',[['Menos de 5 minutos',0],['5 a 10 minutos',1],['10 a 20 minutos',2],['Más de 20 minutos',3]]]
+];
+var hres={};
+document.getElementById('hu').innerHTML=HQ.map(function(q,i){return '<label class="q">'+(i+1)+'. '+q[0]+'</label><div class="chips">'+q[1].map(function(o,j){return '<button class="chip" data-q="'+i+'" data-v="'+o[1]+'">'+o[0]+'</button>';}).join('')+'</div>';}).join('');
+document.querySelectorAll('#hu [data-q]').forEach(function(b){b.onclick=function(){var q=b.getAttribute('data-q');hres[q]=+b.getAttribute('data-v');document.querySelectorAll('#hu [data-q="'+q+'"]').forEach(function(x){x.classList.toggle('on',x===b);});calcH();};});
+var CONSEJO=['Caminar, usar la bici o el transporte público en los trayectos cortos.','Cambiar algunas comidas con carne de res por fríjol, lenteja, garbanzo, huevo o pollo.','Preferir frutas, verduras y alimentos locales en vez de paquetes y gaseosas: menos empaques, menos transporte y mejor salud.','Apagar luces y desconectar cargadores y aparatos que no se usan.','Separar los residuos: orgánicos, aprovechables (plástico, papel, vidrio) y no aprovechables.','Duchas de 5 minutos: se ahorra agua y la energía para calentarla.'];
+function calcH(){var n=Object.keys(hres).length,tot=Object.keys(hres).reduce(function(a,k){return a+hres[k];},0),pct=n?tot/(n*3):0;
+  document.getElementById('hu-m').style.left='calc('+(pct*100)+'% - 3px)';
+  var peores=Object.keys(hres).filter(function(k){return hres[k]>=2;});
+  document.getElementById('hu-t').innerHTML=n<HQ.length?'Responde las '+HQ.length+' preguntas ('+n+' de '+HQ.length+').':'<b>'+(pct<0.34?'🌱 Tu huella es baja. ¡Sigue así y comparte tus hábitos!':pct<0.67?'🌤️ Tu huella es media. Hay cosas fáciles que puedes cambiar.':'🔥 Tu huella es alta. Pequeños cambios hacen una gran diferencia.')+'</b>'+(peores.length?'<p style="margin-top:6px">Lo que más puedes mejorar:</p><ul>'+peores.map(function(k){return '<li>'+CONSEJO[k]+'</li>';}).join('')+'</ul>':'');
+  if(n===HQ.length)BIO.marcarSeccion('huella');}
+calcH();
+var COMP=['Caminaré o iré en bici cuando sea posible.','Comeré menos carne de res y más legumbres.','Llevaré mi botella y no compraré agua en botella plástica.','Separaré los residuos en mi casa.','Apagaré luces y aparatos que no use.','Me ducharé en 5 minutos.','Participaré en una siembra o en un proyecto ambiental del colegio.','Compraré alimentos locales y de temporada.'];
+var guard=BIO.leer('bionom_compromisos',[]);
+document.getElementById('comp').innerHTML=COMP.map(function(c,i){return '<label><input type="checkbox" data-c="'+i+'"'+(guard.indexOf(i)>=0?' checked':'')+'> '+c+'</label>';}).join('')+'<p style="font-size:.84rem;color:var(--cn-dim);margin-top:6px">Tus compromisos se guardan solo en este dispositivo.</p>';
+document.querySelectorAll('#comp [data-c]').forEach(function(x){x.onchange=function(){var a=[].slice.call(document.querySelectorAll('#comp [data-c]:checked')).map(function(y){return +y.getAttribute('data-c');});BIO.guardar('bionom_compromisos',a);};});
+
+/* ═══ Mitigar, adaptarse, resiliencia ═══ */
+BIO.clasificar(document.getElementById('clas-acc'),{
+  cajas:[{id:'mit',titulo:'📉 Mitigación'},{id:'ada',titulo:'🛡️ Adaptación'},{id:'res',titulo:'🔁 Resiliencia'}],
+  fichas:[
+   {t:'Detener la deforestación de la Amazonia',caja:'mit',exp:'reduce las emisiones.'},
+   {t:'Cambiar buses de diésel por eléctricos',caja:'mit'},
+   {t:'Sembrar cultivos resistentes a la sequía',caja:'ada',exp:'prepara a los campesinos para el clima que viene.'},
+   {t:'No construir casas en zonas de deslizamiento',caja:'ada'},
+   {t:'Recoger agua lluvia para la temporada seca',caja:'ada'},
+   {t:'Planes de emergencia y redes vecinales para recuperarse tras una inundación',caja:'res',exp:'ayudan a volver rápido a la normalidad.'},
+   {t:'Seguros de cosecha para que los campesinos vuelvan a sembrar tras una sequía',caja:'res',pista:'Ayuda a recuperarse después del desastre.'},
+   {t:'Restaurar manglares que absorben carbono y frenan las olas',caja:'mit',exp:'¡también sirve para adaptarse! Muchas soluciones basadas en la naturaleza hacen las dos cosas.'}
+  ]});
+})();
+</script>
+<script src="text-zoom.js?v=2"></script>
+<script src="narracion.js?v=2"></script>
+<script src="pwa-install.js?v=2"></script>
+</body>
+</html>

@@ -51,7 +51,7 @@ button{font-family:inherit}
 .site-nav .nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;font-weight:600;padding:6px 9px;border-radius:8px;display:flex;align-items:center;gap:5px}
 .site-nav .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
 .site-nav .nav-links a.active{background:rgba(255,255,255,.22);color:#fff}
-@media(max-width:1240px){.site-nav .nav-links a .full{display:none}.site-nav .nav-links a{font-size:1rem;padding:6px 8px}}
+@media(max-width:1420px){.site-nav .nav-links a .full{display:none}.site-nav .nav-links a{font-size:1rem;padding:6px 8px}}
 @media(max-width:640px){.site-nav .nav-links a{display:none}.site-nav{padding:6px 12px}}
 
 /* Barra inferior en el celular (la arma bio.js) */

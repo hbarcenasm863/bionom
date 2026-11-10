@@ -21,6 +21,7 @@ var MODULOS=[
   {id:'evolucion',href:'evolucion.html',ico:'🦎',txt:'Evolución',full:'Evolución',niveles:['poblacion','organismo']},
   {id:'ecosistemas',href:'ecosistemas.html',ico:'🌳',txt:'Ecosistemas',full:'Ecosistemas',niveles:['poblacion','comunidad','ecosistema','bioma','biosfera']},
   {id:'regiones',href:'regiones.html',ico:'🇨🇴',txt:'Colombia',full:'Ecosistemas de Colombia',niveles:['ecosistema','bioma']},
+  {id:'ambiente',href:'ambiente.html',ico:'🌍',txt:'Ambiente',full:'Ambiente y cambio climático',niveles:['ecosistema','biosfera']},
   {id:'juego',href:'juego.html',ico:'🎮',txt:'Juego',full:'Juego'},
   {id:'docente',href:'docente.html',ico:'📘',txt:'Docente',full:'Docente'}
 ];
