@@ -39,6 +39,16 @@
 .anio-t span{flex:1;display:grid;place-items:center;font:700 .7rem Outfit;color:#fff}
 .anio-ev{display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:center}
 .anio-ev .e{font-size:3.6rem;text-align:center}
+.deriva canvas{width:100%;height:220px;background:#fff;border:1px solid var(--cn-brd);border-radius:12px}
+.mazorcas{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin:10px 0}
+.mazorcas button{border:2px solid var(--cn-brd);border-radius:12px;background:#fff;padding:4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;font:700 .72rem var(--cn-mono)}
+.mazorcas button.on{border-color:var(--cn-naranja);background:#fff7ec}
+@media(max-width:600px){.mazorcas{grid-template-columns:repeat(4,1fr)}}
+.homi{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.homi button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:10px 6px;cursor:pointer;text-align:center}
+.homi button.on{border-color:var(--cn-naranja);background:#fff7ec}
+.homi .ma{font:800 .8rem var(--cn-mono);color:var(--cn-naranja)}
+.cereb{height:16px;border-radius:999px;background:linear-gradient(90deg,#e9a3b3,#b5527a);transition:width .5s}
 .anio-ev .f{font:800 1.1rem var(--cn-mono);color:var(--cn-naranja)}
 </style>
 </head>
@@ -57,13 +67,17 @@
     <a href="#jirafas">🦒 Lamarck vs. Darwin</a>
     <a href="#seleccion">🦋 Simulación</a>
     <a href="#pinzones">🐦 Los pinzones</a>
+    <a href="#variacion">🎲 Variación y deriva</a>
+    <a href="#artificial">🌽 Selección artificial</a>
     <a href="#evidencias">🔎 Evidencias</a>
+    <a href="#humana">🧑 Evolución humana</a>
+    <a href="#endemicas">🐸 Endémicas e invasoras</a>
     <a href="#tiempo">📅 El año de la Tierra</a>
   </nav>
 
   <section class="sec" id="ideas">
-    <h2><span class="n">01</span> ¿Cambian las especies? Una pregunta antigua</h2>
-    <p class="lead">Durante siglos se pensó que cada especie había sido creada tal como es y no cambiaba. Mira cómo fueron apareciendo las ideas.</p>
+    <h2><span class="n">01</span> Las grandes ideas sobre la vida</h2>
+    <p class="lead">Durante siglos se pensó que cada especie había sido creada tal como es y no cambiaba. Recorre los grandes hitos de la biología que cambiaron esa idea.</p>
     <div class="tl" id="tl" role="tablist"></div>
     <div class="card" id="tl-card" aria-live="polite"></div>
   </section>
@@ -107,8 +121,39 @@
     <div class="dato">Cuando una población queda separada (por el mar, una cordillera o un río) y cada grupo evoluciona por su lado, con el tiempo pueden volverse <b>especies distintas</b>, que ya no se reproducen entre sí. Eso se llama <b>especiación</b>. En Colombia, la cordillera de los Andes separó poblaciones de ranas, aves y mariposas y por eso tenemos tantas especies.</div>
   </section>
 
+  <section class="sec" id="variacion">
+    <h2><span class="n">05</span> ¿De dónde sale la variación? Y el papel del azar</h2>
+    <p class="lead">La selección natural solo puede escoger entre variantes que ya existen. Esa <b>variabilidad genética</b> viene de tres fuentes: las <b>mutaciones</b> (cambios nuevos en el ADN), el <b>entrecruzamiento</b> en la meiosis y la <b>fecundación</b>, que junta al azar los genes de dos padres. Por eso los hermanos no son idénticos.</p>
+    <div class="clave">Una población con mucha variabilidad genética tiene más posibilidades de que algunos individuos resistan un cambio del ambiente (una enfermedad, el calentamiento). Las especies con muy pocos individuos pierden variabilidad y quedan más expuestas a la extinción: por eso la conservación busca mantener poblaciones grandes y conectadas.</div>
+    <h3 style="margin-top:18px">🎲 Simulación: la deriva genética</h3>
+    <p>Además de la selección, los alelos cambian de frecuencia <b>por puro azar</b>: algunos individuos dejan más hijos por suerte. Eso es la <b>deriva genética</b>, y es mucho más fuerte en poblaciones pequeñas. Empezamos con 50 % de alelos rojos en 5 poblaciones; ninguno es mejor que el otro.</p>
+    <div class="card deriva">
+      <div class="ctrl"><label>Tamaño de cada población <select id="dz-n"><option value="10">10 individuos</option><option value="50" selected>50 individuos</option><option value="500">500 individuos</option></select></label><button type="button" class="cn-btn cn-btn--primary" id="dz-go">▶ Simular 60 generaciones</button></div>
+      <canvas id="dz" width="900" height="220" aria-label="Frecuencia del alelo rojo en cinco poblaciones"></canvas>
+      <p id="dz-t" style="margin-top:8px" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="sec" id="artificial">
+    <h2><span class="n">06</span> Selección artificial: cuando el ser humano escoge</h2>
+    <p class="lead">Desde hace 10 000 años los agricultores escogen las plantas y animales con las características que prefieren y solo esos se reproducen. Del <b>teosinte</b>, un pasto silvestre de México con mazorcas de 5 cm, salió el <b>maíz</b>. Haz tú la selección: en cada generación escoge las <b>3 mazorcas más grandes</b> para sembrar.</p>
+    <div class="card">
+      <div class="mazorcas" id="maz"></div>
+      <div class="ctrl" style="justify-content:space-between"><span class="marcador" id="maz-t" aria-live="polite"></span><button type="button" class="cn-btn cn-btn--primary" id="maz-go" disabled>🌱 Sembrar las 3 escogidas</button></div>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>🥦 Una sola especie, muchas verduras</h3><p>El repollo, el brócoli, la coliflor, la col de Bruselas y el kale son <b>la misma especie</b> (<i>Brassica oleracea</i>): los agricultores seleccionaron hojas, flores o yemas más grandes.</p></div>
+      <div class="card"><h3>☕ En Colombia</h3><p>Cenicafé obtuvo la variedad de café <b>Castillo</b>, resistente a la roya, cruzando y seleccionando plantas durante décadas. También se han seleccionado razas de ganado criollo como el romosinuano y el blanco orejinegro.</p></div>
+    </div>
+    <div class="dato ojo">La selección artificial tiene un costo: los monocultivos de una sola variedad pierden <b>diversidad genética</b> y una plaga puede acabar con todo. Por eso es tan valioso conservar las <b>semillas nativas</b> que guardan las comunidades campesinas e indígenas.</div>
+    <div class="chequeo" data-ok="1" data-exp="En la selección artificial el ser humano decide qué individuos se reproducen; en la natural, lo decide el ambiente.">
+      <div class="q">¿Cuál es la diferencia principal entre la selección natural y la artificial?</div>
+      <div class="ops"><button class="op" data-por="Las dos funcionan con la variación que ya existe.">La artificial crea variación nueva.</button><button class="op">En la artificial, las personas escogen quién se reproduce.</button><button class="op" data-por="Las dos tardan muchas generaciones.">La artificial ocurre en un solo año.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="evidencias">
-    <h2><span class="n">05</span> Las evidencias de la evolución</h2>
+    <h2><span class="n">07</span> Las evidencias de la evolución</h2>
     <p class="lead">La evolución no es una simple opinión: muchas pruebas independientes llevan a la misma conclusión.</p>
     <div class="tabs"><button class="chip on" data-tab="ev-hom">🦴 Anatomía comparada</button><button class="chip" data-tab="ev-fos">🦖 Fósiles</button><button class="chip" data-tab="ev-mol">🧬 ADN</button><button class="chip" data-tab="ev-emb">🥚 Embriología</button></div>
     <div class="tab-p" id="ev-hom">
@@ -135,14 +180,37 @@
     </div>
   </section>
 
+  <section class="sec" id="humana">
+    <h2><span class="n">08</span> La evolución humana</h2>
+    <p class="lead">No venimos del chimpancé: los dos <b>compartimos un antepasado</b> que vivió en África hace unos 7 millones de años. Desde entonces aparecieron muchas especies de homínidos; hoy solo quedamos nosotros. Toca cada uno.</p>
+    <div class="homi" id="homi"></div>
+    <div class="card" id="homi-t" style="margin-top:10px" aria-live="polite"></div>
+    <div class="dato col">Los primeros pobladores llegaron a lo que hoy es Colombia hace más de 12 000 años. En <b>El Abra</b> y <b>Tibitó</b>, en la Sabana de Bogotá, se han encontrado sus herramientas de piedra y restos de mastodontes y caballos americanos que cazaban. Las pinturas de <b>Chiribiquete</b> son de las más antiguas de América.</div>
+  </section>
+
+  <section class="sec" id="endemicas">
+    <h2><span class="n">09</span> Especies endémicas e invasoras</h2>
+    <p class="lead">Una especie <b>endémica</b> solo existe en un lugar del mundo: evolucionó allí y, si desaparece de allí, desaparece del planeta. Una especie <b>invasora</b> fue llevada por el ser humano a un lugar donde no tiene enemigos naturales y se multiplica sin control, desplazando a las nativas. Clasifica estos casos de Colombia.</p>
+    <div class="card" id="clas-end"></div>
+    <div class="dato">Las mutaciones y la selección pueden ayudar a una especie invasora a adaptarse muy rápido a su nuevo hogar. Las endémicas, en cambio, suelen tener poblaciones pequeñas y poca variabilidad: son de las más vulnerables al cambio climático.</div>
+  </section>
+
   <section class="sec" id="tiempo">
-    <h2><span class="n">06</span> El año de la Tierra</h2>
+    <h2><span class="n">10</span> El año de la Tierra y las eras geológicas</h2>
     <p class="lead">La Tierra tiene unos <b>4600 millones de años</b>. Imagina que toda esa historia cupiera en <b>un solo año</b>: el 1 de enero se forma la Tierra y la medianoche del 31 de diciembre es hoy. Mueve el control.</p>
     <div class="card">
       <div class="anio-t" aria-hidden="true"><span style="background:#7b4bb7;flex:88">Precámbrico (hasta mediados de noviembre)</span><span style="background:#1a7fb5;flex:6.5">Paleo.</span><span style="background:#2e7d4f;flex:4">Meso.</span><span style="background:#c2410c;flex:1.5">C</span></div>
       <input type="range" id="anio" min="0" max="11" value="0" style="width:100%" aria-label="Momento de la historia">
       <div class="anio-ev" id="anio-ev" aria-live="polite" style="margin-top:12px"></div>
     </div>
+    <h3 style="margin-top:18px">Las eras geológicas y los cambios en los seres vivos</h3>
+    <div class="tbl-wrap"><table class="t">
+      <tr><th>Era</th><th>Hace (millones de años)</th><th>Vida</th><th>Novedades en órganos y sistemas</th></tr>
+      <tr><td><b>Precámbrico</b></td><td>4600 – 541</td><td>Bacterias, arqueas, primeras eucariotas y los primeros animales blandos.</td><td>Aparece la célula, la fotosíntesis, el núcleo y la pluricelularidad.</td></tr>
+      <tr><td><b>Paleozoico</b></td><td>541 – 252</td><td>Explosión cámbrica, peces, plantas terrestres, anfibios, primeros reptiles. Termina con la mayor extinción de la historia.</td><td>Esqueletos y conchas; mandíbulas; vasos conductores en las plantas; pulmones y patas en los tetrápodos; el huevo con cáscara de los reptiles.</td></tr>
+      <tr><td><b>Mesozoico</b></td><td>252 – 66</td><td>Dinosaurios, primeros mamíferos y aves, plantas con flores. Termina con el asteroide.</td><td>Plumas, sangre caliente, glándulas mamarias, flores y frutos.</td></tr>
+      <tr><td><b>Cenozoico</b></td><td>66 – hoy</td><td>Diversificación de mamíferos y aves; se levantan los Andes; aparecen los humanos.</td><td>Placenta muy desarrollada, cerebro grande, bipedalismo en los homínidos.</td></tr>
+    </table></div>
     <div class="chequeo" data-ok="3" data-exp="Los seres humanos modernos aparecimos hace unos 300 000 años: en el año de la Tierra, ¡unos 34 minutos antes de la medianoche del 31 de diciembre!">
       <div class="q">En el «año de la Tierra», ¿cuándo aparecen los seres humanos?</div>
       <div class="ops"><button class="op" data-por="En marzo apenas aparecieron las primeras bacterias.">En marzo</button><button class="op" data-por="A mediados de diciembre todavía vivían los dinosaurios.">A mediados de diciembre</button><button class="op" data-por="Muy cerca, pero aún falta: el 30 de diciembre no había humanos.">El 30 de diciembre</button><button class="op">El 31 de diciembre, en la última media hora</button></div>
@@ -162,7 +230,11 @@ var ID=[
  {a:'1835',ico:'🚢',q:'Charles Darwin en el Beagle',d:'Durante un viaje de 5 años alrededor del mundo, Darwin observa fósiles en Suramérica y los pinzones y tortugas de las Galápagos. Empieza a pensar que las especies se transforman.'},
  {a:'1858',ico:'🤝',q:'Alfred Russel Wallace',d:'Trabajando en la Amazonia y en Indonesia, Wallace llega por su cuenta a la misma idea de Darwin. Presentan juntos la teoría de la <b>selección natural</b>.'},
  {a:'1859',ico:'📖',q:'«El origen de las especies»',d:'Darwin publica su libro: los individuos de una población son diferentes; nacen más de los que pueden sobrevivir; los que tienen variaciones ventajosas sobreviven y se reproducen más; así cambian las especies.'},
- {a:'1940',ico:'🧬',q:'Teoría sintética (neodarwinismo)',d:'Se une la selección natural de Darwin con la genética de Mendel: la variación viene de las <b>mutaciones</b> y de la mezcla de genes en la reproducción sexual.'}
+ {a:'1865',ico:'🌱',q:'Gregor Mendel',d:'Publica sus experimentos con arvejas y descubre las leyes de la herencia. Nadie le presta atención hasta 1900.'},
+ {a:'1940',ico:'🧬',q:'Teoría sintética (neodarwinismo)',d:'Se une la selección natural de Darwin con la genética de Mendel: la variación viene de las <b>mutaciones</b> y de la mezcla de genes en la reproducción sexual.'},
+ {a:'1953',ico:'🪜',q:'Watson, Crick y Franklin',d:'Se descubre la estructura de doble hélice del ADN: por fin se entiende cómo se copian y heredan los genes.'},
+ {a:'2003',ico:'📚',q:'Proyecto Genoma Humano',d:'Se termina de leer la secuencia completa del ADN humano: unos 3000 millones de letras y cerca de 20 000 genes.'},
+ {a:'2012',ico:'✂️',q:'CRISPR',d:'Emmanuelle Charpentier y Jennifer Doudna desarrollan una herramienta para editar genes con precisión. Reciben el Premio Nobel en 2020.'}
 ];
 var tl=document.getElementById('tl'),card=document.getElementById('tl-card');
 tl.innerHTML=ID.map(function(h,i){return '<button type="button" class="tl-it" data-i="'+i+'"><div class="pt">'+(i+1)+'</div><div class="a" style="font-size:.75rem">'+h.a+'</div><div class="n">'+h.q.split(' · ')[0]+'</div></button>';}).join('');
@@ -324,6 +396,69 @@ var EV=[
 var an=document.getElementById('anio');
 function verAnio(){var e=EV[+an.value];document.getElementById('anio-ev').innerHTML='<div class="e">'+e[0]+'</div><div><div class="f">'+e[1]+'</div><p>'+e[2]+'</p></div>';if(+an.value===11)BIO.marcarSeccion('tiempo');}
 an.oninput=verAnio;verAnio();
+
+/* ═══ Deriva genética ═══ */
+function deriva(){var N=+document.getElementById('dz-n').value,cv=document.getElementById('dz'),c=cv.getContext('2d'),W=900,H=220,pad=34,G=60,cols=['#e5484d','#3e8ed0','#2e9a5a','#f0a020','#7b4bb7'],fij=0;
+  c.clearRect(0,0,W,H);c.font='12px Outfit';c.strokeStyle='#d6e8dc';c.fillStyle='#3c5446';
+  [0,50,100].forEach(function(v){var y=H-pad-(H-2*pad)*v/100;c.beginPath();c.moveTo(pad,y);c.lineTo(W-10,y);c.stroke();c.fillText(v+'%',2,y+4);});c.fillText('generaciones →',W-100,H-6);
+  for(var r=0;r<5;r++){var p=0.5,pts=[p];for(var g=0;g<G;g++){var k=0;for(var i=0;i<2*N;i++)if(Math.random()<p)k++;p=k/(2*N);pts.push(p);}
+    if(p===0||p===1)fij++;
+    c.strokeStyle=cols[r];c.lineWidth=2.5;c.beginPath();pts.forEach(function(v,i){var x=pad+(W-pad-14)*i/G,y=H-pad-(H-2*pad)*v;if(i)c.lineTo(x,y);else c.moveTo(x,y);});c.stroke();}
+  document.getElementById('dz-t').innerHTML='Con '+N+' individuos, en <b>'+fij+' de 5</b> poblaciones uno de los alelos desapareció del todo (o se volvió el único) solo por azar. '+(N<=10?'En poblaciones pequeñas la deriva es muy fuerte: así se pierde variabilidad.':N>=500?'En poblaciones grandes la frecuencia casi no cambia por azar.':'Vuelve a simular y prueba con 10 y con 500 individuos.');
+  BIO.marcarSeccion('variacion');}
+document.getElementById('dz-go').onclick=deriva;
+
+/* ═══ Selección artificial: mazorcas ═══ */
+var media=5,gen=0,mz=[],escog=[];
+var mzId=0;
+function mazorca(cm,mx){mzId++;var r=cm/mx,h=28+84*r,w=6+9*r,top=118-h,cx=22,id='mz'+mzId;
+  var forma='M'+cx+' '+top+' C'+(cx+w*1.25)+' '+(top+h*0.12)+' '+(cx+w)+' '+(top+h*0.85)+' '+cx+' '+(top+h)+' C'+(cx-w)+' '+(top+h*0.85)+' '+(cx-w*1.25)+' '+(top+h*0.12)+' '+cx+' '+top+'Z';
+  var g='';for(var y=top+4;y<top+h-2;y+=4.2)for(var x=cx-w;x<=cx+w;x+=4)g+='<ellipse cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" rx="1.9" ry="1.8" fill="url(#gr'+id+')"/>';
+  return '<svg width="44" height="122" viewBox="0 0 44 122" aria-hidden="true"><defs><radialGradient id="gr'+id+'" cx="35%" cy="35%"><stop offset="0" stop-color="#fff2b0"/><stop offset="1" stop-color="#e2a91b"/></radialGradient><clipPath id="cp'+id+'"><path d="'+forma+'"/></clipPath></defs>'+
+   '<path d="'+forma+'" fill="#d99a16" stroke="#9a6a08" stroke-width="1"/><g clip-path="url(#cp'+id+')">'+g+'</g>'+
+   '<path d="M'+cx+' 120 C'+(cx-12)+' '+(top+h*0.7)+' '+(cx-14)+' '+(top+h*0.4)+' '+(cx-6)+' '+(top+h*0.25)+' C'+(cx-6)+' '+(top+h*0.55)+' '+(cx-2)+' '+(top+h*0.8)+' '+cx+' 120Z" fill="#7cb342" stroke="#4f7d22" stroke-width=".8"/>'+
+   '<path d="M'+cx+' 120 C'+(cx+12)+' '+(top+h*0.75)+' '+(cx+13)+' '+(top+h*0.45)+' '+(cx+7)+' '+(top+h*0.3)+' C'+(cx+6)+' '+(top+h*0.6)+' '+(cx+2)+' '+(top+h*0.85)+' '+cx+' 120Z" fill="#8bc34a" stroke="#4f7d22" stroke-width=".8"/>'+
+   '<path d="M'+cx+' '+top+' q-3 -6 -1 -10 M'+cx+' '+top+' q3 -6 2 -10" stroke="#c9a76b" stroke-width="1.2" fill="none"/></svg>';}
+function nuevaMaz(){mz=[];for(var i=0;i<8;i++)mz.push(Math.max(2,+(media+(Math.random()-.5)*media*0.7).toFixed(1)));escog=[];pintarMaz();}
+function pintarMaz(){var b=document.getElementById('maz');var mx=Math.max.apply(null,mz);b.innerHTML=mz.map(function(c,i){return '<button type="button" data-i="'+i+'" class="'+(escog.indexOf(i)>=0?'on':'')+'">'+mazorca(c,mx)+c.toString().replace('.',',')+' cm</button>';}).join('');
+  b.querySelectorAll('button').forEach(function(x){x.onclick=function(){var i=+x.getAttribute('data-i'),k=escog.indexOf(i);if(k>=0)escog.splice(k,1);else if(escog.length<3)escog.push(i);pintarMaz();};});
+  document.getElementById('maz-go').disabled=escog.length<3;
+  document.getElementById('maz-t').textContent='Generación '+gen+' · Tamaño promedio: '+media.toFixed(1).replace('.',',')+' cm · Escogidas: '+escog.length+'/3';}
+document.getElementById('maz-go').onclick=function(){var prom=escog.reduce(function(a,i){return a+mz[i];},0)/3,mejores=escog.every(function(i){return mz.filter(function(c){return c>mz[i];}).length<3;});
+  media=media+(prom-media)*0.6;gen++;if(gen>=5)BIO.marcarSeccion('artificial');nuevaMaz();
+  if(gen>=6)document.getElementById('maz-t').textContent+=' 🌽 ¡En '+gen+' generaciones pasaste de 5 cm a '+media.toFixed(1).replace('.',',')+' cm! Los agricultores tardaron miles de años con muchas más características.';};
+nuevaMaz();
+
+/* ═══ Evolución humana ═══ */
+var HOM=[
+ ['Sahelanthropus','7','🦍',350,'Uno de los homínidos más antiguos conocidos (Chad, África). Probablemente ya caminaba algo erguido.','Biológico: inicio del bipedalismo.'],
+ ['Australopithecus afarensis («Lucy»)','3,2','🚶',450,'Medía cerca de 1,1 m. Caminaba en dos patas, pero su cerebro era como el de un chimpancé y aún trepaba a los árboles.','Biológico: bipedalismo completo; cerebro pequeño.'],
+ ['Homo habilis','2,4','🪨',600,'El «hombre hábil»: fabricaba las primeras herramientas de piedra para cortar carne y romper huesos.','Cultural: primeras herramientas.'],
+ ['Homo erectus','1,9','🔥',900,'Cuerpo parecido al nuestro. Dominó el fuego, cocinaba los alimentos y fue el primero en salir de África hacia Asia y Europa.','Biológico: cuerpo alto, cerebro más grande. Cultural: fuego, viajes.'],
+ ['Homo neanderthalensis','0,4 a 0,04','🦴',1450,'Vivió en Europa y Asia en clima frío. Enterraba a sus muertos y fabricaba herramientas complejas. Muchos humanos actuales tenemos un poco de su ADN.','Cultural: entierros, adornos.'],
+ ['Homo sapiens','0,3 hasta hoy','🧑',1350,'Nuestra especie apareció en África hace unos 300 000 años y se extendió por todo el planeta. Lenguaje complejo, arte, agricultura y ciudades.','Cultural: lenguaje simbólico, arte, agricultura, ciencia.']
+];
+var hb=document.getElementById('homi');
+hb.innerHTML=HOM.map(function(h,i){return '<button type="button" data-i="'+i+'"><div style="font-size:2rem">'+h[2]+'</div><b style="font-size:.85rem">'+h[0]+'</b><div class="ma">hace '+h[1]+' Ma</div></button>';}).join('');
+var vistH={};
+function verH(i){var h=HOM[i];vistH[i]=1;hb.querySelectorAll('button').forEach(function(b,j){b.classList.toggle('on',j===i);});
+  document.getElementById('homi-t').innerHTML='<h3>'+h[2]+' '+h[0]+'</h3><p style="color:var(--cn-naranja);font-weight:800">Hace '+h[1]+' millones de años</p><p>'+h[4]+'</p><p style="margin-top:6px"><b>Cambios:</b> '+h[5]+'</p><p style="margin-top:8px;font-size:.9rem"><b>Volumen del cerebro:</b> ~'+h[3]+' cm³</p><div style="background:#eef3ef;border-radius:999px"><div class="cereb" style="width:'+(h[3]/1500*100)+'%"></div></div>';
+  if(Object.keys(vistH).length>=5)BIO.marcarSeccion('humana');}
+hb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verH(+b.getAttribute('data-i'));};});verH(0);
+
+/* ═══ Endémicas e invasoras ═══ */
+BIO.clasificar(document.getElementById('clas-end'),{
+  cajas:[{id:'end',titulo:'🇨🇴 Endémica de Colombia'},{id:'inv',titulo:'🚨 Invasora en Colombia'}],
+  fichas:[
+   {t:'Tití cabeciblanco',caja:'end',exp:'solo vive en los bosques del Caribe colombiano.'},
+   {t:'Rana dorada venenosa',caja:'end',exp:'solo vive en un pequeño sector del Chocó.'},
+   {t:'Hipopótamos del Magdalena',caja:'inv',exp:'escaparon de una hacienda en los años 90 y ya son más de 150.'},
+   {t:'Pez león del Caribe',caja:'inv',exp:'viene del Indo-Pacífico y se come a los peces nativos de los arrecifes.'},
+   {t:'Retamo espinoso',caja:'inv',exp:'arbusto europeo que invade los cerros de Bogotá y favorece los incendios.'},
+   {t:'Caracol gigante africano',caja:'inv',exp:'plaga de cultivos que puede transmitir parásitos.'},
+   {t:'Periquito de Santa Marta',caja:'end',exp:'solo vive en la Sierra Nevada de Santa Marta.',pista:'Fíjate en el nombre del lugar.'},
+   {t:'Rana toro',caja:'inv',exp:'traída de Norteamérica, devora ranas nativas.',pista:'Fue traída de Norteamérica para criadero.'}
+  ]});
 })();
 </script>
 <script src="text-zoom.js?v=2"></script>
