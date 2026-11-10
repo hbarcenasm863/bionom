@@ -141,7 +141,7 @@ function tarjeta(w, i, c, clave){
     + '</div>';
 }
 function hojas(c, v, clave, etiqueta){
-  const ws = palabrasDe(c, v), out = [], tit = (c.titulo || 'Ahorcado de química') + (clave ? ' · Clave' : '');
+  const ws = palabrasDe(c, v), out = [], tit = (c.titulo || (window.HOJA_TITULOS&&window.HOJA_TITULOS.ahorcado||'Ahorcado de química')) + (clave ? ' · Clave' : '');
   const ins = 'Lee la primera pista y escribe una letra a la vez en las casillas. Tacha en el abecedario cada letra que uses; por cada letra que no esté, dibuja una parte del muñeco (cabeza, tronco, dos brazos y dos piernas: 6 fallos). Lee la pista siguiente solo si la necesitas. Las tildes no cuentan como letra aparte.';
   for(let ini = 0; ini < ws.length; ini += POR_HOJA){
     const pag = ws.slice(ini, ini + POR_HOJA);

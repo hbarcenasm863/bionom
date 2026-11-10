@@ -1,6 +1,6 @@
 /* ═════════════════════════════════════════════════════════════════════
    sopa.js — pestaña «Sopa de letras» del generador docente (docente.html)
-   Mismo archivo en ChromaNom (sopa.js) e IonNom (assets/sopa.js).
+   Copiado de ChromaNom (sopa.js); el título por defecto viene de window.HOJA_TITULOS.
    Usa el banco del Ahorcado (BANCO_AHORCADO y AHORCADO_GRUPOS): palabra
    clave del sitio + 3 pistas basadas en lo que explican sus páginas.
    - Hoja para imprimir: cuadrícula con las palabras escondidas y, debajo,
@@ -201,7 +201,7 @@ function hoja(s, c, clave, etiqueta){
   const lista = c.ayuda === 'lista'
     ? '<div class="sp-lista">' + s.puestas.map(p => '<span>' + p.pal + '</span>').join('') + '</div>'
     : '<ol class="sp-pistas">' + s.puestas.map(p => '<li>' + esc(pistaDe(p, c)) + ' <span class="sp-n">(' + p.pal.length + ')</span> <span class="sp-lin">' + (clave ? '<b>' + p.pal + '</b>' : '') + '</span></li>').join('') + '</ol>';
-  return '<div class="sp-hoja">' + encabezadoHoja((c.titulo || 'Sopa de letras de química') + (clave ? ' · Clave' : ''), clave ? '' : ins, etiqueta, !clave)
+  return '<div class="sp-hoja">' + encabezadoHoja((c.titulo || (window.HOJA_TITULOS&&window.HOJA_TITULOS.sopa||'Sopa de letras de química')) + (clave ? ' · Clave' : ''), clave ? '' : ins, etiqueta, !clave)
     + '<div class="sp-cuerpo"><div class="sp-centro">' + tablaHTML(s, clave) + '</div>' + lista + '</div>' + pieHoja() + '</div>';
 }
 function txtDirs(d){ return d === 'facil' ? 'de izquierda a derecha o de arriba abajo' : d === 'media' ? 'en horizontal, en vertical o en diagonal' : 'en cualquier dirección, también al revés'; }
