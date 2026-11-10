@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Evolución — BioNom</title>
+<meta name="description" content="Lamarck y Darwin, selección natural con una simulación de polillas, evidencias de la evolución, órganos homólogos y el calendario de la historia de la Tierra.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=2">
+<style>
+.jir{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.jir{grid-template-columns:1fr}}
+.jir .col{background:#fff;border:1px solid var(--cn-brd);border-radius:var(--cn-r);padding:12px;box-shadow:var(--cn-sh)}
+.jir h3{text-align:center}
+.jir svg{width:100%;height:190px}
+.jir p{font-size:.92rem;min-height:4.2em}
+#bosque{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;cursor:crosshair;touch-action:manipulation;user-select:none}
+#bosque .pol{position:absolute;width:44px;height:30px;transform:translate(-50%,-50%);cursor:pointer;border:0;background:none;padding:0}
+#bosque .pol svg{width:100%;height:100%}
+#bosque .pol.comida{animation:comida .35s forwards}
+@keyframes comida{to{transform:translate(-50%,-50%) scale(0) rotate(90deg);opacity:0}}
+.sim-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin:10px 0}
+.sim-bar .stat{font-weight:800;color:var(--cn-brand-d)}
+#graf{width:100%;height:200px;background:#fff;border:1px solid var(--cn-brd);border-radius:12px}
+.homo{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.homo .an{background:#fff;border:1px solid var(--cn-brd);border-radius:14px;padding:10px;text-align:center;box-shadow:var(--cn-sh)}
+.homo svg{width:100%;height:190px;background:radial-gradient(circle at 50% 45%,#fbfdfb,#eef5f0);border-radius:10px}
+.homo .hb{cursor:pointer;transition:opacity .2s}
+.homo.filtro .hb{opacity:.15}
+.homo.filtro .hb.on{opacity:1}
+.ley-h{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.anio-t{position:relative;height:56px;border-radius:12px;overflow:hidden;display:flex;margin:10px 0}
+.anio-t span{flex:1;display:grid;place-items:center;font:700 .7rem Outfit;color:#fff}
+.anio-ev{display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:center}
+.anio-ev .e{font-size:3.6rem;text-align:center}
+.anio-ev .f{font:800 1.1rem var(--cn-mono);color:var(--cn-naranja)}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">🦎 Nivel de población</span>
+    <h1>Evolución: la vida cambia con el tiempo</h1>
+    <p>Las especies no son fijas: cambian a lo largo de muchas generaciones. Aquí comparas las ideas de <b>Lamarck</b> y de <b>Darwin</b>, haces de pájaro en una <b>simulación de selección natural</b> y revisas las <b>pruebas</b> que muestran que todos los seres vivos están emparentados. Recuerda: <b>evolucionan las poblaciones, no los individuos</b>.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Niveles: organismo → población</a>
+  </header>
+  <nav class="toc" aria-label="En esta página">
+    <strong>En esta página</strong>
+    <a href="#ideas">💭 Las ideas</a>
+    <a href="#jirafas">🦒 Lamarck vs. Darwin</a>
+    <a href="#seleccion">🦋 Simulación</a>
+    <a href="#pinzones">🐦 Los pinzones</a>
+    <a href="#evidencias">🔎 Evidencias</a>
+    <a href="#tiempo">📅 El año de la Tierra</a>
+  </nav>
+
+  <section class="sec" id="ideas">
+    <h2><span class="n">01</span> ¿Cambian las especies? Una pregunta antigua</h2>
+    <p class="lead">Durante siglos se pensó que cada especie había sido creada tal como es y no cambiaba. Mira cómo fueron apareciendo las ideas.</p>
+    <div class="tl" id="tl" role="tablist"></div>
+    <div class="card" id="tl-card" aria-live="polite"></div>
+  </section>
+
+  <section class="sec" id="jirafas">
+    <h2><span class="n">02</span> El cuello de la jirafa: Lamarck vs. Darwin</h2>
+    <p class="lead">Las dos teorías intentan explicar lo mismo, pero de manera muy diferente. Avanza al mismo tiempo en las dos columnas.</p>
+    <div class="jir">
+      <div class="col"><h3>🇫🇷 Lamarck (1809)</h3><svg id="jl" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jl-t"></p></div>
+      <div class="col"><h3>🇬🇧 Darwin (1859)</h3><svg id="jd" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jd-t"></p></div>
+    </div>
+    <div class="ctrl" style="justify-content:center"><button type="button" class="cn-btn" id="j-ant">← Antes</button><span id="j-n" class="marcador"></span><button type="button" class="cn-btn cn-btn--primary" id="j-sig">Siguiente →</button></div>
+    <div class="dato ojo">Lamarck decía que lo que un animal gana en vida (un cuello estirado, unos músculos de gimnasio) pasa a sus hijos. Hoy sabemos que <b>no es así</b>: los hijos de un fisicoculturista no nacen musculosos. Solo se heredan los cambios que están en el ADN de los gametos.</div>
+    <div class="chequeo" data-ok="0" data-exp="En la selección natural la variación ya existe antes; el ambiente solo «escoge» qué variantes sobreviven y se reproducen más.">
+      <div class="q">Según Darwin, ¿de dónde salen las jirafas de cuello largo?</div>
+      <div class="ops"><button class="op">En la población ya había jirafas con cuellos de distintos largos, y las de cuello largo dejaron más crías.</button><button class="op" data-por="Esa es la idea de Lamarck: el uso cambia el órgano y se hereda.">De tanto estirar el cuello, se les alargó y lo heredaron sus hijos.</button><button class="op" data-por="Las especies no cambian porque lo necesiten o lo deseen.">Necesitaban alcanzar las hojas altas y por eso el cuello creció.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="seleccion">
+    <h2><span class="n">03</span> Simulación: ¡eres un pájaro!</h2>
+    <p class="lead">En Inglaterra, en el siglo XIX, las fábricas llenaron de hollín los troncos de los árboles. La polilla del abedul (<i>Biston betularia</i>) tiene una forma <b>clara</b> y una <b>oscura</b>. Tú eres un pájaro: <b>toca las polillas que veas</b> para comértelas. Cada generación tienes 10 picotazos. Las que sobrevivan se reproducen.</p>
+    <div class="card">
+      <div class="sim-bar">
+        <div class="chips" role="group" aria-label="Tronco"><button class="chip on" data-tronco="limpio">🌳 Tronco limpio (con líquenes)</button><button class="chip" data-tronco="hollin">🏭 Tronco con hollín</button></div>
+        <span class="stat" id="sim-stat" aria-live="polite"></span>
+      </div>
+      <div id="bosque" role="application" aria-label="Tronco con polillas"></div>
+      <div class="sim-bar"><span id="sim-msg" aria-live="polite"></span><span><button type="button" class="cn-btn" id="sim-auto">⚡ Simular 10 generaciones</button> <button type="button" class="cn-btn" id="sim-reset">🔄 Reiniciar</button></span></div>
+      <canvas id="graf" width="900" height="200" aria-label="Gráfica del porcentaje de polillas oscuras por generación"></canvas>
+      <p style="font-size:.88rem;color:var(--cn-dim);margin-top:4px">Gráfica: porcentaje de polillas <b>oscuras</b> en cada generación.</p>
+    </div>
+    <div class="clave">Ninguna polilla «decidió» volverse oscura. Las dos formas ya existían; el ambiente cambió y los pájaros se comieron más a las que se veían. Así, <b>generación tras generación cambia la frecuencia de los alelos en la población</b>: eso es la evolución por selección natural.</div>
+    <div class="dato col">Pasa lo mismo con las bacterias y los antibióticos: si alguien deja el tratamiento a mitad, sobreviven las bacterias más resistentes y se multiplican. Por eso hay que terminar el tratamiento que receta el médico.</div>
+  </section>
+
+  <section class="sec" id="pinzones">
+    <h2><span class="n">04</span> Los pinzones de Darwin</h2>
+    <p class="lead">En las islas Galápagos (frente a Ecuador), Darwin encontró pinzones muy parecidos pero con <b>picos diferentes</b> según lo que comían en cada isla. Todos descendían de unos pocos pinzones que llegaron del continente. Une cada pico con su alimento.</p>
+    <div class="card" id="clas-pico"></div>
+    <div class="dato">Cuando una población queda separada (por el mar, una cordillera o un río) y cada grupo evoluciona por su lado, con el tiempo pueden volverse <b>especies distintas</b>, que ya no se reproducen entre sí. Eso se llama <b>especiación</b>. En Colombia, la cordillera de los Andes separó poblaciones de ranas, aves y mariposas y por eso tenemos tantas especies.</div>
+  </section>
+
+  <section class="sec" id="evidencias">
+    <h2><span class="n">05</span> Las evidencias de la evolución</h2>
+    <p class="lead">La evolución no es una simple opinión: muchas pruebas independientes llevan a la misma conclusión.</p>
+    <div class="tabs"><button class="chip on" data-tab="ev-hom">🦴 Anatomía comparada</button><button class="chip" data-tab="ev-fos">🦖 Fósiles</button><button class="chip" data-tab="ev-mol">🧬 ADN</button><button class="chip" data-tab="ev-emb">🥚 Embriología</button></div>
+    <div class="tab-p" id="ev-hom">
+      <p>Las extremidades de un humano, un gato, una ballena y un murciélago sirven para cosas muy distintas, pero tienen <b>los mismos huesos en el mismo orden</b>. Son <b>órganos homólogos</b>: los heredaron de un antepasado común. Toca un tipo de hueso para resaltarlo en las cuatro.</p>
+      <div class="ley-h" id="ley-h"></div>
+      <div class="homo" id="homo"></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h3>🦋 Órganos análogos</h3><p>Cumplen la <b>misma función</b> pero tienen <b>distinto origen</b>: el ala de una mariposa y el ala de un ave sirven para volar, pero no tienen los mismos huesos (¡la mariposa no tiene huesos!).</p></div>
+        <div class="card"><h3>🫥 Órganos vestigiales</h3><p>Órganos reducidos que ya casi no se usan, restos de antepasados: el <b>coxis</b> (resto de cola), las <b>muelas del juicio</b> y los músculos para mover las orejas.</p></div>
+      </div>
+    </div>
+    <div class="tab-p" id="ev-fos">
+      <p>Los <b>fósiles</b> son restos o huellas de seres vivos del pasado conservados en las rocas. Las capas más profundas son las más antiguas, y en ellas aparecen formas de vida más sencillas. Hay fósiles de transición, como <i>Archaeopteryx</i>, con plumas como un ave y dientes y cola como un dinosaurio.</p>
+      <div class="dato col">Colombia tiene fósiles famosos: la <b>Titanoboa</b>, una serpiente de 13 metros encontrada en la mina del Cerrejón (La Guajira); el <b>Kronosaurus</b> de Villa de Leyva (Boyacá), un reptil marino de cuando esa zona estaba bajo el mar; y los monos, tortugas y caimanes gigantes de <b>La Venta</b>, en el desierto de la Tatacoa (Huila).</div>
+    </div>
+    <div class="tab-p" id="ev-mol">
+      <p>Cuanto más emparentadas están dos especies, más se parecen sus secuencias de ADN y de proteínas. Mueve el control para comparar.</p>
+      <div class="ctrl"><label for="mol-sel">Comparar a los humanos con:</label><select id="mol-sel"><option value="98.8">🐒 Chimpancé</option><option value="96">🦍 Gorila</option><option value="90">🐈 Gato</option><option value="85">🐁 Ratón</option><option value="65">🐔 Gallina</option><option value="44">🪰 Mosca de la fruta</option><option value="26">🍞 Levadura</option></select></div>
+      <div id="mol-res"></div>
+      <p style="font-size:.84rem;color:var(--cn-dim)">Valores aproximados y redondeados: según cómo se mida (genes, proteínas o todo el ADN) los porcentajes cambian, pero el orden se mantiene.</p>
+    </div>
+    <div class="tab-p" id="ev-emb">
+      <p>En sus primeras semanas, los embriones de peces, reptiles, aves y mamíferos se parecen mucho: todos tienen <b>hendiduras en la garganta</b> y una <b>cola</b>. En los peces las hendiduras se vuelven branquias; en nosotros, partes del oído y del cuello. Es una huella de un antepasado común.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="tiempo">
+    <h2><span class="n">06</span> El año de la Tierra</h2>
+    <p class="lead">La Tierra tiene unos <b>4600 millones de años</b>. Imagina que toda esa historia cupiera en <b>un solo año</b>: el 1 de enero se forma la Tierra y la medianoche del 31 de diciembre es hoy. Mueve el control.</p>
+    <div class="card">
+      <div class="anio-t" aria-hidden="true"><span style="background:#7b4bb7;flex:88">Precámbrico (hasta mediados de noviembre)</span><span style="background:#1a7fb5;flex:6.5">Paleo.</span><span style="background:#2e7d4f;flex:4">Meso.</span><span style="background:#c2410c;flex:1.5">C</span></div>
+      <input type="range" id="anio" min="0" max="11" value="0" style="width:100%" aria-label="Momento de la historia">
+      <div class="anio-ev" id="anio-ev" aria-live="polite" style="margin-top:12px"></div>
+    </div>
+    <div class="chequeo" data-ok="3" data-exp="Los seres humanos modernos aparecimos hace unos 300 000 años: en el año de la Tierra, ¡unos 34 minutos antes de la medianoche del 31 de diciembre!">
+      <div class="q">En el «año de la Tierra», ¿cuándo aparecen los seres humanos?</div>
+      <div class="ops"><button class="op" data-por="En marzo apenas aparecieron las primeras bacterias.">En marzo</button><button class="op" data-por="A mediados de diciembre todavía vivían los dinosaurios.">A mediados de diciembre</button><button class="op" data-por="Muy cerca, pero aún falta: el 30 de diciembre no había humanos.">El 30 de diciembre</button><button class="op">El 31 de diciembre, en la última media hora</button></div>
+    </div>
+    <div class="sig"><a href="genetica.html"><small>← Anterior</small><b>🧬 Genética</b></a><a class="der" href="ecosistemas.html"><small>Siguiente →</small><b>🌳 Ecosistemas</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=2"></script>
+<script>
+(function(){
+/* ═══ 1. Línea del tiempo de ideas ═══ */
+var ID=[
+ {a:'Antigüedad',ico:'📜',q:'Fijismo',d:'Las especies fueron creadas como son y <b>no cambian</b>. Era la idea dominante en Europa hasta el siglo XVIII.'},
+ {a:'1809',ico:'🦒',q:'Jean-Baptiste Lamarck',d:'Primera teoría completa de evolución: el <b>uso y desuso</b> desarrolla o atrofia los órganos, y esos <b>caracteres adquiridos se heredan</b>. Acertó en que las especies cambian; se equivocó en el mecanismo.'},
+ {a:'1812',ico:'🦴',q:'Georges Cuvier · Catastrofismo',d:'Estudiando fósiles, Cuvier acepta que muchas especies se <b>extinguieron</b> por grandes catástrofes (inundaciones), pero cree que las especies que quedan no cambian.'},
+ {a:'1835',ico:'🚢',q:'Charles Darwin en el Beagle',d:'Durante un viaje de 5 años alrededor del mundo, Darwin observa fósiles en Suramérica y los pinzones y tortugas de las Galápagos. Empieza a pensar que las especies se transforman.'},
+ {a:'1858',ico:'🤝',q:'Alfred Russel Wallace',d:'Trabajando en la Amazonia y en Indonesia, Wallace llega por su cuenta a la misma idea de Darwin. Presentan juntos la teoría de la <b>selección natural</b>.'},
+ {a:'1859',ico:'📖',q:'«El origen de las especies»',d:'Darwin publica su libro: los individuos de una población son diferentes; nacen más de los que pueden sobrevivir; los que tienen variaciones ventajosas sobreviven y se reproducen más; así cambian las especies.'},
+ {a:'1940',ico:'🧬',q:'Teoría sintética (neodarwinismo)',d:'Se une la selección natural de Darwin con la genética de Mendel: la variación viene de las <b>mutaciones</b> y de la mezcla de genes en la reproducción sexual.'}
+];
+var tl=document.getElementById('tl'),card=document.getElementById('tl-card');
+tl.innerHTML=ID.map(function(h,i){return '<button type="button" class="tl-it" data-i="'+i+'"><div class="pt">'+(i+1)+'</div><div class="a" style="font-size:.75rem">'+h.a+'</div><div class="n">'+h.q.split(' · ')[0]+'</div></button>';}).join('');
+function ver(i){var h=ID[i];tl.querySelectorAll('.tl-it').forEach(function(b,j){b.classList.toggle('on',j===i);});
+  card.innerHTML='<div style="display:flex;gap:14px;align-items:center"><div style="font-size:3.2rem">'+h.ico+'</div><div><b style="color:var(--cn-naranja);font-family:var(--cn-mono)">'+h.a+'</b><h3>'+h.q+'</h3><p>'+h.d+'</p></div></div>';
+  if(i===ID.length-1)BIO.marcarSeccion('ideas');}
+tl.querySelectorAll('.tl-it').forEach(function(b){b.onclick=function(){ver(+b.getAttribute('data-i'));};});ver(0);
+
+/* ═══ 2. Jirafas ═══ */
+function jirafa(x,cuello,col,extra){
+  // jirafa de perfil; «cuello» = largo del cuello. col='#ccc' la pinta apagada (murió)
+  var L=cuello,g=col?'url(#jg-gris)':'url(#jg)',m=col?'#9a9a9a':'#7a4a1c',pa=col?'#b5b5b5':'#9b5a22',hy=104-L;
+  var pat='';[[12,112,7,5],[26,108,6,4],[40,114,7,5],[22,122,6,4],[50,118,5,4],[34,124,5,3]].forEach(function(q){pat+='<ellipse cx="'+q[0]+'" cy="'+q[1]+'" rx="'+q[2]+'" ry="'+q[3]+'" fill="'+pa+'" opacity=".85"/>';});
+  var cp='';for(var i=1;i<=Math.floor(L/14);i++){var t=i/(L/14+1),cx=52+t*14,cy=108-t*L;cp+='<ellipse cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" rx="3.4" ry="4" fill="'+pa+'" opacity=".8"/>';}
+  function pata(px){return '<path d="M'+px+' 126 C'+(px-1)+' 146 '+(px+1)+' 160 '+(px)+' 171 L'+(px+5)+' 171 C'+(px+5)+' 158 '+(px+6)+' 144 '+(px+7)+' 126Z" fill="'+g+'" stroke="'+m+'" stroke-width=".8"/><rect x="'+(px-.5)+'" y="170" width="6" height="4" rx="1" fill="'+m+'"/>';}
+  return '<g transform="translate('+x+' 0)"'+(extra||'')+'>'+pata(4)+pata(12)+pata(44)+pata(52)+
+   '<path d="M0 116 C-6 124 -7 134 -5 144" stroke="'+m+'" stroke-width="1.6" fill="none"/><path d="M-6 142 l-2 6 l4 -1z" fill="'+m+'"/>'+
+   '<path d="M0 118 C2 102 18 99 34 101 C46 102 56 104 61 112 C63 124 56 131 44 131 L14 131 C4 131 -1 126 0 118Z" fill="'+g+'" stroke="'+m+'" stroke-width="1"/>'+pat+
+   '<path d="M46 110 C52 96 58 '+(104-L*0.5)+' 64 '+(hy+4)+' L72 '+(hy+5)+' C68 '+(104-L*0.45)+' 64 100 62 113Z" fill="'+g+'" stroke="'+m+'" stroke-width="1"/>'+cp+
+   '<path d="M50 108 C54 98 58 '+(104-L*0.5)+' 63 '+(hy+6)+'" stroke="'+m+'" stroke-width="2.4" fill="none" stroke-dasharray="2 2" opacity=".7"/>'+
+   '<path d="M61 '+(hy+2)+' C67 '+(hy-6)+' 81 '+(hy-5)+' 88 '+(hy+1)+' C89 '+(hy+6)+' 80 '+(hy+8)+' 70 '+(hy+8)+' C64 '+(hy+8)+' 60 '+(hy+6)+' 61 '+(hy+2)+'Z" fill="'+g+'" stroke="'+m+'" stroke-width="1"/>'+
+   '<path d="M66 '+(hy-3)+' l-1 -7 M70 '+(hy-4)+' l0 -7" stroke="'+m+'" stroke-width="1.8" stroke-linecap="round"/><circle cx="65" cy="'+(hy-10)+'" r="1.6" fill="'+m+'"/><circle cx="70" cy="'+(hy-11)+'" r="1.6" fill="'+m+'"/>'+
+   '<path d="M62 '+(hy)+' l-6 -3 l3 5z" fill="'+g+'" stroke="'+m+'" stroke-width=".8"/><circle cx="71" cy="'+(hy+1)+'" r="1.3" fill="#2b1a0c"/></g>';
+}
+function arbol(){return '<defs><linearGradient id="jg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6cf7d"/><stop offset="1" stop-color="#d99b3a"/></linearGradient>'+
+  '<linearGradient id="jg-gris" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e6e6"/><stop offset="1" stop-color="#c8c8c8"/></linearGradient>'+
+  '<linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3f1fb"/><stop offset="1" stop-color="#fdf6e3"/></linearGradient>'+
+  '<radialGradient id="copa" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#6cbf5f"/><stop offset="1" stop-color="#2f7d3a"/></radialGradient></defs>'+
+  '<rect width="300" height="190" fill="url(#cielo)"/><path d="M0 172 Q150 164 300 172 L300 190 L0 190Z" fill="#e2cf94"/>'+
+  '<path d="M262 172 C260 130 258 96 250 70 M256 110 C246 94 236 84 224 78 M258 96 C268 84 276 76 288 72" stroke="#6b4423" stroke-width="5" fill="none" stroke-linecap="round"/>'+
+  '<path d="M200 74 C206 56 232 50 252 54 C272 48 296 56 300 70 C292 80 270 82 252 80 C232 84 208 84 200 74Z" fill="url(#copa)" stroke="#2a6a33" stroke-width="1"/>'+
+  '<path d="M216 72 C220 64 236 62 246 66 M260 64 C270 60 284 62 292 68" stroke="#8ccf7c" stroke-width="1.4" fill="none" opacity=".7"/>';}
+var JL=[
+ [arbol()+jirafa(60,30)+jirafa(140,30),'Hace mucho tiempo, las jirafas tenían el cuello corto.'],
+ [arbol()+jirafa(60,48)+jirafa(140,48)+'<text x="100" y="28" style="font:700 12px Outfit" fill="#c2410c">↑ se estiran</text>','Las hojas de abajo se acabaron. Cada jirafa <b>estira el cuello</b> durante su vida para alcanzar las hojas altas, y se le alarga un poco.'],
+ [arbol()+jirafa(60,62)+jirafa(140,62),'Ese cuello un poco más largo, ganado en vida, <b>pasa a sus crías</b> (herencia de caracteres adquiridos).'],
+ [arbol()+jirafa(60,92)+jirafa(140,92),'Tras muchas generaciones de estirarse, todas las jirafas tienen el cuello largo.']
+];
+var JD=[
+ [arbol()+jirafa(40,26)+jirafa(110,40)+jirafa(180,56),'Hace mucho tiempo había jirafas con cuellos de <b>distintos largos</b>: la población tenía <b>variación</b>.'],
+ [arbol()+jirafa(40,26,'#ccc',' opacity=".35"')+jirafa(110,40)+jirafa(180,56),'Las hojas de abajo se acabaron. Las de cuello corto comían menos y muchas murieron antes de reproducirse: <b>selección natural</b>.'],
+ [arbol()+jirafa(60,56)+jirafa(130,64)+jirafa(190,48),'Las de cuello largo sobrevivieron y tuvieron más crías, que <b>heredaron</b> sus genes de cuello largo.'],
+ [arbol()+jirafa(60,92)+jirafa(140,92),'Generación tras generación aumentaron las jirafas de cuello largo. La <b>población</b> cambió.']
+];
+var jk=0;
+function pintarJ(){document.getElementById('jl').innerHTML=JL[jk][0];document.getElementById('jd').innerHTML=JD[jk][0];
+  document.getElementById('jl-t').innerHTML=JL[jk][1];document.getElementById('jd-t').innerHTML=JD[jk][1];
+  document.getElementById('j-n').textContent='Paso '+(jk+1)+' de 4';
+  document.getElementById('j-ant').disabled=jk===0;document.getElementById('j-sig').disabled=jk===3;if(jk===3)BIO.marcarSeccion('jirafas');}
+document.getElementById('j-sig').onclick=function(){jk++;pintarJ();};document.getElementById('j-ant').onclick=function(){jk--;pintarJ();};pintarJ();
+
+/* ═══ 3. Selección natural: polillas ═══ */
+var bosque=document.getElementById('bosque'),N=20,PICOS=10;
+var tronco='limpio',pobl=[],gen=0,picos=PICOS,hist=[];
+function polilla(oscura){var a=oscura?['#2f2a26','#4a433c','#1c1916']:['#e9e4d6','#cfc7b2','#a99f86'];
+  return '<svg viewBox="0 0 44 30" aria-hidden="true"><path d="M22 15 C14 2 2 4 3 13 C4 20 14 22 22 17Z" fill="'+a[0]+'" stroke="'+a[2]+'" stroke-width=".8"/><path d="M22 15 C30 2 42 4 41 13 C40 20 30 22 22 17Z" fill="'+a[0]+'" stroke="'+a[2]+'" stroke-width=".8"/>'+
+  '<path d="M22 17 C16 22 8 27 10 22 C12 18 18 17 22 17Z M22 17 C28 22 36 27 34 22 C32 18 26 17 22 17Z" fill="'+a[1]+'"/>'+
+  '<g fill="'+a[2]+'" opacity=".7"><circle cx="10" cy="10" r="1.3"/><circle cx="15" cy="13" r="1"/><circle cx="34" cy="10" r="1.3"/><circle cx="29" cy="13" r="1"/></g><ellipse cx="22" cy="16" rx="1.6" ry="6" fill="'+a[2]+'"/></svg>';}
+function fondo(){
+  var limpio=tronco==='limpio',base=limpio?'#c9c2ae':'#3b3631',s='<svg viewBox="0 0 160 90" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><rect width="160" height="90" fill="'+base+'"/>';
+  var r=mulberry(limpio?7:9);
+  for(var i=0;i<140;i++){var x=r()*160,y=r()*90,w=2+r()*9,h=1+r()*4;s+='<ellipse cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" rx="'+w.toFixed(1)+'" ry="'+h.toFixed(1)+'" fill="'+(limpio?['#e7e1cf','#a9a28c','#d8d2bd','#8f8a74','#b9c4a6'][i%5]:['#24201c','#4a443d','#2d2925','#56504a','#1a1714'][i%5])+'" opacity=".85"/>';}
+  for(var k=0;k<8;k++){var xx=r()*160;s+='<path d="M'+xx.toFixed(1)+' 0 Q'+(xx+r()*8-4).toFixed(1)+' 45 '+(xx+r()*6-3).toFixed(1)+' 90" stroke="'+(limpio?'#9b9480':'#151210')+'" stroke-width=".6" fill="none" opacity=".6"/>';}
+  return s+'</svg>';
+}
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function iniciarSim(){pobl=[];for(var i=0;i<N;i++)pobl.push(i%2===0);gen=0;hist=[pct()];nuevaGen();}
+function pct(){return pobl.filter(function(o){return o;}).length/pobl.length*100;}
+function nuevaGen(){
+  picos=PICOS;bosque.innerHTML=fondo();
+  pobl.forEach(function(o,i){var b=document.createElement('button');b.type='button';b.className='pol';b.innerHTML=polilla(o);b.setAttribute('aria-label','Polilla');
+    b.style.left=(6+Math.random()*88)+'%';b.style.top=(8+Math.random()*84)+'%';b.style.transform='translate(-50%,-50%) rotate('+(Math.random()*40-20)+'deg)';b._i=i;
+    b.onclick=function(e){e.stopPropagation();if(picos<=0||b.classList.contains('comida'))return;b.classList.add('comida');pobl[b._i]=null;picos--;estado();if(picos===0)setTimeout(reproducir,700);};
+    bosque.appendChild(b);});
+  bosque.onclick=function(){if(picos>0){picos--;estado('Picaste el tronco: ahí no había nada.');if(picos===0)setTimeout(reproducir,700);}};
+  estado();
+}
+function estado(m){var vivos=pobl.filter(function(o){return o!==null;}),os=vivos.filter(function(o){return o;}).length;
+  document.getElementById('sim-stat').textContent='Generación '+gen+' · Picotazos: '+picos+' · Claras: '+(vivos.length-os)+' · Oscuras: '+os;
+  document.getElementById('sim-msg').textContent=m||(picos===PICOS?'Busca bien: algunas se camuflan muy bien.':'');}
+function reproducir(){
+  var vivos=pobl.filter(function(o){return o!==null;});if(!vivos.length)vivos=[true,false];
+  var hijos=[];for(var i=0;i<N;i++){var p=vivos[Math.floor(Math.random()*vivos.length)];hijos.push(Math.random()<0.03?!p:p);}
+  pobl=hijos;gen++;hist.push(pct());graf();
+  document.getElementById('sim-msg').textContent='Las sobrevivientes se reprodujeron: nueva generación.';
+  if(gen>=3)BIO.marcarSeccion('seleccion');
+  setTimeout(nuevaGen,600);
+}
+function autoGen(){ // un pájaro automático: ve más fácil la polilla que contrasta
+  for(var g=0;g<10;g++){
+    var visib=function(o){return (tronco==='limpio')===o?0.75:0.15;};
+    var vivos=pobl.filter(function(o){return Math.random()>visib(o)*0.6;});if(!vivos.length)vivos=[true,false];
+    var hijos=[];for(var i=0;i<N;i++){var p=vivos[Math.floor(Math.random()*vivos.length)];hijos.push(Math.random()<0.03?!p:p);}
+    pobl=hijos;gen++;hist.push(pct());
+  }
+  graf();nuevaGen();BIO.marcarSeccion('seleccion');
+}
+function graf(){
+  var cv=document.getElementById('graf'),c=cv.getContext('2d'),W=cv.width,H=cv.height,pad=34;
+  c.clearRect(0,0,W,H);c.font='12px Outfit';c.fillStyle='#3c5446';c.strokeStyle='#d6e8dc';
+  [0,50,100].forEach(function(v){var y=H-pad-(H-2*pad)*v/100;c.beginPath();c.moveTo(pad,y);c.lineTo(W-10,y);c.stroke();c.fillText(v+'%',2,y+4);});
+  var n=Math.max(10,hist.length-1),x=function(i){return pad+(W-pad-14)*i/n;},y=function(v){return H-pad-(H-2*pad)*v/100;};
+  c.strokeStyle='#2f2a26';c.lineWidth=3;c.beginPath();hist.forEach(function(v,i){if(i)c.lineTo(x(i),y(v));else c.moveTo(x(i),y(v));});c.stroke();
+  hist.forEach(function(v,i){c.fillStyle='#2f2a26';c.beginPath();c.arc(x(i),y(v),4,0,7);c.fill();});
+  c.fillStyle='#3c5446';c.fillText('generación →',W-90,H-8);
+}
+document.querySelectorAll('[data-tronco]').forEach(function(b){b.onclick=function(){tronco=b.getAttribute('data-tronco');document.querySelectorAll('[data-tronco]').forEach(function(x){x.classList.toggle('on',x===b);});nuevaGen();};});
+document.getElementById('sim-auto').onclick=autoGen;
+document.getElementById('sim-reset').onclick=function(){iniciarSim();graf();};
+iniciarSim();graf();
+
+/* ═══ 4. Pinzones ═══ */
+BIO.clasificar(document.getElementById('clas-pico'),{
+  cajas:[{id:'gr',titulo:'🌰 Semillas duras'},{id:'in',titulo:'🐛 Insectos'},{id:'ca',titulo:'🌵 Flores de cactus'},{id:'ma',titulo:'🪵 Larvas en la madera'}],
+  fichas:[
+   {t:'Pico grueso y fuerte, como un cascanueces',caja:'gr',exp:'puede partir semillas duras.'},
+   {t:'Pico delgado y fino, como unas pinzas',caja:'in',exp:'atrapa insectos pequeños.'},
+   {t:'Pico largo y algo curvo',caja:'ca',exp:'llega al néctar y al polen de las flores del cactus.',pista:'Para alcanzar el fondo de una flor se necesita un pico largo.'},
+   {t:'Pico recto que usa una espina como herramienta',caja:'ma',exp:'el pinzón carpintero saca larvas de los huecos con una espina.',pista:'Este pinzón usa una herramienta, como un palillo.'}
+  ]});
+
+/* ═══ 5. Homólogos ═══ */
+var HUESOS={hu:['Húmero','#e5484d'],rc:['Radio y cúbito','#3e8ed0'],ca:['Carpianos (muñeca)','#f0a020'],me:['Metacarpianos','#2e9a5a'],fa:['Falanges (dedos)','#9b59b6']};
+function h(t,d,w){w=w||7;return '<g class="hb" data-h="'+t+'"><path d="'+d+'" stroke="#00000055" stroke-width="'+(w+2)+'" stroke-linecap="round" fill="none"/><path d="'+d+'" stroke="'+HUESOS[t][1]+'" stroke-width="'+w+'" stroke-linecap="round" fill="none"/><path d="'+d+'" stroke="#ffffff88" stroke-width="'+Math.max(1,w*0.25)+'" stroke-linecap="round" fill="none"/></g>';}
+function hp(t,d){return '<path class="hb" data-h="'+t+'" d="'+d+'" fill="'+HUESOS[t][1]+'" stroke="#00000055" stroke-width="1" rx="2"/>';}
+var AN=[
+ ['🧑 Humano: brazo','Agarrar y manipular',h('hu','M60 14 L62 70',9)+h('rc','M58 76 L52 124',5)+h('rc','M68 76 L66 124',5)+hp('ca','M48 128 h22 v12 h-22Z')+h('me','M48 144 L42 166 M54 144 L52 168 M60 144 L60 170 M66 144 L68 168 M70 140 L80 156',3.5)+h('fa','M42 170 L38 186 M52 172 L50 192 M60 174 L60 196 M68 172 L70 192 M80 160 L88 172',3)],
+ ['🐈 Gato: pata','Caminar y correr',h('hu','M50 14 L70 64',9)+h('rc','M70 70 L56 118',5)+h('rc','M76 72 L62 120',5)+hp('ca','M48 122 h20 v10 h-20Z')+h('me','M48 136 L46 160 M54 136 L54 162 M60 136 L62 162 M66 136 L70 160',3.5)+h('fa','M46 164 L42 176 M54 166 L52 180 M62 166 L64 180 M70 164 L74 176',3)],
+ ['🐋 Ballena: aleta','Nadar','<path d="M60 10 C96 20 104 70 96 120 C90 168 70 190 58 194 C44 170 36 120 40 70 C42 34 48 12 60 10Z" fill="#dbe8f5" stroke="#9db6cf"/>'+h('hu','M62 18 L64 50',11)+h('rc','M56 56 L54 84',7)+h('rc','M72 56 L72 84',7)+hp('ca','M50 88 h28 v10 h-28Z')+h('me','M52 102 L50 120 M60 102 L60 122 M68 102 L70 122 M76 102 L80 120',4)+h('fa','M50 124 L48 170 M60 126 L60 184 M70 126 L72 180 M80 124 L84 160',3.4)],
+ ['🦇 Murciélago: ala','Volar','<path d="M66 60 L20 120 L36 128 L46 150 L60 146 L70 172 L84 150 L104 156 L96 110Z" fill="#e8dcf2" stroke="#b9a3cf"/>'+h('hu','M70 10 L74 50',7)+h('rc','M74 54 L82 92',4.5)+hp('ca','M78 94 h12 v8 h-12Z')+h('me','M82 104 L40 118 M84 104 L52 140 M86 104 L68 150 M88 104 L96 128 M90 100 L100 96',2.6)+h('fa','M40 118 L22 120 M52 140 L46 152 M68 150 L70 172 M96 128 L104 156',2.2)]
+];
+document.getElementById('homo').innerHTML=AN.map(function(a){return '<div class="an"><svg viewBox="0 0 120 200" aria-hidden="true">'+a[2]+'</svg><b>'+a[0]+'</b><br><small>'+a[1]+'</small></div>';}).join('');
+var ley=document.getElementById('ley-h'),hsel=null;
+ley.innerHTML=Object.keys(HUESOS).map(function(k){return '<button class="chip" data-hu="'+k+'"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:'+HUESOS[k][1]+';margin-right:4px"></span>'+HUESOS[k][0]+'</button>';}).join('');
+ley.querySelectorAll('[data-hu]').forEach(function(b){b.onclick=function(){var k=b.getAttribute('data-hu');hsel=hsel===k?null:k;
+  ley.querySelectorAll('[data-hu]').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-hu')===hsel);});
+  var H=document.getElementById('homo');H.classList.toggle('filtro',!!hsel);H.querySelectorAll('.hb').forEach(function(p){p.classList.toggle('on',p.getAttribute('data-h')===hsel);});
+  BIO.marcarSeccion('evidencias');};});
+// ADN
+var ms=document.getElementById('mol-sel');
+function verMol(){var v=+ms.value;document.getElementById('mol-res').innerHTML='<div class="barras"><div class="b" style="display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center"><span>'+ms.options[ms.selectedIndex].text+'</span><span style="height:22px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+v+'%;background:linear-gradient(90deg,#2e7d4f,#5cb85c);border-radius:999px;transition:width .6s"></i></span><b>~'+v+' %</b></div></div>';}
+ms.onchange=verMol;verMol();
+
+/* ═══ 6. El año de la Tierra ═══ */
+var EV=[
+ ['🌋','1 de enero','Se forma la Tierra, una bola de roca fundida. (Hace 4600 millones de años)'],
+ ['🦠','principios de marzo','Aparecen las primeras células: bacterias y arqueas en el mar. (Hace 3800 millones de años)'],
+ ['🫧','finales de mayo','Las cianobacterias empiezan a hacer fotosíntesis y a llenar el aire de oxígeno. (Hace 2700 millones de años)'],
+ ['🧫','finales de julio','Aparecen las primeras células eucariotas, con núcleo (endosimbiosis). (Hace 2000 millones de años)'],
+ ['🪼','mediados de noviembre','«Explosión cámbrica»: aparecen en el mar casi todos los grupos de animales. (Hace 540 millones de años)'],
+ ['🌿','finales de noviembre','Las plantas y los primeros animales salen del agua a la tierra firme. (Hace 470 millones de años)'],
+ ['🦕','13 de diciembre','Aparecen los dinosaurios. (Hace 230 millones de años)'],
+ ['🌸','21 de diciembre','Aparecen las plantas con flores. (Hace 130 millones de años)'],
+ ['☄️','26 de diciembre','Un asteroide cae en Yucatán (México) y se extinguen los dinosaurios (menos los que dieron origen a las aves). (Hace 66 millones de años)'],
+ ['🐍','27 de diciembre','En lo que hoy es La Guajira vive la Titanoboa, en una selva caliente. (Hace 60 millones de años)'],
+ ['⛰️','30 de diciembre','La cordillera Oriental de los Andes se levanta con fuerza y nacen los páramos. (Hace unos 5 millones de años)'],
+ ['🧑','31 de diciembre, 11:26 p. m.','Aparecemos los seres humanos modernos, <i>Homo sapiens</i>. Toda la historia escrita cabe en los últimos 30 segundos del año. (Hace 300 000 años)']
+];
+var an=document.getElementById('anio');
+function verAnio(){var e=EV[+an.value];document.getElementById('anio-ev').innerHTML='<div class="e">'+e[0]+'</div><div><div class="f">'+e[1]+'</div><p>'+e[2]+'</p></div>';if(+an.value===11)BIO.marcarSeccion('tiempo');}
+an.oninput=verAnio;verAnio();
+})();
+</script>
+<script src="text-zoom.js?v=2"></script>
+<script src="narracion.js?v=2"></script>
+<script src="pwa-install.js?v=2"></script>
+</body>
+</html>
