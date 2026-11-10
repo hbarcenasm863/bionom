@@ -184,7 +184,7 @@ palabras:[
 ['CROMATINA','Forma del ADN.','Está suelta en la interfase.','Se condensa en cromosomas.'],
 ['TÉTRADA','Grupo de cromátidas.','Se forma en la meiosis I.','Cuatro cromátidas de dos homólogos.'],
 ['MICROTÚBULO','Fibra de proteína.','Forma el huso.','Mueve los cromosomas.'],
-['CONDENSACIÓN','Cambio del ADN.','Ocurre en la profase.','El ADN se enrolla.'],
+['CARIOCINESIS','División del núcleo.','Es otro nombre de la mitosis.','Reparte los cromosomas.'],
 ['REPOSO','Estado de algunas células.','No se dividen.','Se escribe G0 en el ciclo.'],
 ['INCLUSIÓN','Valor de la convivencia.','Todos participan.','Derecho de las personas con síndrome de Down.'],
 ['ONCOLOGÍA','Rama de la medicina.','Estudia los tumores.','Trata el cáncer.'],
