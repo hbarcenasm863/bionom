@@ -54,7 +54,12 @@
     <a href="#tamano">🔍 Tamaños</a>
     <a href="#tipos">🧫 Tipos</a>
     <a href="#partes">🧩 Partes</a>
-    <a href="#membrana">💧 Membrana y ósmosis</a>
+    <a href="#transporte">🚪 Transporte</a>
+    <a href="#membrana">💧 Ósmosis</a>
+    <a href="#lab-papa">🥔 Laboratorio</a>
+    <a href="#energia">⚡ Fotosíntesis y respiración</a>
+    <a href="#division">➗ Ciclo celular</a>
+    <a href="#medicina">🩺 Célula y medicina</a>
   </nav>
 
   <!-- ═══ HISTORIA ═══ -->
@@ -170,9 +175,31 @@
     </div>
   </section>
 
+  <!-- ═══ TRANSPORTE ═══ -->
+  <section class="sec" id="transporte">
+    <h2><span class="n">06</span> ¿Cómo entran y salen las sustancias?</h2>
+    <p class="lead">La membrana está hecha de una doble capa de lípidos con proteínas incrustadas, como un mosaico que se mueve. Las sustancias la cruzan de dos maneras: <b>sin gastar energía</b> (transporte pasivo), a favor de la diferencia de concentración, o <b>gastando energía</b> (transporte activo), en contra. Prueba los tres modos de la simulación.</p>
+    <div class="card">
+      <div class="chips" role="group" aria-label="Tipo de transporte"><button class="chip on" data-tr="simple">🫧 Difusión simple</button><button class="chip" data-tr="facil">🚪 Difusión facilitada</button><button class="chip" data-tr="activo">⚡ Transporte activo</button></div>
+      <canvas id="dif" width="900" height="300" style="width:100%;height:auto;margin-top:10px;border-radius:12px;background:#f4faf6;border:1px solid var(--cn-brd)" aria-label="Simulación de partículas a los dos lados de una membrana"></canvas>
+      <div class="ctrl" style="justify-content:space-between"><span id="dif-cnt" class="marcador" aria-live="polite"></span><span><button type="button" class="cn-btn" id="dif-atp" hidden>⚡ Gastar 1 ATP (bombear)</button> <button type="button" class="cn-btn" id="dif-reset">🔄 Reiniciar</button></span></div>
+      <p id="dif-txt" style="margin-top:6px"></p>
+    </div>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🍽️</span><b>Endocitosis</b><small>toca para voltear</small></div><div class="bk">La membrana envuelve partículas grandes y forma una vesícula para meterlas a la célula. Así los glóbulos blancos «se comen» a las bacterias (fagocitosis).</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">📤</span><b>Exocitosis</b><small>toca para voltear</small></div><div class="bk">Vesículas del aparato de Golgi se funden con la membrana y sueltan su contenido afuera: así salen las hormonas y las enzimas digestivas.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🔋</span><b>Bomba de sodio y potasio</b><small>toca para voltear</small></div><div class="bk">Proteína que gasta ATP para sacar sodio y meter potasio, en contra de su concentración. Gracias a ella funcionan tus neuronas: ¡usa casi un tercio de la energía de tu cuerpo en reposo!</div></div></div>
+    </div>
+    <div class="dato">La atmósfera funciona un poco como una membrana: deja entrar la luz del Sol, pero gases como el CO₂ y el metano no dejan salir todo el calor. Si aumentan esos gases, el planeta retiene más energía y se calienta. Lo verás en el módulo de <a href="ambiente.html">ambiente</a>.</div>
+    <div class="chequeo" data-ok="2" data-exp="Ir en contra de la diferencia de concentración (de donde hay menos a donde hay más) siempre necesita energía: es transporte activo.">
+      <div class="q">Una célula de la raíz absorbe minerales del suelo aunque dentro de ella ya haya más minerales que afuera. ¿Qué tipo de transporte usa?</div>
+      <div class="ops"><button class="op" data-por="La difusión solo va de donde hay más a donde hay menos.">Difusión simple</button><button class="op" data-por="La ósmosis es el paso del agua, no de los minerales.">Ósmosis</button><button class="op">Transporte activo</button></div>
+    </div>
+  </section>
+
   <!-- ═══ MEMBRANA ═══ -->
   <section class="sec" id="membrana">
-    <h2><span class="n">06</span> La membrana y la ósmosis</h2>
+    <h2><span class="n">07</span> La ósmosis: el viaje del agua</h2>
     <p class="lead">La membrana es <b>semipermeable</b>: deja pasar el agua con facilidad, pero no todas las sustancias. En la <b>ósmosis</b> el agua pasa de donde hay <b>menos</b> sal (o azúcar) disuelta hacia donde hay <b>más</b>. Mueve el control y observa qué les pasa a un glóbulo rojo y a una célula de planta.</p>
     <div class="card">
       <div class="ctrl"><label for="sal">Sal en el agua de afuera</label><input type="range" id="sal" min="0" max="4" step="1" value="2"><b id="sal-txt"></b></div>
@@ -186,6 +213,85 @@
     <div class="chequeo" data-ok="0" data-exp="El agua dulce tiene menos sal que el interior del glóbulo rojo, así que el agua entra a la célula hasta que revienta (lisis). Por eso el suero que ponen en el hospital es <b>isotónico</b> (0,9 % de sal).">
       <div class="q">Si pones glóbulos rojos en agua destilada (sin sal), ¿qué pasa?</div>
       <div class="ops"><button class="op">Les entra agua, se hinchan y pueden reventar.</button><button class="op" data-por="Eso pasaría en agua MUY salada: el agua sale de la célula.">Pierden agua y se arrugan.</button><button class="op" data-por="Solo quedan igual si el agua de afuera tiene la misma concentración que adentro.">No les pasa nada.</button></div>
+    </div>
+  </section>
+
+  <!-- ═══ LABORATORIO: PAPAS ═══ -->
+  <section class="sec" id="lab-papa">
+    <h2><span class="n">08</span> Laboratorio virtual: ¿cuánta sal hay dentro de una papa?</h2>
+    <p class="lead">Vas a investigar como un científico. Cortas cilindros de papa del mismo tamaño, los pesas, los dejas 24 horas en soluciones de azúcar (sacarosa) con distinta concentración y los vuelves a pesar.</p>
+    <div class="pasos" data-titulo="🔬 Indagación" data-alcambiar="pasoPapa">
+      <div class="paso" data-t="Pregunta"><h3>1. La pregunta</h3><p>¿Qué le pasa a la masa de un trozo de papa cuando lo dejamos en soluciones de azúcar con distinta concentración? ¿Podemos usar eso para averiguar la concentración del interior de sus células?</p></div>
+      <div class="paso" data-t="Hipótesis"><h3>2. Tu hipótesis</h3><p>Escoge la que te parezca más razonable (no hay castigo por equivocarse: así trabajan los científicos).</p><div class="chips" id="hip" style="margin-top:8px"><button class="chip" data-h="a">En agua pura la papa ganará masa y en mucha azúcar la perderá.</button><button class="chip" data-h="b">La papa perderá masa en todas las soluciones.</button><button class="chip" data-h="c">La masa de la papa no cambiará.</button></div><p id="hip-t" style="margin-top:8px;font-weight:600"></p></div>
+      <div class="paso" data-t="Variables"><h3>3. Las variables</h3><p>Toca cada variable y luego su tipo.</p><div id="vars"></div></div>
+      <div class="paso" data-t="Datos"><h3>4. Toma los datos</h3><p>Toca cada tubo para medir. Las balanzas reales tienen un pequeño <b>margen de error</b>, así que los datos no caen exactamente en una línea.</p><div id="tubos" class="chips" style="margin:10px 0"></div><div class="lado"><div class="tbl-wrap"><table class="t" id="tab-papa"><tr><th>Sacarosa (M)</th><th>Masa inicial (g)</th><th>Masa final (g)</th><th>Cambio (%)</th></tr></table></div><canvas id="g-papa" width="460" height="300" style="width:100%;height:auto;background:#fff;border:1px solid var(--cn-brd);border-radius:12px"></canvas></div></div>
+      <div class="paso" data-t="Conclusión"><h3>5. Analiza y concluye</h3><p>Mira la gráfica: ¿en qué concentración la papa <b>ni gana ni pierde</b> masa (el cambio es 0 %)?</p><div class="chips" id="iso" style="margin:8px 0"><button class="chip" data-c="0">0 M</button><button class="chip" data-c="0.3">≈ 0,3 M</button><button class="chip" data-c="0.6">≈ 0,6 M</button><button class="chip" data-c="1">1 M</button></div><p id="iso-t" style="font-weight:600" aria-live="polite"></p></div>
+    </div>
+  </section>
+
+  <!-- ═══ ENERGÍA ═══ -->
+  <section class="sec" id="energia">
+    <h2><span class="n">09</span> La energía de la vida: fotosíntesis y respiración</h2>
+    <p class="lead">Todas las células necesitan energía. Las plantas la <b>capturan</b> del Sol con la fotosíntesis y la guardan en la glucosa; luego todas las células, también las de las plantas, la <b>liberan</b> con la respiración celular. Una es casi lo contrario de la otra.</p>
+    <div class="grid g2">
+      <div class="card" style="border-top:6px solid #2e9a5a"><h3>🌞 Fotosíntesis · en el cloroplasto</h3><p style="font-family:var(--cn-mono);font-weight:700;background:#eef8f0;border-radius:10px;padding:8px 10px;margin:8px 0">6 CO₂ + 6 H₂O + luz → C₆H₁₂O₆ + 6 O₂</p><p>Usa dióxido de carbono y agua; produce glucosa y oxígeno. Solo en organismos con clorofila.</p></div>
+      <div class="card" style="border-top:6px solid #e07a3f"><h3>🔋 Respiración celular · en la mitocondria</h3><p style="font-family:var(--cn-mono);font-weight:700;background:#fdf1e8;border-radius:10px;padding:8px 10px;margin:8px 0">C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energía (ATP)</p><p>Usa glucosa y oxígeno; libera energía, agua y CO₂. En casi todos los seres vivos, de día y de noche.</p></div>
+    </div>
+    <h3 style="margin-top:18px">Las etapas, paso a paso</h3>
+    <div class="tabs"><button class="chip on" data-tab="et-foto">🌞 Fotosíntesis</button><button class="chip" data-tab="et-resp">🔋 Respiración</button></div>
+    <div class="tab-p" id="et-foto"><div class="pasos" data-titulo="Fotosíntesis">
+      <div class="paso" data-t="Luz"><h3>1. Fase luminosa (en los tilacoides)</h3><p>La clorofila absorbe la luz. Con esa energía se rompe el agua (H₂O): se libera <b>oxígeno</b> al aire y se fabrican moléculas cargadas de energía (ATP y NADPH). Solo ocurre con luz.</p></div>
+      <div class="paso" data-t="Calvin"><h3>2. Fase oscura o ciclo de Calvin (en el estroma)</h3><p>Con el ATP y el NADPH de la fase anterior, el cloroplasto toma el <b>CO₂</b> del aire y lo arma, átomo por átomo, hasta formar <b>glucosa</b>. Se llama «oscura» porque no usa luz directamente, aunque ocurre de día.</p></div>
+      <div class="paso" data-t="Uso"><h3>3. ¿Qué hace la planta con la glucosa?</h3><p>La usa en su respiración, la guarda como <b>almidón</b> (en la papa, el maíz, la yuca) o la convierte en <b>celulosa</b> para construir sus paredes. Todo lo que comemos viene, al final, de la fotosíntesis.</p></div>
+    </div></div>
+    <div class="tab-p" id="et-resp"><div class="pasos" data-titulo="Respiración celular">
+      <div class="paso" data-t="Glucólisis"><h3>1. Glucólisis (en el citoplasma)</h3><p>La glucosa (6 carbonos) se parte en dos moléculas de 3 carbonos. Se obtienen 2 ATP. No necesita oxígeno.</p></div>
+      <div class="paso" data-t="Krebs"><h3>2. Ciclo de Krebs (en la matriz de la mitocondria)</h3><p>Los fragmentos se desarman por completo: su carbono sale como <b>CO₂</b> (el que exhalas) y se cargan moléculas transportadoras de energía.</p></div>
+      <div class="paso" data-t="Cadena"><h3>3. Cadena respiratoria (en las crestas de la mitocondria)</h3><p>Aquí se usa el <b>oxígeno</b> que respiras: recibe los electrones y forma <b>agua</b>. Se fabrican unos 32 ATP más: en total, cerca de <b>36 ATP por cada glucosa</b>.</p></div>
+      <div class="paso" data-t="Sin O₂"><h3>¿Y si no hay oxígeno? Fermentación</h3><p>Solo se hace la glucólisis y se obtienen 2 ATP. Las levaduras producen alcohol y CO₂ (pan, chicha, cerveza); tus músculos, cuando corres mucho, producen ácido láctico.</p></div>
+    </div></div>
+    <h3 style="margin-top:18px">🔬 La campana de Priestley</h3>
+    <p>En 1771 Joseph Priestley puso una vela bajo una campana de vidrio cerrada: se apagó. Luego puso una planta junto a la vela… Escoge qué metes en la campana, si hay luz, y deja pasar el tiempo.</p>
+    <div class="card">
+      <div class="ctrl"><label><input type="checkbox" data-pr="planta" checked> 🌿 Planta</label><label><input type="checkbox" data-pr="raton"> 🐭 Ratón</label><label><input type="checkbox" data-pr="vela"> 🕯️ Vela</label><label><input type="checkbox" id="pr-luz" checked> ☀️ Luz</label></div>
+      <div class="lado" style="align-items:center"><svg id="campana" viewBox="0 0 300 220" style="width:100%;max-width:380px" aria-hidden="true"></svg><div><input type="range" id="pr-t" min="0" max="12" value="0" style="width:100%" aria-label="Horas"><p><b id="pr-h">0 horas</b></p><div id="pr-gas"></div><p id="pr-txt" style="margin-top:8px" aria-live="polite"></p></div></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="Las plantas respiran todo el tiempo; de día, además, hacen fotosíntesis, que produce más oxígeno del que gastan respirando.">
+      <div class="q">¿Las plantas respiran?</div>
+      <div class="ops"><button class="op" data-por="No: también tienen mitocondrias y respiran.">No, solo hacen fotosíntesis.</button><button class="op">Sí, de día y de noche; de día además hacen fotosíntesis.</button><button class="op" data-por="Respiran todo el tiempo, no solo de noche.">Solo respiran de noche.</button></div>
+    </div>
+  </section>
+
+  <!-- ═══ DIVISIÓN CELULAR ═══ -->
+  <section class="sec" id="division">
+    <h2><span class="n">10</span> El ciclo celular y la mitosis</h2>
+    <p class="lead">«Toda célula viene de otra», dijo Virchow. Pero ¿cómo se divide una célula sin perder su información? Primero <b>copia su ADN</b> y luego reparte una copia exacta a cada célula hija. Esta célula tiene 4 cromosomas (en ti son 46). Avanza fase por fase.</p>
+    <div class="card lado" style="align-items:center">
+      <svg id="mitosis" viewBox="0 0 320 240" style="width:100%" aria-hidden="true"></svg>
+      <div><div class="chips" id="fases" style="margin-bottom:10px"></div><div id="fase-t" aria-live="polite"></div><div class="ctrl"><button type="button" class="cn-btn" id="fa-ant">← Antes</button><button type="button" class="cn-btn cn-btn--primary" id="fa-sig">Siguiente fase →</button><button type="button" class="cn-btn" id="fa-play">▶ Animar</button></div></div>
+    </div>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card"><h3>🔁 ¿Para qué sirve la mitosis?</h3><p>Para <b>crecer</b> (pasaste de una célula a 30 billones), <b>reparar</b> heridas y reemplazar células viejas (tu piel se renueva cada mes) y, en organismos como las bacterias, las amebas o los fresales, para <b>reproducirse</b> de forma asexual.</p></div>
+      <div class="card"><h3>⚠️ Cuando el ciclo se descontrola</h3><p>El ciclo tiene «puntos de control» que revisan el ADN antes de seguir. Si un gen de control muta, la célula se divide sin parar y forma un tumor: así empieza el <b>cáncer</b>. El tabaco, el exceso de sol y algunas sustancias aumentan ese riesgo.</p></div>
+    </div>
+    <div class="dato">Para formar óvulos y espermatozoides hay otra división, la <b>meiosis</b>, que reparte los cromosomas a la mitad y los mezcla. La verás en <a href="genetica.html#meiosis">genética</a>, porque explica las leyes de Mendel.</div>
+    <div class="chequeo" data-ok="0" data-exp="En la metafase los cromosomas se alinean en el centro (el ecuador de la célula), sujetos por las fibras del huso.">
+      <div class="q">¿En qué fase los cromosomas se ordenan en fila en el centro de la célula?</div>
+      <div class="ops"><button class="op">Metafase</button><button class="op" data-por="En la anafase se separan hacia los polos.">Anafase</button><button class="op" data-por="En la profase apenas se condensan.">Profase</button><button class="op" data-por="En la telofase se forman los dos núcleos nuevos.">Telofase</button></div>
+    </div>
+  </section>
+
+  <!-- ═══ MEDICINA ═══ -->
+  <section class="sec" id="medicina">
+    <h2><span class="n">11</span> La teoría celular en la medicina</h2>
+    <p class="lead">Saber que todo está hecho de células cambió la manera de entender las enfermedades: ya no se buscaban «humores» desequilibrados, sino células enfermas o microorganismos. Voltea las tarjetas.</p>
+    <div class="grid g3">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🧫</span><b>Microbiología y vacunas</b><small>toca para voltear</small></div><div class="bk">Pasteur y Koch demostraron que muchas enfermedades las causan microorganismos. Así nacieron las vacunas, la pasteurización de la leche y los antibióticos.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🔬</span><b>Biopsias</b><small>toca para voltear</small></div><div class="bk">Virchow fundó la patología celular: mirar al microscopio un trozo de tejido permite saber si sus células son normales o cancerosas.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🌱</span><b>Células madre</b><small>toca para voltear</small></div><div class="bk">Células que todavía no se han especializado y pueden convertirse en otros tipos. El trasplante de médula ósea, que cura algunas leucemias, se basa en ellas.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">💊</span><b>Medicamentos</b><small>toca para voltear</small></div><div class="bk">Muchos fármacos actúan sobre una parte de la célula: la penicilina destruye la pared de las bacterias, que nuestras células no tienen.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🧪</span><b>Cultivos celulares</b><small>toca para voltear</small></div><div class="bk">Células que se mantienen vivas en el laboratorio para producir vacunas, probar medicamentos o fabricar piel para quemados.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🩸</span><b>Exámenes de sangre</b><small>toca para voltear</small></div><div class="bk">Contar glóbulos rojos, blancos y plaquetas permite detectar anemias, infecciones y otras enfermedades.</div></div></div>
     </div>
     <div class="sig"><a href="index.html"><small>← Volver</small><b>🗺️ Mapa de niveles</b></a><a class="der" href="reinos.html"><small>Siguiente →</small><b>🍄 Reinos y clasificación</b></a></div>
   </section>
@@ -405,6 +511,151 @@ function verSal(){
   document.getElementById('os-exp').innerHTML=s.e;
 }
 sal.addEventListener('input',verSal);verSal();
+
+/* ═══ Transporte: simulación de partículas ═══ */
+var cv=document.getElementById('dif'),cx=cv.getContext('2d'),modo='simple',P=[],atp=0,animD=null,vistoTr={};
+var MX=450,POROS=[60,150,240];
+function iniDif(){P=[];for(var i=0;i<70;i++)P.push({x:20+Math.random()*(MX-40),y:12+Math.random()*276,vx:(Math.random()-.5)*3,vy:(Math.random()-.5)*3,lado:0});
+  for(i=0;i<10;i++)P.push({x:MX+20+Math.random()*(MX-40),y:12+Math.random()*276,vx:(Math.random()-.5)*3,vy:(Math.random()-.5)*3,lado:1});atp=0;}
+function enPoro(y,ancho){return POROS.some(function(p){return Math.abs(y-p)<ancho;});}
+function pasoDif(){
+  P.forEach(function(p){
+    var nx=p.x+p.vx,ny=p.y+p.vy;
+    if(ny<6||ny>294){p.vy*=-1;ny=p.y;}
+    if(nx<6||nx>894){p.vx*=-1;nx=p.x;}
+    var cruza=(p.x<MX)!==(nx<MX);
+    if(cruza){
+      var puede=modo==='simple'?Math.random()<.18:modo==='facil'?enPoro(ny,16):false;
+      if(!puede){p.vx*=-1;nx=p.x;}
+    }
+    p.x=nx;p.y=ny;p.vx+= (Math.random()-.5)*.4;p.vy+=(Math.random()-.5)*.4;var v=Math.hypot(p.vx,p.vy);if(v>3.2){p.vx*=3.2/v;p.vy*=3.2/v;}
+  });
+}
+function pintarDif(){
+  cx.clearRect(0,0,900,300);
+  cx.fillStyle='#fdf6e9';cx.fillRect(0,0,MX,300);cx.fillStyle='#eaf5fb';cx.fillRect(MX,0,MX,300);
+  // membrana (bicapa) con canales o bombas
+  for(var y=0;y<300;y+=10){if(modo!=='simple'&&enPoro(y+5,14))continue;cx.fillStyle='#e0a96d';cx.beginPath();cx.arc(MX-7,y+5,4.4,0,7);cx.arc(MX+7,y+5,4.4,0,7);cx.fill();}
+  POROS.forEach(function(py){if(modo==='simple')return;cx.fillStyle=modo==='facil'?'#7b4bb7':'#c0392b';cx.fillRect(MX-14,py-16,6,32);cx.fillRect(MX+8,py-16,6,32);if(modo==='activo'){cx.fillStyle='#c0392b';cx.font='bold 13px Outfit';cx.fillText('⚡',MX-6,py+5);}});
+  P.forEach(function(p){cx.fillStyle='#2e7d4f';cx.beginPath();cx.arc(p.x,p.y,5,0,7);cx.fill();});
+  cx.fillStyle='#3c5446';cx.font='600 15px Outfit';cx.fillText('Afuera de la célula',16,22);cx.fillText('Adentro de la célula',MX+16,22);
+  var iz=P.filter(function(p){return p.x<MX;}).length;
+  document.getElementById('dif-cnt').textContent='Afuera: '+iz+' · Adentro: '+(P.length-iz)+(modo==='activo'?' · ATP gastados: '+atp:'');
+}
+function bucle(){pasoDif();pintarDif();animD=requestAnimationFrame(bucle);}
+var TXT_TR={simple:'<b>Difusión simple:</b> las partículas pequeñas (como el O₂ y el CO₂) atraviesan la capa de lípidos solas, de donde hay <b>más</b> a donde hay <b>menos</b>, hasta que se reparten parejo. No gasta energía.',
+ facil:'<b>Difusión facilitada:</b> partículas como la glucosa o algunos iones no pasan por los lípidos; necesitan una <b>proteína canal</b> (en morado). Siguen yendo a favor de la diferencia de concentración, sin gastar energía.',
+ activo:'<b>Transporte activo:</b> una <b>proteína bomba</b> (en rojo) mete partículas aunque adentro ya haya más. Va en contra de la diferencia de concentración, así que <b>gasta energía (ATP)</b>. Toca el botón para bombear.'};
+document.querySelectorAll('[data-tr]').forEach(function(b){b.onclick=function(){modo=b.getAttribute('data-tr');vistoTr[modo]=1;document.querySelectorAll('[data-tr]').forEach(function(x){x.classList.toggle('on',x===b);});
+  document.getElementById('dif-atp').hidden=modo!=='activo';document.getElementById('dif-txt').innerHTML=TXT_TR[modo];iniDif();if(Object.keys(vistoTr).length>=3)BIO.marcarSeccion('transporte');};});
+document.getElementById('dif-atp').onclick=function(){var fuera=P.filter(function(p){return p.x<MX;});if(!fuera.length)return;
+  // la bomba toma la partícula más cercana a la membrana y la pasa adentro
+  fuera.sort(function(a,b){return b.x-a.x;});var p=fuera[0];p.x=MX+20;p.y=POROS[atp%3];p.vx=2;atp++;};
+document.getElementById('dif-reset').onclick=iniDif;
+document.getElementById('dif-txt').innerHTML=TXT_TR.simple;iniDif();
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!animD)bucle();}else if(animD){cancelAnimationFrame(animD);animD=null;}});}).observe(cv);}else bucle();
+
+/* ═══ Laboratorio de las papas ═══ */
+var HIP={a:'Buena hipótesis: predice qué pasará y por qué (ósmosis). Ahora hay que ponerla a prueba con datos.',b:'Es una hipótesis válida para probar. Veremos si los datos la apoyan o no.',c:'Es una hipótesis válida para probar. Veremos si los datos la apoyan o no.'};
+document.querySelectorAll('#hip [data-h]').forEach(function(b){b.onclick=function(){document.querySelectorAll('#hip [data-h]').forEach(function(x){x.classList.toggle('on',x===b);});document.getElementById('hip-t').textContent=HIP[b.getAttribute('data-h')];};});
+BIO.clasificar(document.getElementById('vars'),{
+  cajas:[{id:'ind',titulo:'🎛️ Independiente (la que yo cambio)'},{id:'dep',titulo:'📏 Dependiente (la que mido)'},{id:'con',titulo:'🔒 Controlada (la dejo igual)'}],
+  fichas:[{t:'Concentración de azúcar',caja:'ind'},{t:'Cambio de masa de la papa',caja:'dep'},{t:'Tamaño de los trozos',caja:'con'},{t:'Tiempo en la solución (24 h)',caja:'con'},{t:'Temperatura',caja:'con'},{t:'Tipo de papa',caja:'con',pista:'Si cambiara el tipo de papa no sabríamos qué causó el cambio.'}]});
+var CONC=[0,0.2,0.4,0.6,0.8,1.0],medidas={};
+function cambio(c){return 28*(0.3-c)/(0.3+c*0.95);}
+document.getElementById('tubos').innerHTML=CONC.map(function(c){return '<button class="chip" data-c="'+c+'">🧪 '+c.toFixed(1).replace('.',',')+' M</button>';}).join('');
+document.querySelectorAll('#tubos [data-c]').forEach(function(b){b.onclick=function(){var c=+b.getAttribute('data-c');if(medidas[c])return;
+  var m0=+(5+Math.random()*0.4).toFixed(2),pc=cambio(c)+(Math.random()-.5)*3,m1=+(m0*(1+pc/100)).toFixed(2);medidas[c]=[m0,m1,(m1-m0)/m0*100];b.classList.add('on');
+  var t=document.getElementById('tab-papa');t.insertAdjacentHTML('beforeend','<tr><td>'+c.toFixed(1).replace('.',',')+'</td><td>'+m0.toFixed(2).replace('.',',')+'</td><td>'+m1.toFixed(2).replace('.',',')+'</td><td><b style="color:'+(pc>0?'#15803d':'#b42318')+'">'+(medidas[c][2]>0?'+':'')+medidas[c][2].toFixed(1).replace('.',',')+'</b></td></tr>');
+  grafPapa();};});
+function grafPapa(){var g=document.getElementById('g-papa'),c=g.getContext('2d'),W=460,H=300,px=46,py=24;
+  c.clearRect(0,0,W,H);c.font='12px Outfit';c.fillStyle='#3c5446';c.strokeStyle='#d6e8dc';
+  function X(v){return px+(W-px-14)*v;}function Y(v){return py+(H-2*py)*(30-v)/60;}
+  [-30,-15,0,15,30].forEach(function(v){c.beginPath();c.moveTo(px,Y(v));c.lineTo(W-14,Y(v));c.stroke();c.fillText((v>0?'+':'')+v+' %',4,Y(v)+4);});
+  CONC.forEach(function(v){c.fillText(v.toFixed(1).replace('.',','),X(v)-8,H-14);});
+  c.strokeStyle='#10261a';c.lineWidth=1.5;c.beginPath();c.moveTo(px,Y(0));c.lineTo(W-14,Y(0));c.stroke();
+  var ks=Object.keys(medidas).map(Number).sort();c.strokeStyle='#2e7d4f';c.lineWidth=2;c.beginPath();ks.forEach(function(k,i){var y=Y(medidas[k][2]);if(i)c.lineTo(X(k),y);else c.moveTo(X(k),y);});c.stroke();
+  ks.forEach(function(k){c.fillStyle='#2e7d4f';c.beginPath();c.arc(X(k),Y(medidas[k][2]),5,0,7);c.fill();});
+  c.fillStyle='#3c5446';c.fillText('Concentración de sacarosa (M) →',W-200,Y(0)-8);}
+grafPapa();
+document.querySelectorAll('#iso [data-c]').forEach(function(b){b.onclick=function(){var ok=b.getAttribute('data-c')==='0.3',t=document.getElementById('iso-t');
+  document.querySelectorAll('#iso [data-c]').forEach(function(x){x.classList.toggle('on',x===b);});
+  t.innerHTML=ok?'✅ ¡Exacto! Cerca de 0,3 M la solución es <b>isotónica</b>: el agua entra y sale por igual. Eso significa que el interior de las células de la papa tiene una concentración parecida. <b>Conclusión:</b> en soluciones más diluidas la papa gana agua (hipotónicas) y en más concentradas la pierde (hipertónicas). ¿Tu hipótesis se cumplió?':'❌ Busca en la gráfica el punto donde la línea cruza el 0 %.';if(ok)BIO.marcarSeccion('lab-papa');};});
+window.pasoPapa=function(k){if(k===4&&Object.keys(medidas).length<4)document.getElementById('iso-t').textContent='💡 Primero mide al menos 4 tubos en el paso anterior.';};
+
+/* ═══ Campana de Priestley ═══ */
+var prT=document.getElementById('pr-t');
+function priestley(){
+  var h=+prT.value,luz=document.getElementById('pr-luz').checked,tiene=function(k){return document.querySelector('[data-pr="'+k+'"]').checked;};
+  var O2=21,CO2=0.04,vela=tiene('vela'),velaHasta=-1,raton=tiene('raton'),planta=tiene('planta'),desm=-1;
+  for(var t=1;t<=h;t++){
+    if(planta){if(luz){O2+=1.6;CO2=Math.max(0.01,CO2-0.5);}else{O2-=0.3;CO2+=0.3;}}
+    if(raton&&desm<0){O2-=1.4;CO2+=1.2;}
+    if(vela&&velaHasta<0){O2-=3;CO2+=2.6;}
+    O2=Math.max(0,Math.min(30,O2));CO2=Math.max(0.01,CO2);
+    if(vela&&velaHasta<0&&O2<16)velaHasta=t;
+    if(raton&&desm<0&&O2<12)desm=t;
+  }
+  var velaViva=vela&&velaHasta<0,ratonBien=raton&&desm<0;
+  var s='<defs><linearGradient id="vid" x1="0" x2="1"><stop offset="0" stop-color="#e6f3fb" stop-opacity=".9"/><stop offset=".5" stop-color="#fff" stop-opacity=".4"/><stop offset="1" stop-color="#d6eaf6" stop-opacity=".9"/></linearGradient></defs>';
+  s+='<rect width="300" height="220" rx="14" fill="'+(luz?'#fffbea':'#2a3446')+'"/>'+(luz?'<circle cx="270" cy="30" r="16" fill="#ffd34d"/>':'<circle cx="270" cy="30" r="12" fill="#e9eef7"/><circle cx="276" cy="26" r="12" fill="#2a3446"/>');
+  s+='<rect x="40" y="186" width="220" height="12" rx="4" fill="#8a6d4b"/>';
+  if(planta)s+='<g transform="translate(110 186)"><rect x="-12" y="-22" width="24" height="22" fill="#b5651d"/><path d="M0 -22 C-4 -50 -24 -60 -30 -56 C-20 -52 -8 -44 0 -30 M0 -26 C6 -52 26 -62 32 -56 C22 -50 8 -42 0 -30 M0 -24 L0 -64" stroke="#2f7d3a" stroke-width="5" fill="#57b05f"/></g>';
+  if(raton)s+='<g transform="translate(160 178)" opacity="'+(ratonBien?1:.45)+'"><ellipse rx="16" ry="9" fill="#a8a29e"/><circle cx="14" cy="-5" r="6" fill="#a8a29e"/><circle cx="12" cy="-11" r="3.5" fill="#d6d3d1"/><path d="M-16 0 C-26 0 -30 -8 -26 -12" stroke="#a8a29e" stroke-width="2" fill="none"/>'+(ratonBien?'':'<text x="-10" y="-16" style="font:700 12px Outfit" fill="#b42318">💤</text>')+'</g>';
+  if(vela)s+='<g transform="translate(205 186)"><rect x="-6" y="-30" width="12" height="30" fill="#f5f0e1" stroke="#c9bfa5"/>'+(velaViva?'<path d="M0 -44 C-6 -36 -4 -32 0 -30 C4 -32 6 -36 0 -44Z" fill="#f08c1e"/>':'<path d="M0 -32 q-6 -8 0 -14 q6 -6 0 -12" stroke="#999" stroke-width="2" fill="none"/>')+'</g>';
+  s+='<path d="M50 186 L50 70 C50 30 250 30 250 70 L250 186" fill="url(#vid)" stroke="#7fb3d5" stroke-width="3"/><ellipse cx="150" cy="42" rx="14" ry="6" fill="#7fb3d5"/>';
+  document.getElementById('campana').innerHTML=s;
+  document.getElementById('pr-h').textContent=h+' horas';
+  document.getElementById('pr-gas').innerHTML='<div style="display:grid;grid-template-columns:70px 1fr 64px;gap:8px;align-items:center;font-size:.9rem"><b>O₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+(O2/30*100)+'%;background:#1a7fb5"></i></span><span>'+O2.toFixed(1).replace('.',',')+' %</span><b>CO₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+Math.min(100,CO2/10*100)+'%;background:#6b7280"></i></span><span>'+CO2.toFixed(1).replace('.',',')+' %</span></div>';
+  var m=[];
+  if(!planta&&!raton&&!vela)m.push('La campana está vacía: no pasa nada.');
+  if(vela)m.push(velaViva?'🕯️ La vela sigue encendida.':'🕯️ La vela se apagó a las '+velaHasta+' h: la combustión gastó el oxígeno.');
+  if(raton)m.push(ratonBien?'🐭 El ratón está bien.':'🐭 Desde las '+desm+' h al ratón le falta oxígeno (en la vida real, Priestley no lo dejaba llegar a este punto).');
+  if(planta)m.push(luz?'🌿 Con luz, la planta hace fotosíntesis: consume CO₂ y libera O₂, y así «repara» el aire.':'🌿 Sin luz la planta solo respira: también gasta oxígeno.');
+  if(h===0)m=['Mueve el control del tiempo para ver qué pasa.'];
+  document.getElementById('pr-txt').innerHTML=m.join(' ');
+  if(h>=8&&planta&&(raton||vela))BIO.marcarSeccion('energia');
+}
+prT.oninput=priestley;document.querySelectorAll('[data-pr],#pr-luz').forEach(function(x){x.onchange=priestley;});priestley();
+
+/* ═══ Mitosis ═══ */
+var COLC=['#e5484d','#3e8ed0'],FASES=[
+ ['Interfase','La célula crece, trabaja y, en la etapa S, <b>copia todo su ADN</b>. Los cromosomas están desenrollados (cromatina) dentro del núcleo. Es la fase más larga: ocupa cerca del 90 % del ciclo.'],
+ ['Profase','El ADN se enrolla y se condensan los <b>cromosomas</b>, cada uno con dos copias idénticas unidas (cromátidas hermanas): forma de X. La envoltura del núcleo desaparece y se forma el <b>huso</b> de fibras.'],
+ ['Metafase','Los cromosomas se alinean en el <b>centro</b> de la célula (placa ecuatorial), sujetos por las fibras del huso.'],
+ ['Anafase','Las fibras se acortan y <b>separan las cromátidas hermanas</b>: cada copia viaja a un polo de la célula.'],
+ ['Telofase','Llega un juego completo de cromosomas a cada polo. Se forman <b>dos núcleos</b> nuevos y los cromosomas se vuelven a desenrollar.'],
+ ['Citocinesis','El citoplasma se divide en dos. Resultado: <b>dos células hijas idénticas</b> a la madre, con el mismo número de cromosomas (4 aquí; 46 en ti).']
+];
+var fk=0,playF=null;
+function crom(x,y,c,doble,rot,esc){esc=esc||1;var w=4.5*esc,l=13*esc;var a='<g transform="translate('+x+' '+y+') rotate('+(rot||0)+')">';
+  if(doble)a+='<rect x="'+(-w-1.5)+'" y="'+(-l)+'" width="'+w+'" height="'+(2*l)+'" rx="'+w/2+'" fill="'+c+'" transform="rotate(-14)"/><rect x="1.5" y="'+(-l)+'" width="'+w+'" height="'+(2*l)+'" rx="'+w/2+'" fill="'+c+'" transform="rotate(14)"/><circle r="2.6" fill="#333"/>';
+  else a+='<rect x="'+(-w/2)+'" y="'+(-l)+'" width="'+w+'" height="'+(2*l)+'" rx="'+w/2+'" fill="'+c+'"/>';
+  return a+'</g>';}
+function dibMit(k){
+  var s='<defs><radialGradient id="cit" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#fff6f1"/><stop offset="1" stop-color="#fbd9cb"/></radialGradient></defs>';
+  var cel='<ellipse cx="160" cy="120" rx="120" ry="92" fill="url(#cit)" stroke="#e07a5f" stroke-width="4"/>';
+  if(k<=3)s+=cel;
+  if(k===0){s+='<circle cx="160" cy="120" r="48" fill="#ece3f7" stroke="#7b4bb7" stroke-width="3" stroke-dasharray="14 3"/>';
+    for(var i=0;i<4;i++)s+='<path d="M'+(132+i*14)+' '+(100+i%2*20)+' q8 -12 16 0 t16 0 t16 0" stroke="'+COLC[i%2]+'" stroke-width="2.4" fill="none" opacity=".85"/>';
+    s+='<circle cx="160" cy="120" r="9" fill="#7b4bb7" opacity=".6"/>';}
+  if(k===1){s+='<circle cx="160" cy="120" r="50" fill="none" stroke="#7b4bb7" stroke-width="2" stroke-dasharray="4 8" opacity=".5"/>'+crom(140,108,COLC[0],1,20)+crom(176,104,COLC[1],1,-30)+crom(150,140,COLC[1],1,60,0.8)+crom(178,138,COLC[0],1,-10,0.8)+'<circle cx="60" cy="120" r="6" fill="#d4a017"/><circle cx="260" cy="120" r="6" fill="#d4a017"/>';}
+  if(k>=2&&k<=3){for(var f=0;f<7;f++){var yy=60+f*20;s+='<path d="M60 120 Q110 '+yy+' 160 '+yy+'" stroke="#bfa36a" stroke-width="1" fill="none" opacity=".7"/><path d="M260 120 Q210 '+yy+' 160 '+yy+'" stroke="#bfa36a" stroke-width="1" fill="none" opacity=".7"/>';}s+='<circle cx="60" cy="120" r="6" fill="#d4a017"/><circle cx="260" cy="120" r="6" fill="#d4a017"/>';}
+  if(k===2){[[COLC[0],1],[COLC[1],1],[COLC[1],.8],[COLC[0],.8]].forEach(function(c,i){s+=crom(160,72+i*32,c[0],1,90,c[1]);});s+='<line x1="160" y1="34" x2="160" y2="206" stroke="#999" stroke-dasharray="4 4"/>';}
+  if(k===3){[[COLC[0],1],[COLC[1],1],[COLC[1],.8],[COLC[0],.8]].forEach(function(c,i){var y=78+i*28;s+=crom(105,y,c[0],0,90,c[1]*.9)+crom(215,y,c[0],0,90,c[1]*.9);});}
+  if(k===4){s+='<path d="M40 120 C40 40 150 30 160 60 C170 30 280 40 280 120 C280 200 170 210 160 180 C150 210 40 200 40 120Z" fill="url(#cit)" stroke="#e07a5f" stroke-width="4"/>';
+    [95,225].forEach(function(x){s+='<circle cx="'+x+'" cy="120" r="34" fill="#ece3f7" stroke="#7b4bb7" stroke-width="2.5"/>'+crom(x-10,108,COLC[0],0,30,.75)+crom(x+10,106,COLC[1],0,-20,.75)+crom(x-8,134,COLC[1],0,60,.6)+crom(x+12,132,COLC[0],0,-50,.6);});}
+  if(k===5){[90,230].forEach(function(x){s+='<ellipse cx="'+x+'" cy="120" rx="70" ry="64" fill="url(#cit)" stroke="#e07a5f" stroke-width="4"/><circle cx="'+x+'" cy="120" r="30" fill="#ece3f7" stroke="#7b4bb7" stroke-width="2.5" stroke-dasharray="10 3"/>';for(var j=0;j<4;j++)s+='<path d="M'+(x-20+j*9)+' '+(110+j%2*16)+' q5 -8 10 0 t10 0" stroke="'+COLC[j%2]+'" stroke-width="2" fill="none"/>';});}
+  s+='<text x="160" y="232" text-anchor="middle" style="font:800 15px Outfit" fill="#14532d">'+FASES[k][0]+'</text>';
+  return s;
+}
+var fz=document.getElementById('fases');fz.innerHTML=FASES.map(function(f,i){return '<button class="chip" data-f="'+i+'">'+(i+1)+'. '+f[0]+'</button>';}).join('');
+function verFase(k){fk=k;document.getElementById('mitosis').innerHTML=dibMit(k);document.getElementById('fase-t').innerHTML='<h3>'+FASES[k][0]+'</h3><p>'+FASES[k][1]+'</p>';
+  fz.querySelectorAll('.chip').forEach(function(b,i){b.classList.toggle('on',i===k);});document.getElementById('fa-ant').disabled=k===0;document.getElementById('fa-sig').disabled=k===5;if(k===5)BIO.marcarSeccion('division');}
+fz.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){verFase(+b.getAttribute('data-f'));};});
+document.getElementById('fa-sig').onclick=function(){verFase(fk+1);};document.getElementById('fa-ant').onclick=function(){verFase(fk-1);};
+document.getElementById('fa-play').onclick=function(){var b=this;if(playF){clearInterval(playF);playF=null;b.textContent='▶ Animar';return;}b.textContent='⏸ Pausar';verFase(0);playF=setInterval(function(){if(fk>=5){clearInterval(playF);playF=null;b.textContent='▶ Animar';return;}verFase(fk+1);},1800);};
+verFase(0);
 })();
 </script>
 <script src="text-zoom.js?v=2"></script>
