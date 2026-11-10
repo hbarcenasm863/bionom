@@ -6,6 +6,28 @@
 
 ---
 
+## Versión 1.1 — 10 de noviembre de 2026 · Modo Estudiante desactivado
+
+### Contexto
+El docente pidió desactivar por ahora el Modo Estudiante: lo configurará en
+2027.
+
+### Cambios
+- `juego.html`:
+  - Nueva constante `MODO_ESTUDIANTE_ACTIVO=false`, que oculta las pestañas
+    «Modo libre / Modo Estudiante»; el juego funciona solo en modo libre.
+  - Todo el código del Modo Estudiante sigue en el archivo, sin borrar.
+  - Se quitó la mención del Modo Estudiante en la introducción y en la
+    descripción de la página.
+- `index.html`: la tarjeta del Juego ya no menciona el Modo Estudiante.
+- `docente.html`: Orientaciones avisa que el modo está desactivado hasta 2027
+  y explica qué línea cambiar.
+
+### Pasos pendientes (2027)
+1. Cambiar `MODO_ESTUDIANTE_ACTIVO` a `true` en `juego.html`.
+2. Seguir los pasos de la Versión 1 para desplegar `bionom-analytics.gs` y
+   pegar la URL en `APPS_SCRIPT_URL`.
+
 ## Versión 1 — 10 de noviembre de 2026 (creación del sitio)
 
 ### Qué pidió el docente y por qué

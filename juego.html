@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Juego de repaso — BioNom</title>
-<meta name="description" content="Juego de repaso de biología: célula, reinos, sistemas, genética, evolución, ecosistemas y Colombia. Modo libre y Modo Estudiante.">
+<meta name="description" content="Juego de repaso de biología: célula, reinos, sistemas, genética, evolución, ecosistemas y Colombia.">
 <meta name="theme-color" content="#0f2a5f">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
@@ -64,7 +64,7 @@
     <header class="cn-page-head" data-sin-narracion>
       <span class="kicker">🎮 Repaso</span>
       <h1>Juego de biología</h1>
-      <p>Preguntas de todos los módulos de BioNom, con la explicación de cada respuesta. En el <b>Modo Estudiante</b> tus resultados le llegan a tu docente.</p>
+      <p>Preguntas de todos los módulos de BioNom, con la explicación de cada respuesta.</p>
     </header>
     <div class="modos" role="tablist"><button type="button" class="on" id="m-libre" role="tab">🕹️ Modo libre</button><button type="button" id="m-est" role="tab">🎓 Modo Estudiante</button></div>
     <div class="card login" id="login" hidden>
@@ -114,6 +114,10 @@
 /* URL de la aplicación web de bionom-analytics.gs (Implementar → Aplicación web).
    Mientras esté vacía, el Modo Estudiante avisa que el registro no está conectado. */
 var APPS_SCRIPT_URL='';
+/* Modo Estudiante desactivado por decisión del docente: se configurará en 2027.
+   Para activarlo: poner true aquí y llenar APPS_SCRIPT_URL (ver Docente → Orientaciones). */
+var MODO_ESTUDIANTE_ACTIVO=false;
+if(!MODO_ESTUDIANTE_ACTIVO){var _m=document.querySelector('.modos');if(_m)_m.hidden=true;}
 var TEMAS=window.TEMAS_JUEGO,BANCO=window.BANCO_BIO;
 var NOM_T={};TEMAS.forEach(function(t){NOM_T[t[0]]=t[1];});
 var PAG_T={celula:'celula.html',reinos:'reinos.html',sistemas:'sistemas.html',reproduccion:'reproduccion.html',genetica:'genetica.html',evolucion:'evolucion.html',ecosistemas:'ecosistemas.html',colombia:'regiones.html',ambiente:'ambiente.html'};
