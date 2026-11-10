@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
-<link rel="stylesheet" href="actividades.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
+<link rel="stylesheet" href="actividades.css?v=4">
 <style>
 .panel[hidden]{display:none!important}
 .dtabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 18px}
@@ -86,7 +86,7 @@
   </header>
   <div class="dtabs" role="tablist">
     <button class="chip on" data-p="gen" role="tab">📝 Talleres y evaluaciones</button>
-    <button class="chip" data-p="ah" role="tab">🪢 Ahorcado</button>
+    <button class="chip" data-p="ah" role="tab">🔤 Ahorcado</button>
     <button class="chip" data-p="sp" role="tab">🔍 Sopa de letras</button>
     <button class="chip" data-p="ori" role="tab">📖 Orientaciones</button>
   </div>
@@ -128,7 +128,7 @@
   <!-- ══ AHORCADO (ahorcado.js + ahorcado-datos.js) ══ -->
   <section class="panel act-panel" id="panel-ah" hidden>
    <div id="ah-app">
-    <div class="tipo-intro"><strong>🪢 Ahorcado</strong> Palabras clave de los módulos de BioNom, cada una con 3 pistas (de la más general a la más reveladora). Hoja para imprimir con versiones y clave, o modo clase para proyectar.</div>
+    <div class="tipo-intro"><strong>🔤 Ahorcado</strong> Palabras clave de los módulos de BioNom, cada una con 3 pistas (de la más general a la más reveladora). Hoja para imprimir con versiones y clave, o modo clase para proyectar.</div>
     <div class="act-sect"><h2>1 · Temas</h2><div class="act-chks" id="ah-grupos"></div></div>
     <div class="act-sect"><h2>2 · Hoja y versiones</h2>
       <div class="campos">
@@ -225,11 +225,11 @@
 <div id="print-root" aria-hidden="true"></div>
 <div id="ah-print-root" aria-hidden="true"></div>
 <div id="sp-print-root" aria-hidden="true"></div>
-<script src="bio.js?v=3"></script>
-<script src="banco.js?v=3"></script>
-<script src="ahorcado-datos.js?v=3"></script>
-<script src="ahorcado.js?v=3"></script>
-<script src="sopa.js?v=3"></script>
+<script src="bio.js?v=4"></script>
+<script src="banco.js?v=4"></script>
+<script src="ahorcado-datos.js?v=4"></script>
+<script src="ahorcado.js?v=4"></script>
+<script src="sopa.js?v=4"></script>
 <script>
 (function(){
 'use strict';
@@ -322,7 +322,7 @@ llenarVersiones();
 (document.fonts?Promise.all(['13.5px "STIX Two Text"','bold 13.5px "STIX Two Text"','italic 12px "STIX Two Text"','800 13px Outfit','12px Outfit'].map(function(f){return document.fonts.load(f);})).catch(function(){}):Promise.resolve()).then(pintar);
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

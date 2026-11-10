@@ -57,6 +57,11 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
   mismo commit. No repetir archivos en `ASSETS`: un archivo repetido hace
   fallar la instalación de la app.
 
+- **Emojis:** no usar banderas (Windows no las dibuja: para Colombia usar
+  `<span class="co"></span>`) ni emojis de la versión 12 en adelante (🫁 🫀
+  🫘 🫧 🪸 🩸 🟢…), porque en el Windows del docente salen como
+  rectángulos negros.
+
 ## Arquitectura
 
 | Archivo | Qué es |

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 .escalon{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px 0}
 .escalon .e{flex:1;min-width:110px;text-align:center;background:#fff;border:2px solid var(--cn-brd);border-radius:14px;padding:10px 6px;transition:all .3s}
@@ -39,16 +39,16 @@
 <nav class="site-nav"></nav>
 <main class="app">
   <header class="cn-page-head">
-    <span class="kicker">🫀 Nivel del organismo</span>
+    <span class="kicker">❤️ Nivel del organismo</span>
     <h1>Sistemas: un equipo de 30 billones de células</h1>
     <p>Las células parecidas forman <b>tejidos</b>, los tejidos forman <b>órganos</b>, los órganos forman <b>sistemas</b> y todos los sistemas juntos forman un <b>organismo</b>: tú. Explora tu cuerpo por dentro y sigue el viaje de un bocado de comida y de una molécula de oxígeno.</p>
     <a class="nivel-chip" href="index.html">🗺️ Niveles: tejido → órgano → sistema → organismo</a>
   </header>
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
-    <a href="#escalera">🪜 De célula a sistema</a>
+    <a href="#escalera">📶 De célula a sistema</a>
     <a href="#tejidos">🧱 Tejidos</a>
-    <a href="#cuerpo-sec">🧍 El cuerpo por dentro</a>
+    <a href="#cuerpo-sec">🧑 El cuerpo por dentro</a>
     <a href="#recorridos">🚂 Recorridos</a>
     <a href="#equipo">🤝 Trabajo en equipo</a>
     <a href="#inmune">🛡️ Defensas</a>
@@ -64,7 +64,7 @@
       <div class="e"><span class="i">🔴</span>Célula</div><span class="fl">→</span>
       <div class="e"><span class="i">💪</span>Tejido</div><span class="fl">→</span>
       <div class="e"><span class="i">❤️</span>Órgano</div><span class="fl">→</span>
-      <div class="e"><span class="i">🩸</span>Sistema</div><span class="fl">→</span>
+      <div class="e"><span class="i">🔴</span>Sistema</div><span class="fl">→</span>
       <div class="e"><span class="i">🧑</span>Organismo</div>
     </div>
     <div class="pasos" data-alcambiar="pasoEsc">
@@ -120,7 +120,7 @@
       <div class="paso" data-t="Nervioso"><h3>⚡ Sistema nervioso</h3><p>Tus ojos ven el bus alejarse. El cerebro decide correr y manda la orden a los músculos por los nervios en milésimas de segundo.</p></div>
       <div class="paso" data-t="Endocrino"><h3>🧪 Sistema endocrino</h3><p>Las glándulas suprarrenales liberan <b>adrenalina</b> a la sangre: el corazón late más rápido y llega más glucosa a los músculos.</p></div>
       <div class="paso" data-t="Locomotor"><h3>🦴 Sistema locomotor</h3><p>Los músculos de las piernas se contraen y jalan los huesos, que funcionan como palancas. ¡Avanzas!</p></div>
-      <div class="paso" data-t="Respiratorio"><h3>🫁 Sistema respiratorio</h3><p>Respiras más rápido y profundo para meter más oxígeno y sacar el CO₂ que producen tus músculos.</p></div>
+      <div class="paso" data-t="Respiratorio"><h3>🌬️ Sistema respiratorio</h3><p>Respiras más rápido y profundo para meter más oxígeno y sacar el CO₂ que producen tus músculos.</p></div>
       <div class="paso" data-t="Circulatorio"><h3>❤️ Sistema circulatorio</h3><p>El corazón pasa de unos 70 a más de 150 latidos por minuto para repartir el oxígeno y la glucosa a los músculos.</p></div>
       <div class="paso" data-t="Excretor"><h3>💧 Excreción y temperatura</h3><p>Los músculos calientan el cuerpo. Las glándulas de la piel producen <b>sudor</b> para enfriarte, y los riñones ajustan cuánta agua guardas.</p></div>
     </div>
@@ -176,8 +176,8 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
-<script src="cuerpo.js?v=3"></script>
+<script src="bio.js?v=4"></script>
+<script src="cuerpo.js?v=4"></script>
 <script>
 window.pasoEsc=function(k){document.querySelectorAll('#esc .e').forEach(function(e,i){e.classList.toggle('on',i===k);});};
 (function(){
@@ -186,24 +186,24 @@ var C=document.getElementById('cuerpo');
 var ORG={
  boca:['digestivo','Boca','👄','Los dientes <b>trituran</b> el alimento (digestión mecánica) y la saliva empieza a digerir el almidón (digestión química). La lengua forma el <b>bolo alimenticio</b>.'],
  esofago:['digestivo','Esófago','⬇️','Tubo muscular de unos 25 cm que lleva el bolo al estómago con contracciones en ola (<b>peristaltismo</b>). Funciona aunque estés de cabeza.'],
- estomago:['digestivo','Estómago','🫃','Bolsa muscular con <b>ácido clorhídrico</b> y enzimas que digieren las proteínas. Mezcla el bolo hasta volverlo una papilla llamada <b>quimo</b>.'],
- higado:['digestivo','Hígado','🟤','El órgano interno más grande. Produce la <b>bilis</b>, que ayuda a digerir las grasas, guarda glucosa y limpia la sangre de sustancias tóxicas.'],
+ estomago:['digestivo','Estómago','🍲','Bolsa muscular con <b>ácido clorhídrico</b> y enzimas que digieren las proteínas. Mezcla el bolo hasta volverlo una papilla llamada <b>quimo</b>.'],
+ higado:['digestivo','Hígado','🔶','El órgano interno más grande. Produce la <b>bilis</b>, que ayuda a digerir las grasas, guarda glucosa y limpia la sangre de sustancias tóxicas.'],
  pancreas:['digestivo','Páncreas','🌽','Envía al intestino <b>jugo pancreático</b> con enzimas para digerir de todo. También produce insulina (por eso está también en el sistema endocrino).'],
  intdelgado:['digestivo','Intestino delgado','🌀','Tubo de unos <b>6 metros</b> enrollado. Termina la digestión y <b>absorbe los nutrientes</b> hacia la sangre a través de millones de pliegues llamados vellosidades.'],
  intgrueso:['digestivo','Intestino grueso','🔁','Mide 1,5 m y rodea al delgado. <b>Absorbe el agua</b> que queda y forma las heces. Ahí viven billones de bacterias útiles (microbiota).'],
  nariz:['respiratorio','Nariz y fosas nasales','👃','El aire entra, se <b>calienta, se humedece y se filtra</b> con los pelitos y el moco.'],
  traquea:['respiratorio','Tráquea','🦴','Tubo con anillos de cartílago que lo mantienen abierto. Lleva el aire hasta los bronquios. Por delante del esófago.'],
- pulmones:['respiratorio','Pulmones','🫁','Dos «esponjas» con unos 480 millones de <b>alvéolos</b>, sacos diminutos donde el oxígeno pasa a la sangre y el CO₂ sale de ella (<b>intercambio gaseoso</b>).'],
+ pulmones:['respiratorio','Pulmones','🌬️','Dos «esponjas» con unos 480 millones de <b>alvéolos</b>, sacos diminutos donde el oxígeno pasa a la sangre y el CO₂ sale de ella (<b>intercambio gaseoso</b>).'],
  diafragma:['respiratorio','Diafragma','〰️','Músculo en forma de cúpula bajo los pulmones. Al contraerse baja y el aire <b>entra</b> (inspiración); al relajarse sube y el aire <b>sale</b> (espiración).'],
  corazon:['circulatorio','Corazón','❤️','Bomba muscular con <b>4 cavidades</b> (2 aurículas y 2 ventrículos). El lado derecho envía la sangre a los pulmones y el izquierdo, a todo el cuerpo.'],
  arterias:['circulatorio','Arterias','🔴','Vasos de pared gruesa y elástica que llevan la sangre <b>desde el corazón</b> hacia el cuerpo, con mucha presión. La aorta es la más grande.'],
  venas:['circulatorio','Venas','🔵','Llevan la sangre <b>de regreso al corazón</b>. Tienen válvulas que evitan que la sangre se devuelva por la gravedad.'],
- rinones:['excretor','Riñones','🫘','Dos filtros del tamaño de un puño que limpian toda tu sangre unas 300 veces al día. Sacan la urea, las sales y el agua sobrante en forma de <b>orina</b>.'],
+ rinones:['excretor','Riñones','🌰','Dos filtros del tamaño de un puño que limpian toda tu sangre unas 300 veces al día. Sacan la urea, las sales y el agua sobrante en forma de <b>orina</b>.'],
  ureteres:['excretor','Uréteres','〽️','Dos tubos delgados que llevan la orina de los riñones a la vejiga.'],
  vejiga:['excretor','Vejiga','💧','Bolsa muscular que <b>guarda la orina</b> (hasta medio litro) hasta que la eliminas por la uretra.'],
  piel:['excretor','Glándulas del sudor (piel)','💦','La piel también excreta: el <b>sudor</b> elimina agua, sales y un poco de urea, y además enfría el cuerpo.'],
  cerebro:['nervioso','Encéfalo (cerebro)','🧠','Centro de control: recibe la información de los sentidos, la interpreta y <b>decide qué hacer</b>. También guarda memorias y emociones. El cerebelo coordina el equilibrio.'],
- medula:['nervioso','Médula espinal','🦯','Cordón de nervios protegido por la columna. Lleva mensajes entre el cerebro y el cuerpo y controla los <b>actos reflejos</b> (como quitar la mano del fuego).'],
+ medula:['nervioso','Médula espinal','🔗','Cordón de nervios protegido por la columna. Lleva mensajes entre el cerebro y el cuerpo y controla los <b>actos reflejos</b> (como quitar la mano del fuego).'],
  nervios:['nervioso','Nervios','⚡','Cables formados por prolongaciones de neuronas que llegan a cada rincón: llevan órdenes a los músculos y traen información de los sentidos.'],
  ojos:['nervioso','Órganos de los sentidos','👁️','Ojos, oídos, nariz, lengua y piel tienen <b>receptores</b> que captan luz, sonido, olores, sabores, presión y temperatura, y avisan al cerebro.'],
  hipofisis:['endocrino','Hipófisis','🎛️','Pequeña glándula bajo el cerebro, del tamaño de un garbanzo: es la «directora de orquesta» que controla a casi todas las demás glándulas. Produce la hormona del <b>crecimiento</b>.'],
@@ -218,15 +218,15 @@ var ORG={
  extremidades:['oseo','Huesos de brazos y piernas','🦵','Funcionan como <b>palancas</b> que los músculos jalan. El <b>fémur</b> (muslo) es el hueso más largo y fuerte del cuerpo.'],
  amigdalas:['inmune','Amígdalas','🛡️','Grupos de tejido linfático a la entrada de la garganta: atrapan los microbios que entran con el aire y los alimentos.'],
  timo:['inmune','Timo','🎓','Glándula detrás del esternón donde «se entrenan» los linfocitos T para reconocer a los invasores sin atacar al propio cuerpo. Es grande en la niñez y se reduce en el adulto.'],
- bazo:['inmune','Bazo','🩸','Filtra la sangre, destruye los glóbulos rojos viejos y guarda glóbulos blancos listos para defender.'],
- ganglios:['inmune','Ganglios y vasos linfáticos','🟢','Los vasos linfáticos recogen el líquido de los tejidos y lo pasan por los ganglios, donde los glóbulos blancos revisan si hay microbios. Por eso se inflaman («se hacen bolitas» en el cuello) cuando tienes una infección.'],
+ bazo:['inmune','Bazo','🔴','Filtra la sangre, destruye los glóbulos rojos viejos y guarda glóbulos blancos listos para defender.'],
+ ganglios:['inmune','Ganglios y vasos linfáticos','💚','Los vasos linfáticos recogen el líquido de los tejidos y lo pasan por los ganglios, donde los glóbulos blancos revisan si hay microbios. Por eso se inflaman («se hacen bolitas» en el cuello) cuando tienes una infección.'],
  medulaosea:['inmune','Médula ósea','🦴','Tejido blando dentro de los huesos largos donde nacen todas las células de la sangre: glóbulos rojos, plaquetas y glóbulos blancos.'],
  musculos:['oseo','Músculos esqueléticos','💪','Más de 600 músculos unidos a los huesos por <b>tendones</b>. Solo pueden jalar (no empujar), por eso trabajan en pares: bíceps y tríceps.'],
- vesicula:['digestivo','Vesícula biliar','🟢','Pequeña bolsa bajo el hígado que <b>guarda la bilis</b> y la suelta al intestino cuando comes alimentos grasosos.']
+ vesicula:['digestivo','Vesícula biliar','💚','Pequeña bolsa bajo el hígado que <b>guarda la bilis</b> y la suelta al intestino cuando comes alimentos grasosos.']
 };
 var SIS={
  digestivo:['🍽️ Digestivo','#e07a3f','Transforma los alimentos en nutrientes pequeños que la sangre puede absorber, y elimina lo que no se aprovecha.'],
- respiratorio:['🫁 Respiratorio','#c0607a','Toma el oxígeno del aire y expulsa el dióxido de carbono que producen las células.'],
+ respiratorio:['🌬️ Respiratorio','#c0607a','Toma el oxígeno del aire y expulsa el dióxido de carbono que producen las células.'],
  circulatorio:['❤️ Circulatorio','#d62828','Transporta oxígeno, nutrientes, hormonas y defensas a todas las células, y recoge sus desechos.'],
  excretor:['💧 Excretor','#b9922a','Elimina los desechos del metabolismo (como la urea) y mantiene el equilibrio de agua y sales.'],
  nervioso:['⚡ Nervioso','#d4a017','Recibe información, la procesa y coordina las respuestas del cuerpo con mensajes eléctricos muy rápidos.'],
@@ -293,14 +293,14 @@ var REC={
  bocado:{b:'🍌 El viaje de un bocado',col:'#e07a3f',ver:['boca','esofago','higado','vesicula','estomago','pancreas','intgrueso','intdelgado'],
   p:[[150,78,'👄 <b>Boca.</b> Masticas un bocado de arepa. Los dientes lo trituran y la saliva empieza a romper el almidón. Tragas el <b>bolo</b>.'],
      [152,140,'⬇️ <b>Esófago.</b> Ondas de contracción (peristaltismo) empujan el bolo hacia abajo en unos 8 segundos.'],
-     [176,234,'🫃 <b>Estómago.</b> El ácido y las enzimas lo revuelven de 2 a 4 horas. El bolo se vuelve <b>quimo</b>, una papilla.'],
+     [176,234,'🍲 <b>Estómago.</b> El ácido y las enzimas lo revuelven de 2 a 4 horas. El bolo se vuelve <b>quimo</b>, una papilla.'],
      [152,298,'🌀 <b>Intestino delgado.</b> La bilis (del hígado y la vesícula) y el jugo del páncreas terminan la digestión. Los nutrientes pasan a la sangre por las vellosidades.'],
      [186,296,'🔁 <b>Intestino grueso.</b> Se absorbe el agua que queda y las bacterias de la microbiota fermentan la fibra.'],
      [150,350,'🚽 <b>Recto y ano.</b> Lo que no se digirió sale como heces. El viaje completo dura entre 24 y 72 horas.']]},
- oxigeno:{b:'🫁 El viaje del oxígeno',col:'#2e5f9e',ver:['venas','arterias','nariz','traquea','pulmones','corazon'],
+ oxigeno:{b:'🌬️ El viaje del oxígeno',col:'#2e5f9e',ver:['venas','arterias','nariz','traquea','pulmones','corazon'],
   p:[[150,68,'👃 <b>Nariz.</b> Una molécula de oxígeno entra con el aire, que se calienta, se humedece y se filtra.'],
      [150,120,'🦴 <b>Tráquea y bronquios.</b> Baja por la tráquea y se desvía por un bronquio hacia un pulmón.'],
-     [120,180,'🫁 <b>Alvéolo pulmonar.</b> Atraviesa la pared delgadísima del alvéolo y entra a la sangre, donde la atrapa la <b>hemoglobina</b> de un glóbulo rojo.'],
+     [120,180,'🌬️ <b>Alvéolo pulmonar.</b> Atraviesa la pared delgadísima del alvéolo y entra a la sangre, donde la atrapa la <b>hemoglobina</b> de un glóbulo rojo.'],
      [160,188,'❤️ <b>Corazón.</b> La sangre oxigenada llega al lado izquierdo del corazón, que la bombea con fuerza a la aorta.'],
      [129,450,'🦵 <b>Músculo de la pierna.</b> Por las arterias llega a los capilares del músculo. Allí la mitocondria usa el oxígeno para sacar energía de la glucosa. Se produce CO₂.'],
      [123,520,'🔵 <b>De regreso.</b> El CO₂ vuelve por las venas al corazón, luego a los pulmones… y sale cuando exhalas. ¡Una vuelta completa tarda cerca de un minuto!']]}
@@ -390,8 +390,8 @@ grafG();document.getElementById('h-t').textContent='Empieza en 90 mg/dL, en ayun
 
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

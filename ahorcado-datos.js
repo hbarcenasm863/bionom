@@ -6,7 +6,7 @@
    Las tildes no cuentan al adivinar; la Ñ es una letra aparte.
    ═════════════════════════════════════════════════════════════════════ */
 window.AHORCADO_SITIO='BioNom';
-window.AHORCADO_GRUPOS=[["celula","🔬 La célula",["celula"]],["reinos","🍄 Reinos y clasificación",["reinos"]],["sistemas","🫀 Sistemas del cuerpo",["sistemas"]],["reproduccion","👶 Reproducción",["reproduccion"]],["genetica","🧬 Genética",["genetica"]],["evolucion","🦎 Evolución",["evolucion"]],["ecosistemas","🌳 Ecosistemas",["ecosistemas"]],["colombia","🇨🇴 Ecosistemas de Colombia",["colombia"]],["ambiente","🌍 Ambiente y cambio climático",["ambiente"]]];
+window.AHORCADO_GRUPOS=[["celula","🔬 La célula",["celula"]],["reinos","🍄 Reinos y clasificación",["reinos"]],["sistemas","❤️ Sistemas del cuerpo",["sistemas"]],["reproduccion","👶 Reproducción",["reproduccion"]],["genetica","🧬 Genética",["genetica"]],["evolucion","🦎 Evolución",["evolucion"]],["ecosistemas","🌳 Ecosistemas",["ecosistemas"]],["colombia","🗺️ Ecosistemas de Colombia",["colombia"]],["ambiente","🌍 Ambiente y cambio climático",["ambiente"]]];
 window.HOJA_TITULOS={sopa:'Sopa de letras de biología',ahorcado:'Ahorcado de biología'};
 window.HOJA_SITIO={logo:'icons/logo.png',marca:'icons/marca-bionom.png',nombre:'BioNom',pie:'<span class="m">Bio<b>Nom</b> · Biología por niveles de organización</span><span>© 2026 Harvey Bárcenas Morales · Licencia CC BY-NC 4.0</span>'};
 window.BANCO_AHORCADO=[

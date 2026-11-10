@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 .inv{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:center}
 @media(max-width:780px){.inv{grid-template-columns:1fr}}
@@ -43,7 +43,7 @@
     <strong>En esta página</strong>
     <a href="#invernadero">🌡️ Efecto invernadero</a>
     <a href="#causas">🏭 Causas</a>
-    <a href="#consecuencias">🇨🇴 Consecuencias</a>
+    <a href="#consecuencias"><span class="co" role="img" aria-label="Colombia"></span> Consecuencias</a>
     <a href="#nino">🌊 El Niño y La Niña</a>
     <a href="#oceanos">🐠 Océanos</a>
     <a href="#energias">⚡ Energías</a>
@@ -74,7 +74,7 @@
     <div class="card"><canvas id="emis" width="900" height="250" aria-label="Fuentes de gases de efecto invernadero en Colombia"></canvas>
       <p style="font-size:.84rem;color:var(--cn-dim)">Porcentajes aproximados del inventario nacional de gases de efecto invernadero (IDEAM). Toca una barra.</p><p id="emis-t" aria-live="polite"></p></div>
     <div class="grid g3" style="margin-top:12px">
-      <div class="flip"><div class="in"><div class="fr"><span class="e">🪓</span><b>Deforestación</b><small>toca para voltear</small></div><div class="bk">Al talar y quemar el bosque, el carbono guardado en los árboles sale como CO₂, y ese bosque deja de absorberlo. La mayor parte de la deforestación de Colombia ocurre en la Amazonia, para convertirla en potreros.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🚜</span><b>Deforestación</b><small>toca para voltear</small></div><div class="bk">Al talar y quemar el bosque, el carbono guardado en los árboles sale como CO₂, y ese bosque deja de absorberlo. La mayor parte de la deforestación de Colombia ocurre en la Amazonia, para convertirla en potreros.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">🐄</span><b>Ganadería</b><small>toca para voltear</small></div><div class="bk">Las vacas producen metano al digerir el pasto (gracias a arqueas de su estómago). El metano calienta cerca de 80 veces más que el CO₂ en sus primeros 20 años.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">🚗</span><b>Transporte y energía</b><small>toca para voltear</small></div><div class="bk">Carros, buses, motos y fábricas que queman gasolina, diésel o carbón. Es la segunda fuente en Colombia y la primera en el mundo.</div></div></div>
     </div>
@@ -132,11 +132,11 @@
     <p class="lead">Frente al cambio climático hay tres tipos de acciones. <b>Mitigar</b> es reducir las emisiones (atacar la causa). <b>Adaptarse</b> es prepararse para los cambios que ya vienen. Ser <b>resiliente</b> es poder recuperarse rápido después de un desastre. Clasifica estas acciones.</p>
     <div class="card" id="clas-acc"></div>
     <div class="clave">Ninguna persona sola detiene el cambio climático, pero las decisiones de muchos sí cambian las cosas: en la casa, en el colegio, en el barrio y en lo que exigimos a los gobiernos. Un proyecto escolar de reforestación, de ahorro de agua o de reciclaje es ciencia aplicada.</div>
-    <div class="sig"><a href="regiones.html"><small>← Anterior</small><b>🇨🇴 Ecosistemas de Colombia</b></a><a class="der" href="juego.html"><small>Siguiente →</small><b>🎮 Juego de repaso</b></a></div>
+    <div class="sig"><a href="regiones.html"><small>← Anterior</small><b><span class="co" role="img" aria-label="Colombia"></span> Ecosistemas de Colombia</b></a><a class="der" href="juego.html"><small>Siguiente →</small><b>🎮 Juego de repaso</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
+<script src="bio.js?v=4"></script>
 <script>
 (function(){
 /* ═══ Efecto invernadero ═══ */
@@ -191,7 +191,7 @@ var RC={
  'Pacífica':['🌊','Lluvias más intensas e inundaciones; el mar más caliente y ácido daña los arrecifes y afecta la pesca. Los manglares, que protegen la costa, se ven presionados.','Comunidades afrodescendientes e indígenas ribereñas que dependen del río y del mar.'],
  'Orinoquía':['🔥','Temporadas secas más largas y extremas: incendios en las sabanas, mortandad de chigüiros por falta de agua (como en Paz de Ariporo en 2014) y ríos muy bajos.','Comunidades indígenas y campesinas de la sabana y su ganado.'],
  'Amazonía':['🌳','Sequías récord bajan el caudal de los ríos y aíslan a las comunidades que dependen de ellos para moverse y pescar. Si la deforestación continúa, partes de la selva podrían convertirse en sabana.','Pueblos indígenas de la selva, que además son quienes mejor la conservan.'],
- 'Insular':['🪸','Blanqueamiento de corales y huracanes más fuertes, como Iota (2020) en Providencia. El agua dulce de las islas es escasa y se contamina con agua de mar.','Las comunidades raizales de San Andrés y Providencia.']
+ 'Insular':['🐠','Blanqueamiento de corales y huracanes más fuertes, como Iota (2020) en Providencia. El agua dulce de las islas es escasa y se contamina con agua de mar.','Las comunidades raizales de San Andrés y Providencia.']
 };
 var rc=document.getElementById('regc'),vistRC={};
 rc.innerHTML=Object.keys(RC).map(function(r){return '<button class="chip" data-r="'+r+'">'+RC[r][0]+' '+r+'</button>';}).join('');
@@ -210,7 +210,7 @@ function verNN(k){var n=NN[k],w=n.agua[0];
   document.querySelectorAll('[data-n]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-n')===k);});
   var s='<defs><linearGradient id="agua" x1="0" x2="1"><stop offset="0" stop-color="#e05a3a"/><stop offset="'+(w/420).toFixed(2)+'" stop-color="#f08c5a"/><stop offset="'+Math.min(1,(w+80)/420).toFixed(2)+'" stop-color="#7fb3d5"/><stop offset="1" stop-color="#2f6fa8"/></linearGradient></defs>';
   s+='<rect width="420" height="240" fill="#e7f3fb"/><rect x="0" y="130" width="420" height="110" fill="url(#agua)"/>';
-  s+='<text x="10" y="226" style="font:800 12px Outfit" fill="#fff">ASIA / AUSTRALIA</text><path d="M380 70 L420 40 L420 240 L390 240 Z" fill="#7cbf5f"/><text transform="translate(410 200) rotate(-90)" style="font:800 12px Outfit" fill="#fff">SURAMÉRICA 🇨🇴</text>';
+  s+='<text x="10" y="226" style="font:800 12px Outfit" fill="#fff">ASIA / AUSTRALIA</text><path d="M380 70 L420 40 L420 240 L390 240 Z" fill="#7cbf5f"/><text transform="translate(410 200) rotate(-90)" style="font:800 12px Outfit" fill="#fff">SURAMÉRICA · COLOMBIA</text>';
   for(var i=0;i<n.viento+1;i++)s+='<path d="M'+(330-i*10)+' '+(100-i*14)+' L'+(200-i*10)+' '+(100-i*14)+'" stroke="#555" stroke-width="'+(n.viento?2.5:1.5)+'" stroke-dasharray="'+(n.viento?'':'6 6')+'" marker-end="url(#fv)"/>';
   s+='<defs><marker id="fv" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#555"/></marker></defs><text x="210" y="'+(76-n.viento*14)+'" style="font:700 11px Outfit" fill="#333">vientos alisios '+(n.viento===0?'débiles':n.viento===2?'fuertes':'')+'</text>';
   [[60,40],[120,30],[180,46]].forEach(function(c,i){var x=k==='nino'?c[0]+180:c[0];s+='<g transform="translate('+x+' '+c[1]+')"><ellipse rx="26" ry="12" fill="#fff"/><ellipse cx="14" cy="-6" rx="16" ry="10" fill="#fff"/>'+(i<2?'<path d="M-8 14 l-4 10 M4 14 l-4 10" stroke="#3b82c4" stroke-width="2"/>':'')+'</g>';});
@@ -264,8 +264,8 @@ BIO.clasificar(document.getElementById('clas-acc'),{
   ]});
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

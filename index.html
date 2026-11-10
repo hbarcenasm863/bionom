@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 .hero-logo{display:block;width:min(360px,80%);height:auto;margin:0 0 6px}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end}
@@ -118,32 +118,32 @@ var NIVELES=[
  {id:'atomo',n:'Átomo',ico:'⚛️',banda:'quimico',tam:'0,1 nm',ext:[{href:'https://hbarcenasm863.github.io/ionom/atomo.html',ico:'⚛️',full:'IonNom · Teoría atómica'}],
   def:'La unidad más pequeña de un elemento químico. Los seres vivos están hechos sobre todo de <b>C, H, O, N, P y S</b> (los bioelementos).',
   emerge:'Un átomo solo no está vivo: tiene propiedades químicas, pero no se alimenta ni se reproduce.',
-  ej:{humano:['🫁','El oxígeno (O) que respiras: es el 65 % de la masa de tu cuerpo.'],frailejon:['🌬️','El carbono (C) que el frailejón toma del aire como CO₂.'],jaguar:['🩸','El hierro (Fe) de la sangre del jaguar, que atrapa el oxígeno.']}},
+  ej:{humano:['🌬️','El oxígeno (O) que respiras: es el 65 % de la masa de tu cuerpo.'],frailejon:['🌬️','El carbono (C) que el frailejón toma del aire como CO₂.'],jaguar:['🔴','El hierro (Fe) de la sangre del jaguar, que atrapa el oxígeno.']}},
  {id:'molecula',n:'Molécula',ico:'🧪',banda:'quimico',tam:'1–100 nm',ext:[{href:'https://hbarcenasm863.github.io/ionom/enlace.html',ico:'🔗',full:'IonNom · Enlace químico'},{href:'https://hbarcenasm863.github.io/ionom/funciones.html',ico:'🏷️',full:'IonNom · Nomenclatura inorgánica'},{href:'https://hbarcenasm863.github.io/chromanom/biomoleculas.html',ico:'🧬',full:'ChromaNom · Biomoléculas'}],
   def:'Dos o más átomos unidos por enlaces. Las <b>biomoléculas</b> (carbohidratos, lípidos, proteínas y ácidos nucleicos como el ADN) forman todas las estructuras vivas.',
   emerge:'Las moléculas guardan información (ADN) o aceleran reacciones (enzimas), pero todavía no hay vida.',
-  ej:{humano:['🧬','El ADN de tus células, con las instrucciones para fabricarte.'],frailejon:['🟢','La clorofila, que captura la luz del sol para la fotosíntesis.'],jaguar:['🐾','La melanina, el pigmento oscuro de las manchas (rosetas) de su piel.']}},
- {id:'organelo',n:'Organelo',ico:'🫘',banda:'celular',tam:'0,2–10 µm',
+  ej:{humano:['🧬','El ADN de tus células, con las instrucciones para fabricarte.'],frailejon:['💚','La clorofila, que captura la luz del sol para la fotosíntesis.'],jaguar:['🐾','La melanina, el pigmento oscuro de las manchas (rosetas) de su piel.']}},
+ {id:'organelo',n:'Organelo',ico:'⚙️',banda:'celular',tam:'0,2–10 µm',
   def:'Estructura dentro de la célula que cumple una función especial, como un «órgano pequeño»: núcleo, mitocondria, cloroplasto, ribosoma…',
   emerge:'Cada organelo hace un trabajo, pero ninguno sobrevive solo fuera de la célula.',
   ej:{humano:['🔋','Las mitocondrias de tus músculos, que liberan energía de la glucosa.'],frailejon:['🍃','Los cloroplastos de sus hojas, donde ocurre la fotosíntesis.'],jaguar:['🎯','El núcleo de sus células, que guarda el ADN.']}},
  {id:'celula',n:'Célula',ico:'🦠',banda:'celular',tam:'1–100 µm',vida:true,
   def:'La <b>unidad básica de la vida</b>: el nivel más pequeño que está vivo. Se nutre, crece, responde y se reproduce. Hay organismos de una sola célula (unicelulares).',
   emerge:'¡Aquí aparece la vida! La célula hace todo lo que define a un ser vivo.',
-  ej:{humano:['🔴','Un glóbulo rojo, que lleva oxígeno por la sangre.'],frailejon:['🟩','Una célula de la hoja, con pared celular y cloroplastos.'],jaguar:['⚡','Una neurona, que manda mensajes eléctricos para cazar.']}},
+  ej:{humano:['🔴','Un glóbulo rojo, que lleva oxígeno por la sangre.'],frailejon:['🍃','Una célula de la hoja, con pared celular y cloroplastos.'],jaguar:['⚡','Una neurona, que manda mensajes eléctricos para cazar.']}},
  {id:'tejido',n:'Tejido',ico:'🧱',banda:'organismo',tam:'mm',
   def:'Grupo de células parecidas que trabajan juntas en la misma función: tejido muscular, nervioso, epitelial, conectivo; en las plantas, xilema, floema, epidermis…',
   emerge:'Muchas células juntas pueden hacer algo que una sola no: por ejemplo, contraerse con fuerza.',
   ej:{humano:['💪','El tejido muscular cardíaco, que nunca deja de contraerse.'],frailejon:['🧶','La epidermis con pelos que lo protege del frío del páramo.'],jaguar:['🦴','El tejido óseo de su mandíbula, una de las más fuertes de los felinos.']}},
- {id:'organo',n:'Órgano',ico:'🫀',banda:'organismo',tam:'cm',
+ {id:'organo',n:'Órgano',ico:'❤️',banda:'organismo',tam:'cm',
   def:'Estructura formada por varios tejidos distintos que cumplen juntos una función: corazón, pulmón, hoja, raíz…',
   emerge:'El corazón bombea sangre: ningún tejido solo lo logra.',
   ej:{humano:['❤️','Tu corazón: músculo, nervios, vasos y tejido conectivo trabajando juntos.'],frailejon:['🌿','Su hoja peluda y gruesa, que guarda agua y lo protege del frío.'],jaguar:['👁️','Sus ojos, que ven muy bien de noche.']}},
- {id:'sistema',n:'Sistema',ico:'🩺',banda:'organismo',tam:'m',
+ {id:'sistema',n:'Sistema',ico:'⚕️',banda:'organismo',tam:'m',
   def:'Conjunto de órganos que trabajan coordinados para una función amplia: digestión, circulación, respiración…',
   emerge:'El sistema circulatorio reparte oxígeno a todo el cuerpo, algo que el corazón solo no podría.',
-  ej:{humano:['🩸','El sistema circulatorio: corazón, arterias, venas y capilares.'],frailejon:['🌱','El sistema de raíces y tallo que lleva agua y nutrientes por toda la planta.'],jaguar:['🏃','El sistema locomotor: huesos y músculos para saltar sobre su presa.']}},
- {id:'organismo',n:'Organismo',ico:'🧍',banda:'organismo',tam:'µm–30 m',
+  ej:{humano:['🔴','El sistema circulatorio: corazón, arterias, venas y capilares.'],frailejon:['🌱','El sistema de raíces y tallo que lleva agua y nutrientes por toda la planta.'],jaguar:['🏃','El sistema locomotor: huesos y músculos para saltar sobre su presa.']}},
+ {id:'organismo',n:'Organismo',ico:'🧑',banda:'organismo',tam:'µm–30 m',
   def:'Un ser vivo completo e independiente. Puede ser unicelular (una bacteria) o pluricelular (tú, un árbol). Se clasifican en <b>reinos</b>.',
   emerge:'Todos los sistemas coordinados forman un individuo capaz de vivir y reproducirse.',
   ej:{humano:['🧑','Tú: un organismo del reino animal, especie <i>Homo sapiens</i>.'],frailejon:['🌼','Un frailejón (<i>Espeletia</i>): una planta que solo crece en los páramos.'],jaguar:['🐆','Un jaguar (<i>Panthera onca</i>), el felino más grande de América.']}},
@@ -170,7 +170,7 @@ var NIVELES=[
 ];
 var BANDAS={quimico:['Nivel químico','#7b4bb7','#f4eefc'],celular:['Nivel celular','#1a7fb5','#eaf5fc'],organismo:['Nivel del organismo','#c2410c','#fff6ec'],ecologico:['Nivel ecológico','#2e7d4f','#eaf7ee']};
 </script>
-<script src="bio.js?v=3"></script>
+<script src="bio.js?v=4"></script>
 <script>
 (function(){
 var svg=document.getElementById('mapa-svg'),det=document.getElementById('det'),NS='http://www.w3.org/2000/svg';
@@ -273,8 +273,8 @@ document.getElementById('ord-reset').addEventListener('click',reto);
 reto();
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

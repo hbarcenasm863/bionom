@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 .taxo{display:grid;gap:6px}
 .taxo .fila{display:grid;grid-template-columns:120px repeat(3,minmax(0,1fr));gap:6px;align-items:stretch}
@@ -61,7 +61,7 @@
   </header>
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
-    <a href="#taxonomia">🪜 Taxonomía</a>
+    <a href="#taxonomia">📶 Taxonomía</a>
     <a href="#nombre">🏷️ Nombre científico</a>
     <a href="#historia">📜 ¿Cuántos reinos?</a>
     <a href="#monera">🌋 Monera: ¿uno o dos?</a>
@@ -166,11 +166,11 @@
     <h2><span class="n">07</span> Reto: ¿a qué reino pertenece?</h2>
     <p class="lead">Lleva cada organismo a su reino. Toca la ficha y luego la caja.</p>
     <div class="card" id="clas-reinos"></div>
-    <div class="sig"><a href="celula.html"><small>← Anterior</small><b>🔬 La célula</b></a><a class="der" href="sistemas.html"><small>Siguiente →</small><b>🫀 Sistemas del cuerpo</b></a></div>
+    <div class="sig"><a href="celula.html"><small>← Anterior</small><b>🔬 La célula</b></a><a class="der" href="sistemas.html"><small>Siguiente →</small><b>❤️ Sistemas del cuerpo</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
+<script src="bio.js?v=4"></script>
 <script>
 (function(){
 /* ═══ Taxonomía ═══ */
@@ -196,8 +196,8 @@ pintarTaxo();
 var HC=[
  {b:'1735 · Linneo: 2 reinos',t:'<b>Carl von Linneo</b> divide la vida en lo que se mueve y come (animales) y lo que no se mueve (plantas). Los hongos y las bacterias quedaban con las plantas.',g:[['🐾 Animalia','animales','#c2410c'],['🌿 Plantae','plantas, hongos, bacterias','#2e7d4f']]},
  {b:'1866 · Haeckel: 3 reinos',t:'<b>Ernst Haeckel</b>, con el microscopio, nota que muchos seres de una sola célula no son ni plantas ni animales. Crea el reino <b>Protista</b>.',g:[['🐾 Animalia','','#c2410c'],['🌿 Plantae','incluye hongos','#2e7d4f'],['🦠 Protista','unicelulares','#7b4bb7']]},
- {b:'1969 · Whittaker: 5 reinos',t:'<b>Robert Whittaker</b>, con el microscopio electrónico, separa a los seres sin núcleo (<b>Monera</b>) y saca a los hongos de las plantas (<b>Fungi</b>), porque no hacen fotosíntesis y absorben su alimento.',g:[['🦠 Monera','sin núcleo','#64748b'],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
- {b:'1977 · Woese: 6 reinos',t:'<b>Carl Woese</b> compara el ARN de los ribosomas de muchas «bacterias» y descubre que Monera esconde dos grupos muy distintos. Lo divide en <b>Eubacteria</b> y <b>Archaebacteria</b>.',g:[['🦠 Eubacteria','bacterias verdaderas','#64748b'],['🌋 Archaebacteria','arqueas','#b45309'],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
+ {b:'1969 · Whittaker: 5 reinos',t:'<b>Robert Whittaker</b>, con el microscopio electrónico, separa a los seres sin núcleo (<b>Monera</b>) y saca a los hongos de las plantas (<b>Fungi</b>), porque no hacen fotosíntesis y absorben su alimento.',g:[['🦠 Monera','sin núcleo','#64748b'],['💧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
+ {b:'1977 · Woese: 6 reinos',t:'<b>Carl Woese</b> compara el ARN de los ribosomas de muchas «bacterias» y descubre que Monera esconde dos grupos muy distintos. Lo divide en <b>Eubacteria</b> y <b>Archaebacteria</b>.',g:[['🦠 Eubacteria','bacterias verdaderas','#64748b'],['🌋 Archaebacteria','arqueas','#b45309'],['💧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
  {b:'1990 · Woese: 3 dominios',t:'<b>Carl Woese</b> compara el ARN de los ribosomas y descubre que las «bacterias» son en realidad dos grupos muy distintos: <b>Bacteria</b> y <b>Archaea</b>. Crea una categoría por encima del reino: el <b>dominio</b>.',g:[['🦠 Bacteria','bacterias comunes','#64748b'],['🌋 Archaea','arqueas, viven en lugares extremos','#b45309'],['🧫 Eukarya','protistas, hongos, plantas y animales','#1a7fb5']]}
 ];
 var hb=document.getElementById('hc-btn');
@@ -210,9 +210,9 @@ hb.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){verHC(+b.g
 
 /* ═══ Monera: uno o dos ═══ */
 var MOD={
- '5':{g:[['🦠 Monera','eubacterias y arqueas juntas','#64748b',1],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']],t:'<b>Cinco reinos (Whittaker, 1969).</b> Todas las procariotas en un solo reino, Monera, porque al microscopio se ven parecidas.'},
- '6':{g:[['🦠 Eubacteria','bacterias verdaderas','#64748b',1],['🌋 Archaebacteria','arqueas','#b45309',1],['🫧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']],t:'<b>Seis reinos (Woese, 1977).</b> Monera se parte en dos reinos: Eubacteria y Archaebacteria. Es el modelo de muchos libros de texto.'},
- '3':{d:[['Dominio Bacteria','#64748b',[['🦠 Eubacterias','','#64748b',1]]],['Dominio Archaea','#b45309',[['🌋 Arqueas','','#b45309',1]]],['Dominio Eukarya','#1a7fb5',[['🫧 Protistas','','#7b4bb7'],['🍄 Hongos','','#a16207'],['🌿 Plantas','','#2e7d4f'],['🐾 Animales','','#c2410c']]]],t:'<b>Tres dominios (Woese, 1990).</b> Por encima de los reinos: dos dominios de procariotas (Bacteria y Archaea) y uno con todos los seres con núcleo (Eukarya). Las arqueas quedan más cerca de Eukarya que de Bacteria.'}
+ '5':{g:[['🦠 Monera','eubacterias y arqueas juntas','#64748b',1],['💧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']],t:'<b>Cinco reinos (Whittaker, 1969).</b> Todas las procariotas en un solo reino, Monera, porque al microscopio se ven parecidas.'},
+ '6':{g:[['🦠 Eubacteria','bacterias verdaderas','#64748b',1],['🌋 Archaebacteria','arqueas','#b45309',1],['💧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']],t:'<b>Seis reinos (Woese, 1977).</b> Monera se parte en dos reinos: Eubacteria y Archaebacteria. Es el modelo de muchos libros de texto.'},
+ '3':{d:[['Dominio Bacteria','#64748b',[['🦠 Eubacterias','','#64748b',1]]],['Dominio Archaea','#b45309',[['🌋 Arqueas','','#b45309',1]]],['Dominio Eukarya','#1a7fb5',[['💧 Protistas','','#7b4bb7'],['🍄 Hongos','','#a16207'],['🌿 Plantas','','#2e7d4f'],['🐾 Animales','','#c2410c']]]],t:'<b>Tres dominios (Woese, 1990).</b> Por encima de los reinos: dos dominios de procariotas (Bacteria y Archaea) y uno con todos los seres con núcleo (Eukarya). Las arqueas quedan más cerca de Eukarya que de Bacteria.'}
 };
 function grHTML(g){return '<div class="gr" style="border-color:'+g[2]+';color:'+g[2]+';background:'+g[2]+(g[3]?'26':'0d')+(g[3]?';box-shadow:0 0 0 3px '+g[2]+'33':'')+'">'+g[0]+(g[1]?'<small>'+g[1]+'</small>':'')+'</div>';}
 var monVis={};
@@ -240,13 +240,13 @@ BIO.clasificar(document.getElementById('clas-monera'),{
 /* ═══ Cinco reinos ═══ */
 var R=[
  {id:'monera',n:'Monera',e:'🦠',c:'#64748b',cel:'Procariota (sin núcleo)',num:'Unicelulares',nut:'Autótrofos o heterótrofos',pared:'Sí (peptidoglucano)',rep:'Asexual (bipartición)',ej:'Bacterias del yogur (<i>Lactobacillus</i>), <i>E. coli</i> del intestino, cianobacterias de las lagunas.',f:{nucleo:0,foto:1,pluri:0,pared:1,mueve:1,hetero:1}},
- {id:'protista',n:'Protista',e:'🫧',c:'#7b4bb7',cel:'Eucariota',num:'Casi todos unicelulares; algunas algas son pluricelulares',nut:'Autótrofos (algas) o heterótrofos (protozoos)',pared:'Algunos',rep:'Asexual y sexual',ej:'Ameba, paramecio, el plasmodio que causa la malaria en el Pacífico y la Amazonia, algas del mar.',f:{nucleo:1,foto:1,pluri:1,pared:1,mueve:1,hetero:1}},
+ {id:'protista',n:'Protista',e:'💧',c:'#7b4bb7',cel:'Eucariota',num:'Casi todos unicelulares; algunas algas son pluricelulares',nut:'Autótrofos (algas) o heterótrofos (protozoos)',pared:'Algunos',rep:'Asexual y sexual',ej:'Ameba, paramecio, el plasmodio que causa la malaria en el Pacífico y la Amazonia, algas del mar.',f:{nucleo:1,foto:1,pluri:1,pared:1,mueve:1,hetero:1}},
  {id:'fungi',n:'Fungi (hongos)',e:'🍄',c:'#a16207',cel:'Eucariota',num:'Unicelulares (levaduras) o pluricelulares (con hifas)',nut:'Heterótrofos por <b>absorción</b>: digieren afuera y absorben',pared:'Sí (quitina)',rep:'Esporas (asexual y sexual)',ej:'Champiñones, levadura del pan y de la chicha, moho del pan, hongos de los cafetales (roya).',f:{nucleo:1,foto:0,pluri:1,pared:1,mueve:0,hetero:1}},
  {id:'plantae',n:'Plantae (plantas)',e:'🌿',c:'#2e7d4f',cel:'Eucariota',num:'Pluricelulares, con tejidos',nut:'Autótrofos: <b>fotosíntesis</b>',pared:'Sí (celulosa)',rep:'Sexual (semillas, esporas) y asexual',ej:'Frailejón, palma de cera (árbol nacional), orquídea <i>Cattleya trianae</i> (flor nacional), musgos y helechos.',f:{nucleo:1,foto:1,pluri:1,pared:1,mueve:0,hetero:0}},
  {id:'animalia',n:'Animalia (animales)',e:'🐾',c:'#c2410c',cel:'Eucariota',num:'Pluricelulares, con tejidos',nut:'Heterótrofos por <b>ingestión</b>: comen a otros seres',pared:'No',rep:'Sobre todo sexual',ej:'Cóndor de los Andes, jaguar, rana dorada del Chocó, coral del Caribe, hormiga culona.',f:{nucleo:1,foto:0,pluri:1,pared:0,mueve:1,hetero:1}}
 ];
 var FIL=[['nucleo','🎯 Tiene núcleo'],['foto','🌞 Hay fotosíntesis'],['pluri','🧩 Hay pluricelulares'],['pared','🧱 Hay pared celular'],['hetero','🍽️ Hay heterótrofos'],['mueve','🏃 Hay seres que se desplazan']];
-document.getElementById('reinos-g').innerHTML=R.map(function(r){return '<div class="card reino-c" data-r="'+r.id+'" style="border-top-color:'+r.c+'"><span class="e">'+r.e+'</span><h3 style="color:'+r.c+'">'+r.n+'</h3><dl><dt>Célula</dt><dd>'+r.cel+'</dd><dt>N.º de células</dt><dd>'+r.num+'</dd><dt>Nutrición</dt><dd>'+r.nut+'</dd><dt>Pared</dt><dd>'+r.pared+'</dd><dt>Reproducción</dt><dd>'+r.rep+'</dd></dl><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand)">🇨🇴 Ejemplos</summary><p style="font-size:.9rem;margin-top:4px">'+r.ej+'</p></details></div>';}).join('');
+document.getElementById('reinos-g').innerHTML=R.map(function(r){return '<div class="card reino-c" data-r="'+r.id+'" style="border-top-color:'+r.c+'"><span class="e">'+r.e+'</span><h3 style="color:'+r.c+'">'+r.n+'</h3><dl><dt>Célula</dt><dd>'+r.cel+'</dd><dt>N.º de células</dt><dd>'+r.num+'</dd><dt>Nutrición</dt><dd>'+r.nut+'</dd><dt>Pared</dt><dd>'+r.pared+'</dd><dt>Reproducción</dt><dd>'+r.rep+'</dd></dl><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand)"><span class="co" role="img" aria-label="Colombia"></span> Ejemplos</summary><p style="font-size:.9rem;margin-top:4px">'+r.ej+'</p></details></div>';}).join('');
 var fsel=null,fil=document.getElementById('filtros');
 fil.innerHTML=FIL.map(function(f){return '<button class="chip" data-f="'+f[0]+'">'+f[1]+'</button>';}).join('');
 var usados={};
@@ -269,15 +269,15 @@ var PREG={
 };
 var ORGS=[
  {n:'Champiñón',e:'🍄',d:'Crece sobre materia en descomposición. Sus células tienen núcleo y pared de quitina; no tiene clorofila. Libera enzimas que digieren la materia muerta y luego absorbe los nutrientes.',r:{p1:1,p2:0,p4:1}},
- {n:'Cianobacteria',e:'🟢',d:'Forma una nata verde en las lagunas. Es una sola célula sin núcleo, pero tiene clorofila y hace fotosíntesis.',r:{p1:0}},
- {n:'Ameba',e:'🫧',d:'Vive en el agua de los charcos. Es una sola célula con núcleo. No tiene clorofila ni pared; envuelve a otros microorganismos para comérselos.',r:{p1:1,p2:0,p4:0,p5:0}},
+ {n:'Cianobacteria',e:'💚',d:'Forma una nata verde en las lagunas. Es una sola célula sin núcleo, pero tiene clorofila y hace fotosíntesis.',r:{p1:0}},
+ {n:'Ameba',e:'💧',d:'Vive en el agua de los charcos. Es una sola célula con núcleo. No tiene clorofila ni pared; envuelve a otros microorganismos para comérselos.',r:{p1:1,p2:0,p4:0,p5:0}},
  {n:'Frailejón',e:'🌼',d:'Planta del páramo, con raíz, tallo y hojas peludas. Sus células tienen núcleo, pared de celulosa y cloroplastos. Nace de una semilla con un embrión.',r:{p1:1,p2:1,p3:1}},
  {n:'Colibrí',e:'🐦',d:'Ave que se alimenta del néctar de las flores y de insectos pequeños. Tiene muchísimas células con núcleo, sin pared, organizadas en tejidos y órganos.',r:{p1:1,p2:0,p4:0,p5:1}},
  {n:'Alga euglena',e:'🧪',d:'Vive en aguas dulces. Es una sola célula con núcleo y cloroplastos: hace fotosíntesis, pero no tiene tejidos, ni raíz, ni hojas.',r:{p1:1,p2:1,p3:0}},
  {n:'Levadura',e:'🍞',d:'Hace crecer el pan. Es una sola célula con núcleo y pared de quitina. No hace fotosíntesis: absorbe el azúcar de la masa.',r:{p1:1,p2:0,p4:1}},
- {n:'Coral',e:'🪸',d:'Parece una roca o una planta, pero tiene células con núcleo sin pared, tejidos y tentáculos con los que atrapa y come plancton.',r:{p1:1,p2:0,p4:0,p5:1}}
+ {n:'Coral',e:'🐠',d:'Parece una roca o una planta, pero tiene células con núcleo sin pared, tejidos y tentáculos con los que atrapa y come plancton.',r:{p1:1,p2:0,p4:0,p5:1}}
 ];
-var RN={monera:'🦠 Reino Monera',protista:'🫧 Reino Protista',fungi:'🍄 Reino Fungi',plantae:'🌿 Reino Plantae',animalia:'🐾 Reino Animalia'};
+var RN={monera:'🦠 Reino Monera',protista:'💧 Reino Protista',fungi:'🍄 Reino Fungi',plantae:'🌿 Reino Plantae',animalia:'🐾 Reino Animalia'};
 var osel=document.getElementById('org-sel'),ruta=document.getElementById('ruta'),hechos={};
 osel.innerHTML=ORGS.map(function(o,i){return '<button type="button" data-i="'+i+'"><span class="e">'+o.e+'</span>'+o.n+'</button>';}).join('');
 function empezar(i){
@@ -313,8 +313,8 @@ BIO.clasificar(document.getElementById('clas-reinos'),{
   ]});
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

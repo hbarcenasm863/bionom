@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 .jir{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:700px){.jir{grid-template-columns:1fr}}
@@ -86,8 +86,8 @@
     <h2><span class="n">02</span> El cuello de la jirafa: Lamarck vs. Darwin</h2>
     <p class="lead">Las dos teorías intentan explicar lo mismo, pero de manera muy diferente. Avanza al mismo tiempo en las dos columnas.</p>
     <div class="jir">
-      <div class="col"><h3>🇫🇷 Lamarck (1809)</h3><svg id="jl" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jl-t"></p></div>
-      <div class="col"><h3>🇬🇧 Darwin (1859)</h3><svg id="jd" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jd-t"></p></div>
+      <div class="col"><h3>Lamarck · Francia, 1809</h3><svg id="jl" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jl-t"></p></div>
+      <div class="col"><h3>Darwin · Inglaterra, 1859</h3><svg id="jd" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jd-t"></p></div>
     </div>
     <div class="ctrl" style="justify-content:center"><button type="button" class="cn-btn" id="j-ant">← Antes</button><span id="j-n" class="marcador"></span><button type="button" class="cn-btn cn-btn--primary" id="j-sig">Siguiente →</button></div>
     <div class="dato ojo">Lamarck decía que lo que un animal gana en vida (un cuello estirado, unos músculos de gimnasio) pasa a sus hijos. Hoy sabemos que <b>no es así</b>: los hijos de un fisicoculturista no nacen musculosos. Solo se heredan los cambios que están en el ADN de los gametos.</div>
@@ -162,7 +162,7 @@
       <div class="homo" id="homo"></div>
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h3>🦋 Órganos análogos</h3><p>Cumplen la <b>misma función</b> pero tienen <b>distinto origen</b>: el ala de una mariposa y el ala de un ave sirven para volar, pero no tienen los mismos huesos (¡la mariposa no tiene huesos!).</p></div>
-        <div class="card"><h3>🫥 Órganos vestigiales</h3><p>Órganos reducidos que ya casi no se usan, restos de antepasados: el <b>coxis</b> (resto de cola), las <b>muelas del juicio</b> y los músculos para mover las orejas.</p></div>
+        <div class="card"><h3>👻 Órganos vestigiales</h3><p>Órganos reducidos que ya casi no se usan, restos de antepasados: el <b>coxis</b> (resto de cola), las <b>muelas del juicio</b> y los músculos para mover las orejas.</p></div>
       </div>
     </div>
     <div class="tab-p" id="ev-fos">
@@ -171,7 +171,7 @@
     </div>
     <div class="tab-p" id="ev-mol">
       <p>Cuanto más emparentadas están dos especies, más se parecen sus secuencias de ADN y de proteínas. Mueve el control para comparar.</p>
-      <div class="ctrl"><label for="mol-sel">Comparar a los humanos con:</label><select id="mol-sel"><option value="98.8">🐒 Chimpancé</option><option value="96">🦍 Gorila</option><option value="90">🐈 Gato</option><option value="85">🐁 Ratón</option><option value="65">🐔 Gallina</option><option value="44">🪰 Mosca de la fruta</option><option value="26">🍞 Levadura</option></select></div>
+      <div class="ctrl"><label for="mol-sel">Comparar a los humanos con:</label><select id="mol-sel"><option value="98.8">🐒 Chimpancé</option><option value="96">🦍 Gorila</option><option value="90">🐈 Gato</option><option value="85">🐁 Ratón</option><option value="65">🐔 Gallina</option><option value="44">🦟 Mosca de la fruta</option><option value="26">🍞 Levadura</option></select></div>
       <div id="mol-res"></div>
       <p style="font-size:.84rem;color:var(--cn-dim)">Valores aproximados y redondeados: según cómo se mida (genes, proteínas o todo el ADN) los porcentajes cambian, pero el orden se mantiene.</p>
     </div>
@@ -219,7 +219,7 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
+<script src="bio.js?v=4"></script>
 <script>
 (function(){
 /* ═══ 1. Línea del tiempo de ideas ═══ */
@@ -232,7 +232,7 @@ var ID=[
  {a:'1859',ico:'📖',q:'«El origen de las especies»',d:'Darwin publica su libro: los individuos de una población son diferentes; nacen más de los que pueden sobrevivir; los que tienen variaciones ventajosas sobreviven y se reproducen más; así cambian las especies.'},
  {a:'1865',ico:'🌱',q:'Gregor Mendel',d:'Publica sus experimentos con arvejas y descubre las leyes de la herencia. Nadie le presta atención hasta 1900.'},
  {a:'1940',ico:'🧬',q:'Teoría sintética (neodarwinismo)',d:'Se une la selección natural de Darwin con la genética de Mendel: la variación viene de las <b>mutaciones</b> y de la mezcla de genes en la reproducción sexual.'},
- {a:'1953',ico:'🪜',q:'Watson, Crick y Franklin',d:'Se descubre la estructura de doble hélice del ADN: por fin se entiende cómo se copian y heredan los genes.'},
+ {a:'1953',ico:'📶',q:'Watson, Crick y Franklin',d:'Se descubre la estructura de doble hélice del ADN: por fin se entiende cómo se copian y heredan los genes.'},
  {a:'2003',ico:'📚',q:'Proyecto Genoma Humano',d:'Se termina de leer la secuencia completa del ADN humano: unos 3000 millones de letras y cerca de 20 000 genes.'},
  {a:'2012',ico:'✂️',q:'CRISPR',d:'Emmanuelle Charpentier y Jennifer Doudna desarrollan una herramienta para editar genes con precisión. Reciben el Premio Nobel en 2020.'}
 ];
@@ -348,7 +348,7 @@ iniciarSim();graf();
 
 /* ═══ 4. Pinzones ═══ */
 BIO.clasificar(document.getElementById('clas-pico'),{
-  cajas:[{id:'gr',titulo:'🌰 Semillas duras'},{id:'in',titulo:'🐛 Insectos'},{id:'ca',titulo:'🌵 Flores de cactus'},{id:'ma',titulo:'🪵 Larvas en la madera'}],
+  cajas:[{id:'gr',titulo:'🌰 Semillas duras'},{id:'in',titulo:'🐛 Insectos'},{id:'ca',titulo:'🌵 Flores de cactus'},{id:'ma',titulo:'🍂 Larvas en la madera'}],
   fichas:[
    {t:'Pico grueso y fuerte, como un cascanueces',caja:'gr',exp:'puede partir semillas duras.'},
    {t:'Pico delgado y fino, como unas pinzas',caja:'in',exp:'atrapa insectos pequeños.'},
@@ -382,9 +382,9 @@ ms.onchange=verMol;verMol();
 var EV=[
  ['🌋','1 de enero','Se forma la Tierra, una bola de roca fundida. (Hace 4600 millones de años)'],
  ['🦠','principios de marzo','Aparecen las primeras células: bacterias y arqueas en el mar. (Hace 3800 millones de años)'],
- ['🫧','finales de mayo','Las cianobacterias empiezan a hacer fotosíntesis y a llenar el aire de oxígeno. (Hace 2700 millones de años)'],
+ ['💧','finales de mayo','Las cianobacterias empiezan a hacer fotosíntesis y a llenar el aire de oxígeno. (Hace 2700 millones de años)'],
  ['🧫','finales de julio','Aparecen las primeras células eucariotas, con núcleo (endosimbiosis). (Hace 2000 millones de años)'],
- ['🪼','mediados de noviembre','«Explosión cámbrica»: aparecen en el mar casi todos los grupos de animales. (Hace 540 millones de años)'],
+ ['🐙','mediados de noviembre','«Explosión cámbrica»: aparecen en el mar casi todos los grupos de animales. (Hace 540 millones de años)'],
  ['🌿','finales de noviembre','Las plantas y los primeros animales salen del agua a la tierra firme. (Hace 470 millones de años)'],
  ['🦕','13 de diciembre','Aparecen los dinosaurios. (Hace 230 millones de años)'],
  ['🌸','21 de diciembre','Aparecen las plantas con flores. (Hace 130 millones de años)'],
@@ -433,7 +433,7 @@ nuevaMaz();
 var HOM=[
  ['Sahelanthropus','7','🦍',350,'Uno de los homínidos más antiguos conocidos (Chad, África). Probablemente ya caminaba algo erguido.','Biológico: inicio del bipedalismo.'],
  ['Australopithecus afarensis («Lucy»)','3,2','🚶',450,'Medía cerca de 1,1 m. Caminaba en dos patas, pero su cerebro era como el de un chimpancé y aún trepaba a los árboles.','Biológico: bipedalismo completo; cerebro pequeño.'],
- ['Homo habilis','2,4','🪨',600,'El «hombre hábil»: fabricaba las primeras herramientas de piedra para cortar carne y romper huesos.','Cultural: primeras herramientas.'],
+ ['Homo habilis','2,4','⛏️',600,'El «hombre hábil»: fabricaba las primeras herramientas de piedra para cortar carne y romper huesos.','Cultural: primeras herramientas.'],
  ['Homo erectus','1,9','🔥',900,'Cuerpo parecido al nuestro. Dominó el fuego, cocinaba los alimentos y fue el primero en salir de África hacia Asia y Europa.','Biológico: cuerpo alto, cerebro más grande. Cultural: fuego, viajes.'],
  ['Homo neanderthalensis','0,4 a 0,04','🦴',1450,'Vivió en Europa y Asia en clima frío. Enterraba a sus muertos y fabricaba herramientas complejas. Muchos humanos actuales tenemos un poco de su ADN.','Cultural: entierros, adornos.'],
  ['Homo sapiens','0,3 hasta hoy','🧑',1350,'Nuestra especie apareció en África hace unos 300 000 años y se extendió por todo el planeta. Lenguaje complejo, arte, agricultura y ciudades.','Cultural: lenguaje simbólico, arte, agricultura, ciencia.']
@@ -448,7 +448,7 @@ hb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verH(+b.g
 
 /* ═══ Endémicas e invasoras ═══ */
 BIO.clasificar(document.getElementById('clas-end'),{
-  cajas:[{id:'end',titulo:'🇨🇴 Endémica de Colombia'},{id:'inv',titulo:'🚨 Invasora en Colombia'}],
+  cajas:[{id:'end',titulo:'<span class="co" role="img" aria-label="Colombia"></span> Endémica de Colombia'},{id:'inv',titulo:'🚨 Invasora en Colombia'}],
   fichas:[
    {t:'Tití cabeciblanco',caja:'end',exp:'solo vive en los bosques del Caribe colombiano.'},
    {t:'Rana dorada venenosa',caja:'end',exp:'solo vive en un pequeño sector del Chocó.'},
@@ -461,8 +461,8 @@ BIO.clasificar(document.getElementById('clas-end'),{
   ]});
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

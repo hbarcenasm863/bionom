@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 #red{width:100%;height:auto;background:linear-gradient(180deg,#eef7fb,#f3faf1);border-radius:14px}
 #red .nd{cursor:pointer}
@@ -50,7 +50,7 @@
     <h1>Ecosistemas: todo está conectado</h1>
     <p>Un ecosistema es una <b>comunidad</b> de seres vivos más el <b>ambiente físico</b> donde vive, con todas sus relaciones. Aquí verás quién se come a quién, por qué hay tan pocos jaguares y tantos árboles, cómo se recicla el agua y el carbono, y cómo se relacionan las especies.</p>
     <a class="nivel-chip" href="index.html">🗺️ Niveles: población → comunidad → ecosistema → bioma → biosfera</a>
-    <a class="nivel-chip" href="regiones.html">🇨🇴 Después: ecosistemas de Colombia</a>
+    <a class="nivel-chip" href="regiones.html"><span class="co" role="img" aria-label="Colombia"></span> Después: ecosistemas de Colombia</a>
   </header>
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
@@ -123,7 +123,7 @@
   <section class="sec" id="ciclos">
     <h2><span class="n">05</span> Los ciclos de la materia</h2>
     <p class="lead">La <b>energía fluye</b> (entra con el Sol y sale como calor), pero la <b>materia se recicla</b>: los mismos átomos de agua, carbono y nitrógeno circulan una y otra vez. Avanza paso a paso.</p>
-    <div class="tabs" data-alcambiar="cambioCiclo"><button class="chip on" data-tab="c-agua">💧 Ciclo del agua</button><button class="chip" data-tab="c-carb">🌫️ Ciclo del carbono</button><button class="chip" data-tab="c-nitr">🫘 Ciclo del nitrógeno</button></div>
+    <div class="tabs" data-alcambiar="cambioCiclo"><button class="chip on" data-tab="c-agua">💧 Ciclo del agua</button><button class="chip" data-tab="c-carb">🌫️ Ciclo del carbono</button><button class="chip" data-tab="c-nitr">🌰 Ciclo del nitrógeno</button></div>
     <div class="tab-p" id="c-agua"></div>
     <div class="tab-p" id="c-carb"></div>
     <div class="tab-p" id="c-nitr"></div>
@@ -135,7 +135,7 @@
     <div class="tbl-wrap"><table class="t rel-t">
       <tr><th>Relación</th><th>Especie 1</th><th>Especie 2</th><th>Ejemplo en Colombia</th></tr>
       <tr><td><b>🤝 Mutualismo</b>: las dos ganan.</td><td>+</td><td>+</td><td>El colibrí toma néctar de las flores y, sin querer, lleva su polen a otras flores.</td></tr>
-      <tr><td><b>🪴 Comensalismo</b>: una gana y a la otra no le pasa nada.</td><td>+</td><td>0</td><td>Las orquídeas y bromelias que viven sobre las ramas de los árboles para recibir más luz.</td></tr>
+      <tr><td><b>🌱 Comensalismo</b>: una gana y a la otra no le pasa nada.</td><td>+</td><td>0</td><td>Las orquídeas y bromelias que viven sobre las ramas de los árboles para recibir más luz.</td></tr>
       <tr><td><b>🦟 Parasitismo</b>: una gana viviendo a costa de la otra, sin matarla de inmediato.</td><td>+</td><td>−</td><td>Las garrapatas en el ganado; el plasmodio de la malaria en las personas.</td></tr>
       <tr><td><b>🐆 Depredación</b>: una caza y se come a la otra.</td><td>+</td><td>−</td><td>El jaguar que caza un chigüiro en los Llanos.</td></tr>
       <tr><td><b>⚔️ Competencia</b>: las dos necesitan el mismo recurso escaso.</td><td>−</td><td>−</td><td>Árboles de la selva que compiten por la luz; el retamo espinoso invadiendo los bosques andinos.</td></tr>
@@ -149,7 +149,7 @@
     <p class="lead">El <b>hábitat</b> es el lugar donde vive una especie: su «dirección». El <b>nicho ecológico</b> es su papel en el ecosistema: qué come, cuándo está activa, dónde anida, quién se la come. Es su «profesión». Dos especies pueden compartir el hábitat, pero si tienen el mismo nicho compiten hasta que una desplaza a la otra.</p>
     <div class="grid g3">
       <div class="card"><h3>🦆 Pato andino</h3><p>Humedal de la Sabana. Se sumerge y come plantas acuáticas e insectos del fondo.</p></div>
-      <div class="card"><h3>🪶 Garza</h3><p>El mismo humedal. Camina por la orilla y caza peces y ranas con su pico de lanza.</p></div>
+      <div class="card"><h3>🦢 Garza</h3><p>El mismo humedal. Camina por la orilla y caza peces y ranas con su pico de lanza.</p></div>
       <div class="card"><h3>🐦 Tingua bogotana</h3><p>El mismo humedal. Camina sobre la vegetación flotante y come semillas e invertebrados entre los juncos.</p></div>
     </div>
     <p style="margin-top:8px">Las tres comparten el <b>hábitat</b>, pero cada una tiene un <b>nicho</b> distinto: por eso pueden convivir.</p>
@@ -167,11 +167,11 @@
       <p style="font-size:.88rem;color:var(--cn-dim)"><span style="color:#b42318;font-weight:800">— Exponencial (J)</span> · <span style="color:#2e7d4f;font-weight:800">— Logístico (S)</span> · <span style="color:#1a7fb5;font-weight:800">- - Capacidad de carga</span></p>
     </div>
     <div class="dato col">Los factores que limitan una población pueden ser la comida, el agua, el espacio, los depredadores y las enfermedades. Cuando el retamo espinoso llegó a los cerros de Bogotá, no tenía depredadores y su población creció sin control: es una <b>especie invasora</b>.</div>
-    <div class="sig"><a href="evolucion.html"><small>← Anterior</small><b>🦎 Evolución</b></a><a class="der" href="regiones.html"><small>Siguiente →</small><b>🇨🇴 Ecosistemas de Colombia</b></a></div>
+    <div class="sig"><a href="evolucion.html"><small>← Anterior</small><b>🦎 Evolución</b></a><a class="der" href="regiones.html"><small>Siguiente →</small><b><span class="co" role="img" aria-label="Colombia"></span> Ecosistemas de Colombia</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
+<script src="bio.js?v=4"></script>
 <script>
 (function(){
 /* ═══ 1. Bióticos y abióticos ═══ */
@@ -287,7 +287,7 @@ var CIC={
    flecha('fij','M320 118 C380 140 420 160 436 186','#7b4bb7','Fijación',376,140)+flecha('ray','M200 120 C230 150 260 190 300 230','#d4a017','Rayos',214,170)+
    flecha('amon','M530 250 C500 280 470 300 440 314','#8a5a2b','Descomposición',470,272)+flecha('nitri','M400 320 C410 300 420 280 432 258','#0c8599','Nitrificación',340,300)+
    flecha('asim','M446 208 C470 200 505 210 526 226','#2f9e44','Alimentación',470,196)+flecha('desn','M360 330 C320 280 300 170 300 120','#e8590c','Desnitrificación',230,262)+flecha('fert','M330 256 C350 250 380 250 410 270','#495057','Fertilizantes',318,246),
-  p:[['fij','🫘 Fijación del nitrógeno','El aire tiene 78 % de nitrógeno (N₂), pero ni las plantas ni los animales lo pueden usar así. Unas bacterias (como <i>Rhizobium</i>, que vive en los nódulos de las raíces del fríjol, la arveja y otras leguminosas) lo convierten en amoníaco. Por eso los campesinos alternan maíz y fríjol: el fríjol abona el suelo.'],
+  p:[['fij','🌰 Fijación del nitrógeno','El aire tiene 78 % de nitrógeno (N₂), pero ni las plantas ni los animales lo pueden usar así. Unas bacterias (como <i>Rhizobium</i>, que vive en los nódulos de las raíces del fríjol, la arveja y otras leguminosas) lo convierten en amoníaco. Por eso los campesinos alternan maíz y fríjol: el fríjol abona el suelo.'],
      ['ray','⚡ Los rayos','La energía de los rayos también rompe el N₂ y forma compuestos de nitrógeno que la lluvia lleva al suelo.'],
      ['nitri','🦠 Nitrificación','Otras bacterias del suelo transforman el amoníaco en nitratos (NO₃⁻), la forma que las plantas absorben mejor por sus raíces.'],
      ['asim','🐄 Asimilación y alimentación','Las plantas usan el nitrógeno para fabricar proteínas y ADN. Los animales lo obtienen al comer plantas o a otros animales.'],
@@ -306,7 +306,7 @@ montarCiclo('agua');
 
 /* ═══ 6. Relaciones ═══ */
 BIO.clasificar(document.getElementById('clas-rel'),{
-  cajas:[{id:'mu',titulo:'🤝 Mutualismo (+ +)'},{id:'co',titulo:'🪴 Comensalismo (+ 0)'},{id:'pa',titulo:'🦟 Parasitismo (+ −)'},{id:'de',titulo:'🐆 Depredación (+ −)'},{id:'cp',titulo:'⚔️ Competencia (− −)'}],
+  cajas:[{id:'mu',titulo:'🤝 Mutualismo (+ +)'},{id:'co',titulo:'🌱 Comensalismo (+ 0)'},{id:'pa',titulo:'🦟 Parasitismo (+ −)'},{id:'de',titulo:'🐆 Depredación (+ −)'},{id:'cp',titulo:'⚔️ Competencia (− −)'}],
   fichas:[
    {t:'Abeja y flor de café',caja:'mu',exp:'la abeja come néctar y poliniza el cafeto.'},
    {t:'Liquen: hongo + alga',caja:'mu',exp:'el alga da alimento y el hongo, protección y agua.',pista:'Los dos se benefician: uno fabrica alimento, el otro protege.'},
@@ -348,8 +348,8 @@ BIO.clasificar(document.getElementById('clas-adap'),{
   ]});
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 .hist-card{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center}
 .hist-card .ilu{font-size:4rem;text-align:center;background:var(--cn-brand-l);border-radius:16px;padding:10px 0}
@@ -59,7 +59,7 @@
     <a href="#lab-papa">🥔 Laboratorio</a>
     <a href="#energia">⚡ Fotosíntesis y respiración</a>
     <a href="#division">➗ Ciclo celular</a>
-    <a href="#medicina">🩺 Célula y medicina</a>
+    <a href="#medicina">⚕️ Célula y medicina</a>
   </nav>
 
   <!-- ═══ HISTORIA ═══ -->
@@ -180,7 +180,7 @@
     <h2><span class="n">06</span> ¿Cómo entran y salen las sustancias?</h2>
     <p class="lead">La membrana está hecha de una doble capa de lípidos con proteínas incrustadas, como un mosaico que se mueve. Las sustancias la cruzan de dos maneras: <b>sin gastar energía</b> (transporte pasivo), a favor de la diferencia de concentración, o <b>gastando energía</b> (transporte activo), en contra. Prueba los tres modos de la simulación.</p>
     <div class="card">
-      <div class="chips" role="group" aria-label="Tipo de transporte"><button class="chip on" data-tr="simple">🫧 Difusión simple</button><button class="chip" data-tr="facil">🚪 Difusión facilitada</button><button class="chip" data-tr="activo">⚡ Transporte activo</button></div>
+      <div class="chips" role="group" aria-label="Tipo de transporte"><button class="chip on" data-tr="simple">💧 Difusión simple</button><button class="chip" data-tr="facil">🚪 Difusión facilitada</button><button class="chip" data-tr="activo">⚡ Transporte activo</button></div>
       <canvas id="dif" width="900" height="300" style="width:100%;height:auto;margin-top:10px;border-radius:12px;background:#f4faf6;border:1px solid var(--cn-brd)" aria-label="Simulación de partículas a los dos lados de una membrana"></canvas>
       <div class="ctrl" style="justify-content:space-between"><span id="dif-cnt" class="marcador" aria-live="polite"></span><span><button type="button" class="cn-btn" id="dif-atp" hidden>⚡ Gastar 1 ATP (bombear)</button> <button type="button" class="cn-btn" id="dif-reset">🔄 Reiniciar</button></span></div>
       <p id="dif-txt" style="margin-top:6px"></p>
@@ -291,20 +291,20 @@
       <div class="flip"><div class="in"><div class="fr"><span class="e">🌱</span><b>Células madre</b><small>toca para voltear</small></div><div class="bk">Células que todavía no se han especializado y pueden convertirse en otros tipos. El trasplante de médula ósea, que cura algunas leucemias, se basa en ellas.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">💊</span><b>Medicamentos</b><small>toca para voltear</small></div><div class="bk">Muchos fármacos actúan sobre una parte de la célula: la penicilina destruye la pared de las bacterias, que nuestras células no tienen.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">🧪</span><b>Cultivos celulares</b><small>toca para voltear</small></div><div class="bk">Células que se mantienen vivas en el laboratorio para producir vacunas, probar medicamentos o fabricar piel para quemados.</div></div></div>
-      <div class="flip"><div class="in"><div class="fr"><span class="e">🩸</span><b>Exámenes de sangre</b><small>toca para voltear</small></div><div class="bk">Contar glóbulos rojos, blancos y plaquetas permite detectar anemias, infecciones y otras enfermedades.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🔴</span><b>Exámenes de sangre</b><small>toca para voltear</small></div><div class="bk">Contar glóbulos rojos, blancos y plaquetas permite detectar anemias, infecciones y otras enfermedades.</div></div></div>
     </div>
     <div class="sig"><a href="index.html"><small>← Volver</small><b>🗺️ Mapa de niveles</b></a><a class="der" href="reinos.html"><small>Siguiente →</small><b>🍄 Reinos y clasificación</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
+<script src="bio.js?v=4"></script>
 <script>
 (function(){
 var esc=BIO.esc;
 /* ═══ Historia ═══ */
 var HIST=[
  {a:'1590',ico:'🔭',q:'Zacharias y Hans Janssen',d:'Fabricantes holandeses de lentes que unen dos lentes en un tubo: el primer <b>microscopio compuesto</b>. Aumentaba unas 10 veces.',c:'Por primera vez se pudo ver más allá de lo que alcanza el ojo.'},
- {a:'1665',ico:'🪵',q:'Robert Hooke',d:'Observa una lámina delgada de <b>corcho</b> y ve muchas cavidades, como las celdas de un panal. Las llama <b>«células»</b> (del latín <i>cellula</i>, celdilla). Lo publica en su libro <i>Micrographia</i>.',c:'Nace la palabra «célula», aunque lo que vio eran paredes de células muertas.'},
+ {a:'1665',ico:'🍂',q:'Robert Hooke',d:'Observa una lámina delgada de <b>corcho</b> y ve muchas cavidades, como las celdas de un panal. Las llama <b>«células»</b> (del latín <i>cellula</i>, celdilla). Lo publica en su libro <i>Micrographia</i>.',c:'Nace la palabra «célula», aunque lo que vio eran paredes de células muertas.'},
  {a:'1674',ico:'🔎',q:'Anton van Leeuwenhoek',d:'Comerciante de telas que pulía sus propias lentes, de hasta 270 aumentos. En gotas de agua de charco y en el sarro de los dientes ve seres diminutos moviéndose: los llama <b>«animálculos»</b>. Eran bacterias y protozoos.',c:'Se descubren los microorganismos: las primeras células vivas observadas.'},
  {a:'1831',ico:'🌸',q:'Robert Brown',d:'Estudiando células de orquídeas, describe una estructura redonda y oscura que aparecía en todas: el <b>núcleo</b>.',c:'Se empieza a ver que la célula tiene partes internas.'},
  {a:'1838',ico:'🌿',q:'Matthias Schleiden',d:'Botánico alemán que concluye que <b>todas las plantas</b> están formadas por células.',c:'Primera mitad de la teoría celular.'},
@@ -349,7 +349,7 @@ document.querySelectorAll('[data-pas]').forEach(function(f){f.innerHTML=frasco(+
 /* ═══ Escala ═══ */
 var ESC=[
  {ico:'🥚',t:'Óvulo humano: 0,1 mm',d:'La célula más grande del cuerpo humano. Apenas se alcanza a ver a simple vista, como un punto.',in:'👁️ A simple vista (casi)'},
- {ico:'🧅',t:'Célula de cebolla: 100–200 µm',d:'Las células de la piel de la cebolla se ven muy bien con el microscopio del colegio.',in:'🔬 Microscopio óptico (100×)'},
+ {ico:'🥬',t:'Célula de cebolla: 100–200 µm',d:'Las células de la piel de la cebolla se ven muy bien con el microscopio del colegio.',in:'🔬 Microscopio óptico (100×)'},
  {ico:'🔴',t:'Glóbulo rojo: 7 µm',d:'En una gota de sangre hay unos 250 millones de glóbulos rojos.',in:'🔬 Microscopio óptico (400×)'},
  {ico:'🦠',t:'Bacteria: 1–2 µm',d:'Una bacteria como <i>E. coli</i> mide más o menos lo mismo que una mitocondria. ¡Por algo la teoría endosimbiótica!',in:'🔬 Microscopio óptico (1000×, es el límite)'},
  {ico:'🦠',t:'Virus: 20–300 nm',d:'Los virus son mucho más pequeños que una bacteria y no son células. Un ribosoma mide unos 25 nm.',in:'⚡ Microscopio electrónico'},
@@ -379,7 +379,7 @@ BIO.clasificar(document.getElementById('clas-tipos'),{
 
 /* ═══ Célula interactiva ═══ */
 var ORG={
- membrana:{n:'Membrana celular',ico:'🫧',f:'Capa delgada y flexible de lípidos y proteínas que rodea la célula. Es <b>semipermeable</b>: decide qué entra y qué sale.',a:'Las murallas con puertas y vigilantes de la ciudad.',en:['animal','vegetal','procariota']},
+ membrana:{n:'Membrana celular',ico:'💧',f:'Capa delgada y flexible de lípidos y proteínas que rodea la célula. Es <b>semipermeable</b>: decide qué entra y qué sale.',a:'Las murallas con puertas y vigilantes de la ciudad.',en:['animal','vegetal','procariota']},
  citoplasma:{n:'Citoplasma',ico:'💧',f:'Todo el interior de la célula entre la membrana y el núcleo: un líquido gelatinoso (citosol) donde flotan los organelos y ocurren muchas reacciones químicas.',a:'Las calles y el aire de la ciudad, donde todo se mueve.',en:['animal','vegetal','procariota']},
  nucleo:{n:'Núcleo',ico:'🎯',f:'Guarda el <b>ADN</b>, con las instrucciones para fabricar todo lo que la célula necesita, y controla sus actividades. Está rodeado por una doble membrana con poros.',a:'La alcaldía, donde están los planos y se dan las órdenes.',en:['animal','vegetal']},
  nucleolo:{n:'Nucléolo',ico:'⚫',f:'Zona oscura dentro del núcleo donde se fabrican las piezas de los <b>ribosomas</b>.',a:'El taller de la alcaldía donde se arman las fábricas nuevas.',en:['animal','vegetal']},
@@ -397,7 +397,7 @@ var ORG={
  plasmido:{n:'Plásmidos',ico:'⭕',f:'Pequeños anillos de ADN extra. Pueden llevar genes de <b>resistencia a antibióticos</b> y pasarse de una bacteria a otra.',a:'Memorias USB con información extra que se prestan entre vecinos.',en:['procariota']},
  flagelo:{n:'Flagelo',ico:'〰️',f:'Prolongación larga que gira como una hélice y permite que la bacteria <b>se desplace</b>.',a:'El motor fuera de borda de una lancha.',en:['procariota']},
  capsula:{n:'Cápsula',ico:'🛡️',f:'Capa pegajosa por fuera de la pared de algunas bacterias. Las protege de secarse y de las defensas del cuerpo.',a:'Un impermeable que además confunde a la policía.',en:['procariota']},
- pili:{n:'Pili (fimbrias)',ico:'🪝',f:'Pelitos cortos con los que la bacteria se <b>pega</b> a superficies o a otras bacterias para pasarles plásmidos.',a:'Ganchos y velcro para agarrarse.',en:['procariota']}
+ pili:{n:'Pili (fimbrias)',ico:'📎',f:'Pelitos cortos con los que la bacteria se <b>pega</b> a superficies o a otras bacterias para pasarles plásmidos.',a:'Ganchos y velcro para agarrarse.',en:['procariota']}
 };
 var NS='http://www.w3.org/2000/svg';
 function Z(id,inner,lx,ly){return '<g class="zona" data-o="'+id+'" tabindex="0" role="button" aria-label="'+ORG[id].n+'">'+inner+(lx!=null?'<text class="etq" x="'+lx+'" y="'+ly+'" text-anchor="middle" fill="#10261a" stroke="#fff" stroke-width="3" paint-order="stroke">'+ORG[id].n.split(' ')[0]+(id==='rer'?' rugoso':id==='rel'?' liso':'')+'</text>':'')+'</g>';}
@@ -492,8 +492,8 @@ var SAL=[
  {t:'Agua destilada (0 %)',gr:['💥 Lisis: se hinchó y reventó',1.35,'lisis'],ve:['💪 Turgente: firme',1],e:'Afuera hay <b>mucha menos</b> sal que adentro (solución <b>hipotónica</b>). El agua entra a las células. El glóbulo rojo, sin pared, se hincha hasta reventar. La célula vegetal se pone firme, pero su pared de celulosa evita que reviente.',w:1},
  {t:'Poca sal (0,3 %)',gr:['🎈 Hinchado',1.2],ve:['💪 Turgente: firme',1],e:'Solución <b>hipotónica</b>: el agua entra a las células. El glóbulo rojo se hincha; la planta queda firme.',w:1},
  {t:'0,9 % — igual que adentro',gr:['✅ Normal',1],ve:['🙂 Normal, un poco flácida',.97],e:'Solución <b>isotónica</b>: entra la misma cantidad de agua que sale. Por eso el suero fisiológico tiene 0,9 % de sal.',w:0},
- {t:'Bastante sal (3 %)',gr:['🫠 Arrugado (crenado)',.8],ve:['🥀 Plasmólisis: la membrana se despega de la pared',.75],e:'Solución <b>hipertónica</b>: afuera hay más sal, así que el agua <b>sale</b> de las células. El glóbulo rojo se arruga; en la planta, la membrana y la vacuola se encogen y se separan de la pared.',w:-1},
- {t:'Agua de mar (3,5 %)',gr:['🫠 Muy arrugado',.7],ve:['🥀 Plasmólisis fuerte: se marchita',.6],e:'Muy <b>hipertónica</b>: sale mucha agua. Por eso no sirve regar las plantas con agua de mar, ni tomarla cuando tienes sed.',w:-1}
+ {t:'Bastante sal (3 %)',gr:['😵 Arrugado (crenado)',.8],ve:['🥀 Plasmólisis: la membrana se despega de la pared',.75],e:'Solución <b>hipertónica</b>: afuera hay más sal, así que el agua <b>sale</b> de las células. El glóbulo rojo se arruga; en la planta, la membrana y la vacuola se encogen y se separan de la pared.',w:-1},
+ {t:'Agua de mar (3,5 %)',gr:['😵 Muy arrugado',.7],ve:['🥀 Plasmólisis fuerte: se marchita',.6],e:'Muy <b>hipertónica</b>: sale mucha agua. Por eso no sirve regar las plantas con agua de mar, ni tomarla cuando tienes sed.',w:-1}
 ];
 var sal=document.getElementById('sal');
 function flechas(w){if(!w)return '<text x="130" y="172" text-anchor="middle" style="font:700 12px Outfit" fill="#3c5446">⇄ entra y sale igual</text>';
@@ -658,8 +658,8 @@ document.getElementById('fa-play').onclick=function(){var b=this;if(playF){clear
 verFase(0);
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

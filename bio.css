@@ -247,3 +247,6 @@ body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.1
           mask-image:radial-gradient(ellipse 68% 72% at 50% 44%,rgba(0,0,0,.06) 0%,rgba(0,0,0,.12) 52%,rgba(0,0,0,.6) 74%,#000 100%)}
 @media (max-width:640px){#bio-bg{opacity:.35;background-size:540px auto;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 40%,rgba(0,0,0,.5) 70%,#000 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 40%,rgba(0,0,0,.5) 70%,#000 100%)}}
 @media print{body{background-image:none}#bio-bg{display:none!important}}
+
+/* Bandera de Colombia dibujada con CSS: Windows no muestra los emojis de banderas */
+.co{display:inline-block;width:1.3em;height:.86em;vertical-align:-.08em;border-radius:2px;background:linear-gradient(#fcd116 0 50%,#003893 50% 75%,#ce1126 75%);box-shadow:0 0 0 1px rgba(0,0,0,.18)}

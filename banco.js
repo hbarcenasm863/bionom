@@ -11,8 +11,8 @@
    bionom-analytics.gs.
    ════════════════════════════════════════════════════════════════════════ */
 window.TEMAS_JUEGO=[
- ['celula','La célula','🔬'],['reinos','Reinos y clasificación','🍄'],['sistemas','Sistemas del cuerpo','🫀'],['reproduccion','Reproducción','👶'],
- ['genetica','Genética','🧬'],['evolucion','Evolución','🦎'],['ecosistemas','Ecosistemas','🌳'],['colombia','Ecosistemas de Colombia','🇨🇴'],['ambiente','Ambiente y cambio climático','🌍']
+ ['celula','La célula','🔬'],['reinos','Reinos y clasificación','🍄'],['sistemas','Sistemas del cuerpo','❤️'],['reproduccion','Reproducción','👶'],
+ ['genetica','Genética','🧬'],['evolucion','Evolución','🦎'],['ecosistemas','Ecosistemas','🌳'],['colombia','Ecosistemas de Colombia','<span class="co" role="img" aria-label="Colombia"></span>'],['ambiente','Ambiente y cambio climático','🌍']
 ];
 window.BANCO_BIO=[
 /* ───────── LA CÉLULA ───────── */

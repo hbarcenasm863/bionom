@@ -6,6 +6,37 @@
 
 ---
 
+## Versión 1.2 — 10 de noviembre de 2026 · Íconos que no se veían y guisantes gigantes
+
+### Contexto
+En el computador del docente (Windows) aparecían rectángulos negros en lugar
+de algunos íconos. Por ejemplo, el ejemplo del átomo (pulmones), el ícono de
+Organelo y el de Sistemas. La bandera de Colombia salía como «CO». En
+Genética, los guisantes del experimento de Mendel y del cuadro de Punnett se
+veían enormes y no dejaban ver los cruces.
+
+### Causa
+- Esos íconos son emojis recientes (versión 12 o posterior, por ejemplo 🫁 🫀
+  🫘 🫧 🪸 🩸 🟢) que las versiones de Windows anteriores no saben dibujar.
+- Windows no dibuja ningún emoji de bandera.
+- Los guisantes son dibujos de tamaño fijo, pero el estilo general `.fig svg`
+  los estiraba a todo el ancho del recuadro.
+
+### Cambios
+- **Todas las páginas, `bio.js`, `banco.js` y `ahorcado-datos.js`:** cada emoji
+  reciente se cambió por uno antiguo equivalente: ❤️ 🌬️ ⚙️ 🌰 💧 🐠 🔴 💛
+  💚 ⚕️ 🧑, etc. El nivel Organelo usa ⚙️.
+- **Bandera de Colombia:** se dibuja con CSS (clase `.co` en `bio.css`). En los
+  textos de los dibujos del ahorcado se usa 🗺️. Las banderas de Francia e
+  Inglaterra de Lamarck y Darwin se cambiaron por texto.
+- **`genetica.html`:** `.fig svg[width]` conserva el tamaño propio de los
+  guisantes y las flores.
+- **Versiones:** `bionom-v13` y `?v=4`.
+
+### Regla para el futuro
+No usar emojis de banderas ni emojis posteriores a la versión 11; antes de
+agregar uno, revisar que se vea en Windows 10.
+
 ## Versión 1.1 — 10 de noviembre de 2026 · Modo Estudiante desactivado
 
 ### Contexto

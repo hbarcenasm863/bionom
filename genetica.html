@@ -12,8 +12,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
+.fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
 .alelo-sel{display:flex;gap:6px;justify-content:center}
 .alelo-sel button{width:52px;height:52px;border-radius:50%;border:3px solid var(--cn-brd);background:#fff;font:800 1.5rem var(--cn-mono);cursor:pointer;color:var(--cn-brand-d)}
@@ -94,7 +95,7 @@
     <a href="#punnett">🔲 Punnett</a>
     <a href="#dihibrido">🧮 Dihíbrido</a>
     <a href="#meiosis">✂️ Meiosis</a>
-    <a href="#otras">🩸 Más allá de Mendel</a>
+    <a href="#otras">🔴 Más allá de Mendel</a>
     <a href="#genealogias">🌳 Genealogías</a>
     <strong>Molecular</strong>
     <a href="#adn">🧬 ADN</a>
@@ -207,7 +208,7 @@
   <section class="sec" id="otras">
     <h2><span class="n">06</span> Más allá de Mendel</h2>
     <p class="lead">No todos los genes funcionan con un dominante y un recesivo. Explora tres casos famosos.</p>
-    <div class="tabs"><button class="chip on" data-tab="o-inc">🌸 Dominancia incompleta</button><button class="chip" data-tab="o-abo">🩸 Grupos sanguíneos</button><button class="chip" data-tab="o-sex">👁️ Ligada al sexo</button><button class="chip" data-tab="o-poli">📏 Poligénica y ambiente</button></div>
+    <div class="tabs"><button class="chip on" data-tab="o-inc">🌸 Dominancia incompleta</button><button class="chip" data-tab="o-abo">🔴 Grupos sanguíneos</button><button class="chip" data-tab="o-sex">👁️ Ligada al sexo</button><button class="chip" data-tab="o-poli">📏 Poligénica y ambiente</button></div>
     <div class="tab-p card" id="o-inc">
       <p>En la flor <b>don Diego de noche</b> (<i>Mirabilis jalapa</i>), ningún alelo domina: al cruzar roja (RR) con blanca (BB) los hijos salen <b>rosados</b> (RB), una mezcla intermedia.</p>
       <div class="padres" id="inc-padres"></div><div id="inc-tab"></div><div id="inc-prop"></div>
@@ -311,7 +312,7 @@
     <h2><span class="n">11</span> Mutaciones: cuando cambia una letra</h2>
     <p class="lead">Una <b>mutación</b> es un cambio en la secuencia del ADN. Toca cualquier letra del ARNm para cambiarla, o usa los botones, y mira qué le pasa a la proteína.</p>
     <div class="card">
-      <div class="ctrl"><button type="button" class="cn-btn" id="mu-falci">🩸 Anemia falciforme</button><button type="button" class="cn-btn" id="mu-ins">➕ Insertar una letra</button><button type="button" class="cn-btn" id="mu-del">➖ Borrar una letra</button><button type="button" class="cn-btn" id="mu-reset">🔄 Original</button></div>
+      <div class="ctrl"><button type="button" class="cn-btn" id="mu-falci">🔴 Anemia falciforme</button><button type="button" class="cn-btn" id="mu-ins">➕ Insertar una letra</button><button type="button" class="cn-btn" id="mu-del">➖ Borrar una letra</button><button type="button" class="cn-btn" id="mu-reset">🔄 Original</button></div>
       <div class="etq-fila">ARNm (toca una letra para cambiarla)</div><div class="codones" id="mu-arn"></div>
       <div class="etq-fila">Proteína original</div><div class="prot" id="mu-orig"></div>
       <div class="etq-fila">Proteína con la mutación</div><div class="prot" id="mu-prot"></div>
@@ -346,7 +347,7 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
+<script src="bio.js?v=4"></script>
 <script>
 (function(){
 var esc=BIO.esc;
@@ -366,7 +367,7 @@ function flor(col,tam){tam=tam||40;var c={pu:['#c48ee8','#7d3cb5'],bl:['#ffffff'
 
 /* ═══ 1. Conceptos ═══ */
 var RASGOS={
- color:{n:'🟡 Color de la semilla',L:'A',dom:'amarilla',rec:'verde',dib:function(d){return arveja(d?'am':'ve',true,90);}},
+ color:{n:'💛 Color de la semilla',L:'A',dom:'amarilla',rec:'verde',dib:function(d){return arveja(d?'am':'ve',true,90);}},
  forma:{n:'⚪ Forma de la semilla',L:'B',dom:'lisa',rec:'rugosa',dib:function(d){return arveja('am',d,90);}},
  flor:{n:'🌸 Color de la flor',L:'P',dom:'púrpura',rec:'blanca',dib:function(d){return flor(d?'pu':'bl',90);}}
 };
@@ -436,7 +437,7 @@ function proporciones(){
   var g1=P1.split(''),g2=P2.split(''),cnt={};g1.forEach(function(a){g2.forEach(function(b){var g=ordenar(a,b);cnt[g]=(cnt[g]||0)+1;});});
   var am=(cnt.AA||0)+(cnt.Aa||0),ve=cnt.aa||0;
   document.getElementById('pun-prop').innerHTML='<p><b>Genotipos:</b> '+GEN.filter(function(g){return cnt[g];}).map(function(g){return g+' '+cnt[g]+'/4 ('+cnt[g]*25+' %)';}).join(' · ')+'</p>'+
-    barras([['🟡 Amarillas',am/4,'#e7c21c',am*25+' %'],['🟢 Verdes',ve/4,'#7cb83a',ve*25+' %']])+
+    barras([['💛 Amarillas',am/4,'#e7c21c',am*25+' %'],['💚 Verdes',ve/4,'#7cb83a',ve*25+' %']])+
     '<p style="margin-top:6px;font-size:.9rem"><b>Proporción fenotípica:</b> '+(am&&ve?am+' amarilla'+(am>1?'s':'')+' : '+ve+' verde'+(ve>1?'s':''):am?'todas amarillas':'todas verdes')+'.</p>';
   BIO.marcarSeccion('punnett');
 }
@@ -452,7 +453,7 @@ document.getElementById('pun-sol').onclick=function(){pintarPun(true);document.g
 document.querySelectorAll('[data-sim]').forEach(function(b){b.onclick=function(){
   var n=+b.getAttribute('data-sim'),am=0;for(var i=0;i<n;i++){var g=P1[Math.random()<.5?0:1]+P2[Math.random()<.5?0:1];if(g.indexOf('A')>=0)am++;}
   var esp=(function(){var c=0;P1.split('').forEach(function(a){P2.split('').forEach(function(x){if((a+x).indexOf('A')>=0)c++;});});return c/4;})();
-  document.getElementById('pun-sim').innerHTML=barras([['🟡 Amarillas',am/n,'#e7c21c',am],['🟢 Verdes',(n-am)/n,'#7cb83a',n-am]])+
+  document.getElementById('pun-sim').innerHTML=barras([['💛 Amarillas',am/n,'#e7c21c',am],['💚 Verdes',(n-am)/n,'#7cb83a',n-am]])+
     '<p style="font-size:.9rem;margin-top:6px">Salieron '+(am/n*100).toFixed(1)+' % amarillas; el cuadro predice '+(esp*100)+' %. '+(n<10?'Con tan pocos hijos la diferencia puede ser grande: vuelve a simular.':'Con muchos hijos el resultado se acerca a lo esperado.')+'</p>';
 };});
 pintarPadres();pintarPun(false);
@@ -712,8 +713,8 @@ document.querySelectorAll('#biotec [data-v]').forEach(function(b){b.onclick=func
   var l=document.getElementById('bt-'+i);if(l.hidden){l.hidden=false;votos++;}if(votos>=3)BIO.marcarSeccion('biotecnologia');};});
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>

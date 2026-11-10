@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=3">
+<link rel="stylesheet" href="bio.css?v=4">
 <style>
 .mapa-co{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
 @media(max-width:860px){.mapa-co{grid-template-columns:1fr}}
@@ -61,7 +61,7 @@
 <nav class="site-nav"></nav>
 <main class="app">
   <header class="cn-page-head">
-    <span class="kicker">🇨🇴 Niveles de ecosistema y bioma</span>
+    <span class="kicker"><span class="co" role="img" aria-label="Colombia"></span> Niveles de ecosistema y bioma</span>
     <h1>Los ecosistemas de Colombia</h1>
     <p>Colombia tiene casi todos los ecosistemas del planeta en un solo país: nieves perpetuas, páramos, selvas, desiertos, sabanas, manglares y arrecifes de coral. La razón: está en la <b>zona tropical</b>, tiene <b>dos océanos</b> y los <b>Andes</b> la cruzan con tres cordilleras. Explora el mapa: toca una <b>región</b> o un <b>lugar</b> 📍.</p>
     <a class="nivel-chip" href="index.html">🗺️ Niveles: ecosistema → bioma</a>
@@ -134,8 +134,8 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=3"></script>
-<script src="mapa-colombia.js?v=3"></script>
+<script src="bio.js?v=4"></script>
+<script src="mapa-colombia.js?v=4"></script>
 <script>
 (function(){
 var M=window.MAPA_CO,P=M.proj;
@@ -150,7 +150,7 @@ var ECO={
  desierto:{n:'Desierto',e:'🏜️',c:'#e2b465',d:'Muy poca lluvia. Cactus, cardones y animales que ahorran agua. El desierto de La Guajira es el más grande del país; la Tatacoa es en realidad un bosque seco muy erosionado.'},
  sabana:{n:'Sabana (llanura)',e:'🌾',c:'#d4c04a',d:'Planicies de pastos con árboles dispersos y bosques de galería a lo largo de los ríos. Una temporada de lluvias que inunda y otra seca muy marcada. Típica de los Llanos Orientales.'},
  manglar:{n:'Manglar',e:'🌿',c:'#2f8a7a',d:'Bosques en la orilla del mar, donde se mezcla agua dulce y salada. Sus raíces son guardería de peces y protegen la costa de las olas. Colombia tiene manglares en el Caribe y el Pacífico.'},
- arrecife:{n:'Arrecife de coral',e:'🪸',c:'#ef6f6c',d:'Construidos por pequeños animales (pólipos) en aguas cálidas y claras. Las «selvas del mar»: albergan una cuarta parte de las especies marinas. Muy sensibles al calentamiento del agua.'},
+ arrecife:{n:'Arrecife de coral',e:'🐠',c:'#ef6f6c',d:'Construidos por pequeños animales (pólipos) en aguas cálidas y claras. Las «selvas del mar»: albergan una cuarta parte de las especies marinas. Muy sensibles al calentamiento del agua.'},
  humedal:{n:'Humedal, ciénaga y laguna',e:'💧',c:'#3b8fd6',d:'Terrenos cubiertos de agua de forma permanente o por temporadas. Regulan las inundaciones, filtran el agua y son refugio de aves migratorias.'}
 };
 /* ═══ Regiones ═══ */
@@ -335,8 +335,8 @@ eb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verE(+b.g
 document.getElementById('esp-t').innerHTML='<p class="vacio" style="padding:10px">👆 Toca una especie para ver su categoría y por qué está amenazada.</p>';
 })();
 </script>
-<script src="text-zoom.js?v=3"></script>
-<script src="narracion.js?v=3"></script>
-<script src="pwa-install.js?v=3"></script>
+<script src="text-zoom.js?v=4"></script>
+<script src="narracion.js?v=4"></script>
+<script src="pwa-install.js?v=4"></script>
 </body>
 </html>
