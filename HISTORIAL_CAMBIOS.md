@@ -6,6 +6,29 @@
 
 ---
 
+## Versión 2.5 — 10 de noviembre de 2026 · Selección múltiple a doble columna en evaluaciones, talleres y guías
+
+### Contexto
+El docente pidió que las preguntas de opción múltiple de las evaluaciones y los talleres salieran a doble columna, como en ChromaNom, para aprovechar mejor la hoja.
+
+### Cambios
+- **`docente-app.js`:** igual que en ChromaNom, las preguntas de selección múltiple se agrupan en un contenedor de dos columnas en cada hoja. Si la siguiente pregunta no cabe, pasa a otra hoja con su propio contenedor. Aplica a:
+  - las preguntas tipo Saber 11 de las evaluaciones y de la guía;
+  - la selección múltiple de los talleres y de la sesión 3 de la guía;
+  - las hojas de clave.
+
+  El título de la sección va arriba, a todo lo ancho. Verdadero o falso, respuesta corta, ordenar, análisis y actividades siguen a una columna.
+- **`docente.html`:** estilos `.cols2` (dos columnas con línea divisoria; cada pregunta no se parte entre columnas) y opciones en una sola columna dentro de cada pregunta.
+- **Versión:** `?v=11` y `bionom-v22`.
+
+### Verificación
+Con Playwright se generaron evaluación, taller y guía con un tema y con los 10 temas. Hay hojas a doble columna, ninguna hoja se desborda y no hay errores.
+
+### Pendiente
+Ninguno.
+
+---
+
 ## Versión 2.4 — 10 de noviembre de 2026 · 40 o más en cada sección del panel docente, por tema; División celular como tema
 
 ### Contexto

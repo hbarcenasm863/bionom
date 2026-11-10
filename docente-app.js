@@ -82,7 +82,8 @@ function lineas(k){return '<div class="lineas">'+'<i></i>'.repeat(k)+'</div>';}
 function bloquesBanco(P,c,clave,n0){
   var B=[],n=n0||0;
   function sec(t,arr,fn){arr.forEach(function(x,i){B.push((i===0?'<h3>'+t+'</h3>':'')+fn(x));});}
-  if(P.mc.length)sec('Selección múltiple con única respuesta',P.mc,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<ol>'+x.ops.map(function(o,i){return '<li data-l="'+L[i].toLowerCase()+'"'+(clave&&i===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&i===x.a?' ✔':'')+'</li>';}).join('')+'</ol>'+(clave?'<div class="exp">'+x.exp+'</div>':'')+'</div></div>';});
+  if(P.mc.length)B.push('<h3>Selección múltiple con única respuesta</h3>');
+  if(P.mc.length)P.mc.forEach(function(x){B.push((function(){n++;return '<div class="pq sq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<ol>'+x.ops.map(function(o,i){return '<li data-l="'+L[i].toLowerCase()+'"'+(clave&&i===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&i===x.a?' ✔':'')+'</li>';}).join('')+'</ol>'+(clave?'<div class="exp">'+x.exp+'</div>':'')+'</div></div>';})());});
   if(P.vf.length)sec('Verdadero (V) o falso (F): si es falsa, corrígela',P.vf,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div><span class="vf">'+(clave?'<span class="okc">'+(x.a?'✔ V':'✔ F')+'</span>':'V &nbsp; F')+'</span>'+esc(x.q)+(clave?'<div class="exp">'+x.exp+'</div>':lineas(1))+'</div></div>';});
   if(P.esc.length)sec('Responde con una palabra o frase corta',P.esc,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div class="okc">'+esc(x.a[0])+'</div><div class="exp">'+x.exp+'</div>':lineas(1))+'</div></div>';});
   if(P.ord.length)sec('Ordena: escribe 1, 2, 3… en cada casilla',P.ord,function(x){n++;return '<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+'<div class="ord-cajas">'+x.mez.map(function(o){return '<span>'+(clave?'<b>'+(x.ok.indexOf(o)+1)+'</b> ':'')+esc(o)+'</span>';}).join('')+'</div>'+(clave?'<div class="exp">'+x.exp+'</div>':'')+'</div></div>';});
@@ -100,7 +101,8 @@ function bloquesActividades(c,v){
 }
 function bloquesEval(E,c,clave){
   var B=[],n=0;
-  E.saber.forEach(function(x,i){n++;B.push((i===0?'<h3>Selección múltiple con única respuesta (tipo Saber 11)</h3>':'')+'<div class="pq sq"><span class="n">'+n+'.</span><div>'+(x.ctx?'<div class="ctx">'+esc(x.ctx)+'</div>':'')+'<b>'+esc(x.q)+'</b><ol class="col1">'+x.ops.map(function(o,j){return '<li data-l="'+L[j]+'"'+(clave&&j===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&j===x.a?' ✔':'')+'</li>';}).join('')+'</ol></div></div>');});
+  if(E.saber.length)B.push('<h3>Selección múltiple con única respuesta (tipo Saber 11)</h3>');
+  E.saber.forEach(function(x,i){n++;B.push('<div class="pq sq"><span class="n">'+n+'.</span><div>'+(x.ctx?'<div class="ctx">'+esc(x.ctx)+'</div>':'')+'<b>'+esc(x.q)+'</b><ol class="col1">'+x.ops.map(function(o,j){return '<li data-l="'+L[j]+'"'+(clave&&j===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&j===x.a?' ✔':'')+'</li>';}).join('')+'</ol></div></div>');});
   E.ab.forEach(function(x,i){n++;B.push((i===0?'<h3>Preguntas abiertas</h3>':'')+'<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div class="exp">Respuesta abierta: valore la claridad, el uso de los conceptos y las evidencias.</div>':lineas(6))+'</div></div>');});
   if(c.burbujas&&E.saber.length&&!clave){
     var filas=E.saber.map(function(x,i){return '<tr><td>'+(i+1)+'</td>'+[0,1,2,3].map(function(j){return '<td><span class="burb">'+L[j]+'</span></td>';}).join('')+'</tr>';});
@@ -156,9 +158,18 @@ function paginar(B,c,v,clave,parte,nv){
   function pie(k,n){return '<div class="hoja-pie"><span>BioNom · Biología por niveles de organización · © 2026 Harvey Bárcenas Morales · CC BY-NC 4.0</span><span>'+nom+' — página '+k+' de '+n+'</span></div>';}
   var out=[],i=0,pag=0;
   while(i<B.length||pag===0){
-    med.innerHTML=hojaVacia(pag===0);var cuerpo=med.querySelector('.hoja-cuerpo'),disp=cuerpo.clientHeight,usado=0,puestos=[];
-    while(i<B.length){var d=document.createElement('div');d.className='blq';d.innerHTML=B[i];cuerpo.appendChild(d);if(cuerpo.scrollHeight>cuerpo.clientHeight+1&&puestos.length){cuerpo.removeChild(d);break;}puestos.push(B[i]);i++;}
-    out.push({primera:pag===0,html:puestos.map(function(b){return '<div class="blq">'+b+'</div>';}).join('')});pag++;if(!B.length)break;
+    med.innerHTML=hojaVacia(pag===0);var cuerpo=med.querySelector('.hoja-cuerpo'),puestos=0;
+    while(i<B.length){
+      // Como en ChromaNom: las preguntas de selección múltiple («pq sq») van a
+      // doble columna, agrupadas en un contenedor .cols2 por hoja; si la
+      // siguiente no cabe, pasa a otra hoja con su propio contenedor.
+      var enCols=/^<div class="pq sq/.test(B[i]),dest=cuerpo;
+      if(enCols){var u=cuerpo.lastElementChild;if(u&&u.classList.contains('cols2'))dest=u;else{dest=document.createElement('div');dest.className='blq cols2';cuerpo.appendChild(dest);}}
+      var d=document.createElement('div');d.className='blq';d.innerHTML=B[i];dest.appendChild(d);
+      if(cuerpo.scrollHeight>cuerpo.clientHeight+1&&puestos){dest.removeChild(d);if(enCols&&!dest.children.length)cuerpo.removeChild(dest);break;}
+      puestos++;i++;
+    }
+    out.push({primera:pag===0,html:cuerpo.innerHTML});pag++;if(!B.length)break;
   }
   med.innerHTML='';
   return out.map(function(p,k){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,p.primera,parte,nv)+'<div class="hoja-cuerpo">'+p.html+'</div>'+pie(k+1,out.length)+'</div>';}).join('');
