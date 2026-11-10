@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=4">
+<link rel="stylesheet" href="bio.css?v=5">
 <style>
 .taxo{display:grid;gap:6px}
 .taxo .fila{display:grid;grid-template-columns:120px repeat(3,minmax(0,1fr));gap:6px;align-items:stretch}
@@ -164,13 +164,14 @@
 
   <section class="sec" id="clasifica">
     <h2><span class="n">07</span> Reto: ¿a qué reino pertenece?</h2>
-    <p class="lead">Lleva cada organismo a su reino. Toca la ficha y luego la caja.</p>
+    <p class="lead">Primero escoge con qué modelo vas a clasificar: <b>5 reinos</b> (Whittaker) o <b>6 reinos</b> (Monera dividido en eubacterias y arqueas). Luego lleva cada organismo a su reino: toca la ficha y después la caja.</p>
+    <div class="chips" style="margin-bottom:10px" role="group" aria-label="Modelo de clasificación"><button class="chip on" data-modelo="5">👑 Con 5 reinos</button><button class="chip" data-modelo="6">✂️ Con 6 reinos</button></div>
     <div class="card" id="clas-reinos"></div>
     <div class="sig"><a href="celula.html"><small>← Anterior</small><b>🔬 La célula</b></a><a class="der" href="sistemas.html"><small>Siguiente →</small><b>❤️ Sistemas del cuerpo</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=4"></script>
+<script src="bio.js?v=5"></script>
 <script>
 (function(){
 /* ═══ Taxonomía ═══ */
@@ -302,19 +303,27 @@ osel.querySelectorAll('button').forEach(function(b){b.onclick=function(){empezar
 ruta.innerHTML='<div class="card" style="text-align:center;color:var(--cn-dim)">👈 Escoge un organismo para empezar la clave.</div>';
 
 /* ═══ Clasificador ═══ */
-BIO.clasificar(document.getElementById('clas-reinos'),{
-  cajas:R.map(function(r){return {id:r.id,titulo:r.e+' '+r.n.split(' ')[0]};}),
-  fichas:[
-   {t:'Bacteria del yogur',caja:'monera'},{t:'Cianobacteria',caja:'monera',pista:'Hace fotosíntesis, pero no tiene núcleo.'},
-   {t:'Paramecio',caja:'protista'},{t:'Plasmodio de la malaria',caja:'protista',pista:'Es unicelular con núcleo, y no es un hongo.'},
-   {t:'Moho del pan',caja:'fungi'},{t:'Roya del café',caja:'fungi',pista:'Es un hongo que ataca las hojas del cafeto.'},
-   {t:'Palma de cera',caja:'plantae'},{t:'Musgo',caja:'plantae'},
-   {t:'Rana dorada',caja:'animalia'},{t:'Esponja de mar',caja:'animalia',pista:'Aunque no se mueve, come filtrando el agua y no tiene pared celular.'}
-  ]});
+/* Reto: el docente o el estudiante escoge el modelo de 5 o de 6 reinos */
+var RETO_F=[
+ {t:'Bacteria del yogur',r5:'monera',r6:'eu'},{t:'Cianobacteria',r5:'monera',r6:'eu',pista:'Hace fotosíntesis, pero no tiene núcleo.'},
+ {t:'Arquea de las salinas de Manaure',r5:'monera',r6:'ar',pista:'Vive en lugares extremos, sin núcleo.'},{t:'Arquea metanógena del estómago de la vaca',r5:'monera',r6:'ar',pista:'Produce metano y no tiene núcleo.'},
+ {t:'Paramecio',r5:'protista'},{t:'Plasmodio de la malaria',r5:'protista',pista:'Es unicelular con núcleo, y no es un hongo.'},
+ {t:'Moho del pan',r5:'fungi'},{t:'Roya del café',r5:'fungi',pista:'Es un hongo que ataca las hojas del cafeto.'},
+ {t:'Palma de cera',r5:'plantae'},{t:'Musgo',r5:'plantae'},
+ {t:'Rana dorada',r5:'animalia'},{t:'Esponja de mar',r5:'animalia',pista:'Aunque no se mueve, come filtrando el agua y no tiene pared celular.'}
+];
+function reto(n){
+  document.querySelectorAll('[data-modelo]').forEach(function(b){b.classList.toggle('on',+b.getAttribute('data-modelo')===n);});
+  var cajas=n===5?R.map(function(r){return {id:r.id,titulo:r.e+' '+r.n.split(' ')[0]};}):
+    [{id:'eu',titulo:'🦠 Eubacteria'},{id:'ar',titulo:'🌋 Archaebacteria'}].concat(R.filter(function(r){return r.id!=='monera';}).map(function(r){return {id:r.id,titulo:r.e+' '+r.n.split(' ')[0]};}));
+  BIO.clasificar(document.getElementById('clas-reinos'),{cajas:cajas,fichas:RETO_F.map(function(f){return {t:f.t,caja:n===6&&f.r6?f.r6:f.r5,pista:f.pista};})});
+}
+document.querySelectorAll('[data-modelo]').forEach(function(b){b.onclick=function(){reto(+b.getAttribute('data-modelo'));};});
+reto(5);
 })();
 </script>
-<script src="text-zoom.js?v=4"></script>
-<script src="narracion.js?v=4"></script>
-<script src="pwa-install.js?v=4"></script>
+<script src="text-zoom.js?v=5"></script>
+<script src="narracion.js?v=5"></script>
+<script src="pwa-install.js?v=5"></script>
 </body>
 </html>

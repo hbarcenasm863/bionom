@@ -6,6 +6,38 @@
 
 ---
 
+## Versión 1.3 — 10 de noviembre de 2026 · Revisión en celular y reto de 5 o 6 reinos
+
+### Contexto
+El docente pidió revisar los íconos y el tamaño de las imágenes para que se
+vean bien en el celular y en el computador. También pidió que en el reto
+«¿A qué reino pertenece?» se escoja si se trabaja con 5 o con 6 reinos.
+
+### Revisión
+Se tomaron capturas en celular (390 px) de todas las secciones de las 12
+páginas y se midió en computador (1366 px):
+- Ninguna página se desborda de lado.
+- No quedan emojis que Windows no dibuje.
+
+### Cambios
+- **Gráficas en el celular:** las gráficas (polillas, ciclo menstrual, CO₂,
+  emisiones, anticuerpos, azúcar en la sangre, deriva genética, poblaciones)
+  quedaban diminutas e ilegibles.
+  - Ahora conservan 640 px de ancho y se deslizan de lado, con el aviso
+    «← desliza para ver toda la figura →».
+  - Lo hace `bio.js` (función `deslizables`) con todo `canvas` y todo
+    `svg.ancha` (por ahora, la red trófica).
+- **Tablas en el celular:** tienen un ancho mínimo de 520 px y el aviso
+  «desliza la tabla →». Antes la última columna quedaba de una o dos palabras
+  por renglón.
+- **`.lado`:** las columnas pueden encogerse (`minmax(0,1fr)`), así una figura
+  ancha no empuja la página.
+- **`reinos.html`:** botones «Con 5 reinos / Con 6 reinos» en el reto.
+  - Con 6, Monera se cambia por Eubacteria y Archaebacteria.
+  - Se agregaron dos arqueas: la de las salinas de Manaure y la metanógena
+    del estómago de la vaca.
+- **Versiones:** `bionom-v14` y `?v=5`.
+
 ## Versión 1.2 — 10 de noviembre de 2026 · Íconos que no se veían y guisantes gigantes
 
 ### Contexto

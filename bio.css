@@ -104,7 +104,7 @@ button{font-family:inherit}
 .g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
 .lado{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;align-items:start}
-@media(max-width:820px){.lado{grid-template-columns:1fr}}
+@media(max-width:820px){.lado{grid-template-columns:minmax(0,1fr)}}
 
 /* ── Botones ── */
 .cn-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:8px 16px;border-radius:12px;border:1.5px solid var(--cn-brd);background:#fff;color:var(--cn-brand-d);font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;transition:background .15s,border-color .15s,transform .1s}
@@ -250,3 +250,15 @@ body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.1
 
 /* Bandera de Colombia dibujada con CSS: Windows no muestra los emojis de banderas */
 .co{display:inline-block;width:1.3em;height:.86em;vertical-align:-.08em;border-radius:2px;background:linear-gradient(#fcd116 0 50%,#003893 50% 75%,#ce1126 75%);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+
+/* Celular: las gráficas (canvas) y figuras con mucho texto (.ancha) conservan
+   un ancho mínimo legible y se deslizan de lado dentro de .desliza (bio.js). */
+.desliza{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.desliza-aviso{display:none;font-size:.78rem;font-weight:700;color:var(--cn-dim);text-align:right;margin:2px 4px 0}
+@media(max-width:640px){
+  .desliza>canvas{width:640px!important;max-width:none;height:auto}
+  .desliza>svg.ancha{width:640px!important;max-width:none}
+  .desliza-aviso{display:block}
+  table.t{min-width:520px}
+  .tbl-wrap::after{content:'desliza la tabla →';display:block;font-size:.74rem;font-weight:700;color:var(--cn-dim);text-align:right;padding:2px 8px}
+}

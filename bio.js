@@ -236,6 +236,13 @@ function clasificar(cont,op){
   pintarMarc();
 }
 
+function deslizables(){
+  document.querySelectorAll('main canvas, main svg.ancha').forEach(function(c){
+    if(c.parentNode.classList.contains('desliza'))return;
+    var w=document.createElement('div');w.className='desliza';c.parentNode.insertBefore(w,c);w.appendChild(c);
+    var av=document.createElement('div');av.className='desliza-aviso';av.textContent='← desliza para ver toda la figura →';w.parentNode.insertBefore(av,w.nextSibling);
+  });
+}
 function montarTodo(raiz){montarChequeos(raiz);montarPasos(raiz);montarFlips(raiz);montarTabs(raiz);montarTerms(raiz);}
 
 window.BIO={MODULOS:MODULOS,actual:actual,visitas:visitas,secciones:secciones,leer:leer,guardar:guardar,marcarSeccion:marcarSeccion,
@@ -244,6 +251,7 @@ window.BIO={MODULOS:MODULOS,actual:actual,visitas:visitas,secciones:secciones,le
 if(!document.getElementById('bio-bg')){var bg=document.createElement('div');bg.id='bio-bg';bg.setAttribute('aria-hidden','true');document.body.insertBefore(bg,document.body.firstChild);}
 armarMenu();
 montarTodo();
+deslizables();
 montarToc();
 
 if('serviceWorker' in navigator&&location.protocol!=='file:'){
