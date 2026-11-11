@@ -6,6 +6,26 @@
 
 ---
 
+## Versión 2.14 — 11 de noviembre de 2026 · Los deslizadores ya no mueven la página en el celular
+
+**Contexto.** El docente reportó que en el celular, al usar un deslizador (por
+ejemplo, el tiempo en la campana de Priestley), la página bajaba sola e impedía
+ver la figura completa.
+
+**Causa.** El ajuste de contigüidad espacial de la versión 2.13 (`bio.js`)
+desplaza la página hasta la explicación que aparece después de un toque. Mover
+un deslizador también contaba como toque. Reproducido con Playwright: el de
+ósmosis bajaba la página 713 píxeles.
+
+**Cambio.** `bio.js`: el ajuste ya no actúa cuando se toca un deslizador, una
+casilla, un menú o un campo de texto; solo con figuras y botones. `?v=15` de
+`bio.js` en las páginas y `sw.js` → `bionom-v29`.
+
+**Verificación.** Deslizadores de célula (aumento, ósmosis, Priestley),
+reproducción, evolución, regiones y ambiente: 0 píxeles de desplazamiento. Al
+tocar una figura en célula, división, reinos, sistemas y regiones la
+explicación sigue quedando a la vista. Recargar con Ctrl+F5.
+
 ## Versión 2.13 — 11 de noviembre de 2026 · Auditoría biológica y didáctica (principios de Mayer)
 
 **Contexto.** El docente pidió una auditoría que verificara que todo el

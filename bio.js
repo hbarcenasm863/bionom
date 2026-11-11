@@ -268,8 +268,10 @@ if('serviceWorker' in navigator&&location.protocol!=='file:'){
 (function(){
   if(!window.MutationObserver)return;
   var ult=0,pend=null;
-  document.addEventListener('pointerdown',function(){ult=Date.now();},true);
-  document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')ult=Date.now();},true);
+  // Solo toques sobre figuras o botones: nunca deslizadores, casillas ni menús,
+  // porque ahí la explicación cambia mientras el estudiante mira la figura.
+  document.addEventListener('pointerdown',function(e){var t=e.target;ult=(t&&t.closest&&t.closest('input,select,textarea,label'))?0:Date.now();},true);
+  document.addEventListener('keydown',function(e){var t=e.target;if((e.key==='Enter'||e.key===' ')&&!(t&&t.closest&&t.closest('input,select,textarea')))ult=Date.now();},true);
   new MutationObserver(function(ms){
     if(window.innerWidth>760||Date.now()-ult>900)return;
     for(var i=0;i<ms.length;i++){
