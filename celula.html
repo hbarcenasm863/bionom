@@ -130,6 +130,7 @@
         <tr><td><b>Ejemplos</b></td><td>Bacterias y arqueas.</td><td>Animales, plantas, hongos y protistas.</td></tr>
         <tr><td><b>Aparición</b></td><td>Hace unos 3500 millones de años.</td><td>Hace unos 2000 millones de años.</td></tr>
       </table></div>
+      <div class="fotos mini" style="margin:12px 0"><div data-foto="r_bact" data-pie="Procariotas: bacterias <i>E. coli</i> (microscopio electrónico)"></div><div data-foto="k_eukar" data-pie="Eucariotas: células humanas con el núcleo teñido de azul"></div></div>
     </div>
     <div class="tab-p" id="t-av">
       <div class="tbl-wrap"><table class="t">
@@ -141,6 +142,7 @@
         <tr><td><b>Lisosomas</b></td><td>Sí, abundantes.</td><td>Casi no; la vacuola cumple esa función.</td></tr>
         <tr><td><b>Reserva de energía</b></td><td>Glucógeno.</td><td>Almidón.</td></tr>
       </table></div>
+      <div class="fotos" style="margin:12px 0"><div data-foto="k_cheek" data-pie="Células animales: mejilla humana teñida con azul de metileno"></div><div data-foto="k_cebolla" data-pie="Células vegetales: epidermis de cebolla, con su pared rectangular"></div><div data-foto="k_elodea" data-pie="Células vegetales con cloroplastos (hoja de <i>Elodea</i>)"></div></div>
     </div>
     <div class="tab-p" id="t-uni">
       <div class="grid g2">
@@ -202,6 +204,7 @@
   <section class="sec" id="membrana">
     <h2><span class="n">07</span> La ósmosis: el viaje del agua</h2>
     <p class="lead">La membrana es <b>semipermeable</b>: deja pasar el agua con facilidad, pero no todas las sustancias. En la <b>ósmosis</b> el agua pasa de donde hay <b>menos</b> sal (o azúcar) disuelta hacia donde hay <b>más</b>. Mueve el control y observa qué les pasa a un glóbulo rojo y a una célula de planta.</p>
+    <div class="fotos" style="margin:12px 0"><div data-foto="k_eritro" data-pie="Glóbulos rojos en agua muy salada (se arrugan), normal y sin sal (se hinchan)"></div><div data-foto="k_plasmo" data-pie="Plasmólisis: en agua salada la célula de cebolla pierde agua y se separa de la pared"></div></div>
     <div class="card">
       <div class="ctrl"><label for="sal">Sal en el agua de afuera</label><input type="range" id="sal" min="0" max="4" step="1" value="2"><b id="sal-txt"></b></div>
       <div class="osmo">
@@ -234,6 +237,7 @@
   <section class="sec" id="energia">
     <h2><span class="n">09</span> La energía de la vida: fotosíntesis y respiración</h2>
     <p class="lead">Todas las células necesitan energía. Las plantas la <b>capturan</b> del Sol con la fotosíntesis y la guardan en la glucosa; luego todas las células, también las de las plantas, la <b>liberan</b> con la respiración celular. Una es casi lo contrario de la otra.</p>
+    <div class="fotos mini" style="margin:12px 0"><div data-foto="k_elodea" data-pie="Los cloroplastos: aquí ocurre la fotosíntesis"></div><div data-foto="k_estoma" data-pie="Estomas: los poros de la hoja por donde entra el CO₂ y sale el O₂"></div></div>
     <div class="grid g2">
       <div class="card" style="border-top:6px solid #2e9a5a"><h3>🌞 Fotosíntesis · en el cloroplasto</h3><p style="font-family:var(--cn-mono);font-weight:700;background:#eef8f0;border-radius:10px;padding:8px 10px;margin:8px 0">6 CO₂ + 6 H₂O + luz → C₆H₁₂O₆ + 6 O₂</p><p>Usa dióxido de carbono y agua; produce glucosa y oxígeno. Solo en organismos con clorofila.</p></div>
       <div class="card" style="border-top:6px solid #e07a3f"><h3>🔋 Respiración celular · en la mitocondria</h3><p style="font-family:var(--cn-mono);font-weight:700;background:#fdf1e8;border-radius:10px;padding:8px 10px;margin:8px 0">C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energía (ATP)</p><p>Usa glucosa y oxígeno; libera energía, agua y CO₂. En casi todos los seres vivos, de día y de noche.</p></div>
@@ -286,7 +290,7 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="fotos-datos.js?v=1"></script>
+<script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
 <script src="bio.js?v=13"></script>
 <script>
@@ -448,11 +452,12 @@ function pintarCel(){svgC.innerHTML=DIBUJO[tipo]();
     z.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tocar(z.getAttribute('data-o'));}});
   });}
 var vistos={};
+var OF={nucleo:['o_nucleo','Núcleo visto con microscopio electrónico'],golgi:['o_golgi','Aparato de Golgi al microscopio electrónico'],cloroplasto:['k_elodea','Cloroplastos (los granos verdes) en una hoja de <i>Elodea</i>'],pared:['k_cebolla','Paredes celulares en la epidermis de cebolla'],vacuola:['k_plasmo','Cebolla morada: el color está en la vacuola, que aquí se encogió por ósmosis']};
 function verOrg(id){
   var o=ORG[id];
   svgC.querySelectorAll('.zona').forEach(function(z){z.classList.toggle('on',z.getAttribute('data-o')===id);});
   var nom={animal:'🐾 animal',vegetal:'🌿 vegetal',procariota:'🦠 bacteria'};
-  detC.innerHTML='<h3><span>'+o.ico+'</span>'+o.n+'</h3><p>'+o.f+'</p><div class="analog">'+o.a+'</div><p style="margin-top:10px;font-size:.88rem"><b>Está en la célula:</b> '+['animal','vegetal','procariota'].map(function(t){return '<span class="tag" style="'+(o.en.indexOf(t)<0?'opacity:.35;text-decoration:line-through':'')+'">'+nom[t]+'</span>';}).join('')+'</p>';
+  detC.innerHTML='<h3><span>'+o.ico+'</span>'+o.n+'</h3><p>'+o.f+'</p>'+(OF[id]?FOTO(OF[id][0],OF[id][1]):'')+'<div class="analog">'+o.a+'</div><p style="margin-top:10px;font-size:.88rem"><b>Está en la célula:</b> '+['animal','vegetal','procariota'].map(function(t){return '<span class="tag" style="'+(o.en.indexOf(t)<0?'opacity:.35;text-decoration:line-through':'')+'">'+nom[t]+'</span>';}).join('')+'</p>';
   vistos[id]=1;if(Object.keys(vistos).length>=10)BIO.marcarSeccion('partes');
 }
 function tocar(id){

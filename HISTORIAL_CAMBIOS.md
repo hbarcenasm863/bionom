@@ -6,6 +6,47 @@
 
 ---
 
+## Versión 2.12 — 11 de noviembre de 2026 · Fotos reales en célula, división, sistemas, ecosistemas y ambiente
+
+**Contexto.** El docente pidió seguir con las fotos de bancos libres (con su
+cita APA debajo) en sistemas, ecosistemas, ambiente y división celular, y que
+en célula, mitosis y meiosis también hubiera imágenes reales además de las
+animaciones.
+
+**Cambios.** 44 fotos nuevas en `img/fotos/` y sus citas en `fotos-datos.js`
+(fuentes: Wikimedia Commons por Openverse, iNaturalist y Flickr).
+- `celula.html`: bacterias frente a células eucariotas; células de mejilla,
+  de cebolla y de *Elodea* con cloroplastos (animal vs. vegetal); al tocar
+  núcleo, aparato de Golgi, cloroplasto, pared o vacuola aparece su foto al
+  microscopio; ósmosis con glóbulos rojos y plasmólisis en cebolla morada;
+  cloroplastos y estomas en fotosíntesis.
+- `division.html`: cromosomas humanos reales; tres fotos de la punta de raíz
+  de cebolla con células en distintas fases de la mitosis; meiosis en la antera
+  del lirio y tétradas de polen; células de cáncer (HeLa) y cariotipo con
+  trisomía 21.
+- `sistemas.html`: micrografías de los cuatro tejidos (epitelial, cartílago,
+  músculo esquelético, neuronas) y fagocitos (neutrófilo atrapando bacterias,
+  macrófago).
+- `ecosistemas.html`: humedal Santa María del Lago (Bogotá) para bióticos y
+  abióticos; colibrí, bromelia, chigüiro y retamo espinoso en las relaciones
+  entre especies; pato andino, garza y tingua bogotana en hábitat y nicho.
+- `ambiente.html`: cada región muestra una foto de su problema (glaciar
+  Conejeras y gráfica de su retroceso, sequía en La Guajira, inundación,
+  incendio forestal, selva talada, corales blanqueados); blanqueamiento en
+  océanos; embalse Peñol-Guatapé, paneles solares, carbón del Cerrejón y pozo
+  de petróleo en energías.
+- `sw.js` (`bionom-v27`), `fotos-datos.js?v=2` en las páginas.
+
+**Verificación.** Playwright a 1366 y 390 px en las 10 páginas con fotos: sin
+errores, sin desbordes, todas las fotos montadas con su cita.
+
+**Sin resolver.** No se encontró foto libre útil para: garrapatas en ganado,
+erosión costera del Caribe, daños del huracán Iota en Providencia, retrato de
+Schleiden. La foto del parque eólico Jepírachi no se pudo descargar (Commons
+limitó las descargas). Wikimedia Commons bloquea consultas seguidas (error
+429): por eso en varias citas el año aparece como «s. f.». Recargar con
+Ctrl+F5.
+
 ## Versión 2.11 — 10 de noviembre de 2026 · Fotos reales con cita APA y embriones humanos ilustrados
 
 **Contexto.** El docente pidió quitar la comparación con objetos (emojis) en
