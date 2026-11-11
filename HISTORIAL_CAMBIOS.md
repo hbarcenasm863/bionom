@@ -6,6 +6,57 @@
 
 ---
 
+## Versión 2.18 — 11 de noviembre de 2026 · Ya no salta la página, modelos 3D y fotos reales en el mapa de niveles
+
+**Contexto.** El docente reportó que en varias páginas, en el celular, la
+pantalla bajaba sola al hacer un ejercicio o mover un deslizador. También pidió
+que en el mapa de niveles de la portada la imagen de cada nivel fuera un modelo
+3D o una foto real (el dibujo de una cara soplando no decía nada del átomo), y
+que en la línea del tiempo de `celula.html` Robert Brown tuviera una orquídea y
+Schleiden una célula vegetal.
+
+**Página que bajaba sola (`bio.js`, `bio.css`).**
+- Se reprodujo con Playwright simulando un Pixel 7 y tocando todos los botones,
+  opciones, fichas y deslizadores de cada página: hubo saltos de hasta 1000 px
+  (huella de carbono, laboratorio de nutrición, red trófica, genética...).
+- Causa: el desplazamiento automático hacia la explicación que se agregó en la
+  versión 2.13 (contigüidad espacial). **Se quitó por completo.** Tras el
+  cambio, la misma prueba no muestra saltos al resolver ejercicios. Solo se
+  mueve la página donde es a propósito: «Empezar reto» en Regiones, tocar un
+  nivel en el mapa de la portada y el botón Escuchar de la narración.
+- Los deslizadores llevan `touch-action:none`: al arrastrarlos no se mueve la
+  página.
+
+**Modelos 3D y fotos en el mapa de niveles (`index.html`, `modelo3d.js` nuevo).**
+- `modelo3d.js` dibuja modelos 3D que giran solos y se pueden girar con el
+  dedo, sin librerías: átomos de oxígeno, carbono y hierro (modelo de capas,
+  con aviso de que no está a escala) y moléculas de ADN, clorofila y melanina
+  (bolas y varillas, simplificadas). Uso: `M3D.montar(elemento,'adn')`.
+- Del nivel organelo a la biosfera, cada ejemplo (tu cuerpo, frailejón y
+  jaguar) muestra una foto real con su pie y su cita APA: mitocondria y
+  cloroplasto al microscopio electrónico, músculo cardíaco, tricomas, hueso
+  compacto, modelo del corazón, roseta de frailejón, ojos del jaguar, sistema
+  circulatorio, esqueleto de jaguar, Hombre de Vitruvio, Guatapé, frailejonal
+  y bosque de frailejones de Sumapaz, jaguares, Parque Simón Bolívar,
+  guacamaya en Antioquia, selva desde el aire, la Tierra desde el espacio y la
+  laguna de Chingaza. 21 fotos nuevas (129 en total).
+
+**Línea del tiempo de la célula (`celula.html`).** Robert Brown: foto de la
+orquídea *Cattleya trianae* (flor nacional). Schleiden: células de epidermis
+de cebolla.
+
+**Versiones.** `bio.js?v=18`, `bio.css?v=19`, `fotos-datos.js?v=5`,
+`modelo3d.js?v=1` (agregado a `ASSETS`), `sw.js` → `bionom-v33`.
+
+**Pendiente / sin resolver.**
+- La explicación de las figuras ya no se acerca sola en el celular: si en
+  algún ejercicio queda lejos de lo que se toca, conviene acercarla en el
+  propio diseño de esa sección, sin mover la página.
+- Siguen pendientes los puntos de la versión 2.17 (selector de reinos en el
+  juego y el panel docente; redesplegar `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.17 — 11 de noviembre de 2026 · Subpáginas, más fotos libres y modelo de reinos escogido por el docente
 
 **Contexto.** El docente recordó tres cosas: que todo el sitio cuelga del mapa

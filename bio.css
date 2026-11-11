@@ -292,3 +292,6 @@ body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.1
 .sub-nav .sep{color:var(--cn-dim);font-weight:800}
 .modulos-g a.mod.sub{border-left:5px solid var(--cn-brand);background:var(--cn-brand-l)}
 .modulos-g a.mod.sub b::before{content:'↳ ';color:var(--cn-dim)}
+
+/* Deslizadores: al arrastrarlos en el celular no se mueve la página */
+input[type=range]{touch-action:none}

@@ -274,31 +274,5 @@ if('serviceWorker' in navigator&&location.protocol!=='file:'){
 }
 })();
 
-/* ── Principio de contigüidad espacial (Mayer) en el celular ──
-   En pantallas angostas la explicación de una figura queda debajo de ella.
-   Si al tocar algo la explicación nueva aparece en la parte baja o fuera de
-   la pantalla, se desplaza la página lo justo para verla, dejando a la
-   vista el final de la figura. Solo actúa justo después de un toque. */
-(function(){
-  if(!window.MutationObserver)return;
-  var ult=0,pend=null;
-  // Solo toques sobre figuras o botones: nunca deslizadores, casillas ni menús,
-  // porque ahí la explicación cambia mientras el estudiante mira la figura.
-  document.addEventListener('pointerdown',function(e){var t=e.target;ult=(t&&t.closest&&t.closest('input,select,textarea,label'))?0:Date.now();},true);
-  document.addEventListener('keydown',function(e){var t=e.target;if((e.key==='Enter'||e.key===' ')&&!(t&&t.closest&&t.closest('input,select,textarea')))ult=Date.now();},true);
-  new MutationObserver(function(ms){
-    if(window.innerWidth>760||Date.now()-ult>900)return;
-    for(var i=0;i<ms.length;i++){
-      var t=ms[i].target;if(t.nodeType!==1)t=t.parentElement;if(!t)continue;
-      var d=t.closest('.det,[aria-live]');
-      if(!d||d.closest('.chequeo,.pasos,.an-txt')||d.classList.contains('fb')||d.classList.contains('fb-clas')||d.classList.contains('marcador'))continue;
-      pend=d;break;
-    }
-    if(!pend)return;
-    var el=pend;pend=null;
-    requestAnimationFrame(function(){
-      var r=el.getBoundingClientRect(),h=window.innerHeight;
-      if(r.height>0&&r.top>h*0.62)window.scrollBy({top:r.top-h*0.35,behavior:'smooth'});
-    });
-  }).observe(document.body,{childList:true,subtree:true});
-})();
+/* (Versión 2.18) Se quitó el desplazamiento automático hacia las explicaciones:
+   en el celular hacía bajar la página sola al resolver ejercicios. */
