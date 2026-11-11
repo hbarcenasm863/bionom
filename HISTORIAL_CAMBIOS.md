@@ -6,6 +6,63 @@
 
 ---
 
+## Versión 2.17 — 11 de noviembre de 2026 · Subpáginas, más fotos libres y modelo de reinos escogido por el docente
+
+**Contexto.** El docente recordó tres cosas: que todo el sitio cuelga del mapa
+de niveles de organización y de allí se despliega; que, cuando se pueda, se
+usen fotos de bancos libres; y que las páginas nuevas vayan como subpáginas de
+los temas principales para no desordenar el menú. Después pidió que en los
+mapas de reinos se pueda escoger la clasificación que da el docente: 5, 6 o 7
+reinos, con o sin dominios.
+
+**Subpáginas (`bio.js`, `bio.css`, `index.html`).**
+- En `MODULOS` una página puede tener `padre`. *Funciones vitales comparadas*
+  y *Nutrición y salud* ahora son subpáginas de *Sistemas del cuerpo*.
+- Las subpáginas ya no salen en el menú de arriba (allí queda marcado su tema
+  principal). En el menú «Más» del celular salen sangradas con ↳ bajo su tema.
+- Nueva barra de subpáginas arriba de cada página de la familia:
+  «Sistemas del cuerpo › Funciones vitales comparadas › Nutrición y salud».
+- En la portada siguen en el mapa de niveles (organismo, sistema, órgano y
+  molécula) y sus tarjetas salen como «Subpágina de Sistemas del cuerpo».
+
+**Fotos de bancos libres con cita APA (13 nuevas, 107 en total).**
+- `nutricion.html`: mosquito *Aedes aegypti*, Alexander Fleming, colonias de
+  *Penicillium* y un melocactus (agua).
+- `funciones.html`: esquema de la branquia, dormidera (*Mimosa pudica*) y
+  drosera.
+- `ecosistemas.html` (suelo): perfil real de un suelo tropical.
+- `evolucion.html`: aparato de Miller y Urey (en español) y el límite K-Pg.
+- `regiones.html` (placas): mapa de las placas del Caribe y norte de los Andes.
+- `reinos.html`: ganado romosinuano (variedades) y euglena (reino Protozoa).
+
+**Modelo de reinos escogido por el docente (`reinos.html`).**
+- Panel nuevo al inicio: «¿Con qué clasificación trabaja tu clase?» con
+  5, 6 o 7 reinos y «Sin dominios / Con 3 dominios». La elección se guarda en
+  el dispositivo (`bionom_clasificacion`) y se repite en la sección del mapa y
+  en el reto, siempre sincronizada.
+- Enlace para los estudiantes: `reinos.html?reinos=6&dominios=si` abre la
+  página ya con ese modelo (el panel muestra el enlace y un botón Copiar).
+- Se ajustan solos: el mapa de la clasificación (con dominios y 5 reinos,
+  Monera queda unido a los dominios Bacteria y Archaea, con una nota), los
+  grupos de colores, las tarjetas de «Los N reinos» (Eubacteria, Archaebacteria
+  / Bacteria, Archaea, Protozoa, Chromista, con la etiqueta de su dominio), los
+  filtros, la clave dicotómica (pregunta nueva del peptidoglucano y organismo
+  nuevo «Arquea de las salinas»; dice el dominio cuando aplica) y el reto de
+  clasificar.
+
+**Versiones.** `bio.js?v=17`, `bio.css?v=18`, `fotos-datos.js?v=4`, `sw.js`
+→ `bionom-v32`.
+
+**Pendiente / sin resolver.**
+- El juego y el panel docente siguen preguntando con el modelo de 5 reinos
+  (y algunas preguntas mencionan dominios). Si el docente lo quiere, se puede
+  agregar el mismo selector al generador docente.
+- Paso manual que sigue pendiente desde la versión 2.16: copiar
+  `bionom-analytics.gs` al editor de Apps Script, crear una nueva versión de la
+  implementación y luego ejecutar `recalcularAhora()`.
+
+---
+
 ## Versión 2.16 — 11 de noviembre de 2026 · Cobertura completa de los Estándares Básicos de Competencias del MEN
 
 **Contexto.** El docente pidió evaluar, con los lineamientos del MEN, si los

@@ -1271,5 +1271,17 @@ window.FOTOS_DATOS={
 "tipo": "Fotografía",
 "w": 800,
 "h": 600
+},
+"r_euglena": {
+"autor": "Stjepo",
+"titulo": "Two Euglena [Dos euglenas]",
+"anio": "s. f.",
+"lic": "CC BY-SA 3.0",
+"licUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.es",
+"url": "https://commons.wikimedia.org/w/index.php?curid=4194097",
+"fuente": "Wikimedia Commons",
+"tipo": "Micrografía",
+"w": 800,
+"h": 742
 }
 };

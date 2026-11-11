@@ -31,6 +31,14 @@
 .reino-c dt{font-weight:800;color:var(--cn-dim)}
 .reino-c.apagado{opacity:.25;transform:scale(.97)}
 .reino-c.prendido{box-shadow:0 0 0 3px var(--cn-naranja),var(--cn-sh-h)}
+.clasif-panel{border-left:6px solid var(--cn-brand);margin:14px 0}
+.clasif-panel>small{display:block;color:var(--cn-dim);margin:4px 0 8px}
+.clasif-ctrl{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.clasif-ctrl .grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.clasif-ctrl .grp>span{font-weight:800;font-size:.85rem;color:var(--cn-dim)}
+.clasif-link{margin-top:10px;font-size:.88rem}.clasif-link summary{cursor:pointer;font-weight:700;color:var(--cn-brand-d)}
+.clasif-link code{display:inline-block;word-break:break-all;background:#f2f7f3;padding:4px 8px;border-radius:8px;margin:4px 0}
+.reino-c .dom-b{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:#e8f1fb;color:#1a5f8f;margin-bottom:4px}
 .arbol-wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:14px;align-items:start;margin-top:8px}
 @media(max-width:900px){.arbol-wrap{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:640px){.mon-vis .dom{min-width:0!important;flex-basis:100%!important}}
@@ -78,12 +86,19 @@
     <a href="#nombre">🏷️ Nombre científico</a>
     <a href="#historia">📜 ¿Cuántos reinos?</a>
     <a href="#monera">🌋 Monera: ¿uno o dos?</a>
-    <a href="#reinos">👑 Los cinco reinos</a>
+    <a href="#reinos">👑 Los reinos</a>
     <a href="#variedades">🐕 Variedades</a>
     <a href="#microbios">🦠 Microbios útiles</a>
     <a href="#clave">🔑 Clave dicotómica</a>
     <a href="#clasifica">🎯 Clasifica</a>
   </nav>
+
+  <div class="card clasif-panel" id="clasif-panel">
+    <b>🧭 ¿Con qué clasificación trabaja tu clase?</b>
+    <small>El docente escoge el modelo que usa en clase. El mapa, las fichas de los reinos, la clave dicotómica y el reto se ajustan solos, y la elección queda guardada en este dispositivo.</small>
+    <div class="clasif-ctrl"></div>
+    <details class="clasif-link"><summary>🔗 Enlace para los estudiantes con este modelo</summary><p>Comparte este enlace y la página abrirá ya con el modelo escogido:</p><code id="clasif-url"></code> <button type="button" class="cn-btn" id="clasif-copiar">📋 Copiar</button></details>
+  </div>
 
   <section class="sec" id="taxonomia">
     <h2><span class="n">01</span> La escalera de la clasificación</h2>
@@ -125,7 +140,7 @@
     <h2><span class="n">04</span> Monera: ¿un reino o dos?</h2>
     <p class="lead">En el modelo de cinco reinos, <b>todas</b> las células sin núcleo van juntas en <b>Monera</b>. Pero en 1977 Carl Woese comparó el ARN de sus ribosomas y encontró que había <b>dos grupos tan distintos entre sí como una bacteria lo es de un ser humano</b>: las <b>eubacterias</b> («bacterias verdaderas») y las <b>arqueas</b> (antes llamadas arqueobacterias). Toca los botones para ver cómo se parte el reino.</p>
     <div class="card">
-      <div class="chips" role="group" aria-label="Modelo de clasificación"><button class="chip on" data-mod="5">👑 Modelo de 5 reinos</button><button class="chip" data-mod="6">✂️ Modelo de 6 reinos</button><button class="chip" data-mod="7">🔀 Modelo de 7 reinos</button><button class="chip" data-mod="3">🌳 Tres dominios</button></div>
+      <div class="clasif-ctrl"></div>
       <div class="mon-vis" id="mon-vis" aria-live="polite"></div>
       <p id="mon-txt" style="margin-top:10px"></p>
       <h3 style="margin-top:16px">🗺️ Mapa de la clasificación</h3>
@@ -165,8 +180,8 @@
   </section>
 
   <section class="sec" id="reinos">
-    <h2><span class="n">05</span> Los cinco reinos</h2>
-    <p class="lead">En el colegio usamos los cinco reinos de Whittaker (recuerda que en el modelo de seis reinos Monera se divide en eubacterias y arqueas, y en el de siete, además, Protista se divide en Protozoa y Chromista). Toca una característica para ver <b>qué reinos la tienen</b>, y toca cada tarjeta para leer sus ejemplos colombianos.</p>
+    <h2><span class="n">05</span> <span id="reinos-tit">Los cinco reinos</span></h2>
+    <p class="lead" id="reinos-lead"></p>
     <div class="chips" id="filtros" role="group" aria-label="Características"></div>
     <p id="filtro-txt" style="margin:8px 0;font-weight:600;min-height:1.6em" aria-live="polite"></p>
     <div class="grid g3" id="reinos-g"></div>
@@ -215,18 +230,25 @@
 
   <section class="sec" id="clasifica">
     <h2><span class="n">09</span> Reto: ¿a qué reino pertenece?</h2>
-    <p class="lead">Primero escoge con qué modelo vas a clasificar: <b>5 reinos</b> (Whittaker), <b>6 reinos</b> (Monera dividido en eubacterias y arqueas) o <b>7 reinos</b> (además, Protista dividido en Protozoa y Chromista). Luego lleva cada organismo a su reino: toca la ficha y después la caja.</p>
-    <div class="chips" style="margin-bottom:10px" role="group" aria-label="Modelo de clasificación"><button class="chip on" data-modelo="5">👑 Con 5 reinos</button><button class="chip" data-modelo="6">✂️ Con 6 reinos</button><button class="chip" data-modelo="7">🔀 Con 7 reinos</button></div>
+    <p class="lead">Clasifica con el modelo que escogió tu docente (puedes cambiarlo aquí): <b>5 reinos</b> (Whittaker), <b>6 reinos</b> (Monera dividido en eubacterias y arqueas) o <b>7 reinos</b> (además, Protista dividido en Protozoa y Chromista). Luego lleva cada organismo a su reino: toca la ficha y después la caja.</p>
+    <div class="clasif-ctrl" style="margin-bottom:10px"></div>
     <div class="card" id="clas-reinos"></div>
     <div class="sig"><a href="division.html"><small>← Anterior</small><b>✂️ División celular</b></a><a class="der" href="sistemas.html"><small>Siguiente →</small><b>❤️ Sistemas del cuerpo</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="fotos-datos.js?v=3"></script>
+<script src="fotos-datos.js?v=4"></script>
 <script src="fotos.js?v=1"></script>
 <script src="bio.js?v=17"></script>
 <script>
 (function(){
+/* Modelo de clasificación: lo escoge el docente (5, 6 o 7 reinos; con o sin dominios).
+   Se guarda en este dispositivo y se puede fijar con un enlace: reinos.html?reinos=6&dominios=si */
+var CL={r:5,d:0};
+try{var g=JSON.parse(localStorage.getItem('bionom_clasificacion')||'null');if(g&&[5,6,7].indexOf(g.r)>=0)CL={r:g.r,d:g.d?1:0};}catch(e){}
+(function(){var q=new URLSearchParams(location.search),r=+q.get('reinos'),d=q.get('dominios');
+  if([5,6,7].indexOf(r)>=0)CL.r=r;if(d)CL.d=/^(si|sí|1|true)$/i.test(d)?1:0;
+  if(r||d){try{localStorage.setItem('bionom_clasificacion',JSON.stringify(CL));}catch(e){}}})();
 /* ═══ Taxonomía ═══ */
 var TAX=[['Dominio','Eukarya','Eukarya','Eukarya'],['Reino','Animalia','Animalia','Plantae'],['Filo','Chordata','Chordata','Magnoliophyta'],['Clase','Mammalia','Mammalia','Magnoliopsida'],['Orden','Primates','Carnivora','Asterales'],['Familia','Hominidae','Felidae','Asteraceae'],['Género','<i>Homo</i>','<i>Panthera</i>','<i>Espeletia</i>'],['Especie','<i>H. sapiens</i>','<i>P. onca</i>','<i>E. grandiflora</i>']];
 var DESC=['Dominio: los tres tienen células con núcleo (eucariotas). Aquí están todos juntos.','Reino: el frailejón se separa; es una planta. Humano y jaguar siguen juntos: animales.','Filo: humano y jaguar son cordados: en el embrión tienen notocorda (un eje flexible en la espalda) y un cordón nervioso.','Clase: los dos son mamíferos: tienen pelo y alimentan a sus crías con leche.','Orden: aquí se separan. Somos primates; el jaguar es carnívoro.','Familia: cada uno sigue su camino. El jaguar es de la familia de los gatos (félidos).','Género: el frailejón pertenece al género <i>Espeletia</i>, que solo vive en los páramos.','Especie: cada uno es único. Llegamos al final de la escalera.'];
@@ -292,45 +314,46 @@ var NODO={
  dEuk:['🧫','Dominio Eukarya','#1a7fb5',{'Qué es':'Todos los seres con núcleo.','Incluye':'Protistas (o Protozoa y Chromista), hongos, plantas y animales.'}]
 };
 var EUK5=['protista','fungi','plantae','animalia'],EUK7=['protozoa','chromista','fungi','plantae','animalia'];
-var ARBOL={
- '5':['vida',[['pro',['monera']],['eu',EUK5]]],
- '6':['vida',[['pro',['eubac','arq']],['eu',EUK5]]],
- '7':['vida',[['pro',['eubac','arq']],['eu',EUK7]]],
- '3':['vida',[['dBac',['eubac']],['dArq',['arq']],['dEuk',EUK7]]]
-};
+/* El mapa se arma según el modelo escogido (CL.r = 5, 6 o 7 reinos; CL.d = con o sin dominios) */
+function nomNodo(id){var n=NODO[id][1].replace(/ \(.*\)/,'').replace('Dominio ','');
+  if(id==='eubac')return CL.r===7?'Bacteria':'Eubacteria';if(id==='arq')return CL.r===7?'Archaea':'Archaebacteria';return n;}
+function cajaN(id,x,y,w,h,i){var n=NODO[id],c=n[2];
+  return '<g class="nd aparece" data-n="'+id+'" tabindex="0" role="button" aria-label="'+n[1]+'" style="animation-delay:'+(i*60)+'ms"><rect x="'+(x-w/2)+'" y="'+(y-h/2)+'" width="'+w+'" height="'+h+'" rx="12" fill="'+c+'1f" stroke="'+c+'" stroke-width="2"/><text x="'+x+'" y="'+(y-3)+'" text-anchor="middle" style="font-size:17px">'+n[0]+'</text><text x="'+x+'" y="'+(y+15)+'" text-anchor="middle" style="font:800 12px Outfit" fill="'+c+'">'+nomNodo(id)+'</text></g>';}
+function estructura(){
+  var euk=CL.r===7?EUK7:EUK5,pro=CL.r===5?['monera']:['eubac','arq'],ramas=[],hojas=[],k=0;
+  function rama(id,lista){var a=k;lista.forEach(function(h){hojas.push({id:h,s0:k,s1:k,p:[ramas.length]});k++;});ramas.push({id:id,s0:a,s1:k-1});}
+  if(!CL.d){rama('pro',pro);rama('eu',euk);}
+  else if(CL.r===5){ramas.push({id:'dBac',s0:0,s1:0},{id:'dArq',s0:1,s1:1});hojas.push({id:'monera',s0:0,s1:1,p:[0,1]});k=2;rama('dEuk',euk);}
+  else{rama('dBac',['eubac']);rama('dArq',['arq']);rama('dEuk',euk);}
+  return {ramas:ramas,hojas:hojas,n:k};}
 var arbSel=null,arbVis={};
-function cajaN(id,x,y,w,h,i){var n=NODO[id],c=n[2];var nom=n[1].replace(/ \(.*\)/,'').replace('Dominio ','');
-  return '<g class="nd aparece" data-n="'+id+'" tabindex="0" role="button" aria-label="'+n[1]+'" style="animation-delay:'+(i*60)+'ms"><rect x="'+(x-w/2)+'" y="'+(y-h/2)+'" width="'+w+'" height="'+h+'" rx="12" fill="'+c+'1f" stroke="'+c+'" stroke-width="2"/><text x="'+x+'" y="'+(y-3)+'" text-anchor="middle" style="font-size:17px">'+n[0]+'</text><text x="'+x+'" y="'+(y+15)+'" text-anchor="middle" style="font:800 12px Outfit" fill="'+c+'">'+nom+'</text></g>';}
-function pintarArbol(k){
-  var A=ARBOL[k],ramas=A[1],hojas=[];ramas.forEach(function(r){r[1].forEach(function(h){hojas.push(h);});});
-  var W=760,M0=78,n=hojas.length,dx=(W-M0-10)/n,o='',idx=0,yR=36,yM=128,yH=232,xs=[],xR=M0+(W-M0-10)/2;
-  hojas.forEach(function(h,i){xs.push(M0+dx*(i+.5));});
-  var pos=0,mids=[];
-  ramas.forEach(function(r){var a=pos,b=pos+r[1].length-1,xm=(xs[a]+xs[b])/2;mids.push(xm);
-    r[1].forEach(function(h,j){var x=xs[pos+j];o+='<path class="ln" d="M'+xm+' '+(yM+22)+' L'+xm+' '+(yM+48)+' L'+x+' '+(yM+48)+' L'+x+' '+(yH-26)+'"/>';});pos+=r[1].length;});
-  mids.forEach(function(xm){o+='<path class="ln" d="M'+xR+' '+(yR+22)+' L'+xR+' '+(yR+48)+' L'+xm+' '+(yR+48)+' L'+xm+' '+(yM-24)+'"/>';});
-  o+=cajaN(A[0],xR,yR,150,44,idx++);
-  ramas.forEach(function(r,i){o+=cajaN(r[0],mids[i],yM,Math.min(150,r[1].length*dx-8),46,idx++);});
-  var bw=Math.min(118,dx-8);hojas.forEach(function(h,i){o+=cajaN(h,xs[i],yH,bw,50,idx++);});
+function pintarArbol(){
+  var E=estructura(),W=760,M0=78,dx=(W-M0-10)/E.n,o='',idx=0,yR=36,yM=128,yH=232,xR=M0+(W-M0-10)/2;
+  var cx=function(a,b){return M0+dx*((a+b)/2+.5);};
+  E.hojas.forEach(function(h){var x=cx(h.s0,h.s1);h.p.forEach(function(pi){var r=E.ramas[pi],xm=cx(r.s0,r.s1);o+='<path class="ln" d="M'+xm+' '+(yM+22)+' L'+xm+' '+(yM+48)+' L'+x+' '+(yM+48)+' L'+x+' '+(yH-26)+'"/>';});});
+  E.ramas.forEach(function(r){var xm=cx(r.s0,r.s1);o+='<path class="ln" d="M'+xR+' '+(yR+22)+' L'+xR+' '+(yR+48)+' L'+xm+' '+(yR+48)+' L'+xm+' '+(yM-24)+'"/>';});
+  o+=cajaN('vida',xR,yR,150,44,idx++);
+  E.ramas.forEach(function(r){o+=cajaN(r.id,cx(r.s0,r.s1),yM,Math.min(150,(r.s1-r.s0+1)*dx-8),46,idx++);});
+  E.hojas.forEach(function(h){o+=cajaN(h.id,cx(h.s0,h.s1),yH,Math.min(118*(h.s1-h.s0+1),(h.s1-h.s0+1)*dx-8),50,idx++);});
   var rot=function(y,t1,t2){return '<text x="6" y="'+(t2?y-2:y+4)+'" style="font:800 10px Outfit;letter-spacing:.06em" fill="#3c5446">'+t1+'</text>'+(t2?'<text x="6" y="'+(y+11)+'" style="font:800 10px Outfit;letter-spacing:.06em" fill="#3c5446">'+t2+'</text>':'');};
-  o+=rot(yM,k==='3'?'DOMINIOS':'TIPO DE',k==='3'?'':'CÉLULA')+rot(yH,'REINOS','');
+  o+=rot(yM,CL.d?'DOMINIOS':'TIPO DE',CL.d?'':'CÉLULA')+rot(yH,'REINOS','');
   var sv=document.getElementById('arbol');sv.innerHTML=o;
   sv.querySelectorAll('.nd').forEach(function(g){g.onclick=function(){verNodo(g.getAttribute('data-n'));};g.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();verNodo(g.getAttribute('data-n'));}};});
   var t=document.getElementById('arbol-t');
   if(arbSel&&sv.querySelector('[data-n="'+arbSel+'"]'))verNodo(arbSel);
-  else t.innerHTML='<div class="vacio"><div style="font-size:2.4rem">👆</div>Toca una caja del mapa. Con <b>'+(k==='3'?'tres dominios':k+' reinos')+'</b> hay '+hojas.length+' reinos en la última fila.</div>';
+  else t.innerHTML='<div class="vacio"><div style="font-size:2.4rem">👆</div>Toca una caja del mapa. Con el modelo de <b>'+CL.r+' reinos'+(CL.d?' y tres dominios':'')+'</b> hay '+E.hojas.length+' reinos en la última fila.</div>';
 }
-var NF={monera:['r_bact','<i>Escherichia coli</i>: bacteria en forma de bastón'],eubac:['r_bact','<i>Escherichia coli</i>, una eubacteria'],dBac:['r_bact','<i>Escherichia coli</i>, una bacteria'],arq:['r_arq','<i>Halobacterium salinarum</i>, una arquea que vive en salinas'],dArq:['r_arq','<i>Halobacterium salinarum</i>, una arquea'],protista:['r_prot','<i>Paramecium caudatum</i>, protozoo ciliado'],chromista:['r_alga','Diatomea: alga unicelular con caparazón de sílice'],fungi:['r_hongo','<i>Amanita muscaria</i>'],plantae:['r_plant','Frailejones en el Páramo del Sol (Antioquia)'],animalia:['r_anim','Jaguar (<i>Panthera onca</i>)']};
+var NF={monera:['r_bact','<i>Escherichia coli</i>: bacteria en forma de bastón'],eubac:['r_bact','<i>Escherichia coli</i>, una eubacteria'],dBac:['r_bact','<i>Escherichia coli</i>, una bacteria'],arq:['r_arq','<i>Halobacterium salinarum</i>, una arquea que vive en salinas'],dArq:['r_arq','<i>Halobacterium salinarum</i>, una arquea'],protista:['r_prot','<i>Paramecium caudatum</i>, protozoo ciliado'],protozoa:['r_euglena','<i>Euglena</i>, un protozoo con flagelo y cloroplastos'],chromista:['r_alga','Diatomea: alga unicelular con caparazón de sílice'],fungi:['r_hongo','<i>Amanita muscaria</i>'],plantae:['r_plant','Frailejones en el Páramo del Sol (Antioquia)'],animalia:['r_anim','Jaguar (<i>Panthera onca</i>)']};
 function verNodo(id){var n=NODO[id];arbSel=id;arbVis[id]=1;
   document.querySelectorAll('#arbol .nd').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-n')===id);});
-  document.getElementById('arbol-t').innerHTML='<h3 style="color:'+n[2]+'">'+n[0]+' '+n[1]+'</h3><dl class="car">'+Object.keys(n[3]).map(function(k){return '<dt>'+k+'</dt><dd>'+n[3][k]+'</dd>';}).join('')+'</dl>'+(NF[id]?FOTO(NF[id][0],NF[id][1]):'');
+  document.getElementById('arbol-t').innerHTML='<h3 style="color:'+n[2]+'">'+n[0]+' '+n[1]+'</h3><dl class="car">'+Object.keys(n[3]).map(function(k){return '<dt>'+k+'</dt><dd>'+n[3][k]+'</dd>';}).join('')+'</dl>'+(id==='monera'&&CL.d?'<p class="dato" style="margin-top:8px">Con los tres dominios, Monera queda repartido entre <b>dos dominios</b>: Bacteria y Archaea. Por eso los libros que usan dominios suelen preferir 6 o 7 reinos.</p>':'')+(NF[id]?FOTO(NF[id][0],NF[id][1]):'');
   if(Object.keys(arbVis).length>=6)BIO.marcarSeccion('monera');}
-function verMod(k){var m=MOD[k];monVis[k]=1;
-  document.querySelectorAll('[data-mod]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-mod')===k);});
-  document.getElementById('mon-vis').innerHTML=m.g?m.g.map(grHTML).join(''):m.d.map(function(d){return '<div class="dom" style="flex:'+d[2].length+';flex-basis:auto;min-width:'+(d[2].length*100)+'px;border:2px dashed '+d[1]+';border-radius:14px;padding:8px"><b style="color:'+d[1]+'">'+d[0]+'</b>'+d[2].map(grHTML).join('')+'</div>';}).join('');
-  document.getElementById('mon-txt').innerHTML=m.t;pintarArbol(k);}
-document.querySelectorAll('[data-mod]').forEach(function(b){b.onclick=function(){verMod(b.getAttribute('data-mod'));};});
-verMod('5');
+var DOMT='<br><b>Con tres dominios (Woese, 1990).</b> Por encima de los reinos hay dos dominios de procariotas (Bacteria y Archaea) y uno con todos los seres con núcleo (Eukarya). Las arqueas quedan más cerca de Eukarya que de Bacteria.';
+function verMod(){var m=MOD[String(CL.r)],g=m.g,np=CL.r===5?1:2,v=document.getElementById('mon-vis');
+  if(!CL.d)v.innerHTML=g.map(grHTML).join('');
+  else{var dom=function(t,c,gs,f){return '<div class="dom" style="flex:'+f+';flex-basis:auto;min-width:'+(f*100)+'px;border:2px dashed '+c+';border-radius:14px;padding:8px"><b style="color:'+c+'">'+t+'</b>'+gs.map(grHTML).join('')+'</div>';};
+    v.innerHTML=(CL.r===5?dom('Dominios Bacteria y Archaea','#64748b',[g[0]],1):dom('Dominio Bacteria','#64748b',[g[0]],1)+dom('Dominio Archaea','#b45309',[g[1]],1))+dom('Dominio Eukarya','#1a7fb5',g.slice(np),g.length-np);}
+  document.getElementById('mon-txt').innerHTML=m.t+(CL.d?DOMT+(CL.r===5?' Fíjate: Monera queda partido entre dos dominios.':''):'');pintarArbol();}
 BIO.clasificar(document.getElementById('clas-monera'),{
   cajas:[{id:'eu',titulo:'🦠 Solo eubacterias'},{id:'ar',titulo:'🌋 Solo arqueas'},{id:'am',titulo:'🤝 Las dos'}],
   fichas:[
@@ -355,22 +378,40 @@ var R=[
  {id:'animalia',n:'Animalia (animales)',e:'🐾',c:'#c2410c',cel:'Eucariota',num:'Pluricelulares, con tejidos',nut:'Heterótrofos por <b>ingestión</b>: comen a otros seres',pared:'No',rep:'Sobre todo sexual',ej:'Cóndor de los Andes, jaguar, rana dorada del Chocó, coral del Caribe, hormiga culona.',f:{nucleo:1,foto:0,pluri:1,pared:0,mueve:1,hetero:1}}
 ];
 var FIL=[['nucleo','🎯 Tiene núcleo'],['foto','🌞 Hay fotosíntesis'],['pluri','🧩 Hay pluricelulares'],['pared','🧱 Hay pared celular'],['hetero','🍽️ Hay heterótrofos'],['mueve','🏃 Hay seres que se desplazan']];
-document.getElementById('reinos-g').innerHTML=R.map(function(r){return '<div class="card reino-c" data-r="'+r.id+'" style="border-top-color:'+r.c+'"><span class="e">'+r.e+'</span><h3 style="color:'+r.c+'">'+r.n+'</h3>'+FOTO({monera:'r_bact',protista:'r_prot',fungi:'r_hongo',plantae:'r_plant',animalia:'r_anim'}[r.id],{monera:'<i>Escherichia coli</i>, una bacteria (microscopio electrónico)',protista:'<i>Paramecium</i>, un protozoo (microscopio)',fungi:'<i>Amanita muscaria</i>, un hongo',plantae:'Frailejones (<i>Espeletia</i>) en un páramo de Colombia',animalia:'Jaguar (<i>Panthera onca</i>)'}[r.id])+'<dl><dt>Célula</dt><dd>'+r.cel+'</dd><dt>N.º de células</dt><dd>'+r.num+'</dd><dt>Nutrición</dt><dd>'+r.nut+'</dd><dt>Pared</dt><dd>'+r.pared+'</dd><dt>Reproducción</dt><dd>'+r.rep+'</dd></dl><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand)"><span class="co" role="img" aria-label="Colombia"></span> Ejemplos</summary><p style="font-size:.9rem;margin-top:4px">'+r.ej+'</p></details></div>';}).join('');
+var RX={
+ eubac:{id:'eubac',n:'Eubacteria',e:'🦠',c:'#64748b',cel:'Procariota (sin núcleo)',num:'Unicelulares',nut:'Autótrofos o heterótrofos',pared:'Sí (peptidoglucano)',rep:'Asexual (bipartición)',ej:'Bacterias del yogur (<i>Lactobacillus</i>), <i>E. coli</i> del intestino, cianobacterias de las lagunas, la bacteria de la tuberculosis.',f:{nucleo:0,foto:1,pluri:0,pared:1,mueve:1,hetero:1}},
+ arq:{id:'arq',n:'Archaebacteria',e:'🌋',c:'#b45309',cel:'Procariota (sin núcleo)',num:'Unicelulares',nut:'Autótrofos (químicos) o heterótrofos; no hacen fotosíntesis con clorofila',pared:'Sí, pero sin peptidoglucano',rep:'Asexual (bipartición)',ej:'Arqueas de las salinas de Manaure y Zipaquirá, de las aguas termales de Paipa y las metanógenas del estómago de las vacas.',f:{nucleo:0,foto:0,pluri:0,pared:1,mueve:1,hetero:1}},
+ protozoa:{id:'protozoa',n:'Protozoa',e:'🦠',c:'#7b4bb7',cel:'Eucariota',num:'Casi todos unicelulares',nut:'Sobre todo heterótrofos; algunos, como la euglena, tienen cloroplastos',pared:'No (algunos tienen una película flexible)',rep:'Sobre todo asexual',ej:'Amebas de los charcos, euglenas y el tripanosoma que causa la enfermedad de Chagas, transmitido por el pito.',f:{nucleo:1,foto:1,pluri:0,pared:0,mueve:1,hetero:1}},
+ chromista:{id:'chromista',n:'Chromista',e:'🌊',c:'#0e7490',cel:'Eucariota',num:'Unicelulares (diatomeas, paramecio) o pluricelulares (algas pardas)',nut:'Autótrofos (algas) o heterótrofos (paramecio, plasmodio)',pared:'Muchos (sílice en diatomeas, celulosa en algas pardas)',rep:'Asexual y sexual',ej:'Sargazo del Caribe, diatomeas del plancton, paramecio, el plasmodio de la malaria y la gota de la papa (<i>Phytophthora</i>).',f:{nucleo:1,foto:1,pluri:1,pared:1,mueve:1,hetero:1}}
+};
+var RFOTO={monera:['r_bact','<i>Escherichia coli</i>, una bacteria (microscopio electrónico)'],eubac:['r_bact','<i>Escherichia coli</i>, una eubacteria (microscopio electrónico)'],arq:['r_arq','<i>Halobacterium salinarum</i>, una arquea de las salinas'],protista:['r_prot','<i>Paramecium</i>, un protozoo (microscopio)'],protozoa:['r_euglena','<i>Euglena</i>, un protozoo con flagelo'],chromista:['r_alga','Diatomea: alga microscópica con caparazón de sílice'],fungi:['r_hongo','<i>Amanita muscaria</i>, un hongo'],plantae:['r_plant','Frailejones (<i>Espeletia</i>) en un páramo de Colombia'],animalia:['r_anim','Jaguar (<i>Panthera onca</i>)']};
+var DOMR={monera:'Dominios Bacteria y Archaea',eubac:'Dominio Bacteria',arq:'Dominio Archaea'};
+var NUMT={5:'cinco',6:'seis',7:'siete'};
+function listaReinos(){var L=CL.r===5?R.slice():[RX.eubac,RX.arq].concat(CL.r===7?[RX.protozoa,RX.chromista]:[R[1]]).concat(R.slice(2));
+  return L.map(function(r){var c={};for(var k in r)c[k]=r[k];if(CL.r===7&&r.id==='eubac')c.n='Bacteria';if(CL.r===7&&r.id==='arq')c.n='Archaea';return c;});}
+var LR=R;
+function pintarReinos(){LR=listaReinos();
+  document.getElementById('reinos-tit').textContent='Los '+NUMT[CL.r]+' reinos';
+  document.getElementById('reinos-lead').innerHTML={5:'Trabajamos con los <b>cinco reinos de Whittaker</b> (1969): Monera, Protista, Fungi, Plantae y Animalia.',6:'Trabajamos con <b>seis reinos</b> (Woese, 1977): Monera se divide en Eubacteria y Archaebacteria.',7:'Trabajamos con <b>siete reinos</b> (Ruggiero y otros, 2015): Bacteria y Archaea separadas, y Protista dividido en Protozoa y Chromista.'}[CL.r]+(CL.d?' Por encima de los reinos están los <b>tres dominios</b>: Bacteria, Archaea y Eukarya.':'')+' Toca una característica para ver qué reinos la tienen.';
+  document.getElementById('reinos-g').innerHTML=LR.map(function(r){var fo=RFOTO[r.id];return '<div class="card reino-c" data-r="'+r.id+'" style="border-top-color:'+r.c+'">'+(CL.d?'<span class="dom-b">'+(DOMR[r.id]||'Dominio Eukarya')+'</span>':'')+'<span class="e">'+r.e+'</span><h3 style="color:'+r.c+'">'+r.n+'</h3>'+FOTO(fo[0],fo[1])+'<dl><dt>Célula</dt><dd>'+r.cel+'</dd><dt>N.º de células</dt><dd>'+r.num+'</dd><dt>Nutrición</dt><dd>'+r.nut+'</dd><dt>Pared</dt><dd>'+r.pared+'</dd><dt>Reproducción</dt><dd>'+r.rep+'</dd></dl><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand)"><span class="co" role="img" aria-label="Colombia"></span> Ejemplos</summary><p style="font-size:.9rem;margin-top:4px">'+r.ej+'</p></details></div>';}).join('');
+  fsel=null;if(fil){fil.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on');});document.getElementById('filtro-txt').textContent='';}
+}
 var fsel=null,fil=document.getElementById('filtros');
 fil.innerHTML=FIL.map(function(f){return '<button class="chip" data-f="'+f[0]+'">'+f[1]+'</button>';}).join('');
 var usados={};
 fil.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){
   var f=b.getAttribute('data-f');fsel=fsel===f?null:f;usados[f]=1;
   fil.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-f')===fsel);});
-  document.querySelectorAll('.reino-c').forEach(function(c){var r=R.filter(function(x){return x.id===c.getAttribute('data-r');})[0];c.classList.toggle('apagado',!!fsel&&!r.f[fsel]);c.classList.toggle('prendido',!!fsel&&!!r.f[fsel]);});
-  var si=R.filter(function(r){return fsel&&r.f[fsel];}).map(function(r){return r.n.split(' ')[0];});
-  document.getElementById('filtro-txt').textContent=fsel?b.textContent+': '+si.join(', ')+' ('+si.length+' de 5)':'';
+  document.querySelectorAll('.reino-c').forEach(function(c){var r=LR.filter(function(x){return x.id===c.getAttribute('data-r');})[0];c.classList.toggle('apagado',!!fsel&&!r.f[fsel]);c.classList.toggle('prendido',!!fsel&&!!r.f[fsel]);});
+  var si=LR.filter(function(r){return fsel&&r.f[fsel];}).map(function(r){return r.n.split(' ')[0];});
+  document.getElementById('filtro-txt').textContent=fsel?b.textContent+': '+si.join(', ')+' ('+si.length+' de '+LR.length+')':'';
   if(Object.keys(usados).length>=4)BIO.marcarSeccion('reinos');
 };});
 
 /* ═══ Clave dicotómica ═══ */
 var PREG={
  p1:{q:'¿Sus células tienen núcleo?',si:'p2',no:'R:monera'},
+ pB:{q:'¿Su pared tiene peptidoglucano, la sustancia que ataca la penicilina?',si:'R:eubac',no:'R:arq'},
  p2:{q:'¿Hace fotosíntesis (tiene clorofila)?',si:'p3',no:'p4'},
  p3:{q:'¿Es pluricelular con tejidos y órganos (raíz, tallo, hojas) y se desarrolla a partir de un embrión?',si:'R:plantae',no:'R:protista'},
  p4:{q:'¿Tiene pared de quitina y se alimenta absorbiendo nutrientes que digiere por fuera de su cuerpo?',si:'R:fungi',no:'p5'},
@@ -378,7 +419,8 @@ var PREG={
 };
 var ORGS=[
  {n:'Champiñón',e:'🍄',d:'Crece sobre materia en descomposición. Sus células tienen núcleo y pared de quitina; no tiene clorofila. Libera enzimas que digieren la materia muerta y luego absorbe los nutrientes.',r:{p1:1,p2:0,p4:1}},
- {n:'Cianobacteria',e:'💚',d:'Forma una nata verde en las lagunas. Es una sola célula sin núcleo, pero tiene clorofila y hace fotosíntesis.',r:{p1:0}},
+ {n:'Cianobacteria',e:'💚',d:'Forma una nata verde en las lagunas. Es una sola célula sin núcleo, pero tiene clorofila y hace fotosíntesis.',r:{p1:0,pB:1},dom:'Bacteria'},
+ {n:'Arquea de las salinas',e:'🧂',d:'Vive en las salinas de Manaure, con muchísima sal. Es una sola célula sin núcleo. Su pared no tiene peptidoglucano y la penicilina no le hace nada.',r:{p1:0,pB:0},dom:'Archaea'},
  {n:'Ameba',e:'💧',d:'Vive en el agua de los charcos. Es una sola célula con núcleo. No tiene clorofila ni pared; envuelve a otros microorganismos para comérselos.',r:{p1:1,p2:0,p4:0,p5:0}},
  {n:'Frailejón',e:'🌼',d:'Planta del páramo, con raíz, tallo y hojas peludas. Sus células tienen núcleo, pared de celulosa y cloroplastos. Nace de una semilla con un embrión.',r:{p1:1,p2:1,p3:1}},
  {n:'Colibrí',e:'🐦',d:'Ave que se alimenta del néctar de las flores y de insectos pequeños. Tiene muchísimas células con núcleo, sin pared, organizadas en tejidos y órganos.',r:{p1:1,p2:0,p4:0,p5:1}},
@@ -386,7 +428,8 @@ var ORGS=[
  {n:'Levadura',e:'🍞',d:'Hace crecer el pan. Es una sola célula con núcleo y pared de quitina. No hace fotosíntesis: absorbe el azúcar de la masa.',r:{p1:1,p2:0,p4:1}},
  {n:'Coral',e:'🐠',d:'Parece una roca o una planta, pero tiene células con núcleo sin pared, tejidos y tentáculos con los que atrapa y come plancton.',r:{p1:1,p2:0,p4:0,p5:1}}
 ];
-var RN={monera:'🦠 Reino Monera',protista:'💧 Reino Protista',fungi:'🍄 Reino Fungi',plantae:'🌿 Reino Plantae',animalia:'🐾 Reino Animalia'};
+var RN={eubac:'🦠 Reino Eubacteria',arq:'🌋 Reino Archaebacteria',protozoa:'🦠 Reino Protozoa',monera:'🦠 Reino Monera',protista:'💧 Reino Protista',fungi:'🍄 Reino Fungi',plantae:'🌿 Reino Plantae',animalia:'🐾 Reino Animalia'};
+function nomRN(k){if(CL.r===7&&k==='eubac')return '🦠 Reino Bacteria';if(CL.r===7&&k==='arq')return '🌋 Reino Archaea';return RN[k];}
 var osel=document.getElementById('org-sel'),ruta=document.getElementById('ruta'),hechos={};
 osel.innerHTML=ORGS.map(function(o,i){return '<button type="button" data-i="'+i+'"><span class="e">'+o.e+'</span>'+o.n+'</button>';}).join('');
 function empezar(i){
@@ -402,8 +445,8 @@ function preguntar(id,o,i){
   [1,0].forEach(function(v,k){bs[k].onclick=function(){
     if(o.r[id]!==v){d.querySelector('.msg').innerHTML='❌ Vuelve a leer la ficha de '+o.n+'. ¿Seguro que la respuesta es «'+(v?'sí':'no')+'»?';return;}
     bs[0].disabled=bs[1].disabled=true;bs[k].classList.add('cn-btn--primary');d.classList.add('resp');d.querySelector('.msg').textContent='';
-    var sig=v?p.si:p.no;
-    if(sig.indexOf('R:')===0){var r=document.createElement('div');r.className='res';r.innerHTML='🎉 <b>'+o.n+'</b> pertenece al <b>'+RN[sig.slice(2)]+'</b>.';ruta.appendChild(r);hechos[i]=1;osel.children[i].classList.add('hecho');if(Object.keys(hechos).length>=4)BIO.marcarSeccion('clave');}
+    var sig=v?p.si:p.no;if(sig==='R:monera'&&CL.r>=6)sig='pB';if(sig==='R:protista'&&CL.r===7)sig='R:protozoa';
+    if(sig.indexOf('R:')===0){var r=document.createElement('div');r.className='res';r.innerHTML='🎉 <b>'+o.n+'</b> pertenece al <b>'+nomRN(sig.slice(2))+'</b>'+(CL.d?', dentro del <b>dominio '+({eubac:'Bacteria',arq:'Archaea',monera:o.dom}[sig.slice(2)]||'Eukarya')+'</b>':'')+'.';ruta.appendChild(r);hechos[i]=1;osel.children[i].classList.add('hecho');if(Object.keys(hechos).length>=4)BIO.marcarSeccion('clave');}
     else preguntar(sig,o,i);
   };});
 }
@@ -422,14 +465,32 @@ var RETO_F=[
  {t:'Palma de cera',r5:'plantae'},{t:'Musgo',r5:'plantae'},
  {t:'Rana dorada',r5:'animalia'},{t:'Esponja de mar',r5:'animalia',pista:'Aunque no se mueve, come filtrando el agua y no tiene pared celular.'}
 ];
-function reto(n){
-  document.querySelectorAll('[data-modelo]').forEach(function(b){b.classList.toggle('on',+b.getAttribute('data-modelo')===n);});
+function reto(){var n=CL.r;
   var tit=function(r){return {id:r.id,titulo:r.e+' '+r.n.split(' ')[0]};};
   var cajas=n===5?R.map(tit):[{id:'eu',titulo:'🦠 '+(n===7?'Bacteria':'Eubacteria')},{id:'ar',titulo:'🌋 '+(n===7?'Archaea':'Archaebacteria')}]
     .concat(n===7?[{id:'pz',titulo:'🦠 Protozoa'},{id:'ch',titulo:'🌊 Chromista'}]:R.filter(function(r){return r.id==='protista';}).map(tit))
     .concat(R.filter(function(r){return r.id!=='monera'&&r.id!=='protista';}).map(tit));
+  if(CL.d)cajas.forEach(function(c){var dm={monera:'Bacteria y Archaea',eu:'Bacteria',ar:'Archaea'}[c.id]||'Eukarya';if(c.titulo.indexOf(dm)<0)c.titulo+=' · '+dm;});
   BIO.clasificar(document.getElementById('clas-reinos'),{cajas:cajas,fichas:RETO_F.map(function(f){return {t:f.t,caja:(n>=6&&f.r6)?f.r6:(n===7&&f.r7)?f.r7:f.r5,pista:f.pista};})});
 }
+
+/* ═══ Modelo de clasificación escogido por el docente ═══ */
+function aplicar(){
+  document.querySelectorAll('.clasif-ctrl').forEach(function(c){
+    c.innerHTML='<div class="grp" role="group" aria-label="Número de reinos"><span>Reinos:</span>'+[5,6,7].map(function(n){return '<button type="button" class="chip'+(CL.r===n?' on':'')+'" data-cr="'+n+'" aria-pressed="'+(CL.r===n)+'">'+{5:'👑 5 reinos',6:'✂️ 6 reinos',7:'🔀 7 reinos'}[n]+'</button>';}).join('')+'</div><div class="grp" role="group" aria-label="Dominios"><span>Dominios:</span><button type="button" class="chip'+(CL.d?'':' on')+'" data-cd="0" aria-pressed="'+!CL.d+'">Sin dominios</button><button type="button" class="chip'+(CL.d?' on':'')+'" data-cd="1" aria-pressed="'+!!CL.d+'">🌳 Con 3 dominios</button></div>';
+    c.querySelectorAll('[data-cr]').forEach(function(b){b.onclick=function(){CL.r=+b.getAttribute('data-cr');guardarCL();aplicar();};});
+    c.querySelectorAll('[data-cd]').forEach(function(b){b.onclick=function(){CL.d=+b.getAttribute('data-cd');guardarCL();aplicar();};});
+  });
+  var u=location.href.split(/[?#]/)[0]+'?reinos='+CL.r+'&dominios='+(CL.d?'si':'no');
+  document.getElementById('clasif-url').textContent=u;
+  verMod();pintarReinos();reto();
+  document.getElementById('org-ficha').innerHTML='';ruta.innerHTML='<div class="card" style="text-align:center;color:var(--cn-dim)">👈 Escoge un organismo para empezar la clave.</div>';
+  osel.querySelectorAll('button').forEach(function(b){b.classList.remove('on');});
+}
+function guardarCL(){try{localStorage.setItem('bionom_clasificacion',JSON.stringify(CL));}catch(e){}}
+document.getElementById('clasif-copiar').onclick=function(){var t=document.getElementById('clasif-url').textContent,b=this;
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='✅ Copiado';},function(){b.textContent='Selecciona y copia el enlace';});setTimeout(function(){b.textContent='📋 Copiar';},2500);};
+aplicar();
 document.querySelectorAll('[data-modelo]').forEach(function(b){b.onclick=function(){reto(+b.getAttribute('data-modelo'));};});
 reto(5);
 })();
