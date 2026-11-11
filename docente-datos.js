@@ -968,3 +968,49 @@ D.MAPAS_EXTRA=(D.MAPAS_EXTRA||[]).concat([
 ]);
 })();
 
+/* ═══ Modelo de reinos que escogió el docente (BIO_CLASIF en bio.js) ═══
+   Ajusta al modelo la lectura y el esquema de la guía, las preguntas tipo
+   Saber, las abiertas y el detective. Lo que nombra el modelo explícitamente
+   («en el modelo de cinco reinos», Whittaker, Woese) se deja igual. */
+(function(){
+var D=window.DOCENTE_DATOS,C=window.BIO_CLASIF;if(!D||!C)return;
+var NUM={5:'cinco',6:'seis',7:'siete'}[C.r];
+var T=(D.TEMAS||[]).filter(function(t){return t.id==='reinos';})[0];
+if(T&&T.info){
+  var L=T.info.lectura;
+  if(C.r===6)L[2]='Whittaker propuso <strong>cinco reinos</strong>. Después, Carl Woese comparó el ARN de los ribosomas y dividió Monera en dos: así quedan <strong>seis reinos</strong>: <strong>Eubacteria</strong> (procariotas con pared de peptidoglucano), <strong>Archaebacteria</strong> (procariotas de lugares extremos, sin peptidoglucano), <strong>Protista</strong> (eucariotas sencillos), <strong>Fungi</strong>, <strong>Plantae</strong> y <strong>Animalia</strong>.';
+  if(C.r===7)L[2]='Hoy el Catálogo de la Vida usa <strong>siete reinos</strong> (Ruggiero y otros, 2015): <strong>Bacteria</strong> y <strong>Archaea</strong> (procariotas muy distintas entre sí), <strong>Protozoa</strong> (amebas, euglenas, tripanosomas), <strong>Chromista</strong> (diatomeas, algas pardas, paramecios, plasmodio), <strong>Fungi</strong> (absorción, pared de quitina), <strong>Plantae</strong> (fotosíntesis, celulosa) y <strong>Animalia</strong> (ingestión, sin pared).';
+  L[3]=C.d?'Por encima de los reinos están los tres <strong>dominios</strong>: Bacteria, Archaea y Eukarya (todos los seres con núcleo).'+(C.r===5?' Monera queda repartido entre los dominios Bacteria y Archaea.':'')+' Para identificar organismos se usan <strong>claves dicotómicas</strong>: preguntas de dos opciones que llevan, paso a paso, al grupo correcto.'
+    :'Para identificar organismos se usan <strong>claves dicotómicas</strong>: preguntas de dos opciones que llevan, paso a paso, al grupo correcto.';
+  var id={5:'',6:'reinos6',7:'reinos7'}[C.r]+(C.d?'d':''),X=(D.MAPAS_EXTRA||[]).filter(function(x){return x.id===(C.r===5&&C.d?'reinos5d':id);})[0];
+  if(X)T.info.esquema=X.info.esquema;
+  T.previos=JSON.parse(JSON.stringify(T.previos).replace(/los cinco reinos/g,'los '+NUM+' reinos').replace(/protistas del agua/g,C.r===7?'protozoos y algas del agua':'protistas del agua'));
+}
+// Preguntas tipo Saber 11 (la primera opción es la correcta)
+var S=D.SABER||[];
+function q(m,ctx,pre,o,dd){var x={t:'reinos',m:m,ctx:ctx,q:pre,o:o};if(dd)x.d=1;S.push(x);}
+S.forEach(function(x){if(x.t!=='reinos')return;
+  if(/^¿A qué reino pertenece\?$|^Este grupo corresponde al reino$|^Plasmodium pertenece al reino$/.test(x.q)&&x.o[0]==='Protista')x.m='56';
+  if(/dominio|tres dominios/i.test(x.q+x.o[0]))x.d=1;
+  if(C.r>5&&!/cinco reinos|Whittaker/.test(x.q+x.ctx))x.o=x.o.map(function(o,k){return k&&o==='Monera'?(C.r===6?'Eubacteria':'Bacteria'):o;});
+  if(C.r>5)x.ctx=x.ctx.replace('No tiene núcleo → Monera','No tiene núcleo → '+(C.r===6?'Eubacteria o Archaebacteria':'Bacteria o Archaea'));});
+q('6','Las bacterias del yogur y las cianobacterias del agua son procariotas con pared de peptidoglucano.','¿A qué reino pertenecen en el modelo de seis reinos?',['Eubacteria','Archaebacteria','Protista','Plantae']);
+q('7','Las bacterias del yogur y las cianobacterias del agua son procariotas con pared de peptidoglucano.','¿A qué reino pertenecen en el modelo de siete reinos?',['Bacteria','Archaea','Chromista','Plantae']);
+q('6','En las salinas de Manaure viven procariotas que resisten muchísima sal; su pared no tiene peptidoglucano.','En el modelo de seis reinos pertenecen a',['Archaebacteria','Eubacteria','Protista','Fungi']);
+q('7','En las salinas de Manaure viven procariotas que resisten muchísima sal; su pared no tiene peptidoglucano.','En el modelo de siete reinos pertenecen a',['Archaea','Bacteria','Protozoa','Fungi']);
+q('7','Un organismo unicelular tiene núcleo, se mueve con cilios y vive en el agua de un charco: es un paramecio.','En el modelo de siete reinos pertenece a',['Chromista','Protozoa','Bacteria','Animalia']);
+q('7','La malaria la causa Plasmodium, un organismo unicelular eucariota que vive en la sangre.','En el modelo de siete reinos, Plasmodium pertenece a',['Chromista','Protozoa','Fungi','Animalia']);
+q('7','El tripanosoma que causa la enfermedad de Chagas es un eucariota unicelular con un flagelo.','En el modelo de siete reinos pertenece a',['Protozoa','Chromista','Bacteria','Animalia']);
+q('7','Las diatomeas son algas microscópicas con un caparazón de sílice; las algas pardas forman bosques en el mar.','En el modelo de siete reinos, las dos pertenecen a',['Chromista','Plantae','Protozoa','Fungi']);
+for(var i=S.length-1;i>=0;i--){var x=S[i];if(x.t==='reinos'&&(!C.vale(x.m)||!C.valeD(x.d)))S.splice(i,1);}
+// Preguntas abiertas
+var A=(D.ABIERTAS||{}).reinos;
+if(A){for(var j=0;j<A.length;j++)A[j]=A[j].replace(/los cinco reinos/g,'los '+NUM+' reinos');
+  if(!C.d)for(j=A.length-1;j>=0;j--)if(/tres dominios/.test(A[j]))A.splice(j,1);
+  if(C.r>5)A.push('Compara el reino '+(C.r===6?'Eubacteria con el reino Archaebacteria':'Protozoa con el reino Chromista')+': qué tienen en común, qué los diferencia y un ejemplo colombiano de cada uno.');
+  if(C.r===7)A.push('Explica por qué el modelo de siete reinos partió el antiguo reino Protista en dos.');
+  if(A.length<40)A.push('Explica con tres razones por qué los hongos no se clasifican como plantas, aunque los dos tengan pared celular.');}
+// Detective: frases que dan por hecho el reino Monera
+if(C.r>5&&window.DETECTIVE)window.DETECTIVE=JSON.parse(JSON.stringify(window.DETECTIVE).replace(/pertenecen al reino Monera/g,'pertenecen al reino '+(C.r===6?'Eubacteria':'Bacteria')));
+})();
+

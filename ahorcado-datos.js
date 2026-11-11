@@ -502,3 +502,19 @@ window.BANCO_AHORCADO.push(
 ["CASABE", "nutricion", "Alimento amazónico.", "Se hace con yuca brava.", "Es una torta delgada."],
 ["QUIMIOSÍNTESIS", "nutricion", "Forma de obtener energía.", "No usa luz.", "La hacen bacterias de fuentes termales."]
 );
+
+/* Modelo de reinos que escogió el docente (BIO_CLASIF en bio.js) */
+(function(){
+var B=window.BANCO_AHORCADO,C=window.BIO_CLASIF;if(!B||!C)return;
+B.forEach(function(w){if(w[1]!=='reinos')return;
+  if((w[0]==='AMEBA'||w[0]==='PARAMECIO')&&w[2]==='Protista.')w[2]='Eucariota de una sola célula.';
+  if(w[0]==='PROTISTA'&&C.r===7)w.m='56';
+  if(w[0]==='MONERA')w.m='5';});
+function p(m,w,a,b,c){var x=[w,'reinos',a,b,c];x.m=m;B.push(x);}
+p('67','EUBACTERIA','Reino de las bacterias verdaderas.','Su pared tiene peptidoglucano.','Lactobacilos del yogur y E. coli.');
+p('7','PROTOZOA','Reino de eucariotas casi siempre unicelulares.','Se mueven con seudópodos o flagelos.','Amebas, euglenas y tripanosomas.');
+p('7','CHROMISTA','Reino que incluye a las diatomeas.','Ganó cloroplastos de un alga roja.','Algas pardas, paramecio y plasmodio.');
+p('67','ARCHAEBACTERIA','Reino de procariotas de lugares extremos.','Sin peptidoglucano en su pared.','Viven en salinas y aguas termales.');
+for(var i=B.length-1;i>=0;i--)if(B[i][1]==='reinos'&&!C.vale(B[i].m))B.splice(i,1);
+})();
+

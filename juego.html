@@ -74,6 +74,7 @@
       <span class="kicker">🎮 Repaso</span>
       <h1>Juego de biología</h1>
       <p>Preguntas de todos los módulos de BioNom, con la explicación de cada respuesta.</p>
+      <p id="modelo-j" style="font-size:.88rem;color:var(--cn-dim)"></p>
     </header>
     <div class="modos" role="tablist"><button type="button" class="on" id="m-libre" role="tab">🕹️ Modo libre</button><button type="button" id="m-est" role="tab">🎓 Modo Estudiante</button></div>
     <div class="card login" id="login" hidden>
@@ -125,9 +126,10 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=18"></script>
-<script src="banco.js?v=15"></script>
-<script src="ahorcado-datos.js?v=15"></script>
+<script src="bio.js?v=19"></script>
+<script src="banco.js?v=16"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){var C=window.BIO_CLASIF,p=document.getElementById('modelo-j');if(C&&p)p.innerHTML='🍄 Las preguntas de Reinos usan el modelo de <b>'+C.texto()+'</b>'+(C.r===5&&!C.d?'.':', como lo escogió tu docente.');});</script>
+<script src="ahorcado-datos.js?v=16"></script>
 <script src="retos.js?v=13"></script>
 <script>
 (function(){

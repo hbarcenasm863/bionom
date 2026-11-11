@@ -6,6 +6,50 @@
 
 ---
 
+## Versión 2.20 — 11 de noviembre de 2026 · Todo el material de reinos sigue el modelo del docente
+
+**Contexto.** El docente aceptó extender el modelo de reinos que escoge (5, 6 o
+7 reinos, con o sin los 3 dominios) a las guías, las evaluaciones, el juego y
+el resto del material, que seguían usando 5 reinos.
+
+**Cómo funciona.**
+- `bio.js`: nuevo `window.BIO_CLASIF` (se carga antes que los bancos). Lee el
+  modelo guardado en el equipo (`bionom_clasificacion`) o el del enlace
+  `?reinos=6&dominios=si`, y lo guarda. `vale(m)` y `valeD(d)` dicen si una
+  pregunta sirve en ese modelo. `reinos.html` usa el mismo valor.
+- Marcas en los datos: `m:'5'`, `'6'`, `'7'`, `'56'` o `'67'` = solo en esos
+  modelos; `d:1` = solo si se trabajan los dominios. Lo que nombra el modelo
+  («en el modelo de cinco reinos», Whittaker, Woese) sirve en todos.
+- `banco.js` (juego, laberintos): 3 preguntas quedan solo para 5 reinos y 2 de
+  dominios solo con dominios; 18 preguntas nuevas para 6 y 7 reinos y
+  dominios. Cada modelo tiene entre 55 y 66 preguntas de reinos (45 o más
+  cortas).
+- `docente-datos.js`: la lectura de la guía (párrafos de los reinos y de los
+  dominios), el mapa de ideas (esquema del modelo), los aprendizajes previos,
+  las preguntas tipo Saber (3 de Protista quedan para 5 y 6 reinos; 8 nuevas
+  para 6 y 7; la clave dicotómica y los distractores ya no dicen «Monera» en
+  6 y 7), las abiertas (con 40 o más en todo modelo) y el detective.
+- `ahorcado-datos.js` (ahorcado, sopa, crucigrama, criptograma): palabras
+  nuevas EUBACTERIA, ARCHAEBACTERIA, PROTOZOA y CHROMISTA; MONERA solo en 5
+  reinos y PROTISTA no sale en 7.
+- `docente.html`: recuadro «Modelo de reinos que usa en clase» arriba de las
+  pestañas, con el enlace del juego para los estudiantes. Al cambiarlo la
+  página se recarga.
+- `juego.html`: aviso con el modelo que se está usando. Con el enlace del
+  docente (`juego.html?reinos=7&dominios=si`) el celular del estudiante queda
+  con ese modelo.
+- `reinos.html`: el recuadro del enlace muestra también el del juego.
+- Probado con Playwright: con 7 reinos y dominios, la guía y la evaluación de
+  reinos ya no mencionan Monera, el juego arranca y ninguna página tiene
+  errores.
+- Versiones: `bio.js?v=19`, `banco.js?v=16`, `ahorcado-datos.js?v=16`,
+  `docente-datos.js?v=17`, `sw.js` → `bionom-v34`.
+
+**Pendiente.** El Modo Estudiante guarda las respuestas igual que antes; las
+estadísticas no distinguen el modelo con que se respondió.
+
+---
+
 ## Versión 2.19 — 11 de noviembre de 2026 · Mapa conceptual de reinos con el modelo del docente
 
 **Contexto.** El docente notó que en el panel docente, pestaña «Mapa

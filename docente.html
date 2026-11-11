@@ -130,6 +130,20 @@
     <h1>Material para la clase</h1>
     <p>Arme guías de 4 sesiones, talleres, evaluaciones tipo Saber 11, laberintos, crucigramas, ahorcados, sopas de letras, criptogramas genéticos, mapas conceptuales y casos del detective biológico, con las preguntas y palabras de BioNom. Todo con varias versiones para evitar la copia y con su clave.</p>
   </header>
+  <div class="card" id="modelo-reinos" style="margin:0 0 14px;border-left:6px solid var(--cn-brand)">
+    <b>🧭 Modelo de reinos que usa en clase</b>
+    <small style="display:block;color:var(--cn-dim);margin:4px 0 8px">Se aplica a todo lo del tema Reinos: guías (lectura y mapa de ideas), talleres, evaluaciones tipo Saber, preguntas abiertas, laberintos, crucigramas, ahorcado, sopa de letras, mapa conceptual y detective. Queda guardado en este equipo; al cambiarlo, la página se recarga.</small>
+    <div id="mr-ctrl" style="display:flex;flex-wrap:wrap;gap:6px 16px"></div>
+    <p style="margin-top:8px;font-size:.88rem">Enlace del juego con este modelo para los estudiantes: <code id="mr-url" style="word-break:break-all"></code></p>
+  </div>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){var C=window.BIO_CLASIF,c=document.getElementById('mr-ctrl');if(!C)return;
+    c.innerHTML='<span role="group" aria-label="Número de reinos" style="display:flex;gap:6px;flex-wrap:wrap">'+[5,6,7].map(function(n){return '<button type="button" class="chip'+(C.r===n?' on':'')+'" data-r="'+n+'">'+n+' reinos</button>';}).join('')+'</span><span role="group" aria-label="Dominios" style="display:flex;gap:6px;flex-wrap:wrap"><button type="button" class="chip'+(C.d?'':' on')+'" data-d="0">Sin dominios</button><button type="button" class="chip'+(C.d?' on':'')+'" data-d="1">Con 3 dominios</button></span>';
+    c.querySelectorAll('[data-r]').forEach(function(b){b.onclick=function(){C.guardar(+b.getAttribute('data-r'),C.d);location.href=location.pathname;};});
+    c.querySelectorAll('[data-d]').forEach(function(b){b.onclick=function(){C.guardar(C.r,+b.getAttribute('data-d'));location.href=location.pathname;};});
+    document.getElementById('mr-url').textContent=location.href.split(/[?#]/)[0].replace(/docente\.html$/,'')+'juego.html?reinos='+C.r+'&dominios='+(C.d?'si':'no');
+  });
+  </script>
   <div class="dtabs" role="tablist">
     <button class="chip on" data-p="gen" data-m="guia" role="tab">📘 Guías</button>
     <button class="chip" data-p="gen" data-m="taller" role="tab">✏️ Talleres</button>
@@ -357,10 +371,10 @@
 <div id="ah-print-root" aria-hidden="true"></div>
 <div id="sp-print-root" aria-hidden="true"></div>
 <div id="ex-print-root" aria-hidden="true"></div>
-<script src="bio.js?v=18"></script>
-<script src="banco.js?v=15"></script>
-<script src="ahorcado-datos.js?v=15"></script>
-<script src="docente-datos.js?v=16"></script>
+<script src="bio.js?v=19"></script>
+<script src="banco.js?v=16"></script>
+<script src="ahorcado-datos.js?v=16"></script>
+<script src="docente-datos.js?v=17"></script>
 <script>
 /* Ajustes de BioNom para extras.js: textos de biología y criptograma con el código genético. */
 window.EXTRAS_SITIO={area:'biología',adj:'biológico',cripto:'codon'};

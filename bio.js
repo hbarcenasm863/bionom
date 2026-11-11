@@ -10,6 +10,24 @@
        .term     palabra con definición emergente (data-def)
    - BIO.clasificar(): actividad de llevar fichas a cajas (tocar o arrastrar).
    ════════════════════════════════════════════════════════════════════════ */
+/* Modelo de clasificación que usa el docente: 5, 6 o 7 reinos, con o sin los
+   3 dominios. Se guarda en el dispositivo (bionom_clasificacion) y se puede fijar
+   con un enlace: ...?reinos=6&dominios=si. Lo usan reinos.html, el juego y el
+   panel docente para mostrar solo las preguntas y textos de ese modelo.
+   BIO_CLASIF.vale(m): m vacío = sirve en todo modelo; m='67' = solo 6 y 7 reinos.
+   BIO_CLASIF.valeD(d): d=1 = solo si se trabajan los dominios. */
+window.BIO_CLASIF=(function(){
+  var C={r:5,d:0};
+  try{var g=JSON.parse(localStorage.getItem('bionom_clasificacion')||'null');if(g&&[5,6,7].indexOf(g.r)>=0)C={r:g.r,d:g.d?1:0};}catch(e){}
+  try{var q=new URLSearchParams(location.search),r=+q.get('reinos'),d=q.get('dominios');
+    if([5,6,7].indexOf(r)>=0)C.r=r;if(d)C.d=/^(si|sí|1|true)$/i.test(d)?1:0;
+    if(r||d)localStorage.setItem('bionom_clasificacion',JSON.stringify(C));}catch(e){}
+  C.vale=function(m){return !m||String(m).indexOf(String(C.r))>=0;};
+  C.valeD=function(d){return !d||!!C.d;};
+  C.guardar=function(r,d){C.r=r;C.d=d?1:0;try{localStorage.setItem('bionom_clasificacion',JSON.stringify({r:C.r,d:C.d}));}catch(e){}};
+  C.texto=function(){return C.r+' reinos'+(C.d?' con 3 dominios':' sin dominios');};
+  return C;
+})();
 (function(){
 'use strict';
 var MODULOS=[

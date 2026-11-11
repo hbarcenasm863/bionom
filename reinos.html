@@ -97,7 +97,7 @@
     <b>🧭 ¿Con qué clasificación trabaja tu clase?</b>
     <small>El docente escoge el modelo que usa en clase. El mapa, las fichas de los reinos, la clave dicotómica y el reto se ajustan solos, y la elección queda guardada en este dispositivo.</small>
     <div class="clasif-ctrl"></div>
-    <details class="clasif-link"><summary>🔗 Enlace para los estudiantes con este modelo</summary><p>Comparte este enlace y la página abrirá ya con el modelo escogido:</p><code id="clasif-url"></code> <button type="button" class="cn-btn" id="clasif-copiar">📋 Copiar</button></details>
+    <details class="clasif-link"><summary>🔗 Enlace para los estudiantes con este modelo</summary><p>Comparte este enlace y la página abrirá ya con el modelo escogido:</p><code id="clasif-url"></code> <button type="button" class="cn-btn" id="clasif-copiar">📋 Copiar</button><p style="margin-top:6px">Y este abre el <b>juego</b> con las preguntas de ese modelo:</p><code id="clasif-url-j"></code></details>
   </div>
 
   <section class="sec" id="taxonomia">
@@ -239,16 +239,12 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=5"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=18"></script>
+<script src="bio.js?v=19"></script>
 <script>
 (function(){
 /* Modelo de clasificación: lo escoge el docente (5, 6 o 7 reinos; con o sin dominios).
    Se guarda en este dispositivo y se puede fijar con un enlace: reinos.html?reinos=6&dominios=si */
-var CL={r:5,d:0};
-try{var g=JSON.parse(localStorage.getItem('bionom_clasificacion')||'null');if(g&&[5,6,7].indexOf(g.r)>=0)CL={r:g.r,d:g.d?1:0};}catch(e){}
-(function(){var q=new URLSearchParams(location.search),r=+q.get('reinos'),d=q.get('dominios');
-  if([5,6,7].indexOf(r)>=0)CL.r=r;if(d)CL.d=/^(si|sí|1|true)$/i.test(d)?1:0;
-  if(r||d){try{localStorage.setItem('bionom_clasificacion',JSON.stringify(CL));}catch(e){}}})();
+var CL={r:BIO_CLASIF.r,d:BIO_CLASIF.d}; // lo lee bio.js (dispositivo o enlace ?reinos=6&dominios=si)
 /* ═══ Taxonomía ═══ */
 var TAX=[['Dominio','Eukarya','Eukarya','Eukarya'],['Reino','Animalia','Animalia','Plantae'],['Filo','Chordata','Chordata','Magnoliophyta'],['Clase','Mammalia','Mammalia','Magnoliopsida'],['Orden','Primates','Carnivora','Asterales'],['Familia','Hominidae','Felidae','Asteraceae'],['Género','<i>Homo</i>','<i>Panthera</i>','<i>Espeletia</i>'],['Especie','<i>H. sapiens</i>','<i>P. onca</i>','<i>E. grandiflora</i>']];
 var DESC=['Dominio: los tres tienen células con núcleo (eucariotas). Aquí están todos juntos.','Reino: el frailejón se separa; es una planta. Humano y jaguar siguen juntos: animales.','Filo: humano y jaguar son cordados: en el embrión tienen notocorda (un eje flexible en la espalda) y un cordón nervioso.','Clase: los dos son mamíferos: tienen pelo y alimentan a sus crías con leche.','Orden: aquí se separan. Somos primates; el jaguar es carnívoro.','Familia: cada uno sigue su camino. El jaguar es de la familia de los gatos (félidos).','Género: el frailejón pertenece al género <i>Espeletia</i>, que solo vive en los páramos.','Especie: cada uno es único. Llegamos al final de la escalera.'];
@@ -482,12 +478,12 @@ function aplicar(){
     c.querySelectorAll('[data-cd]').forEach(function(b){b.onclick=function(){CL.d=+b.getAttribute('data-cd');guardarCL();aplicar();};});
   });
   var u=location.href.split(/[?#]/)[0]+'?reinos='+CL.r+'&dominios='+(CL.d?'si':'no');
-  document.getElementById('clasif-url').textContent=u;
+  document.getElementById('clasif-url').textContent=u;document.getElementById('clasif-url-j').textContent=u.replace('reinos.html','juego.html');
   verMod();pintarReinos();reto();
   document.getElementById('org-ficha').innerHTML='';ruta.innerHTML='<div class="card" style="text-align:center;color:var(--cn-dim)">👈 Escoge un organismo para empezar la clave.</div>';
   osel.querySelectorAll('button').forEach(function(b){b.classList.remove('on');});
 }
-function guardarCL(){try{localStorage.setItem('bionom_clasificacion',JSON.stringify(CL));}catch(e){}}
+function guardarCL(){BIO_CLASIF.guardar(CL.r,CL.d);}
 document.getElementById('clasif-copiar').onclick=function(){var t=document.getElementById('clasif-url').textContent,b=this;
   (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='✅ Copiado';},function(){b.textContent='Selecciona y copia el enlace';});setTimeout(function(){b.textContent='📋 Copiar';},2500);};
 aplicar();
