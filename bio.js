@@ -145,10 +145,10 @@ function montarPasos(raiz){
     nav.innerHTML='<button type="button" class="cn-btn">← Anterior</button><button type="button" class="cn-btn cn-btn--primary">Siguiente →</button>';
     var tit=P.getAttribute('data-titulo');
     if(tit){var h=document.createElement('div');h.style.cssText='font-weight:800;align-self:center;margin-right:8px;color:var(--cn-brand-d)';h.textContent=tit;top.appendChild(h);}
-    var dots=pasos.map(function(p,i){var d=document.createElement('button');d.type='button';d.className='p-dot';d.textContent=i+1;d.title=p.getAttribute('data-t')||('Paso '+(i+1));d.addEventListener('click',function(){ir(i);});top.appendChild(d);return d;});
+    var dots=pasos.map(function(p,i){var d=document.createElement('button');d.type='button';d.className='p-dot';d.textContent=i+1;d.title=p.getAttribute('data-t')||('Paso '+(i+1));d.addEventListener('click',function(){ir(i,true);});top.appendChild(d);return d;});
     P.innerHTML='';P.appendChild(top);P.appendChild(body);P.appendChild(nav);
     var k=0;
-    function ir(i){
+    function ir(i,desdeUsuario){
       k=Math.max(0,Math.min(pasos.length-1,i));
       pasos.forEach(function(p,j){p.classList.toggle('on',j===k);});
       dots.forEach(function(d,j){d.classList.toggle('on',j===k);if(j<=k)d.classList.add('visto');});
@@ -156,10 +156,11 @@ function montarPasos(raiz){
       nav.children[1].textContent=k===pasos.length-1?'✓ Terminado':'Siguiente →';
       nav.children[1].disabled=k===pasos.length-1;
       var fn=P.getAttribute('data-alcambiar');if(fn&&window[fn])window[fn](k,P);
+      if(desdeUsuario)narrarParte(P,pasos[k]);
       if(k===pasos.length-1){var sec=P.closest('.sec');if(sec)marcarSeccion(sec.id);}
     }
-    nav.children[0].addEventListener('click',function(){ir(k-1);});
-    nav.children[1].addEventListener('click',function(){ir(k+1);});
+    nav.children[0].addEventListener('click',function(){ir(k-1,true);});
+    nav.children[1].addEventListener('click',function(){ir(k+1,true);});
     ir(0);
   });
 }
@@ -174,6 +175,21 @@ function montarFlips(raiz){
   });
 }
 
+/* Narración por pasos (recomendación 2 de la auditoría): si el estudiante
+   escuchó esta sección con «🔊 Escuchar», al cambiar de paso o de pestaña se
+   lee solo el texto nuevo, sin volver a tocar el botón. */
+document.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('.narr-btn');if(!b)return;
+  var sec=b.closest('.sec');if(!sec)return;
+  if(b.getAttribute('aria-pressed')==='true')sec.removeAttribute('data-narrado');else sec.setAttribute('data-narrado','');
+},true);
+function narrarParte(cont,parte){
+  var sec=cont&&cont.closest('.sec');
+  if(!sec||!parte||!sec.hasAttribute('data-narrado')||!window.CN_NARRAR)return;
+  var btn=sec.querySelector('.narr-btn');if(!btn)return;
+  var t=CN_NARRAR.textoDe(parte);if(!t)return;
+  CN_NARRAR.parar();CN_NARRAR.leer(t,btn,sec);
+}
 /* ── pestañas ── */
 function montarTabs(raiz){
   (raiz||document).querySelectorAll('.tabs:not([data-listo])').forEach(function(T){
@@ -182,6 +198,7 @@ function montarTabs(raiz){
     function ir(b){
       bs.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b);var p=document.getElementById(x.getAttribute('data-tab'));if(p)p.classList.toggle('on',x===b);});
       var fn=T.getAttribute('data-alcambiar');if(fn&&window[fn])window[fn](b.getAttribute('data-tab'));
+      narrarParte(T,document.getElementById(b.getAttribute('data-tab')));
     }
     bs.forEach(function(b){b.type='button';b.addEventListener('click',function(){ir(b);});});
     ir(bs.filter(function(b){return b.classList.contains('on');})[0]||bs[0]);
@@ -294,3 +311,59 @@ if('serviceWorker' in navigator&&location.protocol!=='file:'){
 
 /* (Versión 2.18) Se quitó el desplazamiento automático hacia las explicaciones:
    en el celular hacía bajar la página sola al resolver ejercicios. */
+/* ── Contigüidad espacial en el celular SIN mover la página (versión 2.21) ──
+   Si al tocar algo la explicación nueva queda fuera de la pantalla, se muestra
+   una copia en un recuadro flotante abajo. Sus botones funcionan (llaman a
+   los botones originales) y el recuadro se cierra solo cuando la explicación
+   original queda a la vista, al tocar ✕ o al cambiar de tamaño la pantalla. */
+(function(){
+  if(!window.MutationObserver||!document.body)return;
+  if(/(^|\/)(index|juego|docente)\.html$|\/$/.test(location.pathname))return;
+  var ult=0,panel=null,fuente=null,io=null,cuerpo=null;
+  document.addEventListener('pointerdown',function(e){if(!(panel&&panel.contains(e.target)))ult=Date.now();},true);
+  document.addEventListener('input',function(){ult=Date.now();},true);
+  document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')ult=Date.now();},true);
+  function cerrar(){if(panel)panel.hidden=true;if(io&&fuente)io.unobserve(fuente);fuente=null;}
+  function armar(){
+    panel=document.createElement('aside');panel.className='flota-exp';panel.setAttribute('aria-label','Explicación');panel.hidden=true;
+    panel.innerHTML='<div class="fe-bar"><b>💡 Mira la explicación</b><button type="button" class="fe-ir">Ir allá ↓</button><button type="button" class="fe-x" aria-label="Cerrar">✕</button></div><div class="fe-c"></div>';
+    document.body.appendChild(panel);cuerpo=panel.querySelector('.fe-c');
+    panel.querySelector('.fe-x').onclick=cerrar;
+    panel.querySelector('.fe-ir').onclick=function(){var f=fuente;cerrar();if(f)f.scrollIntoView({block:'center'});};
+    if(window.IntersectionObserver)io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.target===fuente&&x.intersectionRatio>0.35)cerrar();});},{threshold:[0,0.35,0.6]});
+    window.addEventListener('resize',function(){if(window.innerWidth>760)cerrar();});
+  }
+  function copiar(){
+    if(!fuente||!cuerpo)return;
+    var c=fuente.cloneNode(true);
+    c.removeAttribute('id');c.querySelectorAll('[id]').forEach(function(x){x.removeAttribute('id');});
+    c.querySelectorAll('[aria-live]').forEach(function(x){x.removeAttribute('aria-live');});
+    var orig=fuente.querySelectorAll('button,a,input,select'),dup=c.querySelectorAll('button,a,input,select');
+    dup.forEach(function(d,i){var o=orig[i];if(!o)return;
+      if(d.tagName==='BUTTON'||d.tagName==='A')d.addEventListener('click',function(ev){ev.preventDefault();o.click();});
+      else{d.disabled=true;}});
+    cuerpo.innerHTML='';cuerpo.appendChild(c);cuerpo.scrollTop=cuerpo.scrollHeight;
+  }
+  function visible(el){var r=el.getBoundingClientRect(),H=window.innerHeight;if(r.height<4)return true;
+    var v=Math.min(r.bottom,H-72)-Math.max(r.top,60);return v>=Math.min(80,r.height*0.5);}
+  var pend=null;
+  new MutationObserver(function(ms){
+    if(window.innerWidth>760)return;
+    for(var i=0;i<ms.length;i++){
+      var t=ms[i].target;if(t.nodeType!==1)t=t.parentElement;if(!t||(panel&&panel.contains(t)))continue;
+      var d=t.closest('.det,[aria-live]');
+      if(!d||d.closest('.chequeo,.pasos,.an-txt,.flota-exp,.marcador')||/(^| )(fb|fb-clas|marcador)( |$)/.test(d.className))continue;
+      if(fuente&&d===fuente){pend=d;break;}
+      if(Date.now()-ult>1500)continue;
+      pend=d;break;
+    }
+    if(!pend)return;var d2=pend;pend=null;
+    requestAnimationFrame(function(){
+      if(!d2.isConnected)return;
+      if(visible(d2)){if(d2===fuente)cerrar();return;}
+      if(!panel)armar();
+      if(io&&fuente&&fuente!==d2)io.unobserve(fuente);
+      fuente=d2;copiar();panel.hidden=false;if(io)io.observe(d2);
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();

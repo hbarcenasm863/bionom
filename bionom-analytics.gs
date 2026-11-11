@@ -139,7 +139,7 @@ const REG_HEADERS = [
   'Timestamp', 'Fecha', 'Hora', 'Nombre', 'Curso', 'Nivel', 'Sesión',
   'Correctas', 'Total', '% Acierto', 'Errores MC', 'Errores Drag',
   'Errores ID', 'Errores Write', 'Tiempo agotado', 'Errores por tema',
-  'Aciertos por tema', 'Preguntas falladas', 'Trigger'
+  'Aciertos por tema', 'Preguntas falladas', 'Trigger', 'Modelo de reinos'
 ];
 
 const EST_HEADERS_BASE = [
@@ -520,7 +520,8 @@ function upsertRegistro(ss, d) {
     JSON.stringify(erroresTema || {}),
     JSON.stringify(aciertosTema || {}),
     falladosTxt,
-    trigger
+    trigger,
+    String(d.modelo_reinos || '') // p. ej. «6 reinos con 3 dominios» (versión 2.21)
   ];
 
   let filaIdx;
@@ -553,6 +554,13 @@ function obtenerHojaRegistro(ss) {
   return sh;
 }
 
+// Completa con celdas vacías las filas migradas que tengan menos columnas que
+// REG_HEADERS (por ejemplo, sin «Modelo de reinos»).
+function rellenarFilas_(filas) {
+  filas.forEach(function (f) { while (f.length < REG_HEADERS.length) f.push(''); });
+  return filas;
+}
+
 function escribirEncabezadosRegistro(sh) {
   sh.getRange(1, 1, 1, REG_HEADERS.length).setValues([REG_HEADERS])
     .setBackground('#343a40').setFontColor('#ffffff').setFontWeight('bold');
@@ -573,6 +581,14 @@ function migrarRegistroSiEsNecesario(sh) {
 
   const yaEsNuevo = REG_HEADERS.every(function (h, i) { return encabezadoActual[i] === h; });
   if (yaEsNuevo) return;
+  // Hoja con todas las columnas menos la última, «Modelo de reinos» (versión
+  // 2.21): basta con escribir el encabezado nuevo; las filas viejas quedan en
+  // blanco en esa columna.
+  const n = REG_HEADERS.length - 1;
+  if (REG_HEADERS.slice(0, n).every(function (h, i) { return encabezadoActual[i] === h; }) && !encabezadoActual[n]) {
+    escribirEncabezadosRegistro(sh);
+    return;
+  }
 
   // Esquema de IonNom Analytics v1: cada fila vieja YA era una sesión real y
   // distinta (ese script no hacía upsert ni las duplicaba), así que basta con
@@ -638,6 +654,7 @@ function migrarRegistroSiEsNecesario(sh) {
   sh.clearFormats();
   escribirEncabezadosRegistro(sh);
   if (filasNuevas.length) {
+    rellenarFilas_(filasNuevas);
     sh.getRange(2, 1, filasNuevas.length, REG_HEADERS.length).setValues(filasNuevas);
     const colores = filasNuevas.map(function (f) {
       return new Array(REG_HEADERS.length).fill(colorPorPorcentaje(f[9]));
@@ -665,6 +682,7 @@ function migrarDatosHistoricosSiEsNecesario_(ss, shRegistro) {
 
   if (filasNuevas.length) {
     const inicio = shRegistro.getLastRow() + 1;
+    rellenarFilas_(filasNuevas);
     shRegistro.getRange(inicio, 1, filasNuevas.length, REG_HEADERS.length).setValues(filasNuevas);
     const colores = filasNuevas.map(function (f) {
       return new Array(REG_HEADERS.length).fill(colorPorPorcentaje(f[9]));

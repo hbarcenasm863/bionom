@@ -95,9 +95,11 @@ y el «año de la Tierra», evolución humana, las 400 preguntas Saber 11 y las
    (principio de voz). La voz sintética funciona, pero suena menos cercana.
 2. **Narración por pasos**: que al avanzar una animación o un «paso» se lea
    solo el texto de ese paso, sin tener que tocar «Escuchar» de nuevo.
+   ✅ Hecho en la versión 2.21.
 3. **Emojis**: hay muchos en títulos y botones. Ayudan a orientarse, pero
    conviene no agregar más de los que hay (principio de coherencia).
 4. **Reproducción y genética** son los módulos más largos (~2400 palabras).
    Si los estudiantes se cansan, se pueden partir en dos páginas.
 5. **Preguntas abiertas y Detective** del panel docente se revisaron solo con
    búsquedas dirigidas; conviene una lectura completa en otra sesión.
+   ✅ Hecho en la versión 2.21 (ver `HISTORIAL_CAMBIOS.md`).

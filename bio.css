@@ -295,3 +295,17 @@ body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.1
 
 /* Deslizadores: al arrastrarlos en el celular no se mueve la página */
 input[type=range]{touch-action:none}
+
+/* Recuadro flotante con la explicación (celular), versión 2.21 */
+.flota-exp{position:fixed;left:8px;right:8px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:125;background:#fff;border:2px solid var(--cn-brand);border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.25);display:flex;flex-direction:column;max-height:30vh;animation:aparece .25s ease}
+.flota-exp[hidden]{display:none}
+.flota-exp .fe-bar{display:flex;align-items:center;gap:8px;padding:6px 8px 6px 12px;border-bottom:1px solid var(--cn-brd);font-size:.85rem;color:var(--cn-brand-d)}
+.flota-exp .fe-bar b{flex:1}
+.flota-exp .fe-bar button{border:1px solid var(--cn-brd);background:#f4faf6;border-radius:999px;padding:4px 10px;font-weight:700;font-size:.8rem;cursor:pointer;color:var(--cn-brand-d)}
+.flota-exp .fe-c{overflow:auto;padding:6px 10px 8px;font-size:.84rem;line-height:1.4}
+.flota-exp .fe-c>*{margin:0;padding:0;border:0;box-shadow:none;background:none}
+.flota-exp .fe-c h3{font-size:1rem}
+.flota-exp .fe-c .chip,.flota-exp .fe-c button{font-size:.8rem;padding:3px 9px}
+.flota-exp .fe-c img{max-height:14vh;width:auto;max-width:100%}
+.flota-exp .fe-c .vacio{display:none}
+@media(min-width:761px){.flota-exp{display:none!important}}

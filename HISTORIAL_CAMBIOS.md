@@ -6,6 +6,64 @@
 
 ---
 
+## Versión 2.21 — 11 de noviembre de 2026 · Se arregla lo que quedaba pendiente
+
+**Contexto.** El docente pidió arreglar lo faltante. Se revisaron los
+pendientes del historial y de la auditoría (`AUDITORIA_2026-11.md`) y se
+resolvió todo lo que se puede hacer con código.
+
+**1. Explicaciones fuera de la vista en el celular (pendiente de la 2.18).**
+- Se midió con Playwright (Pixel 7) dónde la explicación aparecía fuera de la
+  pantalla al tocar algo: el cuerpo humano de Sistemas (30 casos), la clave
+  dicotómica de Reinos, las partes de la célula, las fases de la mitosis, el
+  plato saludable y otros.
+- `bio.js` y `bio.css`: si la explicación nueva queda fuera de la vista, se
+  muestra una copia en un **recuadro flotante** abajo (máximo 30 % de la
+  pantalla), con «Ir allá ↓» y «✕». Sus botones funcionan, porque tocan los
+  botones originales. Se cierra solo cuando la explicación original queda a
+  la vista. **La página no se mueve sola.** No se usa en la portada, el juego
+  ni el panel docente.
+
+**2. Modelo de reinos en los resultados del Modo Estudiante (pendiente de la 2.20).**
+- `juego.html` envía `modelo_reinos` (por ejemplo «6 reinos con 3 dominios»).
+- `bionom-analytics.gs`: nueva columna «Modelo de reinos» al final de la hoja
+  Registro. Una hoja que ya existía recibe el encabezado sin perder datos, y
+  las filas migradas se completan con celdas vacías (`rellenarFilas_`).
+
+**3. Narración por pasos (recomendación 2 de la auditoría).** Si el
+estudiante escuchó una sección con «🔊 Escuchar», al pasar de paso (botones o
+puntos) o de pestaña se lee solo el texto nuevo, sin volver a tocar el botón.
+Probado: al pasar al paso 2 de «Cadenas tróficas» se lee solo ese paso.
+
+**4. Lectura completa de las preguntas abiertas y del Detective
+(recomendación 5).**
+- Detective: 60 historias, 5 o más por tema, todas con 8 frases dudosas, sin
+  repetidas ni fórmulas con paréntesis.
+- Preguntas abiertas (480): el contenido científico está correcto. Se
+  corrigió «propone» por «propón» (3), se aclaró el ejemplo de los ojos
+  azules (modelo sencillo de un gen), se suavizó «la deforestación es la
+  principal fuente de emisiones» a «una de las principales», y se cambiaron 8
+  preguntas casi repetidas dentro del mismo tema por preguntas nuevas (especie
+  clave, restauración ecológica, ranas de Colombia, huella de carbono del
+  transporte, deshielo y nivel del mar, polinización y fecundación, controles
+  del embarazo, Whittaker y los hongos). Todos los temas siguen con 40 o más.
+
+**Versiones.** `bio.js?v=20`, `bio.css?v=20`, `docente-datos.js?v=18`,
+`sw.js` → `bionom-v35`.
+
+**⚠️ Pasos manuales (cuando se active el Modo Estudiante en 2027).**
+1. Copiar `bionom-analytics.gs` al editor de Apps Script y crear una nueva
+   versión de la implementación (Implementar → Administrar implementaciones →
+   Editar → Nueva versión).
+2. Ejecutar `recalcularAhora()` para reescribir las hojas de estadísticas.
+3. Cambiar `MODO_ESTUDIANTE_ACTIVO` a `true` y pegar la URL en
+   `APPS_SCRIPT_URL` de `juego.html`, y probar con el código `110106`.
+
+**Lo que no se puede hacer con código.** Grabar la voz del docente para la
+narración (recomendación 1) y revisar cada año las cifras ambientales.
+
+---
+
 ## Versión 2.20 — 11 de noviembre de 2026 · Todo el material de reinos sigue el modelo del docente
 
 **Contexto.** El docente aceptó extender el modelo de reinos que escoge (5, 6 o
