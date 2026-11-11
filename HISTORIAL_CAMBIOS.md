@@ -24,6 +24,11 @@ gana siempre sin importar el orden. Verificado en los niveles con modelo 3D y
 con foto de los tres ejemplos, en celular y computador: el rótulo mide 25 px
 de alto.
 
+**Versión de la app.** `sw.js` → `bionom-v39`. Primero se había publicado sin
+subir `CACHE`, y por eso no salía el aviso «Nueva versión disponible» en la
+app instalada. **Regla:** subir `CACHE` en cada publicación, aunque solo cambie
+un `.html`, para que aparezca el aviso.
+
 ---
 
 ## Versión 2.24 — 11 de noviembre de 2026 · Estándares del MEN reforzados y foto del incendio
