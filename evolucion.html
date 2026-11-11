@@ -70,6 +70,7 @@
     <a href="#jirafas">🦒 Lamarck vs. Darwin</a>
     <a href="#seleccion">🦋 Simulación</a>
     <a href="#pinzones">🐦 Los pinzones</a>
+    <a href="#tipos-sel">⚖️ Tipos de selección</a>
     <a href="#variacion">🎲 Variación y deriva</a>
     <a href="#artificial">🌽 Selección artificial</a>
     <a href="#evidencias">🔎 Evidencias</a>
@@ -128,8 +129,28 @@
     <div class="dato">Cuando una población queda separada (por el mar, una cordillera o un río) y cada grupo evoluciona por su lado, con el tiempo pueden volverse <b>especies distintas</b>, que ya no se reproducen entre sí. Eso se llama <b>especiación</b>. En Colombia, la cordillera de los Andes separó poblaciones de ranas, aves y mariposas y por eso tenemos tantas especies.</div>
   </section>
 
+  <section class="sec" id="tipos-sel">
+    <h2><span class="n">05</span> Tipos de selección natural</h2>
+    <p class="lead">La selección natural no siempre empuja hacia un solo lado. Según qué individuos sobreviven y se reproducen más, la población cambia de formas distintas. Escoge un tipo y compara la población <b>antes</b> (gris) y <b>después</b> (color).</p>
+    <div class="lado">
+      <div class="fig"><svg id="ts-svg" viewBox="0 0 320 200" role="img" aria-label="Distribución de un rasgo en la población antes y después de la selección"></svg></div>
+      <div>
+        <div class="chips" role="group" aria-label="Tipo de selección" id="ts-b"><button type="button" class="chip on" data-ts="dir">➡️ Direccional</button><button type="button" class="chip" data-ts="est">🎯 Estabilizadora</button><button type="button" class="chip" data-ts="dis">↔️ Disruptiva</button><button type="button" class="chip" data-ts="sex">💃 Sexual</button></div>
+        <div class="det" id="ts-t" aria-live="polite" style="margin-top:10px"></div>
+      </div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="Si solo hay semillas muy duras y muy blandas, sobreviven mejor los pinzones de pico muy grande y los de pico muy pequeño: la población se parte en dos grupos. Eso es selección disruptiva.">
+      <div class="q">En una isla solo quedan semillas muy duras y semillas muy blandas. Los pinzones de pico mediano no comen bien ninguna. ¿Qué tipo de selección ocurre?</div>
+      <div class="ops"><button class="op" data-por="La direccional favorece solo un extremo; aquí ganan los dos extremos.">Direccional</button><button class="op" data-por="La estabilizadora favorece el promedio, y aquí el pico mediano es el que pierde.">Estabilizadora</button><button class="op">Disruptiva</button><button class="op" data-por="La selección sexual depende de conseguir pareja, no del alimento.">Sexual</button></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="Los bebés con un peso intermedio sobreviven mejor que los muy pequeños o los muy grandes: la selección favorece el promedio. Eso es selección estabilizadora.">
+      <div class="q">Los bebés que nacen con un peso intermedio sobreviven más que los de peso muy bajo o muy alto. ¿Qué tipo de selección es?</div>
+      <div class="ops"><button class="op">Estabilizadora</button><button class="op" data-por="La direccional favorece un extremo, por ejemplo siempre a los más grandes.">Direccional</button><button class="op" data-por="La disruptiva favorece los dos extremos, no el promedio.">Disruptiva</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="variacion">
-    <h2><span class="n">05</span> ¿De dónde sale la variación? Y el papel del azar</h2>
+    <h2><span class="n">06</span> ¿De dónde sale la variación? Y el papel del azar</h2>
     <p class="lead">La selección natural solo puede escoger entre variantes que ya existen. Esa <b>variabilidad genética</b> viene de tres fuentes: las <b>mutaciones</b> (cambios nuevos en el ADN), el <b>entrecruzamiento</b> en la meiosis y la <b>fecundación</b>, que junta al azar los genes de dos padres. Por eso los hermanos no son idénticos.</p>
     <div class="clave">Una población con mucha variabilidad genética tiene más posibilidades de que algunos individuos resistan un cambio del ambiente (una enfermedad, el calentamiento). Las especies con muy pocos individuos pierden variabilidad y quedan más expuestas a la extinción: por eso la conservación busca mantener poblaciones grandes y conectadas.</div>
     <h3 style="margin-top:18px">🎲 Simulación: la deriva genética</h3>
@@ -142,7 +163,7 @@
   </section>
 
   <section class="sec" id="artificial">
-    <h2><span class="n">06</span> Selección artificial: cuando el ser humano escoge</h2>
+    <h2><span class="n">07</span> Selección artificial: cuando el ser humano escoge</h2>
     <p class="lead">Desde hace 10 000 años los agricultores escogen las plantas y animales con las características que prefieren y solo esos se reproducen. Del <b>teosinte</b>, un pasto silvestre de México con mazorcas de 5 cm, salió el <b>maíz</b>. Haz tú la selección: en cada generación escoge las <b>3 mazorcas más grandes</b> para sembrar.</p>
     <div class="card">
       <div class="mazorcas" id="maz"></div>
@@ -160,7 +181,7 @@
   </section>
 
   <section class="sec" id="evidencias">
-    <h2><span class="n">07</span> Las evidencias de la evolución</h2>
+    <h2><span class="n">08</span> Las evidencias de la evolución</h2>
     <p class="lead">La evolución no es una simple opinión: muchas pruebas independientes llevan a la misma conclusión.</p>
     <div class="tabs"><button class="chip on" data-tab="ev-hom">🦴 Anatomía comparada</button><button class="chip" data-tab="ev-fos">🦖 Fósiles</button><button class="chip" data-tab="ev-mol">🧬 ADN</button><button class="chip" data-tab="ev-emb">🥚 Embriología</button></div>
     <div class="tab-p" id="ev-hom">
@@ -188,8 +209,21 @@
   </section>
 
   <section class="sec" id="origen">
-    <h2><span class="n">08</span> El origen del universo y de la vida</h2>
+    <h2><span class="n">09</span> El origen del universo y de la vida</h2>
     <p class="lead">Según la teoría del <b>Big Bang</b>, el universo empezó hace unos 13 800 millones de años; la Tierra se formó hace unos 4600 millones y la vida apareció hace unos 3800 millones. ¿Cómo surgió la vida? Hay varias explicaciones. Recórrelas.</p>
+    <div class="pasos" data-titulo="Del Big Bang a la Tierra">
+      <div class="paso" data-t="Big Bang"><h3>💥 El Big Bang</h3><p>Hace unos <b>13 800 millones de años</b>, todo el universo estaba en un estado muy caliente y denso, y empezó a expandirse. No fue una explosión en un lugar: es el espacio mismo el que se estira.</p></div>
+      <div class="paso" data-t="Galaxias"><h3>🌌 Evidencia 1: las galaxias se alejan</h3><p>En 1929 Edwin Hubble descubrió que las galaxias lejanas se alejan de nosotros, y más rápido cuanto más lejos están. Si hoy se separan, en el pasado estuvieron juntas.</p></div>
+      <div class="paso" data-t="Radiación"><h3>📡 Evidencia 2: el eco del Big Bang</h3><p>En 1965 Arno Penzias y Robert Wilson captaron un débil brillo de microondas que llega de todas las direcciones: la <b>radiación de fondo</b>, el calor que quedó del universo joven.</p></div>
+      <div class="paso" data-t="Estrellas"><h3>⭐ Las estrellas fabrican los elementos</h3><p>Al principio casi solo había hidrógeno y helio. Dentro de las estrellas se formaron el carbono, el oxígeno, el nitrógeno y el hierro de tu cuerpo: estás hecho de «polvo de estrellas».</p></div>
+      <div class="paso" data-t="La Tierra"><h3>🌍 Nace el Sistema Solar</h3><p>Hace unos <b>4600 millones de años</b>, una nube de gas y polvo formó el Sol y los planetas. La Tierra se enfrió, se formaron los océanos y, hace unos 3800 millones de años, apareció la vida.</p></div>
+    </div>
+    <div data-foto="v_hubble" data-pie="Campo ultraprofundo del Hubble: casi cada mancha es una galaxia con miles de millones de estrellas"></div>
+    <div class="chequeo" data-ok="1" data-exp="La radiación de fondo de microondas es el calor que quedó del universo joven, como predice la teoría del Big Bang. La otra gran evidencia es que las galaxias se alejan.">
+      <div class="q">¿Qué evidencia apoya la teoría del Big Bang?</div>
+      <div class="ops"><button class="op" data-por="Los fósiles cuentan la historia de la vida en la Tierra, no el origen del universo.">Los fósiles de dinosaurios.</button><button class="op">La radiación de fondo de microondas que llega de todas las direcciones.</button><button class="op" data-por="Los aminoácidos de los meteoritos se relacionan con la panspermia y el origen de la vida.">Los aminoácidos del meteorito Murchison.</button></div>
+    </div>
+    <h3 style="margin-top:18px">¿Y cómo empezó la vida?</h3>
     <div class="pasos" data-titulo="Teorías sobre el origen de la vida">
       <div class="paso" data-t="Creación"><h3>📜 Explicaciones religiosas y ancestrales</h3><p>Muchas religiones y los pueblos indígenas, como los kogui o los muiscas, tienen relatos sobre el origen de la vida. Son parte de la cultura y merecen respeto, pero no se pueden poner a prueba con experimentos: no son explicaciones científicas.</p></div>
       <div class="paso" data-t="Generación espontánea"><h3>🐁 Generación espontánea</h3><p>Desde Aristóteles se creyó que la vida salía sola de la materia: moscas de la carne, ratones del trigo. Francesco Redi (1668) y Louis Pasteur (1862) demostraron con experimentos que no es así.</p></div>
@@ -212,7 +246,7 @@
   </section>
 
   <section class="sec" id="extinciones">
-    <h2><span class="n">09</span> Las grandes extinciones: formula tu hipótesis</h2>
+    <h2><span class="n">10</span> Las grandes extinciones: formula tu hipótesis</h2>
     <p class="lead">Más del 99 % de las especies que han existido se extinguieron. Cinco veces desapareció más de la mitad de las especies en poco tiempo geológico. Los científicos proponen hipótesis y buscan pruebas para explicarlas.</p>
     <div class="tbl-wrap"><table class="t">
       <tr><th>Extinción</th><th>Hace (millones de años)</th><th>Causa más aceptada</th></tr>
@@ -241,7 +275,7 @@
   </section>
 
   <section class="sec" id="humana">
-    <h2><span class="n">10</span> La evolución humana</h2>
+    <h2><span class="n">11</span> La evolución humana</h2>
     <p class="lead">No venimos del chimpancé: los dos <b>compartimos un antepasado</b> que vivió en África hace unos 7 millones de años. Desde entonces aparecieron muchas especies de homínidos; hoy solo quedamos nosotros. Toca cada uno.</p>
     <div class="homi" id="homi"></div>
     <div class="card" id="homi-t" style="margin-top:10px" aria-live="polite"></div>
@@ -249,28 +283,33 @@
   </section>
 
   <section class="sec" id="endemicas">
-    <h2><span class="n">11</span> Especies endémicas e invasoras</h2>
+    <h2><span class="n">12</span> Especies endémicas e invasoras</h2>
     <p class="lead">Una especie <b>endémica</b> solo existe en un lugar del mundo: evolucionó allí y, si desaparece de allí, desaparece del planeta. Una especie <b>invasora</b> fue llevada por el ser humano a un lugar donde no tiene enemigos naturales y se multiplica sin control, desplazando a las nativas. Clasifica estos casos de Colombia.</p>
     <div class="card" id="clas-end"></div>
     <div class="dato">Las mutaciones y la selección pueden ayudar a una especie invasora a adaptarse muy rápido a su nuevo hogar. Las endémicas, en cambio, suelen tener poblaciones pequeñas y poca variabilidad: son de las más vulnerables al cambio climático.</div>
   </section>
 
   <section class="sec" id="tiempo">
-    <h2><span class="n">12</span> El año de la Tierra y las eras geológicas</h2>
+    <h2><span class="n">13</span> El año de la Tierra y las eras geológicas</h2>
     <p class="lead">La Tierra tiene unos <b>4600 millones de años</b>. Imagina que toda esa historia cupiera en <b>un solo año</b>: el 1 de enero se forma la Tierra y la medianoche del 31 de diciembre es hoy. Mueve el control.</p>
     <div class="card">
       <div class="anio-t" aria-hidden="true"><span style="background:#7b4bb7;flex:88">Precámbrico (hasta mediados de noviembre)</span><span style="background:#1774a6;flex:6.5">Paleo.</span><span style="background:#2e7d4f;flex:4">Meso.</span><span style="background:#c2410c;flex:1.5">C</span></div>
       <input type="range" id="anio" min="0" max="11" value="0" style="width:100%" aria-label="Momento de la historia">
       <div class="anio-ev" id="anio-ev" aria-live="polite" style="margin-top:12px"></div>
     </div>
-    <h3 style="margin-top:18px">Las eras geológicas y los cambios en los seres vivos</h3>
+    <h3 style="margin-top:18px">Las eras geológicas: clima y cambios en los seres vivos</h3>
     <div class="tbl-wrap"><table class="t">
-      <tr><th>Era</th><th>Hace (millones de años)</th><th>Vida</th><th>Novedades en órganos y sistemas</th></tr>
-      <tr><td><b>Precámbrico</b></td><td>4600 – 541</td><td>Bacterias, arqueas, primeras eucariotas y los primeros animales blandos.</td><td>Aparece la célula, la fotosíntesis, el núcleo y la pluricelularidad.</td></tr>
-      <tr><td><b>Paleozoico</b></td><td>541 – 252</td><td>Explosión cámbrica, peces, plantas terrestres, anfibios, primeros reptiles. Termina con la mayor extinción de la historia.</td><td>Esqueletos y conchas; mandíbulas; vasos conductores en las plantas; pulmones y patas en los tetrápodos; el huevo con cáscara de los reptiles.</td></tr>
-      <tr><td><b>Mesozoico</b></td><td>252 – 66</td><td>Dinosaurios, primeros mamíferos y aves, plantas con flores. Termina con el asteroide.</td><td>Plumas, sangre caliente, glándulas mamarias, flores y frutos.</td></tr>
-      <tr><td><b>Cenozoico</b></td><td>66 – hoy</td><td>Diversificación de mamíferos y aves; se levantan los Andes; aparecen los humanos.</td><td>Placenta muy desarrollada, cerebro grande, bipedalismo en los homínidos.</td></tr>
+      <tr><th>Era</th><th>Hace (millones de años)</th><th>Clima</th><th>Vida</th><th>Novedades en órganos y sistemas</th></tr>
+      <tr><td><b>Precámbrico</b></td><td>4600 – 541</td><td>Al principio casi sin oxígeno en el aire. Hubo glaciaciones que cubrieron casi todo el planeta («Tierra bola de nieve»).</td><td>Bacterias, arqueas, primeras eucariotas y los primeros animales blandos.</td><td>Aparece la célula, la fotosíntesis, el núcleo y la pluricelularidad.</td></tr>
+      <tr><td><b>Paleozoico</b></td><td>541 – 252</td><td>Mares cálidos. En el Carbonífero, clima cálido y húmedo, con mucho oxígeno y bosques pantanosos (de ellos viene el carbón). Al final, desiertos.</td><td>Explosión cámbrica, peces, plantas terrestres, anfibios, primeros reptiles. Termina con la mayor extinción de la historia.</td><td>Esqueletos y conchas; mandíbulas; vasos conductores en las plantas; pulmones y patas en los tetrápodos; el huevo con cáscara de los reptiles.</td></tr>
+      <tr><td><b>Mesozoico</b></td><td>252 – 66</td><td>Muy cálido, sin hielo en los polos y con el mar más alto que hoy.</td><td>Dinosaurios, primeros mamíferos y aves, plantas con flores. Termina con el asteroide.</td><td>Plumas, sangre caliente, glándulas mamarias, flores y frutos.</td></tr>
+      <tr><td><b>Cenozoico</b></td><td>66 – hoy</td><td>Se enfría poco a poco. En los últimos 2,6 millones de años, glaciaciones que bajaron los páramos y los glaciares de los Andes.</td><td>Diversificación de mamíferos y aves; se levantan los Andes; aparecen los humanos.</td><td>Placenta muy desarrollada, cerebro grande, bipedalismo en los homínidos.</td></tr>
     </table></div>
+    <div class="dato col">Durante las glaciaciones, los páramos de Colombia bajaron y se unieron entre montañas; al calentarse, quedaron aislados en las cumbres. Así, poblaciones de frailejones separadas evolucionaron por su lado: hoy hay más de 140 especies de <i>Espeletia</i>.</div>
+    <div class="chequeo" data-ok="0" data-exp="En el Carbonífero el aire tenía mucho más oxígeno que hoy. Los insectos respiran por tráqueas, que llevan el aire directo a las células: con más oxígeno podían ser mucho más grandes, como libélulas de 70 cm.">
+      <div class="q">En el Carbonífero el clima era cálido y húmedo y el aire tenía mucho oxígeno. ¿Qué rasgo de los seres vivos se relaciona con ese clima?</div>
+      <div class="ops"><button class="op">Insectos gigantes, como libélulas de 70 cm.</button><button class="op" data-por="El pelo grueso protege del frío, y el Carbonífero era cálido; además, aún no había mamíferos.">Mamíferos de pelo grueso.</button><button class="op" data-por="Las hojas en aguja ayudan contra el frío y la sequía, y el Carbonífero era cálido y húmedo.">Árboles de hojas en forma de aguja.</button></div>
+    </div>
     <div class="chequeo" data-ok="3" data-exp="Los seres humanos modernos aparecimos hace unos 300 000 años: en el año de la Tierra, ¡unos 34 minutos antes de la medianoche del 31 de diciembre!">
       <div class="q">En el «año de la Tierra», ¿cuándo aparecen los seres humanos?</div>
       <div class="ops"><button class="op" data-por="En marzo apenas aparecieron las primeras bacterias.">En marzo</button><button class="op" data-por="A mediados de diciembre todavía vivían los dinosaurios.">A mediados de diciembre</button><button class="op" data-por="Muy cerca, pero aún falta: el 30 de diciembre no había humanos.">El 30 de diciembre</button><button class="op">El 31 de diciembre, en la última hora</button></div>
@@ -279,7 +318,7 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="fotos-datos.js?v=5"></script>
+<script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
 <script src="bio.js?v=20"></script>
 <script>
@@ -530,6 +569,33 @@ var mil=document.getElementById('mil');
 var MOL=['Gases de la Tierra primitiva: metano, amoníaco, hidrógeno y vapor de agua. Todavía no hay moléculas orgánicas.','El agua se tiñe de rosado: empiezan a formarse moléculas pequeñas como el formaldehído y el cianuro de hidrógeno.','Aparecen los primeros <b>aminoácidos</b>: glicina y alanina.','Más aminoácidos: ácido aspártico y otros. El agua se pone café.','Ya hay una docena de aminoácidos distintos, de los que forman las proteínas.','Se acumulan más moléculas orgánicas; en experimentos posteriores también se formaron bases de los ácidos nucleicos.','La mezcla sigue cambiando, pero <b>no aparece ninguna célula</b>: falta organizar las moléculas.','Resultado de Miller y Urey (1953): con gases simples y energía se forman <b>moléculas de la vida</b>. El paso de moléculas a células sigue en investigación.'];
 function verMil(){var d=+mil.value;document.getElementById('mil-n').textContent=d+(d===1?' día':' días');document.getElementById('mil-t').innerHTML=MOL[d];if(d===7)BIO.marcarSeccion('origen');}
 mil.oninput=verMil;verMil();
+})();
+</script>
+<script>
+(function(){
+var TS={
+ dir:{x:'Resistencia a un insecticida',f:function(x){return g(x,.9,1);},t:'<h3>➡️ Selección direccional</h3><p>Sobreviven más los individuos de <b>un extremo</b>, y la curva se corre hacia ese lado. En Colombia, el mosquito <i>Aedes aegypti</i> se ha vuelto resistente a algunos insecticidas: los mosquitos más resistentes dejaron más crías.</p><p>Otros ejemplos: las bacterias resistentes a los antibióticos y las polillas oscuras de la simulación.</p>'},
+ est:{x:'Peso al nacer',f:function(x){return g(x,0,.55);},t:'<h3>🎯 Selección estabilizadora</h3><p>Sobreviven más los individuos del <b>promedio</b>, y los extremos desaparecen: la curva se hace más alta y angosta. Ejemplo: los bebés de peso intermedio sobreviven más que los muy pequeños o los muy grandes.</p><p>Es la más común: mantiene a la población bien adaptada a un ambiente que no cambia.</p>'},
+ dis:{x:'Tamaño del pico',f:function(x){return .5*g(x,-1.25,.5)+.5*g(x,1.25,.5);},t:'<h3>↔️ Selección disruptiva</h3><p>Sobreviven más los individuos de los <b>dos extremos</b>, y la curva se parte en dos picos. Ejemplo: en un pinzón africano (<i>Pyrenestes</i>) los de pico grande parten semillas duras y los de pico pequeño comen semillas blandas; a los de pico mediano les va mal.</p><p>Si los dos grupos dejan de cruzarse, pueden formar especies distintas.</p>'},
+ sex:{x:'Brillo del plumaje del macho',f:function(x){return g(x,.8,.9);},t:'<h3>💃 Selección sexual</h3><p>Ganan los rasgos que ayudan a <b>conseguir pareja</b>, aunque sean un riesgo frente a los depredadores. El macho del gallito de roca andino, que vive en las montañas de Colombia, es de un naranja brillante y baila en grupo: las hembras escogen a los más llamativos.</p><p>Por eso en muchas aves el macho y la hembra se ven muy distintos.</p>'}
+};
+function g(x,m,s){return Math.exp(-Math.pow(x-m,2)/(2*s*s))/s;}
+var sv=document.getElementById('ts-svg'),tt=document.getElementById('ts-t');
+function curva(f,max){var p='M20 170';for(var i=0;i<=140;i++){var x=-3+6*i/140,y=f(x);p+=' L'+(20+280*i/140).toFixed(1)+' '+(170-140*y/max).toFixed(1);}return p+' L300 170 Z';}
+function ver(k){var T=TS[k],a=function(x){return g(x,0,1);},mx=0;
+  for(var i=0;i<=140;i++){var x=-3+6*i/140;mx=Math.max(mx,a(x),T.f(x));}
+  sv.innerHTML='<rect x="0" y="0" width="320" height="200" rx="12" fill="#f8fafc"/>'+
+   '<path d="'+curva(a,mx)+'" fill="#cbd5e1" opacity=".8"/><path d="'+curva(T.f,mx)+'" fill="#2e7d4f" opacity=".55" stroke="#14532d" stroke-width="2"/>'+
+   '<line x1="20" y1="170" x2="300" y2="170" stroke="#334155" stroke-width="2"/>'+
+   '<text x="160" y="190" text-anchor="middle" style="font:700 11px Outfit" fill="#334155">'+T.x+' →</text>'+
+   '<text x="14" y="95" text-anchor="middle" transform="rotate(-90 14 95)" style="font:700 10px Outfit" fill="#334155">N.º de individuos</text>'+
+   '<rect x="200" y="12" width="12" height="10" fill="#cbd5e1"/><text x="216" y="21" style="font:600 10px Outfit" fill="#334155">antes</text>'+
+   '<rect x="252" y="12" width="12" height="10" fill="#2e7d4f" opacity=".7"/><text x="268" y="21" style="font:600 10px Outfit" fill="#334155">después</text>';
+  tt.innerHTML=T.t;
+  document.querySelectorAll('#ts-b .chip').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-ts')===k);});
+}
+document.querySelectorAll('#ts-b .chip').forEach(function(b){b.onclick=function(){ver(b.getAttribute('data-ts'));};});
+ver('dir');
 })();
 </script>
 <script src="narracion.js?v=14"></script>

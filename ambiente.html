@@ -148,7 +148,7 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="fotos-datos.js?v=5"></script>
+<script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
 <script src="bio.js?v=20"></script>
 <script>
@@ -207,7 +207,7 @@ var RC={
  'Amazonía':['🌳','Sequías récord bajan el caudal de los ríos y aíslan a las comunidades que dependen de ellos para moverse y pescar. Si la deforestación continúa, partes de la selva podrían convertirse en sabana.','Pueblos indígenas de la selva, que además son quienes mejor la conservan.'],
  'Insular':['🐠','Blanqueamiento de corales y huracanes más fuertes, como Iota (2020) en Providencia. El agua dulce de las islas es escasa y se contamina con agua de mar.','Las comunidades raizales de San Andrés y Providencia.']
 };
-var RF={Andina:[['a_glaciar','Lo que queda del glaciar Conejeras, en el Nevado Santa Isabel (2010)'],['a_glaciar_graf','Cómo se ha reducido el área del glaciar del Santa Isabel']],Caribe:[['a_guajira','Suelo agrietado por la sequía en La Guajira']],'Pacífica':[['a_inund','Familias que salen de su casa en balsa durante una inundación en Colombia']],'Orinoquía':[['a_incendio','Incendio forestal en Colombia']],'Amazonía':[['a_defor','Selva amazónica talada y convertida en potreros']],Insular:[['a_blanq','Corales blanqueados por el agua caliente']]};
+var RF={Andina:[['a_glaciar','Lo que queda del glaciar Conejeras, en el Nevado Santa Isabel (2010)'],['a_glaciar_graf','Cómo se ha reducido el área del glaciar del Santa Isabel']],Caribe:[['a_guajira','Suelo agrietado por la sequía en La Guajira']],'Pacífica':[['a_inund','Familias que salen de su casa en balsa durante una inundación en Colombia']],'Orinoquía':[['a_incendio','Un incendio forestal como los que aumentan con las sequías en la Orinoquía (la foto es de Chile)']],'Amazonía':[['a_defor','Selva amazónica talada y convertida en potreros']],Insular:[['a_blanq','Corales blanqueados por el agua caliente']]};
 var rc=document.getElementById('regc'),vistRC={};
 rc.innerHTML=Object.keys(RC).map(function(r){return '<button class="chip" data-r="'+r+'">'+RC[r][0]+' '+r+'</button>';}).join('');
 rc.querySelectorAll('[data-r]').forEach(function(b){b.onclick=function(){var r=b.getAttribute('data-r');vistRC[r]=1;rc.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b);});

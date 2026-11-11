@@ -68,6 +68,9 @@
 .ruta .pr .bt{display:flex;gap:8px;margin-top:8px}
 .ruta .pr.resp{opacity:.7}
 .ruta .res{background:var(--cn-ok-l);border:2px solid var(--cn-ok);border-radius:12px;padding:12px;font-size:1.05rem;animation:aparece .3s ease}
+.lev{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:16px;align-items:center;margin-top:10px}
+.lev-fig svg{width:100%;max-width:200px;display:block;margin:auto}
+@media(max-width:560px){.lev{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -90,6 +93,7 @@
     <a href="#reinos">👑 Los reinos</a>
     <a href="#variedades">🐕 Variedades</a>
     <a href="#microbios">🦠 Microbios útiles</a>
+    <a href="#grupos">🌿 Dentro de cada reino</a>
     <a href="#clave">🔑 Clave dicotómica</a>
     <a href="#clasifica">🎯 Clasifica</a>
   </nav>
@@ -214,14 +218,68 @@
       <div class="card"><h3>🍞 En la cocina colombiana</h3><p>Las levaduras (<i>Saccharomyces</i>) hacen crecer el pan y fermentan la chicha y el guarapo. Las bacterias lácticas convierten la leche en yogur, kumis y queso. Las bacterias del ácido acético producen el vinagre.</p></div>
       <div class="card"><h3>♨️ Amigos de lugares extremos</h3><p>Microorganismos de aguas termales tienen enzimas que no se dañan con el calor. La bacteria <i>Thermus aquaticus</i> dio la enzima que copia el ADN en las pruebas de laboratorio (PCR), y enzimas de otros microbios de lugares extremos se usan en detergentes y en pruebas genéticas.</p></div>
     </div>
+    <h3 style="margin-top:20px">🧪 Laboratorio virtual: la levadura y el pan</h3>
+    <p>Una panadería quiere saber en qué condiciones la levadura (<i>Saccharomyces cerevisiae</i>) produce más gas. La levadura fermenta el azúcar y suelta <b>CO₂</b>: ese gas es el que esponja el pan. En el experimento, el gas infla un globo puesto en la boca de una botella con agua tibia, azúcar y levadura.</p>
+    <div class="card lev">
+      <div class="lev-fig"><svg id="lev-svg" viewBox="0 0 200 250" role="img" aria-label="Botella con levadura y un globo en la boca"></svg></div>
+      <div>
+        <label for="lev-az" style="font-weight:800">Azúcar: <span id="lev-az-v"></span></label><input type="range" id="lev-az" min="0" max="20" step="5" value="10" style="width:100%">
+        <label for="lev-t" style="font-weight:800;display:block;margin-top:8px">Temperatura del agua: <span id="lev-t-v"></span></label><input type="range" id="lev-t" min="5" max="70" step="5" value="35" style="width:100%">
+        <p style="font-size:.88rem;color:var(--cn-dim);margin-top:6px">Se mantienen iguales (variables controladas): 1 sobre de levadura, 200 mL de agua, el mismo globo y 30 minutos de espera.</p>
+        <div class="ctrl"><button type="button" class="cn-btn cn-btn--primary" id="lev-go">⏱️ Esperar 30 minutos</button><button type="button" class="cn-btn" id="lev-rs">🔄 Borrar tabla</button></div>
+        <p id="lev-msg" aria-live="polite" style="margin-top:8px;min-height:2.6em"></p>
+      </div>
+    </div>
+    <div class="tbl-wrap"><table class="t" id="lev-tab"><tr><th>Ensayo</th><th>Azúcar (g)</th><th>Temperatura (°C)</th><th>CO₂ en el globo (mL)</th></tr></table></div>
+    <div class="dato">Para un buen experimento cambia <b>una sola variable</b> a la vez. La <b>variable independiente</b> es la que tú cambias (azúcar o temperatura) y la <b>dependiente</b> es la que mides (el gas del globo). Escribe tu hipótesis antes de empezar: por ejemplo, «si el agua está tibia, se produce más gas que si está fría».</div>
+    <div class="chequeo" data-ok="2" data-exp="Por encima de unos 50 °C las proteínas de la levadura se dañan y la levadura muere: deja de fermentar y el globo no se infla. Por eso la masa del pan se deja en un lugar tibio, no caliente.">
+      <div class="q">Con agua a 70 °C el globo casi no se infla. ¿Por qué?</div>
+      <div class="ops"><button class="op" data-por="La levadura sí puede usar el azúcar; el problema es la temperatura.">Porque la levadura no come azúcar.</button><button class="op" data-por="El calor hace que los gases se expandan un poco, pero aquí casi no se produjo gas.">Porque el calor desinfla el globo.</button><button class="op">Porque el calor mató a la levadura y no hubo fermentación.</button></div>
+    </div>
     <div class="chequeo" data-ok="0" data-exp="Las enzimas de microorganismos que viven en aguas muy calientes no se dañan con el calor: por eso sirven en procesos industriales y en la PCR, que calienta el ADN a más de 90 °C.">
       <div class="q">¿Por qué son tan útiles las enzimas de microorganismos de aguas termales?</div>
       <div class="ops"><button class="op">Porque funcionan a temperaturas muy altas sin dañarse.</button><button class="op" data-por="Muchas sí cuestan menos de producir, pero esa no es su ventaja especial.">Porque son las más baratas.</button><button class="op" data-por="No tienen relación con el color.">Porque tienen colores llamativos.</button></div>
     </div>
   </section>
 
+  <section class="sec" id="grupos">
+    <h2><span class="n">08</span> Dentro de cada reino: plantas y animales</h2>
+    <p class="lead">Cada reino se divide en grupos más pequeños. Para las <b>plantas</b> se pregunta si tienen vasos conductores, semillas y flores. Para los <b>animales</b>, si tienen columna vertebral y, en los vertebrados, cómo son su piel, su respiración y su reproducción.</p>
+    <div class="tabs"><button class="chip on" data-tab="gr-pl">🌿 Plantas</button><button class="chip" data-tab="gr-an">🐾 Vertebrados</button></div>
+    <div class="tab-p on" id="gr-pl">
+      <div class="grid g2">
+        <div class="card"><h3>🍀 Briofitos (musgos)</h3><p>Sin vasos conductores, sin semillas: se reproducen por esporas y necesitan humedad. Son pequeños. El musgo <i>Sphagnum</i> del páramo guarda agua como una esponja.</p></div>
+        <div class="card"><h3>🌿 Helechos</h3><p>Con vasos conductores, pero sin semillas: esporas en el envés de las hojas. Los helechos arborescentes de los bosques andinos pueden medir más de 10 metros.</p></div>
+        <div class="card"><h3>🌲 Gimnospermas</h3><p>Con vasos y <b>semillas desnudas</b>, en conos, sin flores ni frutos. En Colombia: el pino romerón y el pino colombiano (<i>Podocarpus</i>), y las zamias.</p></div>
+        <div class="card"><h3>🌸 Angiospermas</h3><p>Con vasos, <b>flores</b> y semillas protegidas dentro de un <b>fruto</b>. Son la mayoría de las plantas: frailejón, orquídeas, palma de cera, café, maíz.</p></div>
+      </div>
+      <h3 style="margin-top:14px">🎯 ¿A qué grupo pertenece?</h3>
+      <div class="card" id="clas-plantas"></div>
+    </div>
+    <div class="tab-p" id="gr-an">
+      <div class="grid g2">
+        <div class="card"><h3>🐟 Peces</h3><p>Viven en el agua, respiran por branquias, tienen escamas y aletas. Casi todos ponen huevos.</p></div>
+        <div class="card"><h3>🐸 Anfibios</h3><p>Piel húmeda y sin escamas; las larvas respiran por branquias en el agua y los adultos por pulmones y piel.</p></div>
+        <div class="card"><h3>🐊 Reptiles</h3><p>Piel seca con escamas, pulmones y huevos con cáscara: pueden vivir lejos del agua.</p></div>
+        <div class="card"><h3>🦅 Aves</h3><p>Plumas, pico sin dientes, huesos huecos, sangre caliente y huevos con cáscara dura.</p></div>
+        <div class="card"><h3>🐆 Mamíferos</h3><p>Pelo, glándulas mamarias que dan leche y sangre caliente. Casi todos tienen crías vivas.</p></div>
+        <div class="card"><h3>🐌 ¿Y los invertebrados?</h3><p>Más del 95 % de los animales no tiene columna: artrópodos (insectos, arañas, cangrejos), moluscos, anélidos (lombriz), cnidarios (corales) y esponjas.</p></div>
+      </div>
+      <h3 style="margin-top:14px">🎯 ¿A qué clase de vertebrado pertenece?</h3>
+      <div class="card" id="clas-vert"></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="El murciélago tiene pelo, glándulas mamarias y crías vivas que toman leche: es un mamífero. Volar no define a un grupo, porque también vuelan insectos y aves.">
+      <div class="q">El murciélago vuela. ¿Por qué es un mamífero y no un ave?</div>
+      <div class="ops"><button class="op" data-por="Hay aves que no vuelan y mamíferos que sí: volar no define a ningún grupo.">Porque vuela de noche.</button><button class="op">Porque tiene pelo y sus crías toman leche.</button><button class="op" data-por="Los murciélagos tienen sangre caliente, igual que las aves; eso no los separa.">Porque tiene sangre fría.</button></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="El helecho tiene vasos conductores pero no semillas: se reproduce por esporas. Las semillas aparecen en las gimnospermas y las angiospermas.">
+      <div class="q">¿Qué tiene un helecho que no tiene un musgo?</div>
+      <div class="ops"><button class="op" data-por="Ni los helechos ni los musgos tienen semillas: los dos usan esporas.">Semillas</button><button class="op" data-por="Los helechos no tienen flores: las flores son de las angiospermas.">Flores</button><button class="op">Vasos conductores</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="clave">
-    <h2><span class="n">08</span> Clave dicotómica: clasifica como un científico</h2>
+    <h2><span class="n">09</span> Clave dicotómica: clasifica como un científico</h2>
     <p class="lead">Una <b>clave dicotómica</b> hace preguntas de dos opciones (sí o no). Cada respuesta te lleva a otra pregunta, hasta llegar al grupo. Escoge un organismo, lee su ficha y responde.</p>
     <div class="clave-d">
       <div><div class="org-sel" id="org-sel"></div><div class="card" id="org-ficha" style="margin-top:12px" aria-live="polite"></div></div>
@@ -230,7 +288,7 @@
   </section>
 
   <section class="sec" id="clasifica">
-    <h2><span class="n">09</span> Reto: ¿a qué reino pertenece?</h2>
+    <h2><span class="n">10</span> Reto: ¿a qué reino pertenece?</h2>
     <p class="lead">Clasifica con el modelo que escogió tu docente (puedes cambiarlo aquí): <b>5 reinos</b> (Whittaker), <b>6 reinos</b> (Monera dividido en eubacterias y arqueas) o <b>7 reinos</b> (además, Protista dividido en Protozoa y Chromista). Luego lleva cada organismo a su reino: toca la ficha y después la caja.</p>
     <div class="clasif-ctrl" style="margin-bottom:10px"></div>
     <div class="card" id="clas-reinos"></div>
@@ -238,7 +296,7 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="fotos-datos.js?v=5"></script>
+<script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
 <script src="bio.js?v=20"></script>
 <script>
@@ -495,9 +553,46 @@ reto(5);
 <script src="text-zoom.js?v=13"></script>
 <script>
 (function(){
+(function(){ // Laboratorio de la levadura
+  var az=document.getElementById('lev-az'),te=document.getElementById('lev-t'),sv=document.getElementById('lev-svg'),tab=document.getElementById('lev-tab'),msg=document.getElementById('lev-msg'),n=0,tok=0;
+  function gas(a,t){var fa=(a+.5)/(a+4.5),ft=t>=55?0:t>50?(55-t)/5*.35:Math.max(0,1-Math.pow((t-35)/22,2));return Math.round(260*fa*ft);}
+  function dib(v){var r=8+Math.sqrt(v)*2.2;
+    sv.innerHTML='<rect x="0" y="0" width="200" height="250" rx="12" fill="#f8fafc"/>'+
+     '<path d="M70 120 L70 210 Q70 222 82 222 L118 222 Q130 222 130 210 L130 120 Q130 100 112 92 L112 78 L88 78 L88 92 Q70 100 70 120 Z" fill="#e0f2fe" stroke="#0369a1" stroke-width="2.5"/>'+
+     '<rect x="73" y="150" width="54" height="68" rx="8" fill="#fde68a" opacity=".85"/>'+
+     '<circle cx="90" cy="175" r="2.5" fill="#a16207"/><circle cx="108" cy="190" r="2.5" fill="#a16207"/><circle cx="98" cy="205" r="2.5" fill="#a16207"/><circle cx="114" cy="168" r="2" fill="#a16207"/>'+
+     '<ellipse cx="100" cy="'+(76-r)+'" rx="'+(r*.85)+'" ry="'+r+'" fill="#f43f5e" opacity=".88"/><rect x="92" y="70" width="16" height="10" rx="3" fill="#be123c"/>'+
+     '<text x="100" y="240" text-anchor="middle" style="font:700 10px Outfit" fill="#0c4a6e">agua + azúcar + levadura</text>';}
+  function eti(){document.getElementById('lev-az-v').textContent=az.value+' g';document.getElementById('lev-t-v').textContent=te.value+' °C';}
+  az.oninput=eti;te.oninput=eti;eti();dib(0);
+  document.getElementById('lev-go').onclick=function(){var a=+az.value,t=+te.value,v=gas(a,t),k=++tok,t0=null;
+    msg.textContent='Esperando…';
+    (function cuadro(ts){if(k!==tok)return;if(t0===null)t0=ts;var u=Math.min(1,(ts-t0)/1400);dib(v*u);if(u<1){requestAnimationFrame(cuadro);return;}
+      n++;var tr=document.createElement('tr');tr.innerHTML='<td>'+n+'</td><td>'+a+'</td><td>'+t+'</td><td><b>'+v+'</b></td>';tab.appendChild(tr);
+      msg.textContent=t>=55?'El globo casi no se infló: a esa temperatura la levadura muere.':t<15?'Muy poco gas: con el frío la levadura trabaja muy despacio.':a===0?'Poco gas: sin azúcar, la levadura solo tiene el poco alimento que trae la masa.':'Se produjeron '+v+' mL de CO₂. Compara con otros ensayos cambiando una sola variable.';
+      if(n>=3)BIO.marcarSeccion('microbios');})(performance.now());};
+  document.getElementById('lev-rs').onclick=function(){tok++;n=0;tab.querySelectorAll('tr:not(:first-child)').forEach(function(r){r.remove();});dib(0);msg.textContent='';};
+})();
 BIO.clasificar(document.getElementById('clas-mic'),{
   cajas:[{id:'ali',titulo:'🍞 Alimentos'},{id:'med',titulo:'💊 Medicina'},{id:'amb',titulo:'🌱 Ambiente'},{id:'ind',titulo:'🏭 Industria y laboratorio'}],
   fichas:[{t:'Levadura que hace crecer el pan',caja:'ali'},{t:'Bacterias que hacen el yogur y el kumis',caja:'ali'},{t:'Hongo que produce penicilina',caja:'med'},{t:'Bacteria con el gen de la insulina humana',caja:'med'},{t:'Bacterias que limpian derrames de petróleo',caja:'amb',pista:'Se llama biorremediación.'},{t:'Microbios que hacen compost',caja:'amb'},{t:'Bacteria de aguas termales usada en la PCR',caja:'ind'},{t:'Enzimas de microbios extremófilos en detergentes',caja:'ind',pista:'Funcionan aunque el agua esté caliente.'}]});
+})();
+</script>
+<script>
+(function(){
+BIO.clasificar(document.getElementById('clas-plantas'),{
+  cajas:[{id:'bri',titulo:'🍀 Briofitos'},{id:'hel',titulo:'🌿 Helechos'},{id:'gim',titulo:'🌲 Gimnospermas'},{id:'ang',titulo:'🌸 Angiospermas'}],
+  fichas:[{t:'Musgo del páramo (Sphagnum)',caja:'bri',exp:'no tiene vasos ni semillas.'},{t:'Hepática de las piedras húmedas',caja:'bri',exp:'es un briofito: sin vasos ni semillas.',pista:'Es pequeña, plana y sin vasos.'},
+   {t:'Helecho arborescente',caja:'hel',exp:'tiene vasos, pero se reproduce por esporas.'},{t:'Cola de caballo (Equisetum)',caja:'hel',exp:'tiene vasos y esporas, sin semillas: va con los helechos.',pista:'Se reproduce por esporas, no por semillas.'},
+   {t:'Pino romerón',caja:'gim',exp:'tiene semillas desnudas en conos.'},{t:'Zamia',caja:'gim',exp:'tiene semillas en conos, sin flores ni frutos.',pista:'Parece una palma, pero sus semillas van en conos.'},
+   {t:'Frailejón',caja:'ang',exp:'tiene flores amarillas y frutos.'},{t:'Orquídea Cattleya',caja:'ang',exp:'tiene flores: es una angiosperma.'},{t:'Palma de cera',caja:'ang',exp:'tiene flores y frutos, aunque no los veas desde abajo.',pista:'Da flores y frutos en racimos.'}]});
+BIO.clasificar(document.getElementById('clas-vert'),{
+  cajas:[{id:'pez',titulo:'🐟 Peces'},{id:'anf',titulo:'🐸 Anfibios'},{id:'rep',titulo:'🐊 Reptiles'},{id:'ave',titulo:'🦅 Aves'},{id:'mam',titulo:'🐆 Mamíferos'}],
+  fichas:[{t:'Bagre del Magdalena',caja:'pez',exp:'respira por branquias y tiene aletas.'},{t:'Tiburón ballena',caja:'pez',exp:'aunque es enorme, respira por branquias: es un pez.',pista:'Respira por branquias.'},
+   {t:'Rana dorada',caja:'anf',exp:'tiene piel húmeda y sin escamas.'},{t:'Salamandra',caja:'anf',exp:'piel húmeda y larvas en el agua: es un anfibio.',pista:'Parece un lagarto, pero su piel es húmeda y sin escamas.'},
+   {t:'Caimán del Orinoco',caja:'rep',exp:'tiene escamas y huevos con cáscara.'},{t:'Tortuga carey',caja:'rep',exp:'tiene escamas y pone huevos en la playa.'},
+   {t:'Cóndor de los Andes',caja:'ave',exp:'tiene plumas y pico.'},{t:'Colibrí',caja:'ave',exp:'tiene plumas: es un ave.'},
+   {t:'Murciélago',caja:'mam',exp:'tiene pelo y sus crías toman leche.',pista:'Vuela, pero tiene pelo.'},{t:'Delfín rosado',caja:'mam',exp:'respira por pulmones y amamanta a sus crías.',pista:'Vive en el agua, pero respira aire y da leche.'}]});
 })();
 </script>
 <script src="narracion.js?v=14"></script>

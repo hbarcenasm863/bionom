@@ -6,6 +6,60 @@
 
 ---
 
+## Versión 2.24 — 11 de noviembre de 2026 · Estándares del MEN reforzados y foto del incendio
+
+**Contexto.** De lo que quedó para decidir en la versión 2.23, el docente
+escogió los dos primeros puntos: reforzar los cinco estándares del MEN que la
+auditoría v2 encontró flojos y cambiar la foto del incendio forestal, en la
+que casi no se veía el fuego.
+
+**`evolucion.html`.**
+- Sección nueva **«Tipos de selección natural»** (10.°–11.°), con gráfica de
+  antes y después y dos chequeos:
+  - direccional: *Aedes aegypti* resistente a insecticidas;
+  - estabilizadora: peso al nacer;
+  - disruptiva: pinzón *Pyrenestes*;
+  - sexual: gallito de roca andino.
+- **«Del Big Bang a la Tierra»** (6.°–7.°), en 5 pasos: expansión, Hubble
+  (1929), radiación de fondo (1965), elementos fabricados en las estrellas y
+  formación del Sistema Solar. Incluye foto del campo ultraprofundo del
+  Hubble con cita APA y un chequeo.
+- **Clima en las eras geológicas** (8.°–9.°): columna «Clima» en la tabla,
+  dato de los páramos en las glaciaciones (más de 140 especies de
+  *Espeletia*) y chequeo del Carbonífero (insectos gigantes por el oxígeno).
+
+**`reinos.html`.**
+- Sección nueva **«Dentro de cada reino: plantas y animales»** (8.°–9.°),
+  con pestañas, un clasificador de 9 plantas, otro de 10 vertebrados y dos
+  chequeos:
+  - plantas: briofitos, helechos, gimnospermas y angiospermas;
+  - las cinco clases de vertebrados y los invertebrados.
+- **Laboratorio virtual de la levadura** (10.°–11.°): azúcar y temperatura
+  como variables, globo animado, tabla de resultados, variables controladas,
+  hipótesis y un chequeo.
+
+**`ecosistemas.html`.** Chequeo de la segunda ley de la termodinámica, con el
+chigüiro y el jaguar.
+
+**Foto del incendio.** `a_incendio` ahora es una foto con llamas visibles
+(Trincado, P., Pirque, Chile, CC BY 2.0). El pie aclara que la foto es de
+Chile.
+
+**`banco.js`.** 12 preguntas nuevas: 7 de evolución y 5 de reinos.
+**`MATRIZ_MEN.md`.** Tabla de actualización con dónde se trabaja cada estándar
+reforzado.
+
+**Pruebas.** Con Playwright en computador y en Pixel 7: las 15 páginas sin
+errores ni desbordes. Funcionan la gráfica de selección, los clasificadores y
+la levadura (a 35 °C da 188 mL y a 70 °C, 0).
+
+**Versiones.** `fotos-datos.js?v=6`, `banco.js?v=18`, `sw.js` → `bionom-v38`.
+
+**Pendiente.** El crucigrama del juego en el celular con palabras largas: el
+cambio va en `retos.js`, que es compartido con ChromaNom e IonNom.
+
+---
+
 ## Versión 2.23 — 11 de noviembre de 2026 · Auditoría experta (ciencia, MEN, Mayer) y revisión técnica y de UI/UX
 
 **Contexto.** El docente pidió dos revisiones a fondo con agentes: una

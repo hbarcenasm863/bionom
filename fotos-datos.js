@@ -841,16 +841,16 @@ window.FOTOS_DATOS={
 "h": 584
 },
 "a_incendio": {
-"titulo": "Incendio forestal en Colombia",
-"autor": "CristianoRonaldoPremiumSK",
+"titulo": "Incendio forestal en Pirque, Santiago de Chile",
+"autor": "Trincado, P.",
 "anio": "s. f.",
-"lic": "CC BY-SA 4.0",
-"licUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+"lic": "CC BY 2.0",
+"licUrl": "https://creativecommons.org/licenses/by/2.0/deed.es",
 "fuente": "Wikimedia Commons",
-"url": "https://commons.wikimedia.org/w/index.php?curid=138206148",
+"url": "https://commons.wikimedia.org/w/index.php?curid=55391041",
 "tipo": "Fotografía",
-"w": 671,
-"h": 800
+"w": 800,
+"h": 535
 },
 "a_defor": {
 "titulo": "Amazon 2",
@@ -1547,5 +1547,17 @@ window.FOTOS_DATOS={
 "tipo": "Fotografía",
 "w": 800,
 "h": 534
+},
+"v_hubble": {
+"autor": "ESO/MUSE HUDF collaboration",
+"titulo": "The Hubble Ultra Deep Field seen with MUSE [Campo ultraprofundo del Hubble]",
+"anio": "s. f.",
+"lic": "CC BY 4.0",
+"licUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+"url": "https://commons.wikimedia.org/w/index.php?curid=64474146",
+"fuente": "Wikimedia Commons",
+"tipo": "Fotografía",
+"w": 791,
+"h": 800
 }
 };

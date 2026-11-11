@@ -150,3 +150,18 @@ Estas acciones atraviesan todos los grados. BioNom las trabaja así:
 Con la versión 2.16 todos los estándares de biología, salud y ambiente de sexto
 a undécimo tienen al menos una sección interactiva, chequeos y preguntas en el
 Juego y en el panel docente.
+
+
+## Actualización de la versión 2.24 (11-11-2026)
+
+La auditoría v2 (`AUDITORIA_2026-11-v2.md`) encontró cinco estándares flojos.
+Ya quedaron reforzados:
+
+| Grado | Estándar | Dónde se trabaja ahora |
+|---|---|---|
+| 6.°–7.° | Explico el origen del universo y de la vida a partir de varias teorías. | `evolucion.html#origen`: pasos «Del Big Bang a la Tierra» (expansión, galaxias que se alejan, radiación de fondo, elementos fabricados en las estrellas, formación del Sistema Solar), foto del campo ultraprofundo del Hubble y chequeo. |
+| 8.°–9.° | Clasifico seres vivos en diversos grupos taxonómicos (plantas, animales, microorganismos…). | `reinos.html#grupos`: «Dentro de cada reino», con briofitos, helechos, gimnospermas y angiospermas, las cinco clases de vertebrados, dos clasificadores y dos chequeos. |
+| 8.°–9.° | Establezco relaciones entre el clima en las diferentes eras geológicas y las adaptaciones de los seres vivos. | `evolucion.html#tiempo`: columna «Clima» en la tabla de eras, dato de los páramos en las glaciaciones y chequeo del Carbonífero (insectos gigantes por el oxígeno). |
+| 10.°–11.° | Comparo casos en especies actuales que ilustren diferentes acciones de la selección natural. | `evolucion.html#tipos-sel`: selección direccional, estabilizadora, disruptiva y sexual, con gráfica de antes y después y dos chequeos. |
+| 10.°–11.° | Verifico la utilidad de microorganismos en la industria alimenticia. | `reinos.html#microbios`: laboratorio virtual de la levadura (azúcar y temperatura como variables, tabla de resultados) y chequeo. |
+| 10.°–11.° | Busco ejemplos de principios termodinámicos en algunos ecosistemas. | `ecosistemas.html#energia`: chequeo nuevo de la segunda ley con el chigüiro y el jaguar. |
