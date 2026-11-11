@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=14">
+<link rel="stylesheet" href="bio.css?v=15">
 <style>
 .mapa-co{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
 @media(max-width:860px){.mapa-co{grid-template-columns:1fr}}
@@ -69,6 +69,8 @@
     <a class="nivel-chip" href="index.html">🗺️ Niveles: ecosistema → bioma</a>
     <a class="nivel-chip" href="ecosistemas.html">🌳 Antes: ¿qué es un ecosistema?</a>
   </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Los seres vivos de un lugar más su ambiente físico y sus relaciones.">ecosistema</span><span class="term" data-def="Zona del país con relieve, clima y ecosistemas parecidos.">región natural</span><span class="term" data-def="Franja de altura con un clima parecido: cálido, templado, frío, páramo o nival.">piso térmico</span><span class="term" data-def="Especie que solo vive en un lugar del mundo.">especie endémica</span><span class="term" data-def="Especie con riesgo de extinguirse, según las categorías de la UICN.">especie amenazada</span></div></div>
+
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#mapa">🗺️ Mapa interactivo</a>
@@ -108,6 +110,10 @@
       </div>
     </div>
     <div class="dato col">Bogotá está a unos <b>2600 m</b> y tiene una temperatura media de 14 °C; Girardot, a solo 130 km, está a 290 m y tiene 28 °C. ¡14 grados de diferencia solo por la altura!</div>
+    <div class="chequeo" data-ok="1" data-exp="Se sube unos 3000 m: la temperatura baja unos 6 °C por cada 1000 m, así que baja unos 18 °C (28 − 18 ≈ 10 °C).">
+      <div class="q">Sales de Girardot (290 m, 28 °C) y subes a un páramo a unos 3300 m. ¿Qué temperatura media esperas allá?</div>
+      <div class="ops"><button class="op" data-por="Al subir la temperatura baja: unos 6 °C por cada 1000 m.">Unos 28 °C, igual que abajo.</button><button class="op">Unos 10 °C.</button><button class="op" data-por="La distancia al Sol casi no cambia; lo que cuenta es que el aire de arriba es más frío.">Unos 40 °C, porque se está más cerca del Sol.</button></div>
+    </div>
   </section>
 
   <section class="sec" id="amenazadas">
@@ -125,6 +131,10 @@
       <div class="card"><h3>🔬 Investigación y monitoreo</h3><p>Contar cuántos individuos quedan, estudiar su genética y criar en cautiverio para reintroducir, como se hace con el caimán del Orinoco.</p></div>
       <div class="card"><h3>🤝 Comunidades</h3><p>Las comunidades indígenas, afro y campesinas que viven en los territorios son las mejores guardianas cuando participan y se benefician de la conservación.</p></div>
     </div>
+    <div class="chequeo" data-ok="2" data-exp="Un área protegida cuida el ecosistema completo: el alimento, el agua y el refugio de cientos de especies a la vez.">
+      <div class="q">¿Qué estrategia protege a más especies al mismo tiempo?</div>
+      <div class="ops"><button class="op" data-por="Ayuda a esa especie, pero no a su ecosistema ni a las demás.">Criar una sola especie en un zoológico.</button><button class="op" data-por="Eso alimenta el tráfico de fauna, una de las causas de la amenaza.">Comprar animales silvestres para cuidarlos en casa.</button><button class="op">Proteger un ecosistema completo con un área protegida.</button></div>
+    </div>
   </section>
 
   <section class="sec" id="reto">
@@ -138,7 +148,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=13"></script>
+<script src="bio.js?v=14"></script>
 <script src="mapa-colombia.js?v=13"></script>
 <script>
 (function(){
@@ -342,7 +352,7 @@ document.getElementById('esp-t').innerHTML='<p class="vacio" style="padding:10px
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
-<script src="narracion.js?v=13"></script>
+<script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=14">
+<link rel="stylesheet" href="bio.css?v=15">
 <style>
 .inv{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:center}
 @media(max-width:780px){.inv{grid-template-columns:1fr}}
@@ -39,6 +39,8 @@
     <p>La biosfera funciona como un todo: lo que pasa en una selva, en una fábrica o en tu cocina termina afectando el clima de todo el planeta. Aquí entenderás <b>por qué</b> se está calentando la Tierra, <b>qué</b> le está pasando a Colombia y <b>qué</b> podemos hacer, empezando por ti.</p>
     <a class="nivel-chip" href="index.html">🗺️ Nivel: biosfera</a>
   </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Retención de parte del calor de la Tierra por algunos gases de la atmósfera.">efecto invernadero</span><span class="term" data-def="Gas que retiene calor, como el CO₂, el metano o el vapor de agua.">gas de efecto invernadero</span><span class="term" data-def="Gases que liberamos al aire con nuestras actividades.">emisiones</span><span class="term" data-def="Acciones que reducen las emisiones: atacan la causa.">mitigación</span><span class="term" data-def="Acciones que preparan a las personas para los cambios del clima que ya vienen.">adaptación</span></div></div>
+
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#invernadero">🌡️ Efecto invernadero</a>
@@ -66,6 +68,10 @@
     <p>Esta gráfica resume las mediciones del observatorio de Mauna Loa (Hawái), con valores aproximados. Toca «Predecir» y escoge cómo crees que seguirá la curva.</p>
     <div class="card"><canvas id="keel" width="900" height="260" aria-label="CO₂ medido entre 1960 y 2024"></canvas>
       <div class="ctrl"><b>Para 2050 predigo…</b><button class="chip" data-p="400">que baje a 400 ppm</button><button class="chip" data-p="430">que se quede en 430</button><button class="chip" data-p="490">que suba a unos 490</button></div><p id="keel-t" aria-live="polite"></p></div>
+    <div class="chequeo" data-ok="0" data-exp="Sin el efecto invernadero natural, la Tierra tendría unos −18 °C de temperatura media: el problema no es el efecto, sino aumentarlo.">
+      <div class="q">¿Qué pasaría si la atmósfera no tuviera ningún gas de efecto invernadero?</div>
+      <div class="ops"><button class="op">La Tierra sería mucho más fría, unos −18 °C en promedio.</button><button class="op" data-por="Esos gases retienen calor: sin ellos se perdería.">La Tierra tendría la misma temperatura de hoy.</button><button class="op" data-por="Al contrario: sin gases que retengan calor, este se iría al espacio.">La Tierra sería más caliente.</button></div>
+    </div>
   </section>
 
   <section class="sec" id="causas">
@@ -89,7 +95,7 @@
 
   <section class="sec" id="nino">
     <h2><span class="n">04</span> El Niño y La Niña</h2>
-    <p class="lead">Cada pocos años cambia la temperatura del océano Pacífico tropical y eso altera las lluvias en Colombia. No los causa el cambio climático, pero el calentamiento los está volviendo <b>más intensos</b>. Cambia el estado del océano.</p>
+    <p class="lead">Cada pocos años cambia la temperatura del océano Pacífico tropical y eso altera las lluvias en Colombia. No los causa el cambio climático, pero en un planeta más caliente sus efectos (sequías, incendios, lluvias extremas) son <b>más fuertes</b>. Cambia el estado del océano.</p>
     <div class="card nino">
       <svg id="pac" viewBox="0 0 420 240" aria-hidden="true"></svg>
       <div><div class="chips" id="nn"><button class="chip" data-n="normal">🌤️ Normal</button><button class="chip" data-n="nino">🔥 El Niño</button><button class="chip" data-n="nina">🌧️ La Niña</button></div><div id="nn-t" style="margin-top:10px" aria-live="polite"></div></div>
@@ -118,6 +124,10 @@
     <div class="card" id="clas-en"></div>
     <div class="fotos" style="margin:12px 0"><div data-foto="en_hidro" data-pie="Embalse Peñol-Guatapé (Antioquia): agua para hidroeléctricas"></div><div data-foto="en_solar" data-pie="Granja de paneles solares"></div><div data-foto="en_carbon" data-pie="Tren con carbón de la mina del Cerrejón (La Guajira)"></div><div data-foto="en_petroleo" data-pie="Pozo histórico de petróleo (Museo Nacional del Petróleo)"></div></div>
     <div class="dato col">Cerca de dos terceras partes de la electricidad de Colombia vienen de <b>hidroeléctricas</b>. Por eso, cuando El Niño seca los embalses, hay riesgo de racionamiento. La Guajira tiene uno de los mejores vientos y soles del continente para producir energía eólica y solar.</div>
+    <div class="chequeo" data-ok="1" data-exp="El carbón, el petróleo y el gas se formaron con restos de seres vivos durante millones de años: lo que se gasta no se repone a escala humana.">
+      <div class="q">¿Por qué el carbón es una energía no renovable?</div>
+      <div class="ops"><button class="op" data-por="Contamina, pero eso no es lo que la hace no renovable.">Porque es negro y contamina.</button><button class="op">Porque tardó millones de años en formarse y se acaba.</button><button class="op" data-por="Se extrae allí, pero se usa en todo el mundo.">Porque solo se usa en La Guajira.</button></div>
+    </div>
   </section>
 
   <section class="sec" id="huella">
@@ -140,7 +150,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=13"></script>
+<script src="bio.js?v=14"></script>
 <script>
 (function(){
 /* ═══ Efecto invernadero ═══ */
@@ -270,7 +280,7 @@ BIO.clasificar(document.getElementById('clas-acc'),{
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
-<script src="narracion.js?v=13"></script>
+<script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>
 </html>

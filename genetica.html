@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=14">
+<link rel="stylesheet" href="bio.css?v=15">
 <style>
 .fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
@@ -88,6 +88,8 @@
     <p>Tienes los ojos de tu mamá o la risa de tu abuelo porque heredaste sus <b>genes</b>. Primero verás las leyes que descubrió <b>Mendel</b> con arvejas y aprenderás a predecir cruces con el <b>cuadro de Punnett</b>. Después bajarás al nivel molecular: qué es el <b>ADN</b> y cómo sus letras se convierten en <b>proteínas</b>.</p>
     <a class="nivel-chip" href="index.html">🗺️ Niveles: molécula → célula → organismo</a>
   </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Molécula que guarda la información hereditaria, en forma de doble hélice.">ADN</span><span class="term" data-def="Fragmento de ADN con la información para una característica.">gen</span><span class="term" data-def="Cada una de las versiones de un mismo gen.">alelo</span><span class="term" data-def="Los alelos que tiene un individuo, como Aa.">genotipo</span><span class="term" data-def="Lo que se ve o se mide de un rasgo, como el color de una semilla.">fenotipo</span><span class="term" data-def="Molécula que la célula fabrica siguiendo las instrucciones de un gen.">proteína</span></div></div>
+
   <nav class="toc" aria-label="En esta página">
     <strong>Mendeliana</strong>
     <a href="#conceptos">🔤 Conceptos</a>
@@ -141,7 +143,7 @@
       <div class="paso" data-t="P"><div class="lado"><div><h3>1. Generación P (parental)</h3><p>Cruza una planta de <b>raza pura</b> de semillas <b>amarillas</b> (AA) con una de raza pura de semillas <b>verdes</b> (aa). «Raza pura» quiere decir que, cruzada consigo misma, siempre da lo mismo.</p></div><div class="fig" id="men-1"></div></div></div>
       <div class="paso" data-t="F1"><div class="lado"><div><h3>2. Primera generación filial (F1)</h3><p><b>¡Todas las semillas salen amarillas!</b> El verde parece haber desaparecido. Todas son <b>Aa</b>: el alelo amarillo domina sobre el verde.</p><p><b>1.ª ley de Mendel (uniformidad):</b> al cruzar dos razas puras distintas, todos los hijos son iguales.</p></div><div class="fig" id="men-2"></div></div></div>
       <div class="paso" data-t="F2"><div class="lado"><div><h3>3. Segunda generación filial (F2)</h3><p>Mendel cruza las plantas F1 entre sí (Aa × Aa) y… <b>¡reaparece el verde!</b> De cada 4 semillas, unas 3 son amarillas y 1 verde. Mendel contó 6022 amarillas y 2001 verdes: <b>3 a 1</b>.</p></div><div class="fig" id="men-3"></div></div></div>
-      <div class="paso" data-t="Ley"><div class="lado"><div><h3>4. La explicación</h3><p><b>2.ª ley de Mendel (segregación):</b> los dos alelos de cada gen se <b>separan</b> al formar los gametos (óvulos y polen). Cada gameto lleva un solo alelo, y al unirse vuelven a formar parejas al azar.</p><p>El verde nunca se perdió: estaba escondido en las plantas Aa.</p></div><div class="fig" id="men-4"></div></div></div>
+      <div class="paso" data-t="Ley"><div class="lado"><div><h3>4. La explicación</h3><p><b>2.ª ley de Mendel (segregación):</b> los dos alelos de cada gen se <b>separan</b> al formar los gametos (óvulos y células sexuales masculinas, que en la arveja viajan en el polen). Cada gameto lleva un solo alelo, y al unirse vuelven a formar parejas al azar.</p><p>El verde nunca se perdió: estaba escondido en las plantas Aa.</p></div><div class="fig" id="men-4"></div></div></div>
     </div>
   </section>
 
@@ -337,7 +339,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=13"></script>
+<script src="bio.js?v=14"></script>
 <script>
 (function(){
 var esc=BIO.esc;
@@ -651,7 +653,7 @@ document.querySelectorAll('#biotec [data-v]').forEach(function(b){b.onclick=func
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
-<script src="narracion.js?v=13"></script>
+<script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>
 </html>

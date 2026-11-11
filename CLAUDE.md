@@ -79,6 +79,7 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 | `docente-datos.js` | Solo contenido del panel docente: `TEMAS` (sesión 1 de aprendizajes previos, sesión 2 con lectura y mapa de ideas, autoevaluación «Puedo…»), `SABER` (40 preguntas tipo Saber 11 por tema; la primera opción es la correcta en el archivo), `ABIERTAS` (40 por tema) y `window.DETECTIVE` (5 historias por tema, cada una con 8 frases dudosas). Lo agregado en la versión 2.4 está al final del archivo, dentro de un bloque que hace `push`. |
 | `fotos.js`, `fotos-datos.js`, `img/fotos/` | Fotos reales de bancos libres con su cita APA debajo (`FOTO(clave,pie)`). Ver «Regla de imágenes». |
 | `embrion-fig.js` | Ilustraciones del desarrollo embrionario humano (`EMB.fig(clave)`) para «Semana a semana» y «De la fecundación al parto». |
+| `AUDITORIA_2026-11.md` | Informe de la auditoría biológica y didáctica (principios de Mayer) de la versión 2.13. |
 | `bionom-analytics.gs` | Backend de Google Apps Script del Modo Estudiante (copiado de IonNom). |
 
 ## Regla de imágenes: fotos reales de bancos libres, siempre con cita APA
@@ -109,6 +110,20 @@ expliquen mejor un proceso.
   `FOTO('clave','pie de foto')` o `<div data-foto="clave" data-pie="..."></div>`
   (cargar `fotos-datos.js` y `fotos.js` antes de `bio.js`). `fotos.js` arma
   la figura con la cita APA debajo.
+
+## Regla didáctica: principios de Mayer
+
+Desde la auditoría de la versión 2.13 (ver `AUDITORIA_2026-11.md`), todo módulo
+nuevo o modificado debe mantener: recuadro de palabras clave al inicio
+(`.pre-claves`, preentrenamiento); texto junto a su figura y explicaciones que
+queden a la vista en el celular (contigüidad espacial); contenido por pasos o
+pestañas al ritmo del estudiante (segmentación); al menos dos chequeos con
+explicación de cada error por módulo; y párrafos de menos de 80 palabras
+(coherencia). La narración solo lee lo visible: no romper eso.
+
+**Semanas del embarazo**: siempre en semanas de embarazo (desde la última
+menstruación, 40 en total); si se da la edad desde la fecundación, decirlo
+explícitamente. **ATP de la respiración**: unos 30 a 32 por glucosa.
 
 ## Regla de contenido
 

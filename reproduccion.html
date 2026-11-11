@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=14">
+<link rel="stylesheet" href="bio.css?v=15">
 <style>
 .grupos-r{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
 .grupos-r button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:8px 4px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--cn-tx)}
@@ -65,6 +65,8 @@
     <a class="nivel-chip" href="index.html">🗺️ Mapa de niveles</a>
     <a class="nivel-chip" href="division.html#meiosis">✂️ Repasa la meiosis</a>
   </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Célula sexual con la mitad de los cromosomas: óvulo o espermatozoide.">gameto</span><span class="term" data-def="Unión de dos gametos que forma un cigoto.">fecundación</span><span class="term" data-def="La primera célula de un nuevo ser, resultado de la fecundación.">cigoto</span><span class="term" data-def="El nuevo ser mientras se forman sus órganos: en humanos, hasta 8 semanas después de la fecundación.">embrión</span><span class="term" data-def="El bebé en formación desde que ya tiene sus órganos hasta el parto.">feto</span><span class="term" data-def="Reproducción con un solo progenitor y sin gametos: los hijos son clones.">asexual</span></div></div>
+
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#tipos">🧬 Tipos</a>
@@ -84,7 +86,7 @@
     <p class="lead">Hay dos estrategias, y cada una tiene ventajas.</p>
     <div class="grid g2">
       <div class="card" style="border-top:6px solid #e0a024"><h3>🧬 Asexual</h3><p>Un solo progenitor, sin gametos ni fecundación; las nuevas células se forman por <b>mitosis</b>. Los hijos son <b>clones</b>. <b>Ventajas:</b> es rápida y no necesita pareja. <b>Desventaja:</b> no hay variabilidad: una enfermedad o un cambio del ambiente puede acabar con todos.</p></div>
-      <div class="card" style="border-top:6px solid #7b4bb7"><h3>💞 Sexual</h3><p>Dos progenitores producen <b>gametos</b> por <b>meiosis</b> (óvulos y espermatozoides, o el polen y la oosfera en las plantas), que se unen en la <b>fecundación</b>. <b>Ventaja:</b> los hijos combinan genes y hay <b>variabilidad</b>. <b>Desventaja:</b> es más lenta y gasta más energía.</p></div>
+      <div class="card" style="border-top:6px solid #7b4bb7"><h3>💞 Sexual</h3><p>Dos progenitores producen <b>gametos</b> por <b>meiosis</b> (óvulos y espermatozoides; en las plantas, la oosfera y las células espermáticas que lleva el grano de polen), que se unen en la <b>fecundación</b>. <b>Ventaja:</b> los hijos combinan genes y hay <b>variabilidad</b>. <b>Desventaja:</b> es más lenta y gasta más energía.</p></div>
     </div>
     <h3 style="margin-top:18px">Formas de reproducción asexual</h3>
     <div class="grid g3">
@@ -207,6 +209,7 @@
       <div class="paso" data-t="Parto"><div class="lado" style="align-items:center"><div><h3>4. Parto</h3><p>Hacia la semana 40, el útero se contrae, el cuello uterino se dilata y el bebé sale. Después sale la placenta. La leche materna es el mejor alimento durante los primeros 6 meses.</p></div><div data-emb="parto"></div></div></div>
     </div>
     <h3 style="margin-top:18px">Semana a semana</h3>
+    <p style="font-size:.92rem;color:var(--cn-dim)">Las semanas se cuentan como lo hacen los médicos: desde el primer día de la última menstruación, unas 2 semanas antes de la fecundación. Por eso el embarazo dura unas 40 semanas (38 desde la fecundación).</p>
     <div class="card">
       <input type="range" id="sem" min="0" max="9" value="0" style="width:100%" aria-label="Semana del embarazo">
       <div id="sem-t" class="lado" style="margin-top:10px;align-items:center" aria-live="polite"></div>
@@ -243,10 +246,10 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=13"></script>
+<script src="bio.js?v=14"></script>
 <script src="cuerpo.js?v=13"></script>
 <script src="repro-anim.js?v=9"></script>
-<script src="embrion-fig.js?v=1"></script>
+<script src="embrion-fig.js?v=2"></script>
 <script>
 (function(){
 var sp=CUERPO.sp,esc=BIO.esc;
@@ -273,7 +276,7 @@ var GR=[
  ['🐸','Anfibios','sexual','Fecundación casi siempre externa en el agua; desarrollo indirecto: huevo → renacuajo → adulto (metamorfosis).','La rana venenosa carga a sus renacuajos en la espalda hasta pozos de agua en las bromelias.','anfibios'],
  ['🐢','Reptiles','sexual','Fecundación interna y <b>huevo amniota</b> con cáscara, que no se seca en tierra. En las tortugas, la temperatura de la arena decide si nacen machos o hembras.','La tortuga caná desova en las playas del Chocó y La Guajira.','reptiles'],
  ['🐦','Aves','sexual','Fecundación interna, huevos con cáscara dura que los padres incuban. Desarrollo directo.','El cóndor pone un solo huevo cada dos años: por eso se recupera tan despacio.','aves'],
- ['🐻','Mamíferos','sexual','Fecundación interna. Casi todos son <b>vivíparos placentarios</b>; los marsupiales (zarigüeya o chucha) terminan el desarrollo en una bolsa, y los monotremas (ornitorrinco) ponen huevos. Todos amamantan.','La chucha o zarigüeya, el único marsupial común en Colombia.','mamiferos']
+ ['🐻','Mamíferos','sexual','Fecundación interna. Casi todos son <b>vivíparos placentarios</b>; los marsupiales (zarigüeya o chucha) terminan el desarrollo en una bolsa, y los monotremas (ornitorrinco) ponen huevos. Todos amamantan.','La chucha o zarigüeya, el marsupial más común de Colombia, aunque hay muchos más.','mamiferos']
 ];
 var BADGE={asexual:['🧬 Asexual','#e0a024'],sexual:['💞 Sexual','#7b4bb7'],ambas:['🧬💞 Asexual y sexual','#2e7d4f']};
 var gb=document.getElementById('gr'),vG={};
@@ -394,18 +397,18 @@ function verDia(){var d=+dia.value,t;
 dia.oninput=verDia;verDia();
 
 /* ═══ Embarazo semana a semana ═══ */
-var SEM=[['Día 1','cigoto','Cigoto','El óvulo fecundado: una sola célula con 46 cromosomas. Empieza a dividirse por mitosis mientras baja por la trompa.'],
- ['Semana 1','blasto','Blastocisto','Una esfera hueca de unas 100 células llega al útero y se implanta en el endometrio. Las células de adentro formarán al bebé; las de afuera, la placenta.'],
- ['Semana 4','s4','Embrión en forma de C','Se forman el tubo neural (futuro cerebro y médula espinal) y el corazón, que ya empieza a latir. Tiene una pequeña cola.'],
- ['Semana 6','s6','Ojos y extremidades','Aparecen los esbozos de brazos y piernas y se forman los ojos. El corazón late unas 110 veces por minuto.'],
- ['Semana 8','s8','Fin de la etapa de embrión','Todos los órganos principales ya están formados y se ven los dedos. Desde ahora se llama <b>feto</b>. Es el periodo más sensible al alcohol, al cigarrillo y a los medicamentos.'],
- ['Semana 12','s12','Fin del primer trimestre','Mueve brazos y piernas, aunque la madre aún no lo siente. En una ecografía se ven sus órganos sexuales.'],
- ['Semana 20','s20','Segundo trimestre','La madre siente sus movimientos. Escucha sonidos y reconoce la voz de su madre.'],
+var SEM=[['Semana 3 · día 1','cigoto','Cigoto','El óvulo fecundado (día 1 después de la fecundación): una sola célula con 46 cromosomas. Empieza a dividirse por mitosis mientras baja por la trompa.'],
+ ['Semana 3','blasto','Blastocisto','Una esfera hueca de unas 100 células que, hacia el día 7 después de la fecundación, llega al útero y se implanta en el endometrio. Las células de adentro formarán al bebé; las de afuera, la placenta.'],
+ ['Semana 6','s4','Embrión en forma de C','(4 semanas después de la fecundación). Se forman el tubo neural (futuro cerebro y médula espinal) y el corazón, que ya late: en una ecografía se puede ver su latido. Tiene una pequeña cola.'],
+ ['Semana 8','s6','Ojos y extremidades','(6 semanas después de la fecundación). Aparecen los esbozos de brazos y piernas y se forman los ojos. El corazón late unas 150 veces por minuto, el doble que el de la madre.'],
+ ['Semana 10','s8','Fin de la etapa de embrión','(8 semanas después de la fecundación). Todos los órganos principales ya están formados y se ven los dedos. Desde ahora se llama <b>feto</b>. Las semanas anteriores son el periodo más sensible al alcohol, al cigarrillo y a los medicamentos.'],
+ ['Semana 12','s12','Fin del primer trimestre','Mueve brazos y piernas, aunque la madre aún no lo siente. Sus órganos sexuales ya se formaron, aunque en la ecografía se distinguen bien desde la semana 16 a 20.'],
+ ['Semana 20','s20','Segundo trimestre','La madre siente sus movimientos. Ya oye sonidos, como los latidos y la voz de su madre.'],
  ['Semana 28','s28','Tercer trimestre','Abre los ojos y duerme y despierta en ciclos. Los pulmones siguen madurando.'],
  ['Semana 36','s36','Cabeza abajo','Gana peso rápidamente y casi siempre gira cabeza abajo para el parto.'],
  ['Semana 40','s40','Listo para nacer','Ocupa todo el útero. Sus pulmones ya pueden respirar aire.']];
 var sem=document.getElementById('sem');
-var SEMF={"cigoto": ["cigoto", "Cigoto humano real: se ven los dos núcleos (del óvulo y del espermatozoide) antes de unirse"], "blasto": ["blasto", "Blastocisto humano real de 5 días, visto al microscopio"], "s6": ["em5", "Embrión real de unas 5 semanas desde la fecundación (7.ª semana de embarazo)"], "s8": ["em7", "Embrión real de unas 7 semanas: ya se ven los dedos y la cara"], "s12": ["eco12", "Ecografía real a las 12 semanas: el feto mide unos 6,5 cm"], "s20": ["eco20", "Ecografía real a las 20 semanas: perfil del feto"], "s28": ["eco32", "Ecografía 3D real del rostro de un feto de 32 semanas"], "s40": ["bebe", "Un recién nacido"]};
+var SEMF={"cigoto": ["cigoto", "Cigoto humano real: se ven los dos núcleos (del óvulo y del espermatozoide) antes de unirse"], "blasto": ["blasto", "Blastocisto humano real de 5 días, visto al microscopio"], "s6": ["em5", "Embrión real en la 7.ª semana de embarazo (unas 5 después de la fecundación)"], "s8": ["em7", "Embrión real de 6 a 7 semanas después de la fecundación (unas 9 de embarazo): ya se ven los dedos y la cara"], "s12": ["eco12", "Ecografía real a las 12 semanas: el feto mide unos 6,5 cm"], "s20": ["eco20", "Ecografía real a las 20 semanas: perfil del feto"], "s28": ["eco32", "Ecografía 3D real del rostro de un feto de 32 semanas"], "s40": ["bebe", "Un recién nacido"]};
 function verSem(){var e=SEM[+sem.value];document.getElementById('sem-t').innerHTML='<div>'+EMB.fig(e[1])+'</div><div><b style="font-family:var(--cn-mono);color:var(--cn-naranja)">'+e[0]+'</b><h3>'+e[2]+'</h3><p>'+e[3]+'</p>'+(SEMF[e[1]]?'<div style="margin-top:10px">'+FOTO(SEMF[e[1]][0],'Así se ve en realidad: '+SEMF[e[1]][1])+'</div>':'')+'</div>';if(+sem.value===9)BIO.marcarSeccion('embarazo');}
 document.querySelectorAll('[data-emb]').forEach(function(d){d.innerHTML=EMB.fig(d.getAttribute('data-emb'));});
 sem.oninput=verSem;verSem();
@@ -453,7 +456,7 @@ mb.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){var i=+
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
-<script src="narracion.js?v=13"></script>
+<script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>
 </html>

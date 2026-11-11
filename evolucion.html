@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=14">
+<link rel="stylesheet" href="bio.css?v=15">
 <style>
 .jir{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:700px){.jir{grid-template-columns:1fr}}
@@ -62,6 +62,8 @@
     <p>Las especies no son fijas: cambian a lo largo de muchas generaciones. Aquí comparas las ideas de <b>Lamarck</b> y de <b>Darwin</b>, haces de pájaro en una <b>simulación de selección natural</b> y revisas las <b>pruebas</b> que muestran que todos los seres vivos están emparentados. Recuerda: <b>evolucionan las poblaciones, no los individuos</b>.</p>
     <a class="nivel-chip" href="index.html">🗺️ Niveles: organismo → población</a>
   </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Individuos de la misma especie que viven en un mismo lugar.">población</span><span class="term" data-def="Diferencias entre los individuos de una población.">variación</span><span class="term" data-def="Característica heredada que ayuda a sobrevivir y reproducirse en un ambiente.">adaptación</span><span class="term" data-def="Los individuos con variaciones ventajosas dejan más crías, y esas variaciones se vuelven más comunes.">selección natural</span><span class="term" data-def="Resto o huella de un ser vivo del pasado conservado en las rocas.">fósil</span></div></div>
+
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#ideas">💭 Las ideas</a>
@@ -114,7 +116,7 @@
       <p style="font-size:.88rem;color:var(--cn-dim);margin-top:4px">Gráfica: porcentaje de polillas <b>oscuras</b> en cada generación.</p>
     </div>
     <div class="clave">Ninguna polilla «decidió» volverse oscura. Las dos formas ya existían; el ambiente cambió y los pájaros se comieron más a las que se veían. Así, <b>generación tras generación cambia la frecuencia de los alelos en la población</b>: eso es la evolución por selección natural.</div>
-    <div class="dato col">Pasa lo mismo con las bacterias y los antibióticos: si alguien deja el tratamiento a mitad, sobreviven las bacterias más resistentes y se multiplican. Por eso hay que terminar el tratamiento que receta el médico.</div>
+    <div class="dato col">Pasa lo mismo con las bacterias y los antibióticos: cada vez que se usa un antibiótico, sobreviven y se multiplican las bacterias más resistentes. Por eso solo se toman cuando el médico los receta, en la dosis y el tiempo que indica, y nunca para virus como el de la gripa.</div>
   </section>
 
   <section class="sec" id="pinzones">
@@ -170,11 +172,11 @@
     </div>
     <div class="tab-p" id="ev-fos">
       <p>Los <b>fósiles</b> son restos o huellas de seres vivos del pasado conservados en las rocas. Las capas más profundas son las más antiguas, y en ellas aparecen formas de vida más sencillas. Hay fósiles de transición, como <i>Archaeopteryx</i>, con plumas como un ave y dientes y cola como un dinosaurio.</p>
-      <div class="dato col">Colombia tiene fósiles famosos: la <b>Titanoboa</b>, una serpiente de 13 metros encontrada en la mina del Cerrejón (La Guajira); el <b>Kronosaurus</b> de Villa de Leyva (Boyacá), un reptil marino de cuando esa zona estaba bajo el mar; y los monos, tortugas y caimanes gigantes de <b>La Venta</b>, en el desierto de la Tatacoa (Huila).</div>
+      <div class="dato col">Colombia tiene fósiles famosos: la <b>Titanoboa</b>, una serpiente de 13 metros encontrada en la mina del Cerrejón (La Guajira); el reptil marino de Villa de Leyva (Boyacá) que se conocía como <b>Kronosaurus</b> y desde 2023 se llama <i>Monquirasaurus boyacensis</i>, un animal de cuando esa zona estaba bajo el mar; y los monos, tortugas y caimanes gigantes de <b>La Venta</b>, en el desierto de la Tatacoa (Huila).</div>
     </div>
     <div class="tab-p" id="ev-mol">
       <p>Cuanto más emparentadas están dos especies, más se parecen sus secuencias de ADN y de proteínas. Mueve el control para comparar.</p>
-      <div class="ctrl"><label for="mol-sel">Comparar a los humanos con:</label><select id="mol-sel"><option value="98.8">🐒 Chimpancé</option><option value="96">🦍 Gorila</option><option value="90">🐈 Gato</option><option value="85">🐁 Ratón</option><option value="65">🐔 Gallina</option><option value="44">🦟 Mosca de la fruta</option><option value="26">🍞 Levadura</option></select></div>
+      <div class="ctrl"><label for="mol-sel">Comparar a los humanos con:</label><select id="mol-sel"><option value="98.8">🐒 Chimpancé</option><option value="98.3">🦍 Gorila</option><option value="90">🐈 Gato</option><option value="85">🐁 Ratón</option><option value="65">🐔 Gallina</option><option value="44">🦟 Mosca de la fruta</option><option value="26">🍞 Levadura</option></select></div>
       <div id="mol-res"></div>
       <p style="font-size:.84rem;color:var(--cn-dim)">Valores aproximados y redondeados: según cómo se mida (genes, proteínas o todo el ADN) los porcentajes cambian, pero el orden se mantiene.</p>
     </div>
@@ -224,12 +226,12 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=13"></script>
+<script src="bio.js?v=14"></script>
 <script>
 (function(){
 /* ═══ 1. Línea del tiempo de ideas ═══ */
 var ID=[
- {a:'Antigüedad',ico:'📜',q:'Fijismo',d:'Las especies fueron creadas como son y <b>no cambian</b>. Era la idea dominante en Europa hasta el siglo XVIII.'},
+ {a:'Antigüedad',ico:'📜',q:'Fijismo',d:'Las especies fueron creadas como son y <b>no cambian</b>. Fue la idea dominante en Europa hasta el siglo XIX.'},
  {a:'1809',ico:'🦒',q:'Jean-Baptiste Lamarck',f:['lamarck','Jean-Baptiste Lamarck'],d:'Primera teoría completa de evolución: el <b>uso y desuso</b> desarrolla o atrofia los órganos, y esos <b>caracteres adquiridos se heredan</b>. Acertó en que las especies cambian; se equivocó en el mecanismo.'},
  {a:'1812',ico:'🦴',q:'Georges Cuvier · Catastrofismo',f:['cuvier','Georges Cuvier'],d:'Estudiando fósiles, Cuvier acepta que muchas especies se <b>extinguieron</b> por grandes catástrofes (inundaciones), pero cree que las especies que quedan no cambian.'},
  {a:'1835',ico:'🚢',q:'Charles Darwin en el Beagle',f:['beagle','Darwin, el HMS Beagle y la ruta de su viaje'],d:'Durante un viaje de 5 años alrededor del mundo, Darwin observa fósiles en Suramérica y los pinzones y tortugas de las Galápagos. Empieza a pensar que las especies se transforman.'},
@@ -380,7 +382,7 @@ ley.querySelectorAll('[data-hu]').forEach(function(b){b.onclick=function(){var k
   BIO.marcarSeccion('evidencias');};});
 // ADN
 var ms=document.getElementById('mol-sel');
-function verMol(){var v=+ms.value;document.getElementById('mol-res').innerHTML='<div class="barras"><div class="b" style="display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center"><span>'+ms.options[ms.selectedIndex].text+'</span><span style="height:22px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+v+'%;background:linear-gradient(90deg,#2e7d4f,#5cb85c);border-radius:999px;transition:width .6s"></i></span><b>~'+v+' %</b></div></div>';}
+function verMol(){var v=+ms.value;document.getElementById('mol-res').innerHTML='<div class="barras"><div class="b" style="display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center"><span>'+ms.options[ms.selectedIndex].text+'</span><span style="height:22px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+v+'%;background:linear-gradient(90deg,#2e7d4f,#5cb85c);border-radius:999px;transition:width .6s"></i></span><b>~'+String(v).replace('.',',')+' %</b></div></div>';}
 ms.onchange=verMol;verMol();
 
 /* ═══ 6. El año de la Tierra ═══ */
@@ -467,7 +469,7 @@ BIO.clasificar(document.getElementById('clas-end'),{
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
-<script src="narracion.js?v=13"></script>
+<script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>
 </html>

@@ -273,3 +273,7 @@ body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.1
 .fotos.mini{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),280px))}
 .fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px;margin-top:12px}
 @media print{.foto{break-inside:avoid;box-shadow:none}}
+/* Preentrenamiento (Mayer): palabras clave antes de empezar el módulo */
+.pre-claves{background:#fff;border:1px solid var(--cn-brd);border-left:6px solid var(--cn-naranja);border-radius:var(--cn-r);padding:10px 14px;margin:12px 0;box-shadow:var(--cn-sh);font-size:.95rem}
+.pre-claves .pc{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:6px}
+.pre-claves small{display:block;color:var(--cn-dim);margin-top:4px}

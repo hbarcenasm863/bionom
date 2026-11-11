@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=14">
+<link rel="stylesheet" href="bio.css?v=15">
 <style>
 #red{width:100%;height:auto;background:linear-gradient(180deg,#eef7fb,#f3faf1);border-radius:14px}
 #red .nd{cursor:pointer}
@@ -52,6 +52,8 @@
     <a class="nivel-chip" href="index.html">🗺️ Niveles: población → comunidad → ecosistema → bioma → biosfera</a>
     <a class="nivel-chip" href="regiones.html"><span class="co" role="img" aria-label="Colombia"></span> Después: ecosistemas de Colombia</a>
   </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Todo ser vivo del ecosistema y sus restos.">factor biótico</span><span class="term" data-def="Componente sin vida que afecta a los seres vivos: luz, agua, suelo, temperatura.">factor abiótico</span><span class="term" data-def="Todas las poblaciones de distintas especies que viven en un lugar.">comunidad</span><span class="term" data-def="Lugar que ocupa un ser vivo en la cadena alimenticia: productor, consumidor…">nivel trófico</span><span class="term" data-def="El papel de una especie en el ecosistema: qué come, cuándo está activa, quién se la come.">nicho</span></div></div>
+
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#componentes">🧩 Componentes</a>
@@ -175,7 +177,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=13"></script>
+<script src="bio.js?v=14"></script>
 <script>
 (function(){
 /* ═══ 1. Bióticos y abióticos ═══ */
@@ -281,7 +283,7 @@ var CIC={
  carb:{svg:paisaje()+'<g transform="translate(318 236)"><rect x="-26" y="-22" width="52" height="30" fill="#7a7f87"/><rect x="10" y="-52" width="10" height="34" fill="#5f646b"/><circle cx="16" cy="-62" r="8" fill="#9aa"/><circle cx="24" cy="-76" r="10" fill="#bbb"/></g><g transform="translate(560 240)"><ellipse rx="16" ry="10" fill="#c2410c"/><circle cx="14" cy="-6" r="6" fill="#c2410c"/></g><text x="500" y="300" style="font:700 11px Outfit" fill="#fff">restos → hongos</text><text x="380" y="352" style="font:700 11px Outfit" fill="#fff">⛏️ petróleo y carbón (fósiles)</text>'+
    '<text x="250" y="120" style="font:800 16px Outfit" fill="#495057">CO₂ en el aire</text>'+
    flecha('foto','M330 128 C420 150 480 170 500 182','#2f9e44','Fotosíntesis',420,150)+flecha('resp','M548 228 C560 180 460 140 360 125','#e8590c','Respiración',505,160)+flecha('desc','M520 280 C470 240 420 160 330 132','#8a5a2b','Descomposición',420,262)+flecha('comb','M336 168 C334 150 326 138 312 128','#495057','Combustión',340,150)+flecha('ocean','M240 274 C240 210 250 160 270 128','#1971c2','Disolución en el mar',172,248)+flecha('alim','M520 205 C535 215 545 222 552 232','#c2410c','Alimentación',528,198),
-  p:[['foto','🌿 Fotosíntesis','Las plantas toman CO₂ del aire y, con la energía del Sol, lo convierten en glucosa. Así el carbono entra a los seres vivos.'],['alim','🐄 Alimentación','Cuando un animal se come una planta, el carbono pasa a su cuerpo.'],['resp','💨 Respiración','Todos los seres vivos, también las plantas, «queman» glucosa en sus mitocondrias y devuelven CO₂ al aire.'],['desc','🍄 Descomposición','Hongos y bacterias descomponen los restos y liberan su carbono como CO₂. Los restos enterrados por millones de años formaron el petróleo y el carbón.'],['comb','🏭 Combustión','Al quemar petróleo, gasolina, carbón o bosques, devolvemos al aire en pocos años el carbono que estuvo guardado millones. Ese exceso de CO₂ aumenta el efecto invernadero y calienta el planeta.'],['ocean','🌊 Océanos','El mar disuelve mucho CO₂; los corales y moluscos lo usan para sus esqueletos. Demasiado CO₂ vuelve el mar más ácido.']]},
+  p:[['foto','🌿 Fotosíntesis','Las plantas toman CO₂ del aire y, con la energía del Sol, lo convierten en glucosa. Así el carbono entra a los seres vivos.'],['alim','🐄 Alimentación','Cuando un animal se come una planta, el carbono pasa a su cuerpo.'],['resp','💨 Respiración','Casi todos los seres vivos, también las plantas, «queman» glucosa en la respiración celular (en sus mitocondrias; las bacterias, en su membrana) y devuelven CO₂ al aire.'],['desc','🍄 Descomposición','Hongos y bacterias descomponen los restos y liberan su carbono como CO₂. Los restos enterrados por millones de años formaron el petróleo y el carbón.'],['comb','🏭 Combustión','Al quemar petróleo, gasolina, carbón o bosques, devolvemos al aire en pocos años el carbono que estuvo guardado millones. Ese exceso de CO₂ aumenta el efecto invernadero y calienta el planeta.'],['ocean','🌊 Océanos','El mar disuelve mucho CO₂; los corales y moluscos lo usan para sus esqueletos. Demasiado CO₂ vuelve el mar más ácido.']]},
  nitr:{svg:paisaje()+'<text x="280" y="112" style="font:800 15px Outfit" fill="#495057">N₂ en el aire (78 %)</text>'+
    '<path d="M190 70 L176 100 L188 100 L172 132" stroke="#f5c542" stroke-width="4" fill="none"/>'+
    '<g transform="translate(440 214)"><path d="M0 0 L0 -40 M0 -28 C-14 -36 -22 -30 -24 -24 C-14 -22 -6 -24 0 -28 M0 -36 C12 -46 22 -40 24 -34 C12 -32 6 -32 0 -36" stroke="#2f7d3a" stroke-width="3" fill="#57b05f"/><path d="M0 0 L-10 22 M0 0 L8 24 M0 0 L0 26" stroke="#8a5a2b" stroke-width="2"/><circle cx="-8" cy="16" r="3.5" fill="#e07a5f"/><circle cx="6" cy="18" r="3.5" fill="#e07a5f"/><circle cx="0" cy="22" r="3" fill="#e07a5f"/><text x="12" y="34" style="font:700 10px Outfit" fill="#fff">nódulos</text></g>'+
@@ -353,7 +355,7 @@ BIO.clasificar(document.getElementById('clas-adap'),{
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
-<script src="narracion.js?v=13"></script>
+<script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=14">
+<link rel="stylesheet" href="bio.css?v=15">
 <style>
 .taxo{display:grid;gap:6px}
 .taxo .fila{display:grid;grid-template-columns:120px repeat(3,minmax(0,1fr));gap:6px;align-items:stretch}
@@ -70,6 +70,8 @@
     <p>Se conocen cerca de <b>2 millones</b> de especies y faltan muchas por descubrir. Para estudiarlas, los biólogos las agrupan según lo que tienen en común. Aquí aprenderás a <b>nombrar</b> a un ser vivo, a ubicarlo en su <b>reino</b> y a usar una <b>clave</b> como lo hace un científico.</p>
     <a class="nivel-chip" href="index.html">🗺️ Nivel: organismo</a>
   </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Ciencia que nombra y clasifica a los seres vivos.">taxonomía</span><span class="term" data-def="Grupo de organismos que pueden reproducirse entre sí y tener crías fértiles.">especie</span><span class="term" data-def="Ser vivo que fabrica su propio alimento, casi siempre por fotosíntesis.">autótrofo</span><span class="term" data-def="Ser vivo que obtiene su alimento de otros seres vivos.">heterótrofo</span><span class="term" data-def="Gran grupo de la clasificación, como Fungi (hongos) o Animalia.">reino</span><span class="term" data-def="La categoría más amplia: Bacteria, Archaea o Eukarya.">dominio</span></div></div>
+
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#taxonomia">📶 Taxonomía</a>
@@ -190,12 +192,12 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=13"></script>
+<script src="bio.js?v=14"></script>
 <script>
 (function(){
 /* ═══ Taxonomía ═══ */
 var TAX=[['Dominio','Eukarya','Eukarya','Eukarya'],['Reino','Animalia','Animalia','Plantae'],['Filo','Chordata','Chordata','Magnoliophyta'],['Clase','Mammalia','Mammalia','Magnoliopsida'],['Orden','Primates','Carnivora','Asterales'],['Familia','Hominidae','Felidae','Asteraceae'],['Género','<i>Homo</i>','<i>Panthera</i>','<i>Espeletia</i>'],['Especie','<i>H. sapiens</i>','<i>P. onca</i>','<i>E. grandiflora</i>']];
-var DESC=['Dominio: los tres tienen células con núcleo (eucariotas). Aquí están todos juntos.','Reino: el frailejón se separa; es una planta. Humano y jaguar siguen juntos: animales.','Filo: humano y jaguar tienen médula espinal (cordados).','Clase: los dos son mamíferos: tienen pelo y alimentan a sus crías con leche.','Orden: aquí se separan. Somos primates; el jaguar es carnívoro.','Familia: cada uno sigue su camino. El jaguar es de la familia de los gatos (félidos).','Género: el frailejón pertenece al género <i>Espeletia</i>, que solo vive en los páramos.','Especie: cada uno es único. Llegamos al final de la escalera.'];
+var DESC=['Dominio: los tres tienen células con núcleo (eucariotas). Aquí están todos juntos.','Reino: el frailejón se separa; es una planta. Humano y jaguar siguen juntos: animales.','Filo: humano y jaguar son cordados: en el embrión tienen notocorda (un eje flexible en la espalda) y un cordón nervioso.','Clase: los dos son mamíferos: tienen pelo y alimentan a sus crías con leche.','Orden: aquí se separan. Somos primates; el jaguar es carnívoro.','Familia: cada uno sigue su camino. El jaguar es de la familia de los gatos (félidos).','Género: el frailejón pertenece al género <i>Espeletia</i>, que solo vive en los páramos.','Especie: cada uno es único. Llegamos al final de la escalera.'];
 var tk=0,taxo=document.getElementById('taxo');
 function pintarTaxo(){
   var h='<div class="fila cab"><div>Categoría</div><div>🧑 Humano</div><div>🐆 Jaguar</div><div>🌼 Frailejón</div></div>';
@@ -214,7 +216,7 @@ pintarTaxo();
 
 /* ═══ Historia de la clasificación ═══ */
 var HC=[
- {b:'1735 · Linneo: 2 reinos',t:'<b>Carl von Linneo</b> divide la vida en lo que se mueve y come (animales) y lo que no se mueve (plantas). Los hongos y las bacterias quedaban con las plantas.',g:[['🐾 Animalia','animales','#c2410c'],['🌿 Plantae','plantas, hongos, bacterias','#2e7d4f']]},
+ {b:'1735 · Linneo: 2 reinos',t:'<b>Carl von Linneo</b> divide la vida en lo que se mueve y come (animales) y lo que no se mueve (plantas). Los hongos quedaban con las plantas.',g:[['🐾 Animalia','animales','#c2410c'],['🌿 Plantae','plantas, hongos, bacterias','#2e7d4f']]},
  {b:'1866 · Haeckel: 3 reinos',t:'<b>Ernst Haeckel</b>, con el microscopio, nota que muchos seres de una sola célula no son ni plantas ni animales. Crea el reino <b>Protista</b>.',g:[['🐾 Animalia','','#c2410c'],['🌿 Plantae','incluye hongos','#2e7d4f'],['🦠 Protista','unicelulares','#7b4bb7']]},
  {b:'1969 · Whittaker: 5 reinos',t:'<b>Robert Whittaker</b>, con el microscopio electrónico, separa a los seres sin núcleo (<b>Monera</b>) y saca a los hongos de las plantas (<b>Fungi</b>), porque no hacen fotosíntesis y absorben su alimento.',g:[['🦠 Monera','sin núcleo','#64748b'],['💧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
  {b:'1977 · Woese: 6 reinos',t:'<b>Carl Woese</b> compara el ARN de los ribosomas de muchas «bacterias» y descubre que Monera esconde dos grupos muy distintos. Lo divide en <b>Eubacteria</b> y <b>Archaebacteria</b>.',g:[['🦠 Eubacteria','bacterias verdaderas','#64748b'],['🌋 Archaebacteria','arqueas','#b45309'],['💧 Protista','','#7b4bb7'],['🍄 Fungi','','#a16207'],['🌿 Plantae','','#2e7d4f'],['🐾 Animalia','','#c2410c']]},
@@ -286,7 +288,7 @@ function pintarArbol(k){
   if(arbSel&&sv.querySelector('[data-n="'+arbSel+'"]'))verNodo(arbSel);
   else t.innerHTML='<div class="vacio"><div style="font-size:2.4rem">👆</div>Toca una caja del mapa. Con <b>'+(k==='3'?'tres dominios':k+' reinos')+'</b> hay '+hojas.length+' reinos en la última fila.</div>';
 }
-var NF={monera:['r_bact','<i>Escherichia coli</i>: bacteria en forma de bastón'],eubac:['r_bact','<i>Escherichia coli</i>, una eubacteria'],dBac:['r_bact','<i>Escherichia coli</i>, una bacteria'],arq:['r_arq','<i>Halobacterium salinarum</i>, una arquea que vive en salinas'],dArq:['r_arq','<i>Halobacterium salinarum</i>, una arquea'],protista:['r_prot','<i>Paramecium caudatum</i>, protozoo ciliado'],protozoa:['r_prot','<i>Paramecium caudatum</i>, protozoo ciliado'],chromista:['r_alga','Diatomea: alga unicelular con caparazón de sílice'],fungi:['r_hongo','<i>Amanita muscaria</i>'],plantae:['r_plant','Frailejones en el Páramo del Sol (Antioquia)'],animalia:['r_anim','Jaguar (<i>Panthera onca</i>)']};
+var NF={monera:['r_bact','<i>Escherichia coli</i>: bacteria en forma de bastón'],eubac:['r_bact','<i>Escherichia coli</i>, una eubacteria'],dBac:['r_bact','<i>Escherichia coli</i>, una bacteria'],arq:['r_arq','<i>Halobacterium salinarum</i>, una arquea que vive en salinas'],dArq:['r_arq','<i>Halobacterium salinarum</i>, una arquea'],protista:['r_prot','<i>Paramecium caudatum</i>, protozoo ciliado'],chromista:['r_alga','Diatomea: alga unicelular con caparazón de sílice'],fungi:['r_hongo','<i>Amanita muscaria</i>'],plantae:['r_plant','Frailejones en el Páramo del Sol (Antioquia)'],animalia:['r_anim','Jaguar (<i>Panthera onca</i>)']};
 function verNodo(id){var n=NODO[id];arbSel=id;arbVis[id]=1;
   document.querySelectorAll('#arbol .nd').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-n')===id);});
   document.getElementById('arbol-t').innerHTML='<h3 style="color:'+n[2]+'">'+n[0]+' '+n[1]+'</h3><dl class="car">'+Object.keys(n[3]).map(function(k){return '<dt>'+k+'</dt><dd>'+n[3][k]+'</dd>';}).join('')+'</dl>'+(NF[id]?FOTO(NF[id][0],NF[id][1]):'');
@@ -401,7 +403,7 @@ reto(5);
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
-<script src="narracion.js?v=13"></script>
+<script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>
 </html>

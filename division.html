@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=14">
+<link rel="stylesheet" href="bio.css?v=15">
 <style>
 #mitosis,#meio,#cariot{width:100%;height:auto}
 .gam{display:inline-flex;gap:4px;font:800 1rem var(--cn-mono);background:#fff7ec;border:1.5px solid #f5c58c;border-radius:10px;padding:4px 10px;margin:3px}
@@ -39,6 +39,8 @@
     <a class="nivel-chip" href="index.html">🗺️ Niveles: molécula → célula → organismo</a>
     <a class="nivel-chip" href="celula.html">🔬 Antes: La célula</a>
   </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="ADN muy enrollado y empacado que se ve cuando la célula se va a dividir.">cromosoma</span><span class="term" data-def="Las dos copias idénticas de un cromosoma, unidas por el centrómero.">cromátidas hermanas</span><span class="term" data-def="Célula con dos juegos de cromosomas, uno de cada padre. En humanos, 46.">diploide (2n)</span><span class="term" data-def="Célula con un solo juego de cromosomas, como los gametos. En humanos, 23.">haploide (n)</span><span class="term" data-def="División que da dos células idénticas a la madre.">mitosis</span><span class="term" data-def="Dos divisiones seguidas que dan cuatro células con la mitad de los cromosomas.">meiosis</span></div></div>
+
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#cromosomas">🧬 Cromosomas</a>
@@ -109,7 +111,7 @@
 
   <section class="sec" id="meiosis">
     <h2><span class="n">05</span> La meiosis</h2>
-    <p class="lead">Para formar óvulos, espermatozoides o el polen, la célula hace <b>dos divisiones seguidas</b> y reparte <b>un cromosoma de cada pareja</b>. Esta célula es AaBb (rojo: de la madre; azul: del padre). Sigue los alelos.</p>
+    <p class="lead">Para formar óvulos y espermatozoides (o, en las plantas, las células que darán el polen), la célula hace <b>dos divisiones seguidas</b> y reparte <b>un cromosoma de cada pareja</b>. Esta célula es AaBb (rojo: de la madre; azul: del padre). Sigue los alelos.</p>
     <div class="card lado" style="align-items:center">
       <svg id="meio" viewBox="0 0 360 250" aria-hidden="true"></svg>
       <div><div class="chips" id="mfases" style="margin-bottom:8px"></div><div id="mfase-t" aria-live="polite"></div>
@@ -117,15 +119,19 @@
     </div>
     <h3 style="margin-top:16px">Así se ve de verdad: la meiosis que forma el polen del lirio</h3>
     <div class="fotos" style="margin:12px 0"><div data-foto="me_lirio" data-pie="Células madre del polen en la antera del lirio, dividiéndose por meiosis"></div><div data-foto="me_tetrad" data-pie="Tétradas: cada célula madre dio 4 células hijas, que serán granos de polen"></div></div>
+    <div class="chequeo" data-ok="1" data-exp="La meiosis reduce los cromosomas a la mitad: 8 → 4 en cada una de las cuatro células hijas.">
+      <div class="q">Una célula con 8 cromosomas hace meiosis. ¿Cuántos cromosomas tiene cada célula al final?</div>
+      <div class="ops"><button class="op" data-por="Eso pasaría en la mitosis, que conserva el número.">8</button><button class="op">4</button><button class="op" data-por="La meiosis no duplica los cromosomas: los reduce a la mitad.">16</button></div>
+    </div>
     <div class="clave">Esto explica las leyes de Mendel. La <b>segregación</b>: al separarse las parejas en la meiosis I, cada gameto recibe un solo alelo de cada gen. La <b>transmisión independiente</b>: cada pareja se orienta al azar en la metafase I. Toca «Otra orientación» y mira cómo cambian los gametos.</div>
-    <div class="dato">¿Por qué los hermanos no son idénticos? Por el <b>entrecruzamiento</b> y la orientación al azar, una persona puede formar más de <b>8 millones</b> de combinaciones distintas de cromosomas en sus gametos, y además se juntan dos al azar en la fecundación.</div>
+    <div class="dato">¿Por qué los hermanos no son idénticos? Solo por la orientación al azar de las 23 parejas, una persona puede formar más de <b>8 millones</b> de combinaciones de cromosomas en sus gametos (2²³); con el <b>entrecruzamiento</b> son muchísimas más, y además se juntan dos al azar en la fecundación.</div>
   </section>
 
   <section class="sec" id="comparar">
     <h2><span class="n">06</span> Mitosis vs. meiosis</h2>
     <div class="tbl-wrap"><table class="t">
       <tr><th></th><th>Mitosis</th><th>Meiosis</th></tr>
-      <tr><td><b>¿Para qué?</b></td><td>Crecer, reparar, reproducción asexual</td><td>Formar gametos (óvulos, espermatozoides, polen)</td></tr>
+      <tr><td><b>¿Para qué?</b></td><td>Crecer, reparar, reproducción asexual</td><td>Formar gametos (óvulos y espermatozoides); en las plantas, las esporas que originan el polen</td></tr>
       <tr><td><b>¿Dónde?</b></td><td>En casi todas las células del cuerpo</td><td>Solo en los órganos reproductores (ovarios, testículos, anteras)</td></tr>
       <tr><td><b>Divisiones</b></td><td>Una</td><td>Dos seguidas (meiosis I y II)</td></tr>
       <tr><td><b>Células hijas</b></td><td>2, idénticas a la madre</td><td>4, distintas entre sí</td></tr>
@@ -150,7 +156,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=13"></script>
+<script src="bio.js?v=14"></script>
 <script>
 (function(){
 /* ═══ Mitosis ═══ */
@@ -303,7 +309,7 @@ BIO.clasificar(document.getElementById('clas-div'),{cajas:[{id:'mi',titulo:'➗ 
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
-<script src="narracion.js?v=13"></script>
+<script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>
 </html>

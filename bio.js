@@ -259,3 +259,30 @@ if('serviceWorker' in navigator&&location.protocol!=='file:'){
   window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});
 }
 })();
+
+/* ── Principio de contigüidad espacial (Mayer) en el celular ──
+   En pantallas angostas la explicación de una figura queda debajo de ella.
+   Si al tocar algo la explicación nueva aparece en la parte baja o fuera de
+   la pantalla, se desplaza la página lo justo para verla, dejando a la
+   vista el final de la figura. Solo actúa justo después de un toque. */
+(function(){
+  if(!window.MutationObserver)return;
+  var ult=0,pend=null;
+  document.addEventListener('pointerdown',function(){ult=Date.now();},true);
+  document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')ult=Date.now();},true);
+  new MutationObserver(function(ms){
+    if(window.innerWidth>760||Date.now()-ult>900)return;
+    for(var i=0;i<ms.length;i++){
+      var t=ms[i].target;if(t.nodeType!==1)t=t.parentElement;if(!t)continue;
+      var d=t.closest('.det,[aria-live]');
+      if(!d||d.closest('.chequeo,.pasos,.an-txt')||d.classList.contains('fb')||d.classList.contains('fb-clas')||d.classList.contains('marcador'))continue;
+      pend=d;break;
+    }
+    if(!pend)return;
+    var el=pend;pend=null;
+    requestAnimationFrame(function(){
+      var r=el.getBoundingClientRect(),h=window.innerHeight;
+      if(r.height>0&&r.top>h*0.62)window.scrollBy({top:r.top-h*0.35,behavior:'smooth'});
+    });
+  }).observe(document.body,{childList:true,subtree:true});
+})();

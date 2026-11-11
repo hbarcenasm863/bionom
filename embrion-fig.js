@@ -22,7 +22,7 @@ function rotulo(t1,t2){return '<rect x="8" y="8" width="'+(Math.max(t1.length,t2
 function etq(x,y,t,ax,ay){var w=t.length*5.9,der=x>ax,tx2=der?352:8,ini=der?tx2-w-4:tx2+w+4;
   return '<path d="M'+f(ini)+' '+f(y)+' L'+f(ax)+' '+f(ay)+'" stroke="#5a4a4e" stroke-width="1" fill="none"/><circle cx="'+f(ax)+'" cy="'+f(ay)+'" r="2" fill="#5a4a4e"/><text x="'+f(tx2)+'" y="'+f(y+4)+'" text-anchor="'+(der?'end':'start')+'" style="font:700 10.5px Outfit,sans-serif" fill="#3c2a2e" paint-order="stroke" stroke="#fff" stroke-width="3">'+t+'</text>';}
 
-/* ── embrión en forma de C (semanas 4 a 6): tubo curvado, de la cabeza a la cola ── */
+/* ── embrión en forma de C (semanas 6 a 8 de embarazo): tubo curvado, de la cabeza a la cola ── */
 function embrionC(p,cx,cy,s,lb){var o='',n=26;
   for(var i=n-1;i>=0;i--){var k=i/(n-1),a=Math.PI*(0.15+1.55*k),r=36*s,x=cx+Math.cos(a)*r,y=cy-Math.sin(a)*r*1.05,rad=(4+16*Math.pow(1-k,1.6))*s;
     o+='<circle cx="'+f(x)+'" cy="'+f(y)+'" r="'+f(rad)+'" fill="url(#'+p+'em)"/>';}
@@ -35,7 +35,7 @@ function embrionC(p,cx,cy,s,lb){var o='',n=26;
     '<circle cx="'+f(hx-4*s)+'" cy="'+f(hy-2*s)+'" r="'+f(2.8*s)+'" fill="#3a2a2a"/>';}
   return o;}
 
-/* ── feto de perfil (semana 8 en adelante) ──
+/* ── feto de perfil (semana 10 de embarazo en adelante) ──
    o: {x,y,s (escala), hr (radio de la cabeza), rot, dedos(0-1), cordon:[x,y]} */
 function feto(p,o){var s=o.s,hr=o.hr,c='url(#'+p+'pi)',st='#b86a52';
   var h='<g transform="translate('+f(o.x)+' '+f(o.y)+') rotate('+f(o.rot||0)+') scale('+f(s)+')">';
@@ -70,17 +70,17 @@ function utero(p,cx,cy,rx,ry,fo,cerv){var o='<g filter="url(#'+p+'sh)"><ellipse 
 var ETAPA={
  cigoto:function(p){return '<circle cx="180" cy="112" r="78" fill="#fdf3dc" opacity=".8" stroke="#e9d7a8" stroke-width="10"/><circle cx="180" cy="112" r="64" fill="url(#'+p+'ov)"/>'+brillo(180,112,64)+
    '<circle cx="164" cy="108" r="14" fill="url(#'+p+'nu)"/><circle cx="196" cy="116" r="14" fill="url(#'+p+'nu)"/><circle cx="238" cy="64" r="8" fill="url(#'+p+'ov)" stroke="#d9bf7a"/>'+
-   etq(300,70,'zona pelúcida',248,76)+etq(300,140,'núcleo del óvulo',204,118)+etq(70,160,'núcleo del espermatozoide',158,116)+rotulo('Cigoto · día 1','≈ 0,1 mm: el tamaño de un punto');},
+   etq(300,70,'zona pelúcida',248,76)+etq(300,140,'núcleo del óvulo',204,118)+etq(70,160,'núcleo del espermatozoide',158,116)+rotulo('Cigoto · semana 3','día 1 tras la fecundación · ≈ 0,1 mm');},
  blasto:function(p){var o='<path d="M0 170 Q90 150 180 168 T360 166 L360 220 L0 220Z" fill="url(#'+p+'ut)"/><path d="M0 172 Q90 152 180 170 T360 168" stroke="#f8d0d8" stroke-width="4" fill="none"/>';
    for(var i=0;i<26;i++){var a=i/26*Math.PI*2;o+='<circle cx="'+f(180+Math.cos(a)*58)+'" cy="'+f(104+Math.sin(a)*52)+'" r="9" fill="url(#'+p+'em)"/>';}
    o+='<ellipse cx="180" cy="104" rx="50" ry="44" fill="#fff6f0" opacity=".85"/>';for(var j=0;j<8;j++)o+='<circle cx="'+f(162+(j%4)*12)+'" cy="'+f(64+Math.floor(j/4)*12)+'" r="8" fill="url(#'+p+'em)"/>';
-   return o+etq(300,58,'masa interna: será el embrión',196,70)+etq(300,120,'cavidad con líquido',214,110)+etq(60,120,'capa externa: será la placenta',124,112)+etq(60,196,'endometrio (pared del útero)',110,176)+rotulo('Blastocisto · semana 1','≈ 0,2 mm · se implanta en el útero');},
+   return o+etq(300,58,'masa interna: será el embrión',196,70)+etq(300,120,'cavidad con líquido',214,110)+etq(60,120,'capa externa: será la placenta',124,112)+etq(60,196,'endometrio (pared del útero)',110,176)+rotulo('Blastocisto · semana 3','≈ 0,2 mm · se implanta en el útero');},
  s4:function(p){return '<ellipse cx="180" cy="118" rx="120" ry="92" fill="url(#'+p+'am)" stroke="#e6b8c2" stroke-width="2"/>'+embrionC(p,180,120,1.25,0)+'<circle cx="270" cy="170" r="16" fill="#f6e7b8" stroke="#d9bf7a"/>'+
-   etq(330,80,'cerebro (tubo neural)',232,88)+etq(330,140,'corazón: ya late',176,126)+etq(40,200,'somitas: futuras vértebras y músculos',150,146)+etq(330,200,'saco vitelino',282,178)+rotulo('Embrión · semana 4','≈ 4 mm, como un grano de arroz');},
+   etq(330,80,'cerebro (tubo neural)',232,88)+etq(330,140,'corazón: ya late',176,126)+etq(40,200,'somitas: futuras vértebras y músculos',150,146)+etq(330,200,'saco vitelino',282,178)+rotulo('Embrión · semana 6','≈ 4 mm, como un grano de arroz');},
  s6:function(p){return '<ellipse cx="180" cy="118" rx="120" ry="92" fill="url(#'+p+'am)" stroke="#e6b8c2" stroke-width="2"/>'+embrionC(p,180,120,1.35,1)+
-   etq(330,70,'ojo',232,92)+etq(40,110,'brazo en formación',140,128)+etq(330,175,'pierna en formación',168,168)+etq(330,130,'corazón',178,126)+rotulo('Embrión · semana 6','≈ 6 mm · se forman los ojos y las extremidades');},
+   etq(330,70,'ojo',232,92)+etq(40,110,'brazo en formación',140,128)+etq(330,175,'pierna en formación',168,168)+etq(330,130,'corazón',178,126)+rotulo('Embrión · semana 8','≈ 1,3 cm · se forman los ojos y las extremidades');},
  s8:function(p){return '<ellipse cx="180" cy="116" rx="122" ry="94" fill="url(#'+p+'am)" stroke="#e6b8c2" stroke-width="2"/>'+cordon(268,150,176,128)+'<ellipse cx="282" cy="160" rx="20" ry="30" fill="url(#'+p+'pl)"/>'+
-   feto(p,{x:176,y:130,s:1.25,hr:28,rot:-10,dedos:1})+etq(330,70,'cabeza grande: el cerebro crece rápido',212,78)+etq(40,150,'dedos',132,104)+etq(330,200,'cordón umbilical',236,152)+rotulo('Embrión · semana 8','≈ 1,6 cm · ya están todos los órganos');},
+   feto(p,{x:176,y:130,s:1.25,hr:28,rot:-10,dedos:1})+etq(330,70,'cabeza grande: el cerebro crece rápido',212,78)+etq(40,150,'dedos',132,104)+etq(330,200,'cordón umbilical',236,152)+rotulo('Embrión · semana 10','≈ 3 cm · ya están todos los órganos');},
  s12:function(p){return utero(p,180,118,104,84,{x:168,y:132,s:1.05,hr:24,rot:-6,dedos:1,cx:180,cy:136})+etq(340,40,'placenta',260,58)+etq(340,190,'líquido amniótico',260,170)+rotulo('Feto · semana 12','≈ 6 cm · 14 g · se mueve, pero aún no se siente');},
  s20:function(p){return utero(p,180,116,112,90,{x:172,y:130,s:1.3,hr:22,rot:-4,dedos:1,cx:184,cy:136})+etq(340,190,'cordón umbilical',236,98)+rotulo('Feto · semana 20','≈ 25 cm · 300 g · la madre siente sus patadas');},
  s28:function(p){return utero(p,180,116,118,94,{x:174,y:128,s:1.45,hr:20,rot:10,dedos:1,cx:186,cy:136})+rotulo('Feto · semana 28','≈ 37 cm · 1 kg · abre los ojos');},

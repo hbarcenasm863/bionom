@@ -6,6 +6,56 @@
 
 ---
 
+## Versión 2.13 — 11 de noviembre de 2026 · Auditoría biológica y didáctica (principios de Mayer)
+
+**Contexto.** El docente pidió una auditoría que verificara que todo el
+contenido sea biológicamente correcto y que el sitio cumpla los principios del
+aprendizaje multimedia de Mayer. El informe completo está en
+`AUDITORIA_2026-11.md`.
+
+**Qué se revisó.** Los 10 módulos y la portada (incluidos los textos escondidos
+en el código), las 536 preguntas del juego, las 400 preguntas Saber 11, las
+lecturas del panel docente, las 400 palabras con pistas del ahorcado y la sopa,
+y las ilustraciones del embarazo. La didáctica se midió con Playwright en
+computador y celular.
+
+**Correcciones biológicas (28 grupos).** ATP de la respiración (30 a 32, no 36
+o 38) en la teoría, el juego y el ahorcado; ciclo de Calvin y de Krebs; origen
+de las vacunas; acción de la penicilina; manglares; título del laboratorio de la
+papa; el polen no es un gameto; combinaciones 2²³ en la meiosis; **semanas del
+embarazo unificadas** (todas en semanas de embarazo, con nota que explica la
+diferencia con las semanas desde la fecundación), tamaños, latido y momento en
+que se distingue el sexo en la ecografía; definición de cordados; paramecio en
+el mapa de 7 reinos; Linneo; nodo sinusal del corazón; arterias pulmonares;
+médula ósea del adulto; marsupiales de Colombia; *Monquirasaurus boyacensis*;
+resistencia a antibióticos; ADN compartido con el gorila (98,3 %); fijismo hasta
+el siglo XIX; respiración de las bacterias; efectos de El Niño; páramos de
+Panamá; «arvejas»; 30 billones de células en todo el sitio; preguntas del banco
+sobre plantas y sobre el tamaño de las regiones.
+
+**Mejoras didácticas.**
+- **Contigüidad temporal** (`narracion.js`): la narración lee solo lo que está
+  en pantalla, no los pasos ni las pestañas ocultas.
+- **Contigüidad espacial en el celular** (`bio.js`): al tocar una figura, la
+  página se desplaza hasta su explicación (antes quedaba fuera de la pantalla en
+  sistemas y regiones).
+- **Preentrenamiento**: recuadro «🔑 Antes de empezar: palabras clave» al
+  comienzo de los 10 módulos (`.pre-claves` en `bio.css`).
+- **Práctica con retroalimentación**: 2 chequeos nuevos en regiones (que no
+  tenía ninguno), 2 en ambiente y 1 de meiosis en división.
+
+**Archivos.** Los 10 módulos, `index.html`, `embrion-fig.js`, `banco.js`,
+`ahorcado-datos.js`, `docente-datos.js`, `bio.js`, `bio.css`, `narracion.js`,
+`sw.js` (`bionom-v28`) y `?v=` de las páginas; nuevo `AUDITORIA_2026-11.md`.
+
+**Verificación.** Las 13 páginas cargan sin errores ni desbordes a 1366 y
+390 px; el banco no da avisos; los chequeos nuevos, las palabras clave, la
+narración y el desplazamiento en el celular se probaron funcionando.
+
+**Pendiente** (recomendaciones del informe): grabar la voz del docente para la
+narración, narrar paso a paso las animaciones y leer completas las preguntas
+abiertas y el Detective del panel docente. Recargar con Ctrl+F5.
+
 ## Versión 2.12 — 11 de noviembre de 2026 · Fotos reales en célula, división, sistemas, ecosistemas y ambiente
 
 **Contexto.** El docente pidió seguir con las fotos de bancos libres (con su
