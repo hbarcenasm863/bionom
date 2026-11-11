@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=17">
+<link rel="stylesheet" href="bio.css?v=18">
 <style>
 .cor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:center}
 @media(max-width:640px){.cor{grid-template-columns:1fr}}
@@ -69,6 +69,7 @@
       <div class="card"><h3>🐄 Pulmones</h3><p>Los mamíferos tienen millones de alvéolos. Las aves tienen además <b>sacos aéreos</b>: el aire pasa por sus pulmones en un solo sentido y les da oxígeno para volar.</p></div>
       <div class="card"><h3>🌿 Estomas</h3><p>Las plantas no tienen pulmones: los gases entran y salen por los estomas de las hojas y por las lenticelas del tallo.</p></div>
     </div>
+    <div class="fotos mini" style="margin:12px 0"><div data-foto="f_branquias" data-pie="Esquema de una branquia: cada filamento tiene laminillas llenas de capilares (en inglés)"></div></div>
     <h3 style="margin-top:18px">🎯 ¿Con qué respira?</h3>
     <div class="card" id="clas-resp"></div>
     <div class="chequeo" data-ok="0" data-exp="Las tráqueas llevan el aire directo a las células, así que la hemolinfa del insecto no necesita transportar oxígeno.">
@@ -118,6 +119,7 @@
       <svg id="trop-svg" viewBox="0 0 300 220" role="img" aria-label="Plántula y fuente de luz"></svg>
       <div><div class="chips" id="trop-b" role="group" aria-label="Posición de la luz"><button type="button" class="chip on" data-l="-1">💡 Luz a la izquierda</button><button type="button" class="chip" data-l="0">💡 Luz arriba</button><button type="button" class="chip" data-l="1">💡 Luz a la derecha</button></div><p id="trop-t" aria-live="polite" style="margin-top:10px"></p></div>
     </div>
+    <div class="fotos" style="margin:12px 0"><div data-foto="f_dormidera" data-pie="La dormidera cierra sus hojas en segundos cuando la tocas: una respuesta sin nervios"></div><div data-foto="f_drosera" data-pie="La drosera atrapa insectos con gotas pegajosas y dobla sus pelos sobre la presa"></div></div>
     <div class="chequeo" data-ok="0" data-exp="El plátano maduro libera etileno, una fitohormona gaseosa que acelera la maduración de los frutos cercanos.">
       <div class="q">¿Por qué los aguacates maduran más rápido en una bolsa con plátanos maduros?</div>
       <div class="ops"><button class="op">Por el etileno que sueltan los plátanos.</button><button class="op" data-por="Las auxinas actúan en el crecimiento hacia la luz.">Por las auxinas del plátano.</button><button class="op" data-por="No es el calor de la bolsa lo principal.">Porque la bolsa los calienta mucho.</button></div>
@@ -163,7 +165,9 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=16"></script>
+<script src="fotos-datos.js?v=3"></script>
+<script src="fotos.js?v=1"></script>
+<script src="bio.js?v=17"></script>
 <script>
 (function(){
 /* ═══ Respiración ═══ */

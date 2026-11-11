@@ -18,8 +18,8 @@ var MODULOS=[
   {id:'division',href:'division.html',ico:'✂️',txt:'División',full:'División celular: mitosis y meiosis',niveles:['celula','organismo']},
   {id:'reinos',href:'reinos.html',ico:'🍄',txt:'Reinos',full:'Reinos y clasificación',niveles:['organismo']},
   {id:'sistemas',href:'sistemas.html',ico:'❤️',txt:'Sistemas',full:'Sistemas del cuerpo',niveles:['tejido','organo','sistema','organismo']},
-  {id:'funciones',href:'funciones.html',ico:'🐙',txt:'Funciones',full:'Funciones vitales comparadas',niveles:['organo','sistema','organismo']},
-  {id:'nutricion',href:'nutricion.html',ico:'🍎',txt:'Nutrición',full:'Nutrición y salud',niveles:['molecula','organismo']},
+  {id:'funciones',padre:'sistemas',href:'funciones.html',ico:'🐙',txt:'Funciones',full:'Funciones vitales comparadas',niveles:['organo','sistema','organismo']},
+  {id:'nutricion',padre:'sistemas',href:'nutricion.html',ico:'🍎',txt:'Nutrición',full:'Nutrición y salud',niveles:['molecula','organismo']},
   {id:'reproduccion',href:'reproduccion.html',ico:'👶',txt:'Reproducción',full:'Reproducción',niveles:['celula','organo','sistema','organismo','poblacion']},
   {id:'genetica',href:'genetica.html',ico:'🧬',txt:'Genética',full:'Genética mendeliana y molecular',niveles:['molecula','celula','organismo']},
   {id:'evolucion',href:'evolucion.html',ico:'🦎',txt:'Evolución',full:'Evolución',niveles:['poblacion','organismo']},
@@ -47,11 +47,23 @@ function marcarSeccion(id){
 }
 
 /* ── menú, barra inferior y pie ── */
+/* Subpáginas: una familia (tema principal + sus subpáginas) comparte una barra
+   arriba de la página, para que el menú principal no crezca. */
+function armarSubnav(){
+  if(!actual||document.querySelector('.sub-nav'))return;
+  var raiz=actual.padre||actual.id,hijos=MODULOS.filter(function(m){return m.padre===raiz;});
+  if(!hijos.length)return;
+  var fam=[MODULOS.filter(function(m){return m.id===raiz;})[0]].concat(hijos),main=document.querySelector('main');if(!main)return;
+  var n=document.createElement('nav');n.className='sub-nav';n.setAttribute('aria-label','Páginas de este tema');
+  n.innerHTML=fam.map(function(m,i){return (i?'<span class="sep" aria-hidden="true">›</span>':'')+'<a href="'+m.href+'"'+(m.id===actual.id?' class="on" aria-current="page"':'')+'><span aria-hidden="true">'+m.ico+'</span> '+m.full+'</a>';}).join('');
+  main.insertBefore(n,main.firstChild);
+}
 function armarMenu(){
+  armarSubnav();
   var nav=document.querySelector('.site-nav');
   if(nav&&!nav.children.length){
     nav.innerHTML='<a class="nav-brand" href="index.html"><img src="icons/icon-192.png" alt="" width="32" height="32"><span><span class="bio">Bio</span><b>Nom</b></span></a><div class="nav-links">'+
-      MODULOS.map(function(m){return '<a href="'+m.href+'"'+(actual&&m.id===actual.id?' class="active" aria-current="page"':'')+' title="'+m.full+'"><span aria-hidden="true">'+m.ico+'</span><span class="full">'+m.txt+'</span></a>';}).join('')+'</div>';
+      MODULOS.filter(function(m){return !m.padre;}).map(function(m){return '<a href="'+m.href+'"'+(actual&&m.id===(actual.padre||actual.id)?' class="active" aria-current="page"':'')+' title="'+m.full+'"><span aria-hidden="true">'+m.ico+'</span><span class="full">'+m.txt+'</span></a>';}).join('')+'</div>';
   }
   if(!document.querySelector('.bot-nav')){
     var princ=['inicio','celula','ecosistemas','juego'];
@@ -63,7 +75,7 @@ function armarMenu(){
     b.querySelector('#bot-mas').addEventListener('click',function(){
       var o=document.createElement('div');o.className='mas-menu';
       o.innerHTML='<div class="mm-caja" role="dialog" aria-label="Todos los módulos">'+MODULOS.map(function(m){
-        return '<a href="'+m.href+'"><span style="font-size:1.3rem">'+m.ico+'</span>'+m.full+(visitas[m.id]?' <span style="color:var(--cn-ok)">✓</span>':'')+'</a>';}).join('')+'</div>';
+        return '<a href="'+m.href+'"'+(m.padre?' style="padding-left:28px;font-size:.92em"':'')+'><span style="font-size:1.3rem">'+(m.padre?'↳ ':'')+m.ico+'</span>'+m.full+(visitas[m.id]?' <span style="color:var(--cn-ok)">✓</span>':'')+'</a>';}).join('')+'</div>';
       var tz=document.getElementById('text-zoom-widget'),caja=o.querySelector('.mm-caja');
       if(tz){var t=document.createElement('div');t.className='tz-t';t.textContent='Tamaño de la letra';caja.appendChild(t);caja.appendChild(tz);}
       o.addEventListener('click',function(e){if(e.target===o){if(tz)document.body.appendChild(tz);o.remove();}});

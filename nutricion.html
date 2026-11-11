@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=17">
+<link rel="stylesheet" href="bio.css?v=18">
 <style>
 .mol-tab{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,.8fr));gap:4px;font-size:.88rem}
 .mol-tab .h{font-weight:800;text-align:center;padding:6px 2px;color:var(--cn-brand-d)}
@@ -89,6 +89,7 @@
       <div class="paso" data-t="Hábitat"><h3>🐟 Es hogar</h3><p>El hielo flota y aísla el agua de abajo, así los lagos fríos no se congelan por completo. La vida empezó en el agua y la mayoría de especies aún vive en ella.</p></div>
     </div>
     <div class="dato col">Los pueblos y ciudades de Colombia nacieron junto a ríos y ciénagas: el agua es para beber, cultivar, pescar y transportarse. Por eso proteger los páramos y las cuencas es proteger a las comunidades.</div>
+    <div class="fotos mini" style="margin:12px 0"><div data-foto="f_melocactus" data-pie="Un melocactus: su tallo grueso guarda agua y sus espinas, que son hojas transformadas, casi no la pierden"></div></div>
     <div class="chequeo" data-ok="2" data-exp="El agua se calienta y se enfría despacio, y al evaporarse el sudor se lleva calor: así ayuda a mantener estable la temperatura.">
       <div class="q">¿Por qué sudar te refresca?</div>
       <div class="ops"><button class="op" data-por="El sudor tiene sal, pero no es lo que enfría.">Porque la sal del sudor es fría.</button><button class="op" data-por="El agua del sudor sale de tu propio cuerpo.">Porque entra agua fría a la piel.</button><button class="op">Porque el agua, al evaporarse, se lleva calor del cuerpo.</button></div>
@@ -170,6 +171,7 @@
       <div class="card"><h3>🤧 Por el aire</h3><p>Taparse al toser, ventilar los espacios y vacunarse.</p></div>
       <div class="card"><h3>💉 Por contacto y sangre</h3><p>Condón, no compartir agujas ni cuchillas y vacunarse contra la hepatitis B y el VPH.</p></div>
     </div>
+    <div class="fotos mini" style="margin:12px 0"><div data-foto="n_aedes" data-pie="Aedes aegypti: el mosquito del dengue, el zika y el chikunguña. Fíjate en las rayas blancas de sus patas"></div></div>
     <div class="chequeo" data-ok="0" data-exp="El dengue lo transmite el mosquito Aedes aegypti, que pone sus huevos en agua quieta y limpia: eliminar los recipientes con agua corta su ciclo.">
       <div class="q">¿Qué medida previene mejor el dengue?</div>
       <div class="ops"><button class="op">Eliminar los recipientes con agua quieta donde se cría el mosquito.</button><button class="op" data-por="El dengue no se transmite por el aire entre personas.">Usar tapabocas.</button><button class="op" data-por="Los antibióticos no sirven contra virus como el del dengue.">Tomar antibióticos.</button></div>
@@ -185,6 +187,7 @@
       <div class="paso" data-t="Virus no"><h3>🚫 No sirven contra virus</h3><p>Los virus no tienen pared ni ribosomas propios. Por eso un antibiótico no cura la gripa, el dengue ni el COVID-19.</p></div>
       <div class="paso" data-t="Uso correcto"><h3>✅ Uso correcto</h3><p>Solo con receta médica, en la dosis y el tiempo indicados. Cada uso innecesario favorece que sobrevivan y se multipliquen las bacterias resistentes, y luego esos medicamentos dejan de funcionar.</p></div>
     </div>
+    <div class="fotos" style="margin:12px 0"><div data-foto="n_fleming" data-pie="Alexander Fleming descubrió la penicilina en 1928"></div><div data-foto="n_penicillium" data-pie="Colonias del hongo Penicillium, del que salió la penicilina"></div></div>
     <div class="chequeo" data-ok="2" data-exp="La penicilina impide formar la pared de peptidoglucano, una estructura que tienen las bacterias y no las células humanas.">
       <div class="q">¿Por qué la penicilina mata bacterias pero no daña nuestras células?</div>
       <div class="ops"><button class="op" data-por="Nuestras células sí tienen ADN.">Porque nuestras células no tienen ADN.</button><button class="op" data-por="Las dos tienen membrana.">Porque ataca la membrana, que solo tienen las bacterias.</button><button class="op">Porque ataca la pared celular, que nuestras células no tienen.</button></div>
@@ -208,7 +211,9 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="bio.js?v=16"></script>
+<script src="fotos-datos.js?v=3"></script>
+<script src="fotos.js?v=1"></script>
+<script src="bio.js?v=17"></script>
 <script>
 (function(){
 /* ═══ Biomoléculas en todos los grupos ═══ */

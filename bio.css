@@ -284,3 +284,11 @@ body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.1
 .flip .fr,.flip .bk{position:relative;inset:auto;grid-area:1/1;min-height:150px}
 .flip .bk{display:block;align-content:center}
 .flip{display:grid}
+
+/* Barra de subpáginas de un tema principal */
+.sub-nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 4px;font-size:.88rem}
+.sub-nav a{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--cn-brd);color:var(--cn-brand-d);font-weight:700;text-decoration:none}
+.sub-nav a.on{background:var(--cn-brand);border-color:var(--cn-brand);color:#fff}
+.sub-nav .sep{color:var(--cn-dim);font-weight:800}
+.modulos-g a.mod.sub{border-left:5px solid var(--cn-brand);background:var(--cn-brand-l)}
+.modulos-g a.mod.sub b::before{content:'↳ ';color:var(--cn-dim)}
