@@ -56,6 +56,9 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
   (por ejemplo `bionom-v12` → `bionom-v13`) y el `?v=` de las páginas en el
   mismo commit. No repetir archivos en `ASSETS`: un archivo repetido hace
   fallar la instalación de la app.
+  **Subir `CACHE` en cada publicación**, aunque solo cambie un `.html`: el
+  aviso «Nueva versión disponible» de la app instalada solo aparece cuando
+  cambia `sw.js` (versión 2.25).
 
 - **Emojis:** no usar banderas (Windows no las dibuja: para Colombia usar
   `<span class="co"></span>`) ni emojis de la versión 12 en adelante (🫁 🫀
