@@ -66,7 +66,7 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 
 | Archivo | Qué es |
 |---|---|
-| `bio.css` | Estilos comunes y componentes (`.chequeo`, `.pasos`, `.flip`, `.tabs`, `.term`, `.fig`/`.det`, `.tl`, clasificador). Usa los nombres de clase de ChromaNom (`.cn-page-head`, `.sec`, `.cn-btn`) para que funcionen `narracion.js` y `actividades.css`. |
+| `bio.css` | Para texto naranja usar `--cn-naranja-tx` (contraste AA), no `--cn-naranja`. Estilos comunes y componentes (`.chequeo`, `.pasos`, `.flip`, `.tabs`, `.term`, `.fig`/`.det`, `.tl`, clasificador). Usa los nombres de clase de ChromaNom (`.cn-page-head`, `.sec`, `.cn-btn`) para que funcionen `narracion.js` y `actividades.css`. |
 | `bio.js` | Menú, barra inferior del celular, pie, progreso en `localStorage` (`bionom_visitas`, `bionom_secciones`), montaje de componentes y `BIO.clasificar()`. La lista `MODULOS` dice qué niveles de organización estudia cada módulo: la usa el mapa de la portada. |
 | `index.html` | Mapa interactivo de los 13 niveles de organización. |
 | Subpáginas | Un módulo con `padre:'id'` en `MODULOS` es subpágina de ese tema: no sale en el menú de arriba, sale sangrado en «Más», y `bio.js` pone arriba la barra `.sub-nav` de la familia. Hoy `funciones.html` y `nutricion.html` son subpáginas de `sistemas.html`. **Regla:** las páginas nuevas se agregan como subpáginas de un tema principal y con sus `niveles`, para que cuelguen del mapa de niveles de organización sin desordenar el menú. |

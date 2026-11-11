@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 .hero-logo{display:block;width:min(360px,80%);height:auto;margin:0 0 6px}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end}
@@ -129,7 +129,7 @@ var NIVELES=[
  {id:'atomo',n:'Átomo',ico:'⚛️',banda:'quimico',tam:'0,1 nm',ext:[{href:'https://hbarcenasm863.github.io/ionom/atomo.html',ico:'⚛️',full:'IonNom · Teoría atómica'}],
   def:'La unidad más pequeña de un elemento químico. Los seres vivos están hechos sobre todo de <b>C, H, O, N, P y S</b> (los bioelementos).',
   emerge:'Un átomo solo no está vivo: tiene propiedades químicas, pero no se alimenta ni se reproduce.',
-  ej:{humano:['🌬️','El oxígeno (O) que respiras: es el 65 % de la masa de tu cuerpo.','3d:atomo_O'],frailejon:['🌬️','El carbono (C) que el frailejón toma del aire como CO₂.','3d:atomo_C'],jaguar:['🔴','El hierro (Fe) de la sangre del jaguar, que atrapa el oxígeno.','3d:atomo_Fe']}},
+  ej:{humano:['🌬️','El oxígeno (O): es el 65 % de la masa de tu cuerpo, sobre todo en el agua, y también lo respiras.','3d:atomo_O'],frailejon:['🌬️','El carbono (C) que el frailejón toma del aire como CO₂.','3d:atomo_C'],jaguar:['🔴','El hierro (Fe) de la sangre del jaguar, que atrapa el oxígeno.','3d:atomo_Fe']}},
  {id:'molecula',n:'Molécula',ico:'🧪',banda:'quimico',tam:'1–100 nm',ext:[{href:'https://hbarcenasm863.github.io/ionom/enlace.html',ico:'🔗',full:'IonNom · Enlace químico'},{href:'https://hbarcenasm863.github.io/ionom/funciones.html',ico:'🏷️',full:'IonNom · Nomenclatura inorgánica'},{href:'https://hbarcenasm863.github.io/chromanom/biomoleculas.html',ico:'🧬',full:'ChromaNom · Biomoléculas'}],
   def:'Dos o más átomos unidos por enlaces. Las <b>biomoléculas</b> (carbohidratos, lípidos, proteínas y ácidos nucleicos como el ADN) forman todas las estructuras vivas.',
   emerge:'Las moléculas guardan información (ADN) o aceleran reacciones (enzimas), pero todavía no hay vida.',
@@ -179,7 +179,7 @@ var NIVELES=[
   emerge:'Todos los ecosistemas están conectados: el agua, el carbono y el oxígeno circulan por todo el planeta.',
   ej:{humano:['🌍','Tú compartes el oxígeno que producen las algas del mar y las selvas.','nv_tierra'],frailejon:['💦','El agua que guarda el páramo llega a millones de personas y al mar.','nv_chingaza'],jaguar:['🌍','La Amazonia produce gran parte de la lluvia de Suramérica e influye en el clima de todo el planeta.','nv_tierra']}}
 ];
-var BANDAS={quimico:['Nivel químico','#7b4bb7','#f4eefc'],celular:['Nivel celular','#1a7fb5','#eaf5fc'],organismo:['Nivel del organismo','#c2410c','#fff6ec'],ecologico:['Nivel ecológico','#2e7d4f','#eaf7ee']};
+var BANDAS={quimico:['Nivel químico','#7b4bb7','#f4eefc'],celular:['Nivel celular','#1774a6','#eaf5fc'],organismo:['Nivel del organismo','#c2410c','#fff6ec'],ecologico:['Nivel ecológico','#2e7d4f','#eaf7ee']};
 </script>
 <script src="fotos-datos.js?v=5"></script>
 <script src="fotos.js?v=1"></script>
@@ -281,7 +281,7 @@ document.getElementById('prog').innerHTML='<svg viewBox="0 0 64 64" aria-hidden=
 
 // tarjetas de módulos
 document.getElementById('mods-g').innerHTML=BIO.MODULOS.filter(function(m){return m.id!=='inicio';}).map(function(m){
-  var desc={funciones:'Cómo respiran, circulan, excretan, se regulan y se defienden distintos grupos de seres vivos, y la física de sus fluidos.',nutricion:'Biomoléculas, el agua, dieta balanceada, deporte, sustancias que hacen daño, enfermedades transmisibles y antibióticos.',celula:'Historia del descubrimiento, tipos de célula y sus partes en una célula que se toca.',division:'Cromosomas, ciclo celular, mitosis y meiosis, y qué pasa cuando la división falla.',reinos:'Cómo se clasifican los seres vivos: dominios, los 5 reinos y una clave para clasificar.',sistemas:'Del tejido al sistema: recorre el cuerpo humano y cómo se coordinan sus sistemas.',reproduccion:'Tipos de reproducción en cada grupo, la flor, el sistema reproductor humano, embarazo, anticoncepción e ITS.',genetica:'Mendel y sus arvejas, el cuadro de Punnett, el ADN y cómo se fabrica una proteína.',evolucion:'Lamarck, Darwin, las evidencias y una simulación de selección natural.',ecosistemas:'Componentes, cadenas y redes tróficas, flujo de energía, ciclos y relaciones.',regiones:'Mapa interactivo: los ecosistemas de cada región natural de Colombia.',ambiente:'Efecto invernadero, El Niño y La Niña, océanos, energías y tu huella de carbono.',juego:'Repaso con preguntas de todos los temas, con la explicación de cada respuesta.',docente:'Talleres, evaluaciones, ahorcado y sopa de letras para imprimir o proyectar.'}[m.id];
+  var desc={funciones:'Cómo respiran, circulan, excretan, se regulan y se defienden distintos grupos de seres vivos, y la física de sus fluidos.',nutricion:'Biomoléculas, el agua, dieta balanceada, deporte, sustancias que hacen daño, enfermedades transmisibles y antibióticos.',celula:'Historia del descubrimiento, tipos de célula y sus partes en una célula que se toca.',division:'Cromosomas, ciclo celular, mitosis y meiosis, y qué pasa cuando la división falla.',reinos:'Cómo se clasifican los seres vivos: dominios, los modelos de 5, 6 y 7 reinos y una clave para clasificar.',sistemas:'Del tejido al sistema: recorre el cuerpo humano y cómo se coordinan sus sistemas.',reproduccion:'Tipos de reproducción en cada grupo, la flor, el sistema reproductor humano, embarazo, anticoncepción e ITS.',genetica:'Mendel y sus arvejas, el cuadro de Punnett, el ADN y cómo se fabrica una proteína.',evolucion:'Lamarck, Darwin, las evidencias y una simulación de selección natural.',ecosistemas:'Componentes, cadenas y redes tróficas, flujo de energía, ciclos y relaciones.',regiones:'Mapa interactivo: los ecosistemas de cada región natural de Colombia.',ambiente:'Efecto invernadero, El Niño y La Niña, océanos, energías y tu huella de carbono.',juego:'Repaso con preguntas de todos los temas, con la explicación de cada respuesta.',docente:'Talleres, evaluaciones, ahorcado y sopa de letras para imprimir o proyectar.'}[m.id];
   return '<a class="mod'+(m.padre?' sub':'')+'" href="'+m.href+'"><span class="e">'+m.ico+'</span><b>'+m.full+'</b>'+(m.padre?'<small style="color:var(--cn-brand-d);font-weight:700">Subpágina de '+BIO.MODULOS.filter(function(p){return p.id===m.padre;})[0].full+'</small>':'')+'<small>'+desc+'</small>'+(BIO.visitas[m.id]?'<span class="v">✓ visitado</span>':'')+'</a>';
 }).join('');
 
@@ -307,6 +307,6 @@ reto();
 </script>
 <script src="text-zoom.js?v=13"></script>
 <script src="narracion.js?v=14"></script>
-<script src="pwa-install.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

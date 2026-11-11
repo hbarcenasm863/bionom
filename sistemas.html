@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 .escalon{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px 0}
 .escalon .e{flex:1;min-width:110px;text-align:center;background:#fff;border:2px solid var(--cn-brd);border-radius:14px;padding:10px 6px;transition:all .3s}
@@ -297,7 +297,7 @@ function verSis(s){
   document.querySelectorAll('#sist-btns .chip').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-s')===s);});
   C.querySelectorAll('.org').forEach(function(g){var v=g.getAttribute('data-s')===s;g.classList.toggle('vis',v);g.classList.remove('on');g.setAttribute('tabindex',v?'0':'-1');});
   var lista=Object.keys(ORG).filter(function(id){return ORG[id][0]===s;});
-  det.innerHTML='<div class="sist-info" style="border-color:'+S[1]+'"><h3 style="color:'+S[1]+'">Sistema '+S[0].split(' ').slice(1).join(' ').toLowerCase()+'</h3><p>'+S[2]+'</p></div><p style="font-size:.9rem;color:var(--cn-dim)">Órganos: '+lista.map(function(id){return '<button type="button" class="chip" style="min-height:30px;padding:3px 10px;margin:2px" data-ver="'+id+'">'+ORG[id][2]+' '+ORG[id][1]+'</button>';}).join('')+'</p><div id="org-txt" style="margin-top:12px"><p class="vacio" style="padding:14px">👆 Toca un órgano en la figura o en la lista.</p></div>';
+  det.innerHTML='<div class="sist-info" style="border-color:'+S[1]+'"><h3 style="color:'+S[1]+';color:color-mix(in srgb,'+S[1]+' 70%,#000)">Sistema '+S[0].split(' ').slice(1).join(' ').toLowerCase()+'</h3><p>'+S[2]+'</p></div><p style="font-size:.9rem;color:var(--cn-dim)">Órganos: '+lista.map(function(id){return '<button type="button" class="chip" style="min-height:36px;padding:3px 11px;margin:2px" data-ver="'+id+'">'+ORG[id][2]+' '+ORG[id][1]+'</button>';}).join('')+'</p><div id="org-txt" style="margin-top:12px"><p class="vacio" style="padding:14px">👆 Toca un órgano en la figura o en la lista.</p></div>';
   det.querySelectorAll('[data-ver]').forEach(function(b){b.onclick=function(){verOrg(b.getAttribute('data-ver'));};});
   guias();
 }
@@ -433,12 +433,12 @@ function graf(k){var marca=[1,2,3,4,6,6][k],s='<rect x="40" y="10" width="270" h
   s+='<path d="M'+pts.map(function(p){return X(p[0])+' '+Y(p[1]);}).join(' L')+'" fill="none" stroke="#d7e3da" stroke-width="3"/><path d="'+d+'" fill="none" stroke="#c0392b" stroke-width="3.5" stroke-linejoin="round"/>';
   var p=pts[marca];s+='<circle cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="6" fill="#c0392b"/>';
   if(k===4)s+='<text x="175" y="60" text-anchor="middle" style="font:700 12px Outfit" fill="#7b4bb7">sinapsis: el mensaje sigue con neurotransmisores</text>';
-  if(k===5)s+='<text x="175" y="60" text-anchor="middle" style="font:700 12px Outfit" fill="#1a7fb5">con mielina, el impulso salta y llega antes</text>';
+  if(k===5)s+='<text x="175" y="60" text-anchor="middle" style="font:700 12px Outfit" fill="#1774a6">con mielina, el impulso salta y llega antes</text>';
   document.getElementById('pa-svg').innerHTML=s;}
 window.pasoNeurona=function(k){graf(k);};graf(0);
 })();
 </script>
 <script src="narracion.js?v=14"></script>
-<script src="pwa-install.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

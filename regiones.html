@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 .mapa-co{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
 @media(max-width:860px){.mapa-co{grid-template-columns:1fr}}
@@ -29,11 +29,12 @@
 #co .mk{cursor:pointer}
 #co .mk circle.f{stroke:#fff;stroke-width:2.2;transition:r .2s}
 #co .mk:hover circle.f,#co .mk.on circle.f{r:15}
+#co .mk:focus-visible circle.f{stroke:#b45309;stroke-width:3.4;r:15}
 #co .mk text{pointer-events:none;font-size:14px}
 #co .mk.oculto{display:none}
 #co .lbl-r{font:800 15px Outfit;fill:#10261a;paint-order:stroke;stroke:#ffffffcc;stroke-width:4;pointer-events:none;letter-spacing:.04em}
 .leyenda{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.leyenda .chip{font-size:.8rem;padding:4px 10px;min-height:32px}
+.leyenda .chip{font-size:.8rem;padding:4px 10px;min-height:36px}
 .panel-r{position:sticky;top:64px}
 .panel-r .det{min-height:460px}
 .reg-cab{border-radius:14px;padding:12px 14px;color:#fff;margin:-4px -6px 12px}
@@ -289,7 +290,7 @@ BIO.montar(document.getElementById('eco-cards'));
 /* ═══ Pisos térmicos ═══ */
 var PISOS=[
  [0,1000,'Cálido','> 24 °C','#e9a23b','Selva húmeda, bosque seco, sabanas.','Arroz, plátano, cacao, caña de azúcar, mango.','Girardot, Cali (en el límite), Barranquilla, Villavicencio.'],
- [1000,2000,'Templado','18 a 24 °C','#c7b544','Bosque subandino.','Café, maíz, fríjol, cítricos.','Medellín, Bucaramanga, Armenia.'],
+ [1000,2000,'Templado','18 a 24 °C','#c7b544','Bosque subandino.','Café, maíz, fríjol, cítricos.','Medellín, Ibagué, Armenia.'],
  [2000,3000,'Frío','12 a 18 °C','#5f9e5a','Bosque andino y de niebla.','Papa, arveja, fresa, ganado de leche.','Bogotá, Tunja, Pasto.'],
  [3000,4700,'Páramo','6 a 12 °C','#8a74c4','Páramo: frailejones, pajonales, lagunas.','Ninguno recomendado: hay que protegerlo porque produce agua.','No hay ciudades: es zona de conservación.'],
  [4700,5800,'Nival (glacial)','< 6 °C','#cfe3f2','Nieves perpetuas y glaciares.','Ninguno.','Picos de la Sierra Nevada, el Ruiz, el Cocuy.']
@@ -347,13 +348,14 @@ document.getElementById('reto-btn').onclick=function(){reto={q:BIO.barajar(PREG)
 document.getElementById('reto-salir').onclick=function(){reto=null;document.getElementById('reto-bar').hidden=true;};
 
 /* ═══ Especies amenazadas ═══ */
-var CAT=[['LC','Preocupación menor','#3c9a5f'],['NT','Casi amenazada','#9bbf3c'],['VU','Vulnerable','#e8c02a'],['EN','En peligro','#f08c1e'],['CR','En peligro crítico','#d64535'],['EW','Extinta en estado silvestre','#6b3fa0'],['EX','Extinta','#222']];
-document.getElementById('uicn').innerHTML=CAT.map(function(c){return '<div data-c="'+c[0]+'" style="background:'+c[2]+'">'+c[0]+'<small>'+c[1]+'</small></div>';}).join('');
+/* [sigla, nombre, fondo, color del texto]: el texto oscuro va sobre los fondos claros para que se lea bien (contraste WCAG AA). */
+var CAT=[['LC','Preocupación menor','#2e7d4f','#fff'],['NT','Casi amenazada','#9bbf3c','#10261a'],['VU','Vulnerable','#e8c02a','#10261a'],['EN','En peligro','#f08c1e','#10261a'],['CR','En peligro crítico','#b42318','#fff'],['EW','Extinta en estado silvestre','#6b3fa0','#fff'],['EX','Extinta','#222','#fff']];
+document.getElementById('uicn').innerHTML=CAT.map(function(c){return '<div data-c="'+c[0]+'" style="background:'+c[2]+';color:'+c[3]+'">'+c[0]+'<small>'+c[1]+'</small></div>';}).join('');
 var ESP=[
  ['🐻','Oso de anteojos','VU','Andina','El único oso de Suramérica. Pierde su bosque andino y páramo por la ganadería y los cultivos, y a veces lo cazan por atacar ganado.','Proteger páramos y bosques andinos; corredores entre parques como Chingaza y Sumapaz.'],
  ['🐊','Caimán del Orinoco','CR','Orinoquía','Puede medir 6 m. Fue cazado por miles para vender su piel en el siglo XX. Quedan muy pocos en libertad.','Cría en cautiverio (Estación Roberto Franco en Villavicencio) y liberación en ríos protegidos.'],
  ['🐒','Tití cabeciblanco','CR','Caribe','Endémico de Colombia. Su bosque seco fue talado casi por completo y lo capturan para venderlo como mascota.','Restaurar bosque seco, corredores y campañas contra el tráfico.'],
- ['🐸','Rana dorada','EN','Pacífica','Solo vive en un pequeño sector del Chocó. Es uno de los animales más venenosos del mundo. Su bosque se pierde por minería y tala.','Proteger su hábitat y controlar la minería ilegal.'],
+ ['🐸','Rana dorada','EN','Pacífica','Solo vive en un pequeño sector de la costa pacífica del Cauca (Chocó biogeográfico). Es uno de los animales más venenosos del mundo. Su bosque se pierde por minería y tala.','Proteger su hábitat y controlar la minería ilegal.'],
  ['🐬','Delfín rosado','EN','Amazonía','Se enreda en redes de pesca, lo afecta el mercurio de la minería y a veces lo matan para usarlo como carnada.','Pesca responsable, monitoreo en lagos de Tarapoto y control del mercurio.'],
  ['🌴','Palma de cera','EN','Andina','El árbol nacional. Antes se cortaban sus hojas para el Domingo de Ramos y su bosque se convirtió en potreros, donde las palmas viejas no se reproducen.','Prohibición del uso de sus hojas y siembra de nuevas palmas en bosque.'],
  ['🐢','Tortuga carey','CR','Caribe e Insular','Fue cazada por su caparazón para hacer adornos. Sus playas de anidación se urbanizan y se llenan de plástico.','Proteger playas de anidación y no comprar artesanías de carey.'],
@@ -367,7 +369,7 @@ eb.innerHTML=ESP.map(function(e,i){return '<button type="button" data-i="'+i+'">
 function verE(i){var e=ESP[i],c=CAT.filter(function(x){return x[0]===e[2];})[0];vistE[i]=1;
   eb.querySelectorAll('button').forEach(function(b,j){b.classList.toggle('on',j===i);});
   document.querySelectorAll('#uicn [data-c]').forEach(function(d){d.classList.toggle('on',d.getAttribute('data-c')===e[2]);});
-  document.getElementById('esp-t').innerHTML='<div class="esp-det">'+FOTO(EK[i],e[1])+'<div><h3>'+e[0]+' '+e[1]+'</h3><p><span class="tag" style="background:'+c[2]+';color:#fff">'+c[0]+' · '+c[1]+'</span><span class="tag">'+e[3]+'</span></p><p style="margin-top:8px"><b>¿Por qué está amenazada?</b> '+e[4]+'</p><p style="margin-top:6px"><b>¿Qué se hace para protegerla?</b> '+e[5]+'</p></div></div>';
+  document.getElementById('esp-t').innerHTML='<div class="esp-det">'+FOTO(EK[i],e[1])+'<div><h3>'+e[0]+' '+e[1]+'</h3><p><span class="tag" style="background:'+c[2]+';color:'+c[3]+'">'+c[0]+' · '+c[1]+'</span><span class="tag">'+e[3]+'</span></p><p style="margin-top:8px"><b>¿Por qué está amenazada?</b> '+e[4]+'</p><p style="margin-top:6px"><b>¿Qué se hace para protegerla?</b> '+e[5]+'</p></div></div>';
   if(Object.keys(vistE).length>=5)BIO.marcarSeccion('amenazadas');}
 eb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verE(+b.getAttribute('data-i'));};});
 document.getElementById('esp-t').innerHTML='<p class="vacio" style="padding:10px">👆 Toca una especie para ver su categoría y por qué está amenazada.</p>';
@@ -375,6 +377,6 @@ document.getElementById('esp-t').innerHTML='<p class="vacio" style="padding:10px
 </script>
 <script src="text-zoom.js?v=13"></script>
 <script src="narracion.js?v=14"></script>
-<script src="pwa-install.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

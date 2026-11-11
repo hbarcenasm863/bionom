@@ -6,6 +6,77 @@
 
 ---
 
+## Versión 2.23 — 11 de noviembre de 2026 · Auditoría experta (ciencia, MEN, Mayer) y revisión técnica y de UI/UX
+
+**Contexto.** El docente pidió dos revisiones a fondo con agentes: una
+auditoría de un experto doctor en ciencias naturales, en los Estándares
+Básicos de Competencias y en aprendizaje multimedia; y una revisión de un
+ingeniero senior en programación, diseño gráfico y UI/UX, que también
+ajustara los visuales. Informes completos: `AUDITORIA_2026-11-v2.md` y
+`REVISION_TECNICA_2026-11.md`.
+
+**1. Auditoría científica y didáctica: 45 hallazgos (7 altos, 16 medios y 22
+bajos), todos aplicados salvo los que se indican abajo.**
+- En los bancos (subido antes, en el commit de la auditoría v2):
+  - arqueas metanógenas como productoras del metano;
+  - microbios del rumen;
+  - el polen ya no aparece como gameto;
+  - pisos térmicos, alvéolos, El Niño y antibióticos coherentes con las
+    páginas;
+  - la pregunta de las algas ya no sale con 7 reinos (`m:'56'`);
+  - pistas de RESPIRACIÓN (30 a 32 ATP), BIOACUMULACIÓN y HOMÍNIDO;
+  - guías y Detective (Woese en 1990, «ProMeAnaTe», la yema de avestruz).
+- En las páginas:
+  - las bacterias no hacen mitosis (`division.html`, `reproduccion.html`);
+  - el rumen y el camuflaje del insecto palo (`funciones.html`);
+  - el año de la Tierra: «última hora» y la cordillera Oriental el 31 de
+    diciembre (`evolucion.html`);
+  - la vida y el agua, el mercurio, biomagnificación (`nutricion.html`);
+  - la pastilla de emergencia ahora muestra el dato por relación y no por
+    año; el tiburón ballena; los anticonceptivos sin «implantación»
+    (`reproduccion.html`);
+  - Linneo, Monera, enzimas de extremófilos y la clave dicotómica
+    (`reinos.html`);
+  - Ibagué en el piso templado y la rana dorada del Cauca (`regiones.html`,
+    `evolucion.html`);
+  - el mangle negro (`ecosistemas.html`);
+  - la tarjeta de Reinos y el oxígeno del cuerpo (`index.html`);
+  - el chequeo de Pasteur explica cada error, más Ruska y el agua destilada
+    (`celula.html`);
+  - el estándar de 8.°–9.° en `MATRIZ_MEN.md`.
+- Probado: la pastilla de emergencia y el chequeo de Pasteur, en el
+  navegador.
+
+**2. Revisión técnica y UI/UX (15 páginas, en computador, tableta, Pixel 7 e
+iPhone 13).** No había errores de consola, archivos 404 ni desbordes. Se
+arregló:
+- **Contraste (WCAG AA):** nueva variable `--cn-naranja-tx` para texto
+  naranja y `--cn-azul` más oscuro; categorías UICN, bases del ADN y Punnett
+  más legibles.
+- **Genética en el celular:** el ADN en dos filas.
+- **Áreas táctiles más grandes:** instalar, puntos de los pasos, órganos y
+  leyendas.
+- **Subpáginas:** `funciones.html` y `nutricion.html` cargan el control de
+  letra y el botón de instalar.
+- **Foco visible con teclado.**
+- **Batería:** la animación de la citocinesis solo corre cuando está a la
+  vista.
+- **Versiones:** `bio.css?v=21`, `pwa-install.js?v=14`, `sw.js` →
+  `bionom-v37`.
+
+**Sin resolver (para decidir con el docente).**
+- Estándares MEN que la auditoría encontró flojos:
+  - tipos de selección natural (10.°–11.°);
+  - clima en las eras geológicas (8.°–9.°);
+  - origen del universo (6.°–7.°);
+  - clasificar dentro de cada reino (8.°–9.°);
+  - experimento con microorganismos en alimentos (10.°–11.°).
+- Foto `a_incendio` poco clara: buscar otra.
+- Crucigrama del juego en el celular con palabras largas: el cambio va en
+  `retos.js`, que es compartido con ChromaNom e IonNom.
+
+---
+
 ## Versión 2.22 — 11 de noviembre de 2026 · Animaciones del ARN mensajero y de la replicación
 
 **Contexto.** Una docente le comentó al docente que en la replicación faltaba

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 #red{width:100%;height:auto;background:linear-gradient(180deg,#eef7fb,#f3faf1);border-radius:14px}
 #red .nd{cursor:pointer}
@@ -22,7 +22,7 @@
 #red.foco .ar{opacity:.08}
 #red.foco .ar.come,#red.foco .ar.comido{opacity:1}
 #red .ar.come{stroke:#c2410c}
-#red .ar.comido{stroke:#1a7fb5}
+#red .ar.comido{stroke:#1774a6}
 #red.foco .nd{opacity:.3}
 #red.foco .nd.on,#red.foco .nd.rel{opacity:1}
 #red .nd.fuera circle{fill:#ddd!important;stroke:#999!important}
@@ -99,7 +99,7 @@
 
   <section class="sec" id="red-sec">
     <h2><span class="n">03</span> La red trófica de la selva amazónica</h2>
-    <p class="lead">En la naturaleza las cadenas se cruzan y forman una <b>red trófica</b>. <b>Toca un ser vivo</b> para ver qué come (flechas <span style="color:#c2410c;font-weight:800">naranjas</span>) y quién se lo come (flechas <span style="color:#1a7fb5;font-weight:800">azules</span>). Después, prueba a <b>hacerlo desaparecer</b> y mira qué les pasa a los demás.</p>
+    <p class="lead">En la naturaleza las cadenas se cruzan y forman una <b>red trófica</b>. <b>Toca un ser vivo</b> para ver qué come (flechas <span style="color:#c2410c;font-weight:800">naranjas</span>) y quién se lo come (flechas <span style="color:#1774a6;font-weight:800">azules</span>). Después, prueba a <b>hacerlo desaparecer</b> y mira qué les pasa a los demás.</p>
     <div class="lado">
       <div class="fig"><svg id="red" class="ancha" viewBox="0 0 720 470" role="group" aria-label="Red trófica"></svg></div>
       <div class="det" id="red-det" aria-live="polite"></div>
@@ -198,7 +198,7 @@
     <div class="card">
       <div class="ctrl"><label>Capacidad de carga <input type="range" id="pk" min="200" max="1000" step="50" value="600"> <b id="pk-v"></b></label><label>Tasa de crecimiento <input type="range" id="pr" min="0.1" max="0.8" step="0.05" value="0.35"> <b id="pr-v"></b></label></div>
       <canvas id="pob" width="900" height="220" aria-label="Gráfica de crecimiento de una población"></canvas>
-      <p style="font-size:.88rem;color:var(--cn-dim)"><span style="color:#b42318;font-weight:800">— Exponencial (J)</span> · <span style="color:#2e7d4f;font-weight:800">— Logístico (S)</span> · <span style="color:#1a7fb5;font-weight:800">- - Capacidad de carga</span></p>
+      <p style="font-size:.88rem;color:var(--cn-dim)"><span style="color:#b42318;font-weight:800">— Exponencial (J)</span> · <span style="color:#2e7d4f;font-weight:800">— Logístico (S)</span> · <span style="color:#1774a6;font-weight:800">- - Capacidad de carga</span></p>
     </div>
     <div class="dato col">Los factores que limitan una población pueden ser la comida, el agua, el espacio, los depredadores y las enfermedades. Cuando el retamo espinoso llegó a los cerros de Bogotá, no tenía depredadores y su población creció sin control: es una <b>especie invasora</b>.</div>
     <div class="sig"><a href="evolucion.html"><small>← Anterior</small><b>🦎 Evolución</b></a><a class="der" href="regiones.html"><small>Siguiente →</small><b><span class="co" role="img" aria-label="Colombia"></span> Ecosistemas de Colombia</b></a></div>
@@ -273,7 +273,7 @@ function elegir(id){
   red.querySelectorAll('.ar').forEach(function(a){a.classList.toggle('come',a.getAttribute('data-p')===id);a.classList.toggle('comido',a.getAttribute('data-q')===id);});
   var come=(COME[id]||[]).map(function(q){return N[q][0]+' '+N[q][1];}),lo=Object.keys(COME).filter(function(p){return COME[p].indexOf(id)>=0;}).map(function(p){return N[p][0]+' '+N[p][1];});
   rdet.innerHTML='<h3>'+n[0]+' '+n[1]+'</h3><span class="tag" style="background:'+COL[n[2]]+'22">'+NIV[n[2]]+'</span><p style="margin-top:8px">'+n[4]+'</p>'+
-   '<p style="margin-top:8px"><b style="color:#c2410c">Come:</b> '+(come.length?come.join(', '):'nada: fabrica su alimento con la luz del Sol')+'</p><p><b style="color:#1a7fb5">Se lo come:</b> '+(lo.length?lo.join(', '):'nadie (superdepredador)')+'</p>'+
+   '<p style="margin-top:8px"><b style="color:#c2410c">Come:</b> '+(come.length?come.join(', '):'nada: fabrica su alimento con la luz del Sol')+'</p><p><b style="color:#1774a6">Se lo come:</b> '+(lo.length?lo.join(', '):'nadie (superdepredador)')+'</p>'+
    '<button type="button" class="cn-btn" id="quitar" style="margin-top:10px">'+(fuera[id]?'↩️ Devolver al ecosistema':'🚫 Hacer desaparecer')+'</button> <button type="button" class="cn-btn" id="todo-r">🔄 Restaurar todo</button><div id="casc" style="margin-top:10px"></div>';
   document.getElementById('quitar').onclick=function(){if(fuera[id])delete fuera[id];else fuera[id]=1;pintarRed();elegir(id);cascada();BIO.marcarSeccion('red-sec');};
   document.getElementById('todo-r').onclick=function(){fuera={};pintarRed();elegir(id);};
@@ -363,7 +363,7 @@ function graf(){var K=+pk.value,r=+pr.value,cv=document.getElementById('pob'),c=
   [0,500,1000].forEach(function(v){var y=H-pad-(H-2*pad)*v/Y;c.beginPath();c.moveTo(pad,y);c.lineTo(W-10,y);c.stroke();c.fillText(v,2,y+4);});
   c.fillText('tiempo →',W-70,H-8);c.save();c.translate(12,40);c.fillText('individuos',0,0);c.restore();
   function X(t){return pad+(W-pad-12)*t/T;}function Yp(v){return H-pad-(H-2*pad)*Math.min(v,Y)/Y;}
-  c.setLineDash([6,5]);c.strokeStyle='#1a7fb5';c.lineWidth=2;c.beginPath();c.moveTo(pad,Yp(K));c.lineTo(W-12,Yp(K));c.stroke();c.setLineDash([]);
+  c.setLineDash([6,5]);c.strokeStyle='#1774a6';c.lineWidth=2;c.beginPath();c.moveTo(pad,Yp(K));c.lineTo(W-12,Yp(K));c.stroke();c.setLineDash([]);
   c.strokeStyle='#b42318';c.lineWidth=3;c.beginPath();for(var t=0;t<=T;t+=0.25){var v=N0*Math.exp(r*t);if(v>Y){break;}if(t)c.lineTo(X(t),Yp(v));else c.moveTo(X(t),Yp(v));}c.stroke();
   c.strokeStyle='#2e7d4f';c.beginPath();for(t=0;t<=T;t+=0.25){v=K/(1+(K-N0)/N0*Math.exp(-r*t));if(t)c.lineTo(X(t),Yp(v));else c.moveTo(X(t),Yp(v));}c.stroke();}
 pk.oninput=pr.oninput=function(){graf();BIO.marcarSeccion('poblaciones');};graf();
@@ -374,7 +374,7 @@ BIO.clasificar(document.getElementById('clas-adap'),{
   fichas:[
    {t:'Pelos blancos del frailejón contra el frío',caja:'mor',exp:'es parte de la forma de la hoja.'},
    {t:'Raíces zancos del mangle',caja:'mor',exp:'lo sostienen en el lodo blando.'},
-   {t:'El mangle elimina la sal por sus hojas',caja:'fis',exp:'es un proceso interno.',pista:'No se ve en la forma: es un proceso que ocurre dentro de la planta.'},
+   {t:'El mangle negro elimina la sal por glándulas de sus hojas',caja:'fis',exp:'es un proceso interno.',pista:'No se ve en la forma: es un proceso que ocurre dentro de la planta.'},
    {t:'Colores brillantes de la rana venenosa',caja:'mor',exp:'advierten a los depredadores (aposematismo).',pista:'Es una característica que se ve en su cuerpo.'},
    {t:'Colibrí que baja su temperatura de noche para ahorrar energía',caja:'fis',exp:'se llama torpor.'},
    {t:'Ojos y nariz del chigüiro en la parte alta de la cabeza',caja:'mor',exp:'puede ver y respirar casi sumergido.'},
@@ -398,6 +398,6 @@ window.pasoSuelo=function(k){suelo(k);};suelo(0);
 })();
 </script>
 <script src="narracion.js?v=14"></script>
-<script src="pwa-install.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

@@ -12,11 +12,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 .hist-card{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:16px;align-items:center}
 .hist-card .ilu{font-size:4rem;text-align:center;background:var(--cn-brand-l);border-radius:16px;padding:10px 0}
-.hist-card .anio{font-family:var(--cn-mono);font-weight:800;color:var(--cn-naranja)}
+.hist-card .anio{font-family:var(--cn-mono);font-weight:800;color:var(--cn-naranja-tx)}
 .hist-card .foto img{max-height:250px;object-fit:contain;background:#f4f1ea}
 @media(max-width:560px){.hist-card{grid-template-columns:1fr}.hist-card .ilu{font-size:3rem}}
 .escala{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center}
@@ -98,7 +98,7 @@
     <div class="dato">Un virus <b>no</b> es una célula: no tiene citoplasma ni ribosomas y solo se multiplica dentro de una célula ajena. Por eso muchos biólogos no lo consideran un ser vivo.</div>
     <div class="chequeo" data-ok="1" data-exp="Ese es el postulado de la unidad de origen: si toda célula viene de otra, la vida no aparece de la nada.">
       <div class="q">El experimento de Pasteur apoya directamente el postulado que dice que…</div>
-      <div class="ops"><button class="op">los seres vivos están hechos de células.</button><button class="op">toda célula proviene de otra célula.</button><button class="op">la célula tiene información hereditaria.</button></div>
+      <div class="ops"><button class="op" data-por="Ese es el postulado de la unidad estructural (Schleiden y Schwann). Los frascos de Pasteur no estudiaban de qué están hechos los seres vivos.">los seres vivos están hechos de células.</button><button class="op">toda célula proviene de otra célula.</button><button class="op" data-por="Pasteur no estudió la herencia: mostró que los microbios no aparecen solos en el caldo.">la célula tiene información hereditaria.</button></div>
     </div>
   </section>
 
@@ -219,7 +219,7 @@
       <p id="os-exp" style="margin-top:12px" aria-live="polite"></p>
     </div>
     <div class="dato col">Por la ósmosis, si riegas una planta con agua de mar, ¡se marchita! El agua sale de sus células hacia el suelo salado. Por eso en la costa Caribe y Pacífica solo crecen cerca del mar plantas especiales como los <b>manglares</b>, que impiden la entrada de la sal por sus raíces o la eliminan por glándulas de sus hojas.</div>
-    <div class="chequeo" data-ok="0" data-exp="El agua dulce tiene menos sal que el interior del glóbulo rojo, así que el agua entra a la célula hasta que revienta (lisis). Por eso el suero que ponen en el hospital es <b>isotónico</b> (0,9 % de sal).">
+    <div class="chequeo" data-ok="0" data-exp="El agua destilada no tiene sal, y el interior del glóbulo rojo sí, así que el agua entra a la célula hasta que revienta (lisis). Por eso el suero que ponen en el hospital es <b>isotónico</b> (0,9 % de sal).">
       <div class="q">Si pones glóbulos rojos en agua destilada (sin sal), ¿qué pasa?</div>
       <div class="ops"><button class="op">Les entra agua, se hinchan y pueden reventar.</button><button class="op" data-por="Eso pasaría en agua MUY salada: el agua sale de la célula.">Pierden agua y se arrugan.</button><button class="op" data-por="Solo quedan igual si el agua de afuera tiene la misma concentración que adentro.">No les pasa nada.</button></div>
     </div>
@@ -319,7 +319,7 @@ var HIST=[
  {a:'1839',ico:'🐸',q:'Theodor Schwann',f:['schwann','Theodor Schwann'],d:'Zoólogo alemán que demuestra que <b>también los animales</b> están formados por células. Junto con Schleiden propone que la célula es la unidad de todos los seres vivos.',c:'Nace la teoría celular.'},
  {a:'1855',ico:'🧫',q:'Rudolf Virchow',f:['virchow','Rudolf Virchow'],d:'Médico alemán que afirma: <b>«Omnis cellula e cellula»</b>, toda célula proviene de otra célula. Explicó así cómo crecen los tejidos y algunas enfermedades.',c:'Se completa la teoría celular: las células no aparecen de la nada.'},
  {a:'1862',ico:'⚗️',q:'Louis Pasteur',f:['pasteur','Louis Pasteur fotografiado por Nadar'],d:'Con sus frascos de cuello de cisne demuestra que los microorganismos <b>no aparecen solos</b> en el caldo: llegan del aire.',c:'Cae la teoría de la generación espontánea.'},
- {a:'1931',ico:'⚡',q:'Ernst Ruska y Max Knoll',f:['ruska','Microscopio electrónico de Ruska (Deutsches Museum, Múnich)'],d:'Construyen el <b>microscopio electrónico</b>, que usa electrones en vez de luz y aumenta más de un millón de veces.',c:'Se pueden ver los organelos por dentro, los ribosomas y los virus.'},
+ {a:'1931',ico:'⚡',q:'Ernst Ruska y Max Knoll',f:['ruska','Microscopio electrónico de Ruska (Deutsches Museum, Múnich)'],d:'Construyen el <b>microscopio electrónico</b>, que usa electrones en vez de luz y hoy aumenta más de un millón de veces (el primero, unas 400).',c:'Se pueden ver los organelos por dentro, los ribosomas y los virus.'},
  {a:'1967',ico:'🤝',q:'Lynn Margulis',f:['margulis','Lynn Margulis en 2005'],d:'Propone la <b>teoría endosimbiótica</b>: las mitocondrias y los cloroplastos fueron bacterias que vivieron dentro de otra célula y se volvieron parte de ella.',c:'Explica el origen de la célula eucariota.'}
 ];
 var tl=document.getElementById('tl'),card=document.getElementById('tl-card');
@@ -506,7 +506,7 @@ var SAL=[
 ];
 var sal=document.getElementById('sal');
 function flechas(w){if(!w)return '<text x="130" y="172" text-anchor="middle" style="font:700 12px Outfit" fill="#3c5446">⇄ entra y sale igual</text>';
-  var s='';[[30,90],[230,90],[130,20],[130,160]].forEach(function(p){var ang=Math.atan2(90-p[1],130-p[0])*180/Math.PI+(w<0?180:0);s+='<g transform="translate('+p[0]+' '+p[1]+') rotate('+ang+')"><path d="M-12 0 L10 0 M3 -6 L10 0 L3 6" stroke="#1a7fb5" stroke-width="3.5" fill="none"/></g>';});return s;}
+  var s='';[[30,90],[230,90],[130,20],[130,160]].forEach(function(p){var ang=Math.atan2(90-p[1],130-p[0])*180/Math.PI+(w<0?180:0);s+='<g transform="translate('+p[0]+' '+p[1]+') rotate('+ang+')"><path d="M-12 0 L10 0 M3 -6 L10 0 L3 6" stroke="#1774a6" stroke-width="3.5" fill="none"/></g>';});return s;}
 function verSal(){
   var s=SAL[+sal.value];document.getElementById('sal-txt').textContent=s.t;
   var k=s.gr[1],gr;
@@ -615,7 +615,7 @@ function priestley(){
   s+='<path d="M50 186 L50 70 C50 30 250 30 250 70 L250 186" fill="url(#vid)" stroke="#7fb3d5" stroke-width="3"/><ellipse cx="150" cy="42" rx="14" ry="6" fill="#7fb3d5"/>';
   document.getElementById('campana').innerHTML=s;
   document.getElementById('pr-h').textContent=h+' horas';
-  document.getElementById('pr-gas').innerHTML='<div style="display:grid;grid-template-columns:70px 1fr 64px;gap:8px;align-items:center;font-size:.9rem"><b>O₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+(O2/30*100)+'%;background:#1a7fb5"></i></span><span>'+O2.toFixed(1).replace('.',',')+' %</span><b>CO₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+Math.min(100,CO2/10*100)+'%;background:#6b7280"></i></span><span>'+CO2.toFixed(1).replace('.',',')+' %</span></div>';
+  document.getElementById('pr-gas').innerHTML='<div style="display:grid;grid-template-columns:70px 1fr 64px;gap:8px;align-items:center;font-size:.9rem"><b>O₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+(O2/30*100)+'%;background:#1774a6"></i></span><span>'+O2.toFixed(1).replace('.',',')+' %</span><b>CO₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+Math.min(100,CO2/10*100)+'%;background:#6b7280"></i></span><span>'+CO2.toFixed(1).replace('.',',')+' %</span></div>';
   var m=[];
   if(!planta&&!raton&&!vela)m.push('La campana está vacía: no pasa nada.');
   if(vela)m.push(velaViva?'🕯️ La vela sigue encendida.':'🕯️ La vela se apagó a las '+velaHasta+' h: la combustión gastó el oxígeno.');
@@ -639,6 +639,6 @@ BIO.clasificar(document.getElementById('clas-mem'),{
 })();
 </script>
 <script src="narracion.js?v=14"></script>
-<script src="pwa-install.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

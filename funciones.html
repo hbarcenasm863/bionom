@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 .cor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:center}
 @media(max-width:640px){.cor{grid-template-columns:1fr}}
@@ -50,7 +50,7 @@
       <div class="paso" data-t="Hidra"><h3>🌊 Una bolsa con una sola abertura</h3><p>Los cnidarios (hidras, medusas, corales) tienen una <b>cavidad gastrovascular</b>: el alimento entra y los restos salen por la misma boca.</p></div>
       <div class="paso" data-t="Lombriz"><h3>🐛 Un tubo con dos aberturas</h3><p>La lombriz de tierra tiene boca y ano: el alimento avanza en una sola dirección. Guarda la tierra en el <b>buche</b> y la tritura en la <b>molleja</b>.</p></div>
       <div class="paso" data-t="Ave"><h3>🐔 Sin dientes</h3><p>Las aves no tienen dientes: ablandan el alimento en el buche y lo muelen en la molleja, a veces con piedritas que tragan.</p></div>
-      <div class="paso" data-t="Vaca"><h3>🐄 Cuatro compartimentos</h3><p>Los rumiantes tienen el estómago dividido en rumen, retículo, omaso y abomaso. En el rumen viven bacterias y arqueas que digieren la celulosa del pasto, algo que la vaca sola no puede hacer.</p></div>
+      <div class="paso" data-t="Vaca"><h3>🐄 Cuatro compartimentos</h3><p>Los rumiantes tienen el estómago dividido en rumen, retículo, omaso y abomaso. En el rumen viven bacterias, hongos y protozoos que digieren la celulosa del pasto (y arqueas que producen metano), algo que la vaca sola no puede hacer.</p></div>
       <div class="paso" data-t="Plantas y hongos"><h3>🌿🍄 Sin tubo digestivo</h3><p>Las plantas fabrican su alimento y no lo digieren por fuera. Los hongos sueltan enzimas sobre la comida y absorben lo digerido: <b>digestión externa</b>.</p></div>
     </div>
     <div class="chequeo" data-ok="2" data-exp="La vaca no fabrica enzimas para romper la celulosa: lo hacen los microorganismos de su rumen. Es un caso de mutualismo.">
@@ -214,7 +214,7 @@ tb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verTrop(+
 /* ═══ Defensa ═══ */
 BIO.clasificar(document.getElementById('clas-def'),{
   cajas:[{id:'mor',titulo:'🦔 Morfológica (forma del cuerpo)'},{id:'fis',titulo:'🧪 Fisiológica (química y funcionamiento)'}],
-  fichas:[{t:'Espinas del cactus',caja:'mor'},{t:'Caparazón del armadillo',caja:'mor'},{t:'Garras del jaguar',caja:'mor'},{t:'Camuflaje del camaleón',caja:'mor',pista:'Es el color y la forma de su cuerpo.'},{t:'Toxina de la piel de la rana dorada',caja:'fis'},{t:'Veneno de la serpiente',caja:'fis'},{t:'Látex que suelta una planta herida',caja:'fis',pista:'Es una sustancia que la planta fabrica.'},{t:'Cafeína de las hojas del cafeto',caja:'fis'},{t:'Tinta del pulpo',caja:'fis'}]});
+  fichas:[{t:'Espinas del cactus',caja:'mor'},{t:'Caparazón del armadillo',caja:'mor'},{t:'Garras del jaguar',caja:'mor'},{t:'Camuflaje del insecto palo',caja:'mor',pista:'Es la forma de su cuerpo, que parece una rama.'},{t:'Toxina de la piel de la rana dorada',caja:'fis'},{t:'Veneno de la serpiente',caja:'fis'},{t:'Látex que suelta una planta herida',caja:'fis',pista:'Es una sustancia que la planta fabrica.'},{t:'Cafeína de las hojas del cafeto',caja:'fis'},{t:'Tinta del pulpo',caja:'fis'}]});
 
 /* ═══ Poiseuille ═══ */
 var rad=document.getElementById('rad');
@@ -230,6 +230,8 @@ function verRad(){var r=+rad.value/100,q=Math.pow(r,4);document.getElementById('
 rad.oninput=verRad;verRad();
 })();
 </script>
+<script src="text-zoom.js?v=13"></script>
 <script src="narracion.js?v=14"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

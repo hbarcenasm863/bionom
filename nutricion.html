@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 .mol-tab{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,.8fr));gap:4px;font-size:.88rem}
 .mol-tab .h{font-weight:800;text-align:center;padding:6px 2px;color:var(--cn-brand-d)}
@@ -86,7 +86,7 @@
       <div class="paso" data-t="Temperatura"><h3>🌡️ Cambia de temperatura despacio</h3><p>El agua necesita mucha energía para calentarse. Eso estabiliza la temperatura del cuerpo y de los mares, y el sudor al evaporarse se lleva calor.</p></div>
       <div class="paso" data-t="Transporte"><h3>🚚 Transporta</h3><p>La sangre y la savia son sobre todo agua: llevan nutrientes, hormonas y desechos. La orina saca los desechos disueltos.</p></div>
       <div class="paso" data-t="Reacciones"><h3>⚗️ Participa en reacciones</h3><p>En la fotosíntesis, la planta rompe el agua y libera el oxígeno que respiras. En la digestión, el agua ayuda a partir las moléculas grandes.</p></div>
-      <div class="paso" data-t="Hábitat"><h3>🐟 Es hogar</h3><p>El hielo flota y aísla el agua de abajo, así los lagos fríos no se congelan por completo. La vida empezó en el agua y la mayoría de especies aún vive en ella.</p></div>
+      <div class="paso" data-t="Hábitat"><h3>🐟 Es hogar</h3><p>El hielo flota y aísla el agua de abajo, así los lagos fríos no se congelan por completo. La vida empezó en el agua y ningún ser vivo puede prescindir de ella.</p></div>
     </div>
     <div class="dato col">Los pueblos y ciudades de Colombia nacieron junto a ríos y ciénagas: el agua es para beber, cultivar, pescar y transportarse. Por eso proteger los páramos y las cuencas es proteger a las comunidades.</div>
     <div class="fotos mini" style="margin:12px 0"><div data-foto="f_melocactus" data-pie="Un melocactus: su tallo grueso guarda agua y sus espinas, que son hojas transformadas, casi no la pierden"></div></div>
@@ -203,9 +203,9 @@
       <div class="card"><h3>🌾 Suelo y alimentos</h3><p>El exceso de plaguicidas contamina el suelo, el agua y los alimentos. Lavar frutas y verduras y usar los plaguicidas solo como se indica reduce el riesgo.</p></div>
       <div class="card"><h3>🔊 Ruido y basuras</h3><p>El ruido constante causa estrés y daña la audición. Las basuras acumuladas atraen ratas y moscas que transmiten enfermedades.</p></div>
     </div>
-    <div class="chequeo" data-ok="1" data-exp="El mercurio se acumula en los tejidos y aumenta en cada eslabón de la cadena: los peces grandes y las personas que los comen reciben más (bioacumulación).">
+    <div class="chequeo" data-ok="1" data-exp="El mercurio se acumula en los tejidos y aumenta en cada eslabón de la cadena: los peces grandes y las personas que los comen reciben más (bioacumulación y biomagnificación).">
       <div class="q">¿Por qué el mercurio de la minería afecta a personas que viven lejos de las minas?</div>
-      <div class="ops"><button class="op" data-por="El mercurio no viaja así hasta las personas.">Porque se respira en el aire de las ciudades.</button><button class="op">Porque se acumula en los peces que esas personas comen.</button><button class="op" data-por="No llega a la piel por estar cerca del río.">Porque se absorbe por la piel al ver el río.</button></div>
+      <div class="ops"><button class="op" data-por="Cerca de las minas y compraventas de oro también se respira, pero a quien vive lejos le llega sobre todo por el pescado.">Porque se respira en el aire de las ciudades.</button><button class="op">Porque se acumula en los peces que esas personas comen.</button><button class="op" data-por="No llega a la piel por estar cerca del río.">Porque se absorbe por la piel al ver el río.</button></div>
     </div>
     <div class="sig"><a href="funciones.html"><small>← Anterior</small><b>🐙 Funciones vitales comparadas</b></a><a class="der" href="reproduccion.html"><small>Siguiente →</small><b>👶 Reproducción</b></a></div>
   </section>
@@ -280,6 +280,8 @@ BIO.clasificar(document.getElementById('clas-tr'),{
   fichas:[{t:'Dengue',caja:'vec'},{t:'Malaria',caja:'vec'},{t:'Enfermedad de Chagas',caja:'vec',pista:'La transmite el pito, un insecto.'},{t:'Cólera',caja:'agu'},{t:'Diarrea por parásitos',caja:'agu'},{t:'Hepatitis A',caja:'agu',pista:'Se transmite por agua o comida contaminada.'},{t:'Gripa',caja:'air'},{t:'Tuberculosis',caja:'air'},{t:'Sarampión',caja:'air'},{t:'VIH',caja:'con'},{t:'Hepatitis B',caja:'con',pista:'Pasa por la sangre y las relaciones sexuales.'}]});
 })();
 </script>
+<script src="text-zoom.js?v=13"></script>
 <script src="narracion.js?v=14"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

@@ -64,7 +64,7 @@ parte y se completó.
 | Justifico la importancia de la reproducción sexual en el mantenimiento de la variabilidad. | ✅ | Reproducción; División · Meiosis |
 | Establezco la relación entre el ciclo menstrual y la reproducción humana. | ✅ | Reproducción · Ciclo menstrual |
 | Analizo las consecuencias del control de la natalidad en las poblaciones. | 🆕 | Reproducción · **La natalidad y las poblaciones** (pirámide de población) |
-| Clasifico organismos en grupos taxonómicos de acuerdo con sus características celulares. | ✅ | Reinos |
+| Clasifico seres vivos en diversos grupos taxonómicos (plantas, animales, microorganismos…). | ✅ | Reinos |
 | Propongo alternativas de clasificación de algunos organismos de difícil ubicación taxonómica. | ✅ | Reinos · Modelos de 5, 6 y 7 reinos, Clave |
 | Identifico criterios para clasificar individuos dentro de una misma especie. | 🆕 | Reinos · **Una especie, muchas variedades** |
 | Comparo sistemas de órganos de diferentes grupos taxonómicos. | 🆕 | **Funciones vitales comparadas** (página nueva) |
