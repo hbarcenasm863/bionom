@@ -12,11 +12,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 .hist-card{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:16px;align-items:center}
 .hist-card .ilu{font-size:4rem;text-align:center;background:var(--cn-brand-l);border-radius:16px;padding:10px 0}
-.hist-card .anio{font-family:var(--cn-mono);font-weight:800;color:var(--cn-naranja)}
+.hist-card .anio{font-family:var(--cn-mono);font-weight:800;color:var(--cn-naranja-tx)}
 .hist-card .foto img{max-height:250px;object-fit:contain;background:#f4f1ea}
 @media(max-width:560px){.hist-card{grid-template-columns:1fr}.hist-card .ilu{font-size:3rem}}
 .escala{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center}
@@ -506,7 +506,7 @@ var SAL=[
 ];
 var sal=document.getElementById('sal');
 function flechas(w){if(!w)return '<text x="130" y="172" text-anchor="middle" style="font:700 12px Outfit" fill="#3c5446">⇄ entra y sale igual</text>';
-  var s='';[[30,90],[230,90],[130,20],[130,160]].forEach(function(p){var ang=Math.atan2(90-p[1],130-p[0])*180/Math.PI+(w<0?180:0);s+='<g transform="translate('+p[0]+' '+p[1]+') rotate('+ang+')"><path d="M-12 0 L10 0 M3 -6 L10 0 L3 6" stroke="#1a7fb5" stroke-width="3.5" fill="none"/></g>';});return s;}
+  var s='';[[30,90],[230,90],[130,20],[130,160]].forEach(function(p){var ang=Math.atan2(90-p[1],130-p[0])*180/Math.PI+(w<0?180:0);s+='<g transform="translate('+p[0]+' '+p[1]+') rotate('+ang+')"><path d="M-12 0 L10 0 M3 -6 L10 0 L3 6" stroke="#1774a6" stroke-width="3.5" fill="none"/></g>';});return s;}
 function verSal(){
   var s=SAL[+sal.value];document.getElementById('sal-txt').textContent=s.t;
   var k=s.gr[1],gr;
@@ -615,7 +615,7 @@ function priestley(){
   s+='<path d="M50 186 L50 70 C50 30 250 30 250 70 L250 186" fill="url(#vid)" stroke="#7fb3d5" stroke-width="3"/><ellipse cx="150" cy="42" rx="14" ry="6" fill="#7fb3d5"/>';
   document.getElementById('campana').innerHTML=s;
   document.getElementById('pr-h').textContent=h+' horas';
-  document.getElementById('pr-gas').innerHTML='<div style="display:grid;grid-template-columns:70px 1fr 64px;gap:8px;align-items:center;font-size:.9rem"><b>O₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+(O2/30*100)+'%;background:#1a7fb5"></i></span><span>'+O2.toFixed(1).replace('.',',')+' %</span><b>CO₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+Math.min(100,CO2/10*100)+'%;background:#6b7280"></i></span><span>'+CO2.toFixed(1).replace('.',',')+' %</span></div>';
+  document.getElementById('pr-gas').innerHTML='<div style="display:grid;grid-template-columns:70px 1fr 64px;gap:8px;align-items:center;font-size:.9rem"><b>O₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+(O2/30*100)+'%;background:#1774a6"></i></span><span>'+O2.toFixed(1).replace('.',',')+' %</span><b>CO₂</b><span style="height:14px;background:#eef3ef;border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:'+Math.min(100,CO2/10*100)+'%;background:#6b7280"></i></span><span>'+CO2.toFixed(1).replace('.',',')+' %</span></div>';
   var m=[];
   if(!planta&&!raton&&!vela)m.push('La campana está vacía: no pasa nada.');
   if(vela)m.push(velaViva?'🕯️ La vela sigue encendida.':'🕯️ La vela se apagó a las '+velaHasta+' h: la combustión gastó el oxígeno.');
@@ -639,6 +639,6 @@ BIO.clasificar(document.getElementById('clas-mem'),{
 })();
 </script>
 <script src="narracion.js?v=14"></script>
-<script src="pwa-install.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

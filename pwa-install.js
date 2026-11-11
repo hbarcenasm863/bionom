@@ -179,7 +179,10 @@
     btn.style.cssText = [
       'display:inline-flex',
       'align-items:center',
+      'justify-content:center',
       'gap:5px',
+      'min-width:40px',
+      'min-height:40px',
       'background:rgba(255,255,255,.13)',
       'border:1.5px solid rgba(255,255,255,.28)',
       'color:#fff',

@@ -11,7 +11,8 @@
   --cn-brand-l:#e7f6ec;    /* fondo suave de marca */
   --cn-verde:#5cb85c;
   --cn-naranja:#f08c1e;
-  --cn-azul:#1a7fb5;
+  --cn-naranja-tx:#b45309; /* naranja oscuro para TEXTO sobre fondo claro (contraste AA) */
+  --cn-azul:#1774a6;      /* un poco más oscuro que antes (#1a7fb5) para que el texto azul se lea bien */
   --cn-morado:#7b4bb7;
   --cn-bg:#f5faf6;
   --cn-surf:#ffffff;
@@ -38,7 +39,7 @@ body{background-color:var(--cn-bg);color:var(--cn-tx);font-family:var(--cn-sans)
 img,svg{max-width:100%}
 a{color:var(--cn-brand)}
 button{font-family:inherit}
-:focus-visible{outline:3px solid var(--cn-naranja);outline-offset:2px}
+:focus-visible{outline:3px solid var(--cn-naranja-tx);outline-offset:2px}
 [hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
@@ -147,7 +148,7 @@ button{font-family:inherit}
 /* ── Paso a paso ── */
 .pasos{background:#fff;border:1px solid var(--cn-brd);border-radius:var(--cn-r);box-shadow:var(--cn-sh);overflow:hidden}
 .pasos .p-top{display:flex;gap:4px;padding:10px 12px;background:#f3f8f4;border-bottom:1px solid var(--cn-brd);flex-wrap:wrap}
-.pasos .p-dot{width:34px;height:34px;border-radius:50%;border:2px solid var(--cn-brd);background:#fff;font-weight:800;color:var(--cn-dim);cursor:pointer}
+.pasos .p-dot{width:38px;height:38px;border-radius:50%;border:2px solid var(--cn-brd);background:#fff;font-weight:800;color:var(--cn-dim);cursor:pointer}
 .pasos .p-dot.on{background:var(--cn-brand);border-color:var(--cn-brand);color:#fff}
 .pasos .p-dot.visto{border-color:var(--cn-brand)}
 .pasos .p-body{padding:16px 20px;min-height:140px}

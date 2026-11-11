@@ -12,13 +12,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 #mitosis,#meio,#cariot{width:100%;height:auto}
 .gam{display:inline-flex;gap:4px;font:800 1rem var(--cn-mono);background:#fff7ec;border:1.5px solid #f5c58c;border-radius:10px;padding:4px 10px;margin:3px}
 #ciclo-svg .sec-c{cursor:pointer;transition:filter .2s}
 #ciclo-svg .sec-c:hover,#ciclo-svg .sec-c.on{filter:brightness(1.1) drop-shadow(0 0 4px rgba(240,140,30,.9))}
 #ciclo-svg .sec-c:focus{outline:none}
+#ciclo-svg .sec-c:focus-visible{filter:drop-shadow(0 0 3px #b45309) drop-shadow(0 0 3px #b45309)}
 .crom-fig{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px;align-items:center}
 @media(max-width:700px){.crom-fig{grid-template-columns:1fr}}
 .cario{display:grid;grid-template-columns:repeat(12,1fr);gap:4px 6px;align-items:end}
@@ -279,7 +280,7 @@ cario('cario','XX');cario('cario21','XY',true);
 /* ciclo celular */
 var CICLO=[
  ['G1','Crecimiento','#2e9a5a',0,150,'La célula crece, fabrica proteínas y organelos y hace su trabajo normal. Es la etapa más larga. <b>Punto de control:</b> ¿está sano el ADN? ¿hay nutrientes? Si no, no sigue.'],
- ['S','Síntesis de ADN','#1a7fb5',150,250,'La célula <b>copia todo su ADN</b>: cada cromosoma queda con dos cromátidas hermanas.'],
+ ['S','Síntesis de ADN','#1774a6',150,250,'La célula <b>copia todo su ADN</b>: cada cromosoma queda con dos cromátidas hermanas.'],
  ['G2','Preparación','#7b4bb7',250,310,'Sigue creciendo y se prepara para dividirse. <b>Punto de control:</b> ¿se copió bien todo el ADN?'],
  ['M','Mitosis y citocinesis','#e07a3f',310,360,'Se reparten los cromosomas (profase, metafase, anafase, telofase) y se parte el citoplasma. <b>Punto de control</b> en la metafase: ¿están todos los cromosomas sujetos al huso?']
 ];
@@ -301,7 +302,10 @@ function cito(){var k=((performance.now()-t0)/3000)%1.4,p=Math.min(1,k),w=p*34;
   var V='<rect x="14" y="14" width="212" height="92" rx="6" fill="#e7f5dc" stroke="#5b8c2a" stroke-width="5"/><circle cx="64" cy="60" r="14" fill="#c9b6e4"/><circle cx="176" cy="60" r="14" fill="#c9b6e4"/>';
   for(var i=0;i<7;i++){var y=60+(i-3)*12;if(Math.abs(i-3)*12<=44*p+4)V+='<circle cx="120" cy="'+y+'" r="3.4" fill="#f2a541"/>';}
   V+='<rect x="117" y="'+(60-44*p)+'" width="6" height="'+(88*p)+'" fill="#5b8c2a" opacity="'+(p>.9?1:.0)+'"/>';
-  document.getElementById('cito-v').innerHTML=V;requestAnimationFrame(cito);}
+  document.getElementById('cito-v').innerHTML=V;citoRaf=citoVisible?requestAnimationFrame(cito):0;}
+/* Solo se anima mientras se ve en pantalla: antes redibujaba sin parar aunque la sección estuviera lejos, gastando batería en el celular. */
+var citoRaf=0,citoVisible=true;
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){var v=es.some(function(e){return e.isIntersecting;});citoVisible=v;if(v&&!citoRaf)citoRaf=requestAnimationFrame(cito);}).observe(document.getElementById('cito-a').closest('.sec')||document.getElementById('cito-a'));}
 cito();
 /* clasificar */
 BIO.clasificar(document.getElementById('clas-div'),{cajas:[{id:'mi',titulo:'➗ Mitosis'},{id:'me',titulo:'✂️ Meiosis'},{id:'am',titulo:'🤝 Las dos'}],
@@ -310,6 +314,6 @@ BIO.clasificar(document.getElementById('clas-div'),{cajas:[{id:'mi',titulo:'➗ 
 </script>
 <script src="text-zoom.js?v=13"></script>
 <script src="narracion.js?v=14"></script>
-<script src="pwa-install.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>

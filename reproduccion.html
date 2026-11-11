@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=20">
+<link rel="stylesheet" href="bio.css?v=21">
 <style>
 .grupos-r{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
 .grupos-r button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:8px 4px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--cn-tx)}
@@ -388,7 +388,7 @@ function pintarSR(){var O=sx==='fem'?FEM:MAS,ord=sx==='fem'?['ovarios','trompas'
   svgR.innerHTML=DEFS+'<rect width="400" height="320" fill="#fff" opacity="0"/>'+ord.map(function(k){return z(k,O[k][2]);}).join('');
   svgR.querySelectorAll('.zona').forEach(function(g){g.onclick=function(){var k=g.getAttribute('data-z');vR[sx+k]=1;svgR.querySelectorAll('.zona').forEach(function(x){x.classList.toggle('on',x===g);});
     srT.innerHTML='<h3>'+O[k][0]+'</h3><p>'+O[k][1]+'</p>';if(Object.keys(vR).length>=10)BIO.marcarSeccion('humano');};g.onkeydown=function(e){if(e.key==='Enter')g.onclick();};});
-  srT.innerHTML='<p style="color:var(--cn-dim)">Órganos: '+ord.map(function(k){return '<button type="button" class="chip" style="min-height:30px;padding:3px 10px;margin:2px" data-o="'+k+'">'+O[k][0]+'</button>';}).join('')+'</p>';
+  srT.innerHTML='<p style="color:var(--cn-dim)">Órganos: '+ord.map(function(k){return '<button type="button" class="chip" style="min-height:36px;padding:3px 11px;margin:2px" data-o="'+k+'">'+O[k][0]+'</button>';}).join('')+'</p>';
   srT.querySelectorAll('[data-o]').forEach(function(b){b.onclick=function(){svgR.querySelector('[data-z="'+b.getAttribute('data-o')+'"]').onclick();};});}
 document.querySelectorAll('[data-sx]').forEach(function(b){b.onclick=function(){sx=b.getAttribute('data-sx');document.querySelectorAll('[data-sx]').forEach(function(x){x.classList.toggle('on',x===b);});pintarSR();};});
 pintarSR();
@@ -396,7 +396,7 @@ pintarSR();
 /* ═══ Ciclo menstrual ═══ */
 function hormonas(d){var g=function(x,m,s){return Math.exp(-Math.pow((x-m)/s,2));};
   return {fsh:0.35+0.45*g(d,3,4)+0.4*g(d,13.5,1.2),lh:0.12+0.95*g(d,14,1),est:0.15+0.75*g(d,12.5,3)+0.35*g(d,21,3.5),pro:0.06+0.85*g(d,21.5,4),endo:d<=5?0.6-d*0.1:d<=14?0.1+(d-5)*0.06:Math.min(1,0.64+(d-14)*0.03)};}
-var CUR=[['fsh','FSH','#1a7fb5'],['lh','LH','#7b4bb7'],['est','Estrógenos','#e07a3f'],['pro','Progesterona','#2e9a5a']];
+var CUR=[['fsh','FSH','#1774a6'],['lh','LH','#7b4bb7'],['est','Estrógenos','#e07a3f'],['pro','Progesterona','#2e9a5a']];
 function grafCiclo(dia){var cv=document.getElementById('ciclo-c'),c=cv.getContext('2d'),W=900,H=260,px=40,py=20,hb=40;
   function X(d){return px+(W-px-20)*(d-1)/27;}
   c.clearRect(0,0,W,H);
@@ -432,7 +432,7 @@ var SEM=[['Semana 3 · día 1','cigoto','Cigoto','El óvulo fecundado (día 1 de
  ['Semana 40','s40','Listo para nacer','Ocupa todo el útero. Sus pulmones ya pueden respirar aire.']];
 var sem=document.getElementById('sem');
 var SEMF={"cigoto": ["cigoto", "Cigoto humano real: se ven los dos núcleos (del óvulo y del espermatozoide) antes de unirse"], "blasto": ["blasto", "Blastocisto humano real de 5 días, visto al microscopio"], "s6": ["em5", "Embrión real en la 7.ª semana de embarazo (unas 5 después de la fecundación)"], "s8": ["em7", "Embrión real de 6 a 7 semanas después de la fecundación (unas 9 de embarazo): ya se ven los dedos y la cara"], "s12": ["eco12", "Ecografía real a las 12 semanas: el feto mide unos 6,5 cm"], "s20": ["eco20", "Ecografía real a las 20 semanas: perfil del feto"], "s28": ["eco32", "Ecografía 3D real del rostro de un feto de 32 semanas"], "s40": ["bebe", "Un recién nacido"]};
-function verSem(){var e=SEM[+sem.value];document.getElementById('sem-t').innerHTML='<div>'+EMB.fig(e[1])+'</div><div><b style="font-family:var(--cn-mono);color:var(--cn-naranja)">'+e[0]+'</b><h3>'+e[2]+'</h3><p>'+e[3]+'</p>'+(SEMF[e[1]]?'<div style="margin-top:10px">'+FOTO(SEMF[e[1]][0],'Así se ve en realidad: '+SEMF[e[1]][1])+'</div>':'')+'</div>';if(+sem.value===9)BIO.marcarSeccion('embarazo');}
+function verSem(){var e=SEM[+sem.value];document.getElementById('sem-t').innerHTML='<div>'+EMB.fig(e[1])+'</div><div><b style="font-family:var(--cn-mono);color:var(--cn-naranja-tx)">'+e[0]+'</b><h3>'+e[2]+'</h3><p>'+e[3]+'</p>'+(SEMF[e[1]]?'<div style="margin-top:10px">'+FOTO(SEMF[e[1]][0],'Así se ve en realidad: '+SEMF[e[1]][1])+'</div>':'')+'</div>';if(+sem.value===9)BIO.marcarSeccion('embarazo');}
 document.querySelectorAll('[data-emb]').forEach(function(d){d.innerHTML=EMB.fig(d.getAttribute('data-emb'));});
 sem.oninput=verSem;verSem();
 
@@ -467,7 +467,7 @@ var ITS=[
  ['Clamidia','bacteria','Con frecuencia no da síntomas, pero puede dañar las trompas de Falopio y causar infertilidad.','Se cura con antibióticos; pruebas periódicas; condón.'],
  ['Tricomoniasis','protozoo','La causa un protozoo (<i>Trichomonas</i>). Picazón, flujo y ardor.','Se cura con medicamento; tratar también a la pareja; condón.']
 ];
-var AG={virus:['🦠 Virus','#c0392b'],bacteria:['🧫 Bacteria','#1a7fb5'],protozoo:['🔬 Protozoo','#7b4bb7']};
+var AG={virus:['🦠 Virus','#c0392b'],bacteria:['🧫 Bacteria','#1774a6'],protozoo:['🔬 Protozoo','#7b4bb7']};
 function verITS(f){document.getElementById('its-g').innerHTML=ITS.filter(function(x){return f==='todas'||x[1]===f;}).map(function(x){var a=AG[x[1]];return '<div class="card" style="border-top:5px solid '+a[1]+'"><span class="ag" style="color:'+a[1]+'">'+a[0]+'</span><h3>'+x[0]+'</h3><p style="font-size:.9rem">'+x[2]+'</p><p style="font-size:.88rem;margin-top:6px"><b>Prevención y tratamiento:</b> '+x[3]+'</p></div>';}).join('');}
 document.querySelectorAll('#its-f [data-a]').forEach(function(b){b.onclick=function(){document.querySelectorAll('#its-f [data-a]').forEach(function(x){x.classList.toggle('on',x===b);});verITS(b.getAttribute('data-a'));};});
 verITS('todas');
@@ -494,6 +494,6 @@ tgf.oninput=verTgf;verTgf();
 })();
 </script>
 <script src="narracion.js?v=14"></script>
-<script src="pwa-install.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
 </body>
 </html>
