@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=16">
+<link rel="stylesheet" href="bio.css?v=17">
 <style>
 .jir{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:700px){.jir{grid-template-columns:1fr}}
@@ -73,6 +73,8 @@
     <a href="#variacion">🎲 Variación y deriva</a>
     <a href="#artificial">🌽 Selección artificial</a>
     <a href="#evidencias">🔎 Evidencias</a>
+    <a href="#origen">🌋 Origen de la vida</a>
+    <a href="#extinciones">☄️ Extinciones</a>
     <a href="#humana">🧑 Evolución humana</a>
     <a href="#endemicas">🐸 Endémicas e invasoras</a>
     <a href="#tiempo">📅 El año de la Tierra</a>
@@ -185,8 +187,59 @@
     </div>
   </section>
 
+  <section class="sec" id="origen">
+    <h2><span class="n">08</span> El origen del universo y de la vida</h2>
+    <p class="lead">Según la teoría del <b>Big Bang</b>, el universo empezó hace unos 13 800 millones de años; la Tierra se formó hace unos 4600 millones y la vida apareció hace unos 3800 millones. ¿Cómo surgió la vida? Hay varias explicaciones. Recórrelas.</p>
+    <div class="pasos" data-titulo="Teorías sobre el origen de la vida">
+      <div class="paso" data-t="Creación"><h3>📜 Explicaciones religiosas y ancestrales</h3><p>Muchas religiones y los pueblos indígenas, como los kogui o los muiscas, tienen relatos sobre el origen de la vida. Son parte de la cultura y merecen respeto, pero no se pueden poner a prueba con experimentos: no son explicaciones científicas.</p></div>
+      <div class="paso" data-t="Generación espontánea"><h3>🐁 Generación espontánea</h3><p>Desde Aristóteles se creyó que la vida salía sola de la materia: moscas de la carne, ratones del trigo. Francesco Redi (1668) y Louis Pasteur (1862) demostraron con experimentos que no es así.</p></div>
+      <div class="paso" data-t="Panspermia"><h3>☄️ Panspermia</h3><p>Propone que la vida, o sus moléculas, llegó del espacio en meteoritos. En el meteorito Murchison (1969) se encontraron aminoácidos. Pero no explica cómo empezó la vida: solo traslada la pregunta a otro lugar.</p></div>
+      <div class="paso" data-t="Oparin y Haldane"><h3>🌋 Evolución química</h3><p>Aleksandr Oparin (1924) y J. B. S. Haldane (1929) propusieron que en la Tierra primitiva, sin oxígeno, la energía de los rayos y del Sol formó moléculas orgánicas en el mar (la «sopa primitiva») que se fueron juntando en gotas hasta formar las primeras células.</p></div>
+      <div class="paso" data-t="Miller y Urey"><h3>⚡ El experimento de Miller y Urey</h3><p>En 1953 Stanley Miller y Harold Urey pusieron metano, amoníaco, hidrógeno y agua en un aparato cerrado y le dieron chispas eléctricas. En una semana se formaron <b>aminoácidos</b>: la primera prueba de que la evolución química es posible.</p></div>
+      <div class="paso" data-t="Mundo de ARN"><h3>🧬 El mundo de ARN y las fuentes termales</h3><p>Hoy se piensa que el primer material hereditario fue el <b>ARN</b>, que guarda información y además acelera reacciones. Muchos científicos proponen que todo empezó en fuentes hidrotermales del fondo del mar. Sigue siendo un tema de investigación.</p></div>
+    </div>
+    <h3 style="margin-top:18px">⚡ Simula el experimento de Miller y Urey</h3>
+    <div class="card"><div class="ctrl"><label for="mil">Días con chispas eléctricas</label><input type="range" id="mil" min="0" max="7" step="1" value="0"><b id="mil-n"></b></div><p id="mil-t" aria-live="polite"></p></div>
+    <div class="chequeo" data-ok="1" data-exp="Miller y Urey mostraron que, con los gases de la Tierra primitiva y energía, se forman moléculas de la vida como los aminoácidos. No crearon células vivas.">
+      <div class="q">¿Qué demostró el experimento de Miller y Urey?</div>
+      <div class="ops"><button class="op" data-por="No se formó ninguna célula, solo moléculas.">Que se puede crear una bacteria en el laboratorio.</button><button class="op">Que con gases simples y energía se forman moléculas orgánicas como los aminoácidos.</button><button class="op" data-por="El experimento no tenía nada que ver con meteoritos.">Que la vida llegó en meteoritos.</button></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="Una explicación científica se puede poner a prueba con observaciones y experimentos; por eso la ciencia la acepta, la corrige o la descarta.">
+      <div class="q">¿Qué distingue a una teoría científica sobre el origen de la vida de un relato ancestral?</div>
+      <div class="ops"><button class="op">Que se puede poner a prueba con observaciones y experimentos.</button><button class="op" data-por="Un relato ancestral puede ser muy valioso; la diferencia es otra.">Que el relato ancestral no tiene ningún valor.</button><button class="op" data-por="Las teorías científicas también cambian cuando aparecen nuevas pruebas.">Que la teoría científica nunca cambia.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="extinciones">
+    <h2><span class="n">09</span> Las grandes extinciones: formula tu hipótesis</h2>
+    <p class="lead">Más del 99 % de las especies que han existido se extinguieron. Cinco veces desapareció más de la mitad de las especies en poco tiempo geológico. Los científicos proponen hipótesis y buscan pruebas para explicarlas.</p>
+    <div class="tbl-wrap"><table class="t">
+      <tr><th>Extinción</th><th>Hace (millones de años)</th><th>Causa más aceptada</th></tr>
+      <tr><td>Ordovícico</td><td>445</td><td>Una glaciación que enfrió y secó los mares poco profundos.</td></tr>
+      <tr><td>Devónico</td><td>372</td><td>Mares sin oxígeno, quizá por cambios en el clima.</td></tr>
+      <tr><td><b>Pérmico</b> (la mayor)</td><td>252</td><td>Erupciones volcánicas gigantes en Siberia: calentamiento y mares ácidos. Murió cerca del 90 % de las especies marinas.</td></tr>
+      <tr><td>Triásico</td><td>201</td><td>Erupciones volcánicas al separarse los continentes.</td></tr>
+      <tr><td>Cretácico</td><td>66</td><td>Un asteroide de unos 10 km cayó en Chicxulub (México); se extinguieron los dinosaurios no avianos.</td></tr>
+    </table></div>
+    <h3 style="margin-top:18px">🔎 Caso: ¿qué acabó con los dinosaurios?</h3>
+    <div class="pasos" data-titulo="Las pruebas">
+      <div class="paso" data-t="Iridio"><h3>⛰️ Una capa de iridio</h3><p>En 1980 Luis y Walter Álvarez encontraron, en rocas de 66 millones de años de todo el mundo, una capa rica en <b>iridio</b>, un metal escaso en la Tierra pero común en los asteroides.</p></div>
+      <div class="paso" data-t="Cráter"><h3>🕳️ El cráter</h3><p>En la península de Yucatán se encontró el cráter de Chicxulub, de unos 180 km de ancho y de la misma edad.</p></div>
+      <div class="paso" data-t="Volcanes"><h3>🌋 Otra hipótesis</h3><p>En la India hubo al mismo tiempo enormes erupciones (las traps del Decán). Muchos científicos piensan que el volcanismo debilitó los ecosistemas y el asteroide dio el golpe final.</p></div>
+      <div class="paso" data-t="Sexta"><h3>⚠️ ¿Una sexta extinción?</h3><p>Hoy las especies desaparecen mucho más rápido de lo normal por la deforestación, la cacería, las especies invasoras y el cambio climático. Por primera vez la causa es una especie: la nuestra.</p></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="Una hipótesis científica se apoya en pruebas: la capa de iridio y el cráter de la misma edad apoyan la hipótesis del asteroide.">
+      <div class="q">¿Qué prueba apoya la hipótesis de que un asteroide extinguió a los dinosaurios?</div>
+      <div class="ops"><button class="op" data-por="Que hoy no existan no indica la causa.">Que hoy no se ven dinosaurios.</button><button class="op" data-por="Las aves descienden de dinosaurios; eso no explica la extinción.">Que las aves tienen plumas.</button><button class="op">Una capa de iridio y un cráter de 66 millones de años.</button></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="La actual pérdida de especies se debe sobre todo a actividades humanas como la deforestación, la cacería, las especies invasoras y el cambio climático.">
+      <div class="q">¿Qué tiene de diferente la extinción que ocurre hoy?</div>
+      <div class="ops"><button class="op" data-por="No hay un asteroide reciente.">La causa un asteroide.</button><button class="op">La causa principal es la actividad humana.</button><button class="op" data-por="Las especies sí están desapareciendo más rápido de lo normal.">No está pasando: las especies están estables.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="humana">
-    <h2><span class="n">08</span> La evolución humana</h2>
+    <h2><span class="n">10</span> La evolución humana</h2>
     <p class="lead">No venimos del chimpancé: los dos <b>compartimos un antepasado</b> que vivió en África hace unos 7 millones de años. Desde entonces aparecieron muchas especies de homínidos; hoy solo quedamos nosotros. Toca cada uno.</p>
     <div class="homi" id="homi"></div>
     <div class="card" id="homi-t" style="margin-top:10px" aria-live="polite"></div>
@@ -194,14 +247,14 @@
   </section>
 
   <section class="sec" id="endemicas">
-    <h2><span class="n">09</span> Especies endémicas e invasoras</h2>
+    <h2><span class="n">11</span> Especies endémicas e invasoras</h2>
     <p class="lead">Una especie <b>endémica</b> solo existe en un lugar del mundo: evolucionó allí y, si desaparece de allí, desaparece del planeta. Una especie <b>invasora</b> fue llevada por el ser humano a un lugar donde no tiene enemigos naturales y se multiplica sin control, desplazando a las nativas. Clasifica estos casos de Colombia.</p>
     <div class="card" id="clas-end"></div>
     <div class="dato">Las mutaciones y la selección pueden ayudar a una especie invasora a adaptarse muy rápido a su nuevo hogar. Las endémicas, en cambio, suelen tener poblaciones pequeñas y poca variabilidad: son de las más vulnerables al cambio climático.</div>
   </section>
 
   <section class="sec" id="tiempo">
-    <h2><span class="n">10</span> El año de la Tierra y las eras geológicas</h2>
+    <h2><span class="n">12</span> El año de la Tierra y las eras geológicas</h2>
     <p class="lead">La Tierra tiene unos <b>4600 millones de años</b>. Imagina que toda esa historia cupiera en <b>un solo año</b>: el 1 de enero se forma la Tierra y la medianoche del 31 de diciembre es hoy. Mueve el control.</p>
     <div class="card">
       <div class="anio-t" aria-hidden="true"><span style="background:#7b4bb7;flex:88">Precámbrico (hasta mediados de noviembre)</span><span style="background:#1a7fb5;flex:6.5">Paleo.</span><span style="background:#2e7d4f;flex:4">Meso.</span><span style="background:#c2410c;flex:1.5">C</span></div>
@@ -226,7 +279,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=15"></script>
+<script src="bio.js?v=16"></script>
 <script>
 (function(){
 /* ═══ 1. Línea del tiempo de ideas ═══ */
@@ -469,6 +522,14 @@ BIO.clasificar(document.getElementById('clas-end'),{
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
+<script>
+(function(){
+var mil=document.getElementById('mil');
+var MOL=['Gases de la Tierra primitiva: metano, amoníaco, hidrógeno y vapor de agua. Todavía no hay moléculas orgánicas.','El agua se tiñe de rosado: empiezan a formarse moléculas pequeñas como el formaldehído y el cianuro de hidrógeno.','Aparecen los primeros <b>aminoácidos</b>: glicina y alanina.','Más aminoácidos: ácido aspártico y otros. El agua se pone café.','Ya hay una docena de aminoácidos distintos, de los que forman las proteínas.','Se acumulan más moléculas orgánicas; en experimentos posteriores también se formaron bases de los ácidos nucleicos.','La mezcla sigue cambiando, pero <b>no aparece ninguna célula</b>: falta organizar las moléculas.','Resultado de Miller y Urey (1953): con gases simples y energía se forman <b>moléculas de la vida</b>. El paso de moléculas a células sigue en investigación.'];
+function verMil(){var d=+mil.value;document.getElementById('mil-n').textContent=d+(d===1?' día':' días');document.getElementById('mil-t').innerHTML=MOL[d];if(d===7)BIO.marcarSeccion('origen');}
+mil.oninput=verMil;verMil();
+})();
+</script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>

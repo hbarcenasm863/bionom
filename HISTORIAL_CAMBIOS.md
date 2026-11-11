@@ -6,6 +6,67 @@
 
 ---
 
+## Versión 2.16 — 11 de noviembre de 2026 · Cobertura completa de los Estándares Básicos de Competencias del MEN
+
+**Contexto.** El docente pidió evaluar, con los lineamientos del MEN, si los
+temas y explicaciones cubren todas las competencias de los Estándares Básicos
+de Competencias en Ciencias Naturales, y agregar páginas y preguntas donde
+faltara. Compartió el PDF oficial (*Estándares Básicos de Competencias*, MEN
+2004). La evaluación completa, estándar por estándar, está en `MATRIZ_MEN.md`.
+
+**Resultado de la evaluación.** De 72 estándares de biología, salud y ambiente
+de sexto a undécimo, 41 ya estaban cubiertos, 7 estaban en parte y 24 faltaban.
+
+**Páginas nuevas.**
+- `funciones.html` · **Funciones vitales comparadas** (8.°-9.° y 10.°-11.°):
+  digestión, respiración (clasificador), circulación con corazones de 2, 3 y 4
+  cavidades, excreción (amoníaco, urea, ácido úrico), regulación nerviosa y
+  hormonal con fitohormonas y experimento de fototropismo, defensa y ataque
+  (clasificador morfológica/fisiológica) y mecánica de fluidos con un modelo de
+  la ley de Poiseuille.
+- `nutricion.html` · **Nutrición y salud** (6.°-7.° y CTS de todos los grados):
+  biomoléculas en todos los grupos y laboratorio virtual de reactivos, el agua,
+  plato saludable interactivo (Guías Alimentarias del ICBF), dietas de las
+  regiones, deporte y salud, sustancias que hacen daño (cafeína, tabaco y
+  vapeadores, alcohol, drogas), enfermedades transmisibles (clasificador),
+  antibióticos y contaminación y salud.
+
+**Secciones nuevas en módulos existentes.** Sistemas: la neurona y el impulso
+nervioso con gráfica del potencial de acción. Evolución: el origen del universo
+y de la vida (con simulación de Miller y Urey) y las grandes extinciones.
+Ecosistemas: el suelo como depósito de nutrientes y las leyes de la
+termodinámica. Ecosistemas de Colombia: placas tectónicas y clima. Reinos:
+variedades dentro de una especie y microorganismos útiles. Reproducción: la
+natalidad y las poblaciones (pirámide de población). Célula: clasificador de
+membranas por permeabilidad y tabla de mecanismos de obtención de energía con
+quimiosíntesis. Todas con palabras clave, pasos y al menos dos chequeos.
+
+**Bancos.**
+- `banco.js`: 2 temas nuevos en `TEMAS_JUEGO` con 50 preguntas cada uno (con 2
+  pistas y explicación, opciones cortas que sirven en los laberintos) y 28
+  preguntas para las secciones nuevas.
+- `docente-datos.js`: guías de sesión (`TEMAS`), 40 preguntas tipo Saber 11 y
+  40 abiertas por tema nuevo, 20 Saber 11 de las secciones nuevas y 5 historias
+  del Detective por tema (8 frases dudosas cada una).
+- `ahorcado-datos.js`: 42 y 41 palabras nuevas con 3 pistas, sin repetir.
+- `docente.html` (casillas del laberinto), `bio.js` (menú), `index.html`
+  (descripciones), navegación anterior/siguiente, `sw.js` (`bionom-v31`) y `?v=`.
+
+**⚠️ Paso manual pendiente.** `bionom-analytics.gs` tiene dos temas nuevos en
+`TEMAS_PRINCIPALES` («Funciones vitales comparadas» y «Nutrición y salud»).
+Cuando se active el Modo Estudiante en 2027, copiarlo al editor de Apps Script y
+crear una nueva versión de la implementación; luego ejecutar `recalcularAhora()`.
+
+**Verificación.** Playwright a 1366 y 390 px en las 15 páginas: sin errores ni
+desbordes. Juego: los temas nuevos aparecen con 50 preguntas y funcionan. Panel
+docente: guías, talleres, evaluaciones, laberinto, crucigrama, ahorcado, sopa y
+Detective generan contenido de los temas nuevos sin errores.
+
+**Sin resolver.** Los estándares de *Entorno físico* (química y física) quedan
+fuera de BioNom: la química está en IonNom y ChromaNom. No se pudo descargar el
+texto de los DBA porque la red del entorno no permite el sitio del MEN; la
+evaluación se hizo con el PDF de los Estándares que compartió el docente.
+
 ## Versión 2.15 — 11 de noviembre de 2026 · Tarjetas volteables sin texto cortado
 
 **Contexto.** El docente reportó que en el celular las tarjetas de «Los cuatro

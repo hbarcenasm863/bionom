@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=16">
+<link rel="stylesheet" href="bio.css?v=17">
 <style>
 .taxo{display:grid;gap:6px}
 .taxo .fila{display:grid;grid-template-columns:120px repeat(3,minmax(0,1fr));gap:6px;align-items:stretch}
@@ -79,6 +79,8 @@
     <a href="#historia">📜 ¿Cuántos reinos?</a>
     <a href="#monera">🌋 Monera: ¿uno o dos?</a>
     <a href="#reinos">👑 Los cinco reinos</a>
+    <a href="#variedades">🐕 Variedades</a>
+    <a href="#microbios">🦠 Microbios útiles</a>
     <a href="#clave">🔑 Clave dicotómica</a>
     <a href="#clasifica">🎯 Clasifica</a>
   </nav>
@@ -172,8 +174,37 @@
     <div class="dato col">Colombia es el <b>segundo país más biodiverso</b> del mundo y el primero en especies de <b>aves</b> (más de 1900) y de <b>orquídeas</b> (más de 4200).</div>
   </section>
 
+  <section class="sec" id="variedades">
+    <h2><span class="n">06</span> Una especie, muchas variedades</h2>
+    <p class="lead">Dentro de una misma especie también se clasifica. Los individuos se agrupan en <b>subespecies</b> (poblaciones naturales de regiones distintas), <b>razas</b> (en animales domésticos) o <b>variedades</b> (en plantas cultivadas). Los criterios son la forma del cuerpo, el lugar donde viven y, cada vez más, el ADN.</p>
+    <div class="grid g2">
+      <div class="card"><h3>🐕 Perros</h3><p>Un chihuahua y un gran danés son la misma especie (<i>Canis familiaris</i>): pueden tener crías fértiles. Las razas se separan por tamaño, pelo, forma del hocico y comportamiento, logrados por selección artificial.</p></div>
+      <div class="card"><h3>🐄 Ganado criollo</h3><p>El blanco orejinegro y el romosinuano son razas colombianas de vaca (<i>Bos taurus</i>) adaptadas al calor y a las enfermedades del trópico. Se reconocen por su color, sus orejas y sus genes.</p></div>
+      <div class="card"><h3>🥔 Papas y maíces</h3><p>La papa criolla y la papa pastusa son variedades de la misma especie (<i>Solanum tuberosum</i>). Las comunidades campesinas e indígenas conservan cientos de variedades de maíz y de papa: son un tesoro genético.</p></div>
+      <div class="card"><h3>👥 Los seres humanos</h3><p>En los humanos <b>no existen razas biológicas</b>: las diferencias de color de piel son pocas y graduales, y dos personas de cualquier lugar comparten cerca del 99,9 % del ADN. Hay más variación dentro de un pueblo que entre pueblos.</p></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="Si dos individuos se cruzan y tienen crías fértiles, son de la misma especie; las diferencias de forma los ubican en razas o variedades dentro de ella.">
+      <div class="q">Un perro pastor y un perro criollo tienen cachorros fértiles. ¿Qué se concluye?</div>
+      <div class="ops"><button class="op" data-por="Si tienen crías fértiles, no son especies distintas.">Son especies distintas.</button><button class="op" data-por="El género es una categoría más amplia que la especie.">Son del mismo género pero de especies diferentes.</button><button class="op">Son de la misma especie y de razas distintas.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="microbios">
+    <h2><span class="n">07</span> Microorganismos que trabajan para nosotros</h2>
+    <p class="lead">Bacterias, hongos y arqueas no solo causan enfermedades: la mayoría son inofensivos y muchos son útiles. La <b>biotecnología</b> los usa en la cocina, la medicina, la industria y el cuidado del ambiente. Clasifica estos usos.</p>
+    <div class="card" id="clas-mic"></div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>🍞 En la cocina colombiana</h3><p>Las levaduras (<i>Saccharomyces</i>) hacen crecer el pan y fermentan la chicha y el guarapo. Las bacterias lácticas convierten la leche en yogur, kumis y queso. Las bacterias del ácido acético producen el vinagre.</p></div>
+      <div class="card"><h3>♨️ Amigos de lugares extremos</h3><p>Microorganismos de aguas termales tienen enzimas que no se dañan con el calor. La bacteria <i>Thermus aquaticus</i> dio la enzima que copia el ADN en las pruebas de laboratorio (PCR), y enzimas de arqueas se usan en detergentes y en pruebas genéticas.</p></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="Las enzimas de microorganismos que viven en aguas muy calientes no se dañan con el calor: por eso sirven en procesos industriales y en la PCR, que calienta el ADN a más de 90 °C.">
+      <div class="q">¿Por qué son tan útiles las enzimas de microorganismos de aguas termales?</div>
+      <div class="ops"><button class="op">Porque funcionan a temperaturas muy altas sin dañarse.</button><button class="op" data-por="Muchas sí cuestan menos de producir, pero esa no es su ventaja especial.">Porque son las más baratas.</button><button class="op" data-por="No tienen relación con el color.">Porque tienen colores llamativos.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="clave">
-    <h2><span class="n">06</span> Clave dicotómica: clasifica como un científico</h2>
+    <h2><span class="n">08</span> Clave dicotómica: clasifica como un científico</h2>
     <p class="lead">Una <b>clave dicotómica</b> hace preguntas de dos opciones (sí o no). Cada respuesta te lleva a otra pregunta, hasta llegar al grupo. Escoge un organismo, lee su ficha y responde.</p>
     <div class="clave-d">
       <div><div class="org-sel" id="org-sel"></div><div class="card" id="org-ficha" style="margin-top:12px" aria-live="polite"></div></div>
@@ -182,7 +213,7 @@
   </section>
 
   <section class="sec" id="clasifica">
-    <h2><span class="n">07</span> Reto: ¿a qué reino pertenece?</h2>
+    <h2><span class="n">09</span> Reto: ¿a qué reino pertenece?</h2>
     <p class="lead">Primero escoge con qué modelo vas a clasificar: <b>5 reinos</b> (Whittaker), <b>6 reinos</b> (Monera dividido en eubacterias y arqueas) o <b>7 reinos</b> (además, Protista dividido en Protozoa y Chromista). Luego lleva cada organismo a su reino: toca la ficha y después la caja.</p>
     <div class="chips" style="margin-bottom:10px" role="group" aria-label="Modelo de clasificación"><button class="chip on" data-modelo="5">👑 Con 5 reinos</button><button class="chip" data-modelo="6">✂️ Con 6 reinos</button><button class="chip" data-modelo="7">🔀 Con 7 reinos</button></div>
     <div class="card" id="clas-reinos"></div>
@@ -192,7 +223,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=15"></script>
+<script src="bio.js?v=16"></script>
 <script>
 (function(){
 /* ═══ Taxonomía ═══ */
@@ -403,6 +434,13 @@ reto(5);
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
+<script>
+(function(){
+BIO.clasificar(document.getElementById('clas-mic'),{
+  cajas:[{id:'ali',titulo:'🍞 Alimentos'},{id:'med',titulo:'💊 Medicina'},{id:'amb',titulo:'🌱 Ambiente'},{id:'ind',titulo:'🏭 Industria y laboratorio'}],
+  fichas:[{t:'Levadura que hace crecer el pan',caja:'ali'},{t:'Bacterias que hacen el yogur y el kumis',caja:'ali'},{t:'Hongo que produce penicilina',caja:'med'},{t:'Bacteria con el gen de la insulina humana',caja:'med'},{t:'Bacterias que limpian derrames de petróleo',caja:'amb',pista:'Se llama biorremediación.'},{t:'Microbios que hacen compost',caja:'amb'},{t:'Bacteria de aguas termales usada en la PCR',caja:'ind'},{t:'Enzimas de arqueas en detergentes',caja:'ind',pista:'Funcionan aunque el agua esté caliente.'}]});
+})();
+</script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>

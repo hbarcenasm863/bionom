@@ -69,7 +69,7 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 | `bio.css` | Estilos comunes y componentes (`.chequeo`, `.pasos`, `.flip`, `.tabs`, `.term`, `.fig`/`.det`, `.tl`, clasificador). Usa los nombres de clase de ChromaNom (`.cn-page-head`, `.sec`, `.cn-btn`) para que funcionen `narracion.js` y `actividades.css`. |
 | `bio.js` | Menú, barra inferior del celular, pie, progreso en `localStorage` (`bionom_visitas`, `bionom_secciones`), montaje de componentes y `BIO.clasificar()`. La lista `MODULOS` dice qué niveles de organización estudia cada módulo: la usa el mapa de la portada. |
 | `index.html` | Mapa interactivo de los 13 niveles de organización. |
-| `celula.html`, `division.html`, `reinos.html`, `sistemas.html`, `reproduccion.html`, `genetica.html`, `evolucion.html`, `ecosistemas.html`, `regiones.html`, `ambiente.html` | Módulos de contenido. `cuerpo.js` dibuja el cuerpo humano; `fondo-plantas.svg` es el fondo de plantas de Colombia. |
+| `celula.html`, `division.html`, `reinos.html`, `sistemas.html`, `funciones.html`, `nutricion.html`, `reproduccion.html`, `genetica.html`, `evolucion.html`, `ecosistemas.html`, `regiones.html`, `ambiente.html` | Módulos de contenido. `cuerpo.js` dibuja el cuerpo humano; `fondo-plantas.svg` es el fondo de plantas de Colombia. |
 | `mapa-colombia.js` | Contornos simplificados de las regiones naturales y departamentos (de los límites del DANE/MGN 2018). La franja del Pacífico en Valle, Cauca y Nariño es aproximada. |
 | `repro-anim.js` | Animaciones con volumen de `reproduccion.html` (`ANIM.montar(el,'nombre')` o `<div data-anim="nombre">`). Cada paso dibuja la escena según su avance; los degradados llevan nombres únicos por animación. |
 | `banco.js` | Banco de preguntas del juego y del generador (`BANCO_BIO`), al menos 40 por tema y al menos 40 cortas por tema para los laberintos (opciones de hasta 36 caracteres o verdadero/falso). Cada pregunta lleva `p` (2 pistas: general y concreta, sin la respuesta) y `exp` (explicación completa). Al final, `BIO_AJ` agrega pistas a preguntas existentes y `BIO_NUEVAS` agrega preguntas. |
@@ -79,6 +79,7 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
 | `docente-datos.js` | Solo contenido del panel docente: `TEMAS` (sesión 1 de aprendizajes previos, sesión 2 con lectura y mapa de ideas, autoevaluación «Puedo…»), `SABER` (40 preguntas tipo Saber 11 por tema; la primera opción es la correcta en el archivo), `ABIERTAS` (40 por tema) y `window.DETECTIVE` (5 historias por tema, cada una con 8 frases dudosas). Lo agregado en la versión 2.4 está al final del archivo, dentro de un bloque que hace `push`. |
 | `fotos.js`, `fotos-datos.js`, `img/fotos/` | Fotos reales de bancos libres con su cita APA debajo (`FOTO(clave,pie)`). Ver «Regla de imágenes». |
 | `embrion-fig.js` | Ilustraciones del desarrollo embrionario humano (`EMB.fig(clave)`) para «Semana a semana» y «De la fecundación al parto». |
+| `MATRIZ_MEN.md` | Cobertura de cada Estándar Básico de Competencias del MEN (6.° a 11.°) y dónde se trabaja. Actualizarla si se agrega o quita contenido. |
 | `AUDITORIA_2026-11.md` | Informe de la auditoría biológica y didáctica (principios de Mayer) de la versión 2.13. |
 | `bionom-analytics.gs` | Backend de Google Apps Script del Modo Estudiante (copiado de IonNom). |
 
@@ -133,7 +134,7 @@ molecular (C₆H₁₂O₆) o figuras.
 
 ## Meta de contenido del panel docente
 
-Cada tema (los 10 de `TEMAS_JUEGO`, incluida División celular) debe tener **al
+Cada tema (los 12 de `TEMAS_JUEGO`, incluidos División celular, Funciones vitales comparadas y Nutrición y salud) debe tener **al
 menos 40** de cada cosa:
 - preguntas del Juego y 40 cortas para los laberintos (`banco.js`);
 - preguntas tipo Saber 11 y preguntas abiertas (`docente-datos.js`);

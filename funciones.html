@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Funciones vitales comparadas — BioNom</title>
+<meta name="description" content="Cómo cumplen las funciones vitales distintos grupos de seres vivos: digestión, respiración, circulación, excreción, regulación nerviosa y hormonal, hormonas de las plantas, defensa y ataque, y mecánica de fluidos.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=17">
+<style>
+.cor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:center}
+@media(max-width:640px){.cor{grid-template-columns:1fr}}
+#cor-svg,#trop-svg,#vaso-svg{width:100%;max-width:340px;display:block;margin:auto}
+.big{font:800 2rem var(--cn-mono);color:var(--cn-brand-d)}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">🐙 Nivel del organismo</span>
+    <h1>Funciones vitales comparadas</h1>
+    <p>Todos los seres vivos se nutren, respiran, transportan sustancias, eliminan desechos, responden al ambiente y se defienden. Pero cada grupo lo resuelve con <b>órganos distintos</b>. Aquí comparas cómo lo hacen una lombriz, un insecto, un pez, un ave, un mamífero y una planta.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Niveles: órgano → sistema → organismo</a>
+  </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Parte del cuerpo que cumple la misma función en dos grupos aunque tenga distinto origen, como las branquias y los pulmones para respirar.">órgano análogo</span><span class="term" data-def="Paso de una sustancia de donde hay más a donde hay menos, sin gastar energía.">difusión</span><span class="term" data-def="Órgano de los peces y renacuajos que toma el oxígeno disuelto en el agua.">branquia</span><span class="term" data-def="Desecho con nitrógeno que queda al usar las proteínas: amoníaco, urea o ácido úrico.">desecho nitrogenado</span><span class="term" data-def="Mensajero químico. En las plantas se llaman fitohormonas, como las auxinas.">hormona</span><span class="term" data-def="Rama de la física que estudia cómo se mueven y empujan los líquidos y los gases, como la sangre, la savia o el aire.">mecánica de fluidos</span></div></div>
+
+  <nav class="toc" aria-label="En esta página">
+    <strong>En esta página</strong>
+    <a href="#digestion">🍽️ Digestión</a>
+    <a href="#respiracion">🌬️ Respiración</a>
+    <a href="#circulacion">❤️ Circulación</a>
+    <a href="#excrecion">💧 Excreción</a>
+    <a href="#regulacion">⚡ Regulación</a>
+    <a href="#defensa">🛡️ Defensa y ataque</a>
+    <a href="#fluidos">🌊 Fluidos en los seres vivos</a>
+  </nav>
+
+  <section class="sec" id="digestion">
+    <h2><span class="n">01</span> La digestión en distintos grupos</h2>
+    <p class="lead">Digerir es romper las moléculas grandes de los alimentos en otras pequeñas que la célula pueda absorber. Avanza de lo más sencillo a lo más complejo.</p>
+    <div class="pasos" data-titulo="De la esponja a la vaca">
+      <div class="paso" data-t="Esponja"><h3>🧽 Dentro de cada célula</h3><p>Las esponjas filtran el agua y cada célula atrapa partículas y las digiere adentro, en vacuolas: es la <b>digestión intracelular</b>, como la de las amebas.</p></div>
+      <div class="paso" data-t="Hidra"><h3>🌊 Una bolsa con una sola abertura</h3><p>Los cnidarios (hidras, medusas, corales) tienen una <b>cavidad gastrovascular</b>: el alimento entra y los restos salen por la misma boca.</p></div>
+      <div class="paso" data-t="Lombriz"><h3>🐛 Un tubo con dos aberturas</h3><p>La lombriz de tierra tiene boca y ano: el alimento avanza en una sola dirección. Guarda la tierra en el <b>buche</b> y la tritura en la <b>molleja</b>.</p></div>
+      <div class="paso" data-t="Ave"><h3>🐔 Sin dientes</h3><p>Las aves no tienen dientes: ablandan el alimento en el buche y lo muelen en la molleja, a veces con piedritas que tragan.</p></div>
+      <div class="paso" data-t="Vaca"><h3>🐄 Cuatro compartimentos</h3><p>Los rumiantes tienen el estómago dividido en rumen, retículo, omaso y abomaso. En el rumen viven bacterias y arqueas que digieren la celulosa del pasto, algo que la vaca sola no puede hacer.</p></div>
+      <div class="paso" data-t="Plantas y hongos"><h3>🌿🍄 Sin tubo digestivo</h3><p>Las plantas fabrican su alimento y no lo digieren por fuera. Los hongos sueltan enzimas sobre la comida y absorben lo digerido: <b>digestión externa</b>.</p></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="La vaca no fabrica enzimas para romper la celulosa: lo hacen los microorganismos de su rumen. Es un caso de mutualismo.">
+      <div class="q">¿Cómo digiere una vaca la celulosa del pasto?</div>
+      <div class="ops"><button class="op" data-por="Los dientes la trituran, pero no la digieren químicamente.">Solo con sus dientes.</button><button class="op" data-por="La vaca no produce enzimas que rompan la celulosa.">Con enzimas que fabrica su estómago.</button><button class="op">Gracias a bacterias y arqueas que viven en su rumen.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="respiracion">
+    <h2><span class="n">02</span> La respiración: muchas formas de tomar oxígeno</h2>
+    <p class="lead">Todos los órganos respiratorios cumplen una regla: el oxígeno pasa por <b>difusión</b> a través de una superficie delgada, húmeda y muy grande. Branquias, tráqueas y pulmones son órganos <b>análogos</b>: cumplen la misma función con estructuras distintas.</p>
+    <div class="grid g3">
+      <div class="card"><h3>🐛 Piel</h3><p>La lombriz y, en parte, las ranas respiran por la piel húmeda. Si la piel se seca, se ahogan.</p></div>
+      <div class="card"><h3>🐟 Branquias</h3><p>Láminas finas llenas de capilares. El agua y la sangre corren en sentidos contrarios (<b>contracorriente</b>): así sacan hasta el 80 % del oxígeno disuelto.</p></div>
+      <div class="card"><h3>🐝 Tráqueas</h3><p>Los insectos tienen tubos que llevan el aire directo a cada célula desde unos huecos del cuerpo (espiráculos). Por eso no necesitan sangre que lleve oxígeno.</p></div>
+      <div class="card"><h3>🐄 Pulmones</h3><p>Los mamíferos tienen millones de alvéolos. Las aves tienen además <b>sacos aéreos</b>: el aire pasa por sus pulmones en un solo sentido y les da oxígeno para volar.</p></div>
+      <div class="card"><h3>🌿 Estomas</h3><p>Las plantas no tienen pulmones: los gases entran y salen por los estomas de las hojas y por las lenticelas del tallo.</p></div>
+    </div>
+    <h3 style="margin-top:18px">🎯 ¿Con qué respira?</h3>
+    <div class="card" id="clas-resp"></div>
+    <div class="chequeo" data-ok="0" data-exp="Las tráqueas llevan el aire directo a las células, así que la hemolinfa del insecto no necesita transportar oxígeno.">
+      <div class="q">¿Por qué la «sangre» de los insectos casi no lleva oxígeno?</div>
+      <div class="ops"><button class="op">Porque sus tráqueas llevan el aire directamente a las células.</button><button class="op" data-por="Los insectos sí necesitan oxígeno.">Porque no necesitan oxígeno.</button><button class="op" data-por="Los insectos no tienen branquias ni pulmones.">Porque respiran con pulmones muy pequeños.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="circulacion">
+    <h2><span class="n">03</span> La circulación y los corazones</h2>
+    <p class="lead">En la <b>circulación abierta</b> (insectos, arañas, la mayoría de moluscos) la «sangre» sale de los vasos y baña los órganos. En la <b>cerrada</b> (lombriz, pulpo, vertebrados) siempre va dentro de vasos, con más presión. En los vertebrados el corazón cambia de un grupo a otro. Escoge uno.</p>
+    <div class="card cor">
+      <svg id="cor-svg" viewBox="0 0 300 220" role="img" aria-label="Esquema del corazón"></svg>
+      <div><div class="chips" id="cor-b" role="group" aria-label="Grupo"></div><div id="cor-t" aria-live="polite" style="margin-top:10px"></div></div>
+    </div>
+    <div class="dato">En las plantas no hay corazón: el <b>xilema</b> sube el agua y los minerales desde la raíz, y el <b>floema</b> reparte los azúcares que fabrican las hojas. Lo verás en la sección de fluidos.</div>
+    <div class="chequeo" data-ok="1" data-exp="Con cuatro cavidades, la sangre con oxígeno y la sangre sin oxígeno nunca se mezclan: llega más oxígeno a los tejidos, algo clave para animales de sangre caliente.">
+      <div class="q">¿Qué ventaja tiene el corazón de cuatro cavidades de aves y mamíferos?</div>
+      <div class="ops"><button class="op" data-por="El tamaño no es la diferencia clave.">Es más grande.</button><button class="op">No mezcla sangre con oxígeno y sin oxígeno.</button><button class="op" data-por="Late de forma parecida; la diferencia está en las cavidades.">Late más despacio.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="excrecion">
+    <h2><span class="n">04</span> La excreción: sacar los desechos</h2>
+    <p class="lead">Al usar las proteínas queda un desecho con nitrógeno. El <b>amoníaco</b> es muy tóxico y necesita mucha agua para salir; la <b>urea</b> es menos tóxica; el <b>ácido úrico</b> casi no necesita agua. Cada grupo usa el que conviene a su ambiente.</p>
+    <div class="grid g2">
+      <div class="card"><h3>Órganos excretores</h3><p><b>Vacuola contráctil</b> en protozoos de agua dulce, <b>nefridios</b> en la lombriz, <b>túbulos de Malpighi</b> en los insectos y <b>riñones</b> en los vertebrados. Las plantas guardan desechos en sus vacuolas o los sueltan con las hojas que se caen.</p></div>
+      <div class="card"><h3>¿Por qué el ácido úrico?</h3><p>Aves, reptiles e insectos ponen huevos con cáscara: dentro del huevo no hay dónde eliminar agua. El ácido úrico se guarda sólido sin intoxicar al embrión. Por eso el excremento de las aves es blanco.</p></div>
+    </div>
+    <h3 style="margin-top:18px">🎯 ¿Qué desecho eliminan?</h3>
+    <div class="card" id="clas-exc"></div>
+    <div class="chequeo" data-ok="2" data-exp="Los peces viven rodeados de agua, así que pueden eliminar el amoníaco, que es muy tóxico pero se diluye de inmediato.">
+      <div class="q">¿Por qué los peces pueden eliminar amoníaco, el desecho más tóxico?</div>
+      <div class="ops"><button class="op" data-por="El amoníaco es tóxico para todos.">Porque no les hace daño.</button><button class="op" data-por="Los peces sí tienen riñones.">Porque no tienen riñones.</button><button class="op">Porque viven en el agua, que lo diluye enseguida.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="regulacion">
+    <h2><span class="n">05</span> La regulación: nervios y hormonas en animales y plantas</h2>
+    <p class="lead">Para responder al ambiente, los animales usan el <b>sistema nervioso</b> (rápido) y las <b>hormonas</b> (lentas y duraderas). Las plantas no tienen nervios, pero sí <b>fitohormonas</b>.</p>
+    <div class="tabs"><button class="chip on" data-tab="r-ner">🧠 Sistemas nerviosos</button><button class="chip" data-tab="r-hor">🧪 Hormonas animales</button><button class="chip" data-tab="r-fit">🌱 Hormonas de las plantas</button></div>
+    <div class="tab-p" id="r-ner"><div class="card"><p>La hidra tiene una <b>red nerviosa</b> sin centro. La lombriz y los insectos tienen <b>ganglios</b> unidos por un cordón nervioso en el vientre. Los vertebrados tienen <b>encéfalo y médula espinal</b> protegidos por el cráneo y la columna. Cuanto más centralizado, más complejas las respuestas.</p></div></div>
+    <div class="tab-p" id="r-hor"><div class="card"><p>En el ser humano la <b>insulina</b> baja el azúcar, la <b>adrenalina</b> prepara para huir y las hormonas sexuales causan la pubertad. En los insectos, la <b>ecdisona</b> controla las mudas y la metamorfosis; en las ranas, la <b>tiroxina</b> transforma al renacuajo en rana.</p></div></div>
+    <div class="tab-p" id="r-fit"><div class="card"><p>Las <b>auxinas</b> hacen que el tallo crezca hacia la luz (<b>fototropismo</b>) y la raíz hacia abajo (gravitropismo). Las <b>giberelinas</b> estiran el tallo y activan la germinación. El <b>etileno</b> madura los frutos: por eso un plátano maduro acelera la maduración del aguacate en la misma bolsa. El <b>ácido abscísico</b> cierra los estomas en la sequía.</p></div></div>
+    <h3 style="margin-top:18px">🔦 Experimento: ¿hacia dónde crece la plántula?</h3>
+    <div class="card cor">
+      <svg id="trop-svg" viewBox="0 0 300 220" role="img" aria-label="Plántula y fuente de luz"></svg>
+      <div><div class="chips" id="trop-b" role="group" aria-label="Posición de la luz"><button type="button" class="chip on" data-l="-1">💡 Luz a la izquierda</button><button type="button" class="chip" data-l="0">💡 Luz arriba</button><button type="button" class="chip" data-l="1">💡 Luz a la derecha</button></div><p id="trop-t" aria-live="polite" style="margin-top:10px"></p></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="El plátano maduro libera etileno, una fitohormona gaseosa que acelera la maduración de los frutos cercanos.">
+      <div class="q">¿Por qué los aguacates maduran más rápido en una bolsa con plátanos maduros?</div>
+      <div class="ops"><button class="op">Por el etileno que sueltan los plátanos.</button><button class="op" data-por="Las auxinas actúan en el crecimiento hacia la luz.">Por las auxinas del plátano.</button><button class="op" data-por="No es el calor de la bolsa lo principal.">Porque la bolsa los calienta mucho.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="defensa">
+    <h2><span class="n">06</span> Sistemas de defensa y ataque</h2>
+    <p class="lead">Animales y plantas se defienden y atacan de dos maneras: con la <b>forma de su cuerpo</b> (morfológicas: espinas, caparazones, garras, camuflaje) o con su <b>química y funcionamiento</b> (fisiológicas: venenos, toxinas, látex). Muchas especies de Colombia son ejemplo.</p>
+    <div class="grid g2">
+      <div class="card"><h3>🐸 Animales</h3><p>La <b>rana dorada</b> tiene en la piel una de las toxinas más potentes que se conocen y la anuncia con colores brillantes (aposematismo). El <b>pulpo</b> suelta tinta, el <b>armadillo</b> se enrolla en su caparazón y el <b>jaguar</b> ataca con colmillos y garras. Algunas mariposas inofensivas imitan los colores de otras venenosas (<b>mimetismo</b>).</p></div>
+      <div class="card"><h3>🌵 Plantas</h3><p>Los cactus tienen espinas; la ortiga, pelos que inyectan sustancias irritantes; la yuca brava, compuestos que liberan cianuro. La <b>cafeína</b> del café y la <b>nicotina</b> del tabaco son defensas contra insectos. La <b>dormidera</b> cierra sus hojas al tocarla. Las plantas carnívoras como la <i>Drosera</i> «atacan» insectos con hojas pegajosas.</p></div>
+    </div>
+    <h3 style="margin-top:18px">🎯 ¿Morfológica o fisiológica?</h3>
+    <div class="card" id="clas-def"></div>
+    <div class="chequeo" data-ok="1" data-exp="La cafeína es una sustancia química que la planta fabrica: es una defensa fisiológica (química) contra los insectos que se comen sus hojas y semillas.">
+      <div class="q">La cafeína del cafeto es para la planta…</div>
+      <div class="ops"><button class="op" data-por="La planta no la produce para atraer animales.">un alimento para atraer abejas.</button><button class="op">una defensa química contra los insectos.</button><button class="op" data-por="Es química, no una estructura del cuerpo.">una defensa morfológica.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="fluidos">
+    <h2><span class="n">07</span> La mecánica de fluidos en los seres vivos</h2>
+    <p class="lead">La sangre, la savia y el aire son <b>fluidos</b>: se mueven por diferencias de presión y siguen las mismas leyes de la física que el agua de una manguera. Avanza y luego experimenta con un vaso sanguíneo.</p>
+    <div class="pasos" data-titulo="Fluidos que dan vida">
+      <div class="paso" data-t="Presión"><h3>❤️ El corazón es una bomba</h3><p>Al contraerse, el ventrículo izquierdo empuja la sangre con una presión de unos 120 mmHg (presión sistólica); al relajarse baja a unos 80 mmHg (diastólica). Por eso la presión normal se escribe «120/80».</p></div>
+      <div class="paso" data-t="Jirafa"><h3>🦒 Contra la gravedad</h3><p>Para subir la sangre 2 metros hasta la cabeza, la jirafa necesita una presión cerca del doble de la nuestra. Las válvulas de las venas evitan que la sangre se devuelva por su peso.</p></div>
+      <div class="paso" data-t="Savia"><h3>🌳 El agua sube 40 metros</h3><p>Al evaporarse el agua por los estomas (transpiración), jala la columna de agua del xilema, que se mantiene unida por la <b>cohesión</b> de sus moléculas y se pega a las paredes de tubos muy delgados (<b>capilaridad</b>). Así sube sin bomba.</p></div>
+      <div class="paso" data-t="Flotar"><h3>🐟 La vejiga natatoria</h3><p>Muchos peces tienen una bolsa de gas: al llenarla, bajan su densidad y flotan (principio de Arquímedes); al vaciarla, se hunden. Sin gastar energía nadando.</p></div>
+      <div class="paso" data-t="Forma"><h3>🐬 Formas hidrodinámicas</h3><p>El cuerpo alargado del delfín, del atún y de las aves reduce el roce con el agua o el aire. Los ingenieros copian esas formas en barcos y aviones.</p></div>
+    </div>
+    <h3 style="margin-top:18px">🧮 Modelo: el radio de un vaso sanguíneo</h3>
+    <p>Según la ley de Poiseuille, el caudal que pasa por un tubo depende del radio <b>a la cuarta potencia</b>. Si una arteria se estrecha un poco, el caudal cae muchísimo. Mueve el control.</p>
+    <div class="card cor">
+      <svg id="vaso-svg" viewBox="0 0 300 160" aria-hidden="true"></svg>
+      <div><div class="ctrl"><label for="rad">Radio del vaso</label><input type="range" id="rad" min="50" max="120" step="5" value="100"><b id="rad-n"></b></div><div class="big" id="cau"></div><p id="rad-t" aria-live="polite"></p></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="El caudal depende del radio a la cuarta potencia: (0,5)⁴ ≈ 0,06, es decir, pasa solo cerca del 6 % de la sangre. Por eso una arteria tapada por grasa es tan peligrosa.">
+      <div class="q">Si una arteria queda con la mitad de su radio, ¿cuánta sangre pasa con la misma presión?</div>
+      <div class="ops"><button class="op" data-por="El caudal no es proporcional al radio, sino al radio a la cuarta.">La mitad.</button><button class="op" data-por="Sería el área (radio al cuadrado); la ley de Poiseuille usa la cuarta potencia.">Una cuarta parte.</button><button class="op">Cerca del 6 %.</button></div>
+    </div>
+    <div class="sig"><a href="sistemas.html"><small>← Anterior</small><b>❤️ Sistemas del cuerpo</b></a><a class="der" href="nutricion.html"><small>Siguiente →</small><b>🍎 Nutrición y salud</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=16"></script>
+<script>
+(function(){
+/* ═══ Respiración ═══ */
+BIO.clasificar(document.getElementById('clas-resp'),{
+  cajas:[{id:'pie',titulo:'Piel'},{id:'bra',titulo:'Branquias'},{id:'tra',titulo:'Tráqueas'},{id:'pul',titulo:'Pulmones'},{id:'est',titulo:'Estomas'}],
+  fichas:[{t:'🐛 Lombriz de tierra',caja:'pie'},{t:'🐟 Bocachico',caja:'bra'},{t:'🐸 Renacuajo',caja:'bra',pista:'Vive en el agua antes de la metamorfosis.'},{t:'🐝 Abeja',caja:'tra'},{t:'🦗 Saltamontes',caja:'tra'},{t:'🦅 Cóndor',caja:'pul'},{t:'🐬 Delfín rosado',caja:'pul',pista:'Es un mamífero: sale a respirar aire.'},{t:'🌿 Frailejón',caja:'est'},{t:'☕ Cafeto',caja:'est'}]});
+
+/* ═══ Corazones ═══ */
+var COR={pez:['🐟 Pez',2,'Dos cavidades: una aurícula y un ventrículo. La sangre pasa una sola vez por el corazón en cada vuelta (<b>circulación simple</b>): va a las branquias y de allí al cuerpo.'],
+ anf:['🐸 Anfibio',3,'Tres cavidades: dos aurículas y un ventrículo. En el ventrículo la sangre con oxígeno y la sin oxígeno se <b>mezclan</b> en parte. La piel también ayuda a respirar.'],
+ rep:['🦎 Reptil',3.5,'Tres cavidades con el ventrículo dividido a medias: la mezcla es menor. Los cocodrilos y las babillas ya tienen cuatro cavidades completas.'],
+ ave:['🐦 Ave y 🐄 mamífero',4,'Cuatro cavidades: dos aurículas y dos ventrículos. <b>Circulación doble y completa</b>: el lado derecho manda sangre a los pulmones y el izquierdo al cuerpo, sin mezclarse.']};
+var cb=document.getElementById('cor-b'),vistC={};
+cb.innerHTML=Object.keys(COR).map(function(k,i){return '<button type="button" class="chip'+(i?'':' on')+'" data-k="'+k+'">'+COR[k][0]+'</button>';}).join('');
+function corazon(n){var R='#d64535',B='#4a6fd0',M='#9b5aa8',s='';
+  if(n===2)s='<rect x="110" y="30" width="80" height="60" rx="14" fill="'+B+'"/><text x="150" y="65" text-anchor="middle" fill="#fff" style="font:700 12px Outfit">aurícula</text><rect x="100" y="100" width="100" height="80" rx="18" fill="'+B+'"/><text x="150" y="145" text-anchor="middle" fill="#fff" style="font:700 12px Outfit">ventrículo</text>';
+  else{s='<rect x="55" y="30" width="85" height="60" rx="14" fill="'+B+'"/><text x="97" y="65" text-anchor="middle" fill="#fff" style="font:700 11px Outfit">aurícula der.</text><rect x="160" y="30" width="85" height="60" rx="14" fill="'+R+'"/><text x="202" y="65" text-anchor="middle" fill="#fff" style="font:700 11px Outfit">aurícula izq.</text>';
+    if(n===4)s+='<rect x="55" y="100" width="85" height="85" rx="18" fill="'+B+'"/><rect x="160" y="100" width="85" height="85" rx="18" fill="'+R+'"/><text x="97" y="147" text-anchor="middle" fill="#fff" style="font:700 11px Outfit">ventrículo</text><text x="202" y="147" text-anchor="middle" fill="#fff" style="font:700 11px Outfit">ventrículo</text>';
+    else s+='<defs><linearGradient id="mez"><stop offset="0" stop-color="'+B+'"/><stop offset=".5" stop-color="'+M+'"/><stop offset="1" stop-color="'+R+'"/></linearGradient></defs><rect x="55" y="100" width="190" height="85" rx="18" fill="url(#mez)"/>'+(n===3.5?'<rect x="146" y="100" width="8" height="45" fill="#fff"/>':'')+'<text x="150" y="172" text-anchor="middle" fill="#fff" style="font:700 12px Outfit">un ventrículo (sangre mezclada)</text>';}
+  return s+'<text x="10" y="210" style="font:600 11px Outfit" fill="'+B+'">■ sin oxígeno</text><text x="110" y="210" style="font:600 11px Outfit" fill="'+R+'">■ con oxígeno</text>'+(n===3||n===3.5?'<text x="210" y="210" style="font:600 11px Outfit" fill="'+M+'">■ mezclada</text>':'');}
+function verCor(k){vistC[k]=1;cb.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.k===k);});
+  document.getElementById('cor-svg').innerHTML=corazon(COR[k][1]);document.getElementById('cor-t').innerHTML='<h3>'+COR[k][0]+'</h3><p>'+COR[k][2]+'</p>';
+  if(Object.keys(vistC).length>=4)BIO.marcarSeccion('circulacion');}
+cb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verCor(b.dataset.k);};});verCor('pez');
+
+/* ═══ Excreción ═══ */
+BIO.clasificar(document.getElementById('clas-exc'),{
+  cajas:[{id:'amo',titulo:'Amoníaco'},{id:'ure',titulo:'Urea'},{id:'uri',titulo:'Ácido úrico'}],
+  fichas:[{t:'🐟 Pez de río',caja:'amo'},{t:'🐸 Renacuajo',caja:'amo',pista:'Vive en el agua como un pez.'},{t:'🐄 Vaca',caja:'ure'},{t:'🧑 Ser humano',caja:'ure'},{t:'🐸 Rana adulta',caja:'ure',pista:'Al salir del agua cambia a un desecho menos tóxico.'},{t:'🐦 Paloma',caja:'uri'},{t:'🦎 Iguana',caja:'uri'},{t:'🐝 Abeja',caja:'uri'}]});
+
+/* ═══ Fototropismo ═══ */
+var tb=document.getElementById('trop-b');
+function planta(l){var x=150+l*110,ang=l*28,s='<rect x="0" y="180" width="300" height="40" fill="#8a6a45"/>';
+  s+='<circle cx="'+x+'" cy="'+(l?110:24)+'" r="16" fill="#ffd34d"/><path d="M'+(x-10)+' '+(l?135:48)+' h20" stroke="#888" stroke-width="5"/>';
+  s+='<g transform="rotate('+ang+' 150 180)"><path d="M150 180 C150 150 '+(150)+' 120 150 90" stroke="#3f8f3a" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M150 100 c-18 -10 -30 -4 -36 6 c14 6 26 4 36 -6z M150 100 c18 -10 30 -4 36 6 c-14 6 -26 4 -36 -6z" fill="#5cb85c"/></g>';
+  s+='<path d="M150 180 v26 M150 196 l-12 12 M150 196 l12 12" stroke="#d9c7a3" stroke-width="3" fill="none"/>';
+  if(l)s+='<text x="'+(150-l*60)+'" y="60" text-anchor="middle" style="font:700 11px Outfit" fill="#2e7d4f">más auxina en</text><text x="'+(150-l*60)+'" y="74" text-anchor="middle" style="font:700 11px Outfit" fill="#2e7d4f">el lado de sombra</text>';
+  return s;}
+function verTrop(l){tb.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',+b.dataset.l===l);});document.getElementById('trop-svg').innerHTML=planta(l);
+  document.getElementById('trop-t').innerHTML=l?'La auxina se acumula en el lado del tallo que queda a la <b>sombra</b>: esas células se alargan más y el tallo se curva <b>hacia la luz</b>. Eso es el <b>fototropismo</b>. La raíz sigue creciendo hacia abajo (gravitropismo).':'Con la luz justo arriba, la auxina se reparte igual en los dos lados y el tallo crece derecho.';
+  if(l)BIO.marcarSeccion('regulacion');}
+tb.querySelectorAll('button').forEach(function(b){b.onclick=function(){verTrop(+b.dataset.l);};});verTrop(-1);
+
+/* ═══ Defensa ═══ */
+BIO.clasificar(document.getElementById('clas-def'),{
+  cajas:[{id:'mor',titulo:'🦔 Morfológica (forma del cuerpo)'},{id:'fis',titulo:'🧪 Fisiológica (química y funcionamiento)'}],
+  fichas:[{t:'Espinas del cactus',caja:'mor'},{t:'Caparazón del armadillo',caja:'mor'},{t:'Garras del jaguar',caja:'mor'},{t:'Camuflaje del camaleón',caja:'mor',pista:'Es el color y la forma de su cuerpo.'},{t:'Toxina de la piel de la rana dorada',caja:'fis'},{t:'Veneno de la serpiente',caja:'fis'},{t:'Látex que suelta una planta herida',caja:'fis',pista:'Es una sustancia que la planta fabrica.'},{t:'Cafeína de las hojas del cafeto',caja:'fis'},{t:'Tinta del pulpo',caja:'fis'}]});
+
+/* ═══ Poiseuille ═══ */
+var rad=document.getElementById('rad');
+function verRad(){var r=+rad.value/100,q=Math.pow(r,4);document.getElementById('rad-n').textContent=Math.round(r*100)+' %';
+  document.getElementById('cau').textContent='caudal: '+String(Math.round(q*100)).replace('.',',')+' %';
+  var h=24*r,R=Math.max(24,h),sv='<rect x="10" y="'+(80-R-8)+'" width="280" height="'+(2*R+16)+'" rx="10" fill="#f2b7b0"/>';
+  if(r<1)sv+='<rect x="10" y="'+(80-R)+'" width="280" height="'+(2*R)+'" fill="#f6d36b"/>';
+  sv+='<rect x="10" y="'+(80-h)+'" width="280" height="'+(2*h)+'" fill="#c0392b"/>'+[0,1,2,3,4].map(function(i){return '<circle cx="'+(40+i*55)+'" cy="80" r="'+Math.max(4,h*0.35)+'" fill="#e57368"/>';}).join('');
+  if(r<1)sv+='<text x="150" y="'+(80-R-14)+'" text-anchor="middle" style="font:700 11px Outfit" fill="#8a6a10">placa de grasa (amarillo) dentro de la pared</text>';
+  document.getElementById('vaso-svg').innerHTML=sv;
+  document.getElementById('rad-t').innerHTML=r>1?'Si el vaso se <b>dilata</b> (por ejemplo, en la piel cuando hace calor), pasa mucha más sangre.':r===1?'Radio normal: 100 % del caudal.':'Con el radio al '+Math.round(r*100)+' %, pasa solo el '+Math.round(q*100)+' % de la sangre. Para compensar, el corazón tendría que hacer más fuerza: sube la <b>presión arterial</b>.';
+  if(r<=0.6)BIO.marcarSeccion('fluidos');}
+rad.oninput=verRad;verRad();
+})();
+</script>
+<script src="narracion.js?v=14"></script>
+</body>
+</html>

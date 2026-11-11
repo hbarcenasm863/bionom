@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=16">
+<link rel="stylesheet" href="bio.css?v=17">
 <style>
 #red{width:100%;height:auto;background:linear-gradient(180deg,#eef7fb,#f3faf1);border-radius:14px}
 #red .nd{cursor:pointer}
@@ -61,6 +61,7 @@
     <a href="#red-sec">🕸️ Red trófica</a>
     <a href="#energia">🔺 Energía</a>
     <a href="#ciclos">♻️ Ciclos</a>
+    <a href="#suelo">🌱 El suelo</a>
     <a href="#relaciones">🤝 Relaciones</a>
     <a href="#nicho">🏠 Nicho y adaptaciones</a>
     <a href="#poblaciones">📈 Poblaciones</a>
@@ -121,6 +122,7 @@
       <div class="q">¿Por qué en un bosque hay muchos árboles y muy pocos jaguares?</div>
       <div class="ops"><button class="op" data-por="Los cazadores no explican por qué siempre, en todos los ecosistemas, hay menos depredadores que plantas.">Porque los cazadores los acabaron.</button><button class="op">Porque en cada nivel se pierde casi toda la energía y arriba llega muy poca.</button><button class="op" data-por="El tamaño del jaguar no explica la regla general de la pirámide.">Porque los jaguares son muy grandes.</button></div>
     </div>
+    <div class="dato">Esto cumple las <b>leyes de la termodinámica</b>. La <b>primera ley</b>: la energía no se crea ni se destruye, solo se transforma (la luz del Sol pasa a energía química en la glucosa, y de ahí a movimiento y calor). La <b>segunda ley</b>: en cada transformación parte de la energía se pierde como calor que ya no se puede usar. Por eso la energía <b>fluye</b> en una sola dirección y no se recicla, mientras la materia sí.</div>
   </section>
 
   <section class="sec" id="ciclos">
@@ -132,8 +134,35 @@
     <div class="tab-p" id="c-nitr"></div>
   </section>
 
+  <section class="sec" id="suelo">
+    <h2><span class="n">06</span> El suelo: depósito de nutrientes</h2>
+    <p class="lead">El suelo no es solo tierra: es una mezcla de minerales, materia orgánica, agua, aire y millones de seres vivos. Guarda los nutrientes (nitrógeno, fósforo, potasio) que las plantas toman por sus raíces. Baja por sus capas.</p>
+    <div class="lado">
+      <div class="fig"><svg id="suelo-svg" viewBox="0 0 260 260" role="img" aria-label="Perfil del suelo con sus horizontes"></svg></div>
+      <div class="pasos" data-titulo="Las capas (horizontes)" data-alcambiar="pasoSuelo">
+        <div class="paso" data-t="O"><h3>🍂 Horizonte O: hojarasca</h3><p>Hojas, ramas y restos de animales. Hongos, bacterias, lombrices y cucarrones los descomponen y liberan sus nutrientes: así se forma el <b>humus</b>.</p></div>
+        <div class="paso" data-t="A"><h3>🌱 Horizonte A: capa fértil</h3><p>Oscura por el humus. Aquí están casi todas las raíces y la mayor parte de los nutrientes. El humus retiene el agua y los nutrientes como una esponja.</p></div>
+        <div class="paso" data-t="B"><h3>🧱 Horizonte B: subsuelo</h3><p>Más claro y arcilloso. Allí se acumulan minerales que el agua lava desde arriba. Llegan las raíces profundas de los árboles.</p></div>
+        <div class="paso" data-t="C"><h3>⛏️ Horizonte C: roca partida</h3><p>Trozos de la roca madre que el agua, el calor y las raíces van rompiendo (meteorización). Formar un centímetro de suelo puede tardar cientos de años.</p></div>
+        <div class="paso" data-t="R"><h3>⛰️ Roca madre</h3><p>La roca de la que nació el suelo. De ella vienen los minerales como el potasio, el calcio y el fósforo.</p></div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>🌳 La paradoja de la Amazonía</h3><p>Los suelos amazónicos son pobres: casi todos los nutrientes están en los árboles vivos y en la hojarasca, que se descompone muy rápido. Si se tala la selva, la lluvia lava el suelo y en pocos años ya no sirve para cultivar.</p></div>
+      <div class="card"><h3>🚜 Cuidar el suelo</h3><p>La erosión se lleva la capa fértil. La evitan las cercas vivas, las terrazas en las laderas, no quemar, dejar cobertura vegetal y rotar cultivos con leguminosas como el fríjol, que devuelven nitrógeno.</p></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="Los descomponedores transforman los restos en humus y liberan nutrientes que las plantas vuelven a absorber: así el suelo funciona como depósito.">
+      <div class="q">¿Quiénes devuelven al suelo los nutrientes de las hojas que caen?</div>
+      <div class="ops"><button class="op">Los descomponedores: hongos, bacterias y lombrices.</button><button class="op" data-por="Las plantas toman los nutrientes, no los devuelven al descomponer.">Las raíces de las plantas.</button><button class="op" data-por="La lluvia lava y se lleva nutrientes; no descompone las hojas.">La lluvia.</button></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="En la selva amazónica los nutrientes están sobre todo en la vegetación; al talarla, el suelo pobre queda expuesto a la lluvia, que lo lava rápido.">
+      <div class="q">¿Por qué un potrero en la Amazonía pierde la fertilidad en pocos años?</div>
+      <div class="ops"><button class="op" data-por="Llueve mucho en la Amazonía.">Porque allí casi no llueve.</button><button class="op" data-por="El problema no son las vacas en sí, sino el suelo pobre sin bosque.">Porque las vacas comen tierra.</button><button class="op">Porque los nutrientes estaban en la selva y la lluvia lava el suelo pobre.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="relaciones">
-    <h2><span class="n">06</span> Relaciones entre especies</h2>
+    <h2><span class="n">07</span> Relaciones entre especies</h2>
     <p class="lead">En una comunidad, las especies se relacionan. Usamos <b>+</b> si una especie gana, <b>−</b> si pierde y <b>0</b> si no le pasa nada.</p>
     <div class="tbl-wrap"><table class="t rel-t">
       <tr><th>Relación</th><th>Especie 1</th><th>Especie 2</th><th>Ejemplo en Colombia</th></tr>
@@ -149,7 +178,7 @@
   </section>
 
   <section class="sec" id="nicho">
-    <h2><span class="n">07</span> Hábitat, nicho y adaptaciones</h2>
+    <h2><span class="n">08</span> Hábitat, nicho y adaptaciones</h2>
     <p class="lead">El <b>hábitat</b> es el lugar donde vive una especie: su «dirección». El <b>nicho ecológico</b> es su papel en el ecosistema: qué come, cuándo está activa, dónde anida, quién se la come. Es su «profesión». Dos especies pueden compartir el hábitat, pero si tienen el mismo nicho compiten hasta que una desplaza a la otra.</p>
     <div class="grid g3">
       <div class="card"><h3>🦆 Pato andino</h3><div data-foto="c_pato" data-pie=""></div><p>Humedal de la Sabana. Se sumerge y come plantas acuáticas e insectos del fondo.</p></div>
@@ -163,7 +192,7 @@
   </section>
 
   <section class="sec" id="poblaciones">
-    <h2><span class="n">08</span> ¿Cómo crece una población?</h2>
+    <h2><span class="n">09</span> ¿Cómo crece una población?</h2>
     <p class="lead">Si una población tuviera comida y espacio sin límite, crecería cada vez más rápido (<b>crecimiento exponencial</b>, curva en J). Pero los recursos se acaban: la población se estabiliza en la <b>capacidad de carga</b> del ambiente (curva en S). Cambia los valores.</p>
     <div class="card">
       <div class="ctrl"><label>Capacidad de carga <input type="range" id="pk" min="200" max="1000" step="50" value="600"> <b id="pk-v"></b></label><label>Tasa de crecimiento <input type="range" id="pr" min="0.1" max="0.8" step="0.05" value="0.35"> <b id="pr-v"></b></label></div>
@@ -177,7 +206,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=15"></script>
+<script src="bio.js?v=16"></script>
 <script>
 (function(){
 /* ═══ 1. Bióticos y abióticos ═══ */
@@ -355,6 +384,18 @@ BIO.clasificar(document.getElementById('clas-adap'),{
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
+<script>
+(function(){
+var CAP=[['O','#6b4a2a',18],['A','#4a3220',52],['B','#9a6a3c',60],['C','#b89a74',56],['R','#8d8d8d',40]];
+function suelo(k){var y=40,s='<rect x="0" y="0" width="260" height="40" fill="#d7ecf7"/><path d="M40 40 c0 -18 6 -26 10 -32 M50 40 c4 -14 10 -20 16 -24" stroke="#3f8f3a" stroke-width="4" fill="none"/><path d="M200 40 v-26 m-14 6 h28" stroke="#3f8f3a" stroke-width="4"/>';
+  CAP.forEach(function(c,i){s+='<rect x="20" y="'+y+'" width="220" height="'+c[2]+'" fill="'+c[1]+'" stroke="'+(i===k?'#f08c1e':'none')+'" stroke-width="4"/><text x="30" y="'+(y+c[2]/2+5)+'" style="font:800 14px Outfit" fill="#fff">'+c[0]+'</text>';
+    if(i===3)for(var j=0;j<6;j++)s+='<rect x="'+(70+j*28)+'" y="'+(y+10+(j%2)*18)+'" width="18" height="12" rx="3" fill="#8d8d8d"/>';
+    if(i===1)s+='<path d="M60 '+y+' q-6 20 4 44 M200 '+y+' q8 24 -2 46" stroke="#d9c7a3" stroke-width="3" fill="none"/><path d="M130 '+(y+20)+' c8 -6 16 6 24 0" stroke="#e08a8a" stroke-width="5" fill="none" stroke-linecap="round"/>';
+    y+=c[2];});
+  document.getElementById('suelo-svg').innerHTML=s;}
+window.pasoSuelo=function(k){suelo(k);};suelo(0);
+})();
+</script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>

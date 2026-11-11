@@ -18,6 +18,8 @@ var MODULOS=[
   {id:'division',href:'division.html',ico:'✂️',txt:'División',full:'División celular: mitosis y meiosis',niveles:['celula','organismo']},
   {id:'reinos',href:'reinos.html',ico:'🍄',txt:'Reinos',full:'Reinos y clasificación',niveles:['organismo']},
   {id:'sistemas',href:'sistemas.html',ico:'❤️',txt:'Sistemas',full:'Sistemas del cuerpo',niveles:['tejido','organo','sistema','organismo']},
+  {id:'funciones',href:'funciones.html',ico:'🐙',txt:'Funciones',full:'Funciones vitales comparadas',niveles:['organo','sistema','organismo']},
+  {id:'nutricion',href:'nutricion.html',ico:'🍎',txt:'Nutrición',full:'Nutrición y salud',niveles:['molecula','organismo']},
   {id:'reproduccion',href:'reproduccion.html',ico:'👶',txt:'Reproducción',full:'Reproducción',niveles:['celula','organo','sistema','organismo','poblacion']},
   {id:'genetica',href:'genetica.html',ico:'🧬',txt:'Genética',full:'Genética mendeliana y molecular',niveles:['molecula','celula','organismo']},
   {id:'evolucion',href:'evolucion.html',ico:'🦎',txt:'Evolución',full:'Evolución',niveles:['poblacion','organismo']},

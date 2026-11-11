@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=16">
+<link rel="stylesheet" href="bio.css?v=17">
 <style>
 .hero-logo{display:block;width:min(360px,80%);height:auto;margin:0 0 6px}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end}
@@ -170,7 +170,7 @@ var NIVELES=[
 ];
 var BANDAS={quimico:['Nivel químico','#7b4bb7','#f4eefc'],celular:['Nivel celular','#1a7fb5','#eaf5fc'],organismo:['Nivel del organismo','#c2410c','#fff6ec'],ecologico:['Nivel ecológico','#2e7d4f','#eaf7ee']};
 </script>
-<script src="bio.js?v=15"></script>
+<script src="bio.js?v=16"></script>
 <script>
 (function(){
 var svg=document.getElementById('mapa-svg'),det=document.getElementById('det'),NS='http://www.w3.org/2000/svg';
@@ -249,7 +249,7 @@ document.getElementById('prog').innerHTML='<svg viewBox="0 0 64 64" aria-hidden=
 
 // tarjetas de módulos
 document.getElementById('mods-g').innerHTML=BIO.MODULOS.filter(function(m){return m.id!=='inicio';}).map(function(m){
-  var desc={celula:'Historia del descubrimiento, tipos de célula y sus partes en una célula que se toca.',division:'Cromosomas, ciclo celular, mitosis y meiosis, y qué pasa cuando la división falla.',reinos:'Cómo se clasifican los seres vivos: dominios, los 5 reinos y una clave para clasificar.',sistemas:'Del tejido al sistema: recorre el cuerpo humano y cómo se coordinan sus sistemas.',reproduccion:'Tipos de reproducción en cada grupo, la flor, el sistema reproductor humano, embarazo, anticoncepción e ITS.',genetica:'Mendel y sus arvejas, el cuadro de Punnett, el ADN y cómo se fabrica una proteína.',evolucion:'Lamarck, Darwin, las evidencias y una simulación de selección natural.',ecosistemas:'Componentes, cadenas y redes tróficas, flujo de energía, ciclos y relaciones.',regiones:'Mapa interactivo: los ecosistemas de cada región natural de Colombia.',ambiente:'Efecto invernadero, El Niño y La Niña, océanos, energías y tu huella de carbono.',juego:'Repaso con preguntas de todos los temas, con la explicación de cada respuesta.',docente:'Talleres, evaluaciones, ahorcado y sopa de letras para imprimir o proyectar.'}[m.id];
+  var desc={funciones:'Cómo respiran, circulan, excretan, se regulan y se defienden distintos grupos de seres vivos, y la física de sus fluidos.',nutricion:'Biomoléculas, el agua, dieta balanceada, deporte, sustancias que hacen daño, enfermedades transmisibles y antibióticos.',celula:'Historia del descubrimiento, tipos de célula y sus partes en una célula que se toca.',division:'Cromosomas, ciclo celular, mitosis y meiosis, y qué pasa cuando la división falla.',reinos:'Cómo se clasifican los seres vivos: dominios, los 5 reinos y una clave para clasificar.',sistemas:'Del tejido al sistema: recorre el cuerpo humano y cómo se coordinan sus sistemas.',reproduccion:'Tipos de reproducción en cada grupo, la flor, el sistema reproductor humano, embarazo, anticoncepción e ITS.',genetica:'Mendel y sus arvejas, el cuadro de Punnett, el ADN y cómo se fabrica una proteína.',evolucion:'Lamarck, Darwin, las evidencias y una simulación de selección natural.',ecosistemas:'Componentes, cadenas y redes tróficas, flujo de energía, ciclos y relaciones.',regiones:'Mapa interactivo: los ecosistemas de cada región natural de Colombia.',ambiente:'Efecto invernadero, El Niño y La Niña, océanos, energías y tu huella de carbono.',juego:'Repaso con preguntas de todos los temas, con la explicación de cada respuesta.',docente:'Talleres, evaluaciones, ahorcado y sopa de letras para imprimir o proyectar.'}[m.id];
   return '<a class="mod" href="'+m.href+'"><span class="e">'+m.ico+'</span><b>'+m.full+'</b><small>'+desc+'</small>'+(BIO.visitas[m.id]?'<span class="v">✓ visitado</span>':'')+'</a>';
 }).join('');
 

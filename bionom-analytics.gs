@@ -116,6 +116,8 @@ const TEMAS_PRINCIPALES = [
   'División celular',
   'Reinos y clasificación',
   'Sistemas del cuerpo',
+  'Funciones vitales comparadas',
+  'Nutrición y salud',
   'Reproducción',
   'Genética',
   'Evolución',

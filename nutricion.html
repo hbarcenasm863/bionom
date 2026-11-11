@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nutrición y salud — BioNom</title>
+<meta name="description" content="Biomoléculas de los seres vivos, el agua, dieta balanceada y comunidades de Colombia, deporte y salud, sustancias que hacen daño, enfermedades transmisibles, antibióticos y contaminación.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=17">
+<style>
+.mol-tab{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,.8fr));gap:4px;font-size:.88rem}
+.mol-tab .h{font-weight:800;text-align:center;padding:6px 2px;color:var(--cn-brand-d)}
+.mol-tab .r{font-weight:800;padding:8px 6px;background:var(--cn-brand-l);border-radius:8px}
+.mol-tab button{border:1px solid var(--cn-brd);background:#fff;border-radius:8px;cursor:pointer;font:600 .9rem Outfit;min-height:40px}
+.mol-tab button.on{background:var(--cn-brand);color:#fff}
+.lab-n{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:center}
+@media(max-width:640px){.lab-n{grid-template-columns:1fr}.mol-tab{font-size:.78rem}}
+#tubo{width:100%;max-width:240px;display:block;margin:auto}
+.plato{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media(max-width:640px){.plato{grid-template-columns:1fr}}
+#plato-svg{width:100%;max-width:300px;display:block;margin:auto}
+.alim{display:flex;flex-wrap:wrap;gap:6px}
+.alim .chip.on{background:var(--cn-brand);color:#fff}
+.barra{height:16px;border-radius:999px;background:#eef3ef;overflow:hidden}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,#2e9a5a,#5cb85c);transition:width .5s}
+.dieta .card h3{font-size:1.05rem}
+</style>
+</head>
+<body>
+<nav class="site-nav"></nav>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">🍎 Niveles molecular y del organismo</span>
+    <h1>Nutrición y salud</h1>
+    <p>Todos los seres vivos, de una bacteria a un jaguar, estamos hechos de las <b>mismas moléculas</b>. Aquí verás cuáles son, por qué el agua es indispensable, cómo armar una <b>alimentación balanceada</b> con lo que hay en tu región y cómo cuidar tu cuerpo del sedentarismo, de las sustancias que hacen daño y de las enfermedades.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Niveles: molécula → organismo</a>
+  </header>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="Molécula que forma parte de los seres vivos: carbohidratos, lípidos, proteínas y ácidos nucleicos.">biomolécula</span><span class="term" data-def="Sustancia de los alimentos que el cuerpo usa para obtener energía, crecer o regular sus funciones.">nutriente</span><span class="term" data-def="Alimentación que combina en las cantidades adecuadas todos los grupos de alimentos.">dieta balanceada</span><span class="term" data-def="Sustancia que produce dependencia: la persona siente la necesidad de consumirla aunque le haga daño.">adicción</span><span class="term" data-def="Enfermedad que pasa de un ser vivo a otro, por el aire, el agua, los alimentos, el contacto o un vector.">enfermedad transmisible</span><span class="term" data-def="Ser vivo, como un mosquito, que lleva un microbio de una persona a otra.">vector</span></div></div>
+
+  <nav class="toc" aria-label="En esta página">
+    <strong>En esta página</strong>
+    <a href="#moleculas">🧪 Biomoléculas</a>
+    <a href="#agua">💧 El agua</a>
+    <a href="#plato">🍽️ Dieta balanceada</a>
+    <a href="#comunidades"><span class="co" role="img" aria-label="Colombia"></span> Dietas de Colombia</a>
+    <a href="#deporte">⚽ Deporte y salud</a>
+    <a href="#sustancias">🚭 Sustancias que dañan</a>
+    <a href="#transmisibles">🦟 Enfermedades</a>
+    <a href="#antibioticos">💊 Antibióticos</a>
+    <a href="#contaminacion">🏭 Contaminación y salud</a>
+  </nav>
+
+  <section class="sec" id="moleculas">
+    <h2><span class="n">01</span> Las moléculas de la vida</h2>
+    <p class="lead">Las <b>biomoléculas orgánicas</b> están formadas sobre todo por carbono, hidrógeno y oxígeno, y algunas además por nitrógeno, fósforo y azufre. Son las mismas en todos los grupos de seres vivos: esa es una de las pruebas de que todos venimos de un antepasado común.</p>
+    <div class="tabs"><button class="chip on" data-tab="b-car">🍞 Carbohidratos</button><button class="chip" data-tab="b-lip">🥑 Lípidos</button><button class="chip" data-tab="b-pro">🥚 Proteínas</button><button class="chip" data-tab="b-aci">🧬 Ácidos nucleicos</button></div>
+    <div class="tab-p" id="b-car"><div class="card"><p><b>Función:</b> dan energía rápida y forman estructuras. <b>Ejemplos:</b> la glucosa (C₆H₁₂O₆) que usan todas las células; el almidón, reserva de las plantas (papa, yuca, maíz); el glucógeno, reserva de animales y hongos; la celulosa de la pared vegetal; la quitina de los hongos y de los insectos.</p></div></div>
+    <div class="tab-p" id="b-lip"><div class="card"><p><b>Función:</b> guardan mucha energía, aíslan del frío y forman las <b>membranas</b> de todas las células (fosfolípidos). <b>Ejemplos:</b> aceites de las semillas y del aguacate, grasa de los animales, la cera de las hojas y de las abejas, el colesterol y algunas hormonas.</p></div></div>
+    <div class="tab-p" id="b-pro"><div class="card"><p><b>Función:</b> casi todo el trabajo de la célula. Son cadenas de <b>aminoácidos</b> y forman enzimas, anticuerpos, hormonas como la insulina, la hemoglobina, los músculos (actina y miosina), el pelo y las uñas (queratina). <b>Alimentos:</b> fríjol, lenteja, huevo, carne, pescado, leche.</p></div></div>
+    <div class="tab-p" id="b-aci"><div class="card"><p><b>Función:</b> guardar y usar la información hereditaria. El <b>ADN</b> está en todas las células, de las bacterias a las plantas y los animales, y usa el mismo código genético; el <b>ARN</b> lleva esa información a los ribosomas. El ATP, la «moneda» de energía, también es un nucleótido.</p></div></div>
+    <h3 style="margin-top:18px">🔎 ¿Están en todos los grupos? Toca una casilla</h3>
+    <div class="card"><div class="mol-tab" id="mol-tab"></div><p id="mol-t" aria-live="polite" style="margin-top:10px"></p></div>
+    <h3 style="margin-top:18px">🧪 Laboratorio: ¿qué biomoléculas tiene cada alimento?</h3>
+    <p>En el laboratorio se usan <b>reactivos</b> que cambian de color con cada biomolécula. Escoge un alimento y un reactivo.</p>
+    <div class="card lab-n">
+      <div><div class="chips" id="lab-al" role="group" aria-label="Alimento" style="margin-bottom:8px"></div><div class="chips" id="lab-re" role="group" aria-label="Reactivo"></div><p id="lab-t" aria-live="polite" style="margin-top:10px"></p></div>
+      <svg id="tubo" viewBox="0 0 120 220" aria-hidden="true"></svg>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="El lugol (yodo) se pone azul oscuro con el almidón, la reserva de energía de las plantas como el maíz de la arepa.">
+      <div class="q">A una arepa le pones lugol y se pone azul oscuro. ¿Qué biomolécula tiene?</div>
+      <div class="ops"><button class="op" data-por="Las proteínas se detectan con Biuret, que se pone violeta.">Proteína</button><button class="op">Almidón (un carbohidrato)</button><button class="op" data-por="Los lípidos dejan una mancha traslúcida en el papel o se tiñen de rojo con Sudán III.">Lípido</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="agua">
+    <h2><span class="n">02</span> El agua, la molécula de la vida</h2>
+    <p class="lead">Ningún ser vivo conocido puede vivir sin agua. Tu cuerpo es cerca de un 60 % agua; una medusa, más del 95 %. Avanza para ver por qué es tan importante.</p>
+    <div class="pasos" data-titulo="¿Por qué el agua?">
+      <div class="paso" data-t="Disolvente"><h3>💧 Disuelve casi todo</h3><p>En el agua se disuelven sales, azúcares y gases. Por eso dentro de la célula y en la sangre las sustancias viajan y reaccionan disueltas en agua.</p></div>
+      <div class="paso" data-t="Temperatura"><h3>🌡️ Cambia de temperatura despacio</h3><p>El agua necesita mucha energía para calentarse. Eso estabiliza la temperatura del cuerpo y de los mares, y el sudor al evaporarse se lleva calor.</p></div>
+      <div class="paso" data-t="Transporte"><h3>🚚 Transporta</h3><p>La sangre y la savia son sobre todo agua: llevan nutrientes, hormonas y desechos. La orina saca los desechos disueltos.</p></div>
+      <div class="paso" data-t="Reacciones"><h3>⚗️ Participa en reacciones</h3><p>En la fotosíntesis, la planta rompe el agua y libera el oxígeno que respiras. En la digestión, el agua ayuda a partir las moléculas grandes.</p></div>
+      <div class="paso" data-t="Hábitat"><h3>🐟 Es hogar</h3><p>El hielo flota y aísla el agua de abajo, así los lagos fríos no se congelan por completo. La vida empezó en el agua y la mayoría de especies aún vive en ella.</p></div>
+    </div>
+    <div class="dato col">Los pueblos y ciudades de Colombia nacieron junto a ríos y ciénagas: el agua es para beber, cultivar, pescar y transportarse. Por eso proteger los páramos y las cuencas es proteger a las comunidades.</div>
+    <div class="chequeo" data-ok="2" data-exp="El agua se calienta y se enfría despacio, y al evaporarse el sudor se lleva calor: así ayuda a mantener estable la temperatura.">
+      <div class="q">¿Por qué sudar te refresca?</div>
+      <div class="ops"><button class="op" data-por="El sudor tiene sal, pero no es lo que enfría.">Porque la sal del sudor es fría.</button><button class="op" data-por="El agua del sudor sale de tu propio cuerpo.">Porque entra agua fría a la piel.</button><button class="op">Porque el agua, al evaporarse, se lleva calor del cuerpo.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="plato">
+    <h2><span class="n">03</span> Una alimentación balanceada</h2>
+    <p class="lead">Las Guías Alimentarias para la población colombiana (ICBF) usan el <b>Plato saludable de la familia colombiana</b>: en cada comida debe haber alimentos de varios grupos, sobre todo frutas, verduras, cereales, raíces y alimentos con proteína, con poca azúcar y poca grasa. Arma tu almuerzo.</p>
+    <div class="card plato">
+      <svg id="plato-svg" viewBox="0 0 300 300" role="img" aria-label="Plato con los grupos de alimentos"></svg>
+      <div><div class="alim" id="alim" role="group" aria-label="Alimentos"></div><div id="plato-t" aria-live="polite" style="margin-top:10px"></div></div>
+    </div>
+    <div class="dato">Cada grupo aporta algo distinto: los <b>cereales, raíces, tubérculos y plátanos</b> dan energía; las <b>frutas y verduras</b>, vitaminas, minerales y fibra; la <b>leche</b>, calcio; las <b>carnes, huevos y leguminosas</b>, proteína y hierro. Se complementa con agua y actividad física diaria.</div>
+    <div class="chequeo" data-ok="0" data-exp="El fríjol es una leguminosa: da proteína y hierro, como la carne. Por eso el arroz con fríjol, verdura y fruta es un almuerzo balanceado y económico.">
+      <div class="q">Una familia no puede comprar carne todos los días. ¿Qué alimento la reemplaza mejor en proteína?</div>
+      <div class="ops"><button class="op">El fríjol o la lenteja.</button><button class="op" data-por="La gaseosa solo aporta azúcar.">Una gaseosa.</button><button class="op" data-por="El arroz da energía, pero poca proteína.">Más arroz.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="comunidades">
+    <h2><span class="n">04</span> La dieta depende de lo que da la región</h2>
+    <p class="lead">Cada comunidad come lo que produce su territorio. Toca cada tarjeta para pensar si su dieta tradicional es balanceada y qué le podría faltar.</p>
+    <div class="grid g3 dieta">
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🐟</span><b>Pacífico</b><small>toca para voltear</small></div><div class="bk">Pescado, plátano, coco, arroz, chontaduro y borojó. <b>Fuerte en</b> proteína y energía. Conviene sumar más verduras.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🥔</span><b>Andina</b><small>toca para voltear</small></div><div class="bk">Papa, maíz, fríjol, arveja, huevo y leche. <b>Fuerte en</b> energía y proteína vegetal. Cuidado con el exceso de harinas y de fritos.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🥥</span><b>Caribe</b><small>toca para voltear</small></div><div class="bk">Yuca, ñame, plátano, pescado, queso costeño y frutas tropicales. <b>Fuerte en</b> energía. Conviene moderar la sal y los fritos.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🐄</span><b>Llanos</b><small>toca para voltear</small></div><div class="bk">Carne de res, yuca, plátano y arroz. <b>Fuerte en</b> proteína y hierro. Le faltan frutas y verduras para las vitaminas y la fibra.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🌳</span><b>Amazonía</b><small>toca para voltear</small></div><div class="bk">Pescado, casabe y fariña de yuca, frutos como el arazá y el camu camu. <b>Fuerte en</b> proteína y vitaminas de las frutas nativas.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🐐</span><b>La Guajira</b><small>toca para voltear</small></div><div class="bk">El pueblo wayuu come chivo, maíz y fríjol. En las sequías falta comida y agua: por eso la desnutrición infantil es un problema de salud pública allí.</div></div></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="La dieta llanera es rica en carne (proteína y hierro), pero le faltan frutas y verduras, que dan vitaminas, minerales y fibra.">
+      <div class="q">Una dieta tradicional basada en carne, yuca y arroz, ¿qué grupo necesita sumar para ser balanceada?</div>
+      <div class="ops"><button class="op" data-por="Ya tiene mucha proteína con la carne.">Más carne.</button><button class="op">Frutas y verduras.</button><button class="op" data-por="Los azúcares deben ser pocos en cualquier dieta.">Azúcares y dulces.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="deporte">
+    <h2><span class="n">05</span> Deporte y salud física y mental</h2>
+    <p class="lead">La Organización Mundial de la Salud recomienda que niños y adolescentes hagan <b>al menos 60 minutos diarios</b> de actividad física moderada o intensa. Mueve el control para ver qué pasa en tu cuerpo.</p>
+    <div class="card">
+      <div class="ctrl"><label for="act">Minutos de actividad física al día</label><input type="range" id="act" min="0" max="120" step="10" value="20"><b id="act-n"></b></div>
+      <div class="barra" aria-hidden="true"><i id="act-b"></i></div>
+      <div id="act-t" aria-live="polite" style="margin-top:10px"></div>
+    </div>
+    <div class="grid g3" style="margin-top:12px">
+      <div class="card"><h3>❤️ Cuerpo</h3><p>El corazón y los pulmones se fortalecen, los huesos se vuelven más densos y los músculos usan mejor la glucosa: baja el riesgo de obesidad y de diabetes tipo 2.</p></div>
+      <div class="card"><h3>🧠 Mente</h3><p>El ejercicio libera endorfinas y otras sustancias que mejoran el ánimo, bajan el estrés y la ansiedad, y ayudan a dormir y a concentrarse.</p></div>
+      <div class="card"><h3>🤝 Convivencia</h3><p>El deporte en equipo enseña a cooperar, a respetar reglas y a manejar la frustración. Moverse no exige un gimnasio: caminar, bailar o montar bicicleta cuentan.</p></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="El ejercicio regular libera sustancias que mejoran el ánimo y reducen el estrés: beneficia la salud física y también la mental.">
+      <div class="q">¿Cuál afirmación sobre el ejercicio es correcta?</div>
+      <div class="ops"><button class="op" data-por="También mejora el ánimo, el sueño y la concentración.">Solo sirve para tener músculos.</button><button class="op" data-por="Para adolescentes se recomiendan 60 minutos diarios.">Basta con media hora a la semana.</button><button class="op">Ayuda tanto al cuerpo como al ánimo y al sueño.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="sustancias">
+    <h2><span class="n">06</span> Sustancias que hacen daño</h2>
+    <p class="lead">Algunas sustancias cambian cómo funciona el sistema nervioso. El cerebro de los adolescentes todavía se está formando, hasta cerca de los 25 años, por eso es más sensible a sus efectos y a la <b>adicción</b>. Escoge una.</p>
+    <div class="tabs"><button class="chip on" data-tab="s-caf">☕ Cafeína</button><button class="chip" data-tab="s-tab">🚬 Tabaco y vapeadores</button><button class="chip" data-tab="s-alc">🍺 Alcohol</button><button class="chip" data-tab="s-dro">💉 Otras drogas</button></div>
+    <div class="tab-p" id="s-caf"><div class="card"><p>Está en el café, el té, las gaseosas de cola y las <b>bebidas energizantes</b>. En exceso causa nerviosismo, taquicardia, dolor de cabeza e insomnio. Las bebidas energizantes no se recomiendan para menores de edad, y nunca deben mezclarse con alcohol.</p></div></div>
+    <div class="tab-p" id="s-tab"><div class="card"><p>El humo del cigarrillo tiene miles de sustancias, decenas de ellas cancerígenas; la <b>nicotina</b> es muy adictiva. Los <b>vapeadores</b> también suelen llevar nicotina y otras sustancias que irritan los pulmones. Fumar causa cáncer de pulmón, enfermedades del corazón y daña a quienes respiran el humo.</p></div></div>
+    <div class="tab-p" id="s-alc"><div class="card"><p>El alcohol deprime el sistema nervioso: hace más lentos los reflejos y afecta la memoria y el juicio. En exceso daña el hígado y el cerebro. En la adolescencia aumenta el riesgo de dependencia. En Colombia está prohibido venderlo a menores de 18 años.</p></div></div>
+    <div class="tab-p" id="s-dro"><div class="card"><p>La marihuana, la cocaína, los inhalantes y otras drogas actúan sobre el <b>sistema de recompensa</b> del cerebro (dopamina): al principio dan placer, pero el cerebro se acostumbra y pide más. Así aparece la adicción, que afecta el estudio, la familia y la salud.</p></div></div>
+    <div class="dato">Si tú o alguien cercano tiene problemas con alguna sustancia, hablar ayuda: busca a un adulto de confianza, al orientador del colegio o al servicio de salud de tu EPS. La adicción es una enfermedad que tiene tratamiento.</div>
+    <div class="chequeo" data-ok="1" data-exp="El cerebro adolescente sigue madurando hasta cerca de los 25 años; por eso las sustancias lo afectan más y crean adicción con más facilidad.">
+      <div class="q">¿Por qué el alcohol y las drogas son más riesgosos en la adolescencia?</div>
+      <div class="ops"><button class="op" data-por="El riesgo no depende del peso, sino de cómo afectan al cerebro.">Porque los adolescentes pesan menos.</button><button class="op">Porque el cerebro todavía se está desarrollando y crea adicción con más facilidad.</button><button class="op" data-por="Sí hacen daño, y más en esta etapa.">No son más riesgosos que en un adulto.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="transmisibles">
+    <h2><span class="n">07</span> Enfermedades que se transmiten y cómo prevenirlas</h2>
+    <p class="lead">Las enfermedades transmisibles las causan virus, bacterias, protozoos, hongos o gusanos que pasan de un ser vivo a otro. Conocer <b>cómo se transmiten</b> permite saber cómo prevenirlas. Clasifícalas.</p>
+    <div class="card" id="clas-tr"></div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>🦟 Por vectores</h3><p>Eliminar criaderos de mosquitos (agua quieta en llantas y floreros), usar toldillo y repelente.</p></div>
+      <div class="card"><h3>🚰 Por agua y alimentos</h3><p>Hervir o tratar el agua, lavarse las manos y lavar frutas y verduras.</p></div>
+      <div class="card"><h3>🤧 Por el aire</h3><p>Taparse al toser, ventilar los espacios y vacunarse.</p></div>
+      <div class="card"><h3>💉 Por contacto y sangre</h3><p>Condón, no compartir agujas ni cuchillas y vacunarse contra la hepatitis B y el VPH.</p></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="El dengue lo transmite el mosquito Aedes aegypti, que pone sus huevos en agua quieta y limpia: eliminar los recipientes con agua corta su ciclo.">
+      <div class="q">¿Qué medida previene mejor el dengue?</div>
+      <div class="ops"><button class="op">Eliminar los recipientes con agua quieta donde se cría el mosquito.</button><button class="op" data-por="El dengue no se transmite por el aire entre personas.">Usar tapabocas.</button><button class="op" data-por="Los antibióticos no sirven contra virus como el del dengue.">Tomar antibióticos.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="antibioticos">
+    <h2><span class="n">08</span> Los antibióticos: cómo funcionan y cómo usarlos</h2>
+    <p class="lead">Un antibiótico ataca una parte que tienen las bacterias y que nuestras células no tienen, o tienen distinta. Por eso mata a la bacteria sin dañarnos. Avanza paso a paso.</p>
+    <div class="pasos" data-titulo="Cómo actúan">
+      <div class="paso" data-t="Pared"><h3>🧱 Atacan la pared</h3><p>La <b>penicilina</b>, descubierta por Alexander Fleming en 1928 en un hongo, impide que la bacteria construya su pared de peptidoglucano: la bacteria revienta. Nuestras células no tienen pared.</p></div>
+      <div class="paso" data-t="Ribosomas"><h3>🔩 Frenan sus ribosomas</h3><p>Otros antibióticos, como las tetraciclinas o la azitromicina, se pegan a los ribosomas bacterianos, que son distintos a los nuestros, y la bacteria no puede fabricar proteínas.</p></div>
+      <div class="paso" data-t="Virus no"><h3>🚫 No sirven contra virus</h3><p>Los virus no tienen pared ni ribosomas propios. Por eso un antibiótico no cura la gripa, el dengue ni el COVID-19.</p></div>
+      <div class="paso" data-t="Uso correcto"><h3>✅ Uso correcto</h3><p>Solo con receta médica, en la dosis y el tiempo indicados. Cada uso innecesario favorece que sobrevivan y se multipliquen las bacterias resistentes, y luego esos medicamentos dejan de funcionar.</p></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="La penicilina impide formar la pared de peptidoglucano, una estructura que tienen las bacterias y no las células humanas.">
+      <div class="q">¿Por qué la penicilina mata bacterias pero no daña nuestras células?</div>
+      <div class="ops"><button class="op" data-por="Nuestras células sí tienen ADN.">Porque nuestras células no tienen ADN.</button><button class="op" data-por="Las dos tienen membrana.">Porque ataca la membrana, que solo tienen las bacterias.</button><button class="op">Porque ataca la pared celular, que nuestras células no tienen.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="contaminacion">
+    <h2><span class="n">09</span> Contaminación y salud</h2>
+    <p class="lead">La contaminación del aire, del agua y del suelo de tu entorno también llega a tu cuerpo. Identifica los factores de contaminación de tu barrio y sus efectos.</p>
+    <div class="grid g2">
+      <div class="card"><h3>🌫️ Aire</h3><p>El humo de carros, fábricas y quemas tiene partículas finas (PM2,5) que entran hasta los alvéolos: causan asma, bronquitis y enfermedades del corazón. En Bogotá y Medellín hay alertas por calidad del aire.</p></div>
+      <div class="card"><h3>🚱 Agua</h3><p>Las aguas negras sin tratar llevan bacterias y parásitos que causan diarrea. El mercurio de la minería ilegal se acumula en los peces y daña el sistema nervioso de quien los come.</p></div>
+      <div class="card"><h3>🌾 Suelo y alimentos</h3><p>El exceso de plaguicidas contamina el suelo, el agua y los alimentos. Lavar frutas y verduras y usar los plaguicidas solo como se indica reduce el riesgo.</p></div>
+      <div class="card"><h3>🔊 Ruido y basuras</h3><p>El ruido constante causa estrés y daña la audición. Las basuras acumuladas atraen ratas y moscas que transmiten enfermedades.</p></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="El mercurio se acumula en los tejidos y aumenta en cada eslabón de la cadena: los peces grandes y las personas que los comen reciben más (bioacumulación).">
+      <div class="q">¿Por qué el mercurio de la minería afecta a personas que viven lejos de las minas?</div>
+      <div class="ops"><button class="op" data-por="El mercurio no viaja así hasta las personas.">Porque se respira en el aire de las ciudades.</button><button class="op">Porque se acumula en los peces que esas personas comen.</button><button class="op" data-por="No llega a la piel por estar cerca del río.">Porque se absorbe por la piel al ver el río.</button></div>
+    </div>
+    <div class="sig"><a href="funciones.html"><small>← Anterior</small><b>🐙 Funciones vitales comparadas</b></a><a class="der" href="reproduccion.html"><small>Siguiente →</small><b>👶 Reproducción</b></a></div>
+  </section>
+</main>
+<footer class="site-foot"></footer>
+<script src="bio.js?v=16"></script>
+<script>
+(function(){
+/* ═══ Biomoléculas en todos los grupos ═══ */
+var GR=['Bacteria','Hongo','Planta','Animal'],MO=['Carbohidratos','Lípidos','Proteínas','Ácidos nucleicos'];
+var EJ=[['Pared y reserva de glucógeno; usan glucosa.','Glucógeno de reserva y quitina en la pared.','Almidón de reserva y celulosa en la pared.','Glucógeno en el hígado y los músculos.'],
+ ['Fosfolípidos de su membrana.','Fosfolípidos y grasas de reserva.','Aceites de las semillas y cera de las hojas.','Grasa de reserva y colesterol.'],
+ ['Enzimas para digerir y copiar su ADN.','Enzimas que sueltan para digerir afuera.','Enzimas de la fotosíntesis (rubisco).','Músculos, hemoglobina, anticuerpos.'],
+ ['ADN circular y ARN.','ADN en el núcleo y ARN.','ADN en el núcleo, cloroplastos y mitocondrias.','ADN en el núcleo y en las mitocondrias.']];
+var mt=document.getElementById('mol-tab'),vistM={};
+var h='<div class="h"></div>'+GR.map(function(g){return '<div class="h">'+g+'</div>';}).join('');
+MO.forEach(function(m,i){h+='<div class="r">'+m+'</div>'+GR.map(function(g,j){return '<button type="button" data-i="'+i+'" data-j="'+j+'" aria-label="'+m+' en '+g+'">✔</button>';}).join('');});
+mt.innerHTML=h;
+mt.querySelectorAll('button').forEach(function(b){b.onclick=function(){var i=+b.dataset.i,j=+b.dataset.j;vistM[i+'-'+j]=1;
+  mt.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
+  document.getElementById('mol-t').innerHTML='<b>'+MO[i]+' en '+GR[j].toLowerCase()+':</b> '+EJ[i][j]+' <br><small style="color:var(--cn-dim)">Todas las casillas tienen ✔: las cuatro biomoléculas están en todos los grupos.</small>';
+  if(Object.keys(vistM).length>=6)BIO.marcarSeccion('moleculas');};});
+document.getElementById('mol-t').textContent='👆 Toca una casilla para ver un ejemplo.';
+
+/* ═══ Laboratorio de biomoléculas ═══ */
+var AL=[['🌽','Arepa de maíz',{lugol:1,biuret:0,sudan:0,benedict:0}],['🍳','Aceite',{lugol:0,biuret:0,sudan:1,benedict:0}],['🥚','Clara de huevo',{lugol:0,biuret:1,sudan:0,benedict:0}],['🍊','Jugo de naranja',{lugol:0,biuret:0,sudan:0,benedict:1}],['🌱','Fríjol molido',{lugol:1,biuret:1,sudan:0,benedict:0}],['🥛','Leche',{lugol:0,biuret:1,sudan:1,benedict:1}]];
+var RE={lugol:['Lugol','almidón','azul oscuro casi negro','#1d1a4a','amarillo ámbar','#e0b04a'],biuret:['Biuret','proteínas','violeta','#7b3fa8','azul claro','#7fb2e6'],sudan:['Sudán III','lípidos','gotas rojo-naranja','#e0582a','rosado claro','#f2c0b0'],benedict:['Benedict (calentando)','azúcares como la glucosa','rojo ladrillo','#b5432a','azul','#4a86d0']};
+var sa=0,sr='lugol',la=document.getElementById('lab-al'),lr=document.getElementById('lab-re'),vistL={};
+la.innerHTML=AL.map(function(a,i){return '<button type="button" class="chip'+(i?'':' on')+'" data-a="'+i+'">'+a[0]+' '+a[1]+'</button>';}).join('');
+lr.innerHTML=Object.keys(RE).map(function(k,i){return '<button type="button" class="chip'+(i?'':' on')+'" data-r="'+k+'">🧪 '+RE[k][0]+'</button>';}).join('');
+function tubo(col,pos){return '<path d="M40 10 h40 v170 a20 20 0 0 1 -40 0z" fill="#f4f8fb" stroke="#4a6b7a" stroke-width="3"/><path d="M42 80 h36 v100 a18 18 0 0 1 -36 0z" fill="'+col+'"/>'+(pos?'<circle cx="54" cy="120" r="3" fill="#fff" opacity=".6"/><circle cx="66" cy="150" r="2" fill="#fff" opacity=".6"/>':'')+'<rect x="34" y="4" width="52" height="10" rx="4" fill="#4a6b7a"/>';}
+function verLab(){var a=AL[sa],r=RE[sr],pos=a[2][sr];vistL[sa+sr]=1;
+  document.getElementById('tubo').innerHTML=tubo(pos?r[3]:r[5],pos);
+  document.getElementById('lab-t').innerHTML=(pos?'✅ <b>Positivo:</b> se puso '+r[2]+'. '+a[1]+': tiene <b>'+r[1]+'</b>.':'➖ <b>Negativo:</b> quedó '+r[4]+'. No se detectan '+r[1]+' (o hay muy pocos).');
+  if(Object.keys(vistL).length>=6)BIO.marcarSeccion('moleculas');}
+la.querySelectorAll('button').forEach(function(b){b.onclick=function(){sa=+b.dataset.a;la.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});verLab();};});
+lr.querySelectorAll('button').forEach(function(b){b.onclick=function(){sr=b.dataset.r;lr.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});verLab();};});
+verLab();
+
+/* ═══ Plato saludable ═══ */
+var GRUPOS=[['cer','Cereales, raíces, tubérculos y plátanos','#e8b44a'],['fru','Frutas y verduras','#5cb85c'],['lac','Leche y derivados','#7fb2e6'],['pro','Carnes, huevos y leguminosas','#c0603a'],['gra','Grasas','#f2d36b'],['azu','Azúcares','#d77aa8']];
+var ALIM=[['🍚 Arroz','cer'],['🥔 Papa','cer'],['🍌 Plátano','cer'],['🥗 Ensalada','fru'],['🍎 Fruta','fru'],['🥕 Zanahoria','fru'],['🥛 Leche','lac'],['🧀 Queso','lac'],['🍗 Pollo','pro'],['🌱 Fríjol','pro'],['🥚 Huevo','pro'],['🐟 Pescado','pro'],['🥑 Aguacate','gra'],['🍟 Papas fritas','gra'],['🥤 Gaseosa','azu'],['🍬 Dulces','azu']];
+var sel={},ai=document.getElementById('alim');
+ai.innerHTML=ALIM.map(function(a,i){return '<button type="button" class="chip" data-i="'+i+'">'+a[0]+'</button>';}).join('');
+function pintarPlato(){var c={};Object.keys(sel).forEach(function(i){var g=ALIM[i][1];c[g]=(c[g]||0)+1;});
+  var s='<circle cx="150" cy="150" r="140" fill="#fff" stroke="#c9d6cc" stroke-width="6"/>',a0=-Math.PI/2,tot=Object.keys(sel).length||1;
+  GRUPOS.forEach(function(g){var n=c[g[0]]||0;if(!n)return;var a1=a0+2*Math.PI*n/tot,x0=150+120*Math.cos(a0),y0=150+120*Math.sin(a0),x1=150+120*Math.cos(a1),y1=150+120*Math.sin(a1);
+    s+=tot===n?'<circle cx="150" cy="150" r="120" fill="'+g[2]+'"/>':'<path d="M150 150 L'+x0+' '+y0+' A120 120 0 '+(a1-a0>Math.PI?1:0)+' 1 '+x1+' '+y1+'Z" fill="'+g[2]+'" stroke="#fff" stroke-width="2"/>';a0=a1;});
+  if(!Object.keys(sel).length)s+='<text x="150" y="155" text-anchor="middle" style="font:700 15px Outfit" fill="#7a8a80">Escoge alimentos</text>';
+  document.getElementById('plato-svg').innerHTML=s;
+  var falta=['cer','fru','pro'].filter(function(g){return !c[g];}),malo=(c.azu||0)+(c.gra&&Object.keys(sel).some(function(i){return ALIM[i][0].indexOf('fritas')>0;})?1:0);
+  var t='<ul style="margin-left:18px">'+GRUPOS.map(function(g){return '<li><span style="display:inline-block;width:10px;height:10px;border-radius:3px;background:'+g[2]+'"></span> '+g[1]+': <b>'+(c[g[0]]||0)+'</b></li>';}).join('')+'</ul>';
+  if(Object.keys(sel).length<3)t+='<p>Escoge al menos 3 alimentos.</p>';
+  else if(!falta.length&&!malo){t+='<p>✅ <b>¡Plato balanceado!</b> Tiene energía, vitaminas y proteína. Acompáñalo con agua.</p>';BIO.marcarSeccion('plato');}
+  else t+='<p>⚠️ '+(falta.length?'Le falta: '+falta.map(function(f){return GRUPOS.filter(function(g){return g[0]===f;})[0][1].toLowerCase();}).join(', ')+'. ':'')+(malo?'Tiene azúcares o fritos: déjalos para ocasiones especiales.':'')+'</p>';
+  document.getElementById('plato-t').innerHTML=t;}
+ai.querySelectorAll('button').forEach(function(b){b.onclick=function(){var i=b.dataset.i;if(sel[i])delete sel[i];else sel[i]=1;b.classList.toggle('on',!!sel[i]);pintarPlato();};});
+pintarPlato();
+
+/* ═══ Actividad física ═══ */
+var act=document.getElementById('act');
+function verAct(){var m=+act.value;document.getElementById('act-n').textContent=m+' min';document.getElementById('act-b').style.width=Math.min(100,m/60*100)+'%';
+  document.getElementById('act-t').innerHTML=m<30?'😴 <b>Muy poca actividad.</b> El sedentarismo aumenta el riesgo de obesidad, diabetes tipo 2 y problemas del ánimo. Empieza caminando o montando bicicleta.':m<60?'🙂 <b>Vas bien, pero falta.</b> Suma juegos, baile o caminatas hasta llegar a 60 minutos al día.':'💪 <b>¡Cumples la recomendación!</b> Tu corazón, tus huesos y tu ánimo lo agradecen. Recuerda hidratarte y descansar.';
+  if(m>=60)BIO.marcarSeccion('deporte');}
+act.oninput=verAct;verAct();
+
+/* ═══ Enfermedades transmisibles ═══ */
+BIO.clasificar(document.getElementById('clas-tr'),{
+  cajas:[{id:'vec',titulo:'🦟 Vectores'},{id:'agu',titulo:'🚰 Agua y alimentos'},{id:'air',titulo:'🤧 Aire'},{id:'con',titulo:'💉 Contacto sexual o sangre'}],
+  fichas:[{t:'Dengue',caja:'vec'},{t:'Malaria',caja:'vec'},{t:'Enfermedad de Chagas',caja:'vec',pista:'La transmite el pito, un insecto.'},{t:'Cólera',caja:'agu'},{t:'Diarrea por parásitos',caja:'agu'},{t:'Hepatitis A',caja:'agu',pista:'Se transmite por agua o comida contaminada.'},{t:'Gripa',caja:'air'},{t:'Tuberculosis',caja:'air'},{t:'Sarampión',caja:'air'},{t:'VIH',caja:'con'},{t:'Hepatitis B',caja:'con',pista:'Pasa por la sangre y las relaciones sexuales.'}]});
+})();
+</script>
+<script src="narracion.js?v=14"></script>
+</body>
+</html>

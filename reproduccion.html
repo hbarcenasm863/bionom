@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=16">
+<link rel="stylesheet" href="bio.css?v=17">
 <style>
 .grupos-r{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
 .grupos-r button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:8px 4px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--cn-tx)}
@@ -77,6 +77,7 @@
     <a href="#ciclo">📅 Ciclo menstrual</a>
     <a href="#embarazo">🤰 Embarazo</a>
     <a href="#anticoncepcion">🛡️ Anticoncepción</a>
+    <a href="#natalidad">📊 Natalidad</a>
     <a href="#its">⚕️ ITS</a>
   </nav>
 
@@ -232,21 +233,43 @@
   </section>
 
   <!-- ═══ ITS ═══ -->
+  <section class="sec" id="natalidad">
+    <h2><span class="n">09</span> La natalidad y las poblaciones</h2>
+    <p class="lead">El número de hijos que tienen en promedio las mujeres de un país (tasa de fecundidad) cambia toda la población. En Colombia pasó de cerca de 7 hijos por mujer en los años sesenta a menos de 2 hoy, gracias a la educación, la vida en las ciudades y los métodos anticonceptivos. Mueve el control.</p>
+    <div class="card lado" style="align-items:center">
+      <svg id="pir-svg" viewBox="0 0 300 220" role="img" aria-label="Pirámide de población"></svg>
+      <div><div class="ctrl"><label for="tgf">Hijos por mujer</label><input type="range" id="tgf" min="1" max="7" step="0.5" value="1.5"><b id="tgf-n"></b></div><p id="tgf-t" aria-live="polite"></p></div>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>📉 Si nacen menos</h3><p>Las familias pueden dar más educación y salud a cada hijo y las mujeres estudian y trabajan más. Pero la población <b>envejece</b>: habrá más adultos mayores que cuidar y menos jóvenes que trabajen.</p></div>
+      <div class="card"><h3>📈 Si nacen muchos</h3><p>La población crece rápido y se necesitan más colegios, empleos, alimentos y agua. Los recursos del ambiente se presionan más.</p></div>
+    </div>
+    <div class="dato">El nivel de <b>reemplazo</b> es de unos 2,1 hijos por mujer: con eso la población se mantiene estable a largo plazo (sin contar la migración).</div>
+    <div class="chequeo" data-ok="1" data-exp="Con menos de unos 2,1 hijos por mujer nacen menos personas de las que se necesitan para reemplazar a los padres: la población envejece y, con el tiempo, disminuye.">
+      <div class="q">Si un país tiene 1,5 hijos por mujer durante muchos años, ¿qué pasa?</div>
+      <div class="ops"><button class="op" data-por="Para crecer necesitaría más de 2,1 hijos por mujer.">La población crece muy rápido.</button><button class="op">La población envejece y luego disminuye.</button><button class="op" data-por="Cambia: hay cada vez menos jóvenes.">Nada cambia.</button></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="El control de la natalidad permite decidir cuántos hijos tener y cuándo; a nivel de país, cambia la forma de la pirámide de población.">
+      <div class="q">¿Qué consecuencia tiene el control de la natalidad en una población?</div>
+      <div class="ops"><button class="op">Cambia la estructura por edades: menos niños y más adultos mayores.</button><button class="op" data-por="No cambia el sexo de los bebés.">Hace que nazcan más mujeres que hombres.</button><button class="op" data-por="Influye en el número de nacimientos, no en la duración de la vida.">Hace que las personas vivan menos.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="its">
-    <h2><span class="n">09</span> Infecciones de transmisión sexual (ITS)</h2>
+    <h2><span class="n">10</span> Infecciones de transmisión sexual (ITS)</h2>
     <p class="lead">Las ITS se transmiten por contacto sexual y algunas también por la sangre o de la madre al bebé. Las causan virus, bacterias, protozoos u hongos. Muchas <b>no dan síntomas</b> al principio, por eso es importante consultar y hacerse pruebas.</p>
     <div class="chips" id="its-f" style="margin-bottom:10px"><button class="chip on" data-a="todas">Todas</button><button class="chip" data-a="virus">🦠 Virus</button><button class="chip" data-a="bacteria">🧫 Bacterias</button><button class="chip" data-a="protozoo">🔬 Protozoos</button></div>
     <div class="its" id="its-g"></div>
     <h3 style="margin-top:18px">¿Mito o realidad?</h3>
     <div class="card" id="mitos"></div>
     <div class="clave">Prevención: información, <b>condón</b> en todas las relaciones, <b>vacunas</b> (VPH y hepatitis B), pruebas periódicas, no compartir agujas y consultar ante cualquier síntoma. Las ITS por bacterias y protozoos se curan con tratamiento; las causadas por virus se controlan, y algunas se previenen con vacunas.</div>
-    <div class="sig"><a href="sistemas.html"><small>← Anterior</small><b>❤️ Sistemas</b></a><a class="der" href="genetica.html"><small>Siguiente →</small><b>🧬 Genética</b></a></div>
+    <div class="sig"><a href="nutricion.html"><small>← Anterior</small><b>🍎 Nutrición y salud</b></a><a class="der" href="genetica.html"><small>Siguiente →</small><b>🧬 Genética</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=15"></script>
+<script src="bio.js?v=16"></script>
 <script src="cuerpo.js?v=13"></script>
 <script src="repro-anim.js?v=9"></script>
 <script src="embrion-fig.js?v=2"></script>
@@ -456,6 +479,20 @@ mb.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){var i=+
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
+<script>
+(function(){
+var tgf=document.getElementById('tgf');
+function verTgf(){var f=+tgf.value,k=f/2.1,s='',g=['0-9','10-19','20-29','30-39','40-49','50-59','60-69','70+'];
+  var sv=[1,1,1,.98,.95,.9,.75,.5],raw=sv.map(function(v,i){return Math.pow(k,-i*0.45)*v;}),mx=Math.max.apply(null,raw);
+  for(var i=0;i<8;i++){var w=Math.max(6,130*raw[i]/mx);var y=190-i*22;
+    s+='<rect x="'+(150-w)+'" y="'+y+'" width="'+w+'" height="18" fill="#7fb2e6"/><rect x="150" y="'+y+'" width="'+w+'" height="18" fill="#e6889c"/><text x="150" y="'+(y+13)+'" text-anchor="middle" style="font:700 9px Outfit" fill="#10261a">'+g[i]+'</text>';}
+  s+='<text x="40" y="14" style="font:700 11px Outfit" fill="#1a5aa0">hombres</text><text x="215" y="14" style="font:700 11px Outfit" fill="#b03a5a">mujeres</text>';
+  document.getElementById('pir-svg').innerHTML=s;document.getElementById('tgf-n').textContent=String(f).replace('.',',');
+  document.getElementById('tgf-t').innerHTML=f>2.6?'📈 <b>Pirámide ancha abajo:</b> muchos niños y jóvenes. La población crece rápido, como en Colombia hacia 1960.':f>=2?'⚖️ <b>Cerca del reemplazo:</b> la pirámide se vuelve una columna y la población se estabiliza.':'📉 <b>Pirámide angosta abajo:</b> pocos niños y muchos adultos mayores. La población envejece, como pasa hoy en Colombia.';
+  if(f<2)BIO.marcarSeccion('natalidad');}
+tgf.oninput=verTgf;verTgf();
+})();
+</script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>

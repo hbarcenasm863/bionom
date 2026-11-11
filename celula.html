@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=16">
+<link rel="stylesheet" href="bio.css?v=17">
 <style>
 .hist-card{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:16px;align-items:center}
 .hist-card .ilu{font-size:4rem;text-align:center;background:var(--cn-brand-l);border-radius:16px;padding:10px 0}
@@ -196,6 +196,9 @@
       <div class="flip"><div class="in"><div class="fr"><span class="e">🔋</span><b>Bomba de sodio y potasio</b><small>toca para voltear</small></div><div class="bk">Proteína que gasta ATP para sacar sodio y meter potasio, en contra de su concentración. Gracias a ella funcionan tus neuronas: ¡usa casi un tercio de la energía de tu cuerpo en reposo!</div></div></div>
     </div>
     <div class="dato">La atmósfera funciona un poco como una membrana: deja entrar la luz del Sol, pero gases como el CO₂ y el metano no dejan salir todo el calor. Si aumentan esos gases, el planeta retiene más energía y se calienta. Lo verás en el módulo de <a href="ambiente.html">ambiente</a>.</div>
+    <h3 style="margin-top:18px">🎯 Clasifica membranas y cubiertas según su permeabilidad</h3>
+    <p>Una cubierta <b>permeable</b> deja pasar casi todo; una <b>semipermeable</b> (selectiva) deja pasar unas sustancias y otras no; una <b>impermeable</b> casi no deja pasar el agua.</p>
+    <div class="card" id="clas-mem"></div>
     <div class="chequeo" data-ok="2" data-exp="Ir en contra de la diferencia de concentración (de donde hay menos a donde hay más) siempre necesita energía: es transporte activo.">
       <div class="q">Una célula de la raíz absorbe minerales del suelo aunque dentro de ella ya haya más minerales que afuera. ¿Qué tipo de transporte usa?</div>
       <div class="ops"><button class="op" data-por="La difusión solo va de donde hay más a donde hay menos.">Difusión simple</button><button class="op" data-por="La ósmosis es el paso del agua, no de los minerales.">Ósmosis</button><button class="op">Transporte activo</button></div>
@@ -267,6 +270,14 @@
       <div class="q">¿Las plantas respiran?</div>
       <div class="ops"><button class="op" data-por="No: también tienen mitocondrias y respiran.">No, solo hacen fotosíntesis.</button><button class="op">Sí, de día y de noche; de día además hacen fotosíntesis.</button><button class="op" data-por="Respiran todo el tiempo, no solo de noche.">Solo respiran de noche.</button></div>
     </div>
+    <h3 style="margin-top:18px">⚖️ Compara: ¿cómo obtienen energía los seres vivos?</h3>
+    <div class="tbl-wrap"><table class="t">
+      <tr><th>Mecanismo</th><th>Fuente de energía</th><th>¿Quiénes?</th></tr>
+      <tr><td><b>Fotosíntesis</b></td><td>Luz del Sol</td><td>Plantas, algas, cianobacterias</td></tr>
+      <tr><td><b>Quimiosíntesis</b></td><td>Sustancias químicas como el azufre o el amoníaco</td><td>Algunas bacterias y arqueas de fuentes hidrotermales y del suelo</td></tr>
+      <tr><td><b>Respiración aerobia</b></td><td>Glucosa + oxígeno (30 a 32 ATP)</td><td>Casi todos: animales, plantas, hongos, muchas bacterias</td></tr>
+      <tr><td><b>Fermentación</b></td><td>Glucosa sin oxígeno (2 ATP)</td><td>Levaduras, bacterias del yogur, tus músculos cansados</td></tr>
+    </table></div>
   </section>
 
   <!-- ═══ DIVISIÓN CELULAR ═══ -->
@@ -294,7 +305,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=15"></script>
+<script src="bio.js?v=16"></script>
 <script>
 (function(){
 var esc=BIO.esc;
@@ -620,6 +631,13 @@ prT.oninput=priestley;document.querySelectorAll('[data-pr],#pr-luz').forEach(fun
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
+<script>
+(function(){
+BIO.clasificar(document.getElementById('clas-mem'),{
+  cajas:[{id:'per',titulo:'Permeable'},{id:'sem',titulo:'Semipermeable'},{id:'imp',titulo:'Impermeable'}],
+  fichas:[{t:'Pared celular de celulosa',caja:'per',pista:'Es rígida pero porosa: deja pasar agua y sustancias disueltas.'},{t:'Membrana de la célula',caja:'sem'},{t:'Membrana del glóbulo rojo',caja:'sem'},{t:'Membrana interna de la cáscara de huevo',caja:'sem',pista:'Se usa en los laboratorios de ósmosis.'},{t:'Pared de los alvéolos pulmonares',caja:'sem',pista:'Deja pasar oxígeno y CO₂, pero no la sangre.'},{t:'Cutícula cerosa de las hojas',caja:'imp'},{t:'Plumas engrasadas de un pato',caja:'imp'}]});
+})();
+</script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>

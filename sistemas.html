@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=16">
+<link rel="stylesheet" href="bio.css?v=17">
 <style>
 .escalon{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px 0}
 .escalon .e{flex:1;min-width:110px;text-align:center;background:#fff;border:2px solid var(--cn-brd);border-radius:14px;padding:10px 6px;transition:all .3s}
@@ -55,6 +55,7 @@
     <a href="#equipo">🤝 Trabajo en equipo</a>
     <a href="#inmune">🛡️ Defensas</a>
     <a href="#homeostasis">⚖️ Homeostasis</a>
+    <a href="#neurona">⚡ La neurona</a>
     <a href="#reproduccion">👶 Reproducción</a>
     <a href="#funciones">🎯 Funciones vitales</a>
   </nav>
@@ -166,23 +167,47 @@
     </div>
   </section>
 
+  <section class="sec" id="neurona">
+    <h2><span class="n">08</span> La neurona y el impulso nervioso</h2>
+    <p class="lead">Un mensaje nervioso es eléctrico <b>y</b> químico. Dentro de la neurona viaja como una onda eléctrica; para pasar a la siguiente neurona se convierte en sustancias químicas. Avanza y mira cómo cambia el voltaje de la membrana.</p>
+    <div class="lado">
+      <div class="fig"><svg id="pa-svg" viewBox="0 0 320 210" role="img" aria-label="Gráfica del potencial de acción"></svg></div>
+      <div class="pasos" data-titulo="Un impulso, paso a paso" data-alcambiar="pasoNeurona">
+        <div class="paso" data-t="Reposo"><h3>🔋 Potencial de reposo</h3><p>Sin estímulo, adentro de la neurona hay unos <b>−70 mV</b> respecto a afuera. La <b>bomba de sodio y potasio</b> gasta ATP para dejar más sodio (Na⁺) afuera y más potasio (K⁺) adentro.</p></div>
+        <div class="paso" data-t="Estímulo"><h3>⚡ Llega un estímulo</h3><p>Si el estímulo es suficiente y el voltaje sube hasta unos −55 mV (el <b>umbral</b>), se abren de golpe unos canales de sodio. Si no llega al umbral, no pasa nada: es «todo o nada».</p></div>
+        <div class="paso" data-t="Despolarización"><h3>⬆️ Entra el sodio</h3><p>El Na⁺ entra rápido y el interior se vuelve positivo, hasta unos <b>+30 mV</b>. Eso es el <b>potencial de acción</b>, y se repite a lo largo del axón como una ola.</p></div>
+        <div class="paso" data-t="Repolarización"><h3>⬇️ Sale el potasio</h3><p>Se cierran los canales de sodio y se abren los de potasio: el K⁺ sale y el voltaje vuelve a ser negativo. La bomba restablece las concentraciones. Todo dura unos 2 milisegundos.</p></div>
+        <div class="paso" data-t="Sinapsis"><h3>🧪 La sinapsis</h3><p>Al final del axón, el impulso libera <b>neurotransmisores</b> (acetilcolina, dopamina, serotonina) que cruzan un espacio diminuto y se pegan a receptores de la neurona siguiente o del músculo. Muchas drogas actúan aquí.</p></div>
+        <div class="paso" data-t="Mielina"><h3>🏎️ La mielina acelera</h3><p>La <b>vaina de mielina</b> aísla el axón y el impulso salta de un nodo a otro: viaja hasta a 100 m/s. En la esclerosis múltiple esa vaina se daña y los mensajes se vuelven lentos.</p></div>
+      </div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="El potencial de acción ocurre cuando se abren los canales de sodio y el Na⁺ entra a la neurona: el interior pasa de negativo a positivo.">
+      <div class="q">¿Qué hace que el interior de la neurona se vuelva positivo durante el impulso?</div>
+      <div class="ops"><button class="op" data-por="La salida de potasio hace lo contrario: lo vuelve negativo.">La salida de potasio.</button><button class="op">La entrada de sodio por canales que se abren.</button><button class="op" data-por="Los neurotransmisores actúan en la sinapsis, entre neuronas.">La llegada de neurotransmisores al axón.</button></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="Entre dos neuronas hay un espacio: la señal eléctrica libera neurotransmisores (señal química) que llevan el mensaje a la siguiente célula.">
+      <div class="q">¿Por qué se dice que el impulso nervioso es eléctrico y químico?</div>
+      <div class="ops"><button class="op" data-por="También hay un paso químico en la sinapsis.">Porque solo usa corriente eléctrica.</button><button class="op" data-por="El paso por el axón es eléctrico.">Porque solo usa hormonas en la sangre.</button><button class="op">Porque viaja eléctrico por el axón y pasa a la siguiente célula con neurotransmisores.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="reproduccion">
-    <h2><span class="n">08</span> La reproducción</h2>
+    <h2><span class="n">09</span> La reproducción</h2>
     <p class="lead">La función de reproducción tiene su propio módulo: tipos de reproducción en cada grupo de seres vivos, la flor, el sistema reproductor humano, el ciclo menstrual, el embarazo, los métodos anticonceptivos y las infecciones de transmisión sexual.</p>
     <a class="card" href="reproduccion.html" style="display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--cn-tx)"><span style="font-size:2.6rem">👶</span><span><b style="color:var(--cn-brand-d);font-size:1.15rem">Ir al módulo de Reproducción →</b><br><small style="color:var(--cn-dim)">Asexual y sexual · grupos · flor · sistema reproductor · embarazo · anticoncepción · ITS</small></span></a>
   </section>
 
   <section class="sec" id="funciones">
-    <h2><span class="n">09</span> Las tres funciones vitales</h2>
+    <h2><span class="n">10</span> Las tres funciones vitales</h2>
     <p class="lead">Todo ser vivo cumple tres funciones: <b>nutrición</b> (obtener materia y energía), <b>relación</b> (percibir el ambiente y responder) y <b>reproducción</b> (originar nuevos individuos). Ubica cada sistema en la función que más le corresponde.</p>
     <div class="card" id="clas-func"></div>
-    <div class="sig"><a href="reinos.html"><small>← Anterior</small><b>🍄 Reinos</b></a><a class="der" href="reproduccion.html"><small>Siguiente →</small><b>👶 Reproducción</b></a></div>
+    <div class="sig"><a href="reinos.html"><small>← Anterior</small><b>🍄 Reinos</b></a><a class="der" href="funciones.html"><small>Siguiente →</small><b>🐙 Funciones vitales comparadas</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=15"></script>
+<script src="bio.js?v=16"></script>
 <script src="cuerpo.js?v=13"></script>
 <script>
 window.pasoEsc=function(k){document.querySelectorAll('#esc .e').forEach(function(e,i){e.classList.toggle('on',i===k);});};
@@ -397,6 +422,22 @@ grafG();document.getElementById('h-t').textContent='Empieza en 90 mg/dL, en ayun
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
+<script>
+(function(){
+var pts=[[0,-70],[40,-70],[60,-55],[80,30],[100,-80],[130,-70],[160,-70]];
+function X(t){return 40+t*1.6;} function Y(v){return 105-v*1.05;}
+function graf(k){var marca=[1,2,3,4,6,6][k],s='<rect x="40" y="10" width="270" height="170" fill="#fbfdfb" stroke="#d7e3da"/>';
+  [30,0,-55,-70].forEach(function(v){s+='<line x1="40" y1="'+Y(v)+'" x2="310" y2="'+Y(v)+'" stroke="'+(v===-55?'#f08c1e':'#e3ebe5')+'" stroke-dasharray="'+(v===-55?'4 3':'0')+'"/><text x="36" y="'+(Y(v)+4)+'" text-anchor="end" style="font:600 10px Outfit" fill="#557">'+(v>0?'+':'')+v+'</text>';});
+  s+='<text x="300" y="'+(Y(-55)-4)+'" text-anchor="end" style="font:600 10px Outfit" fill="#c06a10">umbral</text><text x="8" y="16" style="font:700 10px Outfit" fill="#557">mV</text><text x="300" y="198" text-anchor="end" style="font:600 10px Outfit" fill="#557">tiempo (ms)</text>';
+  var d='M'+X(pts[0][0])+' '+Y(pts[0][1]);for(var i=1;i<=marca;i++)d+=' L'+X(pts[i][0])+' '+Y(pts[i][1]);
+  s+='<path d="M'+pts.map(function(p){return X(p[0])+' '+Y(p[1]);}).join(' L')+'" fill="none" stroke="#d7e3da" stroke-width="3"/><path d="'+d+'" fill="none" stroke="#c0392b" stroke-width="3.5" stroke-linejoin="round"/>';
+  var p=pts[marca];s+='<circle cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="6" fill="#c0392b"/>';
+  if(k===4)s+='<text x="175" y="60" text-anchor="middle" style="font:700 12px Outfit" fill="#7b4bb7">sinapsis: el mensaje sigue con neurotransmisores</text>';
+  if(k===5)s+='<text x="175" y="60" text-anchor="middle" style="font:700 12px Outfit" fill="#1a7fb5">con mielina, el impulso salta y llega antes</text>';
+  document.getElementById('pa-svg').innerHTML=s;}
+window.pasoNeurona=function(k){graf(k);};graf(0);
+})();
+</script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=13"></script>
 </body>

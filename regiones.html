@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=16">
+<link rel="stylesheet" href="bio.css?v=17">
 <style>
 .mapa-co{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
 @media(max-width:860px){.mapa-co{grid-template-columns:1fr}}
@@ -74,6 +74,7 @@
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#mapa">🗺️ Mapa interactivo</a>
+    <a href="#placas">🌍 Placas y clima</a>
     <a href="#tipos">🌿 Tipos de ecosistema</a>
     <a href="#pisos">⛰️ Pisos térmicos</a>
     <a href="#amenazadas">🆘 Especies amenazadas</a>
@@ -92,14 +93,34 @@
     <p style="font-size:.8rem;color:var(--cn-dim);margin-top:8px">Mapa simplificado elaborado con los límites departamentales del DANE (2018). Los límites entre regiones naturales no siguen exactamente los departamentos; aquí se muestran de forma aproximada.</p>
   </section>
 
+  <section class="sec" id="placas">
+    <h2><span class="n">02</span> ¿Por qué tanta diversidad? Placas tectónicas y clima</h2>
+    <p class="lead">La corteza de la Tierra está partida en <b>placas</b> que se mueven unos centímetros al año. Colombia está donde se encuentran tres: la de Nazca, la del Caribe y la Suramericana. Ese choque, sumado al clima tropical, explica buena parte de nuestra biodiversidad. Avanza.</p>
+    <div class="pasos" data-titulo="De las placas a las especies">
+      <div class="paso" data-t="Choque"><h3>🌍 Tres placas que chocan</h3><p>La placa de Nazca se mete debajo de la Suramericana. Ese empuje levantó los Andes, formó volcanes como el Galeras y el Nevado del Ruiz, y causa los temblores del país.</p></div>
+      <div class="paso" data-t="Andes"><h3>⛰️ Nacen las cordilleras</h3><p>La cordillera Oriental se levantó con fuerza en los últimos millones de años. Al subir aparecieron climas fríos y nacieron los <b>páramos</b>, con especies que no existen en las tierras bajas, como los frailejones.</p></div>
+      <div class="paso" data-t="Aislar"><h3>🧗 Montañas que separan</h3><p>Cada cordillera y cada valle separó poblaciones de ranas, aves, mariposas y plantas. Aisladas, evolucionaron por su lado y formaron especies nuevas (<b>especiación</b>). Por eso hay tantas especies endémicas en los Andes.</p></div>
+      <div class="paso" data-t="Panamá"><h3>🌉 El puente de Panamá</h3><p>Hace unos 3 millones de años el istmo de Panamá unió las dos Américas. Hubo un <b>gran intercambio</b>: llegaron del norte felinos, venados y los antepasados del oso de anteojos; al norte pasaron armadillos y perezosos. Colombia quedó en la entrada.</p></div>
+      <div class="paso" data-t="Clima"><h3>☀️ Y el clima tropical</h3><p>En el trópico hay luz y calor todo el año, y dos océanos traen humedad. Con las montañas aparecen todos los pisos térmicos en poca distancia. Más tipos de clima significan más ecosistemas y más especies.</p></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="El levantamiento de los Andes separó poblaciones en distintas montañas y valles; aisladas, evolucionaron por separado y formaron especies nuevas.">
+      <div class="q">¿Cómo aumentó la biodiversidad el levantamiento de los Andes?</div>
+      <div class="ops"><button class="op" data-por="Las montañas no traen especies del espacio ni de otros continentes por sí solas.">Trajo especies de otros continentes.</button><button class="op">Separó poblaciones que evolucionaron por su lado y creó nuevos climas.</button><button class="op" data-por="Al contrario: creó climas nuevos, como el páramo.">Hizo que todo el país tuviera el mismo clima.</button></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="El istmo de Panamá conectó Norteamérica y Suramérica hace unos 3 millones de años y permitió el paso de especies en ambas direcciones.">
+      <div class="q">¿Por qué en Colombia hay felinos y osos, que llegaron de Norteamérica?</div>
+      <div class="ops"><button class="op">Porque el istmo de Panamá unió las dos Américas y pudieron pasar.</button><button class="op" data-por="Los seres humanos no los trajeron; llegaron hace millones de años.">Porque los trajeron los españoles.</button><button class="op" data-por="Los animales terrestres no cruzan océanos nadando.">Porque cruzaron el mar Caribe nadando.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="tipos">
-    <h2><span class="n">02</span> Los ecosistemas, uno por uno</h2>
+    <h2><span class="n">03</span> Los ecosistemas, uno por uno</h2>
     <p class="lead">Mira cómo se ve cada uno en Colombia y conoce su clima, sus seres vivos y por qué es importante.</p>
     <div class="grid g3" id="eco-cards"></div>
   </section>
 
   <section class="sec" id="pisos">
-    <h2><span class="n">03</span> Los pisos térmicos: subir una montaña es como viajar hacia el polo</h2>
+    <h2><span class="n">04</span> Los pisos térmicos: subir una montaña es como viajar hacia el polo</h2>
     <p class="lead">En los Andes, la temperatura baja unos <b>6 °C por cada 1000 m</b> de altura. Por eso, en un mismo día, puedes pasar del calor del valle del Magdalena al frío del páramo. Mueve el control para subir la montaña.</p>
     <div class="card pisos">
       <svg id="monta" viewBox="0 0 400 300" aria-hidden="true"></svg>
@@ -117,7 +138,7 @@
   </section>
 
   <section class="sec" id="amenazadas">
-    <h2><span class="n">04</span> Especies amenazadas y cómo protegerlas</h2>
+    <h2><span class="n">05</span> Especies amenazadas y cómo protegerlas</h2>
     <p class="lead">Ser el segundo país más biodiverso también es una responsabilidad: Colombia tiene cientos de especies en peligro. La <b>UICN</b> (Unión Internacional para la Conservación de la Naturaleza) clasifica el riesgo de extinción de cada especie en categorías. Toca una especie.</p>
     <div class="uicn" id="uicn" aria-hidden="true"></div>
     <div class="esp" id="esp"></div>
@@ -138,7 +159,7 @@
   </section>
 
   <section class="sec" id="reto">
-    <h2><span class="n">05</span> Reto: ¿dónde lo encuentro?</h2>
+    <h2><span class="n">06</span> Reto: ¿dónde lo encuentro?</h2>
     <p class="lead">Lee la pista y toca en el mapa de arriba la <b>región</b> correcta.</p>
     <p>Son 8 preguntas al azar. Al empezar, la pregunta aparece encima del mapa.</p>
     <button type="button" class="cn-btn cn-btn--primary" id="reto-btn">▶ Empezar reto</button>
@@ -148,7 +169,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=2"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=15"></script>
+<script src="bio.js?v=16"></script>
 <script src="mapa-colombia.js?v=13"></script>
 <script>
 (function(){
