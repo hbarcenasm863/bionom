@@ -6,6 +6,26 @@
 
 ---
 
+## Versión 2.25 — 11 de noviembre de 2026 · Rectángulo blanco en los modelos 3D del mapa de niveles
+
+**Contexto.** El docente envió una captura del celular: en los modelos 3D del
+mapa de niveles (portada) aparecía un rectángulo blanco grande que tapaba
+media animación.
+
+**Causa (reproducida con Playwright, Pixel 7).** Era el rótulo «tamaño:
+0,1 nm» estirado de arriba abajo. En la revisión de UI/UX (2.23) la regla
+general `.zoom-box .esc{bottom:8px}` quedó después de la regla de los modelos
+3D `.m3d-box .esc{bottom:auto;top:8px}`. Como las dos tenían la misma
+especificidad, ganó la general y el rótulo quedó pegado arriba y abajo a la
+vez.
+
+**Arreglo (`index.html`).** La regla pasa a ser `.zoom-box.m3d-box .esc`, que
+gana siempre sin importar el orden. Verificado en los niveles con modelo 3D y
+con foto de los tres ejemplos, en celular y computador: el rótulo mide 25 px
+de alto.
+
+---
+
 ## Versión 2.24 — 11 de noviembre de 2026 · Estándares del MEN reforzados y foto del incendio
 
 **Contexto.** De lo que quedó para decidir en la versión 2.23, el docente
