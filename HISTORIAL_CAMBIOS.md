@@ -6,6 +6,26 @@
 
 ---
 
+## Versión 2.15 — 11 de noviembre de 2026 · Tarjetas volteables sin texto cortado
+
+**Contexto.** El docente reportó que en el celular las tarjetas de «Los cuatro
+tejidos del cuerpo» (sistemas) tenían el texto amontonado y cortado.
+
+**Causa.** Las dos caras de cada tarjeta tenían una altura fija: si el texto de
+atrás era largo, se salía de la tarjeta. Además el reverso se organizaba como
+una columna flexible, que separaba la negrita del resto de la frase. Medido con
+Playwright: 6 caras desbordadas (sistemas en celular y computador, célula
+«Microbiología y vacunas» y reproducción «Reproducción vegetativa» en computador).
+
+**Cambio.** `bio.css`: las dos caras se apilan en la misma celda de una
+rejilla, de modo que la tarjeta toma la altura de su cara más larga; el reverso
+fluye como un párrafo, y las tarjetas de una misma fila quedan de la misma
+altura. Aplica a todas las tarjetas del sitio. `?v=16` de `bio.css` y
+`sw.js` → `bionom-v30`.
+
+**Verificación.** 0 caras desbordadas en los 11 módulos a 390 y 1366 px; las
+tarjetas se siguen volteando. Recargar con Ctrl+F5.
+
 ## Versión 2.14 — 11 de noviembre de 2026 · Los deslizadores ya no mueven la página en el celular
 
 **Contexto.** El docente reportó que en el celular, al usar un deslizador (por

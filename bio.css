@@ -277,3 +277,10 @@ body{background-image:radial-gradient(900px 700px at -10% -10%,rgba(46,125,79,.1
 .pre-claves{background:#fff;border:1px solid var(--cn-brd);border-left:6px solid var(--cn-naranja);border-radius:var(--cn-r);padding:10px 14px;margin:12px 0;box-shadow:var(--cn-sh);font-size:.95rem}
 .pre-claves .pc{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:6px}
 .pre-claves small{display:block;color:var(--cn-dim);margin-top:4px}
+/* Tarjetas volteables: las dos caras se apilan en la misma celda de una
+   rejilla, así la tarjeta toma la altura de la cara más larga y el texto
+   nunca se sale. El reverso fluye como párrafo (la negrita no se separa). */
+.flip .in{display:grid;height:auto}
+.flip .fr,.flip .bk{position:relative;inset:auto;grid-area:1/1;min-height:150px}
+.flip .bk{display:block;align-content:center}
+.flip{display:grid}
