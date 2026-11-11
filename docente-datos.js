@@ -952,3 +952,19 @@ window.DETECTIVE.push(
 ["nutricion", "Decisiones saludables", ["En orientación, el curso de Laura habló sobre sustancias que hacen daño.", ["El cerebro se sigue desarrollando hasta cerca de los 25 años.", "El cerebro deja de desarrollarse a los 10 años."], ["Por eso el alcohol daña más en la adolescencia.", "Por eso el alcohol no afecta a los adolescentes."], ["El alcohol hace más lentos los reflejos.", "El alcohol hace más rápidos los reflejos."], "Luego hablaron del cigarrillo y los vapeadores.", ["La nicotina es muy adictiva.", "La nicotina no causa ninguna dependencia."], ["Muchos vapeadores también tienen nicotina.", "Los vapeadores tienen solo vapor de agua."], ["Las drogas alteran el sistema de recompensa del cerebro.", "Las drogas mejoran el sistema de recompensa sin riesgos."], "Al final escribieron compromisos.", ["Si alguien tiene problemas con una sustancia, puede buscar ayuda en el colegio o la EPS.", "Si alguien tiene problemas con una sustancia, debe guardarlo en secreto."], ["El mercurio de la minería ilegal se acumula en los peces que comemos.", "El mercurio de la minería ilegal desaparece en el agua sin dañar a nadie."]]]
 );
 })();
+
+/* Variantes del mapa conceptual de reinos: el docente escoge el modelo que usa en clase
+   (5, 6 o 7 reinos, con o sin dominios). Las usa la pestaña «Mapa conceptual» (extras.js). */
+(function(){
+var D=window.DOCENTE_DATOS;if(!D)return;
+function v(id,titulo,corto,ramas){return {id:id,base:'reinos',titulo:titulo,corto:corto,info:{esquema:{raiz:'Seres vivos',ramas:ramas}}};}
+var P={t:'Protista',items:['Ameba','Algas']},F={t:'Fungi',items:['Absorción','Quitina']},PL={t:'Plantae',items:['Fotosíntesis','Celulosa']},A={t:'Animalia',items:['Ingestión','Sin pared']};
+D.MAPAS_EXTRA=(D.MAPAS_EXTRA||[]).concat([
+ v('reinos6','Reinos · modelo de 6 reinos','Reinos (6)',[{t:'Eubacteria',items:['Peptidoglucano','Yogur']},{t:'Archaebacteria',items:['Salinas','Enlaces éter']},P,F,PL,A]),
+ v('reinos7','Reinos · modelo de 7 reinos','Reinos (7)',[{t:'Bacteria',items:['Yogur','Cólera']},{t:'Archaea',items:['Salinas','Metano']},{t:'Protozoa',items:['Ameba','Tripanosoma']},{t:'Chromista',items:['Diatomeas','Algas pardas']},F,PL,A]),
+ v('reinos5d','Reinos · 5 reinos con 3 dominios','Reinos (5 y dominios)',[{t:'Dominios Bacteria y Archaea',items:['Monera']},{t:'Dominio Eukarya',items:['Protista','Fungi','Plantae','Animalia']}]),
+ v('reinos6d','Reinos · 6 reinos con 3 dominios','Reinos (6 y dominios)',[{t:'Dominio Bacteria',items:['Eubacteria']},{t:'Dominio Archaea',items:['Archaebacteria']},{t:'Dominio Eukarya',items:['Protista','Fungi','Plantae','Animalia']}]),
+ v('reinos7d','Reinos · 7 reinos con 3 dominios','Reinos (7 y dominios)',[{t:'Dominio Bacteria',items:['Reino Bacteria']},{t:'Dominio Archaea',items:['Reino Archaea']},{t:'Dominio Eukarya',items:['Protozoa','Chromista','Fungi','Plantae','Animalia']}])
+]);
+})();
+

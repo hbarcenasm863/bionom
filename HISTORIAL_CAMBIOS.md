@@ -6,6 +6,31 @@
 
 ---
 
+## Versión 2.19 — 11 de noviembre de 2026 · Mapa conceptual de reinos con el modelo del docente
+
+**Contexto.** El docente notó que en el panel docente, pestaña «Mapa
+conceptual», el tema de reinos solo generaba el mapa de 5 reinos, aunque en
+`reinos.html` ya se puede escoger el modelo de 5, 6 o 7 reinos, con o sin
+dominios.
+
+**Cambios.**
+- `docente-datos.js`: al final, `DOCENTE_DATOS.MAPAS_EXTRA` con cinco
+  variantes del esquema de reinos: 6 reinos, 7 reinos, y 5, 6 y 7 reinos con
+  los 3 dominios (con dominios, el mapa va Seres vivos → dominios → reinos).
+- `extras.js`: `MP.temas()` acepta esas variantes opcionales (`base:'reinos'`)
+  y las pone en la lista justo debajo del tema base. Sin `MAPAS_EXTRA` funciona
+  igual que antes. **Este archivo es compartido con ChromaNom e IonNom:** si
+  allá se copia la versión nueva, el cambio es compatible.
+- Probado con Playwright: la lista muestra las 6 opciones de reinos y cada
+  una genera su mapa sin errores; en el de 7 reinos se usaron palabras cortas
+  para que quepan los 7 recuadros.
+- Versiones: `docente-datos.js?v=16`, `extras.js?v=14`.
+
+**Pendiente.** Las guías (lectura y mapa de ideas de la sesión 2), las
+evaluaciones y el juego siguen usando el modelo de 5 reinos.
+
+---
+
 ## Versión 2.18 — 11 de noviembre de 2026 · Ya no salta la página, modelos 3D y fotos reales en el mapa de niveles
 
 **Contexto.** El docente reportó que en varias páginas, en el celular, la

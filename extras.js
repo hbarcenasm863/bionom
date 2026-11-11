@@ -303,7 +303,14 @@ const MP = {
   id:'mp', icono:'🗺️', nombre:'Mapa conceptual con huecos', t1:'Tema', tituloDef:'Mapa conceptual',
   intro:'El esquema de cada tema (el mismo de la lectura de las guías), dibujado con sus conectores y con algunos recuadros en blanco para completar.',
   ayuda:'Cada versión deja en blanco una combinación distinta de recuadros (no se repite mientras queden combinaciones). Sin banco de palabras es más difícil: el estudiante escribe el concepto con sus propias palabras.',
-  temas(){ return ((window.DOCENTE_DATOS || {}).TEMAS || []).filter(t => t.info && t.info.esquema && t.info.esquema.ramas && t.info.esquema.ramas.length); },
+  // DOCENTE_DATOS.MAPAS_EXTRA (opcional): variantes de un esquema, como los modelos de 6 o 7 reinos;
+  // cada una lleva base:'id del tema' y aparece en la lista justo después de ese tema.
+  temas(){
+    const D = window.DOCENTE_DATOS || {}, X = D.MAPAS_EXTRA || [], L = [];
+    (D.TEMAS || []).forEach(t => { L.push(t); X.filter(x => x.base === t.id).forEach(x => L.push(x)); });
+    X.filter(x => !L.includes(x)).forEach(x => L.push(x));
+    return L.filter(t => t.info && t.info.esquema && t.info.esquema.ramas && t.info.esquema.ramas.length);
+  },
   seccion1(E){ return E.campos([E.campo('Tema del mapa', '<select id="mp-tema">' + this.temas().map(t => '<option value="' + esc(t.id) + '">' + esc(t.titulo) + '</option>').join('') + '</select>')]); },
   campos:E => [
     E.campo('Recuadros en blanco', '<select id="mp-huecos"><option value="ramas">Solo las ramas</option><option value="items">Solo los ejemplos</option><option value="mitad" selected>La mitad, al azar</option><option value="todo">Casi todos</option></select>'),
