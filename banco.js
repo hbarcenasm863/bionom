@@ -1056,4 +1056,10 @@ B.push({t:'reinos',k:'vf',m:'67',q:'En este modelo, las eubacterias y las arquea
 var C=window.BIO_CLASIF;
 if(C)for(var i=B.length-1;i>=0;i--){var q=B[i];if(q.t==='reinos'&&(!C.vale(q.m)||!C.valeD(q.d)))B.splice(i,1);}
 })();
+/* Versión 2.22: el ARN mensajero y el cebador de la replicación */
+window.BANCO_BIO.push(
+ {t:'genetica',k:'mc',q:'¿Qué hace el ARN mensajero?',ops:['Lleva la receta de un gen del núcleo al ribosoma','Copia el ADN antes de la división','Trae los aminoácidos al ribosoma','Forma la pared de la célula'],a:0,exp:'El ARN mensajero es una copia de un gen. Sale del núcleo por un poro y el ribosoma lo lee de tres en tres letras para unir los aminoácidos en el orden correcto.',p:['Su nombre dice que lleva un mensaje.','El ADN no sale del núcleo, pero esta copia sí.']},
+ {t:'genetica',k:'mc',q:'¿Qué ARN participa en la replicación del ADN?',ops:['El cebador que pone la primasa','El ARN mensajero','El ARN de transferencia','Ninguno: solo hay ADN'],a:0,exp:'La ADN polimerasa no puede empezar sola: la primasa pone un trocito de ARN llamado cebador y luego se cambia por ADN. El ARN mensajero y el de transferencia trabajan en la síntesis de proteínas.',p:['Es un trocito corto que sirve de punto de partida.','Lo fabrica una enzima llamada primasa.']},
+ {t:'genetica',k:'vf',q:'El ARN mensajero sale del núcleo, pero el ADN no.',a:true,exp:'Verdadero. El ADN se queda protegido en el núcleo; el ARN mensajero, que es una copia de un gen, sale por los poros de la envoltura nuclear hasta los ribosomas del citoplasma.'}
+);
 delete window.BIO_AJ;delete window.BIO_NUEVAS;

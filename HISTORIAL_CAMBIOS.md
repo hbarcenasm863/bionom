@@ -6,6 +6,58 @@
 
 ---
 
+## Versión 2.22 — 11 de noviembre de 2026 · Animaciones del ARN mensajero y de la replicación
+
+**Contexto.** Una docente le comentó al docente que en la replicación faltaba
+la función y la animación de lo que hace el ARN mensajero. En
+`genetica.html`, sección «El ARN y la copia del ADN», el ARNm solo tenía una
+tarjeta que se voltea, y la replicación eran tres pasos de texto sin figura.
+Aclaración científica que quedó en la página: el ARN mensajero no participa
+en la replicación (actúa en la síntesis de proteínas); el ARN que sí participa
+es el **cebador** que pone la primasa.
+
+**Cambios en `genetica.html`.**
+- Nueva figura por pasos **«El trabajo del ARN mensajero»** (SVG animado,
+  `window.pasoARNm`), en 5 pasos:
+  1. Se copia en el núcleo: transcripción con la ARN polimerasa, a partir del
+     ADN TACCACGTGGACATT.
+  2. Sale por un poro de la envoltura nuclear.
+  3. El ribosoma se arma sobre el codón de inicio AUG y llega el ARNt con
+     UAC y metionina.
+  4. Lectura de tres en tres: GUG, CAC y CUG traen valina, histidina y
+     leucina.
+  5. Codón de parada UAA: la proteína se suelta y el ARNm se reusa y luego
+     se destruye.
+- La replicación ahora tiene **figura animada** (`window.pasoReplica`) y un
+  paso nuevo: helicasa, **cebador de ARN** (primasa), ADN polimerasa (con una
+  mención a los fragmentos de Okazaki) y resultado semiconservativo (cadena
+  vieja + cadena nueva).
+- Dos chequeos nuevos con explicación de cada error: para qué sirve el ARNm y
+  qué ARN participa en la replicación.
+- Con «reducir movimiento» del sistema, cada paso se dibuja sin animación.
+
+**`banco.js`.** Tres preguntas nuevas de genética para el juego y los
+laberintos (función del ARNm, el cebador y el ARNm que sale del núcleo).
+
+**Pruebas.** Con Playwright en computador y en celular (Pixel 7): los 9
+pasos se dibujan sin errores, no hay desborde y los chequeos explican las
+opciones equivocadas.
+
+**Versiones.** `banco.js?v=17`, `sw.js` → `bionom-v36`.
+
+**Antes de esta versión (11-11-2026).** Se subieron a `main` las
+correcciones de la auditoría v2 en los bancos (`banco.js`,
+`docente-datos.js`, `ahorcado-datos.js`) y el informe
+`AUDITORIA_2026-11-v2.md`.
+
+**Pendiente.**
+- Aplicar en las páginas las correcciones de la auditoría v2: división,
+  evolución, nutrición, reproducción, reinos, funciones, regiones,
+  ecosistemas, célula y portada.
+- Esperar la revisión técnica y de UI/UX que está en curso.
+
+---
+
 ## Versión 2.21 — 11 de noviembre de 2026 · Se arregla lo que quedaba pendiente
 
 **Contexto.** El docente pidió arreglar lo faltante. Se revisaron los
