@@ -6,6 +6,40 @@
 
 ---
 
+## Versión 2.28 — 12 de noviembre de 2026 · Preguntas oficiales del Icfes y modelo basado en evidencias
+
+**Contexto.** El docente compartió el *Cuadernillo de preguntas Saber 11.º, Prueba Ciencias Naturales* del Icfes (2026) y pidió usar sus preguntas, dando el crédito, y revisar que las preguntas del juego y sobre todo de las herramientas docentes sigan el **modelo basado en evidencias** de la prueba (competencias → afirmaciones → evidencias) para fortalecer esas competencias. También pidió decidir qué pregunta va en cuál de los tres sitios.
+
+**Diagnóstico de los bancos tipo Saber (antes de esta sesión).** La competencia de cada pregunta se tomó de su marca (`c`) o, si no la tenía, se estimó por el enunciado:
+
+| Competencia (Icfes) | En la prueba real (cuadernillo 2026) | ChromaNom | IonNom | BioNom |
+|---|---|---|---|---|
+| Uso comprensivo del conocimiento científico | 26 % | 60 % | 39 % | 68 % |
+| Explicación de fenómenos | 36 % | 28 % | 46 % | 29 % |
+| Indagación | 38 % | 12 % → 19 % con las nuevas | 14 % | 3 % → 7 % con las nuevas |
+| Preguntas sin contexto (situación, tabla o gráfica) | 0 | 0 | 610 de 736 | 0 |
+
+La indagación (analizar datos, controlar variables, evaluar predicciones, sacar conclusiones) es la competencia con más preguntas en la prueba y la más débil en los tres sitios.
+
+**Cambios.**
+- **Reparto de las 50 preguntas del cuadernillo:** biología → BioNom (17: preguntas 5, 10, 11, 12, 16, 20, 21, 24, 34, 36, 38, 39, 40, 44, 46, 47 y 49); química general e inorgánica → IonNom (17: 1, 2, 3, 4, 7, 8, 15, 18, 19, 23, 27, 28, 29, 30, 33, 35 y 37); química orgánica → ChromaNom (2: 41 y 50). Las 14 de física (6, 9, 13, 14, 17, 22, 25, 26, 31, 32, 42, 43, 45 y 48) no se usan porque ningún sitio trabaja física.
+- **`saber-icfes.js` (nuevo, el mismo archivo en los tres sitios):** guarda las tres competencias de la prueba y sus afirmaciones oficiales; da la competencia y la afirmación de cada pregunta (la que trae marcada o, si no la trae, una estimada por el tipo de tarea del enunciado); escoge las preguntas de la evaluación **repartidas entre las tres competencias** (meta cercana al cuadernillo: 30 % uso, 35 % explicación, 35 % indagación), con prioridad a las preguntas oficiales (hasta la mitad de la prueba) y a las que tienen contexto; y arma las figuras, el crédito de cada pregunta oficial y la **matriz de la evaluación** (número, competencia, afirmación, componente y fuente, sin respuestas).
+- **Preguntas oficiales:** se copian **sin cambios** (los términos de uso del Icfes prohíben transformarlas), con sus opciones en el orden original (no se barajan, así coinciden con la clave del Icfes), las figuras recortadas del cuadernillo y debajo el crédito «Pregunta N del Cuadernillo de preguntas Saber 11.º, Prueba Ciencias Naturales (Icfes, 2026). Uso académico, sin ánimo de lucro.». Al final de la evaluación sale la cita completa del cuadernillo.
+- **Figuras:** cada imagen lleva su tamaño fijo; sin eso, la paginación medía la hoja antes de que la imagen cargara y la figura se salía de la hoja (se vio en la prueba con Playwright).
+- **`icfes-datos.js` (nuevo):** 17 preguntas oficiales en sus temas (Genética 5, 16, 38; Evolución 10, 11; Ambiente 12, 46; Reinos 20, 24, 40; Ecosistemas 21, 44; Nutrición 34; Célula 36, 49; Sistemas 39, 47), cada una con explicación y dos pistas de BioNom (no son del Icfes). Imágenes en `img/icfes/`.
+- **`docente-datos.js`:** 24 preguntas nuevas de **indagación** (2 por tema) con su afirmación del Icfes: ósmosis en papa, levadura, fases de la mitosis, frecuencia cardíaca, germinación, Mendel, resistencia a antibióticos, conejos y zorros, páramo, oxígeno de un río, etc. La indagación pasa de 13 a 37 preguntas.
+- **`docente-app.js` y `docente.html`:** la evaluación usa la selección por competencias; casilla nueva **«Priorizar preguntas oficiales del Icfes»** (marcada). En la **clave** cada pregunta dice su competencia, las oficiales traen su explicación y al final sale la **matriz de la evaluación**. En la hoja del estudiante sale el crédito de cada pregunta oficial y la cita del cuadernillo.
+- **`juego.html`:** entran al juego, en su tema, las 14 preguntas oficiales que tienen opciones escritas (las de opciones dibujadas, 10, 24 y 44, quedan solo para las evaluaciones). Salen con su contexto, figura y crédito, sin barajar las opciones, con las pistas y la explicación de BioNom.
+- **Versión de la app:** `sw.js` → `bionom-v42`, con los dos archivos nuevos en `ASSETS`.
+
+**Verificación (Playwright).** Evaluación de Célula, Reinos, Genética y Ecosistemas con 14 preguntas: figuras dentro de la hoja, crédito, clave con competencias y matriz; juego con la pregunta 21 (red trófica) en celular: figura, crédito, pista y explicación. Sin errores en la consola.
+
+**Pendiente.**
+- La indagación sigue baja (7 % frente a ~38 % en la prueba): conviene seguir escribiendo preguntas con datos, tablas y gráficas.
+- Las afirmaciones «estimadas» de la matriz se asignan por palabras del enunciado; si alguna queda mal, se marca a mano con `c` y `af` en `docente-datos.js`.
+
+---
+
 ## Versión 2.27 — 12 de noviembre de 2026 · Laboratorio de microscopía, orden de secciones, chequeos y conclusiones
 
 **Contexto.** El docente pidió cuatro cosas de las pendientes de la auditoría

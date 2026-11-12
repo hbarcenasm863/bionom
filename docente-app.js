@@ -32,7 +32,7 @@ var MODO='guia';  // guia | taller | eval
 var NOMBRE_MODO={guia:'Guía',taller:'Taller',eval:'Evaluación'};
 
 /* ── formulario ── */
-$('g-temas').innerHTML=TEMAS.map(function(t,i){var n=(window.BANCO_BIO||[]).filter(function(q){return q.t===t[0];}).length,s=(D.SABER||[]).filter(function(q){return q.t===t[0];}).length;
+$('g-temas').innerHTML=TEMAS.map(function(t,i){var n=(window.BANCO_BIO||[]).filter(function(q){return q.t===t[0];}).length,s=(D.SABER||[]).concat(window.SABER_ICFES?SABER_ICFES.preguntas():[]).filter(function(q){return q.t===t[0];}).length;
   return '<label class="opt"><input type="checkbox" value="'+t[0]+'"'+(i===0?' checked':'')+'> <span><b>'+t[2]+' '+t[1]+'</b><small>'+n+' preguntas del juego · '+s+' tipo Saber 11</small></span></label>';}).join('');
 function pintarActividades(){
   var box=$('g-acts');if(!box)return;
@@ -46,7 +46,7 @@ function temasMarcados(){return [].slice.call(document.querySelectorAll('#g-tema
 function cfg(){
   var n=function(id,mx){var e=$(id);return e?Math.max(0,Math.min(mx,parseInt(e.value,10)||0)):0;};
   var c={modo:MODO,temas:temasMarcados(),mc:n('g-mc',30),vf:n('g-vf',15),esc:n('g-esc',10),ord:n('g-ord',6),ab:n('g-ab',6),
-    saber:n('g-saber',30),abE:n('g-abE',6),burbujas:$('g-burb').checked,
+    saber:n('g-saber',30),abE:n('g-abE',6),burbujas:$('g-burb').checked,icfes:!$('g-icfes')||$('g-icfes').checked,
     acts:[].slice.call(document.querySelectorAll('#g-acts input:checked')).map(function(x){return x.value;}),
     nver:Math.max(1,Math.min(10,n('g-nver',10)||1)),
     col:$('g-col').value.trim(),doc:$('g-doc').value.trim(),cur:$('g-cur').value.trim(),tit:$('g-tit').value.trim(),seed:($('g-seed').value.trim().toUpperCase()||semilla)};
@@ -68,11 +68,17 @@ function preguntasBanco(c,v){
     vf:tomar('vf',c.vf),esc:tomar('esc',c.esc),ord:tomar('ord',c.ord).map(function(q){return {q:q.q,ok:q.ops,mez:mezclar(q.ops,r),exp:q.exp};}),ab:mezclar(ab,r).slice(0,c.ab)};
 }
 function preguntasEval(c,v){
-  var r=rng(c.seed+'|eval|'+v),pool=(D.SABER||[]).filter(function(q){return c.temas.indexOf(q.t)>=0;});
-  var sab=mezclar(pool,r).slice(0,c.saber).map(function(q){var ord=mezclar([0,1,2,3],r);return {ctx:q.ctx,q:q.q,ops:ord.map(function(i){return q.o[i];}),a:ord.indexOf(0)};});
+  var r=rng(c.seed+'|eval|'+v),SI=window.SABER_ICFES;
+  var pool=(D.SABER||[]).concat(SI?SI.preguntas():[]).filter(function(q){return c.temas.indexOf(q.t)>=0;});
+  // Selección repartida entre las tres competencias de la prueba Saber 11
+  // (saber-icfes.js); las preguntas oficiales del Icfes no barajan opciones.
+  var elegidas=SI?SI.elegir(pool,c.saber,r,{prioIcfes:c.icfes}):mezclar(pool,r).slice(0,c.saber);
+  var sab=elegidas.map(function(q){
+    if(q.fijo)return {ctx:q.ctx,q:q.q,ops:q.imgOps?[]:q.o,a:q.r,exp:q.exp,src:q};
+    var ord=mezclar([0,1,2,3],r);return {ctx:q.ctx,q:q.q,ops:ord.map(function(i){return q.o[i];}),a:ord.indexOf(0),src:q};});
   var ab=[];c.temas.forEach(function(t){((D.ABIERTAS||{})[t]||[]).forEach(function(x){ab.push({t:t,q:x});});});
   // en la evaluación pueden sumarse preguntas de selección del banco del juego
-  var extra=c.modo==='eval'&&c.mc?preguntasBanco({seed:c.seed+'|e',temas:c.temas,mc:c.mc,vf:0,esc:0,ord:0,ab:0},v).mc.map(function(q){return {ctx:'',q:q.q,ops:q.ops,a:q.a};}):[];
+  var extra=c.modo==='eval'&&c.mc?preguntasBanco({seed:c.seed+'|e',temas:c.temas,mc:c.mc,vf:0,esc:0,ord:0,ab:0},v).mc.map(function(q){return {ctx:'',q:q.q,ops:q.ops,a:q.a,exp:q.exp,src:{q:q.q,k:'B'}};}):[];
   return {saber:sab.concat(extra),ab:mezclar(ab,rng(c.seed+'|abE|'+v)).slice(0,c.abE)};
 }
 
@@ -107,7 +113,13 @@ function bloquesActividades(c,v){
 function bloquesEval(E,c,clave){
   var B=[],n=0;
   if(E.saber.length)B.push('<h3>Selección múltiple con única respuesta (tipo Saber 11)</h3>');
-  E.saber.forEach(function(x,i){n++;B.push('<div class="pq sq"><span class="n">'+n+'.</span><div>'+(x.ctx?'<div class="ctx">'+esc(x.ctx)+'</div>':'')+'<b>'+esc(x.q)+'</b><ol class="col1">'+x.ops.map(function(o,j){return '<li data-l="'+L[j]+'"'+(clave&&j===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&j===x.a?' ✔':'')+'</li>';}).join('')+'</ol></div></div>');});
+  var SI=window.SABER_ICFES;
+  E.saber.forEach(function(x,i){n++;var s=x.src||{};
+    B.push('<div class="pq sq"><span class="n">'+n+'.</span><div>'+(x.ctx?'<div class="ctx">'+esc(x.ctx)+'</div>':'')+(SI?SI.extraHTML(s):'')+'<b>'+esc(x.q)+'</b>'+
+      (SI&&s.imgOps?SI.opsImgHTML(s)+(clave?'<div class="okc">✔ Respuesta: '+L[x.a]+'</div>':''):'<ol class="col1">'+x.ops.map(function(o,j){return '<li data-l="'+L[j]+'"'+(clave&&j===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&j===x.a?' ✔':'')+'</li>';}).join('')+'</ol>')+
+      (clave&&s.icfes&&x.exp?'<div class="exp">'+esc(x.exp)+'</div>':'')+
+      (clave&&SI?'<div class="exp">Competencia: '+esc(SI.COMP[SI.competencia(s)].n)+'.</div>':'')+
+      (SI?SI.creditoHTML(s):'')+'</div></div>');});
   E.ab.forEach(function(x,i){n++;B.push((i===0?'<h3>Preguntas abiertas</h3>':'')+'<div class="pq"><span class="n">'+n+'.</span><div>'+esc(x.q)+(clave?'<div class="exp">Respuesta abierta: valore la claridad, el uso de los conceptos y las evidencias.</div>':cuad(6))+'</div></div>');});
   if(c.burbujas&&E.saber.length&&!clave){
     var filas=E.saber.map(function(x,i){return '<tr><td>'+(i+1)+'</td>'+[0,1,2,3].map(function(j){return '<td><span class="burb">'+L[j]+'</span></td>';}).join('')+'</tr>';});
@@ -115,6 +127,8 @@ function bloquesEval(E,c,clave){
     for(var k=0;k<filas.length;k+=15)B.push((k===0?'<h3>Hoja de respuestas · rellena el círculo</h3>':'')+'<table class="burb-t"><tbody>'+filas.slice(k,k+15).join('')+'</tbody></table>');
   }
   if(clave&&E.saber.length)B.push('<h3>Clave</h3><p class="clave-l">'+E.saber.map(function(x,i){return (i+1)+'-'+L[x.a];}).join(' · ')+'</p>');
+  if(clave&&E.saber.length&&SI)B.push('<h3>Matriz de la evaluación (competencias y afirmaciones del Icfes)</h3>'+SI.matrizHTML(E.saber.map(function(x){return x.src||{q:x.q};}),1,'B'));
+  if(!clave&&SI&&E.saber.length){var cr=SI.citaHTML(E.saber.map(function(x){return x.src||{};}));if(cr)B.push(cr);}
   return B;
 }
 function esquemaHTML(e){
@@ -233,7 +247,7 @@ function avisos(c){
   var m=[],pool=(window.BANCO_BIO||[]).filter(function(q){return c.temas.indexOf(q.t)>=0;});
   function falta(k,n,nom){var h=pool.filter(function(q){return q.k===k;}).length;if(n>h)m.push('solo hay '+h+' de '+nom);}
   if(MODO!=='eval'){falta('mc',c.mc,'selección múltiple');falta('vf',c.vf,'verdadero o falso');falta('esc',c.esc,'respuesta corta');falta('ord',c.ord,'ordenar');}
-  if(MODO!=='taller'){var s=(D.SABER||[]).filter(function(q){return c.temas.indexOf(q.t)>=0;}).length;if(c.saber>s)m.push('solo hay '+s+' preguntas tipo Saber 11 para estos temas');}
+  if(MODO!=='taller'){var s=(D.SABER||[]).concat(window.SABER_ICFES?SABER_ICFES.preguntas():[]).filter(function(q){return c.temas.indexOf(q.t)>=0;}).length;if(c.saber>s)m.push('solo hay '+s+' preguntas tipo Saber 11 para estos temas');}
   return m.length?' · ⚠️ '+m.join('; ')+'.':'';
 }
 function pintar(){
@@ -250,6 +264,7 @@ window.DOC_GEN={modo:function(m){MODO=m;$('panel-gen').setAttribute('data-modo',
     eval:'<strong>📝 Evaluación tipo Saber 11</strong> Preguntas con contexto colombiano y cuatro opciones, más preguntas abiertas. Las opciones se barajan en cada versión; hoja de respuestas de burbujas y clave para el docente.'}[m];
   $('g-intro').innerHTML=intro;llenarVersiones();pintar();},pintar:pintar};
 ['g-mc','g-vf','g-esc','g-ord','g-ab','g-saber','g-abE','g-mcE','g-col','g-doc','g-cur','g-tit','g-seed'].forEach(function(id){var e=$(id);if(e)e.addEventListener('input',pintar);});
+if($('g-icfes'))$('g-icfes').addEventListener('change',pintar);
 ['g-burb'].forEach(function(id){$(id).addEventListener('change',pintar);});
 $('g-acts').addEventListener('change',pintar);
 $('g-nver').addEventListener('input',function(){llenarVersiones();pintar();});$('g-vsel').addEventListener('change',pintar);

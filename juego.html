@@ -35,6 +35,7 @@
 .jtop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .jtop .pts{font:800 1rem var(--cn-mono);color:var(--cn-brand-d)}
 .preg{font-size:1.25rem;font-weight:700;margin:6px 0 14px;line-height:1.4}
+.preg .icfes-ctx{font-size:.95rem;font-weight:400;color:var(--cn-dim);margin-bottom:8px}.preg .icfes-fig img{max-width:100%;height:auto;max-height:280px;width:auto!important}.preg .icfes-cred{font-weight:400}.preg .icfes-q{font-size:1.05rem}
 .ops-j{display:grid;gap:10px}
 .op-j{text-align:left;border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:13px 16px;font-size:1.02rem;cursor:pointer;color:var(--cn-tx);font-weight:600;display:flex;gap:10px;align-items:center}
 .op-j .l{flex:0 0 30px;height:30px;border-radius:50%;background:var(--cn-brand-l);display:grid;place-items:center;font-weight:800;color:var(--cn-brand-d)}
@@ -128,6 +129,16 @@
 <footer class="site-foot"></footer>
 <script src="bio.js?v=22"></script>
 <script src="banco.js?v=18"></script>
+<script src="saber-icfes.js?v=1"></script>
+<script src="icfes-datos.js?v=1"></script>
+<script>/* Preguntas oficiales del Icfes (cuadernillo Saber 11.º, 2026) dentro del
+   Juego, en su tema. Solo las que tienen opciones escritas: las de opciones
+   dibujadas (gráficas o carteleras A–D) quedan para las evaluaciones del
+   panel docente. Salen con su contexto, figura y crédito, y sin barajar. */
+(function(){if(!window.SABER_ICFES||!window.BANCO_BIO)return;
+  SABER_ICFES.preguntas().forEach(function(x){if(x.imgOps)return;
+    BANCO_BIO.push({t:x.t,k:'mc',q:x.q,ops:x.o,a:x.r,exp:x.exp+' (Pregunta '+x.icfes+' del cuadernillo Saber 11.º de Ciencias Naturales, Icfes 2026.)',p:x.p||undefined,icfes:x.icfes,ctx:x.ctx,img:x.img,tabla:x.tabla,c:x.c,af:x.af});});
+})();</script>
 <script>document.addEventListener('DOMContentLoaded',function(){var C=window.BIO_CLASIF,p=document.getElementById('modelo-j');if(C&&p)p.innerHTML='🍄 Las preguntas de Reinos usan el modelo de <b>'+C.texto()+'</b>'+(C.r===5&&!C.d?'.':', como lo escogió tu docente.');});</script>
 <script src="ahorcado-datos.js?v=16"></script>
 <script src="retos.js?v=13"></script>
@@ -253,7 +264,9 @@ function mostrar(){
     RETOS.ahorcado($('mini'),q.it,{onFin:function(r){registrar(r.ok,q,r.puntos);siguienteBtn();}});
     return;
   }
-  $('q-txt').textContent=q.q;
+  if(q.icfes&&window.SABER_ICFES){var SI=SABER_ICFES;
+    $('q-txt').innerHTML='<div class="icfes-ctx">'+BIO.esc(q.ctx)+'</div>'+SI.extraHTML(q)+'<div class="icfes-q">'+BIO.esc(q.q)+'</div>'+SI.creditoHTML(q);}
+  else $('q-txt').textContent=q.q;
   var correcta=correctaDe(q),pistas=pistasDe(q,correcta),intento=1,elegidas=[];
   var maxI=q.k==='vf'?1:q.k==='mc'?RETOS.maxIntentos(q.ops.length):3;
   // Error: si quedan intentos, muestra la pista que toca; si no, cierra la pregunta.
@@ -265,7 +278,7 @@ function mostrar(){
     intento++;return true;
   }
   function terminar(ok){resolver(ok,correcta,ok?RETOS.puntos(intento,10):0,{intentos:intento,elegidas:elegidas});}
-  if(q.k==='mc'){var orden=BIO.barajar(q.ops.map(function(o,i){return i;}));
+  if(q.k==='mc'){var orden=q.icfes?q.ops.map(function(o,i){return i;}):BIO.barajar(q.ops.map(function(o,i){return i;}));
     R.innerHTML='<p style="font-size:.85rem;color:var(--cn-dim);margin:-6px 0 8px">Tienes '+maxI+' intentos. Si te equivocas, recibes una pista.</p><div class="ops-j">'+orden.map(function(i,j){return '<button type="button" class="op-j" data-i="'+i+'"><span class="l">'+'ABCDEF'[j]+'</span>'+BIO.esc(q.ops[i])+'</button>';}).join('')+'</div>';
     R.querySelectorAll('.op-j').forEach(function(b){b.onclick=function(){
       var ok=+b.getAttribute('data-i')===q.a;

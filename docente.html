@@ -175,6 +175,7 @@
         <label>Ver en pantalla <select id="g-vsel"></select></label>
       </div>
       <div class="solo m-guia m-eval" style="margin-top:8px"><label class="opt"><input type="checkbox" id="g-burb" checked> <span><b>Hoja de respuestas de burbujas</b><small>Al final de la evaluación, para marcar A, B, C o D</small></span></label></div>
+      <div class="solo m-guia m-eval" style="margin-top:8px"><label class="opt"><input type="checkbox" id="g-icfes" checked> <span><b>Priorizar preguntas oficiales del Icfes</b><small>Del cuadernillo Saber 11.º de Ciencias Naturales (2026), con su crédito. Las preguntas se reparten entre las tres competencias: uso comprensivo, explicación de fenómenos e indagación.</small></span></label></div>
       <div class="solo m-guia m-taller" style="margin-top:8px"><p style="font-weight:800;font-size:.85rem;margin:6px 0">Actividades dentro del documento</p><div class="chks" id="g-acts"></div></div>
       <p class="ayuda" style="font-size:.82rem;color:var(--cn-dim);margin-top:8px">Las versiones traen otras preguntas o las mismas en otro orden, con las opciones barajadas. Con el mismo código salen siempre las mismas hojas, así puede volver a imprimirlas otro día.</p>
     </div>
@@ -375,6 +376,8 @@
 <script src="banco.js?v=18"></script>
 <script src="ahorcado-datos.js?v=16"></script>
 <script src="docente-datos.js?v=18"></script>
+<script src="saber-icfes.js?v=1"></script>
+<script src="icfes-datos.js?v=1"></script>
 <script>
 /* Ajustes de BioNom para extras.js: textos de biología y criptograma con el código genético. */
 window.EXTRAS_SITIO={area:'biología',adj:'biológico',cripto:'codon'};
