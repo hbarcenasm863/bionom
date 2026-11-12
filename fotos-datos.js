@@ -1559,5 +1559,29 @@ window.FOTOS_DATOS={
 "tipo": "Fotografía",
 "w": 791,
 "h": 800
+},
+"m_yogur": {
+"autor": "Bondarev.gal",
+"titulo": "Lactobacillus delbrueckii subsp. bulgaricus in yogurt [Bacterias del yogur al microscopio]",
+"anio": "s. f.",
+"lic": "CC BY 4.0",
+"licUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+"url": "https://commons.wikimedia.org/w/index.php?curid=155155876",
+"fuente": "Wikimedia Commons",
+"tipo": "Micrografía",
+"w": 600,
+"h": 800
+},
+"m_frotis": {
+"autor": "Chaurasiya, A. K.",
+"titulo": "WBC (neutrophil) at centre, numerous erythrocytes and platelets in Wright's stained peripheral blood smear [Frotis de sangre teñido]",
+"anio": "s. f.",
+"lic": "CC BY-SA 4.0",
+"licUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+"url": "https://commons.wikimedia.org/w/index.php?curid=136997705",
+"fuente": "Wikimedia Commons",
+"tipo": "Micrografía",
+"w": 800,
+"h": 600
 }
 };

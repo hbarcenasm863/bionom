@@ -15,6 +15,13 @@ var MUESTRAS={
   sangre:{n:'🩸 Frotis de sangre (ya teñido)',tin:['ninguna'],pide:'Muchos glóbulos rojos sin núcleo y, de vez en cuando, un glóbulo blanco.'},
   yogur:{n:'🥛 Bacterias del yogur',tin:['ninguna','azul'],pide:'Bacterias en forma de bastón: solo se ven a 1000× con aceite de inmersión.'}
 };
+// Foto real de cada muestra (fotos-datos.js, con su cita APA): se muestra al cumplir su reto
+var REAL={cebolla:['k_cebolla','Epidermis de cebolla al microscopio óptico (400×): se ven la pared y el núcleo de cada célula.'],
+  mejilla:['k_cheek','Células de la mejilla teñidas con azul de metileno: el núcleo se ve azul oscuro.'],
+  elodea:['k_elodea','Hoja de <i>Elodea</i>: cada célula está llena de cloroplastos verdes.'],
+  sangre:['m_frotis','Frotis de sangre teñido: un neutrófilo (glóbulo blanco) entre muchos glóbulos rojos y plaquetas.'],
+  yogur:['m_yogur','<i>Lactobacillus bulgaricus</i>, la bacteria del yogur, vista por el ocular a 1000×.']};
+var RETO_DE={cebolla:'ceb',mejilla:'mej',elodea:'elo',sangre:'san',yogur:'yog'};
 var TIN={ninguna:'Sin teñir',lugol:'Lugol',azul:'Azul de metileno'};
 var CAMPO={4:4500,10:1800,40:450,100:180};          // diámetro del campo en µm
 var PROF={4:6,10:3,40:1.2,100:0.7};                   // cuánto se desenfoca por cada unidad fuera de foco
@@ -24,7 +31,7 @@ var E={m:'cebolla',t:'lugol',lam:false,rota:false,luz:false,ob:4,z:430,d:70,acei
 raiz.innerHTML=
  '<div class="ml">'+
   '<div class="ml-vista"><div class="ml-ocular"><canvas id="ml-cv" width="640" height="640" aria-label="Lo que se ve por el ocular"></canvas></div>'+
-   '<div class="ml-info" id="ml-info" aria-live="polite"></div></div>'+
+   '<div class="ml-info" id="ml-info" aria-live="polite"></div><div class="ml-real" id="ml-real"></div></div>'+
   '<div class="ml-ctrl">'+
    '<div class="ml-grp"><b>1. Muestra</b><select id="ml-m">'+Object.keys(MUESTRAS).map(function(k){return '<option value="'+k+'">'+MUESTRAS[k].n+'</option>';}).join('')+'</select>'+
     '<select id="ml-t" aria-label="Tinción"></select><button type="button" class="cn-btn" id="ml-prep">🧪 Preparar y poner la lámina</button></div>'+
@@ -138,12 +145,16 @@ function revisar(){
   $('ml-retos').innerHTML=RETOS.map(function(r){return '<li class="'+(E.hechos[r.id]?'ok':'')+'">'+(E.hechos[r.id]?'✅ ':'⬜ ')+r.t+'</li>';}).join('')+(E.errores?'<li class="mal">Láminas rotas: '+E.errores+'</li>':'');
   if(Object.keys(E.hechos).length>=3&&window.BIO&&BIO.marcarSeccion)BIO.marcarSeccion('microscopio');
 }
-function todo(){dibujar();mensaje();revisar();}
+function real(){var r=document.getElementById('ml-real');if(!r)return;
+  if(!E.lam||!E.hechos[RETO_DE[E.m]]||!window.FOTO){r.innerHTML=E.lam?'<p class="ml-real-ayuda">📷 Cumple el reto de esta muestra para compararla con una foto real.</p>':'';return;}
+  var f=REAL[E.m];if(r.getAttribute('data-m')===E.m)return;r.setAttribute('data-m',E.m);
+  r.innerHTML='<h4>📷 Así se ve en un microscopio real</h4>'+FOTO(f[0],f[1]);}
+function todo(){dibujar();mensaje();revisar();real();}
 
 /* ── Controles ── */
 function tinciones(){var m=MUESTRAS[$('ml-m').value];$('ml-t').innerHTML=m.tin.map(function(t){return '<option value="'+t+'">'+(t==='ninguna'?(m.tin.length>1?'Sin teñir':'No necesita colorante'):TIN[t])+'</option>';}).join('');if(m.tin.indexOf('lugol')>=0)$('ml-t').value='lugol';else if(m.tin.indexOf('azul')>=0)$('ml-t').value='azul';}
 $('ml-m').onchange=tinciones;tinciones();
-$('ml-prep').onclick=function(){E.m=$('ml-m').value;E.t=$('ml-t').value;E.lam=true;E.rota=false;E.ob=4;E.z=430;E.aceite=false;$('ml-ac').checked=false;$('ml-macro').value=430;
+$('ml-prep').onclick=function(){var rr=document.getElementById('ml-real');if(rr)rr.removeAttribute('data-m');E.m=$('ml-m').value;E.t=$('ml-t').value;E.lam=true;E.rota=false;E.ob=4;E.z=430;E.aceite=false;$('ml-ac').checked=false;$('ml-macro').value=430;
   document.querySelectorAll('#ml-ob .chip').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-o')==='4');});todo();};
 $('ml-luz').onclick=function(){E.luz=!E.luz;this.textContent=E.luz?'💡 Apagar':'💡 Encender';todo();};
 $('ml-d').oninput=function(){E.d=+this.value;todo();};

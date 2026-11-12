@@ -6,6 +6,38 @@
 
 ---
 
+## Versión 2.29 — 12 de noviembre de 2026 · Fotos reales para comparar en el laboratorio de microscopía
+
+**Contexto.** El docente preguntó si las muestras del laboratorio de
+microscopía usaban fotos reales. No: lo que se ve por el ocular es un dibujo
+generado por el programa, porque tiene que cambiar con cada objetivo, enfoque,
+diafragma y tinción. El docente pidió agregar fotos reales con su cita APA.
+
+**Cambios.**
+- `microlab.js`: debajo del ocular hay un recuadro **«Así se ve en un
+  microscopio real»**. Aparece al cumplir el reto de cada muestra, con la foto
+  real, su pie explicativo y la cita APA (con `FOTO()` de `fotos.js`). Antes
+  de cumplir el reto dice «Cumple el reto de esta muestra para compararla con
+  una foto real».
+- **Fotos de cada muestra:**
+  - cebolla: `k_cebolla`;
+  - mejilla con azul de metileno: `k_cheek`;
+  - Elodea: `k_elodea`;
+  - frotis de sangre teñido con un neutrófilo: `m_frotis`, nueva
+    (Chaurasiya, A. K., CC BY-SA 4.0);
+  - bacterias del yogur, *Lactobacillus bulgaricus* a través del ocular:
+    `m_yogur`, nueva (Bondarev.gal, CC BY 4.0).
+- `fotos-datos.js`: 2 fotos nuevas (132 en total).
+
+**Pruebas.** Con Playwright en computador y en Pixel 7: en las 5 muestras, la
+foto aparece al cumplir el reto, carga bien y lleva su cita APA. Sin errores
+ni desbordes.
+
+**Versiones.** `fotos-datos.js?v=7`, `microlab.js?v=4`, `sw.js` →
+`bionom-v42`.
+
+---
+
 ## Versión 2.28 — 12 de noviembre de 2026 · Preguntas oficiales del Icfes y modelo basado en evidencias
 
 **Contexto.** El docente compartió el *Cuadernillo de preguntas Saber 11.º, Prueba Ciencias Naturales* del Icfes (2026) y pidió usar sus preguntas, dando el crédito, y revisar que las preguntas del juego y sobre todo de las herramientas docentes sigan el **modelo basado en evidencias** de la prueba (competencias → afirmaciones → evidencias) para fortalecer esas competencias. También pidió decidir qué pregunta va en cuál de los tres sitios.
