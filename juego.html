@@ -145,11 +145,22 @@
 <script src="banco.js?v=19"></script>
 <script src="saber-icfes.js?v=2"></script>
 <script src="icfes-datos.js?v=1"></script>
+<script src="saber-juego.js?v=1"></script>
 <script>/* Preguntas oficiales del Icfes (cuadernillo Saber 11.º, 2026) dentro del
    Juego, en su tema. Solo las que tienen opciones escritas: las de opciones
    dibujadas (gráficas o carteleras A–D) quedan para las evaluaciones del
    panel docente. Salen con su contexto, figura y crédito, y sin barajar. */
 (function(){if(!window.SABER_ICFES||!window.BANCO_BIO)return;
+  /* Preguntas tipo Saber 11 de BioNom (saber-juego.js, generado desde docente-datos.js):
+     entran al Juego en su tema, con su situación (contexto) y sus pistas según la competencia. */
+  var NOMC={uso:'uso comprensivo del conocimiento',exp:'explicación de fenómenos',ind:'indagación'};
+  var PIS={ind:['Fíjate en los datos, la tabla o el procedimiento que describe la situación.','La respuesta correcta se apoya en lo que se midió o se observó; descarta lo que no se desprende de ahí.'],
+    exp:['Relaciona la situación con el concepto del tema: ¿qué causa explica lo que pasa?','Descarta las opciones que solo describen o que inventan una causa que la situación no menciona.'],
+    uso:['Recuerda la definición o la idea principal del tema que usa esta pregunta.','Compara cada opción con esa idea y descarta las que la contradicen.']};
+  (window.SABER_JUEGO||[]).forEach(function(x){
+    BANCO_BIO.push({t:x.t,k:'mc',q:x.q,ctx:x.ctx,ops:x.o,a:0,c:x.c,af:x.af,saber:1,
+      p:PIS[x.c]||PIS.uso,
+      exp:'Esta es una pregunta tipo Saber 11 de la competencia de '+(NOMC[x.c]||NOMC.uso)+'. La respuesta correcta es «'+x.o[0]+'»: es la que se apoya en la situación y en lo que estudiaste de «'+x.t+'»; las otras opciones no se desprenden de ella.'});});
   SABER_ICFES.preguntas().forEach(function(x){if(x.imgOps)return;
     BANCO_BIO.push({t:x.t,k:'mc',q:x.q,ops:x.o,a:x.r,exp:x.exp+' (Pregunta '+x.icfes+' del cuadernillo Saber 11.º de Ciencias Naturales, Icfes 2026.)',p:x.p||undefined,icfes:x.icfes,ctx:x.ctx,img:x.img,tabla:x.tabla,c:x.c,af:x.af});});
 })();</script>
@@ -313,7 +324,7 @@ function mostrar(){
     RETOS.ahorcado($('mini'),q.it,{onFin:function(r){registrar(r.ok,q,r.puntos);siguienteBtn();}});
     return;
   }
-  if(q.icfes&&window.SABER_ICFES){var SI=SABER_ICFES;
+  if((q.icfes||q.saber)&&window.SABER_ICFES){var SI=SABER_ICFES;
     $('q-txt').innerHTML='<div class="icfes-ctx">'+BIO.esc(q.ctx)+'</div>'+SI.extraHTML(q)+'<div class="icfes-q">'+BIO.esc(q.q)+'</div>'+SI.creditoHTML(q);}
   else $('q-txt').textContent=q.q;
   var correcta=correctaDe(q),pistas=pistasDe(q,correcta),intento=1,elegidas=[];
