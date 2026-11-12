@@ -6,6 +6,21 @@
 
 ---
 
+## Versión 2.34 — 12 de noviembre de 2026 · Más indagación en las preguntas tipo Saber
+
+**Contexto.** El docente pidió continuar con lo que había quedado pendiente de la revisión con el modelo basado en evidencias del Icfes: subir la proporción de preguntas de **indagación** (la competencia con más preguntas en la prueba Saber 11 y la más débil en los tres sitios) y, en IonNom, darle **contexto** a las preguntas tipo Saber que no lo tenían.
+
+**Cambios.**
+- **`docente-datos.js`:** 58 preguntas nuevas de indagación, para que **cada tema tenga al menos 8** (antes entre 2 y 4, salvo Evolución). Piden analizar datos (ósmosis, frecuencia cardíaca, glucosa, germinación, aves en cafetales con sombra, material particulado en Bogotá), diseñar experimentos con variables controladas, evaluar predicciones y reconocer cómo se construyó un conocimiento (Hooke, Harvey, Redi, Lind, Griffith, Mutis, Keeling). Opciones del mismo largo y forma.
+- **Resultado:** indagación pasa de 7 % a **16 %** de las 582 preguntas tipo Saber. Ninguna tiene la correcta delatada por su largo.
+- **Versión de la app:** `sw.js` → `bionom-v48` y `docente-datos.js?v=20`.
+
+**Verificación (Playwright).** La clave sigue coincidiendo con el examen (9 combinaciones de temas y códigos); el juego, incluidas las preguntas oficiales del Icfes con los niveles, carga sin errores.
+
+**Pendiente.** Ninguno de esta revisión.
+
+---
+
 ## Versión 2.33 — 12 de noviembre de 2026 · Doble columna sin huecos y distractores al estilo del Icfes
 
 **Contexto.** El docente pidió dos cosas: (1) que las evaluaciones impresas no dejen columnas en blanco y aprovechen la doble columna aunque algunas preguntas sean largas por sus tablas, figuras o contexto; y (2) revisar los bancos de preguntas tipo Saber y los del juego con el modelo basado en evidencias del Icfes, inspirado en el cuadernillo de 2026, y hacer los ajustes necesarios.
