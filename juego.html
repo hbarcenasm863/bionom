@@ -28,6 +28,12 @@
 .temas{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin:12px 0}
 .tema{border:2px solid var(--cn-brd);background:#fff;border-radius:16px;padding:14px 10px;text-align:center;cursor:pointer;font-weight:800;color:var(--cn-brand-d)}
 .tema .e{font-size:2rem;display:block}
+.niveles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0 6px}
+.nivel{border:2px solid var(--cn-brd);background:#fff;border-radius:16px;padding:12px 8px;text-align:center;cursor:pointer;font-weight:800;color:var(--cn-brand-d);font-size:1rem}
+.nivel .e{font-size:1.8rem;display:block}.nivel small{display:block;font-weight:600;color:var(--cn-dim);font-size:.78rem}
+.nivel.on{border-color:var(--cn-naranja);background:#fff7ec;box-shadow:0 0 0 3px rgba(240,140,30,.25)}
+.nota-niv{font-size:.88rem;color:var(--cn-dim);margin:2px 0 12px;min-height:1.2em}
+.tema:disabled{opacity:.45;cursor:not-allowed;background:#f8fafc}
 .tema small{display:block;font-weight:500;color:var(--cn-dim);font-size:.75rem}
 .tema.on{border-color:var(--cn-naranja);background:#fff7ec;box-shadow:0 0 0 3px rgba(240,140,30,.25)}
 .barra-p{height:10px;background:#e3eee7;border-radius:999px;overflow:hidden;margin:8px 0 14px}
@@ -85,9 +91,16 @@
       <div class="err" id="cod-err" aria-live="polite"></div>
     </div>
     <div class="bienv" id="bienv" hidden><b>👋 Hola, <span id="b-nom"></span></b><br><small id="b-cur"></small><div class="stats" id="b-stats"></div></div>
-    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d);margin-top:18px">1 · Escoge el tema</h2>
+    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d);margin-top:18px">1 · Escoge tu nivel</h2>
+    <div class="niveles" id="niveles" role="group" aria-label="Nivel">
+      <button type="button" class="nivel" data-n="1"><span class="e">🌱</span>Básico<small>6.° y 7.°</small></button>
+      <button type="button" class="nivel" data-n="2"><span class="e">🌿</span>Medio<small>8.° y 9.°</small></button>
+      <button type="button" class="nivel" data-n="3"><span class="e">🌳</span>Completo<small>10.° y 11.°</small></button>
+    </div>
+    <p class="nota-niv" id="nota-niv" aria-live="polite"></p>
+    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">2 · Escoge el tema</h2>
     <div class="temas" id="temas"></div>
-    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">2 · ¿Cómo quieres jugar?</h2>
+    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">3 · ¿Cómo quieres jugar?</h2>
     <div class="secciones" id="secciones">
       <button type="button" class="seccion on" data-s="preg"><span class="e">❓</span>Preguntas<small>3 intentos con pistas en cada una</small></button>
       <button type="button" class="seccion" data-s="cruci"><span class="e">🔤</span>Crucigrama<small>10 palabras · unos 10 min</small></button>
@@ -95,7 +108,7 @@
       <button type="button" class="seccion" data-s="ah"><span class="e">🔠</span>Ahorcado<small>10 palabras · tiempo según la palabra</small></button>
     </div>
     <div id="cant-box">
-    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">3 · ¿Cuántas preguntas?</h2>
+    <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">4 · ¿Cuántas preguntas?</h2>
     <div class="chips" id="cant" style="margin:10px 0 18px"><button class="chip" data-n="10">10</button><button class="chip on" data-n="20">20</button><button class="chip" data-n="30">30</button></div>
     </div>
     <p class="nota-sec" id="nota-sec" hidden></p>
@@ -152,7 +165,26 @@ var APPS_SCRIPT_URL='';
    Para activarlo: poner true aquí y llenar APPS_SCRIPT_URL (los pasos están en README.md, sección «Modo Estudiante»). */
 var MODO_ESTUDIANTE_ACTIVO=false;
 if(!MODO_ESTUDIANTE_ACTIVO){var _m=document.querySelector('.modos');if(_m)_m.hidden=true;}
-var TEMAS=window.TEMAS_JUEGO,BANCO=window.BANCO_BIO;
+var TEMAS=window.TEMAS_JUEGO,BANCO_TODO=window.BANCO_BIO,BANCO=BANCO_TODO;
+var PAL_TODO=window.BANCO_AHORCADO||[],BANCO_PAL=PAL_TODO;
+/* ── Niveles del juego (versión 2.31): Básico 6.°–7.°, Medio 8.°–9.°, Completo 10.°–11.°.
+   Cada pregunta o palabra recibe el nivel mínimo en que se trabaja según los
+   Estándares del MEN: lo de profundización es Completo; genética, evolución,
+   reproducción y funciones comparadas son Medio (menos lo de 6.°–7.° que tienen:
+   origen del universo, extinciones, eras, pubertad, flor, reproducción asexual);
+   en los demás temas, alelos, meiosis, arqueas, dominios y hormonas son Medio. */
+var NIV_PROF=/\b(éter|éster)\b|potencial de (acción|reposo)|umbral de|mielina|cebador|primasa|okazaki|krebs|glucólisis|nadph|tilacoide|estroma|ciclo de calvin|cadena respiratoria|estabilizadora|disruptiva|deriva (génica|genética)|poiseuille|termodinámica|\bPCR\b|histonas/i;
+var NIV_MEDIO_T={genetica:1,evolucion:1,reproduccion:1,funciones:1};
+var NIV_BASICO_EN_MEDIO=/big bang|universo|extinci|era geológica|eras geológicas|paleozoico|mesozoico|cenozoico|precámbrico|fósil|miller|oparin|origen de la vida|meteorito|pubertad|menstrua|ovario|testícul|aparato reproductor|sistema reproductor|asexual|biparti|gemaci|esqueje|tubérculo|flor\b|poliniz|semilla|fruto|estambre|pistilo/i;
+var NIV_MEDIO_EN_BASICO=/alelo|genotip|fenotip|heterocig|homocig|meiosis|entrecruzamiento|haploide|diploide|cariotipo|síndrome de down|no disyunci|arquea|archaea|archaebacteria|dominio|woese|hormona|insulina|tiroides|homeostasis|adrenalina/i;
+function nivelDe(t,texto){if(NIV_PROF.test(texto))return 3;
+  if(NIV_MEDIO_T[t])return NIV_BASICO_EN_MEDIO.test(texto)?1:2;
+  return NIV_MEDIO_EN_BASICO.test(texto)?2:1;}
+BANCO_TODO.forEach(function(q){if(q.niv==null)q.niv=nivelDe(q.t,[q.q,q.exp,(q.ops||[]).join(' ')].join(' '));});
+(window.BANCO_AHORCADO||[]).forEach(function(w){if(w.niv==null)w.niv=nivelDe(w[1],w.join(' '));});
+var NIVEL=3;try{var nv=+localStorage.getItem('bionom_nivel_juego');if(nv>=1&&nv<=3)NIVEL=nv;}catch(e){}
+(function(){var q=new URLSearchParams(location.search).get('nivel');var m={basico:1,'básico':1,medio:2,completo:3,'1':1,'2':2,'3':3};if(q&&m[q.toLowerCase()])NIVEL=m[q.toLowerCase()];})();
+var NOM_NIV={1:'Básico (6.° y 7.°)',2:'Medio (8.° y 9.°)',3:'Completo (10.° y 11.°)'};
 var NOM_T={};TEMAS.forEach(function(t){NOM_T[t[0]]=t[1];});
 var PAG_T={celula:'celula.html',division:'division.html',reinos:'reinos.html',sistemas:'sistemas.html',reproduccion:'reproduccion.html',genetica:'genetica.html',evolucion:'evolucion.html',ecosistemas:'ecosistemas.html',colombia:'regiones.html',ambiente:'ambiente.html'};
 var BUCKET={mc:'mc',vf:'id',ord:'drag',esc:'write',cruci:'write',sopa:'id',ah:'write'};
@@ -190,8 +222,20 @@ function cargarStats(){var box=$('b-stats');box.innerHTML='<small>Cargando tus e
 
 /* ── temas ── */
 var tbox=$('temas');
-tbox.innerHTML='<button type="button" class="tema on" data-t="todos"><span class="e">🌍</span>Todos los temas<small>'+BANCO.length+' preguntas</small></button>'+TEMAS.map(function(t){var n=BANCO.filter(function(q){return q.t===t[0];}).length;return '<button type="button" class="tema" data-t="'+t[0]+'"><span class="e">'+t[2]+'</span>'+t[1]+'<small>'+n+' preguntas</small></button>';}).join('');
-tbox.querySelectorAll('.tema').forEach(function(b){b.onclick=function(){tema=b.getAttribute('data-t');tbox.querySelectorAll('.tema').forEach(function(x){x.classList.toggle('on',x===b);});};});
+function pintarTemas(){
+  BANCO=BANCO_TODO.filter(function(q){return q.niv<=NIVEL;});
+  BANCO_PAL=PAL_TODO.filter(function(w){return w.niv<=NIVEL;});
+  var POCAS={};TEMAS.forEach(function(t){if(BANCO.filter(function(q){return q.t===t[0];}).length<8)POCAS[t[0]]=1;});
+  BANCO=BANCO.filter(function(q){return !POCAS[q.t];});BANCO_PAL=BANCO_PAL.filter(function(w){return !POCAS[w[1]];});
+  if(tema!=='todos'&&!BANCO.some(function(q){return q.t===tema;}))tema='todos';
+  tbox.innerHTML='<button type="button" class="tema'+(tema==='todos'?' on':'')+'" data-t="todos"><span class="e">🌍</span>Todos los temas<small>'+BANCO.length+' preguntas</small></button>'+TEMAS.map(function(t){var n=BANCO.filter(function(q){return q.t===t[0];}).length;
+    return '<button type="button" class="tema'+(tema===t[0]?' on':'')+'" data-t="'+t[0]+'"'+(n?'':' disabled')+'><span class="e">'+t[2]+'</span>'+t[1]+'<small>'+(n?n+' preguntas':'Desde el nivel Medio')+'</small></button>';}).join('');
+  tbox.querySelectorAll('.tema').forEach(function(b){b.onclick=function(){if(b.disabled)return;tema=b.getAttribute('data-t');tbox.querySelectorAll('.tema').forEach(function(x){x.classList.toggle('on',x===b);});};});
+  $('niveles').querySelectorAll('.nivel').forEach(function(b){var on=+b.getAttribute('data-n')===NIVEL;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));});
+  $('nota-niv').innerHTML={1:'🌱 Preguntas de 6.° y 7.°: la célula, los reinos, los ecosistemas, Colombia, el ambiente, el cuerpo y la nutrición.',2:'🌿 Suma lo de 8.° y 9.°: genética, evolución, reproducción y funciones comparadas. Sin la profundización.',3:'🌳 Todas las preguntas, incluida la profundización de 10.° y 11.°.'}[NIVEL];
+}
+$('niveles').querySelectorAll('.nivel').forEach(function(b){b.onclick=function(){NIVEL=+b.getAttribute('data-n');try{localStorage.setItem('bionom_nivel_juego',String(NIVEL));}catch(e){}pintarTemas();};});
+pintarTemas();
 var pt=new URLSearchParams(location.search).get('tema');if(pt&&tbox.querySelector('[data-t="'+pt+'"]'))tbox.querySelector('[data-t="'+pt+'"]').click();
 $('cant').querySelectorAll('.chip').forEach(function(b){b.onclick=function(){cant=+b.getAttribute('data-n');$('cant').querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b);});};});
 
@@ -205,7 +249,7 @@ var NOTA_SEC={
 $('secciones').querySelectorAll('.seccion').forEach(function(b){b.onclick=function(){SEC=b.getAttribute('data-s');
   $('secciones').querySelectorAll('.seccion').forEach(function(x){x.classList.toggle('on',x===b);});
   $('cant-box').hidden=SEC!=='preg';$('nota-sec').hidden=SEC==='preg';$('nota-sec').innerHTML=NOTA_SEC[SEC]||'';};});
-var BANCO_PAL=window.BANCO_AHORCADO||[];
+
 function gruposTema(){return tema==='todos'?null:[tema];}
 
 /* ── partida ── */
@@ -353,7 +397,7 @@ function payload(razon){
     correctas:ST.ok,total:n,total_preguntas:n,respondidas:resp,puntaje:ST.pts,pct:p,porcentaje:p,
     errores_mc:ST.err.mc,errores_drag:ST.err.drag,errores_id:ST.err.id,errores_write:ST.err.write,tiempo_agotado:0,
     errores_por_tema:ST.errT,aciertos_por_tema:un?ST.okT:{},moleculas_falladas:ST.fallos.map(function(q){return String(q.q).slice(0,60);}),
-    modelo_reinos:window.BIO_CLASIF?BIO_CLASIF.texto():'',
+    modelo_reinos:window.BIO_CLASIF?BIO_CLASIF.texto():'',nivel_juego:NOM_NIV[NIVEL],
     timestamp:new Date().toISOString()};
 }
 function enviar(razon){

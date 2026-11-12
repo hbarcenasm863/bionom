@@ -139,7 +139,7 @@ const REG_HEADERS = [
   'Timestamp', 'Fecha', 'Hora', 'Nombre', 'Curso', 'Nivel', 'Sesión',
   'Correctas', 'Total', '% Acierto', 'Errores MC', 'Errores Drag',
   'Errores ID', 'Errores Write', 'Tiempo agotado', 'Errores por tema',
-  'Aciertos por tema', 'Preguntas falladas', 'Trigger', 'Modelo de reinos'
+  'Aciertos por tema', 'Preguntas falladas', 'Trigger', 'Modelo de reinos', 'Nivel del juego'
 ];
 
 const EST_HEADERS_BASE = [
@@ -521,7 +521,8 @@ function upsertRegistro(ss, d) {
     JSON.stringify(aciertosTema || {}),
     falladosTxt,
     trigger,
-    String(d.modelo_reinos || '') // p. ej. «6 reinos con 3 dominios» (versión 2.21)
+    String(d.modelo_reinos || ''), // p. ej. «6 reinos con 3 dominios» (versión 2.21)
+    String(d.nivel_juego || '')    // Básico, Medio o Completo (versión 2.31)
   ];
 
   let filaIdx;
@@ -584,10 +585,12 @@ function migrarRegistroSiEsNecesario(sh) {
   // Hoja con todas las columnas menos la última, «Modelo de reinos» (versión
   // 2.21): basta con escribir el encabezado nuevo; las filas viejas quedan en
   // blanco en esa columna.
-  const n = REG_HEADERS.length - 1;
-  if (REG_HEADERS.slice(0, n).every(function (h, i) { return encabezadoActual[i] === h; }) && !encabezadoActual[n]) {
-    escribirEncabezadosRegistro(sh);
-    return;
+  // Lo mismo si faltan las dos últimas («Modelo de reinos» y «Nivel del juego», 2.31).
+  for (let n = REG_HEADERS.length - 1; n >= REG_HEADERS.length - 2; n--) {
+    if (REG_HEADERS.slice(0, n).every(function (h, i) { return encabezadoActual[i] === h; }) && !encabezadoActual[n]) {
+      escribirEncabezadosRegistro(sh);
+      return;
+    }
   }
 
   // Esquema de IonNom Analytics v1: cada fila vieja YA era una sesión real y

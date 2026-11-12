@@ -6,6 +6,64 @@
 
 ---
 
+## Versión 2.31 — 12 de noviembre de 2026 · Niveles en el juego y pendientes de la auditoría de secuencia
+
+**Contexto.** El docente pidió seguir con los pendientes de la auditoría de
+secuencia. Canceló el selector de grado de las páginas (no se publicó) y pidió,
+en su lugar, que el **juego** tenga niveles: Básico (6.°–7.°), Medio (8.°–9.°)
+y Completo (10.°–11.°).
+
+**1. Niveles en el juego (`juego.html`).**
+- Paso nuevo «1 · Escoge tu nivel», con 🌱 Básico, 🌿 Medio y 🌳 Completo.
+  Queda guardado en el equipo (`bionom_nivel_juego`) y se puede fijar con un
+  enlace: `juego.html?nivel=basico|medio|completo`.
+- Cada pregunta y palabra recibe su nivel mínimo, según los Estándares del
+  MEN:
+  - **Completo:** la profundización (éter y éster, potencial de acción,
+    cebador, Okazaki, Krebs, selección estabilizadora y disruptiva, deriva,
+    Poiseuille, termodinámica, PCR…);
+  - **Medio:** genética, evolución, reproducción y funciones comparadas
+    (salvo lo de 6.°–7.° que tienen: universo, extinciones, eras, pubertad,
+    flor, reproducción asexual), y en los demás temas alelos, meiosis,
+    arqueas, dominios y hormonas;
+  - **Básico:** lo demás.
+- Los temas con menos de 8 preguntas en el nivel escogido quedan desactivados
+  («Desde el nivel Medio»): en Básico, Funciones vitales y Genética.
+  Preguntas disponibles: unas 456 en Básico, 675 en Medio y 691 en Completo.
+- El Modo Estudiante envía `nivel_juego`. `bionom-analytics.gs` lo guarda en
+  la columna nueva «Nivel del juego» de Registro; las hojas que ya existían
+  reciben el encabezado sin perder datos.
+
+**2. Pendientes de la auditoría de secuencia.**
+- **Recorrido sugerido por grado** (`docente.html`, recuadro desplegable
+  arriba de las pestañas): qué módulos y secciones trabajar en 6.°, 7.°, 8.°,
+  9.° y en la profundización de 10.°–11.°, con el nivel del juego de cada
+  grado y sus enlaces.
+- **Bomba de sodio y potasio** (B6): en `celula.html` quedó la idea para 6.°
+  (gasta energía para mover sustancias cuesta arriba); el dato de las neuronas
+  pasó a `sistemas.html`, en la sección de la neurona.
+- **`MATRIZ_MEN.md`** (B7): tabla de grado sugerido y nivel del juego.
+- **Laboratorio de microscopía** (`microlab.js`):
+  - los retos cumplidos, la tabla de observaciones y las láminas rotas se
+    guardan en el equipo (`bionom_microlab`) y siguen ahí al recargar;
+  - botón «Empezar el laboratorio de nuevo».
+
+**Pruebas.** Con Playwright:
+- los tres niveles del juego: temas desactivados en Básico, el nivel se
+  recuerda y el enlace `?nivel=medio` funciona;
+- crucigrama en nivel Básico;
+- la tabla del microscopio después de recargar y al empezar de nuevo;
+- el recorrido del panel docente;
+- las 16 páginas sin errores.
+
+**⚠️ Paso manual (cuando se active el Modo Estudiante).** `bionom-analytics.gs`
+cambió: copiarlo al editor de Apps Script, crear una nueva versión de la
+implementación y ejecutar `recalcularAhora()`.
+
+**Versiones.** `microlab.js?v=5`, `sw.js` → `bionom-v45`.
+
+---
+
 ## Versión 2.30 — 12 de noviembre de 2026 · El laboratorio de microscopía en su propia página, en horizontal
 
 **Contexto.** El docente prefirió el laboratorio de microscopía en una página

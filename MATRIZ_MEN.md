@@ -165,3 +165,18 @@ Ya quedaron reforzados:
 | 10.°–11.° | Comparo casos en especies actuales que ilustren diferentes acciones de la selección natural. | `evolucion.html#tipos-sel`: selección direccional, estabilizadora, disruptiva y sexual, con gráfica de antes y después y dos chequeos. |
 | 10.°–11.° | Verifico la utilidad de microorganismos en la industria alimenticia. | `reinos.html#microbios`: laboratorio virtual de la levadura (azúcar y temperatura como variables, tabla de resultados) y chequeo. |
 | 10.°–11.° | Busco ejemplos de principios termodinámicos en algunos ecosistemas. | `ecosistemas.html#energia`: chequeo nuevo de la segunda ley con el chigüiro y el jaguar. |
+
+
+## Grado sugerido y nivel del juego (versión 2.31)
+
+Según la auditoría de secuencia (`AUDITORIA_SECUENCIA_6-9.md`) y el orden de
+los módulos desde la versión 2.26. El panel docente muestra este recorrido en
+«📅 Recorrido sugerido por grado».
+
+| Grado | Módulos principales | Nivel del juego |
+|---|---|---|
+| 6.° | Moléculas y agua (Nutrición), La célula y el laboratorio de microscopía, Reinos, Ecosistemas (sin termodinámica ni ciclo del nitrógeno), Ecosistemas de Colombia, origen del universo y de la vida | 🌱 Básico |
+| 7.° | Sistemas del cuerpo (sin la neurona), Nutrición y salud, División celular (mitosis y comparación con la meiosis), ciclo del nitrógeno, relaciones y poblaciones, eras y extinciones, Ambiente, sistema reproductor y ciclo menstrual | 🌱 Básico |
+| 8.° | Reproducción completa, meiosis con alelos, Funciones vitales comparadas, hormonas y defensa, dentro de cada reino y difícil ubicación, clima en las eras, contaminación del aire | 🌿 Medio |
+| 9.° | Genética (sin la replicación con cebador), Evolución (teorías, evidencias, hipótesis de las ballenas), microbios útiles, especies amenazadas | 🌿 Medio |
+| 10.°–11.° | Todo lo marcado «Profundización 10.°–11.°» | 🌳 Completo |

@@ -27,6 +27,10 @@ var CAMPO={4:4500,10:1800,40:450,100:180};          // diámetro del campo en µ
 var PROF={4:6,10:3,40:1.2,100:0.7};                   // cuánto se desenfoca por cada unidad fuera de foco
 var FOCO={4:500,10:503,40:507,100:509};              // posición de enfoque de cada objetivo
 var E={m:'cebolla',t:'lugol',lam:false,rota:false,luz:false,ob:4,z:430,d:70,aceite:false,errores:0,hechos:{}};
+// Lo logrado (retos, filas de la tabla y láminas rotas) se guarda en el equipo
+var GUARDA='bionom_microlab',FILAS=[];
+try{var gg=JSON.parse(localStorage.getItem(GUARDA)||'null');if(gg){E.hechos=gg.hechos||{};E.errores=gg.errores||0;FILAS=gg.filas||[];}}catch(e){}
+function guardar(){try{localStorage.setItem(GUARDA,JSON.stringify({hechos:E.hechos,errores:E.errores,filas:FILAS}));}catch(e){}}
 
 raiz.innerHTML=
  '<div class="ml">'+
@@ -141,7 +145,7 @@ var RETOS=[
 function revisar(){
   var listo=E.lam&&!E.rota&&E.luz&&desenfoque()<=1;
   RETOS.forEach(function(r){if(listo&&!E.hechos[r.id]&&r.ok()){E.hechos[r.id]=1;
-    var tr=document.createElement('tr');tr.innerHTML='<td>'+MUESTRAS[E.m].n+'</td><td>'+TIN[E.t]+'</td><td>'+(10*E.ob)+'×</td><td>'+r.obs+'</td>';$('ml-tab').appendChild(tr);}});
+    var f=[MUESTRAS[E.m].n,TIN[E.t],(10*E.ob)+'×',r.obs];FILAS.push(f);fila(f);guardar();}});
   $('ml-retos').innerHTML=RETOS.map(function(r){return '<li class="'+(E.hechos[r.id]?'ok':'')+'">'+(E.hechos[r.id]?'✅ ':'⬜ ')+r.t+'</li>';}).join('')+(E.errores?'<li class="mal">Láminas rotas: '+E.errores+'</li>':'');
   if(Object.keys(E.hechos).length>=3&&window.BIO&&BIO.marcarSeccion)BIO.marcarSeccion('microscopio');
 }
@@ -149,6 +153,7 @@ function real(){var r=document.getElementById('ml-real');if(!r)return;
   if(!E.lam||!E.hechos[RETO_DE[E.m]]||!window.FOTO){r.innerHTML=E.lam?'<p class="ml-real-ayuda">📷 Cumple el reto de esta muestra para compararla con una foto real.</p>':'';return;}
   var f=REAL[E.m];if(r.getAttribute('data-m')===E.m)return;r.setAttribute('data-m',E.m);
   r.innerHTML='<h4>📷 Así se ve en un microscopio real</h4>'+FOTO(f[0],f[1]);}
+function fila(f){var tr=document.createElement('tr');tr.innerHTML=f.map(function(x){return '<td>'+x+'</td>';}).join('');$('ml-tab').appendChild(tr);}
 function todo(){dibujar();mensaje();revisar();real();}
 
 /* ── Controles ── */
@@ -161,12 +166,16 @@ $('ml-d').oninput=function(){E.d=+this.value;todo();};
 $('ml-ac').onchange=function(){E.aceite=this.checked;if(E.aceite&&E.ob!==100)msg('El aceite solo se usa con el objetivo de 100×.');else todo();};
 document.querySelectorAll('#ml-ob .chip').forEach(function(b){b.onclick=function(){E.ob=+b.getAttribute('data-o');document.querySelectorAll('#ml-ob .chip').forEach(function(x){x.classList.toggle('on',x===b);});todo();};});
 $('ml-macro').oninput=function(){var nz=+this.value;
-  if(E.lam&&!E.rota&&E.ob>=40&&nz>FOCO[E.ob]+8){E.rota=true;E.errores++;}
+  if(E.lam&&!E.rota&&E.ob>=40&&nz>FOCO[E.ob]+8){E.rota=true;E.errores++;guardar();}
   E.z=nz;todo();};
 document.querySelectorAll('[data-mi]').forEach(function(b){b.onclick=function(){E.z+= +b.getAttribute('data-mi');$('ml-macro').value=E.z;todo();};});
 $('ml-calc').onclick=function(){var n=+$('ml-n').value,r=$('ml-res');
   if(!n){r.textContent='Escribe cuántas células contaste.';return;}
   var t=Math.round(1800/n);r.innerHTML='Tamaño de cada célula ≈ 1800 µm ÷ '+n+' = <b>'+t+' µm</b> ('+(t/1000).toFixed(2).replace('.',',')+' mm). '+
    (t>=170&&t<=360?'✅ ¡Muy bien! Una célula de cebolla mide unos 250 µm de largo: casi un cuarto de milímetro.':'Revisa tu conteo a 100×: las células de cebolla miden unos 250 µm de largo, así que caben unas 7 a lo largo del campo.');};
+FILAS.forEach(fila);
+var rs=document.createElement('button');rs.type='button';rs.className='cn-btn';rs.textContent='🔄 Empezar el laboratorio de nuevo';rs.style.marginTop='8px';
+rs.onclick=function(){if(!confirm('¿Borrar los retos cumplidos y la tabla de observaciones?'))return;E.hechos={};E.errores=0;FILAS=[];guardar();$('ml-tab').querySelectorAll('tr:not(:first-child)').forEach(function(t){t.remove();});var rr=document.getElementById('ml-real');if(rr){rr.removeAttribute('data-m');}todo();};
+$('ml-tab').parentNode.parentNode.insertBefore(rs,$('ml-tab').parentNode.nextSibling);
 todo();
 })();
