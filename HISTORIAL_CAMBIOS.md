@@ -6,6 +6,27 @@
 
 ---
 
+## Versión 2.40 — 13 de noviembre de 2026 · El ARN de transferencia en el traductor «Del gen a la proteína»
+
+**Contexto.** El docente preguntó si ya estaba el ARN de transferencia en la
+pestaña «Traducción (ribosoma)» de Genética. Solo aparecía en la animación por
+pasos y en una tarjeta: en el traductor interactivo no se veía.
+
+**Cambios**
+- `genetica.html`: fila nueva «ARN de transferencia (anticodón y el
+  aminoácido que trae)». En cada paso de la traducción llega, debajo de su
+  codón, el ARNt con su anticodón complementario (UAC frente a AUG…) y su
+  aminoácido encima; los ya usados quedan tenues. En el codón de parada dice
+  «Parada: no entra ARNt». En la transcripción, la fila explica qué hará el
+  ARNt.
+- El codón resaltado del ARNm ahora es el mismo que se acaba de leer (antes iba
+  un paso adelante del texto), y el texto nombra el anticodón.
+- `sw.js`: `CACHE` → `bionom-v53`.
+
+**Pruebas.** Playwright en computador y celular: sin errores ni desbordes.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.39 — 13 de noviembre de 2026 · Explicaciones propias en las preguntas con datos
 
 **Contexto.** El docente pidió explicaciones propias para las preguntas tipo Saber del juego.

@@ -63,6 +63,14 @@
 .prot{display:flex;flex-wrap:wrap;gap:4px;align-items:center;min-height:52px;padding:8px;background:#f7fbf8;border-radius:12px;border:1px solid var(--cn-brd)}
 .aa{min-width:50px;height:42px;border-radius:21px;display:grid;place-items:center;font:800 .82rem Outfit;color:#fff;padding:0 8px;animation:aparece .35s ease}
 .aa.stop{background:#555!important}
+.codon.trna{flex-direction:column;align-items:center;gap:0;padding:3px 3px 0}
+.trna .fila3{display:flex;gap:1px}
+.trna .aa-c{font:800 .72rem Outfit;color:#fff;border-radius:12px;padding:2px 8px;margin-bottom:2px;position:relative}
+.trna .tallo{width:30px;height:9px;border:2px solid #8e44ad;border-bottom:0;border-radius:8px 8px 0 0;margin-bottom:1px}
+.trna.usado{opacity:.4}
+.trna.vacio .fila3{visibility:hidden}
+.trna .sin{font-size:.72rem;color:var(--cn-dim);width:92px;text-align:center;line-height:1.2;padding-top:14px}
+.trna-ayuda{font-size:.9rem;color:var(--cn-dim)}
 .aa.cambio{outline:3px solid var(--cn-err);outline-offset:2px}
 .mut-res{margin-top:10px;padding:10px 14px;border-radius:12px;font-weight:600}
 .etq-fila{font-size:.78rem;font-weight:800;color:var(--cn-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:8px}
@@ -317,6 +325,7 @@
       <div class="chips" style="margin-bottom:10px"><button class="chip on" id="pr-trans">1️⃣ Transcripción (núcleo)</button><button class="chip" id="pr-tradu">2️⃣ Traducción (ribosoma)</button></div>
       <div class="etq-fila">ADN · cadena molde (la que se lee)</div><div class="codones" id="pr-molde"></div>
       <div class="etq-fila">ARN mensajero</div><div class="codones" id="pr-arn"></div>
+      <div class="etq-fila">ARN de transferencia (anticodón y el aminoácido que trae)</div><div class="codones" id="pr-arnt"></div>
       <div class="etq-fila">Proteína (cadena de aminoácidos)</div><div class="prot" id="pr-prot"></div>
       <p id="pr-txt" style="margin-top:10px;min-height:3em" aria-live="polite"></p>
       <div class="ctrl"><button type="button" class="cn-btn cn-btn--primary" id="pr-paso">Siguiente paso ▶</button><button type="button" class="cn-btn" id="pr-todo">⏩ Todo</button><button type="button" class="cn-btn" id="pr-reset">🔄 Reiniciar</button></div>
@@ -588,12 +597,21 @@ function pintarPr(){
   var tot=ARN0.length/3;
   document.getElementById('pr-trans').classList.toggle('on',fase===0);document.getElementById('pr-tradu').classList.toggle('on',fase===1);
   document.getElementById('pr-molde').innerHTML=codHTML(MOLDE,null,fase===0&&pos<ARN0.length?Math.floor(pos/3):-1);
-  document.getElementById('pr-arn').innerHTML=codHTML(ARN0,fase===0?pos:null,fase===1&&pos<tot?pos:-1);
+  document.getElementById('pr-arn').innerHTML=codHTML(ARN0,fase===0?pos:null,fase===1?Math.max(0,pos-1):-1);
+  var ANTI={A:'U',U:'A',G:'C',C:'G'},ht='';
+  if(fase===0)ht='<span class="trna-ayuda">Los ARN de transferencia llegan en la traducción: cada uno trae un aminoácido y tiene un anticodón que encaja con un codón del ARNm.</span>';
+  else for(var q=0;q<tot;q++){var cq=ARN0.substr(q*3,3),aq=CODIGO[cq];
+    if(q<pos&&aq==='*'){ht+='<div class="codon trna on"><div class="sin">Parada:<br>no entra ARNt</div></div>';continue;}
+    var tb=cq.split('').map(function(b){return '<span class="base b-'+ANTI[b]+'">'+ANTI[b]+'</span>';}).join('');
+    ht+=q<pos?'<div class="codon trna'+(q===pos-1?' on':' usado')+'" title="ARNt con anticodón '+cq.split('').map(function(b){return ANTI[b];}).join('')+'"><span class="aa-c" style="background:'+colAA(aq)+'">'+AA[aq][0]+'</span><div class="tallo"></div><div class="fila3">'+tb+'</div></div>'
+      :'<div class="codon trna vacio"><span class="aa-c" style="visibility:hidden">·</span><div class="tallo" style="visibility:hidden"></div><div class="fila3">'+tb+'</div></div>';
+    if(aq==='*')break;}
+  document.getElementById('pr-arnt').innerHTML=ht;
   var prot=fase===1?traducir(ARN0).slice(0,pos):[];
   document.getElementById('pr-prot').innerHTML=prot.length?prot.map(function(a){return aaHTML(a);}).join('<span style="color:#999">–</span>'):'<span style="color:var(--cn-dim);font-size:.9rem">Todavía no hay proteína.</span>';
   var t;
   if(fase===0){t=pos===0?'La ARN polimerasa se pega al gen. Toca «Siguiente paso» para copiar el ADN molde de tres en tres letras.':pos<ARN0.length?'Copiando: frente a cada base del molde se pone su complementaria. Frente a <b>A</b> se pone <b>U</b>, no T.':'✅ El ARNm está listo. Sale del núcleo por un poro y llega a un ribosoma. Toca «Siguiente paso» para traducirlo.';}
-  else{var c=ARN0.substr((pos-1)*3,3),a=CODIGO[c];t=pos===0?'El ribosoma busca el codón de inicio AUG.':a==='*'?'🛑 Codón <b>'+c+'</b>: es de parada. La proteína se suelta y se pliega. ¡Listo!':'Codón <b>'+c+'</b> → '+AA[a][1]+'. Un ARN de transferencia trae ese aminoácido y el ribosoma lo une a la cadena.';}
+  else{var c=ARN0.substr((pos-1)*3,3),a=CODIGO[c];t=pos===0?'El ribosoma busca el codón de inicio AUG.':a==='*'?'🛑 Codón <b>'+c+'</b>: es de parada. La proteína se suelta y se pliega. ¡Listo!':'Codón <b>'+c+'</b> → '+AA[a][1]+'. Llega el ARN de transferencia con el anticodón <b>'+c.split('').map(function(b){return {A:'U',U:'A',G:'C',C:'G'}[b];}).join('')+'</b>, que encaja con ese codón, y trae ese aminoácido; el ribosoma lo une a la cadena.';}
   document.getElementById('pr-txt').innerHTML=t;
   var fin=fase===1&&pos>=traducir(ARN0).length;document.getElementById('pr-paso').disabled=fin;
   if(fin)BIO.marcarSeccion('proteinas');
