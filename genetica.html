@@ -63,23 +63,54 @@
 .prot{display:flex;flex-wrap:wrap;gap:4px;align-items:center;min-height:52px;padding:8px;background:#f7fbf8;border-radius:12px;border:1px solid var(--cn-brd)}
 .aa{min-width:50px;height:42px;border-radius:21px;display:grid;place-items:center;font:800 .82rem Outfit;color:#fff;padding:0 8px;animation:aparece .35s ease}
 .aa.stop{background:#555!important}
-.en-pantalla #ribo-anim~p,.en-pantalla>#ribo-anim~p,[data-pantalla="La traducción de cerca"].en-pantalla>p{display:none}
-[data-pantalla="La traducción de cerca"].en-pantalla>h3{margin:0 0 4px;font-size:1rem}
-.en-pantalla #ribo-anim svg{max-height:calc(100dvh - 230px)!important;width:100%}
-@media (max-height:500px){.en-pantalla #ribo-anim{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:10px;align-items:start}.en-pantalla #ribo-anim svg{grid-row:1/3;max-height:calc(100dvh - 60px)!important}.en-pantalla #ribo-anim .ctrl{flex-direction:column;align-items:stretch}.en-pantalla #ribo-anim .ctrl{gap:4px}.en-pantalla #ribo-anim .ctrl .cn-btn{font-size:.75rem;padding:4px 8px;min-height:0}[data-pantalla="La traducción de cerca"].en-pantalla>h3{display:none}.en-pantalla #ribo-anim .ribo-nota{font-size:.78rem;line-height:1.35;min-height:0!important;margin:0 0 4px!important}}
-.codon.trna{flex-direction:column;align-items:center;gap:0;padding:3px 3px 0}
-.trna .fila3{display:flex;gap:1px}
-.trna .aa-c{font:800 .72rem Outfit;color:#fff;border-radius:12px;padding:2px 8px;margin-bottom:2px;position:relative}
-.trna .tallo{width:30px;height:9px;border:2px solid #8e44ad;border-bottom:0;border-radius:8px 8px 0 0;margin-bottom:1px}
-.trna.usado{opacity:.4}
-.trna.vacio .fila3{visibility:hidden}
-.trna .sin{font-size:.72rem;color:var(--cn-dim);width:92px;text-align:center;line-height:1.2;padding-top:14px}
-.trna-ayuda{font-size:.9rem;color:var(--cn-dim)}
 .aa.cambio{outline:3px solid var(--cn-err);outline-offset:2px}
+/* animación «Del gen a la proteína, paso a paso» (dogma-anim.js) */
+.dg-caps{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.dg-caps small{font-weight:600;opacity:.75}
+#dg-anim svg{background:#f8fbff;box-shadow:0 0 0 1px var(--cn-brd)}
+.dg-puntos{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0 4px}
+.dg-pt{width:14px;height:14px;border-radius:50%;border:2px solid #cbd5e1;background:#fff;padding:0;cursor:pointer}
+.dg-pt.c0{border-color:#7c3aed}.dg-pt.c1{border-color:#f97316}.dg-pt.c2{border-color:#0ea5e9}
+.dg-pt.c0.visto,.dg-pt.c0.on{background:#7c3aed}.dg-pt.c1.visto,.dg-pt.c1.on{background:#f97316}.dg-pt.c2.visto,.dg-pt.c2.on{background:#0ea5e9}
+.dg-pt.on{transform:scale(1.35);box-shadow:0 0 0 3px #fde68a}
+.dg-info{min-height:7.5em;margin:6px 0 8px}
+.dg-num{font-size:.78rem;font-weight:700;color:var(--cn-dim);text-transform:uppercase;letter-spacing:.03em}
+.dg-info h4{margin:2px 0 4px;font-size:1.08rem;color:var(--cn-brand-d)}
+.dg-info p{margin:0}
+.dg-cred{font-size:.8rem;color:var(--cn-dim);margin:8px 0 0}
+.en-pantalla .dg-intro,.en-pantalla .dg-cred,[data-pantalla^="Del gen"].en-pantalla>h3{display:none}
+.en-pantalla .dg-info{min-height:5.5em}
+.en-pantalla #dg-anim svg{max-height:calc(100dvh - 330px);width:100%}
+@media (max-height:500px){
+  .en-pantalla>h3{display:none}
+  .en-pantalla #dg-anim{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);grid-template-areas:'caps caps' 'svg ctrl' 'svg info' 'pts pts';gap:4px 10px;align-items:start}
+  .en-pantalla #dg-anim .dg-caps{grid-area:caps}.en-pantalla #dg-anim svg{grid-area:svg}.en-pantalla #dg-anim .dg-info{grid-area:info}.en-pantalla #dg-anim .dg-ctrl{grid-area:ctrl}.en-pantalla #dg-anim .dg-puntos{grid-area:pts}
+  .en-pantalla #dg-anim .dg-caps,.en-pantalla #dg-anim .dg-puntos{margin:0}
+  .en-pantalla #dg-anim svg{max-height:calc(100dvh - 100px)}
+  .en-pantalla #dg-anim .dg-caps .chip{font-size:.72rem;padding:3px 8px}
+  .en-pantalla #dg-anim .dg-info{min-height:0;margin:0;font-size:.78rem;line-height:1.35}
+  .en-pantalla #dg-anim .dg-info h4{font-size:.9rem}
+  .en-pantalla #dg-anim .dg-ctrl{flex-wrap:wrap;gap:4px;margin:0}
+  .en-pantalla #dg-anim .dg-num{display:none}
+  .en-pantalla #dg-anim .dg-ctrl .cn-btn{font-size:.72rem;padding:4px 8px;min-height:0}
+}
+/* tabla del código genético */
+.tcod{border-collapse:separate;border-spacing:4px;width:100%;min-width:660px;font-size:.86rem}
+.tcod th{background:var(--cn-brand-d);color:#fff;padding:7px 6px;border-radius:8px;text-align:center;font-weight:800}
+.tcod th.bs{font:800 1.1rem var(--cn-mono)}
+.tcod td{background:#f7fbf8;border-radius:10px;padding:6px 8px;vertical-align:middle;border:1px solid var(--cn-brd)}
+.tcod td.b1{width:46px;text-align:center;font:800 1.5rem var(--cn-mono);color:#fff;border:0}
+.tcod td.b3{width:34px;text-align:center;font:800 .95rem var(--cn-mono);background:#eef2f7;padding:6px 4px}
+.tcod .cl,.tcod td.b3 div{height:26px;display:flex;align-items:center}
+.tcod .cl{justify-content:space-between;gap:6px}
+.tcod td.b3 div{justify-content:center}
+.tcod code{font:700 .9rem var(--cn-mono);letter-spacing:.04em}
+.tcod .ap{color:#fff;border-radius:11px;padding:2px 8px;font:700 .78rem Outfit,sans-serif;min-width:48px;text-align:center}
+.tcod .ap.stop{background:#475569}
+.tcod .ap.ini{box-shadow:0 0 0 2px #fbbf24}
+.tcod-guia{font-size:.9rem;margin:8px 2px 0}
 .mut-res{margin-top:10px;padding:10px 14px;border-radius:12px;font-weight:600}
 .etq-fila{font-size:.78rem;font-weight:800;color:var(--cn-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:8px}
-.tabla-cod{font:600 .74rem var(--cn-mono)}
-.tabla-cod td,.tabla-cod th{padding:3px 5px!important}
 #meio,#pedi{width:100%;height:auto}
 .gam{display:inline-flex;gap:4px;font:800 1rem var(--cn-mono);background:#fff7ec;border:1.5px solid #f5c58c;border-radius:10px;padding:4px 10px;margin:3px}
 #pedi .per{cursor:pointer}
@@ -325,24 +356,15 @@
   <section class="sec" id="proteinas">
     <h2><span class="n">10</span> Del gen a la proteína</h2>
     <p class="lead">El ADN no sale del núcleo, pero las proteínas se fabrican en los ribosomas del citoplasma. ¿Cómo viaja la información? Con una copia: el <b>ARN mensajero</b>. Es el llamado <b>dogma central</b>: <b>ADN → ARN → proteína</b>. Avanza paso a paso con un trozo real del gen de la hemoglobina.</p>
-    <div class="card" data-pantalla="Del gen a la proteína">
-      <div class="chips" style="margin-bottom:10px"><button class="chip on" id="pr-trans">1️⃣ Transcripción (núcleo)</button><button class="chip" id="pr-tradu">2️⃣ Traducción (ribosoma)</button></div>
-      <div class="etq-fila">ADN · cadena molde (la que se lee)</div><div class="codones" id="pr-molde"></div>
-      <div class="etq-fila">ARN mensajero</div><div class="codones" id="pr-arn"></div>
-      <div class="etq-fila">ARN de transferencia (anticodón y el aminoácido que trae)</div><div class="codones" id="pr-arnt"></div>
-      <div class="etq-fila">Proteína (cadena de aminoácidos)</div><div class="prot" id="pr-prot"></div>
-      <p id="pr-txt" style="margin-top:10px;min-height:3em" aria-live="polite"></p>
-      <div class="ctrl"><button type="button" class="cn-btn cn-btn--primary" id="pr-paso">Siguiente paso ▶</button><button type="button" class="cn-btn" id="pr-todo">⏩ Todo</button><button type="button" class="cn-btn" id="pr-reset">🔄 Reiniciar</button></div>
+    <div class="card" data-pantalla="Del gen a la proteína, paso a paso">
+      <h3>🎬 Del gen a la proteína, paso a paso</h3>
+      <p class="dg-intro">Mira todo el camino de la información: el ADN se <b>copia</b> (replicación), un gen se <b>transcribe</b> a ARN mensajero, el ARNm sale del núcleo y el ribosoma lo <b>traduce</b> a proteína. Toca «Reproducir todo» o avanza con «Siguiente paso» a tu ritmo.</p>
+      <div id="dg-anim"></div>
+      <p class="dg-cred">Dibujo propio basado en los esquemas de transcripción y traducción del National Human Genome Research Institute (NHGRI, s. f.), Talking Glossary of Genomic and Genetic Terms. https://www.genome.gov/genetics-glossary</p>
     </div>
     <div class="grid g2" style="margin-top:12px">
       <div class="card"><h3>📝 Transcripción</h3><p>En el núcleo, una enzima (la ARN polimerasa) abre el ADN y copia una de sus cadenas en ARN, siguiendo la complementariedad. En el ARN no hay T: en su lugar va <b>U (uracilo)</b>. Frente a una A del ADN se pone una U.</p></div>
       <div class="card"><h3>🔧 Traducción</h3><p>En el ribosoma, el ARNm se lee de <b>tres en tres</b> letras. Cada trío es un <b>codón</b> y corresponde a un aminoácido. Siempre empieza en <b>AUG</b> (metionina) y termina en un codón de parada (UAA, UAG o UGA).</p></div>
-    </div>
-    <div class="card" style="margin-top:12px" data-pantalla="La traducción de cerca">
-      <h3>🔬 La traducción de cerca: el ribosoma y los ARN de transferencia</h3>
-      <p>Dentro del ribosoma caben <b>dos ARNt a la vez</b>. El del <b>sitio P</b> sostiene la cadena que se va formando; al <b>sitio A</b> llega el ARNt con el aminoácido siguiente. La cadena pasa al ARNt nuevo, el ribosoma avanza un codón y el ARNt vacío sale.</p>
-      <div id="ribo-anim"></div>
-      <p style="font-size:.8rem;color:var(--cn-dim);margin:4px 0 0">Dibujo propio basado en el esquema de traducción del National Human Genome Research Institute (NHGRI, s. f.), <i>Translation</i>, Talking Glossary of Genomic and Genetic Terms. https://www.genome.gov/genetics-glossary/Translation</p>
     </div>
     <details class="card" style="margin-top:12px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand-d)">📖 Ver la tabla del código genético</summary><div class="tbl-wrap" style="margin-top:10px" id="tabla-cod"></div></details>
   </section>
@@ -595,43 +617,17 @@ function colAA(a){return PAL_AA[a]||'#555';}
 function aaHTML(a,extra){return '<span class="aa'+(a==='*'?' stop':'')+(extra||'')+'" style="background:'+colAA(a)+'" title="'+AA[a][1]+'">'+AA[a][0]+'</span>';}
 function traducir(arn){var p=[];for(var i=0;i+2<arn.length;i+=3){var a=CODIGO[arn.substr(i,3)];p.push(a);if(a==='*')break;}return p;}
 // tabla
-(function(){var h='<table class="t tabla-cod"><tr><th>1.ª \\ 2.ª</th>'+'UCAG'.split('').map(function(b){return '<th>'+b+'</th>';}).join('')+'</tr>';
-  'UCAG'.split('').forEach(function(a){h+='<tr><th>'+a+'</th>';'UCAG'.split('').forEach(function(b){h+='<td>'+'UCAG'.split('').map(function(c){var x=CODIGO[a+b+c];return a+b+c+' '+AA[x][0];}).join('<br>')+'</td>';});h+='</tr>';});
-  document.getElementById('tabla-cod').innerHTML=h+'</table>';})();
+(function(){var BCOL={U:'#8e44ad',C:'#d97706',A:'#d13438',G:'#23804a'},B='UCAG'.split('');
+  var h='<table class="tcod"><thead><tr><th rowspan="2">1.ª<br>base</th><th colspan="4">2.ª base</th><th rowspan="2">3.ª<br>base</th></tr><tr>'+B.map(function(b){return '<th class="bs" style="background:'+BCOL[b]+'">'+b+'</th>';}).join('')+'</tr></thead><tbody>';
+  B.forEach(function(a){h+='<tr><td class="b1" style="background:'+BCOL[a]+'">'+a+'</td>';
+    B.forEach(function(b){h+='<td>'+B.map(function(c){var cod=a+b+c,x=CODIGO[cod];
+      var ap=x==='*'?'<span class="ap stop" title="Codón de parada">Parada</span>':'<span class="ap'+(cod==='AUG'?' ini':'')+'" style="background:'+colAA(x)+'" title="'+AA[x][1]+'">'+AA[x][0]+(cod==='AUG'?' · inicio':'')+'</span>';
+      return '<div class="cl"><code>'+cod+'</code>'+ap+'</div>';}).join('')+'</td>';});
+    h+='<td class="b3">'+B.map(function(c){return '<div style="color:'+BCOL[c]+'">'+c+'</div>';}).join('')+'</td></tr>';});
+  document.getElementById('tabla-cod').innerHTML=h+'</tbody></table><p class="tcod-guia">📌 Busca la <b>1.ª letra</b> del codón a la izquierda, la <b>2.ª</b> arriba y la <b>3.ª</b> a la derecha. Ejemplo: <b>GUG</b> → fila G, columna U, línea G → <b>Val</b> (valina). Pasa el dedo o el ratón sobre un aminoácido para ver su nombre completo.</p>';})();
 // gen de la beta-globina (inicio) con un codón de parada añadido
 var CODIF='ATGGTGCATCTGACTCCTGAGGAGAAGTAA';
 var ARN0=CODIF.replace(/T/g,'U'),MOLDE=CODIF.split('').map(function(b){return COMP[b];}).join('');
-var fase=0,pos=0;// fase 0: transcripción (pos = letras copiadas); fase 1: traducción (pos = codones leídos)
-function codHTML(sec,hasta,act,tipo){var h='';for(var i=0;i<sec.length;i+=3){var on=act===i/3;h+='<div class="codon'+(on?' on':'')+'">';for(var j=i;j<i+3;j++){var b=sec[j];h+=(hasta==null||j<hasta)?'<span class="base b-'+b+'">'+b+'</span>':'<span class="base vacia">·</span>';}h+='</div>';}return h;}
-function pintarPr(){
-  var tot=ARN0.length/3;
-  document.getElementById('pr-trans').classList.toggle('on',fase===0);document.getElementById('pr-tradu').classList.toggle('on',fase===1);
-  document.getElementById('pr-molde').innerHTML=codHTML(MOLDE,null,fase===0&&pos<ARN0.length?Math.floor(pos/3):-1);
-  document.getElementById('pr-arn').innerHTML=codHTML(ARN0,fase===0?pos:null,fase===1?Math.max(0,pos-1):-1);
-  var ANTI={A:'U',U:'A',G:'C',C:'G'},ht='';
-  if(fase===0)ht='<span class="trna-ayuda">Los ARN de transferencia llegan en la traducción: cada uno trae un aminoácido y tiene un anticodón que encaja con un codón del ARNm.</span>';
-  else for(var q=0;q<tot;q++){var cq=ARN0.substr(q*3,3),aq=CODIGO[cq];
-    if(q<pos&&aq==='*'){ht+='<div class="codon trna on"><div class="sin">Parada:<br>no entra ARNt</div></div>';continue;}
-    var tb=cq.split('').map(function(b){return '<span class="base b-'+ANTI[b]+'">'+ANTI[b]+'</span>';}).join('');
-    ht+=q<pos?'<div class="codon trna'+(q===pos-1?' on':' usado')+'" title="ARNt con anticodón '+cq.split('').map(function(b){return ANTI[b];}).join('')+'"><span class="aa-c" style="background:'+colAA(aq)+'">'+AA[aq][0]+'</span><div class="tallo"></div><div class="fila3">'+tb+'</div></div>'
-      :'<div class="codon trna vacio"><span class="aa-c" style="visibility:hidden">·</span><div class="tallo" style="visibility:hidden"></div><div class="fila3">'+tb+'</div></div>';
-    if(aq==='*')break;}
-  document.getElementById('pr-arnt').innerHTML=ht;
-  var prot=fase===1?traducir(ARN0).slice(0,pos):[];
-  document.getElementById('pr-prot').innerHTML=prot.length?prot.map(function(a){return aaHTML(a);}).join('<span style="color:#999">–</span>'):'<span style="color:var(--cn-dim);font-size:.9rem">Todavía no hay proteína.</span>';
-  var t;
-  if(fase===0){t=pos===0?'La ARN polimerasa se pega al gen. Toca «Siguiente paso» para copiar el ADN molde de tres en tres letras.':pos<ARN0.length?'Copiando: frente a cada base del molde se pone su complementaria. Frente a <b>A</b> se pone <b>U</b>, no T.':'✅ El ARNm está listo. Sale del núcleo por un poro y llega a un ribosoma. Toca «Siguiente paso» para traducirlo.';}
-  else{var c=ARN0.substr((pos-1)*3,3),a=CODIGO[c];t=pos===0?'El ribosoma busca el codón de inicio AUG.':a==='*'?'🛑 Codón <b>'+c+'</b>: es de parada. La proteína se suelta y se pliega. ¡Listo!':'Codón <b>'+c+'</b> → '+AA[a][1]+'. Llega el ARN de transferencia con el anticodón <b>'+c.split('').map(function(b){return {A:'U',U:'A',G:'C',C:'G'}[b];}).join('')+'</b>, que encaja con ese codón, y trae ese aminoácido; el ribosoma lo une a la cadena.';}
-  document.getElementById('pr-txt').innerHTML=t;
-  var fin=fase===1&&pos>=traducir(ARN0).length;document.getElementById('pr-paso').disabled=fin;
-  if(fin)BIO.marcarSeccion('proteinas');
-}
-document.getElementById('pr-paso').onclick=function(){if(fase===0){if(pos<ARN0.length)pos+=3;else{fase=1;pos=0;}}else pos++;pintarPr();};
-document.getElementById('pr-todo').onclick=function(){fase=1;pos=traducir(ARN0).length;pintarPr();};
-document.getElementById('pr-reset').onclick=function(){fase=0;pos=0;pintarPr();};
-document.getElementById('pr-trans').onclick=function(){fase=0;pos=0;pintarPr();};
-document.getElementById('pr-tradu').onclick=function(){fase=1;pos=0;pintarPr();};
-pintarPr();
 
 /* ═══ 8. Mutaciones ═══ */
 var mu=ARN0.split('');
@@ -831,6 +827,6 @@ if(R){
 <script src="text-zoom.js?v=13"></script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=14"></script>
-<script src="ribosoma-anim.js?v=1"></script>
+<script src="dogma-anim.js?v=1"></script>
 </body>
 </html>

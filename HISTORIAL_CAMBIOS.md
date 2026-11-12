@@ -6,6 +6,54 @@
 
 ---
 
+## Versión 2.42 — 13 de noviembre de 2026 · Del gen a la proteína, paso a paso (replicación, transcripción y traducción)
+
+**Contexto.** El docente pidió quitar el traductor de letras de «Del gen a la
+proteína» y dejar una sola animación, del nivel de la del ribosoma, con la
+explicación completa paso a paso de replicación, transcripción y traducción.
+Mostró además el esquema del NHGRI de la transcripción (núcleo, ARN
+polimerasa, procesamiento del ARNm y salida por el poro nuclear). También
+pidió mejorar la tabla del código genético, que se veía mal.
+
+**Cambios**
+- `dogma-anim.js` (nuevo, reemplaza a `ribosoma-anim.js`): una sola
+  animación de 16 pasos en tres capítulos, con la misma secuencia (inicio de
+  la beta-globina, con un intrón corto simplificado):
+  - Replicación (4): el ADN y sus pares A–T y C–G; la helicasa abre;
+    primasa y ADN polimerasa copian (cadenas nuevas en verde); dos
+    moléculas iguales (semiconservativa).
+  - Transcripción (5): la ARN polimerasa llega al gen; copia la cadena molde
+    abriendo una burbuja (dice «frente a A pone U»); se suelta el pre-ARNm
+    con su intrón; procesamiento (se corta el intrón, capuchón y cola
+    poli-A); el ARNm sale por el poro nuclear al citoplasma.
+  - Traducción (7): se arma el ribosoma en AUG con el ARNt de metionina;
+    llega el segundo ARNt; enlace peptídico; avanza un codón; se repite;
+    codón de parada y factor de liberación; la proteína se pliega.
+  Botones Reproducir todo/Pausa, Anterior, Siguiente paso, Desde el
+  inicio, botones por capítulo y puntos para saltar a cualquier paso, con
+  título y explicación de cada uno. Solo se mueve cuando está a la vista y
+  respeta «reducir movimiento».
+- `genetica.html`: se quitaron el traductor viejo (filas de letras y su
+  código) y la tarjeta «La traducción de cerca»; queda la tarjeta nueva con
+  pantalla completa (en el celular horizontal, botones y texto al lado del
+  dibujo) y el crédito al NHGRI. Las funciones que usa Mutaciones se
+  conservan.
+- Tabla del código genético rehecha: 1.ª base a la izquierda, 2.ª arriba y
+  3.ª a la derecha, cada una con su color; aminoácidos en etiquetas de
+  color con el nombre completo al pasar el dedo; «Parada» en gris; AUG
+  marcado como inicio; guía de lectura con un ejemplo.
+- `sw.js`: `dogma-anim.js` en la caché en lugar de `ribosoma-anim.js`;
+  `CACHE` → `bionom-v55`.
+
+**Pruebas.** Playwright: los 16 pasos revisados uno por uno en imagen,
+reproducción automática, botón Siguiente, pantalla completa en computador
+y en celular horizontal, Mutaciones sigue funcionando y sin errores en las
+16 páginas.
+
+**Pendiente.** La sección «ARN y replicación» conserva sus dos animaciones
+pequeñas (pedidas antes por una docente); si el docente prefiere, se pueden
+quitar ahora que esta animación cubre todo.
+
 ## Versión 2.41 — 13 de noviembre de 2026 · La traducción de cerca: ribosoma y ARN de transferencia
 
 **Contexto.** El docente mostró el esquema de traducción del National Human
