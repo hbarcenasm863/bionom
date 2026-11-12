@@ -310,3 +310,6 @@ input[type=range]{touch-action:none}
 .flota-exp .fe-c img{max-height:14vh;width:auto;max-width:100%}
 .flota-exp .fe-c .vacio{display:none}
 @media(min-width:761px){.flota-exp{display:none!important}}
+
+/* Distintivo de contenido de profundización (10.°–11.°), auditoría de secuencia 6.°–9.° */
+.nivel-prof{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:999px;background:#ede9fe;color:#5b21b6;font-size:.72rem;font-weight:700;vertical-align:middle;letter-spacing:0;font-family:Outfit,system-ui,sans-serif}

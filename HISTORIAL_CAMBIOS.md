@@ -6,6 +6,77 @@
 
 ---
 
+## Versión 2.26 — 12 de noviembre de 2026 · Orden y profundidad para 6.° a 9.°
+
+**Contexto.** El docente pidió que el auditor experto en biología y en los
+lineamientos del MEN revisara si el orden y la profundidad de los contenidos
+están bien para sexto a noveno. El informe está en
+`AUDITORIA_SECUENCIA_6-9.md`: 6 acciones de prioridad alta, 10 media y 7
+baja. El docente pidió aplicar las prioritarias y las de profundidad.
+
+**Prioritarias (A1–A6).**
+- **A1–A2. Nuevo orden de los módulos** (`MODULOS` en `bio.js`, menú, tarjetas
+  de la portada y botones «Anterior/Siguiente»): Célula → División → Reinos →
+  Ecosistemas → Ecosistemas de Colombia → Ambiente → Sistemas (Funciones,
+  Nutrición) → Reproducción → Genética → Evolución → Juego. Así lo de
+  6.°–7.° va primero. Se corrigió además el «Siguiente» de Ecosistemas de
+  Colombia, que se saltaba Ambiente.
+- **A3.** Distintivo morado «Profundización 10.°–11.°» (`.nivel-prof` en
+  `bio.css`) en:
+  - las etapas de la fotosíntesis y la respiración (célula);
+  - la neurona (sistemas);
+  - la mecánica de fluidos (funciones);
+  - tipos de selección y variación y deriva (evolución);
+  - la replicación (genética);
+  - el laboratorio de la levadura (reinos);
+  - la termodinámica (ecosistemas).
+- **A4.** La meiosis de `division.html` ya no da por sabidos los alelos: los
+  explica ahí mismo, con su definición emergente.
+- **A5.** Sección nueva **«El microscopio»** en `celula.html`: partes que se
+  iluminan paso a paso en un dibujo, calculadora del aumento total (ocular ×
+  objetivo), cómo preparar la lámina de cebolla, cuidados y dos chequeos.
+- **A6.** La tabla de bacterias y arqueas de `reinos.html` ya no habla de
+  enlaces éter y éster ni de histonas en lenguaje técnico.
+
+**Profundidad.**
+- **8.°–9.° hipótesis sobre el origen de un grupo:** sección nueva «¿De dónde
+  vienen las ballenas?» en `evolucion.html`, con 6 evidencias, un chequeo y
+  un espacio para escribir la hipótesis propia.
+- **8.°–9.° contaminación atmosférica:** sección nueva en `ambiente.html` con
+  lluvia ácida, smog y ozono (arriba y abajo), y dos chequeos.
+- **8.°–9.° etiquetas de alimentos:** sellos de advertencia de la Ley 2120 de
+  2021 y cómo comparar dos productos, con un chequeo, en `nutricion.html`.
+- **Temas que el juego preguntaba y ninguna página enseñaba:**
+  - sucesión ecológica y especies pioneras (ecosistemas, con chequeo);
+  - radiación adaptativa y coevolución (evolución);
+  - faringe, laringe y bulbo raquídeo (sistemas);
+  - donante y receptor universal (genética);
+  - fibrosis quística (genética);
+  - estuario (regiones);
+  - endotermos y ectotermos (reinos).
+- **Vocabulario de 6.°–7.°:**
+  - se quitaron «70S» y «80S» en `celula.html`;
+  - la PCR se explica con palabras sencillas;
+  - en `celula.html`, palabras clave nuevas (glucosa y ATP) y un enlace a
+    las moléculas de la vida de Nutrición.
+
+**Pruebas.** Con Playwright: las 15 páginas sin errores ni desbordes en
+computador y celular; la cadena «Siguiente» y la de «Anterior» completas en
+el nuevo orden; el microscopio, las pestañas del aire y la portada en el
+nuevo orden.
+
+**Versiones.** `bio.js?v=21`, `bio.css?v=22`, `sw.js` → `bionom-v40`.
+
+**Sin hacer (prioridad media y baja del informe).**
+- Selector de grado (`BIO_GRADO`) para filtrar secciones y preguntas.
+- Reordenar las secciones dentro de Reproducción y Evolución.
+- Marcar el ciclo del nitrógeno para 7.°.
+- Guía de recorrido por grado.
+- Más chequeos en Reproducción.
+- Recuadro «Escribe tu conclusión» en los laboratorios.
+
+---
+
 ## Versión 2.25 — 11 de noviembre de 2026 · Rectángulo blanco en los modelos 3D del mapa de niveles
 
 **Contexto.** El docente envió una captura del celular: en los modelos 3D del

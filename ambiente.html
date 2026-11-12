@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=21">
+<link rel="stylesheet" href="bio.css?v=22">
 <style>
 .inv{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:center}
 @media(max-width:780px){.inv{grid-template-columns:1fr}}
@@ -50,6 +50,7 @@
     <a href="#oceanos">🐠 Océanos</a>
     <a href="#energias">⚡ Energías</a>
     <a href="#huella">👣 Tu huella</a>
+    <a href="#aire">🌫️ Contaminación del aire</a>
     <a href="#acciones">✅ Qué hacer</a>
   </nav>
 
@@ -139,18 +140,35 @@
     <div class="card comp" id="comp"></div>
   </section>
 
+  <section class="sec" id="aire">
+    <h2><span class="n">08</span> La contaminación del aire: lluvia ácida, smog y ozono</h2>
+    <p class="lead">Al quemar carbón, gasolina, diésel o leña salen gases y partículas que cambian químicamente en el aire. Cada uno causa un problema distinto. Recórrelos.</p>
+    <div class="tabs"><button class="chip on" data-tab="ai-acida">🌧️ Lluvia ácida</button><button class="chip" data-tab="ai-smog">🌫️ Smog</button><button class="chip" data-tab="ai-ozono">☀️ Ozono</button></div>
+    <div class="tab-p on" id="ai-acida"><div class="card"><p>Las fábricas, las termoeléctricas y los carros sueltan <b>óxidos de azufre y de nitrógeno</b>. En el aire reaccionan con el agua de las nubes y forman ácidos: la lluvia cae más ácida de lo normal.</p><p style="margin-top:8px">Daña las hojas de los árboles, vuelve ácidos los lagos (mueren peces y anfibios) y desgasta las estatuas y los edificios de piedra caliza.</p></div></div>
+    <div class="tab-p" id="ai-smog"><div class="card"><p>El <b>smog</b> es una neblina café o gris sobre las ciudades. Se forma cuando el humo de los motores se mezcla con partículas finas (PM2,5) y, con el sol, los gases reaccionan entre sí.</p><p style="margin-top:8px">Las partículas finas entran hasta los alvéolos y causan asma, bronquitis y problemas del corazón. En Bogotá y Medellín hay alertas de calidad del aire en algunas épocas del año.</p></div></div>
+    <div class="tab-p" id="ai-ozono"><div class="card"><p>El ozono tiene dos caras. <b>Arriba</b>, en la estratosfera, la capa de ozono nos protege de los rayos ultravioleta. <b>Abajo</b>, junto al suelo, se forma por la reacción del smog con el sol y es un contaminante que irrita los pulmones.</p><p style="margin-top:8px">El «agujero de ozono» lo causaron otros gases (los CFC de aerosoles y neveras viejas) y es un problema distinto del cambio climático.</p></div></div>
+    <div class="chequeo" data-ok="2" data-exp="Los óxidos de azufre y de nitrógeno reaccionan con el agua de las nubes y forman ácidos. El CO₂ calienta el planeta, pero no es la causa principal de la lluvia ácida.">
+      <div class="q">¿Qué gases causan principalmente la lluvia ácida?</div>
+      <div class="ops"><button class="op" data-por="El oxígeno no forma ácidos con la lluvia.">El oxígeno y el nitrógeno del aire limpio.</button><button class="op" data-por="El CO₂ causa el calentamiento global; la lluvia ácida viene sobre todo del azufre y el nitrógeno.">El dióxido de carbono.</button><button class="op">Los óxidos de azufre y de nitrógeno.</button></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="El ozono de arriba nos protege del ultravioleta; el de abajo, junto al suelo, se forma con el smog y daña los pulmones. Es la misma molécula en dos lugares distintos.">
+      <div class="q">¿Por qué decimos que el ozono es bueno arriba y malo abajo?</div>
+      <div class="ops"><button class="op">Arriba nos protege del ultravioleta; abajo irrita los pulmones.</button><button class="op" data-por="Es la misma molécula; lo que cambia es dónde está.">Porque son dos gases distintos con el mismo nombre.</button><button class="op" data-por="El ozono de abajo sí hace daño: es parte del smog.">El ozono siempre es bueno.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="acciones">
-    <h2><span class="n">08</span> Mitigar, adaptarse y ser resilientes</h2>
+    <h2><span class="n">09</span> Mitigar, adaptarse y ser resilientes</h2>
     <p class="lead">Frente al cambio climático hay tres tipos de acciones. <b>Mitigar</b> es reducir las emisiones (atacar la causa). <b>Adaptarse</b> es prepararse para los cambios que ya vienen. Ser <b>resiliente</b> es poder recuperarse rápido después de un desastre. Clasifica estas acciones.</p>
     <div class="card" id="clas-acc"></div>
     <div class="clave">Ninguna persona sola detiene el cambio climático, pero las decisiones de muchos sí cambian las cosas: en la casa, en el colegio, en el barrio y en lo que exigimos a los gobiernos. Un proyecto escolar de reforestación, de ahorro de agua o de reciclaje es ciencia aplicada.</div>
-    <div class="sig"><a href="regiones.html"><small>← Anterior</small><b><span class="co" role="img" aria-label="Colombia"></span> Ecosistemas de Colombia</b></a><a class="der" href="juego.html"><small>Siguiente →</small><b>🎮 Juego de repaso</b></a></div>
+    <div class="sig"><a href="regiones.html"><small>← Anterior</small><b><span class="co" role="img" aria-label="Colombia"></span> Ecosistemas de Colombia</b></a><a class="der" href="sistemas.html"><small>Siguiente →</small><b>❤️ Sistemas del cuerpo</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=20"></script>
+<script src="bio.js?v=21"></script>
 <script>
 (function(){
 /* ═══ Efecto invernadero ═══ */

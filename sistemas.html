@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=21">
+<link rel="stylesheet" href="bio.css?v=22">
 <style>
 .escalon{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px 0}
 .escalon .e{flex:1;min-width:110px;text-align:center;background:#fff;border:2px solid var(--cn-brd);border-radius:14px;padding:10px 6px;transition:all .3s}
@@ -168,7 +168,7 @@
   </section>
 
   <section class="sec" id="neurona">
-    <h2><span class="n">08</span> La neurona y el impulso nervioso</h2>
+    <h2><span class="n">08</span> La neurona y el impulso nervioso <span class="nivel-prof" title="Contenido de profundización para 10.° y 11.°">Profundización 10.°–11.°</span></h2>
     <p class="lead">Un mensaje nervioso es eléctrico <b>y</b> químico. Dentro de la neurona viaja como una onda eléctrica; para pasar a la siguiente neurona se convierte en sustancias químicas. Avanza y mira cómo cambia el voltaje de la membrana.</p>
     <div class="lado">
       <div class="fig"><svg id="pa-svg" viewBox="0 0 320 210" role="img" aria-label="Gráfica del potencial de acción"></svg></div>
@@ -201,13 +201,13 @@
     <h2><span class="n">10</span> Las tres funciones vitales</h2>
     <p class="lead">Todo ser vivo cumple tres funciones: <b>nutrición</b> (obtener materia y energía), <b>relación</b> (percibir el ambiente y responder) y <b>reproducción</b> (originar nuevos individuos). Ubica cada sistema en la función que más le corresponde.</p>
     <div class="card" id="clas-func"></div>
-    <div class="sig"><a href="reinos.html"><small>← Anterior</small><b>🍄 Reinos</b></a><a class="der" href="funciones.html"><small>Siguiente →</small><b>🐙 Funciones vitales comparadas</b></a></div>
+    <div class="sig"><a href="ambiente.html"><small>← Anterior</small><b>🌍 Ambiente</b></a><a class="der" href="funciones.html"><small>Siguiente →</small><b>🐙 Funciones vitales comparadas</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=20"></script>
+<script src="bio.js?v=21"></script>
 <script src="cuerpo.js?v=13"></script>
 <script>
 window.pasoEsc=function(k){document.querySelectorAll('#esc .e').forEach(function(e,i){e.classList.toggle('on',i===k);});};
@@ -233,7 +233,7 @@ var ORG={
  ureteres:['excretor','Uréteres','〽️','Dos tubos delgados que llevan la orina de los riñones a la vejiga.'],
  vejiga:['excretor','Vejiga','💧','Bolsa muscular que <b>guarda la orina</b> (hasta medio litro) hasta que la eliminas por la uretra.'],
  piel:['excretor','Glándulas del sudor (piel)','💦','La piel también excreta: el <b>sudor</b> elimina agua, sales y un poco de urea, y además enfría el cuerpo.'],
- cerebro:['nervioso','Encéfalo (cerebro)','🧠','Centro de control: recibe la información de los sentidos, la interpreta y <b>decide qué hacer</b>. También guarda memorias y emociones. El cerebelo coordina el equilibrio.'],
+ cerebro:['nervioso','Encéfalo (cerebro)','🧠','Centro de control: recibe la información de los sentidos, la interpreta y <b>decide qué hacer</b>. También guarda memorias y emociones. El cerebelo coordina el equilibrio, y el <b>bulbo raquídeo</b> controla la respiración y los latidos sin que lo pienses.'],
  medula:['nervioso','Médula espinal','🔗','Cordón de nervios protegido por la columna. Lleva mensajes entre el cerebro y el cuerpo y controla los <b>actos reflejos</b> (como quitar la mano del fuego).'],
  nervios:['nervioso','Nervios','⚡','Cables formados por prolongaciones de neuronas que llegan a cada rincón: llevan órdenes a los músculos y traen información de los sentidos.'],
  ojos:['nervioso','Órganos de los sentidos','👁️','Ojos, oídos, nariz, lengua y piel tienen <b>receptores</b> que captan luz, sonido, olores, sabores, presión y temperatura, y avisan al cerebro.'],
@@ -330,7 +330,7 @@ var REC={
      [150,350,'🚽 <b>Recto y ano.</b> Lo que no se digirió sale como heces. El viaje completo dura entre 24 y 72 horas.']]},
  oxigeno:{b:'🌬️ El viaje del oxígeno',col:'#2e5f9e',ver:['venas','arterias','nariz','traquea','pulmones','corazon'],
   p:[[150,68,'👃 <b>Nariz.</b> Una molécula de oxígeno entra con el aire, que se calienta, se humedece y se filtra.'],
-     [150,120,'🦴 <b>Tráquea y bronquios.</b> Baja por la tráquea y se desvía por un bronquio hacia un pulmón.'],
+     [150,120,'🦴 <b>Faringe, laringe y tráquea.</b> Pasa por la faringe (que comparte con la comida), la laringe (donde están las cuerdas vocales) y baja por la tráquea hasta un bronquio.'],
      [120,180,'🌬️ <b>Alvéolo pulmonar.</b> Atraviesa la pared delgadísima del alvéolo y entra a la sangre, donde la atrapa la <b>hemoglobina</b> de un glóbulo rojo.'],
      [160,188,'❤️ <b>Corazón.</b> La sangre oxigenada llega al lado izquierdo del corazón, que la bombea con fuerza a la aorta.'],
      [129,450,'🦵 <b>Músculo de la pierna.</b> Por las arterias llega a los capilares del músculo. Allí la mitocondria usa el oxígeno para sacar energía de la glucosa. Se produce CO₂.'],

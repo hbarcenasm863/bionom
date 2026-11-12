@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=21">
+<link rel="stylesheet" href="bio.css?v=22">
 <style>
 .fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
@@ -211,7 +211,7 @@
     <div class="tab-p card" id="o-abo">
       <p>El gen del grupo sanguíneo tiene <b>tres alelos</b>: I<sup>A</sup>, I<sup>B</sup> e i. I<sup>A</sup> e I<sup>B</sup> son <b>codominantes</b> (si están juntos se expresan los dos: grupo AB) y los dos dominan sobre i (grupo O = ii). Escoge el genotipo de los padres.</p>
       <div class="padres" id="abo-padres"></div><div id="abo-tab"></div><div id="abo-prop"></div>
-      <div class="dato col">En Colombia el grupo más común es el <b>O</b> (alrededor del 60 % de las personas), seguido del <b>A</b>. Por eso los bancos de sangre siempre piden donantes O.</div>
+      <div class="dato col">En Colombia el grupo más común es el <b>O</b> (alrededor del 60 % de las personas), seguido del <b>A</b>. Por eso los bancos de sangre siempre piden donantes O. El grupo O negativo es <b>donante universal</b> de glóbulos rojos y el AB positivo es <b>receptor universal</b>.</div>
     </div>
     <div class="tab-p card" id="o-sex">
       <p>El <b>daltonismo</b> (no distinguir bien el rojo del verde) se debe a un alelo recesivo (X<sup>d</sup>) que está en el <b>cromosoma X</b>. Las mujeres tienen XX y los hombres XY: a un hombre le basta un X<sup>d</sup> para ser daltónico, porque el Y no tiene ese gen. Por eso es mucho más frecuente en hombres.</p>
@@ -237,6 +237,7 @@
       <div class="fig"><svg id="pedi" viewBox="0 0 420 300" role="group" aria-label="Árbol genealógico"></svg></div>
       <div class="det" id="pedi-det" aria-live="polite"><div class="vacio">👆 Toca una persona del árbol.</div></div>
     </div>
+    <div class="dato">El albinismo no es la única enfermedad que se hereda así. La <b>fibrosis quística</b> (moco espeso en los pulmones) y la <b>anemia falciforme</b> también son recesivas: dos padres sanos portadores pueden tener un hijo con la enfermedad.</div>
   </section>
 
   <!-- ═══ ADN ═══ -->
@@ -292,7 +293,7 @@
       <div class="ops"><button class="op" data-por="El ARNm no fabrica aminoácidos: lleva la receta. Los aminoácidos los traen los ARN de transferencia.">Porque fabrica los aminoácidos.</button><button class="op">Porque el ADN no sale del núcleo y los ribosomas están afuera.</button><button class="op" data-por="El ARNm no copia el ADN para la división: eso es la replicación, y la hace la ADN polimerasa.">Porque copia el ADN antes de la división celular.</button></div>
     </div>
 
-    <h3 style="margin-top:22px">¿Cómo se copia el ADN antes de que la célula se divida?</h3>
+    <h3 style="margin-top:22px">¿Cómo se copia el ADN antes de que la célula se divida? <span class="nivel-prof" title="Contenido de profundización para 10.° y 11.°">Profundización 10.°–11.°</span></h3>
     <div class="lado anim-gen">
       <div class="fig"><svg id="repli-svg" viewBox="0 0 320 210" role="img" aria-label="Replicación del ADN: la helicasa abre, la primasa pone el cebador y la ADN polimerasa copia"></svg></div>
       <div class="pasos" data-titulo="Replicación" data-alcambiar="pasoReplica">
@@ -369,7 +370,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=20"></script>
+<script src="bio.js?v=21"></script>
 <script>
 (function(){
 var esc=BIO.esc;

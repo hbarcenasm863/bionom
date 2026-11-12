@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=21">
+<link rel="stylesheet" href="bio.css?v=22">
 <style>
 .hist-card{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:16px;align-items:center}
 .hist-card .ilu{font-size:4rem;text-align:center;background:var(--cn-brand-l);border-radius:16px;padding:10px 0}
@@ -48,13 +48,15 @@
     <a class="nivel-chip" href="index.html">🗺️ Niveles: organelo → célula</a>
   </header>
 
-  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="La unidad más pequeña que está viva: se nutre, se relaciona y se reproduce.">célula</span><span class="term" data-def="Célula sin núcleo: su ADN está suelto en el citoplasma. Ejemplo: las bacterias.">procariota</span><span class="term" data-def="Célula con núcleo rodeado de membrana y con organelos. Ejemplo: tus células.">eucariota</span><span class="term" data-def="Estructura dentro de la célula que cumple una función, como la mitocondria o el cloroplasto.">organelo</span><span class="term" data-def="Capa que rodea la célula y deja pasar unas sustancias y otras no.">membrana semipermeable</span><span class="term" data-def="Paso del agua a través de una membrana, desde donde hay menos solutos hacia donde hay más.">ósmosis</span></div></div>
+  <p style="font-size:.9rem;margin:0 0 8px">📌 ¿Aún no conoces las moléculas de la vida (glucosa, proteínas, ADN)? Míralas primero en <a href="nutricion.html#moleculas">Nutrición y salud</a>.</p>
+  <div class="pre-claves" role="note"><b>🔑 Antes de empezar: palabras clave</b><small>Toca cada palabra para ver qué significa. Las vas a necesitar en todo el módulo.</small><div class="pc"><span class="term" data-def="La unidad más pequeña que está viva: se nutre, se relaciona y se reproduce.">célula</span><span class="term" data-def="Célula sin núcleo: su ADN está suelto en el citoplasma. Ejemplo: las bacterias.">procariota</span><span class="term" data-def="Célula con núcleo rodeado de membrana y con organelos. Ejemplo: tus células.">eucariota</span><span class="term" data-def="Estructura dentro de la célula que cumple una función, como la mitocondria o el cloroplasto.">organelo</span><span class="term" data-def="Capa que rodea la célula y deja pasar unas sustancias y otras no.">membrana semipermeable</span><span class="term" data-def="Paso del agua a través de una membrana, desde donde hay menos solutos hacia donde hay más.">ósmosis</span><span class="term" data-def="Azúcar que las plantas fabrican con la luz y que todas las células usan para obtener energía.">glucosa</span><span class="term" data-def="Molécula que guarda la energía que la célula usa para trabajar: su «moneda» de energía.">ATP</span></div></div>
 
   <nav class="toc" aria-label="En esta página">
     <strong>En esta página</strong>
     <a href="#historia">📜 Historia</a>
     <a href="#teoria">📌 Teoría celular</a>
     <a href="#tamano">🔍 Tamaños</a>
+    <a href="#microscopio">🔬 El microscopio</a>
     <a href="#tipos">🧫 Tipos</a>
     <a href="#partes">🧩 Partes</a>
     <a href="#transporte">🚪 Transporte</a>
@@ -118,8 +120,41 @@
   </section>
 
   <!-- ═══ TIPOS ═══ -->
+  <section class="sec" id="microscopio">
+    <h2><span class="n">04</span> El microscopio: cómo se ven las células</h2>
+    <p class="lead">Las células son tan pequeñas que se necesita un <b>microscopio óptico</b> para verlas. La luz atraviesa una muestra muy delgada y dos lentes la agrandan. Avanza por sus partes y mira cuál se ilumina en el dibujo.</p>
+    <div class="lado">
+      <div class="fig"><svg id="mic-svg" viewBox="0 0 240 270" role="img" aria-label="Partes del microscopio óptico"></svg></div>
+      <div class="pasos" data-titulo="Partes del microscopio" data-alcambiar="pasoMicro">
+        <div class="paso" data-t="Ocular"><h3>👁️ Ocular</h3><p>Es el lente por donde miras. Casi siempre aumenta <b>10 veces</b> (10×).</p></div>
+        <div class="paso" data-t="Objetivos"><h3>🔭 Objetivos</h3><p>Son los lentes cercanos a la muestra, en una pieza que gira (el revólver). Hay de 4×, 10×, 40× y 100×. Se empieza siempre con el más pequeño.</p></div>
+        <div class="paso" data-t="Platina"><h3>🟫 Platina</h3><p>Es la mesa donde se pone la <b>lámina</b> con la muestra. Unas pinzas la sostienen y tiene un hueco por donde pasa la luz.</p></div>
+        <div class="paso" data-t="Luz"><h3>💡 Fuente de luz y diafragma</h3><p>La lámpara de abajo ilumina la muestra. El <b>diafragma</b> abre o cierra el paso de la luz: con menos luz se ven mejor los bordes de células transparentes.</p></div>
+        <div class="paso" data-t="Tornillos"><h3>🔩 Tornillos</h3><p>El <b>macrométrico</b> (grande) sube o baja la platina rápido para enfocar con poco aumento. El <b>micrométrico</b> (pequeño) hace el ajuste fino con los objetivos grandes.</p></div>
+      </div>
+    </div>
+    <h3 style="margin-top:18px">🧮 ¿Cuánto aumenta?</h3>
+    <div class="card mic-calc">
+      <p>El aumento total es el del <b>ocular</b> <b>multiplicado</b> por el del <b>objetivo</b>.</p>
+      <div class="chips" role="group" aria-label="Objetivo" id="mic-obj"><button type="button" class="chip on" data-o="4">Objetivo 4×</button><button type="button" class="chip" data-o="10">10×</button><button type="button" class="chip" data-o="40">40×</button><button type="button" class="chip" data-o="100">100×</button></div>
+      <p id="mic-res" aria-live="polite" style="margin-top:10px;font-size:1.05rem"></p>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>🧅 Prepara una lámina de cebolla</h3><ol style="padding-left:1.2em"><li>Saca una capa muy delgada de la piel de adentro de la cebolla.</li><li>Ponla extendida sobre la lámina con una gota de agua.</li><li>Agrega una gota de lugol o de azul de metileno para teñir los núcleos.</li><li>Cúbrela con la laminilla, despacio y de lado, para que no queden burbujas.</li><li>Enfoca con el objetivo de 4× y el tornillo macrométrico; luego pasa a 10× y 40× con el micrométrico.</li></ol></div>
+      <div class="card"><h3>⚠️ Cuidados</h3><p>Lleva el microscopio con las dos manos: una en el brazo y otra en la base. Nunca bajes el objetivo de 40× o de 100× con el tornillo grande, porque puede romper la lámina y el lente. Limpia los lentes solo con papel especial.</p></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="El aumento total se calcula multiplicando: 10 × 40 = 400. La muestra se ve 400 veces más grande.">
+      <div class="q">Con un ocular de 10× y un objetivo de 40×, ¿cuál es el aumento total?</div>
+      <div class="ops"><button class="op" data-por="Ese es el error más común: los aumentos se multiplican, no se suman.">50×</button><button class="op">400×</button><button class="op" data-por="40 es solo el aumento del objetivo; falta multiplicar por el del ocular.">40×</button></div>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="Con el objetivo de 40× la lámina queda muy cerca del lente: el tornillo grande la mueve demasiado y puede romperla. Por eso se usa el micrométrico, que mueve muy poco.">
+      <div class="q">Ya enfocaste con 4× y cambiaste al objetivo de 40×. ¿Con qué tornillo terminas de enfocar?</div>
+      <div class="ops"><button class="op">Con el micrométrico, el pequeño.</button><button class="op" data-por="El macrométrico mueve mucho la platina y con el objetivo de 40× puede romper la lámina.">Con el macrométrico, el grande.</button><button class="op" data-por="El diafragma regula la luz, no el enfoque.">Con el diafragma.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="tipos">
-    <h2><span class="n">04</span> Tipos de célula</h2>
+    <h2><span class="n">05</span> Tipos de célula</h2>
     <p class="lead">La gran diferencia está en el <b>núcleo</b>. «Pro» significa <i>antes</i> y «eu» significa <i>verdadero</i>; «carion» es núcleo. Las procariotas existieron <b>antes</b> de que apareciera el núcleo; las eucariotas tienen un núcleo <b>verdadero</b>, rodeado de membrana.</p>
     <div class="tabs"><button class="chip on" data-tab="t-pe">Procariota vs. eucariota</button><button class="chip" data-tab="t-av">Animal vs. vegetal</button><button class="chip" data-tab="t-uni">Unicelular vs. pluricelular</button></div>
     <div class="tab-p" id="t-pe">
@@ -127,7 +162,7 @@
         <tr><th></th><th>🦠 Procariota</th><th>🧫 Eucariota</th></tr>
         <tr><td><b>Núcleo</b></td><td>No tiene. El ADN está suelto en el citoplasma, en una zona llamada <b>nucleoide</b>.</td><td>Sí: el ADN está dentro de un núcleo con membrana.</td></tr>
         <tr><td><b>Organelos con membrana</b></td><td>No tiene (ni mitocondrias, ni retículo, ni aparato de Golgi).</td><td>Sí: mitocondrias, retículo endoplasmático, Golgi, lisosomas, cloroplastos…</td></tr>
-        <tr><td><b>Ribosomas</b></td><td>Pequeños (70S).</td><td>Más grandes (80S).</td></tr>
+        <tr><td><b>Ribosomas</b></td><td>Pequeños.</td><td>Más grandes.</td></tr>
         <tr><td><b>Tamaño</b></td><td>Muy pequeñas: 1–10 µm.</td><td>Más grandes: 10–100 µm.</td></tr>
         <tr><td><b>Ejemplos</b></td><td>Bacterias y arqueas.</td><td>Animales, plantas, hongos y protistas.</td></tr>
         <tr><td><b>Aparición</b></td><td>Hace unos 3500 millones de años.</td><td>Hace unos 2000 millones de años.</td></tr>
@@ -159,7 +194,7 @@
 
   <!-- ═══ PARTES ═══ -->
   <section class="sec" id="partes">
-    <h2><span class="n">05</span> Las partes de la célula</h2>
+    <h2><span class="n">06</span> Las partes de la célula</h2>
     <p class="lead">Toca cualquier parte de la célula para saber qué es, qué hace y a qué se parecería si la célula fuera una ciudad. Cambia de célula con los botones.</p>
     <div class="ctrl">
       <div class="chips cel-tipos" role="group" aria-label="Tipo de célula"><button class="chip on" data-cel="animal">🐾 Animal</button><button class="chip" data-cel="vegetal">🌿 Vegetal</button><button class="chip" data-cel="procariota">🦠 Bacteria</button></div>
@@ -182,7 +217,7 @@
 
   <!-- ═══ TRANSPORTE ═══ -->
   <section class="sec" id="transporte">
-    <h2><span class="n">06</span> ¿Cómo entran y salen las sustancias?</h2>
+    <h2><span class="n">07</span> ¿Cómo entran y salen las sustancias?</h2>
     <p class="lead">La membrana está hecha de una doble capa de lípidos con proteínas incrustadas, como un mosaico que se mueve. Las sustancias la cruzan de dos maneras: <b>sin gastar energía</b> (transporte pasivo), a favor de la diferencia de concentración, o <b>gastando energía</b> (transporte activo), en contra. Prueba los tres modos de la simulación.</p>
     <div class="card">
       <div class="chips" role="group" aria-label="Tipo de transporte"><button class="chip on" data-tr="simple">💧 Difusión simple</button><button class="chip" data-tr="facil">🚪 Difusión facilitada</button><button class="chip" data-tr="activo">⚡ Transporte activo</button></div>
@@ -207,7 +242,7 @@
 
   <!-- ═══ MEMBRANA ═══ -->
   <section class="sec" id="membrana">
-    <h2><span class="n">07</span> La ósmosis: el viaje del agua</h2>
+    <h2><span class="n">08</span> La ósmosis: el viaje del agua</h2>
     <p class="lead">La membrana es <b>semipermeable</b>: deja pasar el agua con facilidad, pero no todas las sustancias. En la <b>ósmosis</b> el agua pasa de donde hay <b>menos</b> sal (o azúcar) disuelta hacia donde hay <b>más</b>. Mueve el control y observa qué les pasa a un glóbulo rojo y a una célula de planta.</p>
     <div class="fotos" style="margin:12px 0"><div data-foto="k_eritro" data-pie="Glóbulos rojos en agua muy salada (se arrugan), normal y sin sal (se hinchan)"></div><div data-foto="k_plasmo" data-pie="Plasmólisis: en agua salada la célula de cebolla pierde agua y se separa de la pared"></div></div>
     <div class="card">
@@ -227,7 +262,7 @@
 
   <!-- ═══ LABORATORIO: PAPAS ═══ -->
   <section class="sec" id="lab-papa">
-    <h2><span class="n">08</span> Laboratorio virtual: ¿qué tan concentrado es el interior de una papa?</h2>
+    <h2><span class="n">09</span> Laboratorio virtual: ¿qué tan concentrado es el interior de una papa?</h2>
     <p class="lead">Vas a investigar como un científico. Cortas cilindros de papa del mismo tamaño, los pesas, los dejas 24 horas en soluciones de azúcar (sacarosa) con distinta concentración y los vuelves a pesar.</p>
     <div class="pasos" data-titulo="🔬 Indagación" data-alcambiar="pasoPapa">
       <div class="paso" data-t="Pregunta"><h3>1. La pregunta</h3><p>¿Qué le pasa a la masa de un trozo de papa cuando lo dejamos en soluciones de azúcar con distinta concentración? ¿Podemos usar eso para averiguar la concentración del interior de sus células?</p></div>
@@ -240,14 +275,14 @@
 
   <!-- ═══ ENERGÍA ═══ -->
   <section class="sec" id="energia">
-    <h2><span class="n">09</span> La energía de la vida: fotosíntesis y respiración</h2>
+    <h2><span class="n">10</span> La energía de la vida: fotosíntesis y respiración</h2>
     <p class="lead">Todas las células necesitan energía. Las plantas la <b>capturan</b> del Sol con la fotosíntesis y la guardan en la glucosa; luego todas las células, también las de las plantas, la <b>liberan</b> con la respiración celular. Una es casi lo contrario de la otra.</p>
     <div class="fotos mini" style="margin:12px 0"><div data-foto="k_elodea" data-pie="Los cloroplastos: aquí ocurre la fotosíntesis"></div><div data-foto="k_estoma" data-pie="Estomas: los poros de la hoja por donde entra el CO₂ y sale el O₂"></div></div>
     <div class="grid g2">
       <div class="card" style="border-top:6px solid #2e9a5a"><h3>🌞 Fotosíntesis · en el cloroplasto</h3><p style="font-family:var(--cn-mono);font-weight:700;background:#eef8f0;border-radius:10px;padding:8px 10px;margin:8px 0">6 CO₂ + 6 H₂O + luz → C₆H₁₂O₆ + 6 O₂</p><p>Usa dióxido de carbono y agua; produce glucosa y oxígeno. Solo en organismos con clorofila.</p></div>
       <div class="card" style="border-top:6px solid #e07a3f"><h3>🔋 Respiración celular · en la mitocondria</h3><p style="font-family:var(--cn-mono);font-weight:700;background:#fdf1e8;border-radius:10px;padding:8px 10px;margin:8px 0">C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energía (ATP)</p><p>Usa glucosa y oxígeno; libera energía, agua y CO₂. En casi todos los seres vivos, de día y de noche.</p></div>
     </div>
-    <h3 style="margin-top:18px">Las etapas, paso a paso</h3>
+    <h3 style="margin-top:18px">Las etapas, paso a paso <span class="nivel-prof" title="Contenido de profundización para 10.° y 11.°">Profundización 10.°–11.°</span></h3>
     <div class="tabs"><button class="chip on" data-tab="et-foto">🌞 Fotosíntesis</button><button class="chip" data-tab="et-resp">🔋 Respiración</button></div>
     <div class="tab-p" id="et-foto"><div class="pasos" data-titulo="Fotosíntesis">
       <div class="paso" data-t="Luz"><h3>1. Fase luminosa (en los tilacoides)</h3><p>La clorofila absorbe la luz. Con esa energía se rompe el agua (H₂O): se libera <b>oxígeno</b> al aire y se fabrican moléculas cargadas de energía (ATP y NADPH). Solo ocurre con luz.</p></div>
@@ -282,14 +317,14 @@
 
   <!-- ═══ DIVISIÓN CELULAR ═══ -->
   <section class="sec" id="division">
-    <h2><span class="n">10</span> ¿Cómo se divide una célula?</h2>
+    <h2><span class="n">11</span> ¿Cómo se divide una célula?</h2>
     <p class="lead">«Toda célula viene de otra», dijo Virchow. Cómo se copia el ADN y se reparte entre las células hijas lo estudias en su propio módulo.</p>
     <a class="card" href="division.html" style="display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--cn-tx)"><span style="font-size:2.6rem">✂️</span><span><b style="color:var(--cn-brand-d);font-size:1.15rem">Ir a División celular: mitosis y meiosis →</b><br><small style="color:var(--cn-dim)">Cromosomas · ciclo celular · mitosis · meiosis · cáncer y síndrome de Down</small></span></a>
   </section>
 
   <!-- ═══ MEDICINA ═══ -->
   <section class="sec" id="medicina">
-    <h2><span class="n">11</span> La teoría celular en la medicina</h2>
+    <h2><span class="n">12</span> La teoría celular en la medicina</h2>
     <p class="lead">Saber que todo está hecho de células cambió la manera de entender las enfermedades: ya no se buscaban «humores» desequilibrados, sino células enfermas o microorganismos. Voltea las tarjetas.</p>
     <div class="grid g3">
       <div class="flip"><div class="in"><div class="fr"><span class="e">🧫</span><b>Microbiología y vacunas</b><small>toca para voltear</small></div><div class="bk">Pasteur y Koch demostraron que muchas enfermedades las causan microorganismos. Eso impulsó nuevas vacunas (como la de la rabia, de Pasteur), la pasteurización de la leche y, más tarde, los antibióticos.</div></div></div>
@@ -305,7 +340,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=20"></script>
+<script src="bio.js?v=21"></script>
 <script>
 (function(){
 var esc=BIO.esc;
@@ -636,6 +671,33 @@ prT.oninput=priestley;document.querySelectorAll('[data-pr],#pr-luz').forEach(fun
 BIO.clasificar(document.getElementById('clas-mem'),{
   cajas:[{id:'per',titulo:'Permeable'},{id:'sem',titulo:'Semipermeable'},{id:'imp',titulo:'Impermeable'}],
   fichas:[{t:'Pared celular de celulosa',caja:'per',pista:'Es rígida pero porosa: deja pasar agua y sustancias disueltas.'},{t:'Membrana de la célula',caja:'sem'},{t:'Membrana del glóbulo rojo',caja:'sem'},{t:'Membrana interna de la cáscara de huevo',caja:'sem',pista:'Se usa en los laboratorios de ósmosis.'},{t:'Pared de los alvéolos pulmonares',caja:'sem',pista:'Deja pasar oxígeno y CO₂, pero no la sangre.'},{t:'Cutícula cerosa de las hojas',caja:'imp'},{t:'Plumas engrasadas de un pato',caja:'imp'}]});
+})();
+</script>
+<script>
+(function(){
+var S=document.getElementById('mic-svg'),N=['ocular','objetivos','platina','luz','tornillos'];
+function pinta(k){var on=function(n){return N[k]===n;},C=function(n){return on(n)?'#f97316':'#64748b';},F=function(n){return on(n)?'#fed7aa':'#e2e8f0';};
+  var o='<rect x="0" y="0" width="240" height="270" rx="14" fill="#f8fafc"/>';
+  o+='<rect x="40" y="236" width="150" height="20" rx="6" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>';
+  o+='<path d="M160 236 L160 150 Q160 70 112 46" fill="none" stroke="#94a3b8" stroke-width="16" stroke-linecap="round"/>';
+  o+='<rect x="92" y="20" width="22" height="18" rx="3" fill="'+F('ocular')+'" stroke="'+C('ocular')+'" stroke-width="2.5"/>';
+  o+='<rect x="96" y="38" width="14" height="66" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>';
+  o+='<rect x="84" y="104" width="38" height="12" rx="4" fill="'+F('objetivos')+'" stroke="'+C('objetivos')+'" stroke-width="2.5"/>';
+  o+='<rect x="88" y="116" width="8" height="22" fill="'+F('objetivos')+'" stroke="'+C('objetivos')+'" stroke-width="2"/><rect x="99" y="116" width="8" height="28" fill="'+F('objetivos')+'" stroke="'+C('objetivos')+'" stroke-width="2"/><rect x="110" y="116" width="8" height="18" fill="'+F('objetivos')+'" stroke="'+C('objetivos')+'" stroke-width="2"/>';
+  o+='<rect x="58" y="158" width="104" height="10" rx="3" fill="'+F('platina')+'" stroke="'+C('platina')+'" stroke-width="2.5"/><rect x="82" y="152" width="46" height="6" rx="1" fill="#bae6fd" stroke="#0284c7" stroke-width="1.5"/>';
+  o+='<rect x="92" y="172" width="26" height="8" rx="2" fill="'+F('luz')+'" stroke="'+C('luz')+'" stroke-width="2"/><circle cx="105" cy="214" r="12" fill="'+(on('luz')?'#fde047':'#fef9c3')+'" stroke="'+C('luz')+'" stroke-width="2.5"/>';
+  if(on('luz'))o+='<path d="M105 200 L105 150" stroke="#facc15" stroke-width="4" stroke-dasharray="4 3"/>';
+  o+='<circle cx="172" cy="170" r="12" fill="'+F('tornillos')+'" stroke="'+C('tornillos')+'" stroke-width="2.5"/><circle cx="172" cy="200" r="7" fill="'+F('tornillos')+'" stroke="'+C('tornillos')+'" stroke-width="2.5"/>';
+  var et={ocular:[120,30,'ocular'],objetivos:[128,128,'objetivos'],platina:[30,152,'platina'],luz:[88,222,'luz'],tornillos:[188,174,'macro']};
+  var e=et[N[k]];o+='<text x="'+e[0]+'" y="'+e[1]+'" style="font:800 11px Outfit" fill="#c2410c"'+(N[k]==='luz'?' text-anchor="end"':N[k]==='platina'?' text-anchor="start"':'')+'>'+e[2]+'</text>';
+  if(N[k]==='luz')o+='<text x="88" y="180" text-anchor="end" style="font:800 11px Outfit" fill="#c2410c">diafragma</text>';
+  if(N[k]==='tornillos')o+='<text x="183" y="212" style="font:800 11px Outfit" fill="#c2410c">micro</text>';
+  S.innerHTML=o;}
+window.pasoMicro=function(k){pinta(k);};pinta(0);
+var R=document.getElementById('mic-res');
+function calc(ob){R.innerHTML='Ocular <b>10×</b> × objetivo <b>'+ob+'×</b> = <b style="color:var(--cn-brand-d);font-size:1.2em">'+(10*ob)+'×</b>. '+({4:'Ves la capa de cebolla completa, con muchas células pequeñas.',10:'Ya se distinguen las paredes de cada célula.',40:'Se ven los núcleos teñidos dentro de las células.',100:'Solo con aceite de inmersión: para bacterias y detalles muy finos.'}[ob]);
+  document.querySelectorAll('#mic-obj .chip').forEach(function(b){b.classList.toggle('on',+b.getAttribute('data-o')===ob);});}
+document.querySelectorAll('#mic-obj .chip').forEach(function(b){b.onclick=function(){calc(+b.getAttribute('data-o'));};});calc(4);
 })();
 </script>
 <script src="narracion.js?v=14"></script>
