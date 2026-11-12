@@ -196,6 +196,7 @@ function traduccion(paso,u){
 }
 
 /* ═════════ Pasos ═════════ */
+var PROF=[0,1,2,3,7]; // replicación y procesamiento del ARNm: profundización 10.°–11.°
 var CAPS=[{n:'Replicación',e:'🧬',lugar:'núcleo',f:replicacion,vb:[0,78,680,302]},{n:'Transcripción',e:'📝',lugar:'núcleo',f:transcripcion,vb:[0,95,680,330]},{n:'Traducción',e:'🔧',lugar:'citoplasma',f:traduccion,vb:[0,50,680,375]}];
 var PASOS=[
  [0,0,2500,'El ADN: dos cadenas unidas','El ADN está en el núcleo. Tiene dos cadenas unidas por sus bases, que siempre se emparejan igual: <b>A con T</b> y <b>C con G</b>. Antes de que la célula se divida, el ADN se copia completo: eso es la <b>replicación</b>.'],
@@ -231,7 +232,7 @@ function dibujar(){
   S.setAttribute('viewBox',vb.join(' '));
   S.innerHTML=cap.f(P[1],u);
   var enCap=PASOS.filter(function(q){return q[0]===P[0];}).length,k=PASOS.slice(0,si+1).filter(function(q){return q[0]===P[0];}).length;
-  raiz.querySelector('.dg-num').textContent=cap.e+' '+cap.n+' · paso '+k+' de '+enCap+'  ('+(si+1)+' de '+PASOS.length+' en total)';
+  raiz.querySelector('.dg-num').innerHTML=cap.e+' '+cap.n+' · paso '+k+' de '+enCap+'  ('+(si+1)+' de '+PASOS.length+' en total)'+(PROF.indexOf(si)>=0?' <span class="nivel-prof">Profundización 10.°–11.°</span>':'');
   raiz.querySelector('.dg-info h4').innerHTML=P[3];raiz.querySelector('.dg-info p').innerHTML=P[4];
   raiz.querySelectorAll('[data-cap]').forEach(function(b){b.classList.toggle('on',+b.getAttribute('data-cap')===P[0]);});
   PUN.querySelectorAll('.dg-pt').forEach(function(b,i){b.classList.toggle('on',i===si);b.classList.toggle('visto',i<si);});

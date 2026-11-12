@@ -6,6 +6,38 @@
 
 ---
 
+## Versión 2.43 — 13 de noviembre de 2026 · Genética: sin explicaciones repetidas sobre el ARN
+
+**Contexto.** Quedaban dos animaciones pequeñas en la sección 9 («El ARN y
+la copia del ADN») que repetían lo que ahora explica la animación grande de
+la sección 10. El docente pidió decidir lo más pedagógico.
+
+**Decisión (principios de Mayer).** Coherencia y redundancia: no explicar
+lo mismo dos veces en secciones vecinas. Preentrenamiento: la sección 9 se
+queda con los conceptos (los tres tipos de ARN) que preparan la animación.
+Práctica de recuperación: las preguntas van justo después de ver el proceso.
+
+**Cambios**
+- `genetica.html`:
+  - Sección 9 renombrada «Los tres tipos de ARN» (menú: «Tipos de ARN»).
+    Conserva las tres tarjetas, agrega un puente hacia la sección 10 y una
+    pregunta nueva: «¿Qué tipo de ARN lleva los aminoácidos hasta el
+    ribosoma?», con la explicación de cada error.
+  - Se quitaron las animaciones «El trabajo del ARN mensajero» y «¿Cómo se
+    copia el ADN?», con su código.
+  - Sus dos preguntas («¿Por qué la célula necesita el ARN mensajero…?» y
+    «¿Qué ARN participa en la replicación?») pasaron a quedar justo después
+    de la animación «Del gen a la proteína, paso a paso».
+- `dogma-anim.js` (v2): los pasos de replicación y el de procesamiento del
+  ARNm muestran la marca «Profundización 10.°–11.°», como estaban antes.
+- `README.md`: descripción de Genética actualizada.
+- `sw.js`: `CACHE` → `bionom-v56`.
+
+**Pruebas.** Playwright: sin errores en las 16 páginas; Genética queda con 7
+preguntas de chequeo.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.42 — 13 de noviembre de 2026 · Del gen a la proteína, paso a paso (replicación, transcripción y traducción)
 
 **Contexto.** El docente pidió quitar el traductor de letras de «Del gen a la
