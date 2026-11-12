@@ -6,6 +6,87 @@
 
 ---
 
+## Versión 2.27 — 12 de noviembre de 2026 · Laboratorio de microscopía, orden de secciones, chequeos y conclusiones
+
+**Contexto.** El docente pidió cuatro cosas de las pendientes de la auditoría
+de secuencia (`AUDITORIA_SECUENCIA_6-9.md`):
+- una simulación completa tipo laboratorio en la sección del microscopio;
+- reordenar las secciones de Reproducción y Evolución;
+- más chequeos en Reproducción;
+- el recuadro de conclusión en los laboratorios.
+
+**1. Laboratorio virtual de microscopía (`microlab.js`, nuevo, en `celula.html`).**
+- **Muestras:** epidermis de cebolla (sin teñir, lugol o azul de metileno),
+  células de la mejilla, Elodea, frotis de sangre y bacterias del yogur.
+- **Procedimiento completo:**
+  - preparar y poner la lámina;
+  - encender la luz y graduar el diafragma (las células sin teñir se ven
+    mejor con el diafragma más cerrado);
+  - objetivos de 4×, 10×, 40× y 100×;
+  - tornillo macrométrico y micrométrico;
+  - aceite de inmersión a 100×.
+- **Realismo:**
+  - el campo visual real de cada objetivo (4500, 1800, 450 y 180 µm), con
+    las células dibujadas a escala en micrómetros;
+  - el desenfoque crece con el aumento;
+  - usar el tornillo grande con 40× o 100× rompe la lámina;
+  - sin aceite, 100× se ve borroso.
+- **Retos y registro:** 5 retos que se marcan solos (cebolla con lugol,
+  mejilla con azul, cloroplastos de la Elodea, glóbulo blanco, bacterias a
+  1000×) y una tabla de observaciones que se llena sola.
+- **Medición:** el estudiante cuenta células a lo largo del campo de 1800 µm
+  y calcula su tamaño (unos 250 µm).
+- `microlab.js` agregado a `ASSETS` de `sw.js`.
+
+**2. Orden de las secciones** (el orden recomendado por la auditoría). Se
+movieron las secciones completas, con el índice «En esta página», la
+numeración y los botones «Anterior/Siguiente» al final. Se comprobó que no se
+perdió ninguna palabra.
+- **Reproducción:** tipos → grupos → flor → sistema humano → ciclo →
+  embarazo → desarrollo embrionario → anticonceptivos → ITS → natalidad.
+- **Evolución:** ideas → origen del universo y de la vida → año de la
+  Tierra → extinciones → jirafas → simulación → pinzones → selección
+  artificial → evidencias → ballenas → evolución humana → endémicas → tipos de
+  selección y variación (profundización).
+
+**3. Chequeos en Reproducción:** de 4 a 11, con un chequeo en cada sección
+que no tenía:
+- clones del banano;
+- esporas del helecho;
+- el ovario se vuelve fruto;
+- el espermatozoide define el sexo;
+- la LH y la ovulación;
+- dónde ocurre la fecundación;
+- ITS sin síntomas.
+
+**4. «Escribe tu conclusión» (componente nuevo en `bio.js` y `bio.css`).**
+- Recuadro con nombre, curso, hipótesis, resultados, conclusión y «lo haría
+  distinto».
+- Se guarda solo en el equipo (`bionom_conclusion_<lab>`).
+- Botón para imprimir o guardar en PDF un informe con la tabla de datos del
+  laboratorio.
+- Uso: `<div class="conclusion" data-lab="…" data-tabla="id" data-titulo="…">`.
+- Está en el laboratorio de la papa, la campana de Priestley, la
+  microscopía y la levadura.
+
+**Pruebas.** Con Playwright en computador y en Pixel 7:
+- la microscopía completa sin errores: los 5 retos, la lámina rota, 100× sin
+  y con aceite, y la medición de 257 µm;
+- la conclusión se conserva al recargar y el informe se abre para imprimir;
+- los 11 chequeos de Reproducción tienen la respuesta correcta sin
+  «data-por»;
+- las 15 páginas sin errores ni desbordes.
+
+**Versiones.** `bio.js?v=22`, `bio.css?v=23`, `microlab.js?v=2`, `sw.js` →
+`bionom-v41`.
+
+**Pendiente.**
+- Selector de grado (`BIO_GRADO`) y guía de recorrido por grado.
+- La tabla de observaciones del microscopio no se guarda al recargar la
+  página: lo escrito en la conclusión sí se guarda.
+
+---
+
 ## Versión 2.26 — 12 de noviembre de 2026 · Orden y profundidad para 6.° a 9.°
 
 **Contexto.** El docente pidió que el auditor experto en biología y en los

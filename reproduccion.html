@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=22">
+<link rel="stylesheet" href="bio.css?v=23">
 <style>
 .grupos-r{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
 .grupos-r button{border:2px solid var(--cn-brd);background:#fff;border-radius:14px;padding:8px 4px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--cn-tx)}
@@ -71,17 +71,15 @@
     <strong>En esta página</strong>
     <a href="#tipos">🧬 Tipos</a>
     <a href="#grupos">🌍 En cada grupo</a>
-    <a href="#desarrollo">🥚 Desarrollo embrionario</a>
     <a href="#flor">🌺 La flor</a>
     <a href="#humano">🧑 Sistema reproductor</a>
     <a href="#ciclo">📅 Ciclo menstrual</a>
     <a href="#embarazo">🤰 Embarazo</a>
+    <a href="#desarrollo">🥚 Desarrollo embrionario</a>
     <a href="#anticoncepcion">🛡️ Anticoncepción</a>
-    <a href="#natalidad">📊 Natalidad</a>
     <a href="#its">⚕️ ITS</a>
+    <a href="#natalidad">📊 Natalidad</a>
   </nav>
-
-  <!-- ═══ TIPOS ═══ -->
   <section class="sec" id="tipos">
     <h2><span class="n">01</span> Reproducción asexual y sexual</h2>
     <p class="lead">Hay dos estrategias, y cada una tiene ventajas.</p>
@@ -104,9 +102,12 @@
       <div class="card"><h3>🤝 Fecundación interna</h3><p>Los gametos se unen dentro del cuerpo de la hembra: insectos, reptiles, aves y mamíferos. Se producen menos gametos, pero es más seguro y permite vivir lejos del agua.</p></div>
     </div>
     <div class="dato">Un organismo <b>hermafrodita</b> tiene órganos masculinos y femeninos a la vez, como la lombriz de tierra, los caracoles y muchas plantas con flores. Aun así, la mayoría se cruza con otro individuo para tener más variabilidad.</div>
+      <div class="chequeo" data-ok="0" data-exp="Los clones tienen los mismos genes: si uno es débil ante el hongo, todos lo son. Esa es la gran desventaja de la reproducción asexual: no hay variabilidad.">
+      <div class="q">En 2019 llegó a La Guajira un hongo que ataca al banano. Como las plantas de un cultivo se siembran por hijuelos, todas son clones. Si el hongo infecta a una planta, ¿qué es lo más probable?</div>
+      <div class="ops"><button class="op">Que muchas se enfermen, porque todas tienen los mismos genes.</button><button class="op" data-por="La reproducción asexual no hace a las plantas más fuertes: las deja a todas iguales.">Que ninguna se enferme, porque las plantas asexuales son más fuertes.</button><button class="op" data-por="La edad no protege: al ser clones, todas tienen la misma debilidad.">Que se enfermen solo las más viejas.</button></div>
+    </div>
   </section>
 
-  <!-- ═══ GRUPOS ═══ -->
   <section class="sec" id="grupos">
     <h2><span class="n">02</span> ¿Cómo se reproduce cada grupo?</h2>
     <p class="lead">Cada reino y cada filo tiene sus estrategias. Toca un grupo y mira la animación paso a paso.</p>
@@ -116,11 +117,95 @@
     </div>
     <h3 style="margin-top:18px">🎯 Clasifica</h3>
     <div class="card" id="clas-tipo"></div>
+      <div class="chequeo" data-ok="1" data-exp="Los helechos forman esporas en el envés de sus hojas. Necesitan agua para que el gameto masculino nade hasta el femenino.">
+      <div class="q">¿Cómo se reproducen los helechos?</div>
+      <div class="ops"><button class="op" data-por="Los helechos no tienen flores ni semillas.">Por semillas que caen de sus flores.</button><button class="op">Por esporas que se forman en el envés de las hojas.</button><button class="op" data-por="La bipartición es de organismos unicelulares; el helecho es pluricelular.">Solo por bipartición, como las bacterias.</button></div>
+    </div>
   </section>
 
-  <!-- ═══ DESARROLLO EMBRIONARIO ═══ -->
+  <section class="sec" id="flor">
+    <h2><span class="n">03</span> La flor: el órgano reproductor de las plantas</h2>
+    <p class="lead">Toca cada parte de la flor. Luego mira, con un caso real, cómo una flor de café se convierte en fruto.</p>
+    <div class="anat">
+      <div class="fig"><svg id="flor-svg" viewBox="0 0 400 320" role="group" aria-label="Partes de la flor"></svg></div>
+      <div class="det" id="flor-t" aria-live="polite"><div class="vacio">👆 Toca una parte de la flor.</div></div>
+    </div>
+    <h3 style="margin-top:18px">De la flor al fruto: un caso real, el café</h3>
+    <p>El café que se cultiva en el Eje Cafetero, Huila, Cauca, Nariño o la Sierra Nevada pasa por estos pasos. Mira la animación.</p>
+    <div class="lado" style="margin-top:10px">
+      <div data-anim="cafe"></div>
+      <div class="card"><ol>
+        <li><b>Floración:</b> unos días después de las lluvias, el cafeto florece.</li>
+        <li><b>Polinización:</b> el polen llega al estigma; en el café arábica la misma flor se poliniza, con ayuda de abejas.</li>
+        <li><b>Fecundación:</b> el tubo polínico lleva los gametos masculinos hasta los óvulos.</li>
+        <li><b>Fruto:</b> el ovario se transforma en la cereza, que madura en unos 8 meses.</li>
+        <li><b>Semillas:</b> los óvulos fecundados son los granos de café; de ellos nacen nuevas plantas.</li></ol>
+        <div class="dato col" style="margin-bottom:0">La <b>flor</b> se vuelve <b>fruto</b> (la cereza) y los <b>óvulos</b> se vuelven <b>semillas</b> (los granos). Lo mismo pasa en el aguacate, el mango o la mazorca: cada grano de maíz es un fruto con su semilla.</div>
+      </div>
+    </div>
+      <div class="chequeo" data-ok="2" data-exp="Después de la fecundación, el ovario crece y se vuelve fruto, y los óvulos fecundados se vuelven semillas, como la cereza y los granos de café.">
+      <div class="q">¿Qué parte de la flor se transforma en el fruto?</div>
+      <div class="ops"><button class="op" data-por="Los pétalos atraen a los polinizadores y luego se caen.">Los pétalos.</button><button class="op" data-por="El estambre produce el polen; no se vuelve fruto.">El estambre.</button><button class="op">El ovario.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="humano">
+    <h2><span class="n">04</span> El sistema reproductor humano</h2>
+    <p class="lead">Durante la <b>pubertad</b> (más o menos entre los 9 y los 15 años) las hormonas sexuales hacen madurar el sistema reproductor. Cada persona tiene su propio ritmo y todos los cambios son normales. Toca cada órgano.</p>
+    <div class="chips" style="margin-bottom:10px"><button class="chip on" data-sx="fem">♀ Sistema femenino</button><button class="chip" data-sx="mas">♂ Sistema masculino</button></div>
+    <div class="anat">
+      <div class="fig"><svg id="sr-svg" viewBox="0 0 400 320" role="group" aria-label="Sistema reproductor"></svg><div class="ayuda">Esquema en vista frontal</div></div>
+      <div class="det" id="sr-t" aria-live="polite"></div>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><h3>♀ Gametos femeninos</h3><p>Al nacer, los ovarios ya tienen cerca de un millón de óvulos inmaduros. Desde la pubertad, normalmente madura <b>un óvulo por mes</b> (ovulación). Cada óvulo lleva 23 cromosomas, uno de ellos un <b>X</b>.</p></div>
+      <div class="card"><h3>♂ Gametos masculinos</h3><p>Desde la pubertad, los testículos producen <b>millones de espermatozoides cada día</b>. Cada uno lleva 23 cromosomas: la mitad lleva un <b>X</b> y la otra mitad un <b>Y</b>. Por eso el espermatozoide define el sexo cromosómico del bebé.</p></div>
+    </div>
+      <div class="chequeo" data-ok="0" data-exp="Todos los óvulos llevan un cromosoma X. La mitad de los espermatozoides lleva X (XX: sexo femenino) y la otra mitad lleva Y (XY: sexo masculino).">
+      <div class="q">¿Qué gameto define el sexo cromosómico del bebé?</div>
+      <div class="ops"><button class="op">El espermatozoide, porque puede llevar X o Y.</button><button class="op" data-por="El óvulo siempre lleva un cromosoma X: no puede decidir el sexo.">El óvulo, porque es más grande.</button><button class="op" data-por="El óvulo siempre aporta X; la diferencia la pone el espermatozoide.">Los dos por igual.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="ciclo">
+    <h2><span class="n">05</span> El ciclo menstrual</h2>
+    <p class="lead">Cada mes, las hormonas preparan al útero para un posible embarazo. Un ciclo dura en promedio <b>28 días</b>, aunque es normal que varíe entre 21 y 35, sobre todo en los primeros años. Mueve el control día por día.</p>
+    <div class="card">
+      <canvas id="ciclo-c" width="900" height="260" aria-label="Hormonas y grosor del endometrio durante el ciclo"></canvas>
+      <input type="range" id="dia" min="1" max="28" value="1" style="width:100%;margin-top:8px" aria-label="Día del ciclo">
+      <div class="fase-dia" id="dia-t" aria-live="polite"></div>
+    </div>
+    <div class="dato">La menstruación es un proceso natural y saludable. Si es muy dolorosa, muy abundante o se ausenta por varios meses, vale la pena consultar al servicio de salud.</div>
+      <div class="chequeo" data-ok="1" data-exp="Hacia la mitad del ciclo, un pico de LH hace que el folículo se rompa y suelte el óvulo hacia la trompa de Falopio.">
+      <div class="q">¿Qué hormona hace que el folículo se rompa y suelte el óvulo (ovulación)?</div>
+      <div class="ops"><button class="op" data-por="El estrógeno engrosa el endometrio en la primera mitad del ciclo.">El estrógeno.</button><button class="op">La LH (hormona luteinizante).</button><button class="op" data-por="La progesterona mantiene el endometrio después de la ovulación.">La progesterona.</button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="embarazo">
+    <h2><span class="n">06</span> Fecundación, embarazo y parto</h2>
+    <div class="pasos" data-titulo="De la fecundación al parto">
+      <div class="paso" data-t="Fecundación"><div class="lado" style="align-items:center"><div><h3>1. Fecundación</h3><p>Ocurre en la <b>trompa de Falopio</b>: de millones de espermatozoides solo uno entra al óvulo. Se forma el <b>cigoto</b>, con 46 cromosomas.</p></div><div data-emb="fecundacion"></div></div></div>
+      <div class="paso" data-t="Implantación"><div class="lado" style="align-items:center"><div><h3>2. Implantación</h3><p>El cigoto se divide por mitosis mientras baja hacia el útero. Hacia el día 7 se implanta en el endometrio. Ahí empieza el embarazo y se suspende la menstruación.</p></div><div data-emb="implantacion"></div></div></div>
+      <div class="paso" data-t="Placenta"><div class="lado" style="align-items:center"><div><h3>3. Placenta y cordón umbilical</h3><p>Se forman la <b>placenta</b>, que intercambia nutrientes, oxígeno y desechos entre la madre y el bebé sin que sus sangres se mezclen, y el <b>cordón umbilical</b>. El bebé flota en el líquido amniótico.</p></div><div data-emb="placenta"></div></div></div>
+      <div class="paso" data-t="Parto"><div class="lado" style="align-items:center"><div><h3>4. Parto</h3><p>Hacia la semana 40, el útero se contrae, el cuello uterino se dilata y el bebé sale. Después sale la placenta. La leche materna es el mejor alimento durante los primeros 6 meses.</p></div><div data-emb="parto"></div></div></div>
+    </div>
+    <h3 style="margin-top:18px">Semana a semana</h3>
+    <p style="font-size:.92rem;color:var(--cn-dim)">Las semanas se cuentan como lo hacen los médicos: desde el primer día de la última menstruación, unas 2 semanas antes de la fecundación. Por eso el embarazo dura unas 40 semanas (38 desde la fecundación).</p>
+    <div class="card">
+      <input type="range" id="sem" min="0" max="9" value="0" style="width:100%" aria-label="Semana del embarazo">
+      <div id="sem-t" class="lado" style="margin-top:10px;align-items:center" aria-live="polite"></div>
+    </div>
+    <div class="dato ojo">El alcohol, el cigarrillo y otras drogas pasan a través de la placenta y pueden causar daños graves al bebé, sobre todo en las primeras semanas, cuando se forman los órganos. Por eso el control prenatal empieza lo antes posible.</div>
+    <div class="aviso-s">💬 Un embarazo en la adolescencia tiene más riesgos para la salud de la madre y del bebé y puede cambiar el proyecto de vida. Conocer el cuerpo y los métodos anticonceptivos ayuda a decidir de manera informada y responsable.</div>
+      <div class="chequeo" data-ok="2" data-exp="El espermatozoide se encuentra con el óvulo en la trompa de Falopio. El cigoto baja hacia el útero mientras se divide y hacia el día 7 se implanta.">
+      <div class="q">¿Dónde ocurre normalmente la fecundación?</div>
+      <div class="ops"><button class="op" data-por="En el útero se implanta el embrión unos días después, pero la fecundación ocurre antes.">En el útero.</button><button class="op" data-por="En el ovario madura el óvulo; luego sale hacia la trompa.">En el ovario.</button><button class="op">En la trompa de Falopio.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="desarrollo">
-    <h2><span class="n">03</span> El desarrollo embrionario</h2>
+    <h2><span class="n">07</span> El desarrollo embrionario</h2>
     <p class="lead">Después de la fecundación, el cigoto se divide una y otra vez hasta formar un embrión. Las primeras etapas son muy parecidas en todos los animales.</p>
     <div class="lado">
       <div data-anim="embrion"></div>
@@ -150,76 +235,6 @@
     </div>
   </section>
 
-  <!-- ═══ FLOR ═══ -->
-  <section class="sec" id="flor">
-    <h2><span class="n">04</span> La flor: el órgano reproductor de las plantas</h2>
-    <p class="lead">Toca cada parte de la flor. Luego mira, con un caso real, cómo una flor de café se convierte en fruto.</p>
-    <div class="anat">
-      <div class="fig"><svg id="flor-svg" viewBox="0 0 400 320" role="group" aria-label="Partes de la flor"></svg></div>
-      <div class="det" id="flor-t" aria-live="polite"><div class="vacio">👆 Toca una parte de la flor.</div></div>
-    </div>
-    <h3 style="margin-top:18px">De la flor al fruto: un caso real, el café</h3>
-    <p>El café que se cultiva en el Eje Cafetero, Huila, Cauca, Nariño o la Sierra Nevada pasa por estos pasos. Mira la animación.</p>
-    <div class="lado" style="margin-top:10px">
-      <div data-anim="cafe"></div>
-      <div class="card"><ol>
-        <li><b>Floración:</b> unos días después de las lluvias, el cafeto florece.</li>
-        <li><b>Polinización:</b> el polen llega al estigma; en el café arábica la misma flor se poliniza, con ayuda de abejas.</li>
-        <li><b>Fecundación:</b> el tubo polínico lleva los gametos masculinos hasta los óvulos.</li>
-        <li><b>Fruto:</b> el ovario se transforma en la cereza, que madura en unos 8 meses.</li>
-        <li><b>Semillas:</b> los óvulos fecundados son los granos de café; de ellos nacen nuevas plantas.</li></ol>
-        <div class="dato col" style="margin-bottom:0">La <b>flor</b> se vuelve <b>fruto</b> (la cereza) y los <b>óvulos</b> se vuelven <b>semillas</b> (los granos). Lo mismo pasa en el aguacate, el mango o la mazorca: cada grano de maíz es un fruto con su semilla.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ SISTEMA REPRODUCTOR HUMANO ═══ -->
-  <section class="sec" id="humano">
-    <h2><span class="n">05</span> El sistema reproductor humano</h2>
-    <p class="lead">Durante la <b>pubertad</b> (más o menos entre los 9 y los 15 años) las hormonas sexuales hacen madurar el sistema reproductor. Cada persona tiene su propio ritmo y todos los cambios son normales. Toca cada órgano.</p>
-    <div class="chips" style="margin-bottom:10px"><button class="chip on" data-sx="fem">♀ Sistema femenino</button><button class="chip" data-sx="mas">♂ Sistema masculino</button></div>
-    <div class="anat">
-      <div class="fig"><svg id="sr-svg" viewBox="0 0 400 320" role="group" aria-label="Sistema reproductor"></svg><div class="ayuda">Esquema en vista frontal</div></div>
-      <div class="det" id="sr-t" aria-live="polite"></div>
-    </div>
-    <div class="grid g2" style="margin-top:12px">
-      <div class="card"><h3>♀ Gametos femeninos</h3><p>Al nacer, los ovarios ya tienen cerca de un millón de óvulos inmaduros. Desde la pubertad, normalmente madura <b>un óvulo por mes</b> (ovulación). Cada óvulo lleva 23 cromosomas, uno de ellos un <b>X</b>.</p></div>
-      <div class="card"><h3>♂ Gametos masculinos</h3><p>Desde la pubertad, los testículos producen <b>millones de espermatozoides cada día</b>. Cada uno lleva 23 cromosomas: la mitad lleva un <b>X</b> y la otra mitad un <b>Y</b>. Por eso el espermatozoide define el sexo cromosómico del bebé.</p></div>
-    </div>
-  </section>
-
-  <!-- ═══ CICLO MENSTRUAL ═══ -->
-  <section class="sec" id="ciclo">
-    <h2><span class="n">06</span> El ciclo menstrual</h2>
-    <p class="lead">Cada mes, las hormonas preparan al útero para un posible embarazo. Un ciclo dura en promedio <b>28 días</b>, aunque es normal que varíe entre 21 y 35, sobre todo en los primeros años. Mueve el control día por día.</p>
-    <div class="card">
-      <canvas id="ciclo-c" width="900" height="260" aria-label="Hormonas y grosor del endometrio durante el ciclo"></canvas>
-      <input type="range" id="dia" min="1" max="28" value="1" style="width:100%;margin-top:8px" aria-label="Día del ciclo">
-      <div class="fase-dia" id="dia-t" aria-live="polite"></div>
-    </div>
-    <div class="dato">La menstruación es un proceso natural y saludable. Si es muy dolorosa, muy abundante o se ausenta por varios meses, vale la pena consultar al servicio de salud.</div>
-  </section>
-
-  <!-- ═══ EMBARAZO ═══ -->
-  <section class="sec" id="embarazo">
-    <h2><span class="n">07</span> Fecundación, embarazo y parto</h2>
-    <div class="pasos" data-titulo="De la fecundación al parto">
-      <div class="paso" data-t="Fecundación"><div class="lado" style="align-items:center"><div><h3>1. Fecundación</h3><p>Ocurre en la <b>trompa de Falopio</b>: de millones de espermatozoides solo uno entra al óvulo. Se forma el <b>cigoto</b>, con 46 cromosomas.</p></div><div data-emb="fecundacion"></div></div></div>
-      <div class="paso" data-t="Implantación"><div class="lado" style="align-items:center"><div><h3>2. Implantación</h3><p>El cigoto se divide por mitosis mientras baja hacia el útero. Hacia el día 7 se implanta en el endometrio. Ahí empieza el embarazo y se suspende la menstruación.</p></div><div data-emb="implantacion"></div></div></div>
-      <div class="paso" data-t="Placenta"><div class="lado" style="align-items:center"><div><h3>3. Placenta y cordón umbilical</h3><p>Se forman la <b>placenta</b>, que intercambia nutrientes, oxígeno y desechos entre la madre y el bebé sin que sus sangres se mezclen, y el <b>cordón umbilical</b>. El bebé flota en el líquido amniótico.</p></div><div data-emb="placenta"></div></div></div>
-      <div class="paso" data-t="Parto"><div class="lado" style="align-items:center"><div><h3>4. Parto</h3><p>Hacia la semana 40, el útero se contrae, el cuello uterino se dilata y el bebé sale. Después sale la placenta. La leche materna es el mejor alimento durante los primeros 6 meses.</p></div><div data-emb="parto"></div></div></div>
-    </div>
-    <h3 style="margin-top:18px">Semana a semana</h3>
-    <p style="font-size:.92rem;color:var(--cn-dim)">Las semanas se cuentan como lo hacen los médicos: desde el primer día de la última menstruación, unas 2 semanas antes de la fecundación. Por eso el embarazo dura unas 40 semanas (38 desde la fecundación).</p>
-    <div class="card">
-      <input type="range" id="sem" min="0" max="9" value="0" style="width:100%" aria-label="Semana del embarazo">
-      <div id="sem-t" class="lado" style="margin-top:10px;align-items:center" aria-live="polite"></div>
-    </div>
-    <div class="dato ojo">El alcohol, el cigarrillo y otras drogas pasan a través de la placenta y pueden causar daños graves al bebé, sobre todo en las primeras semanas, cuando se forman los órganos. Por eso el control prenatal empieza lo antes posible.</div>
-    <div class="aviso-s">💬 Un embarazo en la adolescencia tiene más riesgos para la salud de la madre y del bebé y puede cambiar el proyecto de vida. Conocer el cuerpo y los métodos anticonceptivos ayuda a decidir de manera informada y responsable.</div>
-  </section>
-
-  <!-- ═══ ANTICONCEPCIÓN ═══ -->
   <section class="sec" id="anticoncepcion">
     <h2><span class="n">08</span> Métodos anticonceptivos</h2>
     <p class="lead">Los métodos anticonceptivos permiten decidir si tener hijos y cuándo. Funcionan de distintas maneras: impiden que el espermatozoide llegue al óvulo o impiden la ovulación. Las barras muestran la <b>efectividad con el uso típico</b> (como los usa la gente en la vida real, con olvidos y errores). Toca uno.</p>
@@ -232,9 +247,22 @@
     </div>
   </section>
 
-  <!-- ═══ ITS ═══ -->
+  <section class="sec" id="its">
+    <h2><span class="n">09</span> Infecciones de transmisión sexual (ITS)</h2>
+    <p class="lead">Las ITS se transmiten por contacto sexual y algunas también por la sangre o de la madre al bebé. Las causan virus, bacterias, protozoos u hongos. Muchas <b>no dan síntomas</b> al principio, por eso es importante consultar y hacerse pruebas.</p>
+    <div class="chips" id="its-f" style="margin-bottom:10px"><button class="chip on" data-a="todas">Todas</button><button class="chip" data-a="virus">🦠 Virus</button><button class="chip" data-a="bacteria">🧫 Bacterias</button><button class="chip" data-a="protozoo">🔬 Protozoos</button></div>
+    <div class="its" id="its-g"></div>
+    <h3 style="margin-top:18px">¿Mito o realidad?</h3>
+    <div class="card" id="mitos"></div>
+    <div class="clave">Prevención: información, <b>condón</b> en todas las relaciones, <b>vacunas</b> (VPH y hepatitis B), pruebas periódicas, no compartir agujas y consultar ante cualquier síntoma. Las ITS por bacterias y protozoos se curan con tratamiento; las causadas por virus se controlan, y algunas se previenen con vacunas.</div>
+      <div class="chequeo" data-ok="0" data-exp="Muchas ITS no dan síntomas al principio. Por eso se recomienda el condón en todas las relaciones, las vacunas y hacerse pruebas.">
+      <div class="q">Una persona no tiene ningún síntoma. ¿Puede tener una ITS?</div>
+      <div class="ops"><button class="op">Sí: muchas ITS no dan síntomas al principio.</button><button class="op" data-por="Muchas ITS, como el VPH o la clamidia, no dan síntomas al principio y se pueden transmitir.">No: si no hay síntomas, no hay infección.</button><button class="op" data-por="Las ITS no dependen de la edad.">Solo si es mayor de edad.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="natalidad">
-    <h2><span class="n">09</span> La natalidad y las poblaciones</h2>
+    <h2><span class="n">10</span> La natalidad y las poblaciones</h2>
     <p class="lead">El número de hijos que tienen en promedio las mujeres de un país (tasa de fecundidad) cambia toda la población. En Colombia pasó de cerca de 7 hijos por mujer en los años sesenta a menos de 2 hoy, gracias a la educación, la vida en las ciudades y los métodos anticonceptivos. Mueve el control.</p>
     <div class="card lado" style="align-items:center">
       <svg id="pir-svg" viewBox="0 0 300 220" role="img" aria-label="Pirámide de población"></svg>
@@ -253,23 +281,13 @@
       <div class="q">¿Qué consecuencia tiene el control de la natalidad en una población?</div>
       <div class="ops"><button class="op">Cambia la estructura por edades: menos niños y más adultos mayores.</button><button class="op" data-por="No cambia el sexo de los bebés.">Hace que nazcan más mujeres que hombres.</button><button class="op" data-por="Influye en el número de nacimientos, no en la duración de la vida.">Hace que las personas vivan menos.</button></div>
     </div>
-  </section>
-
-  <section class="sec" id="its">
-    <h2><span class="n">10</span> Infecciones de transmisión sexual (ITS)</h2>
-    <p class="lead">Las ITS se transmiten por contacto sexual y algunas también por la sangre o de la madre al bebé. Las causan virus, bacterias, protozoos u hongos. Muchas <b>no dan síntomas</b> al principio, por eso es importante consultar y hacerse pruebas.</p>
-    <div class="chips" id="its-f" style="margin-bottom:10px"><button class="chip on" data-a="todas">Todas</button><button class="chip" data-a="virus">🦠 Virus</button><button class="chip" data-a="bacteria">🧫 Bacterias</button><button class="chip" data-a="protozoo">🔬 Protozoos</button></div>
-    <div class="its" id="its-g"></div>
-    <h3 style="margin-top:18px">¿Mito o realidad?</h3>
-    <div class="card" id="mitos"></div>
-    <div class="clave">Prevención: información, <b>condón</b> en todas las relaciones, <b>vacunas</b> (VPH y hepatitis B), pruebas periódicas, no compartir agujas y consultar ante cualquier síntoma. Las ITS por bacterias y protozoos se curan con tratamiento; las causadas por virus se controlan, y algunas se previenen con vacunas.</div>
     <div class="sig"><a href="nutricion.html"><small>← Anterior</small><b>🍎 Nutrición y salud</b></a><a class="der" href="genetica.html"><small>Siguiente →</small><b>🧬 Genética</b></a></div>
   </section>
 </main>
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=21"></script>
+<script src="bio.js?v=22"></script>
 <script src="cuerpo.js?v=13"></script>
 <script src="repro-anim.js?v=9"></script>
 <script src="embrion-fig.js?v=2"></script>

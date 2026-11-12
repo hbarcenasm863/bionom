@@ -313,3 +313,15 @@ input[type=range]{touch-action:none}
 
 /* Distintivo de contenido de profundización (10.°–11.°), auditoría de secuencia 6.°–9.° */
 .nivel-prof{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:999px;background:#ede9fe;color:#5b21b6;font-size:.72rem;font-weight:700;vertical-align:middle;letter-spacing:0;font-family:Outfit,system-ui,sans-serif}
+
+/* Recuadro «Escribe tu conclusión» (versión 2.27) */
+.concl{margin-top:14px;border-left:6px solid var(--cn-brand)}
+.concl-ayuda{font-size:.88rem;color:var(--cn-dim);margin:2px 0 8px}
+.concl-fila{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.concl-fila label{display:flex;align-items:center;gap:6px;font-weight:700;font-size:.9rem}
+.concl input[type=text],.concl textarea{font:inherit;border:1.5px solid var(--cn-brd);border-radius:10px;padding:8px 10px;width:100%;background:#fff}
+.concl-c{display:block;margin-top:8px}
+.concl-c b{display:block;color:var(--cn-brand-d)}
+.concl-c span{display:block;font-size:.85rem;color:var(--cn-dim);margin-bottom:4px}
+.concl-bt{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.concl-ok{font-size:.85rem;color:#166534;font-weight:700}

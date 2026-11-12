@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=22">
+<link rel="stylesheet" href="bio.css?v=23">
 <style>
 .taxo{display:grid;gap:6px}
 .taxo .fila{display:grid;grid-template-columns:120px repeat(3,minmax(0,1fr));gap:6px;align-items:stretch}
@@ -232,6 +232,7 @@
     </div>
     <div class="tbl-wrap"><table class="t" id="lev-tab"><tr><th>Ensayo</th><th>Azúcar (g)</th><th>Temperatura (°C)</th><th>CO₂ en el globo (mL)</th></tr></table></div>
     <div class="dato">Para un buen experimento cambia <b>una sola variable</b> a la vez. La <b>variable independiente</b> es la que tú cambias (azúcar o temperatura) y la <b>dependiente</b> es la que mides (el gas del globo). Escribe tu hipótesis antes de empezar: por ejemplo, «si el agua está tibia, se produce más gas que si está fría».</div>
+    <div class="conclusion" data-lab="levadura" data-tabla="lev-tab" data-titulo="Laboratorio: la levadura y el pan"></div>
     <div class="chequeo" data-ok="2" data-exp="Por encima de unos 50 °C las proteínas de la levadura se dañan y la levadura muere: deja de fermentar y el globo no se infla. Por eso la masa del pan se deja en un lugar tibio, no caliente.">
       <div class="q">Con agua a 70 °C el globo casi no se infla. ¿Por qué?</div>
       <div class="ops"><button class="op" data-por="La levadura sí puede usar el azúcar; el problema es la temperatura.">Porque la levadura no come azúcar.</button><button class="op" data-por="El calor hace que los gases se expandan un poco, pero aquí casi no se produjo gas.">Porque el calor desinfla el globo.</button><button class="op">Porque el calor mató a la levadura y no hubo fermentación.</button></div>
@@ -298,7 +299,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=21"></script>
+<script src="bio.js?v=22"></script>
 <script>
 (function(){
 /* Modelo de clasificación: lo escoge el docente (5, 6 o 7 reinos; con o sin dominios).

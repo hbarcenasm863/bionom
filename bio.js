@@ -190,6 +190,37 @@ function narrarParte(cont,parte){
   var t=CN_NARRAR.textoDe(parte);if(!t)return;
   CN_NARRAR.parar();CN_NARRAR.leer(t,btn,sec);
 }
+/* ── «Escribe tu conclusión» (versión 2.27) ──
+   <div class="conclusion" data-lab="papa" data-tabla="id-de-la-tabla" data-titulo="Laboratorio de…"></div>
+   El estudiante escribe hipótesis, resultados y conclusión. Se guarda solo en este
+   equipo (bionom_conclusion_<lab>) y se puede imprimir o guardar como PDF con la
+   tabla de resultados del laboratorio. */
+function montarConclusiones(raiz){
+  (raiz||document).querySelectorAll('.conclusion:not([data-listo])').forEach(function(C){
+    C.setAttribute('data-listo','');
+    var lab=C.getAttribute('data-lab')||'lab',clave='bionom_conclusion_'+lab,tit=C.getAttribute('data-titulo')||'Informe de laboratorio';
+    var CAMPOS=[['hip','🔮 Mi hipótesis','¿Qué esperabas que pasara y por qué?'],['res','📊 Mis resultados','¿Qué observaste? Escribe los datos más importantes.'],['con','✅ Mi conclusión','¿Se cumplió tu hipótesis? ¿Qué datos lo muestran?'],['mej','🔁 Lo haría distinto','¿Qué cambiarías o qué nueva pregunta te queda?']];
+    var g={};try{g=JSON.parse(localStorage.getItem(clave)||'{}');}catch(e){}
+    var es=function(t){return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');};
+    C.innerHTML='<div class="card concl"><h3>✍️ Escribe tu conclusión</h3><p class="concl-ayuda">Comunicar lo que encontraste es parte del trabajo científico. Se guarda en este equipo mientras escribes.</p>'+
+      '<div class="concl-fila"><label>Nombre <input type="text" data-c="nom" value="'+es(g.nom)+'"></label><label>Curso <input type="text" data-c="cur" value="'+es(g.cur)+'" style="max-width:7em"></label></div>'+
+      CAMPOS.map(function(c){return '<label class="concl-c"><b>'+c[1]+'</b><span>'+c[2]+'</span><textarea rows="3" data-c="'+c[0]+'">'+es(g[c[0]])+'</textarea></label>';}).join('')+
+      '<div class="concl-bt"><button type="button" class="cn-btn cn-btn--primary" data-acc="imp">🖨️ Imprimir o guardar en PDF</button><button type="button" class="cn-btn" data-acc="bor">🗑️ Borrar</button><span class="concl-ok" aria-live="polite"></span></div></div>';
+    var ok=C.querySelector('.concl-ok'),tm=null;
+    C.addEventListener('input',function(e){var c=e.target.getAttribute('data-c');if(!c)return;g[c]=e.target.value;try{localStorage.setItem(clave,JSON.stringify(g));}catch(x){}
+      clearTimeout(tm);ok.textContent='Guardado ✓';tm=setTimeout(function(){ok.textContent='';},1500);});
+    C.querySelector('[data-acc="bor"]').onclick=function(){if(!confirm('¿Borrar lo que escribiste en este informe?'))return;g={};try{localStorage.removeItem(clave);}catch(x){}C.querySelectorAll('[data-c]').forEach(function(x){x.value='';});};
+    C.querySelector('[data-acc="imp"]').onclick=function(){
+      var tb=C.getAttribute('data-tabla')&&document.getElementById(C.getAttribute('data-tabla'));
+      var w=window.open('','_blank');if(!w){alert('Permite las ventanas emergentes para imprimir el informe.');return;}
+      var f=new Date().toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'});
+      w.document.write('<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>'+es(tit)+'</title><style>body{font-family:Outfit,Arial,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;color:#1f2937}h1{font-size:1.4rem;color:#14532d;margin:0}p.m{color:#475569;margin:4px 0 16px}h2{font-size:1.05rem;color:#14532d;margin:18px 0 4px}.r{white-space:pre-wrap;border:1px solid #cbd5e1;border-radius:8px;padding:8px 10px;min-height:2.5em}table{border-collapse:collapse;width:100%;margin-top:6px}td,th{border:1px solid #94a3b8;padding:4px 8px;font-size:.9rem;text-align:left}th{background:#e2e8f0}</style></head><body>'+
+        '<h1>🧪 '+es(tit)+'</h1><p class="m">BioNom · '+es(g.nom||'Nombre: ____________')+' · Curso '+es(g.cur||'____')+' · '+f+'</p>'+
+        (tb?'<h2>📋 Datos del laboratorio</h2>'+tb.outerHTML:'')+
+        CAMPOS.map(function(c){return '<h2>'+c[1]+'</h2><div class="r">'+es(g[c[0]]||'')+'</div>';}).join('')+'</body></html>');
+      w.document.close();w.focus();setTimeout(function(){w.print();},300);};
+  });
+}
 /* ── pestañas ── */
 function montarTabs(raiz){
   (raiz||document).querySelectorAll('.tabs:not([data-listo])').forEach(function(T){
@@ -293,7 +324,7 @@ function deslizables(){
     var av=document.createElement('div');av.className='desliza-aviso';av.textContent='← desliza para ver toda la figura →';w.parentNode.insertBefore(av,w.nextSibling);
   });
 }
-function montarTodo(raiz){montarChequeos(raiz);montarPasos(raiz);montarFlips(raiz);montarTabs(raiz);montarTerms(raiz);}
+function montarTodo(raiz){montarChequeos(raiz);montarPasos(raiz);montarFlips(raiz);montarTabs(raiz);montarTerms(raiz);montarConclusiones(raiz);}
 
 window.BIO={MODULOS:MODULOS,actual:actual,visitas:visitas,secciones:secciones,leer:leer,guardar:guardar,marcarSeccion:marcarSeccion,
   montar:montarTodo,clasificar:clasificar,barajar:barajar,esc:esc};

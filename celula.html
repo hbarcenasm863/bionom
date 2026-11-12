@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=22">
+<link rel="stylesheet" href="bio.css?v=23">
 <style>
 .hist-card{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:16px;align-items:center}
 .hist-card .ilu{font-size:4rem;text-align:center;background:var(--cn-brand-l);border-radius:16px;padding:10px 0}
@@ -36,6 +36,23 @@
 .osmo .vaso{background:#fff;border:1px solid var(--cn-brd);border-radius:var(--cn-r);padding:10px;text-align:center}
 .osmo svg{width:100%;max-width:260px;height:auto}
 .est{font-weight:800;font-size:1.05rem;margin-top:4px}
+.ml{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;align-items:start;margin-top:8px}
+@media(max-width:760px){.ml{grid-template-columns:1fr}}
+.ml-ocular{width:100%;max-width:340px;aspect-ratio:1;margin:auto;border-radius:50%;background:#111;padding:8px;box-shadow:0 0 0 6px #334155,0 8px 24px rgba(0,0,0,.25);overflow:hidden}
+.ml-ocular canvas{width:100%;height:100%;border-radius:50%;display:block;transition:filter .25s}
+.ml-info{margin-top:10px;font-size:.92rem;min-height:3.2em}
+.ml-info .bien{color:#166534}.ml-info .mal{color:#b91c1c;font-weight:700}
+.ml-ctrl{display:grid;gap:10px}
+.ml-grp{background:#fff;border:1.5px solid var(--cn-brd);border-radius:12px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ml-grp>b{flex-basis:100%;color:var(--cn-brand-d)}
+.ml-grp select{font:inherit;padding:6px 8px;border-radius:8px;border:1.5px solid var(--cn-brd);max-width:100%}
+.ml-grp label{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:.9rem}
+.ml-grp input[type=range]{width:180px;max-width:100%}
+.ml-micro{display:inline-flex;align-items:center;gap:6px;font-size:.9rem}
+.ml-micro .cn-btn{min-width:44px;min-height:40px;padding:4px 10px}
+.ml-retos{padding-left:1.3em;display:grid;gap:4px}
+.ml-retos li.ok{color:#166534;font-weight:700}.ml-retos li.mal{color:#b91c1c;list-style:none;margin-left:-1.3em}
+.ml-medir{margin:12px 0}
 </style>
 </head>
 <body>
@@ -143,6 +160,10 @@
       <div class="card"><h3>🧅 Prepara una lámina de cebolla</h3><ol style="padding-left:1.2em"><li>Saca una capa muy delgada de la piel de adentro de la cebolla.</li><li>Ponla extendida sobre la lámina con una gota de agua.</li><li>Agrega una gota de lugol o de azul de metileno para teñir los núcleos.</li><li>Cúbrela con la laminilla, despacio y de lado, para que no queden burbujas.</li><li>Enfoca con el objetivo de 4× y el tornillo macrométrico; luego pasa a 10× y 40× con el micrométrico.</li></ol></div>
       <div class="card"><h3>⚠️ Cuidados</h3><p>Lleva el microscopio con las dos manos: una en el brazo y otra en la base. Nunca bajes el objetivo de 40× o de 100× con el tornillo grande, porque puede romper la lámina y el lente. Limpia los lentes solo con papel especial.</p></div>
     </div>
+    <h3 style="margin-top:20px">🔬 Laboratorio virtual de microscopía</h3>
+    <p>Practica todo el procedimiento: escoge una muestra y su colorante, pon la lámina, enciende la luz, sube de objetivo y enfoca. Cuidado: con 40× y 100× el tornillo grande puede romper la lámina.</p>
+    <div id="microlab"></div>
+    <div class="conclusion" data-lab="microscopio" data-tabla="ml-tab" data-titulo="Laboratorio de microscopía"></div>
     <div class="chequeo" data-ok="1" data-exp="El aumento total se calcula multiplicando: 10 × 40 = 400. La muestra se ve 400 veces más grande.">
       <div class="q">Con un ocular de 10× y un objetivo de 40×, ¿cuál es el aumento total?</div>
       <div class="ops"><button class="op" data-por="Ese es el error más común: los aumentos se multiplican, no se suman.">50×</button><button class="op">400×</button><button class="op" data-por="40 es solo el aumento del objetivo; falta multiplicar por el del ocular.">40×</button></div>
@@ -271,6 +292,7 @@
       <div class="paso" data-t="Datos"><h3>4. Toma los datos</h3><p>Toca cada tubo para medir. Las balanzas reales tienen un pequeño <b>margen de error</b>, así que los datos no caen exactamente en una línea.</p><div id="tubos" class="chips" style="margin:10px 0"></div><div class="lado"><div class="tbl-wrap"><table class="t" id="tab-papa"><tr><th>Sacarosa (M)</th><th>Masa inicial (g)</th><th>Masa final (g)</th><th>Cambio (%)</th></tr></table></div><canvas id="g-papa" width="460" height="300" style="width:100%;height:auto;background:#fff;border:1px solid var(--cn-brd);border-radius:12px"></canvas></div></div>
       <div class="paso" data-t="Conclusión"><h3>5. Analiza y concluye</h3><p>Mira la gráfica: ¿en qué concentración la papa <b>ni gana ni pierde</b> masa (el cambio es 0 %)?</p><div class="chips" id="iso" style="margin:8px 0"><button class="chip" data-c="0">0 M</button><button class="chip" data-c="0.3">≈ 0,3 M</button><button class="chip" data-c="0.6">≈ 0,6 M</button><button class="chip" data-c="1">1 M</button></div><p id="iso-t" style="font-weight:600" aria-live="polite"></p></div>
     </div>
+      <div class="conclusion" data-lab="papa" data-tabla="tab-papa" data-titulo="Laboratorio: ósmosis en la papa"></div>
   </section>
 
   <!-- ═══ ENERGÍA ═══ -->
@@ -313,6 +335,7 @@
       <tr><td><b>Respiración aerobia</b></td><td>Glucosa + oxígeno (30 a 32 ATP)</td><td>Casi todos: animales, plantas, hongos, muchas bacterias</td></tr>
       <tr><td><b>Fermentación</b></td><td>Glucosa sin oxígeno (2 ATP)</td><td>Levaduras, bacterias del yogur, tus músculos cansados</td></tr>
     </table></div>
+      <div class="conclusion" data-lab="priestley" data-titulo="Experimento: la campana de Priestley"></div>
   </section>
 
   <!-- ═══ DIVISIÓN CELULAR ═══ -->
@@ -340,7 +363,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=6"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=21"></script>
+<script src="bio.js?v=22"></script>
 <script>
 (function(){
 var esc=BIO.esc;
@@ -665,6 +688,7 @@ prT.oninput=priestley;document.querySelectorAll('[data-pr],#pr-luz').forEach(fun
 
 })();
 </script>
+<script src="microlab.js?v=2"></script>
 <script src="text-zoom.js?v=13"></script>
 <script>
 (function(){
