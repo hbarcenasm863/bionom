@@ -222,6 +222,41 @@ function montarConclusiones(raiz){
       w.document.close();w.focus();setTimeout(function(){w.print();},300);};
   });
 }
+/* ── Pantalla completa para simulaciones (versión 2.36) ──
+   <div class="card" data-pantalla="Nombre de la simulación">…</div> recibe un botón
+   «⛶ Pantalla completa». Usa la pantalla completa del navegador; donde no se puede
+   (iPhone), el recuadro ocupa toda la ventana. Se sale con el mismo botón o con Esc. */
+function marcarSimulaciones(){
+  // Detecta solo las simulaciones de las páginas de contenido: recuadros con
+  // dibujos interactivos, gráficas, deslizadores o animaciones por pasos.
+  if(/(^|\/)(index|juego|docente|microscopio)\.html$|\/$/.test(location.pathname))return;
+  var S=[];
+  document.querySelectorAll('main canvas, main svg[id], main input[type=range], main [data-anim], main .pasos[data-alcambiar]').forEach(function(el){
+    if(el.closest('button,.flip,.flota-exp,header,.chequeo,.pre-claves,.tl,figure,[data-pantalla]'))return;
+    var c=el.closest('.card, .lado, .cuerpo-wrap');if(!c)return;
+    var p=c.closest('.paso');if(p&&p.closest('.pasos'))c=p.closest('.pasos');
+    if(S.indexOf(c)<0)S.push(c);});
+  S.filter(function(c){return !S.some(function(o){return o!==c&&o.contains(c);});}).forEach(function(c){
+    if(!c.hasAttribute('data-pantalla')&&!c.closest('[data-pantalla]')){var h=c.closest('.sec');h=h&&h.querySelector('h2');var t='';if(h){h=h.cloneNode(true);h.querySelectorAll('.nivel-prof').forEach(function(x){x.remove();});t=h.textContent.replace(/^\s*\d+\s*/,'').trim();}c.setAttribute('data-pantalla',t||'la simulación');}});
+}
+function montarPantallas(raiz){
+  if(!raiz)marcarSimulaciones();
+  (raiz||document).querySelectorAll('[data-pantalla]:not([data-pantalla-listo])').forEach(function(C){
+    C.setAttribute('data-pantalla-listo','');C.classList.add('con-pantalla');
+    var b=document.createElement('button');b.type='button';b.className='cn-btn btn-pantalla';
+    b.setAttribute('aria-label','Ver '+(C.getAttribute('data-pantalla')||'la simulación')+' en pantalla completa');
+    b.innerHTML='⛶ Pantalla completa';C.insertBefore(b,C.firstChild);
+    function activo(){return document.fullscreenElement===C||document.webkitFullscreenElement===C||C.classList.contains('pantalla-activa');}
+    function pintar(){var on=activo();b.innerHTML=on?'✕ Salir de pantalla completa'+(matchMedia('(orientation:portrait) and (max-width:700px)').matches?'<small class="gira-aviso">Gira el celular para verla más grande</small>':''):'⛶ Pantalla completa';C.classList.toggle('en-pantalla',on);if(!on&&screen.orientation&&screen.orientation.unlock){try{screen.orientation.unlock();}catch(e){}}document.documentElement.classList.toggle('sin-scroll',C.classList.contains('pantalla-activa'));window.dispatchEvent(new Event('resize'));}
+    b.onclick=function(){
+      if(activo()){if(document.fullscreenElement||document.webkitFullscreenElement)(document.exitFullscreen||document.webkitExitFullscreen).call(document);C.classList.remove('pantalla-activa');pintar();return;}
+      var f=C.requestFullscreen||C.webkitRequestFullscreen;
+      if(f){Promise.resolve(f.call(C)).then(function(){if(screen.orientation&&screen.orientation.lock&&matchMedia('(pointer:coarse)').matches)screen.orientation.lock('landscape').catch(function(){});pintar();}).catch(function(){C.classList.add('pantalla-activa');pintar();});}
+      else{C.classList.add('pantalla-activa');pintar();}};
+    document.addEventListener('fullscreenchange',pintar);document.addEventListener('webkitfullscreenchange',pintar);
+    document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&C.classList.contains('pantalla-activa')){C.classList.remove('pantalla-activa');pintar();}});
+  });
+}
 /* ── pestañas ── */
 function montarTabs(raiz){
   (raiz||document).querySelectorAll('.tabs:not([data-listo])').forEach(function(T){
@@ -325,7 +360,7 @@ function deslizables(){
     var av=document.createElement('div');av.className='desliza-aviso';av.textContent='← desliza para ver toda la figura →';w.parentNode.insertBefore(av,w.nextSibling);
   });
 }
-function montarTodo(raiz){montarChequeos(raiz);montarPasos(raiz);montarFlips(raiz);montarTabs(raiz);montarTerms(raiz);montarConclusiones(raiz);}
+function montarTodo(raiz){montarChequeos(raiz);montarPasos(raiz);montarFlips(raiz);montarTabs(raiz);montarTerms(raiz);montarConclusiones(raiz);montarPantallas(raiz);}
 
 window.BIO={MODULOS:MODULOS,actual:actual,visitas:visitas,secciones:secciones,leer:leer,guardar:guardar,marcarSeccion:marcarSeccion,
   montar:montarTodo,clasificar:clasificar,barajar:barajar,esc:esc};

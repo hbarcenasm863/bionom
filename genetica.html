@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=23">
+<link rel="stylesheet" href="bio.css?v=25">
 <style>
 .fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
@@ -156,7 +156,7 @@
   <section class="sec" id="punnett">
     <h2><span class="n">03</span> El cuadro de Punnett</h2>
     <p class="lead">Es una tabla para predecir los hijos de un cruce. Arriba van los alelos que puede dar un padre en sus gametos y a la izquierda los del otro. Cada casilla es una combinación posible. <b>Escoge los padres y llena tú las casillas</b>: tócalas para cambiar las letras y luego revisa.</p>
-    <div class="card">
+    <div class="card" data-pantalla="El cuadro de Punnett">
       <div class="padres" id="pun-padres"></div>
       <div class="pun-wrap">
         <div style="text-align:center">
@@ -313,7 +313,7 @@
   <section class="sec" id="proteinas">
     <h2><span class="n">10</span> Del gen a la proteína</h2>
     <p class="lead">El ADN no sale del núcleo, pero las proteínas se fabrican en los ribosomas del citoplasma. ¿Cómo viaja la información? Con una copia: el <b>ARN mensajero</b>. Es el llamado <b>dogma central</b>: <b>ADN → ARN → proteína</b>. Avanza paso a paso con un trozo real del gen de la hemoglobina.</p>
-    <div class="card">
+    <div class="card" data-pantalla="Del gen a la proteína">
       <div class="chips" style="margin-bottom:10px"><button class="chip on" id="pr-trans">1️⃣ Transcripción (núcleo)</button><button class="chip" id="pr-tradu">2️⃣ Traducción (ribosoma)</button></div>
       <div class="etq-fila">ADN · cadena molde (la que se lee)</div><div class="codones" id="pr-molde"></div>
       <div class="etq-fila">ARN mensajero</div><div class="codones" id="pr-arn"></div>
@@ -332,7 +332,7 @@
   <section class="sec" id="mutaciones">
     <h2><span class="n">11</span> Mutaciones: cuando cambia una letra</h2>
     <p class="lead">Una <b>mutación</b> es un cambio en la secuencia del ADN. Toca cualquier letra del ARNm para cambiarla, o usa los botones, y mira qué le pasa a la proteína.</p>
-    <div class="card">
+    <div class="card" data-pantalla="Las mutaciones">
       <div class="ctrl"><button type="button" class="cn-btn" id="mu-falci">🔴 Anemia falciforme</button><button type="button" class="cn-btn" id="mu-ins">➕ Insertar una letra</button><button type="button" class="cn-btn" id="mu-del">➖ Borrar una letra</button><button type="button" class="cn-btn" id="mu-reset">🔄 Original</button></div>
       <div class="etq-fila">ARNm (toca una letra para cambiarla)</div><div class="codones" id="mu-arn"></div>
       <div class="etq-fila">Proteína original</div><div class="prot" id="mu-orig"></div>
@@ -370,7 +370,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=8"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=23"></script>
+<script src="bio.js?v=25"></script>
 <script>
 (function(){
 var esc=BIO.esc;

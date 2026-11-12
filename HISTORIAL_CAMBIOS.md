@@ -6,6 +6,41 @@
 
 ---
 
+## Versión 2.38 — 13 de noviembre de 2026 · Pantalla completa en todas las simulaciones
+
+**Contexto.** El docente pidió poder ver en pantalla completa la simulación de
+las polillas de Evolución y luego, en general, «cualquier experimento o
+simulación», para verla bien en el celular y en el video beam.
+
+**Cambios**
+- `bio.js` (v25): nuevo componente de pantalla completa. Busca solo las
+  simulaciones de las páginas de temas (dibujos interactivos, gráficas,
+  deslizadores, animaciones por pasos) y les pone arriba el botón
+  «⛶ Pantalla completa» / «✕ Salir de pantalla completa». Quedan **58
+  simulaciones** con botón en las 12 páginas de temas (la portada, el juego, el
+  panel docente y el laboratorio de microscopía no lo llevan: ya ocupan toda la
+  pantalla). En Android gira el celular a horizontal; en vertical recuerda
+  «Gira el celular para verla más grande». En iPhone, que no permite pantalla
+  completa en una página, usa un modo de respaldo que llena la pantalla y se
+  cierra con el botón o con Esc.
+- `bio.css` (v25): en pantalla completa la figura crece sin salirse de la
+  pantalla, la figura y su explicación quedan lado a lado en horizontal, y se
+  esconden el control de tamaño de letra y el botón de narración para que no
+  tapen la simulación.
+- Marcadas a mano las que la detección no encontraba: el cuerpo por dentro
+  (Sistemas), el mapa de regiones naturales, el cuadro de Punnett, «Del gen a
+  la proteína», las mutaciones y la huella de carbono.
+- `evolucion.html`: en pantalla completa el bosque de las polillas se agranda.
+- `sw.js`: `CACHE` → `bionom-v51` (aviso «Nueva versión disponible»).
+- `CLAUDE.md`: regla nueva: toda simulación nueva debe tener el botón.
+
+**Pruebas.** Playwright en computador (1366×768), iPhone vertical y
+horizontal: abrir y salir en 7 páginas, sin errores ni desbordes en las 16
+páginas.
+
+**Pendiente.** Nada nuevo. Sigue pendiente lo de versiones anteriores
+(redesplegar `bionom-analytics.gs` y correr `recalcularAhora()`).
+
 ## Versión 2.37 — 13 de noviembre de 2026 · Preguntas de indagación con tablas y gráficas
 
 **Contexto.** El docente pidió seguir con las preguntas de indagación que traen sus datos en una tabla o una gráfica, como la prueba Saber 11, también en el juego.

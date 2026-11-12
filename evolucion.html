@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=23">
+<link rel="stylesheet" href="bio.css?v=25">
 <style>
 .jir{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:700px){.jir{grid-template-columns:1fr}}
@@ -55,6 +55,10 @@
 @media(max-width:700px){.mil-lado{grid-template-columns:1fr}}
 #mil-svg{width:100%;max-width:380px;display:block;margin:auto}
 .mil-ley{font-size:.8rem;color:var(--cn-dim);margin-top:6px}
+/* Simulación de las polillas en pantalla completa */
+.en-pantalla #bosque,.pantalla-activa #bosque{flex:1;aspect-ratio:auto;min-height:42vh}
+.en-pantalla #bosque .pol,.pantalla-activa #bosque .pol{width:60px;height:40px}
+.en-pantalla #graf,.pantalla-activa #graf{height:120px;width:auto;max-width:100%;align-self:center;flex:none}
 </style>
 </head>
 <body>
@@ -208,7 +212,7 @@
     <h2><span class="n">06</span> Simulación: ¡eres un pájaro!</h2>
     <p class="lead">En Inglaterra, en el siglo XIX, las fábricas llenaron de hollín los troncos de los árboles. La polilla del abedul (<i>Biston betularia</i>) tiene una forma <b>clara</b> y una <b>oscura</b>. Tú eres un pájaro: <b>toca las polillas que veas</b> para comértelas. Cada generación tienes 10 picotazos. Las que sobrevivan se reproducen.</p>
     <div class="fotos mini" style="margin-bottom:12px"><div data-foto="biston1" data-pie="Forma clara: se confunde con los líquenes del tronco"></div><div data-foto="biston2" data-pie="Forma oscura: se confunde con el hollín"></div></div>
-    <div class="card">
+    <div class="card" data-pantalla="Simulación de las polillas">
       <div class="sim-bar">
         <div class="chips" role="group" aria-label="Tronco"><button class="chip on" data-tronco="limpio">🌳 Tronco limpio (con líquenes)</button><button class="chip" data-tronco="hollin">🏭 Tronco con hollín</button></div>
         <span class="stat" id="sim-stat" aria-live="polite"></span>
@@ -353,7 +357,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=8"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=23"></script>
+<script src="bio.js?v=25"></script>
 <script>
 (function(){
 /* ═══ 1. Línea del tiempo de ideas ═══ */
