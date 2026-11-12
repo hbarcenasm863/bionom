@@ -115,7 +115,7 @@ function bloquesEval(E,c,clave){
   if(E.saber.length)B.push('<h3>Selección múltiple con única respuesta (tipo Saber 11)</h3>');
   var SI=window.SABER_ICFES;
   E.saber.forEach(function(x,i){n++;var s=x.src||{};
-    B.push('<div class="pq sq"><span class="n">'+n+'.</span><div>'+(x.ctx?'<div class="ctx">'+esc(x.ctx)+'</div>':'')+(SI?SI.extraHTML(s):'')+'<b>'+esc(x.q)+'</b>'+
+    B.push('<div class="pq sq" data-k="'+i+'"><span class="n">'+n+'.</span><div>'+(x.ctx?'<div class="ctx">'+esc(x.ctx)+'</div>':'')+(SI?SI.extraHTML(s):'')+'<b>'+esc(x.q)+'</b>'+
       (SI&&s.imgOps?SI.opsImgHTML(s)+(clave?'<div class="okc">✔ Respuesta: '+L[x.a]+'</div>':''):'<ol class="col1">'+x.ops.map(function(o,j){return '<li data-l="'+L[j]+'"'+(clave&&j===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&j===x.a?' ✔':'')+'</li>';}).join('')+'</ol>')+
       (clave&&s.icfes&&x.exp?'<div class="exp">'+esc(x.exp)+'</div>':'')+
       (clave&&SI?'<div class="exp">Competencia: '+esc(SI.COMP[SI.competencia(s)].n)+'.</div>':'')+
@@ -127,7 +127,7 @@ function bloquesEval(E,c,clave){
     for(var k=0;k<filas.length;k+=15)B.push((k===0?'<h3>Hoja de respuestas · rellena el círculo</h3>':'')+'<table class="burb-t"><tbody>'+filas.slice(k,k+15).join('')+'</tbody></table>');
   }
   if(clave&&E.saber.length)B.push('<h3>Clave</h3><p class="clave-l">'+E.saber.map(function(x,i){return (i+1)+'-'+L[x.a];}).join(' · ')+'</p>');
-  if(clave&&E.saber.length&&SI)B.push('<h3>Matriz de la evaluación (competencias y afirmaciones del Icfes)</h3>'+SI.matrizHTML(E.saber.map(function(x){return x.src||{q:x.q};}),1,'B'));
+  if(clave&&E.saber.length&&SI)SI.matrizBloques(E.saber.map(function(x){return x.src||{q:x.q};}),1,'B',8).forEach(function(h,k){B.push((k===0?'<h3>Matriz de la evaluación (competencias y afirmaciones del Icfes)</h3>':'')+h);});
   if(!clave&&SI&&E.saber.length){var cr=SI.citaHTML(E.saber.map(function(x){return x.src||{};}));if(cr)B.push(cr);}
   return B;
 }
@@ -202,7 +202,8 @@ function llenarHoja(c,parte){
   }
   while(c.scrollHeight>c.clientHeight+1&&hechos.length){var g=hechos.pop();g.style.height=(alto(g)-CUADRO).toFixed(1)+'px';}
 }
-function paginar(B,c,v,clave,parte,nv){
+function paginar(B,c,v,clave,parte,nv,op){
+  op=op||{};B=B.slice();
   var med=$('medidor');
   function hojaVacia(primera){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,primera,parte,nv)+'<div class="hoja-cuerpo"></div>'+pie(99,99)+'</div>';}
   var nom={guia:'Guía',eval:'Evaluación',taller:'Taller'}[parte];
@@ -212,25 +213,48 @@ function paginar(B,c,v,clave,parte,nv){
   while(i<B.length||pag===0){
     med.innerHTML=hojaVacia(pag===0);var cuerpo=med.querySelector('.hoja-cuerpo'),puestos=0;
     while(i<B.length){
-      // Como en ChromaNom: las preguntas de selección múltiple («pq sq») van a
-      // doble columna, agrupadas en un contenedor .cols2 por hoja; si la
-      // siguiente no cabe, pasa a otra hoja con su propio contenedor.
-      var enCols=/^<div class="pq sq/.test(B[i]),dest=cuerpo;
-      if(enCols){var u=cuerpo.lastElementChild;if(u&&u.classList.contains('cols2'))dest=u;else{dest=document.createElement('div');dest.className='blq cols2';cuerpo.appendChild(dest);}}
-      var d=document.createElement('div');d.className='blq';d.innerHTML=B[i];dest.appendChild(d);
-      if(cuerpo.scrollHeight>cuerpo.clientHeight+1&&puestos){dest.removeChild(d);if(enCols&&!dest.children.length)cuerpo.removeChild(dest);break;}
+      // Las preguntas de selección múltiple («pq sq») van a doble columna
+      // con SABER_ICFES.colocar: dos columnas reales que se llenan en orden
+      // (izquierda y luego derecha), sin dejar una columna en blanco cuando
+      // una pregunta es larga.
+      if(/^<div class="pq sq/.test(B[i])&&window.SABER_ICFES){
+        var nodos=[];for(var j=i;j<B.length&&/^<div class="pq sq/.test(B[j]);j++){var e=document.createElement('div');e.className='blq';e.innerHTML=B[j];nodos.push(e);}
+        nodos.forEach(function(e,q){e._src=B[i+q];});
+        var r=SABER_ICFES.colocar(cuerpo,nodos,0,!puestos,{reordenar:!!op.reordenar});
+        // si se adelantó alguna pregunta, B sigue el nuevo orden
+        nodos.forEach(function(e,q){B[i+q]=e._src;});
+        i+=r;puestos+=r;
+        if(r<nodos.length)break;
+        continue;
+      }
+      var d=document.createElement('div');d.className='blq';d.innerHTML=B[i];cuerpo.appendChild(d);
+      if(cuerpo.scrollHeight>cuerpo.clientHeight+1&&puestos){cuerpo.removeChild(d);break;}
       puestos++;i++;
     }
     llenarHoja(cuerpo,parte);
     out.push({primera:pag===0,html:cuerpo.innerHTML});pag++;if(!B.length)break;
   }
   med.innerHTML='';
+  if(op.reordenar&&window.SABER_ICFES){
+    // números 1, 2, 3… en el orden en que quedaron las preguntas
+    var tmp=document.createElement('div');tmp.innerHTML=out.map(function(p){return '<div class="pg">'+p.html+'</div>';}).join('');
+    paginar.orden=SABER_ICFES.renumerar(tmp,'.pq.sq[data-k]','.n',function(n){return n+'.';});
+    [].forEach.call(tmp.children,function(pg,k){out[k].html=pg.innerHTML;});
+  }else paginar.orden=null;
   return out.map(function(p,k){return '<div class="hoja"><img class="wm" src="icons/marca-bionom.png" alt="">'+cabecera(c,v,clave,p.primera,parte,nv)+'<div class="hoja-cuerpo">'+p.html+'</div>'+pie(k+1,out.length)+'</div>';}).join('');
 }
 /* Documento de una versión. La guía (sesiones 1 a 3) sale una sola vez; la
    evaluación sale una vez por versión. */
 function docTaller(c,v,clave){var b=bloquesBanco(preguntasBanco(c,v),c,clave).B.concat(clave?[]:bloquesActividades(c,v));return paginar(b,c,v,clave,'taller',c.nver);}
-function docEval(c,v,clave){return paginar(bloquesEval(preguntasEval(c,v),c,clave),c,v,clave,'eval',c.nver);}
+function docEval(c,v,clave){
+  var E=preguntasEval(c,v);
+  // La hoja del estudiante adelanta preguntas cortas a los huecos de las
+  // columnas y renumera; la clave (y su matriz) se arman con ese mismo orden.
+  var est=paginar(bloquesEval(E,c,false),c,v,false,'eval',c.nver,{reordenar:true}),orden=paginar.orden;
+  if(!clave)return est;
+  if(window.SABER_ICFES&&orden)E.saber=SABER_ICFES.aplicarOrden(E.saber,orden);
+  return paginar(bloquesEval(E,c,true),c,v,true,'eval',c.nver);
+}
 function docGuia(c,clave){return paginar(bloquesGuia(c,clave),c,0,clave,'guia',1);}
 function vistaPrevia(c,sel){
   var clave=sel.charAt(0)==='k',v=+sel.slice(1)||0;
