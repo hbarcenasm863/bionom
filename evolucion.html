@@ -51,6 +51,10 @@
 .cereb{height:16px;border-radius:999px;background:linear-gradient(90deg,#e9a3b3,#b5527a);transition:width .5s}
 .anio-ev .f{font:800 1.1rem var(--cn-mono);color:var(--cn-naranja-tx)}
 .hist-ev{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:16px;align-items:center}.hist-ev .foto img{max-height:250px;object-fit:contain;background:#f4f1ea}@media(max-width:560px){.hist-ev{grid-template-columns:1fr}}
+.mil-lado{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:center}
+@media(max-width:700px){.mil-lado{grid-template-columns:1fr}}
+#mil-svg{width:100%;max-width:380px;display:block;margin:auto}
+.mil-ley{font-size:.8rem;color:var(--cn-dim);margin-top:6px}
 </style>
 </head>
 <body>
@@ -115,7 +119,9 @@
     </div>
     <div class="fotos mini" style="margin:12px 0"><div data-foto="v_miller" data-pie="Aparato de Miller y Urey: los gases, el agua que hierve y las chispas que imitan los rayos"></div></div>
     <h3 style="margin-top:18px">⚡ Simula el experimento de Miller y Urey</h3>
-    <div class="card"><div class="ctrl"><label for="mil">Días con chispas eléctricas</label><input type="range" id="mil" min="0" max="7" step="1" value="0"><b id="mil-n"></b></div><p id="mil-t" aria-live="polite"></p></div>
+    <div class="card mil-lado"><svg id="mil-svg" viewBox="0 0 320 250" role="img" aria-label="Aparato de Miller y Urey: matraz con agua que hierve, esfera con gases y chispas, condensador y trampa donde se acumulan las moléculas"></svg>
+      <div><div class="ctrl"><label for="mil">Días con chispas eléctricas</label><input type="range" id="mil" min="0" max="7" step="1" value="0"><b id="mil-n"></b></div><p id="mil-t" aria-live="polite"></p>
+      <p class="mil-ley"><span style="color:#2563eb">●</span> agua y vapor · <span style="color:#a855f7">●</span> gases (metano, amoníaco, hidrógeno) · <span style="color:#16a34a">●</span> aminoácidos</p></div></div>
     <div class="chequeo" data-ok="1" data-exp="Miller y Urey mostraron que, con los gases de la Tierra primitiva y energía, se forman moléculas de la vida como los aminoácidos. No crearon células vivas.">
       <div class="q">¿Qué demostró el experimento de Miller y Urey?</div>
       <div class="ops"><button class="op" data-por="No se formó ninguna célula, solo moléculas.">Que se puede crear una bacteria en el laboratorio.</button><button class="op">Que con gases simples y energía se forman moléculas orgánicas como los aminoácidos.</button><button class="op" data-por="El experimento no tenía nada que ver con meteoritos.">Que la vida llegó en meteoritos.</button></div>
@@ -219,6 +225,7 @@
   <section class="sec" id="pinzones">
     <h2><span class="n">07</span> Los pinzones de Darwin</h2>
     <p class="lead">En las islas Galápagos (frente a Ecuador), Darwin encontró pinzones muy parecidos pero con <b>picos diferentes</b> según lo que comían en cada isla. Todos descendían de unos pocos pinzones que llegaron del continente. Une cada pico con su alimento.</p>
+    <div class="fotos pinzones" style="margin:0 0 12px"><div data-foto="v_pz_fortis" data-pie="Pinzón terrestre mediano: pico grueso"></div><div data-foto="v_pz_olivacea" data-pie="Pinzón cantor: pico delgado"></div><div data-foto="v_pz_scandens" data-pie="Pinzón de los cactus en una flor de cactus: pico largo"></div><div data-foto="v_pz_pallidus" data-pie="Pinzón carpintero: usa espinas como herramienta"></div></div>
     <div class="card" id="clas-pico"></div>
     <div class="dato">Cuando de un solo antepasado salen muchas especies adaptadas a ambientes distintos, como los pinzones, se habla de <b>radiación adaptativa</b>. Y cuando dos especies se influyen y evolucionan juntas hay <b>coevolución</b>: el colibrí pico de espada de los Andes tiene un pico más largo que su cuerpo, y las flores de las que se alimenta tienen tubos igual de largos.</div>
     <div class="dato">Cuando una población queda separada (por el mar, una cordillera o un río) y cada grupo evoluciona por su lado, con el tiempo pueden volverse <b>especies distintas</b>, que ya no se reproducen entre sí. Eso se llama <b>especiación</b>. En Colombia, la cordillera de los Andes separó poblaciones de ranas, aves y mariposas y por eso tenemos tantas especies.</div>
@@ -344,24 +351,24 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="fotos-datos.js?v=7"></script>
+<script src="fotos-datos.js?v=8"></script>
 <script src="fotos.js?v=1"></script>
 <script src="bio.js?v=23"></script>
 <script>
 (function(){
 /* ═══ 1. Línea del tiempo de ideas ═══ */
 var ID=[
- {a:'Antigüedad',ico:'📜',q:'Fijismo',d:'Las especies fueron creadas como son y <b>no cambian</b>. Fue la idea dominante en Europa hasta el siglo XIX.'},
+ {a:'Antigüedad',ico:'📜',q:'Fijismo',f:['v_linneo','Carl von Linneo (1707–1778) clasificó miles de especies creyendo que no cambiaban'],d:'Las especies fueron creadas como son y <b>no cambian</b>. Fue la idea dominante en Europa hasta el siglo XIX.'},
  {a:'1809',ico:'🦒',q:'Jean-Baptiste Lamarck',f:['lamarck','Jean-Baptiste Lamarck'],d:'Primera teoría completa de evolución: el <b>uso y desuso</b> desarrolla o atrofia los órganos, y esos <b>caracteres adquiridos se heredan</b>. Acertó en que las especies cambian; se equivocó en el mecanismo.'},
  {a:'1812',ico:'🦴',q:'Georges Cuvier · Catastrofismo',f:['cuvier','Georges Cuvier'],d:'Estudiando fósiles, Cuvier acepta que muchas especies se <b>extinguieron</b> por grandes catástrofes (inundaciones), pero cree que las especies que quedan no cambian.'},
  {a:'1835',ico:'🚢',q:'Charles Darwin en el Beagle',f:['beagle','Darwin, el HMS Beagle y la ruta de su viaje'],d:'Durante un viaje de 5 años alrededor del mundo, Darwin observa fósiles en Suramérica y los pinzones y tortugas de las Galápagos. Empieza a pensar que las especies se transforman.'},
  {a:'1858',ico:'🤝',q:'Alfred Russel Wallace',f:['wallace','Alfred Russel Wallace en 1889'],d:'Trabajando en la Amazonia y en Indonesia, Wallace llega por su cuenta a la misma idea de Darwin. Presentan juntos la teoría de la <b>selección natural</b>.'},
  {a:'1859',ico:'📖',q:'«El origen de las especies»',f:['origen','Portada de la primera edición (1859)'],d:'Darwin publica su libro: los individuos de una población son diferentes; nacen más de los que pueden sobrevivir; los que tienen variaciones ventajosas sobreviven y se reproducen más; así cambian las especies.'},
  {a:'1865',ico:'🌱',q:'Gregor Mendel',f:['mendel','Gregor Mendel'],d:'Publica sus experimentos con arvejas y descubre las leyes de la herencia. Nadie le presta atención hasta 1900.'},
- {a:'1940',ico:'🧬',q:'Teoría sintética (neodarwinismo)',d:'Se une la selección natural de Darwin con la genética de Mendel: la variación viene de las <b>mutaciones</b> y de la mezcla de genes en la reproducción sexual.'},
- {a:'1953',ico:'📶',q:'Watson, Crick y Franklin',d:'Se descubre la estructura de doble hélice del ADN: por fin se entiende cómo se copian y heredan los genes.'},
- {a:'2003',ico:'📚',q:'Proyecto Genoma Humano',d:'Se termina de leer la secuencia completa del ADN humano: unos 3000 millones de letras y cerca de 20 000 genes.'},
- {a:'2012',ico:'✂️',q:'CRISPR',d:'Emmanuelle Charpentier y Jennifer Doudna desarrollan una herramienta para editar genes con precisión. Reciben el Premio Nobel en 2020.'}
+ {a:'1940',ico:'🧬',q:'Teoría sintética (neodarwinismo)',f:['v_dobzhansky','Theodosius Dobzhansky, uno de sus autores: «Nada en biología tiene sentido si no es a la luz de la evolución»'],d:'Se une la selección natural de Darwin con la genética de Mendel: la variación viene de las <b>mutaciones</b> y de la mezcla de genes en la reproducción sexual.'},
+ {a:'1953',ico:'🧬',q:'Watson, Crick y Franklin',f:['v_franklin','Rosalind Franklin: sus fotos de rayos X mostraron que el ADN es una hélice'],d:'Se descubre la estructura de doble hélice del ADN: por fin se entiende cómo se copian y heredan los genes.'},
+ {a:'2003',ico:'📚',q:'Proyecto Genoma Humano',f:['d_cario','El genoma humano está repartido en 23 pares de cromosomas, como en este cariotipo'],d:'Se termina de leer la secuencia completa del ADN humano: unos 3000 millones de letras y cerca de 20 000 genes.'},
+ {a:'2012',ico:'✂️',q:'CRISPR',f:['v_crispr','Emmanuelle Charpentier y Jennifer Doudna, Premio Nobel de Química 2020'],d:'Emmanuelle Charpentier y Jennifer Doudna desarrollan una herramienta para editar genes con precisión. Reciben el Premio Nobel en 2020.'}
 ];
 var tl=document.getElementById('tl'),card=document.getElementById('tl-card');
 tl.innerHTML=ID.map(function(h,i){return '<button type="button" class="tl-it" data-i="'+i+'"><div class="pt">'+(i+1)+'</div><div class="a" style="font-size:.75rem">'+h.a+'</div><div class="n">'+h.q.split(' · ')[0]+'</div></button>';}).join('');
@@ -594,6 +601,35 @@ BIO.clasificar(document.getElementById('clas-end'),{
 var mil=document.getElementById('mil');
 var MOL=['Gases de la Tierra primitiva: metano, amoníaco, hidrógeno y vapor de agua. Todavía no hay moléculas orgánicas.','El agua se tiñe de rosado: empiezan a formarse moléculas pequeñas como el formaldehído y el cianuro de hidrógeno.','Aparecen los primeros <b>aminoácidos</b>: glicina y alanina.','Más aminoácidos: ácido aspártico y otros. El agua se pone café.','Ya hay una docena de aminoácidos distintos, de los que forman las proteínas.','Se acumulan más moléculas orgánicas; en experimentos posteriores también se formaron bases de los ácidos nucleicos.','La mezcla sigue cambiando, pero <b>no aparece ninguna célula</b>: falta organizar las moléculas.','Resultado de Miller y Urey (1953): con gases simples y energía se forman <b>moléculas de la vida</b>. El paso de moléculas a células sigue en investigación.'];
 function verMil(){var d=+mil.value;document.getElementById('mil-n').textContent=d+(d===1?' día':' días');document.getElementById('mil-t').innerHTML=MOL[d];if(d===7)BIO.marcarSeccion('origen');}
+/* Animación del aparato: el agua hierve, el vapor y los gases circulan, las chispas
+   saltan y en la trampa se acumulan moléculas; el color depende de los días. */
+var MS=document.getElementById('mil-svg'),MQ=matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,mVis=true,mT0=performance.now();
+var AGUA=['#bfdbfe','#fbcfe8','#f9a8d4','#d6a77a','#b07a4a','#9a6436','#86552c','#734a26'];
+if(window.IntersectionObserver)new IntersectionObserver(function(x){mVis=x[0].isIntersecting;}).observe(MS);
+function camino(t){ // recorrido cerrado: matraz → tubo → esfera → condensador → trampa → matraz
+  var P=[[70,170],[70,110],[70,60],[150,40],[230,60],[240,110],[240,170],[180,205],[110,205],[70,190]];
+  var n=P.length,u=((t%1)+1)%1*n,i=Math.floor(u),f=u-i,a=P[i],b=P[(i+1)%n];return [a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f];}
+function dibMil(ts){
+  requestAnimationFrame(dibMil);if(!mVis)return;
+  var d=+mil.value,t=MQ?0:(ts-mT0)/1000,o='<rect x="0" y="0" width="320" height="250" rx="14" fill="#f8fafc"/>';
+  // tubos del circuito
+  o+='<path d="M70 168 L70 60 Q70 40 90 40 L210 40 Q232 40 232 62 L240 110 L240 170 Q240 205 205 205 L110 205 Q80 205 74 188" fill="none" stroke="#94a3b8" stroke-width="7" stroke-linecap="round"/>';
+  // esfera de gases con electrodos
+  o+='<circle cx="150" cy="70" r="34" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><line x1="122" y1="52" x2="140" y2="66" stroke="#334155" stroke-width="3"/><line x1="178" y1="52" x2="160" y2="66" stroke="#334155" stroke-width="3"/>';
+  if(d>0&&(MQ||Math.sin(t*9)>-.2)){var z='M140 66';for(var k=1;k<=5;k++)z+=' L'+(140+k*4)+' '+(66+((k%2)?-5:5)*(MQ?1:Math.sin(t*20+k)));o+='<path d="'+z+'" fill="none" stroke="#facc15" stroke-width="2.5"/>';}
+  o+='<text x="150" y="122" text-anchor="middle" style="font:700 9px Outfit" fill="#6b21a8">gases + chispas (rayos)</text>';
+  // condensador con agua fría
+  o+='<rect x="226" y="96" width="28" height="56" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="262" y="128" style="font:700 9px Outfit" fill="#1d4ed8">agua fría</text>';
+  // matraz con agua y fuego
+  o+='<circle cx="70" cy="190" r="28" fill="'+AGUA[d]+'" stroke="#0369a1" stroke-width="2.5"/><path d="M50 222 Q58 210 62 222 Q70 206 78 222 Q84 212 90 222 Z" fill="#f97316"/><text x="70" y="240" text-anchor="middle" style="font:700 9px Outfit" fill="#c2410c">calor</text>';
+  for(var b=0;b<4&&!MQ;b++){var by=200-((t*30+b*14)%24);o+='<circle cx="'+(60+b*7)+'" cy="'+by+'" r="2" fill="#fff" opacity=".8"/>';}
+  // trampa en U con el líquido que se acumula
+  o+='<path d="M150 205 L150 228 Q150 238 160 238 L180 238 Q190 238 190 228 L190 205" fill="none" stroke="#94a3b8" stroke-width="7"/><rect x="153" y="'+(236-d*2.6)+'" width="34" height="'+(2+d*2.6)+'" fill="'+AGUA[d]+'"/><text x="200" y="236" style="font:700 9px Outfit" fill="#475569">trampa</text>';
+  // partículas que circulan: vapor (azul), gases (morado) y aminoácidos (verde)
+  for(var p=0;p<14;p++){var q=camino(t*.12+p/14),col=p%3===0?'#a855f7':'#2563eb';if(d>1&&p%4===1)col='#16a34a';o+='<circle cx="'+q[0]+'" cy="'+q[1]+'" r="3" fill="'+col+'"/>';}
+  for(var a=0;a<Math.min(d*3,18);a++)o+='<circle cx="'+(158+(a%6)*5)+'" cy="'+(233-Math.floor(a/6)*5)+'" r="2.2" fill="#16a34a"/>';
+  MS.innerHTML=o;}
+requestAnimationFrame(dibMil);
 mil.oninput=verMil;verMil();
 })();
 </script>

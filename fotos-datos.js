@@ -1583,5 +1583,101 @@ window.FOTOS_DATOS={
 "tipo": "Micrografía",
 "w": 800,
 "h": 600
+},
+"v_linneo": {
+"autor": "Autor desconocido",
+"titulo": "Retrato de Carl Linnaeus (1707–1778)",
+"anio": "s. f.",
+"lic": "CC BY 4.0",
+"licUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+"url": "https://commons.wikimedia.org/w/index.php?curid=36310454",
+"fuente": "Wikimedia Commons",
+"tipo": "Pintura",
+"w": 628,
+"h": 800
+},
+"v_dobzhansky": {
+"autor": "McCluskey, S.",
+"titulo": "Dobzhansky Evolution Notre Dame [«Nada en biología tiene sentido si no es a la luz de la evolución»]",
+"anio": "s. f.",
+"lic": "CC BY-SA 3.0",
+"licUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.es",
+"url": "https://commons.wikimedia.org/w/index.php?curid=25369137",
+"fuente": "Wikimedia Commons",
+"tipo": "Fotografía",
+"w": 798,
+"h": 800
+},
+"v_franklin": {
+"autor": "MRC Laboratory of Molecular Biology",
+"titulo": "Rosalind Franklin",
+"anio": "s. f.",
+"lic": "CC BY-SA 4.0",
+"licUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+"url": "https://commons.wikimedia.org/w/index.php?curid=68494240",
+"fuente": "Wikimedia Commons",
+"tipo": "Fotografía",
+"w": 666,
+"h": 800
+},
+"v_crispr": {
+"autor": "Fioretti, B., Hull, D. y The Royal Society",
+"titulo": "Emmanuelle Charpentier and Jennifer Doudna",
+"anio": "s. f.",
+"lic": "CC BY-SA 4.0",
+"licUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+"url": "https://commons.wikimedia.org/w/index.php?curid=94835949",
+"fuente": "Wikimedia Commons",
+"tipo": "Fotografía",
+"w": 800,
+"h": 379
+},
+"v_pz_fortis": {
+"autor": "Zygy",
+"titulo": "Geospiza fortis",
+"anio": "2019",
+"lic": "CC0 1.0",
+"licUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.es",
+"url": "https://www.inaturalist.org/observations/37146436",
+"fuente": "iNaturalist",
+"tipo": "Fotografía",
+"w": 800,
+"h": 600
+},
+"v_pz_olivacea": {
+"autor": "Renoult, J.",
+"titulo": "Certhidea olivacea",
+"anio": "2017",
+"lic": "CC BY 4.0",
+"licUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+"url": "https://www.inaturalist.org/observations/9398069",
+"fuente": "iNaturalist",
+"tipo": "Fotografía",
+"w": 800,
+"h": 534
+},
+"v_pz_scandens": {
+"autor": "Phillips, J. G.",
+"titulo": "Geospiza scandens",
+"anio": "2018",
+"lic": "CC BY 4.0",
+"licUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+"url": "https://www.inaturalist.org/observations/24542946",
+"fuente": "iNaturalist",
+"tipo": "Fotografía",
+"w": 800,
+"h": 571
+},
+"v_pz_pallidus": {
+"autor": "Jackson, A.",
+"titulo": "Camarhynchus pallidus",
+"anio": "2021",
+"lic": "CC0 1.0",
+"licUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.es",
+"url": "https://www.inaturalist.org/observations/193327154",
+"fuente": "iNaturalist",
+"tipo": "Fotografía",
+"w": 800,
+"h": 534
 }
 };
