@@ -6,6 +6,35 @@
 
 ---
 
+## Versión 2.37 — 13 de noviembre de 2026 · Preguntas de indagación con tablas y gráficas
+
+**Contexto.** El docente pidió seguir con las preguntas de indagación que traen sus datos en una tabla o una gráfica, como la prueba Saber 11, también en el juego.
+
+**Cambios.**
+- **`saber-icfes.js`:** nuevo dibujo de **gráficas** (líneas o barras, una o dos series) en SVG. Una pregunta con `tabla` o `graf` se dibuja sola en la evaluación y en el juego.
+- **`docente-datos.js`:** 12 preguntas nuevas, una por tema, con sus datos: razón superficie ÷ volumen de las células, ADN en el ciclo celular (gráfica), presas y depredadores (gráfica), cruce de arvejas, polillas y selección natural, frecuencia cardíaca (gráfica), azúcar en bebidas, reinos, temperatura basal (gráfica), glucosa en sangre (gráfica), temperatura según la altitud y CO₂ atmosférico (gráfica de barras).
+- **`juego.html`, `saber-juego.js`:** el generador las pasa al juego, que las muestra sobre la pregunta.
+- **Versión:** `bionom-v50` y `?v` de los archivos cambiados. `CLAUDE.md`: se documentan `tabla` y `graf`.
+
+**Verificación.** Con Playwright: evaluación y juego muestran bien las tablas y gráficas, sin errores.
+
+---
+
+## Versión 2.36 — 13 de noviembre de 2026 · Las preguntas tipo Saber también entran al juego
+
+**Contexto.** El docente pidió que las preguntas tipo Saber 11 (con situación, tabla o figura) también salgan en el **juego**, en el tema que les corresponde.
+
+**Cambios.**
+- **`saber-juego.js` (nuevo)** y **`herramientas/generar-saber-juego.js` (nuevo):** el generador pasa las preguntas Saber de `docente-datos.js` que aún no están en el juego a un archivo compacto (565 preguntas). Si cambian las preguntas del panel docente, hay que volver a correr `node herramientas/generar-saber-juego.js`.
+- **`juego.html`:** esas preguntas se suman a `BANCO_BIO` en su tema (cada tema pasó de unas 90 a unas 140 de opción múltiple), con la situación arriba y el crédito del Icfes en las oficiales. Respetan el nivel (Básico, Medio, Completo).
+- **`sw.js`:** `saber-juego.js` en la lista.
+
+**Verificación.** Con Playwright: partida de prueba completa y sin errores.
+
+**Pendiente.** Las explicaciones y pistas del juego para estas preguntas son generales por competencia; falta escribir explicaciones propias.
+
+---
+
 ## Versión 2.35 — 13 de noviembre de 2026 · Fotos y animación en Evolución
 
 **Contexto.** El docente envió capturas de Evolución y señaló que faltaban
