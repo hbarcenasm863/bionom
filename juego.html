@@ -145,7 +145,7 @@
 <script src="banco.js?v=19"></script>
 <script src="saber-icfes.js?v=3"></script>
 <script src="icfes-datos.js?v=1"></script>
-<script src="saber-juego.js?v=2"></script>
+<script src="saber-juego.js?v=3"></script>
 <script>/* Preguntas oficiales del Icfes (cuadernillo Saber 11.º, 2026) dentro del
    Juego, en su tema. Solo las que tienen opciones escritas: las de opciones
    dibujadas (gráficas o carteleras A–D) quedan para las evaluaciones del
@@ -160,7 +160,7 @@
   (window.SABER_JUEGO||[]).forEach(function(x){
     BANCO_BIO.push({t:x.t,k:'mc',q:x.q,ctx:x.ctx,ops:x.o,a:0,c:x.c,af:x.af,saber:1,tabla:x.tabla,graf:x.graf,
       p:PIS[x.c]||PIS.uso,
-      exp:'Esta es una pregunta tipo Saber 11 de la competencia de '+(NOMC[x.c]||NOMC.uso)+'. La respuesta correcta es «'+x.o[0]+'»: es la que se apoya en la situación y en lo que estudiaste de «'+x.t+'»; las otras opciones no se desprenden de ella.'});});
+      exp:x.exp||'Esta es una pregunta tipo Saber 11 de la competencia de '+(NOMC[x.c]||NOMC.uso)+'. La respuesta correcta es «'+x.o[0]+'»: es la que se apoya en la situación y en lo que estudiaste de «'+x.t+'»; las otras opciones no se desprenden de ella.'});});
   SABER_ICFES.preguntas().forEach(function(x){if(x.imgOps)return;
     BANCO_BIO.push({t:x.t,k:'mc',q:x.q,ops:x.o,a:x.r,exp:x.exp+' (Pregunta '+x.icfes+' del cuadernillo Saber 11.º de Ciencias Naturales, Icfes 2026.)',p:x.p||undefined,icfes:x.icfes,ctx:x.ctx,img:x.img,tabla:x.tabla,c:x.c,af:x.af});});
 })();</script>

@@ -11,7 +11,7 @@ const lim=s=>String(s==null?'':s).replace(/<[^>]+>/g,'');
 const out=[],vistos=new Set();
 c.DOCENTE_DATOS.SABER.forEach(q=>{
   if(yaEstan.has(q.q)||vistos.has(q.t+'|'+q.q))return;vistos.add(q.t+'|'+q.q);
-  out.push({t:q.t,c:SI.competencia(q),af:SI.afirmacion(q).cod,ctx:lim(q.ctx),q:lim(q.q),o:q.o.map(lim),tabla:q.tabla||undefined,graf:q.graf||undefined});
+  out.push({t:q.t,c:SI.competencia(q),af:SI.afirmacion(q).cod,ctx:lim(q.ctx),q:lim(q.q),o:q.o.map(lim),tabla:q.tabla||undefined,exp:q.exp?lim(q.exp):undefined,graf:q.graf||undefined});
 });
 const txt='/* GENERADO por herramientas/generar-saber-juego.js: no editar a mano.\n   Preguntas tipo Saber 11 de BioNom para el Juego ('+out.length+'). */\nwindow.SABER_JUEGO='+JSON.stringify(out)+';\n';
 fs.writeFileSync('saber-juego.js',txt);

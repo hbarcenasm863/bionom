@@ -6,6 +6,15 @@
 
 ---
 
+## Versión 2.39 — 13 de noviembre de 2026 · Explicaciones propias en las preguntas con datos
+
+**Contexto.** El docente pidió explicaciones propias para las preguntas tipo Saber del juego.
+
+**Cambios.** Las 12 preguntas con tabla o gráfica tienen su propia explicación (campo `exp` en `docente-datos.js`): leen los datos, hacen la cuenta y explican por qué se descarta cada idea equivocada. El generador y `juego.html` las usan cuando existen. `bionom-v52`.
+
+**Pendiente.** Las demás (unas 560) siguen con la explicación general; se escribirán por tema.
+
+---
 ## Versión 2.38 — 13 de noviembre de 2026 · Pantalla completa en todas las simulaciones
 
 **Contexto.** El docente pidió poder ver en pantalla completa la simulación de
