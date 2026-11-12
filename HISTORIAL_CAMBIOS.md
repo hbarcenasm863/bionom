@@ -6,6 +6,42 @@
 
 ---
 
+## Versión 2.35 — 13 de noviembre de 2026 · Fotos y animación en Evolución
+
+**Contexto.** El docente envió capturas de Evolución y señaló que faltaban
+imágenes, animaciones o fotos reales en tres partes: hitos de la línea del
+tiempo que mostraban solo un emoji, la simulación de Miller y Urey (solo un
+número y un texto) y los pinzones de Darwin (solo texto).
+
+**Cambios en `evolucion.html`.**
+- **Línea del tiempo, fotos con cita APA:**
+  - Fijismo: retrato de Linneo;
+  - Teoría sintética: mosaico de Dobzhansky con su frase «Nada en biología
+    tiene sentido si no es a la luz de la evolución»;
+  - 1953: Rosalind Franklin en su microscopio;
+  - Proyecto Genoma Humano: el cariotipo humano (`d_cario`, ya existente);
+  - CRISPR: Charpentier y Doudna.
+- **Pinzones de Darwin:** fotos reales (iNaturalist, Galápagos) de cada tipo
+  de pico antes del clasificador: pinzón terrestre mediano (semillas), pinzón
+  cantor (insectos), pinzón de los cactus sobre una flor de cactus y pinzón
+  carpintero (herramienta).
+- **Miller y Urey:** animación SVG del aparato:
+  - el matraz hierve y las partículas circulan (vapor, gases y aminoácidos);
+  - saltan chispas en la esfera;
+  - el agua cambia de color con los días (transparente → rosada → café);
+  - los aminoácidos se acumulan en la trampa.
+  Solo se anima cuando está a la vista; con «reducir movimiento» se dibuja
+  quieta.
+- `fotos-datos.js`: 8 fotos nuevas.
+
+**Pruebas.** Con Playwright en Pixel 7: las 5 fotos de la línea del tiempo y
+las 4 de los pinzones cargan con su cita; la animación cambia con el control;
+las 16 páginas sin errores ni desbordes.
+
+**Versiones.** `fotos-datos.js?v=8`, `sw.js` → `bionom-v49`.
+
+---
+
 ## Versión 2.34 — 12 de noviembre de 2026 · Más indagación en las preguntas tipo Saber
 
 **Contexto.** El docente pidió continuar con lo que había quedado pendiente de la revisión con el modelo basado en evidencias del Icfes: subir la proporción de preguntas de **indagación** (la competencia con más preguntas en la prueba Saber 11 y la más débil en los tres sitios) y, en IonNom, darle **contexto** a las preguntas tipo Saber que no lo tenían.
@@ -52,42 +88,6 @@
 
 **Pendiente.**
 - La indagación sigue baja (7 % de las preguntas tipo Saber frente a cerca del 38 % en la prueba real).
-
----
-
-## Versión 2.33 — 13 de noviembre de 2026 · Fotos y animación en Evolución
-
-**Contexto.** El docente envió capturas de Evolución y señaló que faltaban
-imágenes, animaciones o fotos reales en tres partes: hitos de la línea del
-tiempo que mostraban solo un emoji, la simulación de Miller y Urey (solo un
-número y un texto) y los pinzones de Darwin (solo texto).
-
-**Cambios en `evolucion.html`.**
-- **Línea del tiempo, fotos con cita APA:**
-  - Fijismo: retrato de Linneo;
-  - Teoría sintética: mosaico de Dobzhansky con su frase «Nada en biología
-    tiene sentido si no es a la luz de la evolución»;
-  - 1953: Rosalind Franklin en su microscopio;
-  - Proyecto Genoma Humano: el cariotipo humano (`d_cario`, ya existente);
-  - CRISPR: Charpentier y Doudna.
-- **Pinzones de Darwin:** fotos reales (iNaturalist, Galápagos) de cada tipo
-  de pico antes del clasificador: pinzón terrestre mediano (semillas), pinzón
-  cantor (insectos), pinzón de los cactus sobre una flor de cactus y pinzón
-  carpintero (herramienta).
-- **Miller y Urey:** animación SVG del aparato:
-  - el matraz hierve y las partículas circulan (vapor, gases y aminoácidos);
-  - saltan chispas en la esfera;
-  - el agua cambia de color con los días (transparente → rosada → café);
-  - los aminoácidos se acumulan en la trampa.
-  Solo se anima cuando está a la vista; con «reducir movimiento» se dibuja
-  quieta.
-- `fotos-datos.js`: 8 fotos nuevas.
-
-**Pruebas.** Con Playwright en Pixel 7: las 5 fotos de la línea del tiempo y
-las 4 de los pinzones cargan con su cita; la animación cambia con el control;
-las 16 páginas sin errores ni desbordes.
-
-**Versiones.** `fotos-datos.js?v=8`, `sw.js` → `bionom-v47`.
 
 ---
 
