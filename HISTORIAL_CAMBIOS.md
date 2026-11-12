@@ -6,6 +6,58 @@
 
 ---
 
+## Versión 2.30 — 12 de noviembre de 2026 · El laboratorio de microscopía en su propia página, en horizontal
+
+**Contexto.** El docente prefirió el laboratorio de microscopía en una página
+aparte, para que se vea mejor, y pidió que en el celular se use en horizontal,
+con todos los controles a un lado.
+
+**Cambios.**
+- **`microscopio.html` (nueva)**, subpágina de *La célula*
+  (`padre:'celula'` en `MODULOS`; aparece en la barra de subpáginas, en «Más»
+  y en la portada). Tiene:
+  - palabras clave (ocular, objetivo, aumento total, diafragma, tinción y
+    aceite de inmersión);
+  - el laboratorio (`microlab.js`) con las fotos reales para comparar;
+  - tres chequeos: aumento total, para qué se tiñe y para qué sirve el aceite;
+  - el recuadro «Escribe tu conclusión».
+- **Celular en horizontal** (`orientation:landscape` y alto ≤ 560 px):
+  - se ocultan el menú, la barra inferior, la subbarra, la narración y el
+    control de tamaño de letra;
+  - el ocular queda grande a la izquierda (fijo) y los cuatro grupos de
+    controles a la derecha, en dos columnas que caben en la pantalla;
+  - los retos, la medición y la tabla siguen abajo, en la misma columna.
+- **Celular en vertical:**
+  - en lugar del laboratorio aparece «Gira tu celular», con el botón
+    «Pantalla completa en horizontal»: pantalla completa y bloqueo de
+    orientación con `screen.orientation.lock`, que funciona en Android y en la
+    app instalada;
+  - en iPhone el navegador no permite girar la pantalla solo: el aviso pide
+    girarlo a mano y el laboratorio se acomoda;
+  - un enlace permite usarlo en vertical de todos modos;
+  - en computador hay un botón de pantalla completa.
+- **`celula.html`:**
+  - la sección del microscopio conserva las partes, la calculadora, la
+    preparación de la lámina y sus dos chequeos;
+  - el laboratorio se cambió por un botón grande «Abre el laboratorio de
+    microscopía»;
+  - «Siguiente» va al laboratorio, y en `division.html` «Anterior» vuelve a
+    él.
+- `sw.js`: `microscopio.html` agregado a `ASSETS`.
+
+**Pruebas.** Con Playwright:
+- Pixel 7 e iPhone 13 en horizontal: sin menú, ocular a la izquierda y
+  controles a la derecha, sin desbordes;
+- Pixel 7 en vertical: aviso de girar y la opción de usarlo en vertical;
+- en computador y en Pixel 7 horizontal, el laboratorio completo: los 5
+  retos, la lámina rota, 100× sin y con aceite, la medición, la conclusión
+  guardada y el informe;
+- las 16 páginas sin errores.
+
+**Versiones.** `bio.js?v=23`, `sw.js` → `bionom-v43`.
+
+---
+
 ## Versión 2.29 — 12 de noviembre de 2026 · Fotos reales para comparar en el laboratorio de microscopía
 
 **Contexto.** El docente preguntó si las muestras del laboratorio de

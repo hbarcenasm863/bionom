@@ -33,6 +33,7 @@ window.BIO_CLASIF=(function(){
 var MODULOS=[
   {id:'inicio',href:'index.html',ico:'🗺️',txt:'Mapa',full:'Mapa de niveles'},
   {id:'celula',href:'celula.html',ico:'🔬',txt:'Célula',full:'La célula',niveles:['molecula','organelo','celula']},
+  {id:'microscopio',padre:'celula',href:'microscopio.html',ico:'🔬',txt:'Microscopio',full:'Laboratorio de microscopía',niveles:['organelo','celula']},
   {id:'division',href:'division.html',ico:'✂️',txt:'División',full:'División celular: mitosis y meiosis',niveles:['celula','organismo']},
   {id:'reinos',href:'reinos.html',ico:'🍄',txt:'Reinos',full:'Reinos y clasificación',niveles:['organismo']},
   {id:'ecosistemas',href:'ecosistemas.html',ico:'🌳',txt:'Ecosistemas',full:'Ecosistemas',niveles:['poblacion','comunidad','ecosistema','bioma','biosfera']},
