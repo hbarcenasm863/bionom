@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=25">
+<link rel="stylesheet" href="bio.css?v=26">
 <style>
 .fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
@@ -63,6 +63,10 @@
 .prot{display:flex;flex-wrap:wrap;gap:4px;align-items:center;min-height:52px;padding:8px;background:#f7fbf8;border-radius:12px;border:1px solid var(--cn-brd)}
 .aa{min-width:50px;height:42px;border-radius:21px;display:grid;place-items:center;font:800 .82rem Outfit;color:#fff;padding:0 8px;animation:aparece .35s ease}
 .aa.stop{background:#555!important}
+.en-pantalla #ribo-anim~p,.en-pantalla>#ribo-anim~p,[data-pantalla="La traducción de cerca"].en-pantalla>p{display:none}
+[data-pantalla="La traducción de cerca"].en-pantalla>h3{margin:0 0 4px;font-size:1rem}
+.en-pantalla #ribo-anim svg{max-height:calc(100dvh - 230px)!important;width:100%}
+@media (max-height:500px){.en-pantalla #ribo-anim{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:10px;align-items:start}.en-pantalla #ribo-anim svg{grid-row:1/3;max-height:calc(100dvh - 60px)!important}.en-pantalla #ribo-anim .ctrl{flex-direction:column;align-items:stretch}.en-pantalla #ribo-anim .ctrl{gap:4px}.en-pantalla #ribo-anim .ctrl .cn-btn{font-size:.75rem;padding:4px 8px;min-height:0}[data-pantalla="La traducción de cerca"].en-pantalla>h3{display:none}.en-pantalla #ribo-anim .ribo-nota{font-size:.78rem;line-height:1.35;min-height:0!important;margin:0 0 4px!important}}
 .codon.trna{flex-direction:column;align-items:center;gap:0;padding:3px 3px 0}
 .trna .fila3{display:flex;gap:1px}
 .trna .aa-c{font:800 .72rem Outfit;color:#fff;border-radius:12px;padding:2px 8px;margin-bottom:2px;position:relative}
@@ -333,6 +337,12 @@
     <div class="grid g2" style="margin-top:12px">
       <div class="card"><h3>📝 Transcripción</h3><p>En el núcleo, una enzima (la ARN polimerasa) abre el ADN y copia una de sus cadenas en ARN, siguiendo la complementariedad. En el ARN no hay T: en su lugar va <b>U (uracilo)</b>. Frente a una A del ADN se pone una U.</p></div>
       <div class="card"><h3>🔧 Traducción</h3><p>En el ribosoma, el ARNm se lee de <b>tres en tres</b> letras. Cada trío es un <b>codón</b> y corresponde a un aminoácido. Siempre empieza en <b>AUG</b> (metionina) y termina en un codón de parada (UAA, UAG o UGA).</p></div>
+    </div>
+    <div class="card" style="margin-top:12px" data-pantalla="La traducción de cerca">
+      <h3>🔬 La traducción de cerca: el ribosoma y los ARN de transferencia</h3>
+      <p>Dentro del ribosoma caben <b>dos ARNt a la vez</b>. El del <b>sitio P</b> sostiene la cadena que se va formando; al <b>sitio A</b> llega el ARNt con el aminoácido siguiente. La cadena pasa al ARNt nuevo, el ribosoma avanza un codón y el ARNt vacío sale.</p>
+      <div id="ribo-anim"></div>
+      <p style="font-size:.8rem;color:var(--cn-dim);margin:4px 0 0">Dibujo propio basado en el esquema de traducción del National Human Genome Research Institute (NHGRI, s. f.), <i>Translation</i>, Talking Glossary of Genomic and Genetic Terms. https://www.genome.gov/genetics-glossary/Translation</p>
     </div>
     <details class="card" style="margin-top:12px"><summary style="cursor:pointer;font-weight:800;color:var(--cn-brand-d)">📖 Ver la tabla del código genético</summary><div class="tbl-wrap" style="margin-top:10px" id="tabla-cod"></div></details>
   </section>
@@ -821,5 +831,6 @@ if(R){
 <script src="text-zoom.js?v=13"></script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=14"></script>
+<script src="ribosoma-anim.js?v=1"></script>
 </body>
 </html>

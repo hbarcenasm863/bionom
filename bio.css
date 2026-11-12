@@ -330,7 +330,8 @@ input[type=range]{touch-action:none}
 .con-pantalla{position:relative}
 .btn-pantalla{display:flex;margin:0 0 8px auto;font-size:.85rem;padding:6px 12px}
 .con-pantalla.en-pantalla{display:flex;flex-direction:column;background:#fff;padding:14px 18px;overflow:auto;border-radius:0;max-width:none;width:100%;height:100%}
-.con-pantalla.pantalla-activa{position:fixed;inset:0;z-index:300;height:100dvh}
+.con-pantalla.pantalla-activa{position:fixed;inset:0;z-index:2000;height:100dvh}
+html.sin-scroll .site-nav,html.sin-scroll .toc,html.sin-scroll .sub-nav,html.sin-scroll .bot-nav,html.sin-scroll .flota-exp{visibility:hidden}
 /* Dentro de la pantalla completa, las figuras crecen sin salirse de la pantalla */
 .btn-pantalla .gira-aviso{display:block;font-weight:400;font-size:.75rem;margin-left:8px}
 .btn-pantalla:has(.gira-aviso){align-items:center}

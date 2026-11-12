@@ -6,6 +6,39 @@
 
 ---
 
+## Versión 2.41 — 13 de noviembre de 2026 · La traducción de cerca: ribosoma y ARN de transferencia
+
+**Contexto.** El docente mostró el esquema de traducción del National Human
+Genome Research Institute (NHGRI): ribosoma sobre el ARNm, dos ARNt a la vez,
+la cadena que pasa de uno a otro y el ARNt vacío que sale. La animación que
+había mostraba un solo ARNt a la vez. Pidió además que tuviera pantalla
+completa.
+
+**Cambios**
+- `ribosoma-anim.js` (nuevo): animación propia inspirada en el esquema del
+  NHGRI, con la misma secuencia del traductor (AUG GUG CAU CUG…). En cada
+  codón: llega el ARNt al sitio A con su anticodón y su aminoácido; enlace
+  peptídico (la cadena pasa al ARNt del sitio A); el ribosoma avanza un codón y
+  el ARNt vacío sale. Al final, en UAA, entra el factor de liberación, se
+  suelta la proteína y el ribosoma se separa. Botones Reproducir/Pausa,
+  Siguiente codón y Reiniciar, con un texto que explica cada momento. Solo se
+  mueve cuando está a la vista, respeta «reducir movimiento» y en pantallas
+  angostas acerca la vista al ribosoma.
+- `genetica.html`: tarjeta nueva «La traducción de cerca» en «Del gen a la
+  proteína», con crédito al NHGRI (Talking Glossary, *Translation*) y botón de
+  pantalla completa. En pantalla completa se oculta el párrafo de
+  introducción y, en el celular horizontal, el texto y los botones quedan al
+  lado del dibujo.
+- `bio.css` (v26): en el modo de respaldo (iPhone) la barra del sitio, el
+  índice, la barra inferior y el recuadro flotante ya no tapan la simulación.
+- `sw.js`: `ribosoma-anim.js` agregado a la caché; `CACHE` → `bionom-v54`.
+
+**Pruebas.** Playwright en computador, en celular vertical y en celular
+horizontal, con la pantalla completa real y con la de respaldo: sin errores ni
+desbordes.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.40 — 13 de noviembre de 2026 · El ARN de transferencia en el traductor «Del gen a la proteína»
 
 **Contexto.** El docente preguntó si ya estaba el ARN de transferencia en la
