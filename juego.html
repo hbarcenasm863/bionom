@@ -100,6 +100,7 @@
     <p class="nota-niv" id="nota-niv" aria-live="polite"></p>
     <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">2 · Escoge el tema</h2>
     <div class="temas" id="temas"></div>
+    <p class="nota-niv" id="nota-tema" aria-live="polite"></p>
     <h2 style="font-family:var(--cn-serif);color:var(--cn-brand-d)">3 · ¿Cómo quieres jugar?</h2>
     <div class="secciones" id="secciones">
       <button type="button" class="seccion on" data-s="preg"><span class="e">❓</span>Preguntas<small>3 intentos con pistas en cada una</small></button>
@@ -184,7 +185,9 @@ BANCO_TODO.forEach(function(q){if(q.niv==null)q.niv=nivelDe(q.t,[q.q,q.exp,(q.op
 (window.BANCO_AHORCADO||[]).forEach(function(w){if(w.niv==null)w.niv=nivelDe(w[1],w.join(' '));});
 var NIVEL=3;try{var nv=+localStorage.getItem('bionom_nivel_juego');if(nv>=1&&nv<=3)NIVEL=nv;}catch(e){}
 (function(){var q=new URLSearchParams(location.search).get('nivel');var m={basico:1,'básico':1,medio:2,completo:3,'1':1,'2':2,'3':3};if(q&&m[q.toLowerCase()])NIVEL=m[q.toLowerCase()];})();
-var NOM_NIV={1:'Básico (6.° y 7.°)',2:'Medio (8.° y 9.°)',3:'Completo (10.° y 11.°)'};
+var NOM_NIV={1:'Básico (6.° y 7.°)',2:'Medio (8.° y 9.°)',3:'Completo (10.° y 11.°)'},NOM_CORTO={1:'Básico',2:'Medio',3:'Completo'},NIV_TEMA={};
+function avisoTema(){var p=document.getElementById('nota-tema');if(!p)return;var k=tema==='todos'?NIVEL:NIV_TEMA[tema];
+  p.innerHTML=tema!=='todos'&&k>NIVEL?'ℹ️ «'+NOM_T[tema]+'» se trabaja sobre todo desde '+(k===2?'8.° y 9.°':'10.° y 11.°')+': se usan sus preguntas de nivel <b>'+NOM_CORTO[k]+'</b>.':'';}
 var NOM_T={};TEMAS.forEach(function(t){NOM_T[t[0]]=t[1];});
 var PAG_T={celula:'celula.html',division:'division.html',reinos:'reinos.html',sistemas:'sistemas.html',reproduccion:'reproduccion.html',genetica:'genetica.html',evolucion:'evolucion.html',ecosistemas:'ecosistemas.html',colombia:'regiones.html',ambiente:'ambiente.html'};
 var BUCKET={mc:'mc',vf:'id',ord:'drag',esc:'write',cruci:'write',sopa:'id',ah:'write'};
@@ -223,16 +226,18 @@ function cargarStats(){var box=$('b-stats');box.innerHTML='<small>Cargando tus e
 /* ── temas ── */
 var tbox=$('temas');
 function pintarTemas(){
-  BANCO=BANCO_TODO.filter(function(q){return q.niv<=NIVEL;});
-  BANCO_PAL=PAL_TODO.filter(function(w){return w.niv<=NIVEL;});
-  var POCAS={};TEMAS.forEach(function(t){if(BANCO.filter(function(q){return q.t===t[0];}).length<8)POCAS[t[0]]=1;});
-  BANCO=BANCO.filter(function(q){return !POCAS[q.t];});BANCO_PAL=BANCO_PAL.filter(function(w){return !POCAS[w[1]];});
-  if(tema!=='todos'&&!BANCO.some(function(q){return q.t===tema;}))tema='todos';
-  tbox.innerHTML='<button type="button" class="tema'+(tema==='todos'?' on':'')+'" data-t="todos"><span class="e">🌍</span>Todos los temas<small>'+BANCO.length+' preguntas</small></button>'+TEMAS.map(function(t){var n=BANCO.filter(function(q){return q.t===t[0];}).length;
-    return '<button type="button" class="tema'+(tema===t[0]?' on':'')+'" data-t="'+t[0]+'"'+(n?'':' disabled')+'><span class="e">'+t[2]+'</span>'+t[1]+'<small>'+(n?n+' preguntas':'Desde el nivel Medio')+'</small></button>';}).join('');
-  tbox.querySelectorAll('.tema').forEach(function(b){b.onclick=function(){if(b.disabled)return;tema=b.getAttribute('data-t');tbox.querySelectorAll('.tema').forEach(function(x){x.classList.toggle('on',x===b);});};});
+  // Cada tema se puede jugar siempre: si tiene pocas preguntas del nivel escogido,
+  // se usan las del nivel siguiente que alcance (y se avisa).
+  NIV_TEMA={};TEMAS.forEach(function(t){var k=NIVEL;while(k<3&&BANCO_TODO.filter(function(q){return q.t===t[0]&&q.niv<=k;}).length<8)k++;NIV_TEMA[t[0]]=k;});
+  BANCO=BANCO_TODO.filter(function(q){return q.niv<=NIV_TEMA[q.t];});
+  BANCO_PAL=PAL_TODO.filter(function(w){var k=NIV_TEMA[w[1]]||NIVEL;return w.niv<=k;});
+  var BTODOS=BANCO.filter(function(q){return NIV_TEMA[q.t]===NIVEL;}); // «Todos los temas» usa solo los temas de ese nivel
+  tbox.innerHTML='<button type="button" class="tema'+(tema==='todos'?' on':'')+'" data-t="todos"><span class="e">🌍</span>Todos los temas<small>'+BTODOS.length+' preguntas</small></button>'+TEMAS.map(function(t){var n=BANCO.filter(function(q){return q.t===t[0];}).length,k=NIV_TEMA[t[0]];
+    return '<button type="button" class="tema'+(tema===t[0]?' on':'')+'" data-t="'+t[0]+'"><span class="e">'+t[2]+'</span>'+t[1]+'<small>'+n+' preguntas'+(k>NIVEL?' · nivel '+NOM_CORTO[k]:'')+'</small></button>';}).join('');
+  tbox.querySelectorAll('.tema').forEach(function(b){b.onclick=function(){tema=b.getAttribute('data-t');tbox.querySelectorAll('.tema').forEach(function(x){x.classList.toggle('on',x===b);});avisoTema();};});
+  avisoTema();
   $('niveles').querySelectorAll('.nivel').forEach(function(b){var on=+b.getAttribute('data-n')===NIVEL;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));});
-  $('nota-niv').innerHTML={1:'🌱 Preguntas de 6.° y 7.°: la célula, los reinos, los ecosistemas, Colombia, el ambiente, el cuerpo y la nutrición.',2:'🌿 Suma lo de 8.° y 9.°: genética, evolución, reproducción y funciones comparadas. Sin la profundización.',3:'🌳 Todas las preguntas, incluida la profundización de 10.° y 11.°.'}[NIVEL];
+  $('nota-niv').innerHTML={1:'🌱 Preguntas de 6.° y 7.°. Escoge abajo el tema que estás trabajando: todos se pueden jugar.',2:'🌿 Preguntas hasta 8.° y 9.°, sin la profundización. Escoge abajo el tema que estás trabajando.',3:'🌳 Todas las preguntas, incluida la profundización de 10.° y 11.°.'}[NIVEL];
 }
 $('niveles').querySelectorAll('.nivel').forEach(function(b){b.onclick=function(){NIVEL=+b.getAttribute('data-n');try{localStorage.setItem('bionom_nivel_juego',String(NIVEL));}catch(e){}pintarTemas();};});
 pintarTemas();
@@ -250,7 +255,7 @@ $('secciones').querySelectorAll('.seccion').forEach(function(b){b.onclick=functi
   $('secciones').querySelectorAll('.seccion').forEach(function(x){x.classList.toggle('on',x===b);});
   $('cant-box').hidden=SEC!=='preg';$('nota-sec').hidden=SEC==='preg';$('nota-sec').innerHTML=NOTA_SEC[SEC]||'';};});
 
-function gruposTema(){return tema==='todos'?null:[tema];}
+function gruposTema(){return tema==='todos'?TEMAS.map(function(t){return t[0];}).filter(function(t){return NIV_TEMA[t]===NIVEL;}):[tema];}
 
 /* ── partida ── */
 $('jugar').onclick=function(){
@@ -258,7 +263,7 @@ $('jugar').onclick=function(){
   if(MODO==='est'&&!EST.ok){$('jugar-err').textContent='Primero escribe tu código de estudiante (o cambia a Modo libre).';return;}
   var qs;
   if(SEC==='preg'){
-    var n=MODO==='est'?20:cant,pool=tema==='todos'?BANCO:BANCO.filter(function(q){return q.t===tema;});
+    var n=MODO==='est'?20:cant,pool=tema==='todos'?BANCO.filter(function(q){return NIV_TEMA[q.t]===NIVEL;}):BANCO.filter(function(q){return q.t===tema;});
     qs=BIO.barajar(pool);
     if(tema==='todos'){ // reparte los temas de forma pareja
       var porT={};qs.forEach(function(q){(porT[q.t]=porT[q.t]||[]).push(q);});var ks=Object.keys(porT),out=[],i=0;

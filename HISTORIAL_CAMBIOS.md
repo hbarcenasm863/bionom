@@ -6,6 +6,33 @@
 
 ---
 
+## Versión 2.32 — 12 de noviembre de 2026 · En el juego manda el tema; el nivel ajusta la dificultad
+
+**Contexto.** El docente pidió que el juego deje escoger el tema que se esté
+trabajando en el momento, sin importar el nivel. En la 2.31, el nivel Básico
+desactivaba Genética y Funciones vitales.
+
+**Cambios en `juego.html`.**
+- Todos los temas se pueden escoger siempre, en cualquier nivel.
+- Si un tema tiene menos de 8 preguntas del nivel escogido, se usan las del
+  nivel siguiente que alcance. El botón lo indica («56 preguntas · nivel
+  Medio») y aparece el aviso «Genética se trabaja sobre todo desde 8.° y 9.°:
+  se usan sus preguntas de nivel Medio». Vale también para crucigrama, sopa y
+  ahorcado.
+- «Todos los temas» reúne solo los temas propios de ese nivel. En Básico no
+  salen Genética ni Funciones vitales, comprobado en 25 partidas.
+- Enlace con tema y nivel: `juego.html?nivel=basico&tema=genetica`.
+- `docente.html`: el recorrido por grado explica ese enlace y la lista de
+  temas.
+
+**Pruebas.** Con Playwright en Pixel 7: Genética en Básico (con su aviso), el
+enlace con tema y nivel, ahorcado de Genética en Básico, y «Todos los temas»
+en Básico, sin errores.
+
+**Versiones.** `sw.js` → `bionom-v46`.
+
+---
+
 ## Versión 2.31 — 12 de noviembre de 2026 · Niveles en el juego y pendientes de la auditoría de secuencia
 
 **Contexto.** El docente pidió seguir con los pendientes de la auditoría de
