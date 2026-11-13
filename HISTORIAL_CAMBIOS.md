@@ -6,6 +6,45 @@
 
 ---
 
+## Versión 2.47 — 13 de noviembre de 2026 · Imágenes en las hojas de célula, microscopio y división celular
+
+**Contexto.** El docente consideró que a las hojas de referencia de La
+célula, El microscopio y División celular les faltaban imágenes, y autorizó
+que esas hojas queden de dos páginas.
+
+**Cambios**
+- `referencias.html`: página 2 en esas tres hojas, con dibujos nuevos
+  rotulados (pensados para imprimir; los del sitio son interactivos y solo
+  muestran el nombre al tocar) y micrografías reales de `img/fotos`, cada
+  una con su cita APA:
+  - **El microscopio:** microscopio con 14 partes rotuladas, cómo preparar
+    láminas (cebolla, mejilla, Elodea), cómo dibujar lo observado y seis
+    fotos de muestras (cebolla con lugol, mejilla con azul de metileno,
+    Elodea, bacterias del yogur, frotis de sangre y el corcho de Hooke, 1665).
+  - **La célula:** célula animal y célula vegetal rotuladas, cuatro fotos al
+    microscopio óptico (cebolla, mejilla, Elodea, *E. coli*) y cuatro
+    organelos al microscopio electrónico (núcleo, mitocondrias, cloroplasto,
+    aparato de Golgi).
+  - **División celular:** las seis fases de la mitosis dibujadas (2n = 4),
+    un cromosoma rotulado, un esquema de la meiosis (2n → 2 células n → 4
+    células n), cuatro fotos de mitosis en raíz de cebolla y meiosis en el
+    polen de lirio, y cómo reconocer cada fase en la foto.
+- `referencias.js` (v3): las hojas pueden tener varias páginas
+  (`<article class="hoja" data-hoja="id" data-pag="2">`). Se ven, se
+  escogen en el menú y se descargan juntas; el encabezado dice «página 1 de
+  2»; el menú y las tarjetas avisan «(2 páginas)». Pone la cita APA de cada
+  foto (`FOTO_APA`). El ajuste automático también puede achicar un poco una
+  página con muchas figuras.
+- `referencias.css` (v4): estilos de figuras y fotos; el menú selector ya no
+  se sale de la pantalla en celulares angostos (390 px).
+- `sw.js`: `CACHE` → `bionom-v60`.
+
+**Pruebas.** Playwright: las 14 páginas caben sin tapar el pie; todas las
+fotos cargan y tienen cita; «La célula» da un PDF de 2 páginas y «El código
+genético», de 1; sin errores ni desbordes en las 17 páginas.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.46 — 13 de noviembre de 2026 · Menú selector en las hojas de referencia
 
 **Contexto.** El docente pidió un menú selector para escoger cuál de las

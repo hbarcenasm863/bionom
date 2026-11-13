@@ -6,15 +6,24 @@
 var MARCA=window.HOJA_SITIO||{logo:'icons/logo.png',marca:'icons/marca-bionom.png',pie:'<span class="m">Bio<b>Nom</b> · Biología por niveles de organización</span><span>© 2026 Harvey Bárcenas Morales · Licencia CC BY-NC 4.0</span>'};
 var hojas=[].slice.call(document.querySelectorAll('.hoja'));
 var LISTA=document.getElementById('ref-lista'),CAJA=document.getElementById('hojas');
+function hoja(id){return hojas.filter(function(h){return h.getAttribute('data-hoja')===id&&!h.hasAttribute('data-pag');})[0];}
+function paginas(id){return hojas.filter(function(h){return h.getAttribute('data-hoja')===id;});}
+var grupos=hojas.filter(function(h){return !h.hasAttribute('data-pag');}); // primera página de cada hoja
+function nPag(id){var n=paginas(id).length;return n>1?' ('+n+' páginas)':'';}
 
 /* encabezado, marca de agua y pie de cada hoja */
 hojas.forEach(function(h){
+  var p1=hoja(h.getAttribute('data-hoja')),tot=paginas(h.getAttribute('data-hoja')),num=tot.length>1?' · página '+(tot.indexOf(h)+1)+' de '+tot.length:'';
   var enc=document.createElement('div');enc.className='h-enc';
-  enc.innerHTML='<img src="'+MARCA.logo+'" alt="BioNom"><div class="t"><div class="k">Hoja de referencia · '+h.getAttribute('data-tema')+'</div><h3>'+h.getAttribute('data-ico')+' '+h.getAttribute('data-tit')+'</h3></div><div class="tira"></div>';
+  enc.innerHTML='<img src="'+MARCA.logo+'" alt="BioNom"><div class="t"><div class="k">Hoja de referencia · '+p1.getAttribute('data-tema')+num+'</div><h3>'+p1.getAttribute('data-ico')+' '+p1.getAttribute('data-tit')+'</h3></div><div class="tira"></div>';
   h.insertBefore(enc,h.firstChild);
   var wm=document.createElement('img');wm.className='h-wm';wm.src=MARCA.marca;wm.alt='';h.appendChild(wm);
   var pie=document.createElement('div');pie.className='h-pie';pie.innerHTML=MARCA.pie;h.appendChild(pie);
 });
+
+/* fotos con su cita APA (datos de fotos-datos.js) */
+[].slice.call(document.querySelectorAll('[data-ref-foto]')).forEach(function(f){
+  var c=f.querySelector('cite');if(c&&window.FOTO_APA)c.innerHTML=window.FOTO_APA(f.getAttribute('data-ref-foto'));});
 
 /* tabla del código genético (misma organización que la de genetica.html) */
 (function(){
@@ -47,7 +56,7 @@ function ajustar(){
     var ancho=h.clientWidth-parseFloat(getComputedStyle(h).paddingLeft)-parseFloat(getComputedStyle(h).paddingRight);
     var pie=h.querySelector('.h-pie');
     function cabe(f){cu.style.zoom=f;cu.style.width=(ancho/f)+'px';return cu.getBoundingClientRect().bottom<=pie.getBoundingClientRect().top-10;}
-    var lo=1,hi=1.5;if(!cabe(lo)){cu.style.zoom=1;cu.style.width='';return;}
+    var lo=1,hi=1.8;if(!cabe(lo)){lo=.6;hi=1;}
     for(var i=0;i<14;i++){var m=(lo+hi)/2;if(cabe(m))lo=m;else hi=m;}
     cabe(lo);h.setAttribute('data-escala',lo.toFixed(3));});
   hojas.forEach(function(h){h.style.display='';});
@@ -56,8 +65,8 @@ function ajustar(){
 (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){ajustar();});
 
 /* lista de hojas */
-LISTA.innerHTML=hojas.map(function(h){var id=h.getAttribute('data-hoja');
-  return '<div class="ref-card" id="tarjeta-'+id+'"><span class="e" aria-hidden="true">'+h.getAttribute('data-ico')+'</span><span class="tema">'+h.getAttribute('data-tema')+'</span><h3>'+h.getAttribute('data-tit')+'</h3><p>'+h.getAttribute('data-desc')+'</p>'+
+LISTA.innerHTML=grupos.map(function(h){var id=h.getAttribute('data-hoja');
+  return '<div class="ref-card" id="tarjeta-'+id+'"><span class="e" aria-hidden="true">'+h.getAttribute('data-ico')+'</span><span class="tema">'+h.getAttribute('data-tema')+'</span><h3>'+h.getAttribute('data-tit')+'</h3><p>'+h.getAttribute('data-desc')+nPag(id)+'</p>'+
     '<div class="acc"><button type="button" class="cn-btn" data-ver="'+id+'">👁 Ver</button><button type="button" class="cn-btn cn-btn--primary" data-pdf="'+id+'">⬇️ Descargar PDF</button></div></div>';}).join('');
 
 /* visor */
@@ -67,13 +76,12 @@ function abrir(id){actual=id;hojas.forEach(function(h){h.classList.toggle('sel',
   var h=hoja(id);document.getElementById('visor-tit').textContent=h.getAttribute('data-ico')+' '+h.getAttribute('data-tit');
   escala();CAJA.classList.add('abierto');CAJA.setAttribute('aria-hidden','false');document.documentElement.classList.add('visor-abierto');CAJA.scrollTop=0;}
 function cerrar(){CAJA.classList.remove('abierto');CAJA.setAttribute('aria-hidden','true');document.documentElement.classList.remove('visor-abierto');actual=null;}
-function hoja(id){return hojas.filter(function(h){return h.getAttribute('data-hoja')===id;})[0];}
 
 /* descargar = imprimir solo esa hoja (o todas); el título sale como nombre del PDF */
 var tituloOriginal=document.title;
 function imprimir(id){
   if(id==='todas'){document.body.setAttribute('data-imprimir','todas');document.title='BioNom - Hojas de referencia';}
-  else{document.body.setAttribute('data-imprimir',id);hojas.forEach(function(h){h.classList.toggle('sel',h.getAttribute('data-hoja')===id);});document.title='BioNom - '+hoja(id).getAttribute('data-tit');}
+  else{document.body.setAttribute('data-imprimir',id);hojas.forEach(function(h){h.classList.toggle('sel',h.getAttribute('data-hoja')===id);h.classList.remove('ultima');});var pp=paginas(id);pp[pp.length-1].classList.add('ultima');document.title='BioNom - '+hoja(id).getAttribute('data-tit');}
   hojas.forEach(function(h){h.style.zoom=1;});
   setTimeout(function(){window.print();},60);
 }
@@ -85,8 +93,8 @@ LISTA.addEventListener('click',function(e){var b=e.target.closest('button');if(!
   if(b.hasAttribute('data-pdf'))imprimir(b.getAttribute('data-pdf'));});
 /* menú selector: una hoja, o varias marcadas en un solo PDF */
 var SEL=document.getElementById('ref-sel'),CHK=document.getElementById('sel-checks'),BV=document.getElementById('sel-varias-pdf');
-SEL.innerHTML=hojas.map(function(h){return '<option value="'+h.getAttribute('data-hoja')+'">'+h.getAttribute('data-ico')+' '+h.getAttribute('data-tit')+'</option>';}).join('');
-CHK.innerHTML=hojas.map(function(h){return '<label><input type="checkbox" value="'+h.getAttribute('data-hoja')+'"> '+h.getAttribute('data-ico')+' '+h.getAttribute('data-tit')+'</label>';}).join('');
+SEL.innerHTML=grupos.map(function(h){var id=h.getAttribute('data-hoja');return '<option value="'+id+'">'+h.getAttribute('data-ico')+' '+h.getAttribute('data-tit')+nPag(id)+'</option>';}).join('');
+CHK.innerHTML=grupos.map(function(h){var id=h.getAttribute('data-hoja');return '<label><input type="checkbox" value="'+id+'"> '+h.getAttribute('data-ico')+' '+h.getAttribute('data-tit')+nPag(id)+'</label>';}).join('');
 function marcadas(){return [].slice.call(CHK.querySelectorAll('input:checked')).map(function(x){return x.value;});}
 function contar(){var n=marcadas().length;BV.disabled=!n;BV.textContent='⬇️ Descargar o imprimir las marcadas'+(n?' ('+n+')':'');}
 CHK.addEventListener('change',contar);
