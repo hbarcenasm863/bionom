@@ -21,6 +21,11 @@ hojas.forEach(function(h){
   var pie=document.createElement('div');pie.className='h-pie';pie.innerHTML=MARCA.pie;h.appendChild(pie);
 });
 
+/* cuerpo humano por sistemas (dibujos de cuerpo.js) */
+if(window.CUERPO)[].slice.call(document.querySelectorAll('[data-cuerpo]')).forEach(function(d){
+  var s=d.getAttribute('data-cuerpo'),O=window.CUERPO.ORG,ids=Object.keys(O).filter(function(k){return O[k].s===s;});
+  d.innerHTML='<svg viewBox="38 0 224 560" role="img" aria-label="Sistema '+s+'">'+window.CUERPO.svg(ids)+'</svg>';});
+
 /* fotos con su cita APA (datos de fotos-datos.js) */
 [].slice.call(document.querySelectorAll('[data-ref-foto]')).forEach(function(f){
   var c=f.querySelector('cite');if(c&&window.FOTO_APA)c.innerHTML=window.FOTO_APA(f.getAttribute('data-ref-foto'));});

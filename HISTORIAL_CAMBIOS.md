@@ -6,6 +6,47 @@
 
 ---
 
+## Versión 2.48 — 13 de noviembre de 2026 · Imágenes en las demás hojas de referencia
+
+**Contexto.** El docente pidió revisar en cuáles de las demás hojas de
+referencia hacían falta imágenes o dibujos y dejarlas de dos páginas.
+Se revisaron las 8 restantes y en todas una página de imágenes ayuda (son
+temas muy visuales o de procedimiento), así que las 11 quedan de 2 páginas.
+
+**Cambios (`referencias.html`, página 2 de cada hoja)**
+- **Niveles de organización:** la escalera de los 13 niveles con un ejemplo
+  real en cada uno (átomo y molécula dibujados; mitocondria, glóbulo rojo,
+  músculo cardíaco, corazón, sistema circulatorio, guacamaya, jaguares,
+  parque, humedal, páramo y la Tierra en foto).
+- **Método científico:** 10 materiales de laboratorio dibujados con su uso,
+  y un ejemplo completo de tabla y gráfica de líneas (fríjol con luz y en
+  oscuridad) con lista para revisar la gráfica y su interpretación.
+- **Clasificación:** foto de un representante de cada grupo, marcando dónde
+  queda en los modelos de 5, 6 y 7 reinos, y clave dicotómica con ejemplo.
+- **Sistemas del cuerpo:** los 8 sistemas en el cuerpo (dibujos de
+  `cuerpo.js`, los mismos de `sistemas.html`), tabla «¿qué sistemas trabajan
+  cuando…?» y fotos de los cuatro tejidos.
+- **Biomoléculas:** esquema de monómeros a polímeros de las cuatro
+  biomoléculas, tabla de colores de las pruebas de laboratorio y el plato
+  saludable dibujado.
+- **Genética mendeliana:** los 7 rasgos de la arveja, retrato de Mendel,
+  cuadro de Punnett dihíbrido coloreado (9:3:3:1) y símbolos de una
+  genealogía con el ejemplo del albinismo.
+- **Código genético:** estructura del ADN rotulada, nucleótido, tabla ADN y
+  ARN, y dibujo de la traducción en el ribosoma.
+- **Ecosistemas:** red trófica de los Llanos, ciclo del agua y ocho fotos de
+  ecosistemas de Colombia.
+- `referencias.js` (v4) dibuja el cuerpo por sistemas con `cuerpo.js`;
+  `referencias.css` (v7) con los estilos nuevos. Todas las fotos llevan su
+  cita APA.
+- `sw.js`: `CACHE` → `bionom-v61`.
+
+**Pruebas.** Playwright: las 22 páginas caben sin tapar el pie, todas las
+fotos cargan con su cita, cada página revisada en imagen; tres hojas
+marcadas dan un PDF de 6 páginas; sin errores ni desbordes en el sitio.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.47 — 13 de noviembre de 2026 · Imágenes en las hojas de célula, microscopio y división celular
 
 **Contexto.** El docente consideró que a las hojas de referencia de La

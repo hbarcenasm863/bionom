@@ -147,3 +147,29 @@ html.visor-abierto,html.visor-abierto body{overflow:hidden}
 .hoja .fr cite a{color:#475569;text-decoration:none}
 .hoja .cel-svg .gt{font-size:14.5px}
 .hoja .cel-svg .gs{font-size:15px}
+
+/* páginas 2 de las demás hojas */
+.hoja .mats{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:0 0 8px}
+.hoja .mat{background:rgba(255,255,255,.9);border:1px solid var(--h-borde);border-radius:8px;padding:4px 5px;text-align:center;display:flex;flex-direction:column;gap:1px}
+.hoja .mat svg{width:62%;margin:0 auto}
+.hoja .mat b{font-size:9.6px;color:var(--h-azul);line-height:1.15}
+.hoja .mat span{font-size:8.4px;line-height:1.2;color:#334155}
+.hoja .niveles-grid .niv{position:relative}
+.hoja .niv .nn{position:absolute;top:7px;left:7px;background:rgba(15,42,95,.88);color:#fff;font:800 9.5px Outfit,sans-serif;border-radius:6px;padding:1px 6px;z-index:2}
+.hoja .niv .dib{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:#f8fafc;border-radius:5px}
+.hoja .niv .dib svg{width:80%}
+.hoja .niv-nota{grid-column:span 3;margin:0}
+.hoja .cuerpos{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;margin:0 0 4px}
+.hoja .cuerpo-mini{margin:0;background:rgba(255,255,255,.9);border:1px solid var(--h-borde);border-radius:8px;padding:4px;text-align:center}
+.hoja .cuerpo-mini svg{width:100%;height:auto;display:block}
+.hoja .cuerpo-mini{display:flex;flex-direction:column;justify-content:space-between}
+.hoja .cuerpo-mini figcaption{font:800 10.5px Outfit,sans-serif;color:var(--h-azul);min-height:2.5em;display:flex;align-items:center;justify-content:center;line-height:1.15}
+.hoja .mancha{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;border:1px solid rgba(0,0,0,.2)}
+.hoja .t-pun.dih{font-size:10.5px}
+.hoja .t-pun.dih th,.hoja .t-pun.dih td{width:44px;height:22px}
+.hoja .bio-esq{width:74%;margin:0 auto 6px}
+.hoja .cuerpo-mini figcaption{font-size:9px}
+.hoja .cols2.figs.arriba{align-items:start}
+.hoja .cuerpo-mini figcaption{flex-direction:column;font-size:9.5px}
+.hoja .cuerpo-mini figcaption span{display:block;font-size:12px}
+.hoja .fig-svg.grande .gp{font-size:13.5px}
