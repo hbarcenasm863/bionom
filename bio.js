@@ -247,7 +247,8 @@ function montarPantallas(raiz){
     b.setAttribute('aria-label','Ver '+(C.getAttribute('data-pantalla')||'la simulación')+' en pantalla completa');
     b.innerHTML='⛶ Pantalla completa';C.insertBefore(b,C.firstChild);
     function activo(){return document.fullscreenElement===C||document.webkitFullscreenElement===C||C.classList.contains('pantalla-activa');}
-    function pintar(){var on=activo();b.innerHTML=on?'✕ Salir de pantalla completa'+(matchMedia('(orientation:portrait) and (max-width:700px)').matches?'<small class="gira-aviso">Gira el celular para verla más grande</small>':''):'⛶ Pantalla completa';C.classList.toggle('en-pantalla',on);if(!on&&screen.orientation&&screen.orientation.unlock){try{screen.orientation.unlock();}catch(e){}}document.documentElement.classList.toggle('sin-scroll',C.classList.contains('pantalla-activa'));window.dispatchEvent(new Event('resize'));}
+    var antes=false;
+    function pintar(){var on=activo(),salio=antes&&!on;antes=on;b.innerHTML=on?'✕ Salir de pantalla completa'+(matchMedia('(orientation:portrait) and (max-width:700px)').matches?'<small class="gira-aviso">Gira el celular para verla más grande</small>':''):'⛶ Pantalla completa';C.classList.toggle('en-pantalla',on);if(salio&&screen.orientation&&screen.orientation.unlock){try{screen.orientation.unlock();}catch(e){}}document.documentElement.classList.toggle('sin-scroll',C.classList.contains('pantalla-activa'));window.dispatchEvent(new Event('resize'));}
     b.onclick=function(){
       if(activo()){if(document.fullscreenElement||document.webkitFullscreenElement)(document.exitFullscreen||document.webkitExitFullscreen).call(document);C.classList.remove('pantalla-activa');pintar();return;}
       var f=C.requestFullscreen||C.webkitRequestFullscreen;

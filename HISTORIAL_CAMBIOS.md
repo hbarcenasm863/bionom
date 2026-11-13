@@ -6,6 +6,35 @@
 
 ---
 
+## Versión 2.44 — 13 de noviembre de 2026 · La pantalla completa ya queda en horizontal
+
+**Contexto.** El docente reportó que al activar la pantalla completa en el
+celular la pantalla giraba a horizontal e inmediatamente volvía a vertical,
+aunque se girara el teléfono.
+
+**Causa (reproducida con Playwright).** Dos problemas juntos:
+1. Cada una de las simulaciones de la página escuchaba el aviso «cambió la
+   pantalla completa». Las que no estaban activas creían que se había salido
+   y soltaban el giro (`screen.orientation.unlock()`) justo después de que la
+   activa lo pedía: se registraban un «lock» y cuatro «unlock» seguidos.
+2. `manifest.json` tenía `"orientation": "portrait-primary"`, que obliga a la
+   app instalada a quedarse en vertical; al soltar el giro volvía a vertical
+   y no hacía caso al girar el teléfono.
+
+**Cambios**
+- `bio.js` (v26): cada simulación recuerda si ella estaba en pantalla
+  completa y solo suelta el giro cuando ella misma sale. Ahora queda un solo
+  «lock» al entrar y un solo «unlock» al salir.
+- `manifest.json`: `"orientation": "any"`, para que la app instalada siga el
+  giro del teléfono.
+- `sw.js`: `CACHE` → `bionom-v57`.
+
+**Paso manual.** La app instalada actualiza su `manifest.json` por su cuenta
+(Chrome lo revisa cada cierto tiempo, puede tardar hasta un día). Si sigue
+sin girar después de actualizar, desinstalar la app y volver a instalarla.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.43 — 13 de noviembre de 2026 · Genética: sin explicaciones repetidas sobre el ARN
 
 **Contexto.** Quedaban dos animaciones pequeñas en la sección 9 («El ARN y
