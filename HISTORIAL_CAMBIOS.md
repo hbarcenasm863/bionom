@@ -36,6 +36,8 @@ cargan con su cita; sin errores ni desbordes en el sitio.
 **Pendiente.** Si el docente quiere estos diagramas también en la página
 `sistemas.html`, se pueden agregar.
 
+**Corrección posterior (misma versión).** El docente confirmó que la hoja puede quedar de 4 páginas si se ve bien y la información es correcta. Se verificó la leyenda del diagrama excretor contra la imagen: el número 1 es el corchete que agrupa las partes 2 a 6 (sistema urinario); la leyenda se aclaró así.
+
 ## Versión 2.48 — 13 de noviembre de 2026 · Imágenes en las demás hojas de referencia
 
 **Contexto.** El docente pidió revisar en cuáles de las demás hojas de
