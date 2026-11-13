@@ -234,7 +234,7 @@ function marcarSimulaciones(){
   var S=[];
   document.querySelectorAll('main canvas, main svg[id], main input[type=range], main [data-anim], main .pasos[data-alcambiar]').forEach(function(el){
     if(el.closest('button,.flip,.flota-exp,header,.chequeo,.pre-claves,.tl,figure,[data-pantalla]'))return;
-    var c=el.closest('.card, .lado, .cuerpo-wrap');if(!c)return;
+    var c=el.closest('.card, .lado, .cuerpo-wrap, .anat, .crom-fig, .jir');if(!c){var tp=el.closest('.tab-p');if(tp&&tp.parentNode&&tp.parentNode.querySelector(':scope>.tabs')&&!tp.parentNode.classList.contains('sec'))c=tp.parentNode;}if(!c&&el.matches('.pasos'))c=el;if(!c)return;
     var p=c.closest('.paso');if(p&&p.closest('.pasos'))c=p.closest('.pasos');
     if(S.indexOf(c)<0)S.push(c);});
   S.filter(function(c){return !S.some(function(o){return o!==c&&o.contains(c);});}).forEach(function(c){

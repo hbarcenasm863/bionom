@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=27">
+<link rel="stylesheet" href="bio.css?v=28">
 <style>
 .fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
@@ -246,6 +246,7 @@
   <section class="sec" id="otras">
     <h2><span class="n">06</span> Más allá de Mendel</h2>
     <p class="lead">No todos los genes funcionan con un dominante y un recesivo. Explora tres casos famosos.</p>
+    <div class="sim-grupo" data-pantalla="Más allá de Mendel">
     <div class="tabs"><button class="chip on" data-tab="o-inc">🌸 Dominancia incompleta</button><button class="chip" data-tab="o-abo">🔴 Grupos sanguíneos</button><button class="chip" data-tab="o-sex">👁️ Ligada al sexo</button><button class="chip" data-tab="o-poli">📏 Poligénica y ambiente</button></div>
     <div class="tab-p card" id="o-inc">
       <p>En la flor <b>don Diego de noche</b> (<i>Mirabilis jalapa</i>), ningún alelo domina: al cruzar roja (RR) con blanca (BB) los hijos salen <b>rosados</b> (RB), una mezcla intermedia.</p>
@@ -268,6 +269,7 @@
         <div class="dato" style="margin:0">El <b>ambiente</b> también cuenta: dos gemelos idénticos pueden tener estaturas distintas si uno se alimenta mejor. Las hortensias con los mismos genes dan flores azules en suelos ácidos y rosadas en suelos básicos.</div>
         <div class="dato ojo" style="margin:0">Límites del cuadro de Punnett: no sirve para rasgos de muchos genes, para genes que viajan juntos en el mismo cromosoma, ni predice qué pasará exactamente en una familia: solo da <b>probabilidades</b>.</div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -393,7 +395,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=9"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=27"></script>
+<script src="bio.js?v=28"></script>
 <script>
 (function(){
 var esc=BIO.esc;

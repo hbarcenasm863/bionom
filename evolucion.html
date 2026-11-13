@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=27">
+<link rel="stylesheet" href="bio.css?v=28">
 <style>
 .jir{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:700px){.jir{grid-template-columns:1fr}}
@@ -196,11 +196,13 @@
     <h2><span class="n">05</span> El cuello de la jirafa: Lamarck vs. Darwin</h2>
     <p class="lead">Las dos teorías intentan explicar lo mismo, pero de manera muy diferente. Avanza al mismo tiempo en las dos columnas.</p>
     <div class="fotos mini" style="margin-bottom:12px"><div data-foto="lamarck" data-pie="Jean-Baptiste Lamarck (1744-1829)" data-cls="cont"></div><div data-foto="darwin" data-pie="Charles Darwin (1809-1882)" data-cls="cont"></div></div>
+    <div class="sim-grupo" data-pantalla="El cuello de la jirafa: Lamarck vs. Darwin">
     <div class="jir">
       <div class="col"><h3>Lamarck · Francia, 1809</h3><svg id="jl" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jl-t"></p></div>
       <div class="col"><h3>Darwin · Inglaterra, 1859</h3><svg id="jd" viewBox="0 0 300 190" aria-hidden="true"></svg><p id="jd-t"></p></div>
     </div>
     <div class="ctrl" style="justify-content:center"><button type="button" class="cn-btn" id="j-ant">← Antes</button><span id="j-n" class="marcador"></span><button type="button" class="cn-btn cn-btn--primary" id="j-sig">Siguiente →</button></div>
+    </div>
     <div class="dato ojo">Lamarck decía que lo que un animal gana en vida (un cuello estirado, unos músculos de gimnasio) pasa a sus hijos. Hoy sabemos que <b>no es así</b>: los hijos de un fisicoculturista no nacen musculosos. Solo se heredan los cambios que están en el ADN de los gametos.</div>
     <div class="chequeo" data-ok="0" data-exp="En la selección natural la variación ya existe antes; el ambiente solo «escoge» qué variantes sobreviven y se reproducen más.">
       <div class="q">Según Darwin, ¿de dónde salen las jirafas de cuello largo?</div>
@@ -256,6 +258,7 @@
   <section class="sec" id="evidencias">
     <h2><span class="n">09</span> Las evidencias de la evolución</h2>
     <p class="lead">La evolución no es una simple opinión: muchas pruebas independientes llevan a la misma conclusión.</p>
+    <div class="sim-grupo" data-pantalla="Las evidencias de la evolución">
     <div class="tabs"><button class="chip on" data-tab="ev-hom">🦴 Anatomía comparada</button><button class="chip" data-tab="ev-fos">🦖 Fósiles</button><button class="chip" data-tab="ev-mol">🧬 ADN</button><button class="chip" data-tab="ev-emb">🥚 Embriología</button></div>
     <div class="tab-p" id="ev-hom">
       <p>Las extremidades de un humano, un gato, una ballena y un murciélago sirven para cosas muy distintas, pero tienen <b>los mismos huesos en el mismo orden</b>. Son <b>órganos homólogos</b>: los heredaron de un antepasado común. Toca un tipo de hueso para resaltarlo en las cuatro.</p>
@@ -278,6 +281,7 @@
     </div>
     <div class="tab-p" id="ev-emb">
       <p>En sus primeras semanas, los embriones de peces, reptiles, aves y mamíferos se parecen mucho: todos tienen <b>hendiduras en la garganta</b> y una <b>cola</b>. En los peces las hendiduras se vuelven branquias; en nosotros, partes del oído y del cuello. Es una huella de un antepasado común.</p>
+    </div>
     </div>
   </section>
 
@@ -357,7 +361,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=9"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=27"></script>
+<script src="bio.js?v=28"></script>
 <script>
 (function(){
 /* ═══ 1. Línea del tiempo de ideas ═══ */

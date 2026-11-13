@@ -6,6 +6,38 @@
 
 ---
 
+## Versión 2.50 — 13 de noviembre de 2026 · Pantalla completa en los ciclos de la materia y otras simulaciones que faltaban
+
+**Contexto.** El docente reportó que los ciclos de la materia (Ecosistemas)
+no tenían la opción de pantalla completa.
+
+**Causa.** La detección automática de `bio.js` solo buscaba simulaciones
+dentro de recuadros (`.card`, `.lado`, `.cuerpo-wrap`). Los ciclos están en
+pestañas sueltas, y había otras en el mismo caso.
+
+**Cambios**
+- `ecosistemas.html`: los ciclos (agua, carbono, nitrógeno) quedan en un
+  contenedor con `data-pantalla`.
+- También se agregó el botón a: Los cromosomas (División), La flor y El
+  sistema reproductor humano (Reproducción), Más allá de Mendel y el
+  experimento de Mendel (Genética), Lamarck vs. Darwin y Las evidencias de
+  la evolución (Evolución), el experimento de Pasteur (Célula) y «De la
+  célula al sistema» (Sistemas). Quedan **65 simulaciones** con el botón.
+- `bio.js` (v28): la detección también reconoce los contenedores `.anat`,
+  `.crom-fig` y `.jir`, los grupos de pestañas sueltos y los pasos animados
+  que no están en un recuadro, para que las simulaciones nuevas no se
+  escapen.
+- `bio.css` (v28): en pantalla completa, los dibujos dentro de pestañas se
+  ajustan a la altura de la pantalla (en el celular horizontal ya no se
+  cortan abajo).
+- `sw.js`: `CACHE` → `bionom-v64`.
+
+**Pruebas.** Playwright: revisión de todas las páginas de temas sin
+simulaciones sin botón; ciclos en pantalla completa en computador y en
+celular horizontal; sin errores ni desbordes en el sitio.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.49 — 13 de noviembre de 2026 · Diagramas libres de los sistemas del cuerpo en la hoja de referencia
 
 **Contexto.** El docente pidió que en la hoja de referencia de Sistemas se

@@ -347,5 +347,7 @@ html.sin-scroll .site-nav,html.sin-scroll .toc,html.sin-scroll .sub-nav,html.sin
 .en-pantalla #text-zoom-widget,html.sin-scroll #text-zoom-widget,html.sin-scroll .narr-btn{display:none!important}
 @media (orientation:landscape){.con-pantalla.en-pantalla.lado,.con-pantalla.en-pantalla.cuerpo-wrap,.con-pantalla.en-pantalla .lado{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
 @media (orientation:landscape) and (max-height:500px){.con-pantalla.en-pantalla{padding:8px 12px}.con-pantalla.en-pantalla>.btn-pantalla{font-size:.75rem;padding:4px 10px;margin-bottom:4px}.con-pantalla.en-pantalla svg{max-height:calc(100dvh - 60px)}}
+.con-pantalla.en-pantalla .tabs~.tab-p svg,.con-pantalla.en-pantalla .chips~* svg{max-height:calc(100dvh - 170px)}
+@media (orientation:landscape) and (max-height:500px){.con-pantalla.en-pantalla .tabs~.tab-p svg,.con-pantalla.en-pantalla .chips~* svg{max-height:calc(100dvh - 110px)}.con-pantalla.en-pantalla .tabs .chip{padding:3px 10px;font-size:.8rem}}
 .con-pantalla.en-pantalla.sec{margin:0;max-width:none}
 html.sin-scroll,html.sin-scroll body{overflow:hidden}
