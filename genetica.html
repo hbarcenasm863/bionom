@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
-<link rel="stylesheet" href="bio.css?v=26">
+<link rel="stylesheet" href="bio.css?v=27">
 <style>
 .fig svg[width]{width:auto;display:inline-block}
 .alelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:center}
@@ -393,7 +393,7 @@
 <footer class="site-foot"></footer>
 <script src="fotos-datos.js?v=8"></script>
 <script src="fotos.js?v=1"></script>
-<script src="bio.js?v=26"></script>
+<script src="bio.js?v=27"></script>
 <script>
 (function(){
 var esc=BIO.esc;
@@ -606,7 +606,7 @@ function traducir(arn){var p=[];for(var i=0;i+2<arn.length;i+=3){var a=CODIGO[ar
       var ap=x==='*'?'<span class="ap stop" title="Codón de parada">Parada</span>':'<span class="ap'+(cod==='AUG'?' ini':'')+'" style="background:'+colAA(x)+'" title="'+AA[x][1]+'">'+AA[x][0]+(cod==='AUG'?' · inicio':'')+'</span>';
       return '<div class="cl"><code>'+cod+'</code>'+ap+'</div>';}).join('')+'</td>';});
     h+='<td class="b3">'+B.map(function(c){return '<div style="color:'+BCOL[c]+'">'+c+'</div>';}).join('')+'</td></tr>';});
-  document.getElementById('tabla-cod').innerHTML=h+'</tbody></table><p class="tcod-guia">📌 Busca la <b>1.ª letra</b> del codón a la izquierda, la <b>2.ª</b> arriba y la <b>3.ª</b> a la derecha. Ejemplo: <b>GUG</b> → fila G, columna U, línea G → <b>Val</b> (valina). Pasa el dedo o el ratón sobre un aminoácido para ver su nombre completo.</p>';})();
+  document.getElementById('tabla-cod').innerHTML=h+'</tbody></table><p class="tcod-guia">📌 Busca la <b>1.ª letra</b> del codón a la izquierda, la <b>2.ª</b> arriba y la <b>3.ª</b> a la derecha. Ejemplo: <b>GUG</b> → fila G, columna U, línea G → <b>Val</b> (valina). Pasa el dedo o el ratón sobre un aminoácido para ver su nombre completo.</p><p style="text-align:center;margin:10px 0 0"><a class="cn-btn cn-btn--primary" href="referencias.html?hoja=codigo">⬇️ Descargar esta tabla (hoja de referencia en PDF)</a></p>';})();
 // gen de la beta-globina (inicio) con un codón de parada añadido
 var CODIF='ATGGTGCATCTGACTCCTGAGGAGAAGTAA';
 var ARN0=CODIF.replace(/T/g,'U'),MOLDE=CODIF.split('').map(function(b){return COMP[b];}).join('');

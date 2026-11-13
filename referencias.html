@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hojas de referencia — BioNom</title>
+<meta name="description" content="Hojas de referencia de biología para descargar en PDF: código genético, célula, microscopio, mitosis y meiosis, genética mendeliana, clasificación, cuerpo humano, biomoléculas, ecosistemas, niveles de organización y método científico.">
+<meta name="theme-color" content="#0f2a5f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
+<link rel="stylesheet" href="bio.css?v=27">
+<link rel="stylesheet" href="referencias.css?v=1">
+</head>
+<body>
+<main class="app">
+  <header class="cn-page-head">
+    <span class="kicker">📋 Para consultar en cualquier momento</span>
+    <h1>Hojas de referencia</h1>
+    <p>Resúmenes de una página para tener a mano en clase, en la casa o antes de una evaluación. Ábrelas para verlas aquí o descárgalas en PDF para imprimir o guardar en el celular.</p>
+    <a class="nivel-chip" href="index.html">🗺️ Volver al mapa de niveles</a>
+  </header>
+
+  <section class="sec" id="lista">
+    <h2><span class="n">01</span> Escoge una hoja</h2>
+    <p class="lead">Toca <b>Ver</b> para leerla en la pantalla o <b>Descargar PDF</b> para guardarla. En el cuadro de imprimir escoge <b>«Guardar como PDF»</b> como destino.</p>
+    <div class="ref-lista" id="ref-lista"></div>
+    <div class="ref-todas"><button type="button" class="cn-btn" id="ref-todas">⬇️ Descargar todas las hojas en un solo PDF</button></div>
+    <div class="ref-ayuda" role="note"><b>💡 Para el docente:</b> se imprimen en tamaño carta, a color o en blanco y negro. Cada página de tema tiene al final un enlace a su hoja.</div>
+  </section>
+</main>
+
+<!-- ═════════ HOJAS (una página carta cada una) ═════════ -->
+<div id="hojas" aria-hidden="true">
+<div class="visor-barra"><b id="visor-tit"></b><span><button type="button" class="cn-btn cn-btn--primary" id="visor-pdf">⬇️ Descargar PDF</button><button type="button" class="cn-btn" id="visor-cerrar">✕ Cerrar</button></span></div>
+<div class="visor-hojas">
+
+<!-- 1. Niveles de organización -->
+<article class="hoja" data-hoja="niveles" data-tit="Niveles de organización de la vida" data-ico="🗺️" data-tema="Todos los temas" data-desc="Del átomo a la biosfera: qué es cada nivel y un ejemplo.">
+  <table class="t-ref t-niv">
+    <tr><th>Nivel</th><th>Qué es</th><th>Ejemplo</th></tr>
+    <tr class="abio"><td><b>1. Átomo</b></td><td>La unidad más pequeña de un elemento químico.</td><td>Carbono (C), oxígeno (O), hierro (Fe).</td></tr>
+    <tr class="abio"><td><b>2. Molécula</b></td><td>Dos o más átomos unidos. Las de los seres vivos son las biomoléculas.</td><td>Agua H₂O, glucosa C₆H₁₂O₆, ADN, proteínas.</td></tr>
+    <tr class="abio"><td><b>3. Organelo</b></td><td>Estructura dentro de la célula con una función propia.</td><td>Núcleo, mitocondria, cloroplasto.</td></tr>
+    <tr class="cel"><td><b>4. Célula</b></td><td><b>La unidad básica de la vida</b>: el nivel más simple que está vivo.</td><td>Neurona, glóbulo rojo, bacteria, levadura.</td></tr>
+    <tr><td><b>5. Tejido</b></td><td>Grupo de células parecidas que hacen la misma tarea.</td><td>Tejido muscular, óseo, xilema de las plantas.</td></tr>
+    <tr><td><b>6. Órgano</b></td><td>Varios tejidos unidos que cumplen una función.</td><td>Corazón, pulmón, hoja, raíz.</td></tr>
+    <tr><td><b>7. Sistema</b></td><td>Órganos que trabajan juntos en una función grande.</td><td>Sistema digestivo, nervioso, circulatorio.</td></tr>
+    <tr><td><b>8. Organismo</b></td><td>Un ser vivo completo, de una o de muchas células.</td><td>Una guacamaya, un frailejón, una persona.</td></tr>
+    <tr class="eco"><td><b>9. Población</b></td><td>Individuos de la <b>misma especie</b> en un lugar y un tiempo.</td><td>Los frailejones del páramo de Sumapaz.</td></tr>
+    <tr class="eco"><td><b>10. Comunidad</b></td><td>Todas las poblaciones de <b>distintas especies</b> que conviven en un lugar.</td><td>Plantas, aves, insectos y hongos de un bosque.</td></tr>
+    <tr class="eco"><td><b>11. Ecosistema</b></td><td>La comunidad más el medio físico (agua, suelo, luz, clima) y sus relaciones.</td><td>Un manglar, una laguna, un páramo.</td></tr>
+    <tr class="eco"><td><b>12. Bioma</b></td><td>Ecosistemas parecidos por su clima y su vegetación, en grandes regiones.</td><td>Selva húmeda tropical, páramo, sabana.</td></tr>
+    <tr class="eco"><td><b>13. Biosfera</b></td><td>Todas las partes de la Tierra donde hay vida.</td><td>El planeta: tierra, agua y aire con vida.</td></tr>
+  </table>
+  <div class="cols2">
+    <div class="rc"><h4>🔑 Ideas clave</h4><ul>
+      <li>Cada nivel <b>contiene</b> a los anteriores: un órgano está hecho de tejidos, y los tejidos de células.</li>
+      <li>En cada nivel aparecen <b>propiedades nuevas</b> (emergentes): una neurona sola no piensa; el cerebro sí.</li>
+      <li>Los niveles 1 a 3 no están vivos por sí solos; <b>la vida empieza en la célula</b>.</li>
+      <li>Los organismos de una sola célula (bacterias, amebas) saltan de célula a organismo.</li>
+    </ul></div>
+    <div class="rc"><h4>🧭 Cómo usar esta escalera</h4><ul>
+      <li>Para ubicar un tema, pregúntate: <i>¿estoy mirando moléculas, células, un cuerpo o un ecosistema?</i></li>
+      <li><span class="tag abio">gris</span> química de la vida · <span class="tag cel">verde</span> la célula · <span class="tag eco">azul</span> ecología.</li>
+      <li>En BioNom, cada tema del menú cuelga de uno o varios de estos niveles: búscalos en el <b>mapa de la portada</b>.</li>
+    </ul></div>
+  </div>
+</article>
+
+<!-- 2. Método científico -->
+<article class="hoja" data-hoja="metodo" data-tit="Método científico e informe de laboratorio" data-ico="🧪" data-tema="Para todos los laboratorios" data-desc="Pasos de una investigación, hipótesis, variables, tablas, gráficas e informe.">
+  <div class="pasos-ref">
+    <div><b>1. Observar</b><span>Notar algo curioso con los sentidos o instrumentos.</span></div>
+    <div><b>2. Preguntar</b><span>¿Qué pasa si…? Una pregunta que se pueda probar.</span></div>
+    <div><b>3. Hipótesis</b><span>Una respuesta posible que se puede comprobar.</span></div>
+    <div><b>4. Experimentar</b><span>Cambiar una sola cosa y medir qué pasa.</span></div>
+    <div><b>5. Analizar</b><span>Ordenar los datos en tablas y gráficas.</span></div>
+    <div><b>6. Concluir</b><span>¿Se cumplió la hipótesis? ¿Por qué?</span></div>
+    <div><b>7. Comunicar</b><span>Escribir el informe y compartirlo.</span></div>
+  </div>
+  <div class="cols2">
+    <div class="rc"><h4>✍️ Cómo escribir una hipótesis</h4>
+      <p class="formula">Si <u>(cambio lo que pruebo)</u>, entonces <u>(lo que espero medir)</u>, porque <u>(mi razón)</u>.</p>
+      <p><i>Ejemplo:</i> Si las semillas de fríjol germinan en la oscuridad, entonces sus tallos serán más largos y amarillos, porque buscan la luz y no forman clorofila.</p>
+      <p>Una hipótesis <b>no</b> es una pregunta ni una opinión: se tiene que poder <b>medir</b>.</p></div>
+    <div class="rc"><h4>🎛️ Las variables</h4>
+      <table class="t-ref"><tr><th>Variable</th><th>Qué es</th><th>En el ejemplo</th></tr>
+        <tr><td><b>Independiente</b></td><td>La que yo cambio.</td><td>Luz u oscuridad.</td></tr>
+        <tr><td><b>Dependiente</b></td><td>La que mido.</td><td>Largo del tallo (cm).</td></tr>
+        <tr><td><b>Controladas</b></td><td>Las que dejo iguales.</td><td>Agua, suelo, tipo de semilla, temperatura.</td></tr></table>
+      <p>El <b>grupo control</b> es el que no recibe el cambio (semillas con luz normal) y sirve para comparar. Repite el experimento: más datos, más confianza.</p></div>
+  </div>
+  <div class="cols2">
+    <div class="rc"><h4>📊 Tablas y gráficas</h4><ul>
+      <li>Toda tabla lleva <b>título</b>, columnas con <b>unidades</b> (cm, °C, días) y datos ordenados.</li>
+      <li>La variable <b>independiente</b> va en el eje X; la <b>dependiente</b>, en el eje Y.</li>
+      <li><b>Barras</b> para comparar grupos (luz vs. oscuridad). <b>Líneas</b> para ver un cambio en el tiempo (crecimiento día a día). <b>Circular</b> para partes de un todo (%).</li>
+      <li>Escribe qué <b>tendencia</b> ves: «a más días, más largo el tallo».</li></ul></div>
+    <div class="rc"><h4>📝 Partes del informe</h4><ol class="compacta">
+      <li><b>Título</b> y autores.</li><li><b>Objetivo</b>: qué quiero averiguar.</li><li><b>Hipótesis</b>.</li>
+      <li><b>Materiales</b> y <b>procedimiento</b> (pasos numerados, para que otro lo repita).</li>
+      <li><b>Resultados</b>: tablas y gráficas, sin opinar.</li><li><b>Análisis</b>: qué significan los datos.</li>
+      <li><b>Conclusión</b>: responde la pregunta y di si la hipótesis se cumplió.</li><li><b>Referencias</b> en normas APA.</li></ol></div>
+  </div>
+  <div class="rc aviso"><h4>⚠️ Seguridad en el laboratorio</h4><p>Usa bata y gafas · no comas ni bebas · recoge el cabello · nunca huelas ni pruebes sustancias directamente · avisa de inmediato si algo se rompe o se derrama · lava tus manos al terminar · bota los residuos donde indique el docente.</p></div>
+</article>
+
+<!-- 3. Microscopio -->
+<article class="hoja" data-hoja="microscopio" data-tit="El microscopio óptico" data-ico="🔬" data-tema="La célula · Laboratorio" data-desc="Partes y funciones, aumento total, pasos para enfocar, tinciones y cómo medir.">
+  <div class="cols2 c-62">
+    <table class="t-ref"><tr><th>Parte</th><th>Para qué sirve</th></tr>
+      <tr><td><b>Ocular</b></td><td>Lente por donde se mira. Casi siempre aumenta 10×.</td></tr>
+      <tr><td><b>Objetivos</b></td><td>Lentes cerca de la muestra: 4×, 10×, 40× y 100× (este último con aceite de inmersión).</td></tr>
+      <tr><td><b>Revólver</b></td><td>Pieza que gira para cambiar de objetivo.</td></tr>
+      <tr><td><b>Platina</b></td><td>Mesa donde se pone la lámina; las <b>pinzas</b> la sostienen.</td></tr>
+      <tr><td><b>Tornillo macrométrico</b></td><td>Enfoque grueso: sube o baja mucho. Solo con 4× y 10×.</td></tr>
+      <tr><td><b>Tornillo micrométrico</b></td><td>Enfoque fino: ajusta la nitidez. El único que se usa con 40× y 100×.</td></tr>
+      <tr><td><b>Fuente de luz</b></td><td>Lámpara o espejo que ilumina la muestra desde abajo.</td></tr>
+      <tr><td><b>Condensador</b></td><td>Concentra la luz sobre la muestra.</td></tr>
+      <tr><td><b>Diafragma</b></td><td>Regula cuánta luz pasa: menos luz da más contraste.</td></tr>
+      <tr><td><b>Brazo y base</b></td><td>Sostienen el microscopio. Se carga con una mano en el brazo y otra en la base.</td></tr>
+    </table>
+    <div>
+      <div class="rc destacada"><h4>✖️ Aumento total</h4><p class="formula">aumento total = aumento del ocular × aumento del objetivo</p>
+        <table class="t-ref t-cen"><tr><th>Objetivo</th><th>Con ocular 10×</th><th>Campo aprox.</th></tr>
+          <tr><td>4×</td><td><b>40×</b></td><td>4,5 mm</td></tr><tr><td>10×</td><td><b>100×</b></td><td>1,8 mm</td></tr>
+          <tr><td>40×</td><td><b>400×</b></td><td>0,45 mm</td></tr><tr><td>100×</td><td><b>1000×</b></td><td>0,18 mm</td></tr></table>
+        <p class="peq">El diámetro del campo depende de cada microscopio: mídelo con una regla transparente a 4×.</p></div>
+      <div class="rc"><h4>📏 Medir una célula</h4><p class="formula">tamaño ≈ diámetro del campo ÷ número de células que caben en una fila</p>
+        <p>1 mm = <b>1000 µm</b> (micrómetros). <i>Ejemplo:</i> a 400× caben 9 células de cebolla en 0,45 mm → 0,45 ÷ 9 = 0,05 mm = <b>50 µm</b>.</p></div>
+    </div>
+  </div>
+  <div class="cols2">
+    <div class="rc"><h4>👣 Pasos para enfocar</h4><ol class="compacta">
+      <li>Conecta la luz y pon el objetivo de <b>4×</b>.</li><li>Coloca la lámina en la platina y sujétala con las pinzas.</li>
+      <li>Mirando <b>de lado</b>, sube la platina con el macrométrico hasta casi tocar la lámina.</li>
+      <li>Mira por el ocular y baja despacio con el macrométrico hasta ver la imagen.</li>
+      <li>Afina con el micrométrico y ajusta la luz con el diafragma.</li>
+      <li>Centra lo que quieres ver y pasa a 10× y luego a 40× usando <b>solo el micrométrico</b>.</li>
+      <li>Al terminar: objetivo de 4×, platina abajo, luz apagada y microscopio cubierto.</li></ol></div>
+    <div class="rc"><h4>🎨 Tinciones y muestras</h4><table class="t-ref">
+      <tr><td><b>Azul de metileno</b></td><td>Tiñe el núcleo de células animales (mucosa de la mejilla).</td></tr>
+      <tr><td><b>Lugol</b></td><td>Tiñe de morado el almidón (papa) y resalta el núcleo de la cebolla.</td></tr>
+      <tr><td><b>Cristal violeta</b></td><td>Tiñe bacterias (las del yogur).</td></tr>
+      <tr><td><b>Sin tinción</b></td><td>Hoja de Elodea: se ven los cloroplastos verdes moviéndose.</td></tr></table>
+      <p class="peq">La imagen se ve <b>invertida</b>: si mueves la lámina a la derecha, la imagen va a la izquierda.</p></div>
+  </div>
+</article>
+
+<!-- 4. La célula -->
+<article class="hoja" data-hoja="celula" data-tit="La célula" data-ico="🧫" data-tema="La célula" data-desc="Teoría celular, procariota y eucariota, organelos, transporte, fotosíntesis y respiración.">
+  <div class="rc destacada"><h4>📜 Teoría celular</h4><p>1) Todos los seres vivos están formados por <b>una o más células</b>. 2) La célula es la <b>unidad básica</b> de estructura y función. 3) Toda célula viene de <b>otra célula</b> (Schleiden, Schwann y Virchow, siglo XIX).</p></div>
+  <div class="cols2 c-40">
+    <div><table class="t-ref"><tr><th></th><th>Procariota</th><th>Eucariota</th></tr>
+      <tr><td><b>Núcleo</b></td><td>No tiene: el ADN está libre en el citoplasma.</td><td>Sí: el ADN está dentro de un núcleo.</td></tr>
+      <tr><td><b>Organelos con membrana</b></td><td>No tiene.</td><td>Sí (mitocondrias, Golgi…).</td></tr>
+      <tr><td><b>Tamaño</b></td><td>Pequeña: 1 a 10 µm.</td><td>Grande: 10 a 100 µm.</td></tr>
+      <tr><td><b>Ejemplos</b></td><td>Bacterias y arqueas.</td><td>Protistas, hongos, plantas y animales.</td></tr></table>
+    <div class="rc"><h4>🔍 ¿Animal o vegetal? Al microscopio</h4><ul>
+      <li><b>Vegetal</b> (cebolla, Elodea): forma de ladrillo o polígono, <b>pared celular</b> gruesa, una <b>vacuola grande</b> que empuja el núcleo a un lado y, si es verde, <b>cloroplastos</b>.</li>
+      <li><b>Animal</b> (mucosa de la mejilla): forma redondeada o irregular, sin pared, núcleo más o menos en el centro.</li></ul></div></div>
+    <table class="t-ref t-org"><tr><th>Organelo</th><th>Función</th><th>Animal</th><th>Vegetal</th></tr>
+      <tr><td><b>Membrana celular</b></td><td>Controla qué entra y qué sale.</td><td>✔</td><td>✔</td></tr>
+      <tr><td><b>Núcleo</b></td><td>Guarda el ADN y dirige la célula.</td><td>✔</td><td>✔</td></tr>
+      <tr><td><b>Citoplasma</b></td><td>Medio acuoso donde están los organelos.</td><td>✔</td><td>✔</td></tr>
+      <tr><td><b>Ribosomas</b></td><td>Fabrican proteínas.</td><td>✔</td><td>✔</td></tr>
+      <tr><td><b>Mitocondria</b></td><td>Respiración celular: saca energía (ATP) de la glucosa.</td><td>✔</td><td>✔</td></tr>
+      <tr><td><b>Retículo endoplasmático</b></td><td>Rugoso: proteínas. Liso: lípidos.</td><td>✔</td><td>✔</td></tr>
+      <tr><td><b>Aparato de Golgi</b></td><td>Empaca y despacha sustancias.</td><td>✔</td><td>✔</td></tr>
+      <tr><td><b>Lisosomas</b></td><td>Digieren desechos.</td><td>✔</td><td>pocos</td></tr>
+      <tr><td><b>Vacuola</b></td><td>Guarda agua y sustancias.</td><td>pequeñas</td><td>una grande</td></tr>
+      <tr><td><b>Cloroplasto</b></td><td>Fotosíntesis.</td><td>✘</td><td>✔</td></tr>
+      <tr><td><b>Pared celular</b></td><td>Da forma y protege (celulosa).</td><td>✘</td><td>✔</td></tr>
+      <tr><td><b>Centriolos</b></td><td>Ayudan en la división.</td><td>✔</td><td>✘</td></tr></table>
+  </div>
+  <div class="cols2">
+    <div class="rc"><h4>🚪 Transporte por la membrana</h4><ul>
+      <li><b>Difusión:</b> las sustancias pasan de donde hay más a donde hay menos, sin gastar energía.</li>
+      <li><b>Ósmosis:</b> difusión del <b>agua</b> a través de la membrana, hacia donde hay más solutos.</li>
+      <li><b>Transporte activo:</b> en contra de la diferencia de concentración; gasta ATP.</li>
+      <li><b>Endocitosis / exocitosis:</b> la membrana envuelve partículas grandes para meterlas o sacarlas.</li></ul></div>
+    <div class="rc"><h4>⚡ La energía de la célula</h4>
+      <p><b>Fotosíntesis</b> (cloroplasto):</p><p class="formula">6 CO₂ + 6 H₂O + luz → C₆H₁₂O₆ + 6 O₂</p>
+      <p><b>Respiración celular</b> (mitocondria):</p><p class="formula">C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energía</p>
+      <p class="peq">Cada glucosa da unos <b>30 a 32 ATP</b>. Las plantas hacen las dos cosas; los animales, solo la respiración.</p></div>
+  </div>
+</article>
+
+<!-- 5. División celular -->
+<article class="hoja" data-hoja="division" data-tit="División celular: mitosis y meiosis" data-ico="✂️" data-tema="División celular · Reproducción" data-desc="Ciclo celular, fases de la mitosis, meiosis y tabla para compararlas.">
+  <div class="cols2 c-40">
+    <div class="rc"><h4>🔄 El ciclo celular</h4><ul>
+      <li><b>Interfase</b> (casi todo el tiempo): <b>G1</b> la célula crece · <b>S</b> copia su ADN (replicación) · <b>G2</b> se prepara.</li>
+      <li><b>Fase M</b>: mitosis (reparte el núcleo) y <b>citocinesis</b> (parte el citoplasma).</li>
+      <li>Si el ciclo pierde el control, las células se dividen sin parar: así empieza un <b>cáncer</b>.</li></ul></div>
+    <div class="rc"><h4>🧬 Mitosis: las fases (PMAT)</h4><table class="t-ref">
+      <tr><td><b>Profase</b></td><td>El ADN se condensa en cromosomas visibles; se forma el huso; desaparece la envoltura del núcleo.</td></tr>
+      <tr><td><b>Metafase</b></td><td>Los cromosomas se alinean en el <b>centro</b> de la célula.</td></tr>
+      <tr><td><b>Anafase</b></td><td>Las cromátidas hermanas se separan y viajan a polos <b>opuestos</b>.</td></tr>
+      <tr><td><b>Telofase</b></td><td>Se forman dos núcleos nuevos y los cromosomas se descondensan.</td></tr>
+      <tr><td><b>Citocinesis</b></td><td>Animal: un surco estrangula la célula. Vegetal: se forma una placa celular en el medio.</td></tr></table></div>
+  </div>
+  <div class="rc"><h4>🎲 Meiosis: dos divisiones seguidas</h4><div class="cols2 sin-margen">
+    <p><b>Meiosis I</b> (reduccional): los cromosomas <b>homólogos</b> se emparejan y se intercambian trozos (<b>entrecruzamiento</b>); luego cada homólogo va a una célula distinta. De 2n se pasa a n.</p>
+    <p><b>Meiosis II</b> (como una mitosis): se separan las cromátidas hermanas. Resultado: <b>cuatro células</b> haploides (n), todas genéticamente <b>distintas</b>.</p></div></div>
+  <table class="t-ref t-comp"><tr><th></th><th>Mitosis</th><th>Meiosis</th></tr>
+    <tr><td><b>Para qué sirve</b></td><td>Crecer, reparar tejidos, reproducción asexual.</td><td>Formar gametos (óvulos, espermatozoides, esporas).</td></tr>
+    <tr><td><b>Qué células la hacen</b></td><td>Células del cuerpo (somáticas).</td><td>Células de ovarios y testículos (en plantas, de las flores).</td></tr>
+    <tr><td><b>Número de divisiones</b></td><td>Una.</td><td>Dos.</td></tr>
+    <tr><td><b>Células que resultan</b></td><td>2, iguales a la madre.</td><td>4, distintas entre sí.</td></tr>
+    <tr><td><b>Cromosomas</b></td><td>2n → 2n (en humanos 46 → 46).</td><td>2n → n (en humanos 46 → 23).</td></tr>
+    <tr><td><b>Entrecruzamiento</b></td><td>No.</td><td>Sí: produce variación.</td></tr></table>
+  <div class="cols2">
+    <div class="rc"><h4>🔤 Vocabulario</h4><p><b>Cromosoma:</b> ADN enrollado con proteínas. <b>Cromátidas hermanas:</b> las dos copias de un cromosoma unidas por el <b>centrómero</b>. <b>Homólogos:</b> el par de cromosomas, uno del padre y otro de la madre. <b>Diploide (2n):</b> con pares. <b>Haploide (n):</b> con un solo juego.</p></div>
+    <div class="rc"><h4>👶 ¿Y la fecundación?</h4><p>Un óvulo (n = 23) + un espermatozoide (n = 23) forman el <b>cigoto</b> (2n = 46). Desde ahí, el bebé crece por <b>mitosis</b>. Gracias a la meiosis, cada hermano recibe una mezcla distinta de los genes de sus padres.</p></div>
+  </div>
+</article>
+
+<!-- 6. Clasificación -->
+<article class="hoja" data-hoja="clasificacion" data-tit="Clasificación de los seres vivos" data-ico="🍄" data-tema="Reinos y clasificación" data-desc="Categorías taxonómicas, nombre científico, dominios y modelos de 5, 6 y 7 reinos.">
+  <div class="cols2 c-40">
+    <div class="rc"><h4>🪜 Categorías taxonómicas</h4><table class="t-ref t-cen"><tr><th>Categoría</th><th>Ser humano</th><th>Guacamaya bandera</th></tr>
+      <tr><td>Dominio</td><td>Eukarya</td><td>Eukarya</td></tr><tr><td>Reino</td><td>Animalia</td><td>Animalia</td></tr>
+      <tr><td>Filo</td><td>Chordata</td><td>Chordata</td></tr><tr><td>Clase</td><td>Mammalia</td><td>Aves</td></tr>
+      <tr><td>Orden</td><td>Primates</td><td>Psittaciformes</td></tr><tr><td>Familia</td><td>Hominidae</td><td>Psittacidae</td></tr>
+      <tr><td>Género</td><td><i>Homo</i></td><td><i>Ara</i></td></tr><tr><td>Especie</td><td><i>Homo sapiens</i></td><td><i>Ara macao</i></td></tr></table>
+      <p class="peq">Para recordarlas: <b>D</b>e <b>R</b>epente <b>F</b>elipe <b>C</b>omió <b>O</b>rugas <b>F</b>ritas <b>G</b>uisadas <b>E</b>speciales. Mientras más abajo, más parecidos son los organismos.</p></div>
+    <div class="rc destacada"><h4>✍️ El nombre científico (Linneo)</h4><ul>
+      <li>Tiene <b>dos palabras</b> en latín: el <b>género</b> y el <b>epíteto</b> de la especie.</li>
+      <li>El género va con <b>mayúscula</b> inicial y el epíteto, todo en <b>minúscula</b>.</li>
+      <li>Se escribe en <i>cursiva</i>; a mano, se subraya: <u>Ara macao</u>.</li>
+      <li>Después de la primera vez se puede abreviar el género: <i>A. macao</i>.</li>
+      <li>Sirve para que todos los científicos del mundo sepan de qué especie se habla, sin importar el nombre común (guacamaya, lapa, guacamayo).</li></ul>
+      <h4>🌐 Los tres dominios (Woese, 1990)</h4><p><b>Bacteria</b> y <b>Archaea</b>: procariotas. <b>Eukarya</b>: todos los eucariotas. Las arqueas viven a menudo en lugares extremos: aguas termales, salinas, el intestino de las vacas.</p></div>
+  </div>
+  <h4 class="tit-tabla">Los modelos de reinos <small>(tu docente te dirá cuál se usa en clase)</small></h4>
+  <table class="t-ref t-cen t-modelos"><tr><th>5 reinos<br><small>Whittaker, 1969</small></th><th>6 reinos<br><small>Woese, 1977</small></th><th>7 reinos<br><small>Ruggiero y otros, 2015</small></th></tr>
+    <tr><td rowspan="2"><b>Monera</b><br>bacterias y arqueas</td><td><b>Eubacteria</b></td><td><b>Bacteria</b></td></tr>
+    <tr><td><b>Archaebacteria</b></td><td><b>Archaea</b></td></tr>
+    <tr><td rowspan="2"><b>Protista</b><br>amebas, algas, paramecios</td><td rowspan="2"><b>Protista</b></td><td><b>Protozoa</b> (amebas, euglenas, tripanosomas)</td></tr>
+    <tr><td><b>Chromista</b> (algas pardas, diatomeas, paramecios, <i>Plasmodium</i>)</td></tr>
+    <tr><td><b>Fungi</b></td><td><b>Fungi</b></td><td><b>Fungi</b></td></tr>
+    <tr><td><b>Plantae</b></td><td><b>Plantae</b></td><td><b>Plantae</b></td></tr>
+    <tr><td><b>Animalia</b></td><td><b>Animalia</b></td><td><b>Animalia</b></td></tr></table>
+  <table class="t-ref t-reinos"><tr><th>Grupo</th><th>Célula</th><th>N.º de células</th><th>Nutrición</th><th>Pared celular</th><th>Ejemplo en Colombia</th></tr>
+    <tr><td><b>Bacterias y arqueas</b></td><td>Procariota</td><td>Una</td><td>Autótrofa o heterótrofa</td><td>Sí (no de celulosa)</td><td>Lactobacilos del kumis</td></tr>
+    <tr><td><b>Protistas</b></td><td>Eucariota</td><td>Casi siempre una</td><td>Autótrofa o heterótrofa</td><td>Algunos</td><td><i>Plasmodium</i> de la malaria</td></tr>
+    <tr><td><b>Hongos</b></td><td>Eucariota</td><td>Una o muchas</td><td>Heterótrofa por absorción</td><td>Sí, de quitina</td><td>Champiñón, levadura del pan</td></tr>
+    <tr><td><b>Plantas</b></td><td>Eucariota</td><td>Muchas</td><td>Autótrofa (fotosíntesis)</td><td>Sí, de celulosa</td><td>Palma de cera, frailejón</td></tr>
+    <tr><td><b>Animales</b></td><td>Eucariota</td><td>Muchas</td><td>Heterótrofa por ingestión</td><td>No</td><td>Oso de anteojos, guacamaya</td></tr></table>
+</article>
+
+<!-- 7. Sistemas del cuerpo -->
+<article class="hoja" data-hoja="sistemas" data-tit="Sistemas del cuerpo humano" data-ico="❤️" data-tema="Sistemas · Funciones vitales" data-desc="Cada sistema con sus órganos, su función y con qué sistemas trabaja.">
+  <table class="t-ref t-sis"><tr><th>Sistema</th><th>Órganos principales</th><th>Función</th><th>Trabaja con</th></tr>
+    <tr><td><b>🍽️ Digestivo</b></td><td>Boca, esófago, estómago, intestino delgado y grueso, hígado, páncreas.</td><td>Rompe los alimentos en nutrientes pequeños que se absorben en el intestino delgado.</td><td>Circulatorio (lleva los nutrientes).</td></tr>
+    <tr><td><b>🌬️ Respiratorio</b></td><td>Nariz, faringe, laringe, tráquea, bronquios, pulmones (alvéolos).</td><td>Toma O₂ y saca CO₂; el intercambio ocurre en los alvéolos.</td><td>Circulatorio (lleva el O₂ a las células).</td></tr>
+    <tr><td><b>❤️ Circulatorio</b></td><td>Corazón, arterias, venas, capilares, sangre.</td><td>Transporta O₂, nutrientes, hormonas y desechos por todo el cuerpo.</td><td>Todos.</td></tr>
+    <tr><td><b>💧 Excretor (urinario)</b></td><td>Riñones, uréteres, vejiga, uretra. También piel y pulmones.</td><td>Filtra la sangre y elimina desechos como la urea en la orina.</td><td>Circulatorio.</td></tr>
+    <tr><td><b>🧠 Nervioso</b></td><td>Encéfalo, médula espinal, nervios, órganos de los sentidos.</td><td>Recibe información y da respuestas rápidas con impulsos eléctricos (neuronas).</td><td>Locomotor, endocrino.</td></tr>
+    <tr><td><b>⚗️ Endocrino</b></td><td>Hipófisis, tiroides, páncreas, suprarrenales, ovarios, testículos.</td><td>Controla funciones lentas (crecimiento, azúcar en sangre) con hormonas.</td><td>Nervioso, reproductor.</td></tr>
+    <tr><td><b>🛡️ Inmune</b></td><td>Glóbulos blancos, ganglios, bazo, timo, médula ósea.</td><td>Defiende de microbios: barreras, inflamación y anticuerpos.</td><td>Circulatorio (linfático).</td></tr>
+    <tr><td><b>🦴 Locomotor</b></td><td>Huesos, músculos, articulaciones, tendones, ligamentos.</td><td>Sostén, protección y movimiento; los huesos fabrican sangre.</td><td>Nervioso.</td></tr>
+    <tr><td><b>👶 Reproductor</b></td><td>Ovarios, útero, vagina / testículos, conductos, pene.</td><td>Produce gametos y hormonas sexuales; permite tener hijos.</td><td>Endocrino.</td></tr>
+    <tr><td><b>🧴 Tegumentario</b></td><td>Piel, pelo, uñas, glándulas sudoríparas.</td><td>Protege, regula la temperatura con el sudor y siente.</td><td>Nervioso, excretor.</td></tr></table>
+  <div class="cols2">
+    <div class="rc destacada"><h4>⚖️ Homeostasis</h4><p>Es mantener estable el medio interno (temperatura cerca de 37 °C, agua, azúcar en sangre, pH) aunque afuera cambien las cosas. <i>Ejemplo:</i> si hace calor, el cerebro activa el sudor; si sube el azúcar, el páncreas libera <b>insulina</b>.</p></div>
+    <div class="rc"><h4>🔗 La nutrición es trabajo en equipo</h4><p>El <b>digestivo</b> saca los nutrientes, el <b>respiratorio</b> toma el oxígeno, el <b>circulatorio</b> los lleva a cada célula (donde la mitocondria hace la respiración celular) y el <b>excretor</b> bota los desechos.</p></div>
+  </div>
+  <div class="rc"><h4>💪 Hábitos que cuidan tus sistemas</h4><p>Come variado y con frutas y verduras · toma agua · duerme de 8 a 10 horas · muévete al menos 60 minutos al día · no fumes ni vapees · lávate las manos · ponte las vacunas.</p></div>
+</article>
+
+<!-- 8. Biomoléculas y nutrición -->
+<article class="hoja" data-hoja="biomoleculas" data-tit="Biomoléculas y nutrición" data-ico="🍎" data-tema="Nutrición y salud · La célula" data-desc="Las cuatro biomoléculas, cómo reconocerlas en el laboratorio y una alimentación balanceada.">
+  <table class="t-ref t-bio"><tr><th>Biomolécula</th><th>Unidad (monómero)</th><th>Función</th><th>Ejemplos</th><th>Alimentos</th><th>Prueba de laboratorio</th></tr>
+    <tr><td><b>Carbohidratos</b></td><td>Monosacáridos (glucosa, C₆H₁₂O₆)</td><td>Energía rápida; estructura (celulosa).</td><td>Glucosa, sacarosa, almidón, glucógeno, celulosa.</td><td>Arroz, papa, yuca, plátano, pan, panela.</td><td><b>Lugol</b>: el almidón se pone morado. <b>Benedict</b> (con calor): los azúcares reductores dan rojo ladrillo.</td></tr>
+    <tr><td><b>Lípidos</b></td><td>Ácidos grasos y glicerol</td><td>Energía de reserva; membranas; aislar del frío; hormonas.</td><td>Grasas, aceites, ceras, colesterol, fosfolípidos.</td><td>Aguacate, aceite, mantequilla, maní.</td><td><b>Sudán III</b>: tiñe la grasa de rojo. Dejan mancha traslúcida en el papel.</td></tr>
+    <tr><td><b>Proteínas</b></td><td>Aminoácidos (20 tipos)</td><td>Construyen el cuerpo; enzimas; anticuerpos; transporte (hemoglobina).</td><td>Colágeno, queratina, insulina, hemoglobina.</td><td>Huevo, carne, pescado, fríjol, lenteja, leche.</td><td><b>Biuret</b>: color violeta.</td></tr>
+    <tr><td><b>Ácidos nucleicos</b></td><td>Nucleótidos</td><td>Guardan y usan la información genética.</td><td>ADN y ARN.</td><td>Todos los alimentos con células.</td><td>Extracción de ADN con jabón, sal y alcohol.</td></tr></table>
+  <div class="cols2">
+    <div class="rc"><h4>💧 Biomoléculas inorgánicas</h4><p><b>Agua</b> (H₂O): cerca del 60 % del cuerpo; disuelve, transporta y regula la temperatura. <b>Sales minerales</b>: calcio (huesos), hierro (hemoglobina), sodio y potasio (impulso nervioso), yodo (tiroides).</p>
+      <h4>🍊 Vitaminas</h4><p>Se necesitan en poca cantidad. <b>A</b>: visión (zanahoria, mango) · <b>C</b>: defensas y piel (guayaba, naranja) · <b>D</b>: huesos (sol, huevo) · <b>B12</b>: sangre y nervios (carnes, lácteos).</p></div>
+    <div class="rc"><h4>⚡ Energía de los alimentos</h4><table class="t-ref t-cen"><tr><th>Nutriente</th><th>kcal por gramo</th></tr><tr><td>Carbohidratos</td><td>4</td></tr><tr><td>Proteínas</td><td>4</td></tr><tr><td>Lípidos</td><td>9</td></tr></table>
+      <p><i>Ejemplo:</i> 20 g de carbohidrato + 5 g de grasa = 20·4 + 5·9 = <b>125 kcal</b>.</p>
+      <p class="formula">IMC = peso (kg) ÷ estatura² (m²)</p><p class="peq">En niños y adolescentes el IMC se compara con tablas por edad y sexo: pregunta en el puesto de salud.</p></div>
+  </div>
+  <div class="rc destacada"><h4>🍽️ Un plato balanceado</h4><p>Siguiendo el «plato saludable de la familia colombiana» del ICBF: la mitad del plato con <b>frutas y verduras</b>; un cuarto con <b>cereales, raíces, tubérculos o plátanos</b>; un cuarto con <b>carnes, huevo, leguminosas</b> (fríjol, lenteja, garbanzo); <b>lácteos</b> al día y <b>agua</b> como bebida principal. Pocos azúcares, sal y paquetes ultraprocesados.</p></div>
+</article>
+
+<!-- 9. Genética mendeliana -->
+<article class="hoja" data-hoja="mendel" data-tit="Genética mendeliana" data-ico="🌱" data-tema="Genética" data-desc="Vocabulario, leyes de Mendel, cuadro de Punnett, proporciones y grupos sanguíneos.">
+  <table class="t-ref t-voc"><tr><th>Palabra</th><th>Qué significa</th><th>Ejemplo</th></tr>
+    <tr><td><b>Gen</b></td><td>Fragmento de ADN con la información de una característica.</td><td>Gen del color de la semilla de arveja.</td></tr>
+    <tr><td><b>Alelo</b></td><td>Cada versión de un gen.</td><td><b>A</b> (amarillo) y <b>a</b> (verde).</td></tr>
+    <tr><td><b>Dominante / recesivo</b></td><td>El dominante se nota aunque haya un solo alelo; el recesivo solo se nota si hay dos.</td><td>A domina sobre a.</td></tr>
+    <tr><td><b>Homocigoto / heterocigoto</b></td><td>Dos alelos iguales / dos alelos distintos.</td><td>AA o aa / Aa.</td></tr>
+    <tr><td><b>Genotipo / fenotipo</b></td><td>Los alelos que tiene / lo que se ve o se mide.</td><td>Aa / semilla amarilla.</td></tr></table>
+  <div class="cols2">
+    <div class="rc"><h4>📜 Las leyes de Mendel</h4><ol class="compacta">
+      <li><b>Uniformidad:</b> al cruzar dos razas puras distintas (AA × aa), todos los hijos son iguales (Aa).</li>
+      <li><b>Segregación:</b> los dos alelos de un gen se separan al formar los gametos; cada gameto lleva uno.</li>
+      <li><b>Distribución independiente:</b> los alelos de genes distintos se reparten sin depender unos de otros (si están en cromosomas distintos).</li></ol></div>
+    <div class="rc destacada"><h4>🔲 El cuadro de Punnett, paso a paso</h4><div class="punnett-ej">
+      <ol class="compacta"><li>Escribe el genotipo de los padres: <b>Aa × Aa</b>.</li><li>Pon los gametos de uno arriba (A, a) y del otro al lado (A, a).</li><li>Llena cada casilla juntando una letra de arriba y una del lado.</li><li>Cuenta genotipos y fenotipos.</li></ol>
+      <table class="t-pun"><tr><th></th><th>A</th><th>a</th></tr><tr><th>A</th><td>AA</td><td>Aa</td></tr><tr><th>a</th><td>Aa</td><td class="rec">aa</td></tr></table></div>
+      <p>Genotipos <b>1 AA : 2 Aa : 1 aa</b> · Fenotipos <b>3 amarillas : 1 verde</b> (75 % y 25 %).</p></div>
+  </div>
+  <div class="cols2">
+    <div class="rc"><h4>🔢 Proporciones para recordar</h4><table class="t-ref t-cen">
+      <tr><th>Cruce</th><th>Fenotipos de los hijos</th></tr>
+      <tr><td>AA × aa</td><td>100 % dominante</td></tr><tr><td>Aa × Aa</td><td><b>3 : 1</b></td></tr>
+      <tr><td>Aa × aa (cruce de prueba)</td><td><b>1 : 1</b></td></tr><tr><td>AaBb × AaBb (dihíbrido)</td><td><b>9 : 3 : 3 : 1</b></td></tr>
+      <tr><td>Dominancia incompleta Rr × Rr</td><td><b>1 : 2 : 1</b> (rojo, rosado, blanco)</td></tr></table></div>
+    <div class="rc"><h4>🩸 Grupos sanguíneos ABO</h4><p>Alelos <b>Iᴬ</b> e <b>Iᴮ</b> son <b>codominantes</b>; <b>i</b> es recesivo.</p><table class="t-ref t-cen">
+      <tr><th>Grupo</th><th>Genotipos posibles</th></tr><tr><td>A</td><td>IᴬIᴬ o Iᴬi</td></tr><tr><td>B</td><td>IᴮIᴮ o Iᴮi</td></tr><tr><td>AB</td><td>IᴬIᴮ</td></tr><tr><td>O</td><td>ii</td></tr></table>
+      <p class="peq"><b>Ligada al X:</b> el daltonismo es recesivo en el cromosoma X; por eso es más común en hombres (XY), que tienen un solo X.</p></div>
+  </div>
+</article>
+
+<!-- 10. Código genético -->
+<article class="hoja" data-hoja="codigo" data-tit="El código genético" data-ico="🧬" data-tema="Genética · Del gen a la proteína" data-desc="La tabla de codones, cómo leerla, el dogma central y un ejemplo resuelto.">
+  <div class="dogma"><span class="d-adn">ADN</span><i>— transcripción (núcleo) →</i><span class="d-arn">ARNm</span><i>— traducción (ribosoma) →</i><span class="d-prot">Proteína</span><small>El ADN también se copia a sí mismo: <b>replicación</b>.</small></div>
+  <div id="ref-tabla-cod"></div>
+  <div class="cols2">
+    <div class="rc"><h4>📖 Cómo leer la tabla</h4><ol class="compacta">
+      <li>Un <b>codón</b> son tres letras seguidas del ARNm.</li>
+      <li>Busca la <b>1.ª</b> letra en la columna de la izquierda, la <b>2.ª</b> arriba y la <b>3.ª</b> a la derecha.</li>
+      <li>La casilla dice el aminoácido. <i>Ejemplo:</i> <b>GUG</b> → Val (valina).</li>
+      <li><b>AUG</b> = metionina y es el codón de <b>inicio</b>. <b>UAA, UAG, UGA</b> = <b>parada</b>.</li></ol>
+      <h4>🔗 Pares de bases</h4><p>ADN con ADN: <b>A–T</b>, <b>C–G</b>. ADN con ARN: <b>A–U</b>, T–A, C–G, G–C (el ARN tiene U en vez de T).</p></div>
+    <div class="rc destacada"><h4>✅ Ejemplo resuelto</h4><table class="t-ref t-ej">
+      <tr><td><b>ADN molde</b></td><td class="mono">TAC CAC GTA GAC</td></tr>
+      <tr><td><b>ARNm</b></td><td class="mono">AUG GUG CAU CUG</td></tr>
+      <tr><td><b>Anticodones del ARNt</b></td><td class="mono">UAC CAC GUA GAC</td></tr>
+      <tr><td><b>Proteína</b></td><td class="mono">Met – Val – His – Leu</td></tr></table>
+      <p class="peq">Es el inicio de la <b>beta-globina</b> de la hemoglobina. Si una sola letra cambia (GAG → GUG en el codón 6), sale valina en vez de ácido glutámico: así se produce la <b>anemia falciforme</b>.</p>
+      <h4>⭐ Propiedades del código</h4><p><b>Universal</b> (casi igual en todos los seres vivos) · <b>redundante</b> (varios codones para un mismo aminoácido) · se lee <b>de tres en tres</b> y sin saltar letras.</p></div>
+  </div>
+  <p class="aa-lista" id="ref-aa"></p>
+</article>
+
+<!-- 11. Ecosistemas -->
+<article class="hoja" data-hoja="ecosistemas" data-tit="Ecosistemas" data-ico="🌳" data-tema="Ecosistemas · Colombia · Ambiente" data-desc="Niveles tróficos, regla del 10 %, relaciones entre especies, ciclos y pisos térmicos de Colombia.">
+  <div class="cols2">
+    <div class="rc"><h4>🌿 Componentes</h4><p><b>Bióticos:</b> los seres vivos (plantas, animales, hongos, microorganismos). <b>Abióticos:</b> lo no vivo (luz, agua, temperatura, suelo, aire). Un <b>hábitat</b> es el lugar donde vive una especie; su <b>nicho</b> es su papel: qué come, cuándo está activa, quién se la come.</p></div>
+    <div class="rc"><h4>🍃 Niveles tróficos</h4><ul>
+      <li><b>Productores</b> (autótrofos): plantas y algas; hacen fotosíntesis.</li>
+      <li><b>Consumidores primarios</b> (herbívoros), <b>secundarios</b> y <b>terciarios</b> (carnívoros).</li>
+      <li><b>Descomponedores</b>: hongos y bacterias devuelven los nutrientes al suelo.</li></ul></div>
+  </div>
+  <div class="cols2 c-62">
+    <div class="rc destacada"><h4>🔺 La regla del 10 %</h4><p>De un nivel trófico al siguiente pasa solo cerca del <b>10 %</b> de la energía; el resto se gasta en vivir y se pierde como calor. Por eso hay pocos depredadores grandes.</p>
+      <table class="t-ref t-cen"><tr><th>Nivel</th><th>Ejemplo (Llanos)</th><th>Energía</th></tr><tr><td>Productor</td><td>Pasto</td><td>10 000 kcal</td></tr><tr><td>Consumidor 1.º</td><td>Chigüiro</td><td>1000 kcal</td></tr><tr><td>Consumidor 2.º</td><td>Anaconda</td><td>100 kcal</td></tr><tr><td>Consumidor 3.º</td><td>Jaguar</td><td>10 kcal</td></tr></table></div>
+    <div class="rc"><h4>🤝 Relaciones entre especies</h4><table class="t-ref t-rel">
+      <tr><th>Relación</th><th>Efecto</th><th>Ejemplo</th></tr>
+      <tr><td><b>Mutualismo</b></td><td>+ / +</td><td>Colibrí y flor (néctar y polinización).</td></tr>
+      <tr><td><b>Comensalismo</b></td><td>+ / 0</td><td>Orquídea sobre un árbol.</td></tr>
+      <tr><td><b>Parasitismo</b></td><td>+ / −</td><td>Garrapata y vaca.</td></tr>
+      <tr><td><b>Depredación</b></td><td>+ / −</td><td>Jaguar y chigüiro.</td></tr>
+      <tr><td><b>Competencia</b></td><td>− / −</td><td>Dos aves por el mismo alimento.</td></tr></table></div>
+  </div>
+  <div class="cols2">
+    <div class="rc"><h4>♻️ Ciclos de la materia</h4><ul>
+      <li><b>Agua:</b> evaporación → condensación (nubes) → precipitación → escorrentía e infiltración. Las plantas aportan con la transpiración.</li>
+      <li><b>Carbono:</b> la fotosíntesis toma CO₂; la respiración, la descomposición y la quema de combustibles lo devuelven.</li>
+      <li><b>Nitrógeno:</b> bacterias del suelo y de las raíces de leguminosas lo fijan para que las plantas lo usen.</li></ul></div>
+    <div class="rc"><h4><span class="co" role="img" aria-label="Colombia"></span> Pisos térmicos de Colombia</h4><table class="t-ref t-pisos">
+      <tr><th>Piso</th><th>Altura (m)</th><th>Temp.</th></tr><tr><td>Cálido</td><td>0 – 1000</td><td>&gt; 24 °C</td></tr><tr><td>Templado</td><td>1000 – 2000</td><td>18 – 24 °C</td></tr>
+      <tr><td>Frío</td><td>2000 – 3000</td><td>12 – 18 °C</td></tr><tr><td>Páramo</td><td>3000 – 4700</td><td>6 – 12 °C</td></tr><tr><td>Nival</td><td>&gt; 4700</td><td>&lt; 6 °C</td></tr></table>
+      <p class="peq">Regiones naturales: Andina, Caribe, Pacífica, Orinoquía, Amazonía e Insular.</p></div>
+  </div>
+</article>
+
+</div>
+</div>
+
+<script src="bio.js?v=27"></script>
+<script src="referencias.js?v=1"></script>
+<script src="text-zoom.js?v=13"></script>
+<script src="pwa-install.js?v=14"></script>
+</body>
+</html>

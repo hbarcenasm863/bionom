@@ -228,6 +228,12 @@ select,input[type=text],input[type=number]{font:inherit;border:1.5px solid var(-
 .site-foot{background:#0f2a5f;color:rgba(255,255,255,.8);padding:22px 20px;text-align:center;font-size:.84rem}
 .site-foot b{color:#fff}
 .site-foot a{color:#9be3a8}
+.ref-tema{margin:28px 0 0;background:#f0f7ff;border:1.5px solid #bfdbfe;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.ref-tema span{display:flex;flex-wrap:wrap;gap:6px}
+.ref-tema a{background:#fff;border:1.5px solid var(--cn-brd);border-radius:999px;padding:5px 12px;font-weight:700;font-size:.88rem;text-decoration:none;color:var(--cn-brand-d)}
+.ref-tema a.todas{background:transparent;border-style:dashed}
+.ref-tema small{color:var(--cn-dim)}
+@media print{.ref-tema{display:none}}
 .sig{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 0}
 .sig a{flex:1;min-width:220px;background:#fff;border:1px solid var(--cn-brd);border-radius:var(--cn-r);padding:14px 16px;text-decoration:none;color:var(--cn-tx);box-shadow:var(--cn-sh)}
 .sig a:hover{border-color:var(--cn-brand);box-shadow:var(--cn-sh-h)}

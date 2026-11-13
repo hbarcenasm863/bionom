@@ -22,6 +22,7 @@ Se publica con GitHub Pages y se puede instalar como aplicación (PWA).
 | `ambiente.html` | Ambiente y cambio climático | Efecto invernadero, datos de CO₂, causas en Colombia, consecuencias por región, El Niño y La Niña, océanos, energías, huella de carbono, mitigación y adaptación. |
 | `juego.html` | Juego | 536 preguntas de 4 tipos en 10 temas (al menos 40 por tema) con 3 intentos y pistas, crucigrama, sopa de letras y ahorcado. Modo libre (el Modo Estudiante está desactivado hasta 2027). |
 | `docente.html` | Docente | Guías de 4 sesiones, talleres, evaluaciones tipo Saber 11, laberintos, crucigramas, ahorcado, sopa de letras, criptograma genético, mapa conceptual y detective biológico, con versiones y clave. |
+| `referencias.html` | Hojas de referencia | 11 hojas de una página carta, con logo, marca de agua y licencia, para ver o descargar en PDF: niveles de organización, método científico e informe, microscopio, célula, mitosis y meiosis, clasificación, sistemas del cuerpo, biomoléculas y nutrición, genética mendeliana, código genético y ecosistemas. |
 
 ## Modo Estudiante
 

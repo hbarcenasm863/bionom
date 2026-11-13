@@ -6,6 +6,63 @@
 
 ---
 
+## Versión 2.45 — 13 de noviembre de 2026 · Hojas de referencia para descargar en PDF
+
+**Contexto.** El docente pidió, como en IonNom (guía en PDF) y ChromaNom
+(página «Referencia»), hojas de referencia descargables, con logo y marca de
+agua, que sirvan de resumen básico para consultar en cualquier momento y
+para mejorar los procesos de los estudiantes. Como mínimo, la tabla del
+código genético.
+
+**Cambios**
+- `referencias.html`, `referencias.css`, `referencias.js` (nuevos): página
+  «Hojas de referencia» con 11 hojas de una página carta:
+  1. Niveles de organización de la vida (del átomo a la biosfera).
+  2. Método científico e informe de laboratorio (hipótesis «si…, entonces…,
+     porque…», variables, tablas y gráficas, partes del informe, seguridad).
+  3. El microscopio óptico (partes, aumento total, campo, cómo medir,
+     pasos para enfocar, tinciones).
+  4. La célula (teoría celular, procariota/eucariota, organelos animal y
+     vegetal, cómo distinguirlas al microscopio, transporte, fotosíntesis y
+     respiración con 30 a 32 ATP).
+  5. División celular (ciclo, fases de la mitosis, meiosis, tabla
+     comparativa).
+  6. Clasificación (categorías con el ser humano y la guacamaya bandera,
+     nombre científico, tres dominios, modelos de 5, 6 y 7 reinos tal como
+     en `reinos.html`, tabla de grupos con ejemplos de Colombia).
+  7. Sistemas del cuerpo humano (órganos, función, con qué trabajan,
+     homeostasis, hábitos).
+  8. Biomoléculas y nutrición (monómeros, funciones, alimentos, pruebas de
+     laboratorio: lugol, Benedict, Biuret, Sudán III; kcal por gramo, IMC,
+     plato saludable del ICBF).
+  9. Genética mendeliana (vocabulario, leyes, Punnett paso a paso,
+     proporciones, grupos ABO, herencia ligada al X).
+  10. **El código genético** (tabla de 64 codones con colores, cómo leerla,
+      pares de bases, ejemplo resuelto ADN → ARNm → ARNt → proteína, anemia
+      falciforme, propiedades del código y los 20 aminoácidos).
+  11. Ecosistemas (componentes, niveles tróficos, regla del 10 %,
+      relaciones entre especies, ciclos, pisos térmicos de Colombia).
+  Cada hoja lleva el logo de BioNom, la marca de agua y el pie con la
+  licencia. El contenido se agranda solo hasta llenar la página sin tapar
+  el pie (probado: las 11 salen en una sola página en PDF). Botones «Ver»
+  (visor en pantalla, también en el celular), «Descargar PDF» (cuadro de
+  imprimir con solo esa hoja; el PDF toma el nombre de la hoja) y
+  «Descargar todas en un solo PDF». Enlace directo `referencias.html?hoja=codigo`.
+- `bio.js` y `bio.css` (v27): «📋 Referencia» en el menú y, al final de cada
+  página de tema, el recuadro «Hojas de referencia de este tema» con sus
+  hojas.
+- `genetica.html`: botón «Descargar esta tabla (hoja de referencia en PDF)»
+  debajo de la tabla del código genético.
+- `sw.js`: las tres páginas nuevas y `icons/logo.png` en la caché; `CACHE`
+  → `bionom-v58`.
+- `README.md` y `CLAUDE.md`: la página nueva documentada.
+
+**Pruebas.** Playwright: las 11 hojas en PDF de una página, revisadas en
+imagen; lista, visor y enlace directo en celular; sin errores en las 17
+páginas.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.44 — 13 de noviembre de 2026 · La pantalla completa ya queda en horizontal
 
 **Contexto.** El docente reportó que al activar la pantalla completa en el

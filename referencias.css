@@ -1,0 +1,126 @@
+/* referencias.css — Hojas de referencia de BioNom (referencias.html).
+   Cada hoja es una página carta (8,5 × 11 in) con logo, marca de agua y pie. */
+
+/* ── Lista de hojas ── */
+.ref-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:10px}
+.ref-card{background:#fff;border:1.5px solid var(--cn-brd);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--cn-sh)}
+.ref-card .e{font-size:1.8rem;line-height:1}
+.ref-card h3{margin:0;font-size:1.05rem;color:var(--cn-brand-d)}
+.ref-card .tema{font-size:.78rem;font-weight:700;color:var(--cn-dim);text-transform:uppercase;letter-spacing:.03em}
+.ref-card p{margin:0;font-size:.9rem;flex:1}
+.ref-card .acc{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.ref-card .acc .cn-btn{font-size:.85rem;padding:6px 12px}
+.ref-card.pedida{outline:3px solid #fbbf24}
+.ref-todas{margin:14px 0 6px;text-align:center}
+.ref-ayuda{font-size:.9rem;background:#f0f7ff;border-radius:12px;padding:10px 14px;margin-top:10px}
+
+/* ── Visor en pantalla ── */
+#hojas{display:none}
+#hojas.abierto{display:block;position:fixed;inset:0;z-index:2500;background:rgba(15,23,42,.94);overflow:auto;padding:0 10px 30px}
+.visor-barra{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;background:#0f2a5f;color:#fff;padding:8px 12px;margin:0 -10px 14px}
+.visor-barra span{display:flex;gap:6px}
+.visor-barra .cn-btn{font-size:.85rem;padding:6px 12px}
+#hojas.abierto .hoja{display:none}
+#hojas.abierto .hoja.sel{display:block;margin:0 auto}
+html.visor-abierto,html.visor-abierto body{overflow:hidden}
+
+/* ── La hoja ── */
+.hoja{--h-azul:#0f2a5f;--h-verde:#1f7a3f;--h-borde:#cfd8e3;
+  width:8.5in;height:11in;box-sizing:border-box;padding:.42in .45in .55in;position:relative;overflow:hidden;
+  background:#fff;color:#111827;font:400 10.4px/1.38 Outfit,system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.35);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.hoja *{box-sizing:border-box}
+.hoja .h-enc{display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--h-azul);padding-bottom:7px;margin-bottom:9px;position:relative;z-index:1}
+.hoja .h-enc img{height:52px;width:auto}
+.hoja .h-enc .t{flex:1}
+.hoja .h-enc .k{font:700 9px Outfit,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--h-verde)}
+.hoja .h-enc h3{margin:1px 0 0;font:800 21px/1.1 Fraunces,Georgia,serif;color:var(--h-azul)}
+.hoja .h-enc .tira{width:90px;height:6px;border-radius:3px;background:linear-gradient(90deg,#1565d8 0 25%,#3cc11f 25% 50%,#f6c400 50% 75%,#e91e63 75%)}
+.hoja .h-wm{position:absolute;left:50%;top:52%;width:62%;transform:translate(-50%,-50%);opacity:.065;pointer-events:none;z-index:0}
+.hoja .h-pie{position:absolute;left:.45in;right:.45in;bottom:.22in;display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--h-borde);padding-top:4px;font-size:8.2px;color:#475569}
+.hoja .h-pie .m b{color:var(--h-verde)}
+.hoja>*:not(.h-wm){position:relative;z-index:1}
+.hoja>.h-pie{position:absolute}
+.hoja h4{text-align:left;margin:0 0 3px;font:800 11.2px/1.2 Outfit,sans-serif;color:var(--h-azul)}
+.hoja p{margin:0 0 4px}
+.hoja ul,.hoja ol{margin:0 0 3px;padding-left:15px}
+.hoja li{margin:0 0 2px}
+.hoja .peq{font-size:9.2px;color:#334155}
+.hoja .mono{font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.hoja .formula{font-weight:700;background:#f1f5f9;border-radius:6px;padding:3px 7px;text-align:center;margin:3px 0 5px}
+.hoja .cols2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0 0 8px}
+.hoja .cols2>table{align-self:start}
+.hoja .cols2.c-62{grid-template-columns:1.25fr 1fr}
+.hoja .cols2.c-40{grid-template-columns:1fr 1.25fr}
+.hoja .cols2.sin-margen{margin:0}
+.hoja .rc{background:rgba(255,255,255,.82);border:1.3px solid var(--h-borde);border-radius:9px;padding:7px 9px;margin:0 0 8px}
+.hoja .cols2>.rc,.hoja .cols2>div>.rc:last-child{margin-bottom:0}
+.hoja .rc.destacada{background:rgba(236,253,243,.88);border-color:#86c79c}
+.hoja .rc.aviso{background:rgba(255,247,237,.9);border-color:#f2b880}
+.hoja .tit-tabla{margin:2px 0 4px}
+.hoja .tit-tabla small{font-weight:600;color:#475569}
+.hoja .compacta{padding-left:16px}
+
+/* cuerpo que se agranda para llenar la hoja (ver ajustar() en referencias.js) */
+.hoja .h-cuerpo{transform-origin:0 0}
+.hoja .rc,.hoja p,.hoja li{text-align:left}
+
+/* tablas */
+.hoja .t-ref{width:100%;border-collapse:collapse;margin:0 0 8px;background:rgba(255,255,255,.85)}
+.hoja .rc .t-ref{margin:3px 0 4px}
+.hoja .t-ref th{background:var(--h-azul);color:#fff;font-weight:700;padding:3px 5px;text-align:left;font-size:9.8px}
+.hoja .t-ref td{border:1px solid var(--h-borde);padding:2.6px 5px;vertical-align:top}
+.hoja .t-ref tr:nth-child(even) td{background:rgba(241,245,249,.75)}
+.hoja .t-cen th,.hoja .t-cen td{text-align:center}
+.hoja .t-niv td{padding:4px 6px}
+.hoja .t-niv tr.abio td:first-child{border-left:5px solid #94a3b8}
+.hoja .t-niv tr.cel td:first-child{border-left:5px solid #22a35a}
+.hoja .t-niv tr:not(.abio):not(.cel):not(.eco) td:first-child{border-left:5px solid #f59e0b}
+.hoja .t-niv tr.eco td:first-child{border-left:5px solid #1e88e5}
+.hoja .tag{display:inline-block;border-radius:5px;padding:0 5px;font-weight:700;color:#fff;font-size:9px}
+.hoja .tag.abio{background:#94a3b8}.hoja .tag.cel{background:#22a35a}.hoja .tag.eco{background:#1e88e5}
+.hoja .t-org td:nth-child(3),.hoja .t-org td:nth-child(4){text-align:center;white-space:nowrap}
+.hoja .t-modelos td{vertical-align:middle}
+.hoja .t-reinos td,.hoja .t-reinos th{font-size:9.6px}
+.hoja .t-pun{border-collapse:collapse;margin:0 auto;font:700 12px 'JetBrains Mono',monospace}
+.hoja .t-pun th,.hoja .t-pun td{width:34px;height:26px;text-align:center;border:1.3px solid #64748b}
+.hoja .t-pun th{background:#e2e8f0}
+.hoja .t-pun td{background:#fef9c3}.hoja .t-pun td.rec{background:#dcfce7}
+.hoja .punnett-ej{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.hoja .pasos-ref{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:0 0 9px}
+.hoja .pasos-ref div{background:linear-gradient(180deg,#e0f2fe,#fff);border:1.3px solid #93c5fd;border-radius:8px;padding:5px;text-align:center}
+.hoja .pasos-ref b{display:block;color:var(--h-azul);font-size:10.4px}
+.hoja .pasos-ref span{font-size:9px;line-height:1.25;display:block}
+.hoja .dogma{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:0 0 6px;font-size:10px}
+.hoja .dogma span{font:800 12px Outfit,sans-serif;color:#fff;border-radius:7px;padding:3px 10px}
+.hoja .dogma .d-adn{background:#1e3a8a}.hoja .dogma .d-arn{background:#ea580c}.hoja .dogma .d-prot{background:#15803d}
+.hoja .dogma i{color:#334155}
+.hoja .dogma small{flex-basis:100%;text-align:center;color:#475569}
+.hoja .aa-lista{font-size:8.6px;color:#334155;margin:0;columns:1}
+
+/* tabla del código genético en la hoja */
+.hoja .tcod{border-collapse:separate;border-spacing:2.5px;width:100%;margin:0 0 6px}
+.hoja .tcod th{background:var(--h-azul);color:#fff;padding:2px;border-radius:5px;text-align:center;font-size:9.5px}
+.hoja .tcod th.bs{font:800 12.5px 'JetBrains Mono',monospace}
+.hoja .tcod td{background:rgba(247,251,248,.9);border:1px solid var(--h-borde);border-radius:6px;padding:2px 5px;vertical-align:middle}
+.hoja .tcod td.b1{width:30px;text-align:center;font:800 17px 'JetBrains Mono',monospace;color:#fff;border:0}
+.hoja .tcod td.b3{width:22px;text-align:center;font:800 10.5px 'JetBrains Mono',monospace;background:#eef2f7;padding:2px}
+.hoja .tcod .cl,.hoja .tcod td.b3 div{height:17px;display:flex;align-items:center}
+.hoja .tcod .cl{justify-content:space-between;gap:4px}
+.hoja .tcod td.b3 div{justify-content:center}
+.hoja .tcod code{font:700 10.5px 'JetBrains Mono',monospace;letter-spacing:.03em}
+.hoja .tcod .ap{color:#fff;border-radius:8px;padding:0 6px;font:700 9.2px Outfit,sans-serif;min-width:36px;text-align:center}
+.hoja .tcod .ap.stop{background:#475569}
+.hoja .tcod .ap.ini{box-shadow:0 0 0 1.5px #f59e0b}
+
+/* ── Impresión: solo las hojas ── */
+@page{size:letter;margin:0}
+@media print{
+  html,body{background:#fff!important;margin:0!important;padding:0!important}
+  body>*:not(#hojas){display:none!important}
+  #hojas,#hojas.abierto{display:block!important;position:static!important;background:none!important;padding:0!important;overflow:visible!important}
+  .visor-barra{display:none!important}
+  .hoja{display:none;box-shadow:none!important;margin:0!important;zoom:1!important;break-after:page;page-break-after:always}
+  body[data-imprimir="todas"] .hoja,.hoja.sel{display:block!important}
+  .hoja:last-child{break-after:auto;page-break-after:auto}
+}

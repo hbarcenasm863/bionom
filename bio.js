@@ -45,6 +45,7 @@ var MODULOS=[
   {id:'reproduccion',href:'reproduccion.html',ico:'👶',txt:'Reproducción',full:'Reproducción',niveles:['celula','organo','sistema','organismo','poblacion']},
   {id:'genetica',href:'genetica.html',ico:'🧬',txt:'Genética',full:'Genética mendeliana y molecular',niveles:['molecula','celula','organismo']},
   {id:'evolucion',href:'evolucion.html',ico:'🦎',txt:'Evolución',full:'Evolución',niveles:['poblacion','organismo']},
+  {id:'referencias',href:'referencias.html',ico:'📋',txt:'Referencia',full:'Hojas de referencia'},
   {id:'juego',href:'juego.html',ico:'🎮',txt:'Juego',full:'Juego'},
   {id:'docente',href:'docente.html',ico:'📘',txt:'Docente',full:'Docente'}
 ];
@@ -368,6 +369,15 @@ window.BIO={MODULOS:MODULOS,actual:actual,visitas:visitas,secciones:secciones,le
 
 if(!document.getElementById('bio-bg')){var bg=document.createElement('div');bg.id='bio-bg';bg.setAttribute('aria-hidden','true');document.body.insertBefore(bg,document.body.firstChild);}
 armarMenu();
+/* ── hojas de referencia del tema, al final de cada página de contenido ── */
+(function(){
+  var HT={celula:['celula','microscopio','metodo'],microscopio:['microscopio','celula','metodo'],division:['division'],reinos:['clasificacion'],ecosistemas:['ecosistemas','niveles'],regiones:['ecosistemas'],ambiente:['ecosistemas','metodo'],sistemas:['sistemas','niveles'],funciones:['sistemas'],nutricion:['biomoleculas','sistemas'],reproduccion:['division','sistemas'],genetica:['mendel','codigo'],evolucion:['clasificacion','metodo']};
+  var NOM={niveles:'🗺️ Niveles de organización',metodo:'🧪 Método científico',microscopio:'🔬 El microscopio',celula:'🧫 La célula',division:'✂️ Mitosis y meiosis',clasificacion:'🍄 Clasificación',sistemas:'❤️ Sistemas del cuerpo',biomoleculas:'🍎 Biomoléculas y nutrición',mendel:'🌱 Genética mendeliana',codigo:'🧬 El código genético',ecosistemas:'🌳 Ecosistemas'};
+  var lista=actual&&HT[actual.id],main=document.querySelector('main');if(!lista||!main)return;
+  var d=document.createElement('div');d.className='ref-tema';
+  d.innerHTML='<b>📋 Hojas de referencia de este tema</b><span>'+lista.map(function(id){return '<a href="referencias.html?hoja='+id+'">'+NOM[id]+'</a>';}).join('')+'<a class="todas" href="referencias.html">Ver todas →</a></span><small>Resúmenes de una página para consultar o descargar en PDF.</small>';
+  var sig=main.querySelector('.sig');if(sig)sig.parentNode.insertBefore(d,sig);else main.appendChild(d);
+})();
 montarTodo();
 deslizables();
 montarToc();
