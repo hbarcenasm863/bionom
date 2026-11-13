@@ -1,5 +1,98 @@
 /* Datos de las fotos (generado). Cada entrada: autor, año, título, tipo, fuente, URL y licencia para la cita APA. */
 window.FOTOS_DATOS={
+"s_digestivo": {
+"autor": "Ruiz Villarreal, M. (LadyofHats); traducción de Bibi Saint-Pol y Jmarchn",
+"titulo": "Digestive system diagram es [Diagrama del aparato digestivo]",
+"anio": "2007",
+"lic": "Dominio público",
+"url": "https://commons.wikimedia.org/wiki/File:Digestive_system_diagram_es.svg",
+"fuente": "Wikimedia Commons",
+"tipo": "Ilustración",
+"w": 553,
+"h": 800
+},
+"s_respiratorio": {
+"autor": "Ruiz Villarreal, M. (LadyofHats); obra derivada",
+"titulo": "Respiratory system complete es [Aparato respiratorio completo]",
+"anio": "2010",
+"lic": "Dominio público",
+"url": "https://commons.wikimedia.org/wiki/File:Respiratory_system_complete_es.svg",
+"fuente": "Wikimedia Commons",
+"tipo": "Ilustración",
+"w": 751,
+"h": 800
+},
+"s_circulatorio": {
+"autor": "Edoarado",
+"titulo": "Circulatory System es [Sistema circulatorio]",
+"anio": "2012",
+"lic": "CC0 1.0",
+"url": "https://commons.wikimedia.org/wiki/File:Circulatory_System_es.svg",
+"fuente": "Wikimedia Commons",
+"tipo": "Ilustración",
+"w": 530,
+"h": 800,
+"licUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+},
+"s_excretor": {
+"autor": "March i Nogué, J.",
+"titulo": "Urinary system [Aparato excretor]",
+"anio": "2010",
+"lic": "CC BY-SA 3.0",
+"url": "https://commons.wikimedia.org/wiki/File:Urinary_system.svg",
+"fuente": "Wikimedia Commons",
+"tipo": "Ilustración",
+"w": 609,
+"h": 800,
+"licUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+},
+"s_nervioso": {
+"autor": "Medium69 y Jmarchn",
+"titulo": "Nervous system diagram-es [Sistema nervioso]",
+"anio": "2014",
+"lic": "CC BY-SA 4.0",
+"url": "https://commons.wikimedia.org/wiki/File:Nervous_system_diagram-es.svg",
+"fuente": "Wikimedia Commons",
+"tipo": "Ilustración",
+"w": 707,
+"h": 800,
+"licUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+},
+"s_endocrino": {
+"autor": "OpenStax College (modificado)",
+"titulo": "The Endocrine System [El sistema endocrino]",
+"anio": "2019",
+"lic": "CC BY-SA 3.0",
+"url": "https://commons.wikimedia.org/wiki/File:1801_The_Endocrine_System_esp.jpg",
+"fuente": "Wikimedia Commons",
+"tipo": "Ilustración",
+"w": 800,
+"h": 739,
+"licUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+},
+"s_oseo": {
+"autor": "Ruiz Villarreal, M. (LadyofHats); traducción al castellano",
+"titulo": "Human skeleton front es [Esqueleto humano, vista frontal]",
+"anio": "2007",
+"lic": "Dominio público",
+"url": "https://commons.wikimedia.org/wiki/File:Human_skeleton_front_es.svg",
+"fuente": "Wikimedia Commons",
+"tipo": "Ilustración",
+"w": 415,
+"h": 800
+},
+"s_inmune": {
+"autor": "Ortisa (obra derivada de TE-Lymphatic system diagram)",
+"titulo": "TE-Lymphatic system diagram [Sistema linfático]",
+"anio": "2010",
+"lic": "CC BY 3.0",
+"url": "https://commons.wikimedia.org/wiki/File:TE-Lymphatic_system_diagram.es.svg",
+"fuente": "Wikimedia Commons",
+"tipo": "Ilustración",
+"w": 371,
+"h": 800,
+"licUrl": "https://creativecommons.org/licenses/by/3.0"
+},
 "cigoto": {
 "autor": "NinaSes",
 "titulo": "Эмбрион человека первые сутки развития [Embrión humano en su primer día de desarrollo]",

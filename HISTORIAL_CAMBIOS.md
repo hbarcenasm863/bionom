@@ -6,6 +6,36 @@
 
 ---
 
+## Versión 2.49 — 13 de noviembre de 2026 · Diagramas libres de los sistemas del cuerpo en la hoja de referencia
+
+**Contexto.** El docente pidió que en la hoja de referencia de Sistemas se
+usaran imágenes libres de los sistemas, que se ven mejor que los dibujos del
+sitio.
+
+**Cambios**
+- `img/fotos/` y `fotos-datos.js` (v9): ocho diagramas de Wikimedia Commons,
+  casi todos con rótulos en español, cada uno con su cita APA:
+  digestivo y esqueleto (Mariana Ruiz Villarreal, dominio público),
+  respiratorio (obra derivada de LadyofHats, dominio público), circulatorio
+  (Edoarado, CC0), excretor (J. March i Nogué, CC BY-SA 3.0; numerado, con su
+  leyenda en español tomada de la descripción del archivo), nervioso
+  (Medium69 y Jmarchn, CC BY-SA 4.0), endocrino (OpenStax modificado,
+  CC BY-SA 3.0) y linfático (Ortisa, CC BY 3.0).
+- `referencias.html`: la hoja «Sistemas del cuerpo humano» queda de **4
+  páginas**: 1) tabla de sistemas; 2) digestivo, respiratorio, circulatorio
+  y excretor; 3) nervioso, endocrino, óseo e inmune (cuatro por página para
+  que los rótulos se lean impresos); 4) «¿qué sistemas trabajan cuando…?» y
+  los cuatro tejidos en fotos más grandes. Ya no usa los dibujos de
+  `cuerpo.js` (la página `sistemas.html` sigue igual).
+- `referencias.css` (v9) y `referencias.js` (v5, ajuste que puede achicar
+  hasta 50 %); `sw.js`: `CACHE` → `bionom-v62`.
+
+**Pruebas.** Playwright: las 4 páginas caben sin tapar el pie, las 8 imágenes
+cargan con su cita; sin errores ni desbordes en el sitio.
+
+**Pendiente.** Si el docente quiere estos diagramas también en la página
+`sistemas.html`, se pueden agregar.
+
 ## Versión 2.48 — 13 de noviembre de 2026 · Imágenes en las demás hojas de referencia
 
 **Contexto.** El docente pidió revisar en cuáles de las demás hojas de

@@ -61,7 +61,7 @@ function ajustar(){
     var ancho=h.clientWidth-parseFloat(getComputedStyle(h).paddingLeft)-parseFloat(getComputedStyle(h).paddingRight);
     var pie=h.querySelector('.h-pie');
     function cabe(f){cu.style.zoom=f;cu.style.width=(ancho/f)+'px';return cu.getBoundingClientRect().bottom<=pie.getBoundingClientRect().top-10;}
-    var lo=1,hi=1.8;if(!cabe(lo)){lo=.6;hi=1;}
+    var lo=1,hi=1.8;if(!cabe(lo)){lo=.5;hi=1;}
     for(var i=0;i<14;i++){var m=(lo+hi)/2;if(cabe(m))lo=m;else hi=m;}
     cabe(lo);h.setAttribute('data-escala',lo.toFixed(3));});
   hojas.forEach(function(h){h.style.display='';});
