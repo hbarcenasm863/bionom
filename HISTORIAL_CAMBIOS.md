@@ -6,6 +6,29 @@
 
 ---
 
+## Versión 2.46 — 13 de noviembre de 2026 · Menú selector en las hojas de referencia
+
+**Contexto.** El docente pidió un menú selector para escoger cuál de las
+hojas de referencia se va a descargar o imprimir.
+
+**Cambios**
+- `referencias.html`, `referencias.css`, `referencias.js` (v2): recuadro
+  selector arriba de la lista:
+  - **Una hoja:** menú desplegable con las 11 hojas y botones «Ver» y
+    «Descargar o imprimir».
+  - **Varias hojas en un solo PDF:** casillas para marcar las que se
+    quieran, con «Marcar todas», «Quitar todas» y «Descargar o imprimir las
+    marcadas (N)». Reemplaza el botón de descargar todas.
+  - Las tarjetas siguen debajo («O escoge desde las tarjetas»).
+  - El enlace `referencias.html?hoja=id` deja esa hoja escogida en el menú.
+- `sw.js`: `CACHE` → `bionom-v59`.
+
+**Pruebas.** Playwright: el menú abre la hoja escogida; una hoja da un PDF
+de 1 página y tres hojas marcadas, uno de 3 páginas, sin página en blanco
+al final.
+
+**Pendiente.** Nada nuevo.
+
 ## Versión 2.45 — 13 de noviembre de 2026 · Hojas de referencia para descargar en PDF
 
 **Contexto.** El docente pidió, como en IonNom (guía en PDF) y ChromaNom

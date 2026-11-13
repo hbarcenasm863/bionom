@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var z=parseInt(localStorage.getItem('bionom_text_zoom'),10);if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}</script>
 <link rel="stylesheet" href="bio.css?v=27">
-<link rel="stylesheet" href="referencias.css?v=1">
+<link rel="stylesheet" href="referencias.css?v=2">
 </head>
 <body>
 <main class="app">
@@ -26,9 +26,18 @@
 
   <section class="sec" id="lista">
     <h2><span class="n">01</span> Escoge una hoja</h2>
-    <p class="lead">Toca <b>Ver</b> para leerla en la pantalla o <b>Descargar PDF</b> para guardarla. En el cuadro de imprimir escoge <b>«Guardar como PDF»</b> como destino.</p>
+    <p class="lead">Escoge en el menú la hoja que quieres, o marca varias para sacarlas juntas. En el cuadro de imprimir escoge <b>«Guardar como PDF»</b> para descargarla, o tu impresora para imprimirla.</p>
+    <div class="ref-selector" id="ref-selector">
+      <div class="sel-una"><label for="ref-sel"><b>📄 Una hoja:</b></label>
+        <select id="ref-sel"></select>
+        <button type="button" class="cn-btn" id="sel-ver">👁 Ver</button><button type="button" class="cn-btn cn-btn--primary" id="sel-pdf">⬇️ Descargar o imprimir</button></div>
+      <details class="sel-varias"><summary><b>📚 Varias hojas en un solo PDF</b></summary>
+        <div class="sel-checks" id="sel-checks"></div>
+        <div class="sel-acc"><button type="button" class="cn-btn" id="sel-todas">Marcar todas</button><button type="button" class="cn-btn" id="sel-ninguna">Quitar todas</button>
+          <button type="button" class="cn-btn cn-btn--primary" id="sel-varias-pdf" disabled>⬇️ Descargar o imprimir las marcadas</button></div></details>
+    </div>
+    <h3 class="sub-lista">O escoge desde las tarjetas</h3>
     <div class="ref-lista" id="ref-lista"></div>
-    <div class="ref-todas"><button type="button" class="cn-btn" id="ref-todas">⬇️ Descargar todas las hojas en un solo PDF</button></div>
     <div class="ref-ayuda" role="note"><b>💡 Para el docente:</b> se imprimen en tamaño carta, a color o en blanco y negro. Cada página de tema tiene al final un enlace a su hoja.</div>
   </section>
 </main>
@@ -379,7 +388,7 @@
 </div>
 
 <script src="bio.js?v=27"></script>
-<script src="referencias.js?v=1"></script>
+<script src="referencias.js?v=2"></script>
 <script src="text-zoom.js?v=13"></script>
 <script src="pwa-install.js?v=14"></script>
 </body>

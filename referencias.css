@@ -11,7 +11,15 @@
 .ref-card .acc{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
 .ref-card .acc .cn-btn{font-size:.85rem;padding:6px 12px}
 .ref-card.pedida{outline:3px solid #fbbf24}
-.ref-todas{margin:14px 0 6px;text-align:center}
+.ref-selector{background:#fff;border:2px solid var(--cn-brand,#1f7a3f);border-radius:16px;padding:14px;margin:10px 0 16px;box-shadow:var(--cn-sh);display:grid;gap:12px}
+.sel-una{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sel-una select{font:inherit;font-weight:600;padding:8px 10px;border-radius:10px;border:1.5px solid var(--cn-brd);flex:1 1 260px;max-width:100%;background:#fff}
+.sel-varias summary{cursor:pointer;padding:4px 0}
+.sel-checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px;margin:8px 0}
+.sel-checks label{display:flex;gap:8px;align-items:center;background:#f7fbf8;border:1.5px solid var(--cn-brd);border-radius:10px;padding:7px 10px;cursor:pointer;font-size:.92rem}
+.sel-checks input{flex:none;width:18px;height:18px;margin:0;accent-color:var(--cn-brand,#1f7a3f)}
+.sel-acc{display:flex;flex-wrap:wrap;gap:8px}
+.sub-lista{margin:6px 0 0;font-size:1rem;color:var(--cn-dim)}
 .ref-ayuda{font-size:.9rem;background:#f0f7ff;border-radius:12px;padding:10px 14px;margin-top:10px}
 
 /* ── Visor en pantalla ── */
@@ -122,5 +130,5 @@ html.visor-abierto,html.visor-abierto body{overflow:hidden}
   .visor-barra{display:none!important}
   .hoja{display:none;box-shadow:none!important;margin:0!important;zoom:1!important;break-after:page;page-break-after:always}
   body[data-imprimir="todas"] .hoja,.hoja.sel{display:block!important}
-  .hoja:last-child{break-after:auto;page-break-after:auto}
+  .hoja:last-child,.hoja.ultima{break-after:auto;page-break-after:auto}
 }

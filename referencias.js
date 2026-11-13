@@ -77,13 +77,29 @@ function imprimir(id){
   hojas.forEach(function(h){h.style.zoom=1;});
   setTimeout(function(){window.print();},60);
 }
-window.addEventListener('afterprint',function(){document.title=tituloOriginal;document.body.removeAttribute('data-imprimir');
+window.addEventListener('afterprint',function(){document.title=tituloOriginal;hojas.forEach(function(h){h.classList.remove('ultima');});document.body.removeAttribute('data-imprimir');
   if(actual){escala();hojas.forEach(function(h){h.classList.toggle('sel',h.getAttribute('data-hoja')===actual);});}else hojas.forEach(function(h){h.classList.remove('sel');});});
 
 LISTA.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
   if(b.hasAttribute('data-ver'))abrir(b.getAttribute('data-ver'));
   if(b.hasAttribute('data-pdf'))imprimir(b.getAttribute('data-pdf'));});
-document.getElementById('ref-todas').onclick=function(){imprimir('todas');};
+/* menú selector: una hoja, o varias marcadas en un solo PDF */
+var SEL=document.getElementById('ref-sel'),CHK=document.getElementById('sel-checks'),BV=document.getElementById('sel-varias-pdf');
+SEL.innerHTML=hojas.map(function(h){return '<option value="'+h.getAttribute('data-hoja')+'">'+h.getAttribute('data-ico')+' '+h.getAttribute('data-tit')+'</option>';}).join('');
+CHK.innerHTML=hojas.map(function(h){return '<label><input type="checkbox" value="'+h.getAttribute('data-hoja')+'"> '+h.getAttribute('data-ico')+' '+h.getAttribute('data-tit')+'</label>';}).join('');
+function marcadas(){return [].slice.call(CHK.querySelectorAll('input:checked')).map(function(x){return x.value;});}
+function contar(){var n=marcadas().length;BV.disabled=!n;BV.textContent='⬇️ Descargar o imprimir las marcadas'+(n?' ('+n+')':'');}
+CHK.addEventListener('change',contar);
+document.getElementById('sel-todas').onclick=function(){CHK.querySelectorAll('input').forEach(function(x){x.checked=true;});contar();};
+document.getElementById('sel-ninguna').onclick=function(){CHK.querySelectorAll('input').forEach(function(x){x.checked=false;});contar();};
+document.getElementById('sel-ver').onclick=function(){abrir(SEL.value);};
+document.getElementById('sel-pdf').onclick=function(){imprimir(SEL.value);};
+BV.onclick=function(){var ids=marcadas();if(!ids.length)return;
+  if(ids.length===1){imprimir(ids[0]);return;}
+  document.body.setAttribute('data-imprimir','varias');document.title='BioNom - Hojas de referencia ('+ids.length+')';
+  var ult=null;hojas.forEach(function(h){var on=ids.indexOf(h.getAttribute('data-hoja'))>=0;h.classList.toggle('sel',on);h.classList.remove('ultima');h.style.zoom=1;if(on)ult=h;});
+  if(ult)ult.classList.add('ultima');
+  setTimeout(function(){window.print();},60);};
 document.getElementById('visor-cerrar').onclick=cerrar;
 document.getElementById('visor-pdf').onclick=function(){if(actual)imprimir(actual);};
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&actual)cerrar();});
@@ -91,5 +107,5 @@ window.addEventListener('resize',function(){if(actual)escala();});
 
 /* enlace directo: referencias.html?hoja=codigo abre esa hoja */
 var q=new URLSearchParams(location.search).get('hoja');
-if(q&&hoja(q)){var t=document.getElementById('tarjeta-'+q);if(t)t.classList.add('pedida');abrir(q);}
+if(q&&hoja(q)){SEL.value=q;var t=document.getElementById('tarjeta-'+q);if(t)t.classList.add('pedida');abrir(q);}
 })();
