@@ -229,6 +229,7 @@ select,input[type=text],input[type=number]{font:inherit;border:1.5px solid var(-
 .site-foot b{color:#fff}
 .site-foot a{color:#9be3a8}
 .ref-tema{margin:28px 0 0;background:#f0f7ff;border:1.5px solid #bfdbfe;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.ref-tema.ref-arriba{margin:0 0 16px}
 .ref-tema span{display:flex;flex-wrap:wrap;gap:6px}
 .ref-tema a{background:#fff;border:1.5px solid var(--cn-brd);border-radius:999px;padding:5px 12px;font-weight:700;font-size:.88rem;text-decoration:none;color:var(--cn-brand-d)}
 .ref-tema a.todas{background:transparent;border-style:dashed}

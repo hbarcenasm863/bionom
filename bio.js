@@ -377,6 +377,11 @@ armarMenu();
   var d=document.createElement('div');d.className='ref-tema';
   d.innerHTML='<b>📋 Hojas de referencia de este tema</b><span>'+lista.map(function(id){return '<a href="referencias.html?hoja='+id+'">'+NOM[id]+'</a>';}).join('')+'<a class="todas" href="referencias.html">Ver todas →</a></span><small>Resúmenes de una página para consultar o descargar en PDF.</small>';
   var sig=main.querySelector('.sig');if(sig)sig.parentNode.insertBefore(d,sig);else main.appendChild(d);
+  /* Versión 2.50: el mismo recuadro, más corto, justo debajo del título de la página */
+  var cab=main.querySelector('.cn-page-head');
+  if(cab){var t=document.createElement('div');t.className='ref-tema ref-arriba';
+    t.innerHTML='<b>📋 Hojas de referencia de este tema</b><span>'+lista.map(function(id){return '<a href="referencias.html?hoja='+id+'">'+NOM[id]+'</a>';}).join('')+'<a class="todas" href="referencias.html">Ver todas →</a></span>';
+    cab.parentNode.insertBefore(t,cab.nextSibling);}
 })();
 montarTodo();
 deslizables();
