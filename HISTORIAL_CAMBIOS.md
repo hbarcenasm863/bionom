@@ -6,6 +6,23 @@
 
 ---
 
+## Versión 2.50 — 14 de noviembre de 2026 · Enlaces a las hojas de referencia también arriba de cada tema
+
+**Contexto.** El docente pidió que cada sección enlace la guía de referencia que le
+corresponde (lo había pedido antes en ChromaNom). En BioNom las 13 páginas de tema ya
+tenían el recuadro «Hojas de referencia de este tema», pero solo al final de la página.
+
+**Cambios**
+- `bio.js`: el mismo recuadro se agrega también justo debajo del título de cada página
+  de tema, con las mismas hojas (por ejemplo, Genética: genética mendeliana y código
+  genético). El de abajo se conserva.
+- `bio.css` (v28): estilo del recuadro de arriba. `sw.js`: caché `bionom-v64`; `?v=28`
+  en todas las páginas.
+
+**Pendiente.** Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.49 — 13 de noviembre de 2026 · Diagramas libres de los sistemas del cuerpo en la hoja de referencia
 
 **Contexto.** El docente pidió que en la hoja de referencia de Sistemas se
