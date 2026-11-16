@@ -6,6 +6,35 @@
 
 ---
 
+## Versión 2.52 — 16 de noviembre de 2026 · Correcciones de las hojas de referencia tras la auditoría
+
+**Contexto.** Un auditor independiente revisó las 11 hojas de referencia (¿sirven como
+repaso para secundaria?) y señaló errores y vacíos. Se corrigió lo verificable.
+
+**Cambios en `referencias.html`**
+- **Clasificación:** la clave dicotómica ya no se contradice con su ejemplo (el champiñón
+  entra por «pluricelular»; se quitó «y tiene tejidos»); nota sobre las algas pluricelulares
+  (kelp, protistas) y sobre los virus; pared celular de las bacterias (peptidoglucano); el
+  modelo de 6 reinos cita también a Cavalier-Smith (1998).
+- **Código genético:** «GAG → GUG» en el sexto aminoácido de la proteína madura (sin la
+  Met inicial) y nota sobre el sentido 3′→5′ del molde y 5′→3′ del ARNm.
+- **División celular:** nombres de las fases de la meiosis I y II y una fila nueva en la
+  tabla: qué se separa en la anafase (cromátidas en mitosis y meiosis II; homólogos en la
+  anafase I).
+- **Mendel:** recuadro «Errores frecuentes»; los grupos ABO dicen que hay tres alelos y se
+  menciona el factor Rh.
+- **Ecosistemas:** la cadena de ejemplo se presenta como «simplificada». **La célula:**
+  lisosomas en plantas «pocos (la vacuola ayuda)».
+- `sw.js`: caché `bionom-v66`.
+
+**Pendiente (no se hizo)**
+- Rótulos muy pequeños en las fotos de los sistemas del cuerpo (circulatorio, excretor).
+- Pirámides de energía, límites de los pisos térmicos con fuente, caja «Errores frecuentes»
+  en cada hoja y más detalle de errores/pruebas en otras hojas.
+- Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.51 — 14 de noviembre de 2026 · Enlaces a las hojas de referencia también arriba de cada tema
 
 **Contexto.** El docente pidió que cada sección enlace la guía de referencia que le
