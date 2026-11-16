@@ -6,6 +6,26 @@
 
 ---
 
+## Versión 2.53 — 16 de noviembre de 2026 · Lo que faltaba de la auditoría de las hojas de referencia
+
+**Contexto.** El docente pidió completar lo que quedó pendiente en la versión 2.52.
+
+**Cambios**
+- **Sistemas del cuerpo:** las figuras pasan de 4 a 2 por página para que se lean los rótulos
+  (circulatorio y excretor); la hoja queda de **6 páginas** (nutrición; transporte y excreción;
+  relación y coordinación; sostén y defensa; «¿qué sistemas trabajan cuando…?» y tejidos).
+  `referencias.css` (v10).
+- **Ecosistemas:** pirámide de energía dibujada bajo la regla del 10 %; los pisos térmicos
+  indican que sus límites son aproximados y dependen de la fuente (IGAC).
+- **Errores frecuentes:** caja nueva al final de la primera página de ocho hojas (niveles,
+  célula, división celular, clasificación, sistemas, biomoléculas, código genético y
+  ecosistemas; las de método, microscopio y Mendel ya la tenían).
+- `sw.js`: caché `bionom-v67`.
+
+**Pendiente.** Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.52 — 16 de noviembre de 2026 · Correcciones de las hojas de referencia tras la auditoría
 
 **Contexto.** Un auditor independiente revisó las 11 hojas de referencia (¿sirven como
