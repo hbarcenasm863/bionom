@@ -39,6 +39,35 @@
 .lab-cta{display:flex;align-items:center;gap:14px;margin:16px 0;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,#14532d,#0f2a5f);color:#fff;text-decoration:none;box-shadow:var(--cn-sh)}
 .lab-cta .e{font-size:2.4rem}.lab-cta b{display:block;font-size:1.1rem}.lab-cta small{display:block;color:#dbeafe;margin-top:2px}.lab-cta .ir{margin-left:auto;font-size:1.6rem}
 .lab-cta:hover{filter:brightness(1.1)}
+/* animación «La respiración celular, paso a paso» (respiracion-anim.js) */
+.rc-caps{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.rc-caps small{font-weight:600;opacity:.75}
+#rc-anim svg{background:#fff;box-shadow:0 0 0 1px var(--cn-brd)}
+.rc-puntos{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0 4px}
+.rc-pt{width:14px;height:14px;border-radius:50%;border:2px solid #cbd5e1;background:#fff;padding:0;cursor:pointer}
+.rc-pt.c0{border-color:#c2410c}.rc-pt.c1{border-color:#7c3aed}.rc-pt.c2{border-color:#0ea5e9}.rc-pt.c3{border-color:#dc2626}
+.rc-pt.c0.visto,.rc-pt.c0.on{background:#c2410c}.rc-pt.c1.visto,.rc-pt.c1.on{background:#7c3aed}.rc-pt.c2.visto,.rc-pt.c2.on{background:#0ea5e9}.rc-pt.c3.visto,.rc-pt.c3.on{background:#dc2626}
+.rc-pt.on{transform:scale(1.35);box-shadow:0 0 0 3px #fde68a}
+.rc-info{min-height:7.5em;margin:6px 0 8px}
+.rc-num{font-size:.78rem;font-weight:700;color:var(--cn-dim);text-transform:uppercase;letter-spacing:.03em}
+.rc-info h4{margin:2px 0 4px;font-size:1.08rem;color:var(--cn-brand-d)}
+.rc-info p{margin:0}
+.en-pantalla .rc-intro{display:none}
+.en-pantalla .rc-info{min-height:5.5em}
+.en-pantalla #rc-anim svg{max-height:calc(100dvh - 330px);width:100%}
+@media (max-height:500px){
+  .en-pantalla>h3{display:none}
+  .en-pantalla #rc-anim{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);grid-template-areas:'caps caps' 'svg ctrl' 'svg info' 'pts pts';gap:4px 10px;align-items:start}
+  .en-pantalla #rc-anim .rc-caps{grid-area:caps}.en-pantalla #rc-anim svg{grid-area:svg}.en-pantalla #rc-anim .rc-info{grid-area:info}.en-pantalla #rc-anim .rc-ctrl{grid-area:ctrl}.en-pantalla #rc-anim .rc-puntos{grid-area:pts}
+  .en-pantalla #rc-anim .rc-caps,.en-pantalla #rc-anim .rc-puntos{margin:0}
+  .en-pantalla #rc-anim svg{max-height:calc(100dvh - 100px)}
+  .en-pantalla #rc-anim .rc-caps .chip{font-size:.72rem;padding:3px 8px}
+  .en-pantalla #rc-anim .rc-info{min-height:0;margin:0;font-size:.78rem;line-height:1.35}
+  .en-pantalla #rc-anim .rc-info h4{font-size:.9rem}
+  .en-pantalla #rc-anim .rc-ctrl{flex-wrap:wrap;gap:4px;margin:0}
+  .en-pantalla #rc-anim .rc-num{display:none}
+  .en-pantalla #rc-anim .rc-ctrl .cn-btn{font-size:.72rem;padding:4px 8px;min-height:0}
+}
 </style>
 </head>
 <body>
@@ -300,6 +329,11 @@
       <div class="paso" data-t="Cadena"><h3>3. Cadena respiratoria (en las crestas de la mitocondria)</h3><p>Aquí se usa el <b>oxígeno</b> que respiras: recibe los electrones y forma <b>agua</b>. Aquí se fabrica la mayor parte del ATP: en total se obtienen unos <b>30 a 32 ATP por cada glucosa</b> (algunos libros dicen 36 o 38, un cálculo antiguo).</p></div>
       <div class="paso" data-t="Sin O₂"><h3>¿Y si no hay oxígeno? Fermentación</h3><p>Solo se hace la glucólisis y se obtienen 2 ATP. Las levaduras producen alcohol y CO₂ (pan, chicha, cerveza); tus músculos, cuando corres mucho, producen ácido láctico.</p></div>
     </div></div>
+    <div class="card" data-pantalla="La respiración celular, paso a paso">
+      <h3>🎬 La respiración celular, paso a paso <span class="nivel-prof" title="Contenido de profundización para 10.° y 11.°">Profundización 10.°–11.°</span></h3>
+      <p class="rc-intro">Sigue a una molécula de glucosa: cada punto gris es un átomo de carbono. Verás dónde se gasta el oxígeno, de dónde sale el CO₂ y cómo se fabrica el ATP. Toca «Reproducir todo» o avanza con «Siguiente paso» a tu ritmo.</p>
+      <div id="rc-anim"></div>
+    </div>
     <h3 style="margin-top:18px">🔬 La campana de Priestley</h3>
     <p>En 1771 Joseph Priestley puso una vela bajo una campana de vidrio cerrada: se apagó. Luego puso una planta junto a la vela… Escoge qué metes en la campana, si hay luz, y deja pasar el tiempo.</p>
     <div class="card">
@@ -708,5 +742,6 @@ document.querySelectorAll('#mic-obj .chip').forEach(function(b){b.onclick=functi
 </script>
 <script src="narracion.js?v=14"></script>
 <script src="pwa-install.js?v=14"></script>
+<script src="respiracion-anim.js?v=1"></script>
 </body>
 </html>

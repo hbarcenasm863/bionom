@@ -518,3 +518,13 @@ p('67','ARCHAEBACTERIA','Reino de procariotas de lugares extremos.','Sin peptido
 for(var i=B.length-1;i>=0;i--)if(B[i][1]==='reinos'&&!C.vale(B[i].m))B.splice(i,1);
 })();
 
+
+/* ── Respiración celular (versión 2.54): palabras nuevas de La célula ── */
+window.BANCO_AHORCADO.push(
+["GLUCÓLISIS","celula","Primera etapa de la respiración.","Ocurre en el citoplasma.","Parte la glucosa en dos piruvatos."],
+["PIRUVATO","celula","Molécula de 3 carbonos.","Sale de la glucólisis.","Entra a la mitocondria si hay oxígeno."],
+["KREBS","celula","Apellido de un bioquímico alemán.","Su ciclo ocurre en la matriz.","En él salen los carbonos como CO₂."],
+["CRESTAS","celula","Pliegues de una membrana.","Están dentro de la mitocondria.","Allí trabaja la cadena respiratoria."],
+["NADH","celula","Transportador de electrones.","Se carga en el ciclo de Krebs.","Entrega electrones a la cadena respiratoria."],
+["LACTATO","celula","Sustancia de la fermentación en músculos.","Sube cuando corres muy rápido.","Se forma a partir del piruvato sin oxígeno."]
+);

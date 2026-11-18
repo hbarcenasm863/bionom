@@ -6,6 +6,49 @@
 
 ---
 
+## Versión 2.54 — 18 de noviembre de 2026 · Animación de la respiración celular y preguntas nuevas
+
+**Contexto.** El docente preguntó qué había sobre respiración celular. La consulta mostró que
+solo había texto en pasos (sección 09 de «La célula»), preguntas sueltas y 5 palabras del
+ahorcado: sin figura de dónde ocurre cada etapa y sin preguntas Saber del tema. Pidió preparar
+la animación y las preguntas.
+
+**Cambios**
+- **`respiracion-anim.js` (nuevo) y `celula.html`:** animación «La respiración celular, paso a
+  paso» (tarjeta nueva en la sección 09, con botón de pantalla completa y marcada como
+  Profundización 10.°–11.°). 12 pasos en 4 capítulos: glucólisis (citoplasma), ciclo de Krebs
+  (matriz), cadena respiratoria con ATP sintasa (crestas) y sin oxígeno (fermentación láctica y
+  alcohólica). Cada carbono de la glucosa es un punto gris que termina como CO₂; un contador
+  muestra los ATP (2, 4 y luego 30 a 32). Estilos `rc-*` dentro de `celula.html`.
+- **`docente-datos.js`:** 12 preguntas tipo Saber 11 de La célula (4 uso comprensivo, 4
+  explicación, 4 indagación; una con tabla y una con gráfica) y 4 abiertas, todas con su
+  explicación. La célula pasa a 61 Saber y 44 abiertas.
+- **`banco.js`:** 16 preguntas nuevas del juego de La célula (12 de opción múltiple con
+  opciones cortas y 4 de verdadero/falso), con 2 pistas y explicación. La célula: 72, de ellas
+  64 cortas para los laberintos.
+- **`ahorcado-datos.js`:** 6 palabras nuevas (glucólisis, piruvato, Krebs, crestas, NADH,
+  lactato). La célula: 46.
+- **`juego.html`:** `piruvato`, `atp sintasa`, `crestas` y `nadh` cuentan como nivel Completo
+  (10.°–11.°).
+- **`saber-juego.js`** regenerado (`node herramientas/generar-saber-juego.js`: 588 preguntas).
+- **`CLAUDE.md`:** fila nueva para `respiracion-anim.js` en la tabla de arquitectura.
+- `sw.js`: caché `bionom-v68` y el archivo nuevo en `ASSETS`; `?v=` subidos de `banco.js` (20),
+  `ahorcado-datos.js` (17), `docente-datos.js` (23) y `saber-juego.js` (4).
+
+**Pruebas.** Con Playwright (Chromium): sin errores de consola en `celula.html`, `juego.html` y
+`docente.html`; los 12 pasos se dibujan sin valores inválidos; la animación se ve bien en el
+celular en vertical (sin desbordar) y trae el botón de pantalla completa.
+
+**Pendiente**
+- Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+- En el celular en vertical los rótulos de la animación quedan pequeños: conviene usar el botón
+  «Pantalla completa» (gira a horizontal).
+- No se agregó hoja de referencia de respiración celular ni se actualizó `MATRIZ_MEN.md`.
+- En `banco.js` hay 4 preguntas repetidas de antes (ordenar fases de la mitosis y tres de
+  reinos); no se tocaron.
+
+---
+
 ## Versión 2.53 — 16 de noviembre de 2026 · Lo que faltaba de la auditoría de las hojas de referencia
 
 **Contexto.** El docente pidió completar lo que quedó pendiente en la versión 2.52.
