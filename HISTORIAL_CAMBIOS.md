@@ -6,6 +6,41 @@
 
 ---
 
+## Versión 2.58 — 18 de noviembre de 2026 · Todas las preguntas con su DBA y filtro «Solo un DBA»
+
+**Contexto.** El docente aceptó etiquetar con su DBA las preguntas de los otros ocho DBA, para que el
+conteo sea exacto y el panel pueda filtrar por DBA.
+
+**Cambios**
+- **`dba-bio.js`:** `BIO_DBA.dba(pregunta, tema)` da el DBA de cada pregunta: el escrito a mano (`dba`) o
+  el deducido por tema y palabras clave del enunciado y la respuesta correcta (`DBA_TEMA`; la primera regla
+  que coincide gana y, si ninguna, el DBA por defecto del tema). Funciones vitales y Nutrición y salud no
+  tienen DBA propio: reciben el más cercano (7.3 o 8.4). También `dbasDeTemas` para el selector.
+- **`docente.html` y `docente-app.js`:** selector nuevo «Solo un DBA» (junto al curso). Con un DBA escogido
+  salen solo sus preguntas (Saber 11, Juego y abiertas) de cualquier curso; el panel muestra su texto oficial
+  y cuántas hay. La lista de DBA depende de los temas marcados.
+- **El conteo exacto mostró huecos que el estimado por palabras clave ocultaba**, y se completaron:
+  7.4 (ciclos y agua) tenía 10 del Juego y 19 Saber: +15 del Juego, +4 Saber y +6 abiertas; 9.5 (expresión
+  del ADN): +8 del Juego, +4 abiertas; 10.4 (biotecnología): +8 abiertas. Todo con `dba`, `curso` y `niv`.
+- **Conteo final por DBA (Juego / Saber 11 / abiertas), todos de 20 o más:** 6.4: 84/87/64; 6.5: 73/50/39;
+  7.3: 110/106/80; 7.4: 25/23/20; 8.4: 128/123/107; 8.5: 50/50/40; 9.4: 44/49/38; 9.5: 27/20/21;
+  9.6: 88/67/46; 10.4: 27/22/23; 11.5: 96/83/59. Totales: 752 del Juego, 680 Saber, 537 abiertas.
+- `MATRIZ_DBA.md` con el conteo exacto; `CLAUDE.md` actualizado. `saber-juego.js` regenerado (654).
+- `sw.js`: caché `bionom-v72`; `?v=` de `docente-app.js` (17), `dba-bio.js` (2), `banco.js` (22),
+  `docente-datos.js` (27) y `saber-juego.js` (7).
+
+**Pruebas (Playwright).** Evolución 9.6, Genética 10.4 y 9.5, Colombia y Ambiente 11.5, Ecosistemas y
+Ambiente 7.4 y Célula y División 6.4: el selector muestra solo los DBA de los temas marcados y las
+preguntas coinciden con el DBA escogido. Sin errores en el panel ni en el juego.
+
+**Pendiente**
+- Las etiquetas por palabras clave (no escritas a mano) son criterio de BioNom: conviene que el docente
+  revise las que le parezcan mal puestas y las corrija en `DBA_TEMA` o con `dba` en la pregunta.
+- Funciones vitales y Nutrición y salud siguen sin DBA propio.
+- Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.57 — 18 de noviembre de 2026 · Lo que faltaba de los DBA en los temas y 20 preguntas o más por DBA
 
 **Contexto.** El docente pidió subir a los temas lo que faltara de los DBA y crear al menos 20

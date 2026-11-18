@@ -101,6 +101,39 @@ function curso(q,tema){
   if(q&&typeof q==='object')q.curso=c;
   return c;
 }
+/* ── DBA de cada pregunta (versión 2.58) ──
+   Una pregunta con `dba` escrito a mano (las de la versión 2.57) lo conserva. Las demás
+   se etiquetan por tema y palabras clave del enunciado y la respuesta correcta:
+   la primera regla que coincide gana y, si ninguna coincide, se usa el DBA por defecto
+   del tema. Funciones vitales comparadas y Nutrición y salud no tienen DBA propio: su
+   etiqueta es la más cercana (7.3 nutrición; 8.4 sistemas y hábitos). */
+var BIOTEC=/biotecnolog|transg[eé]nic|clonaci|crispr|terapia g[eé]nica|genoma humano|ingenier[ií]a gen[eé]tica|\bPCR\b|adn recombinante|fertilizaci[oó]n asistida|in vitro|modificaci[oó]n gen[eé]tica|organismo modificado|bio[eé]tic|prueba de adn|editar el adn|edici[oó]n gen[eé]tica|embriones humanos/i;
+var DBA_TEMA={
+ celula:{def:'6.4',r:[['7.3',/fotos[ií]ntesis|cloroplasto|clorofila|autótrof|heterótrof|priestley|ciclo de calvin|tilacoide/i]]},
+ division:{def:'6.4',r:[['9.4',/meiosis|gameto|haploide|diploide|entrecruzamiento|homólog|cariotipo|disyunci|síndrome de down/i]]},
+ reinos:{def:'6.5',r:[['7.4',/descompon|biogeoqu|ciclo del nitr|fijaci[oó]n de nitr|micorriz/i]]},
+ ecosistemas:{def:'7.3',r:[['7.4',/ciclo|carbono|nitr[oó]geno|biogeoqu|erosi|suelo|deforest|contaminaci|microorganism|agua/i],['11.5',/calentamiento global|cambio climático|efecto invernadero|megadiver/i]]},
+ colombia:{def:'7.3',r:[['11.5',/megadiver|biodiversidad|amenaz|en peligro|conservaci|tráfico|miner[ií]a|deforest|calentamiento|deshielo|nevado|endémic|protegid|parque|especies? (invasora|exótica)/i]]},
+ ambiente:{def:'11.5',r:[['7.4',/ciclo del|ciclo de|biogeoqu|erosi|eutrof|uso responsable|ahorro de agua|fijaci[oó]n/i]]},
+ sistemas:{def:'8.4',r:[]},
+ funciones:{def:'8.4',r:[['7.3',/digesti|nutrici|alimentaci|fotos[ií]ntesis/i]]},
+ nutricion:{def:'8.4',r:[['7.3',/nutrici[oó]n|nutriente|autótrof|heterótrof|molécula|carbohidrat|lípid|prote[ií]na|agua|glucosa|ATP|vitamina|mineral|dieta|alimentaci|caloría|balanceada/i],['8.5',/\bITS\b|infecciones de transmisión|embarazo|anticonce|\bVPH\b|sexual/i]]},
+ reproduccion:{def:'8.5',r:[['10.4',BIOTEC]]},
+ genetica:{def:'9.4',r:[['10.4',BIOTEC],['9.5',/\bADN\b|\bARN|traducci|transcrip|prote[ií]na|codón|mutaci|código genético|ribosoma|expresi|replicaci|nucle[oó]tido/i]]},
+ evolucion:{def:'9.6',r:[]}
+};
+function dbaDe1(q,tema){
+  if(q&&typeof q==='object'&&q.dba)return q.dba;
+  var t=tema||(q&&q.t),T=DBA_TEMA[t];if(!T)return null;
+  var tx=texto(q);
+  for(var i=0;i<T.r.length;i++)if(T.r[i][1].test(tx))return T.r[i][0];
+  return T.def;
+}
+/* Temas de cada DBA, para el selector del panel. */
+function dbasDeTemas(temas){var o=[],vis={};
+  [6,7,8,9,10,11].forEach(function(c){(DBA[c]||[]).forEach(function(d){var k=c+'.'+d.n;if(!vis[k]&&d.temas.some(function(t){return temas.indexOf(t)>=0;})){vis[k]=1;o.push({id:k,curso:c,n:d.n,tx:d.tx});}});});
+  return o;}
+
 /* Abiertas con curso fijo (por el comienzo del texto). */
 var FIJO={
   'Compara la respiración con oxígeno y la fermentación':7,
@@ -111,6 +144,6 @@ function cursoAb(s,tema){for(var k in FIJO)if(s.indexOf(k)===0)return FIJO[k];re
 /* DBA de un curso para los temas dados: [{n, tx, ev, temas}] */
 function dbaDe(c,temas){return (DBA[c]||[]).filter(function(d){return d.temas.some(function(t){return temas.indexOf(t)>=0;});});}
 /* Primer curso (desde `c`) en que un tema tiene al menos `min` preguntas de la lista. */
-window.BIO_DBA={DBA:DBA,BASE:BASE,CURSOS:CURSOS,FUENTE:FUENTE,curso:curso,cursoAb:cursoAb,dbaDe:dbaDe,
+window.BIO_DBA={DBA:DBA,BASE:BASE,CURSOS:CURSOS,FUENTE:FUENTE,curso:curso,cursoAb:cursoAb,dbaDe:dbaDe,dba:dbaDe1,dbasDeTemas:dbasDeTemas,
   NOM:{6:'6.°',7:'7.°',8:'8.°',9:'9.°',10:'10.°',11:'11.°'}};
 })();

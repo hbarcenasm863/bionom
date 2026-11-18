@@ -47,6 +47,7 @@ function cfg(){
   var n=function(id,mx){var e=$(id);return e?Math.max(0,Math.min(mx,parseInt(e.value,10)||0)):0;};
   var c={modo:MODO,temas:temasMarcados(),mc:n('g-mc',30),vf:n('g-vf',15),esc:n('g-esc',10),ord:n('g-ord',6),ab:n('g-ab',6),
     curso:Math.max(6,Math.min(11,parseInt(($('g-curso')||{}).value,10)||11)),
+    dba:($('g-dba-sel')||{}).value||'',
     saber:n('g-saber',30),abE:n('g-abE',6),burbujas:$('g-burb').checked,icfes:!$('g-icfes')||$('g-icfes').checked,
     acts:[].slice.call(document.querySelectorAll('#g-acts input:checked')).map(function(x){return x.value;}),
     nver:Math.max(1,Math.min(10,n('g-nver',10)||1)),
@@ -70,22 +71,31 @@ function cursoTema(t,curso){
   var base=(D.SABER||[]).filter(function(q){return q.t===t;}),k=curso;
   while(k<11&&base.filter(function(q){return cursoQ(q)<=k;}).length<15)k++;
   return (_nt[key]=k);}
-function okNivel(q,c){return !DB||cursoQ(q)<=cursoTema(q.t,c.curso);}
-function okNivelAb(x,c){return !DB||DB.cursoAb(x.q,x.t)<=cursoTema(x.t,c.curso);}
+/* Con un DBA escogido (c.dba) salen solo las preguntas de ese DBA, de cualquier curso. */
+function okNivel(q,c){if(!DB)return true;if(c.dba)return DB.dba(q)===c.dba&&!(q.icfes&&c.curso<10);return cursoQ(q)<=cursoTema(q.t,c.curso);}
+function okNivelAb(x,c){if(!DB)return true;if(c.dba)return DB.dba(x.q,x.t)===c.dba;return DB.cursoAb(x.q,x.t)<=cursoTema(x.t,c.curso);}
+function pintarDbaSel(){
+  var e=$('g-dba-sel');if(!e||!DB)return;var antes=e.value,L=DB.dbasDeTemas(temasMarcados());
+  e.innerHTML='<option value="">Todos los DBA del curso</option>'+L.map(function(d){return '<option value="'+d.id+'">DBA '+d.id+' · '+esc(d.tx.length>62?d.tx.slice(0,60)+'…':d.tx)+'</option>';}).join('');
+  if(antes&&L.some(function(d){return d.id===antes;}))e.value=antes;}
 function abiertasDe(c){var ab=[];c.temas.forEach(function(t){((D.ABIERTAS||{})[t]||[]).forEach(function(x){ab.push({t:t,q:x});});});return ab.filter(function(x){return okNivelAb(x,c);});}
 function notaNivel(c){
   var e=$('g-curso-nota'),d=$('g-dba');if(!e)return;
   if(!c.temas.length){e.textContent='';if(d)d.innerHTML='';return;}
   var S=(D.SABER||[]).concat(window.SABER_ICFES?SABER_ICFES.preguntas():[]).filter(function(q){return c.temas.indexOf(q.t)>=0&&okNivel(q,c);}).length,
       J=(window.BANCO_BIO||[]).filter(function(q){return c.temas.indexOf(q.t)>=0&&q.k==='mc'&&okNivel(q,c);}).length,
-      A=abiertasDe(c).length,subidos=c.curso<11?c.temas.filter(function(t){return cursoTema(t,c.curso)>c.curso;}).map(function(t){return TEMAS_N[t]+' (desde '+DB.NOM[cursoTema(t,c.curso)]+')';}):[];
-  e.innerHTML='Hasta '+DB.NOM[c.curso]+' hay <b>'+S+'</b> preguntas tipo Saber 11, <b>'+J+'</b> de selección múltiple del Juego y <b>'+A+'</b> abiertas en los temas marcados.'+
-    (subidos.length?' <b>Ojo:</b> '+esc(subidos.join(', '))+' no se trabaja en los DBA de ese curso, así que ese tema sube al curso indicado.':'')+
-    (c.curso<10?' Las preguntas oficiales del Icfes (Saber 11) solo se usan desde 10.°.':'');
-  if(d){var L=DB.dbaDe(c.curso,c.temas);
-    d.innerHTML='<details><summary>DBA de '+DB.NOM[c.curso]+' para los temas marcados ('+L.length+')</summary>'+
-      (L.length?L.map(function(x){return '<p><b>DBA '+x.n+'.</b> '+esc(x.tx)+(x.ev.length?'<br><small>Evidencias: '+x.ev.map(esc).join(' · ')+'</small>':'')+'</p>';}).join(''):'<p>Los DBA de Ciencias Naturales de '+DB.NOM[c.curso]+' no tratan estos temas; las preguntas son las de cursos anteriores o posteriores indicadas arriba.</p>')+
-      '<p><small>'+esc(DB.FUENTE)+' Lo que ningún DBA nombra (por ejemplo las etapas de la respiración celular) se trata como profundización de 10.°.</small></p></details>';}
+      A=abiertasDe(c).length,
+      subidos=!c.dba&&c.curso<11?c.temas.filter(function(t){return cursoTema(t,c.curso)>c.curso;}).map(function(t){return TEMAS_N[t]+' (desde '+DB.NOM[cursoTema(t,c.curso)]+')';}):[],
+      txt=(c.dba?'Solo el DBA '+c.dba+' (de cualquier curso)':'Hasta '+DB.NOM[c.curso])+' hay <b>'+S+'</b> preguntas tipo Saber 11, <b>'+J+'</b> de selección múltiple del Juego y <b>'+A+'</b> abiertas en los temas marcados.';
+  if(subidos.length)txt+=' <b>Ojo:</b> '+esc(subidos.join(', '))+' no se trabaja en los DBA de ese curso, así que ese tema sube al curso indicado.';
+  if(c.curso<10||c.dba&&c.curso<10)txt+=' Las preguntas oficiales del Icfes (Saber 11) solo se usan desde 10.°.';
+  e.innerHTML=txt;
+  if(!d)return;
+  var L=c.dba?DB.dbasDeTemas(c.temas).filter(function(x){return x.id===c.dba;}).map(function(x){return DB.dbaDe(x.curso,c.temas).filter(function(y){return y.n===x.n;})[0];}).filter(Boolean):DB.dbaDe(c.curso,c.temas),
+      tit=c.dba?'DBA '+c.dba+' escogido':'DBA de '+DB.NOM[c.curso]+' para los temas marcados ('+L.length+')';
+  d.innerHTML='<details><summary>'+tit+'</summary>'+
+    (L.length?L.map(function(x){return '<p><b>DBA '+x.n+'.</b> '+esc(x.tx)+(x.ev.length?'<br><small>Evidencias: '+x.ev.map(esc).join(' · ')+'</small>':'')+'</p>';}).join(''):'<p>Los DBA de Ciencias Naturales de '+DB.NOM[c.curso]+' no tratan estos temas; las preguntas son las de cursos anteriores o posteriores indicadas arriba.</p>')+
+    '<p><small>'+esc(DB.FUENTE)+' Lo que ningún DBA nombra (por ejemplo las etapas de la respiración celular) se trata como profundización de 10.°. Funciones vitales y Nutrición y salud no tienen DBA propio: se etiquetan con el más cercano.</small></p></details>';
 }
 /* ── selección ── */
 function preguntasBanco(c,v){
@@ -323,12 +333,14 @@ window.DOC_GEN={modo:function(m){MODO=m;$('panel-gen').setAttribute('data-modo',
   $('g-intro').innerHTML=intro;llenarVersiones();pintar();},pintar:pintar};
 ['g-mc','g-vf','g-esc','g-ord','g-ab','g-saber','g-abE','g-mcE','g-col','g-doc','g-cur','g-tit','g-seed'].forEach(function(id){var e=$(id);if(e)e.addEventListener('input',pintar);});
 if($('g-icfes'))$('g-icfes').addEventListener('change',pintar);
+pintarDbaSel();
+if($('g-dba-sel'))$('g-dba-sel').addEventListener('change',pintar);
 if($('g-curso')){try{var _nv=localStorage.getItem('bionom_curso_docente');if(_nv&&/^(6|7|8|9|10|11)$/.test(_nv))$('g-curso').value=_nv;}catch(e){}
   $('g-curso').addEventListener('change',function(){try{localStorage.setItem('bionom_curso_docente',$('g-curso').value);}catch(e){}pintar();});}
 ['g-burb'].forEach(function(id){$(id).addEventListener('change',pintar);});
 $('g-acts').addEventListener('change',pintar);
 $('g-nver').addEventListener('input',function(){llenarVersiones();pintar();});$('g-vsel').addEventListener('change',pintar);
-$('g-temas').addEventListener('change',pintar);
+$('g-temas').addEventListener('change',function(){pintarDbaSel();pintar();});
 $('g-otra').onclick=function(){semilla=nuevaSemilla();$('g-seed').value='';pintar();};
 window.addEventListener('resize',escalar);
 $('g-imp').onclick=function(){var c=cfg();if(!c.temas.length)return;var h='',k='',v;
