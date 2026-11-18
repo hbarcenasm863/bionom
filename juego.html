@@ -142,10 +142,11 @@
 </main>
 <footer class="site-foot"></footer>
 <script src="bio.js?v=29"></script>
+<script src="nivel-bio.js?v=1"></script>
 <script src="banco.js?v=20"></script>
 <script src="saber-icfes.js?v=3"></script>
 <script src="icfes-datos.js?v=1"></script>
-<script src="saber-juego.js?v=4"></script>
+<script src="saber-juego.js?v=5"></script>
 <script>/* Preguntas oficiales del Icfes (cuadernillo Saber 11.º, 2026) dentro del
    Juego, en su tema. Solo las que tienen opciones escritas: las de opciones
    dibujadas (gráficas o carteleras A–D) quedan para las evaluaciones del
@@ -158,7 +159,7 @@
     exp:['Relaciona la situación con el concepto del tema: ¿qué causa explica lo que pasa?','Descarta las opciones que solo describen o que inventan una causa que la situación no menciona.'],
     uso:['Recuerda la definición o la idea principal del tema que usa esta pregunta.','Compara cada opción con esa idea y descarta las que la contradicen.']};
   (window.SABER_JUEGO||[]).forEach(function(x){
-    BANCO_BIO.push({t:x.t,k:'mc',q:x.q,ctx:x.ctx,ops:x.o,a:0,c:x.c,af:x.af,saber:1,tabla:x.tabla,graf:x.graf,
+    BANCO_BIO.push({t:x.t,k:'mc',q:x.q,ctx:x.ctx,ops:x.o,a:0,c:x.c,af:x.af,niv:x.niv,saber:1,tabla:x.tabla,graf:x.graf,
       p:PIS[x.c]||PIS.uso,
       exp:x.exp||'Esta es una pregunta tipo Saber 11 de la competencia de '+(NOMC[x.c]||NOMC.uso)+'. La respuesta correcta es «'+x.o[0]+'»: es la que se apoya en la situación y en lo que estudiaste de «'+x.t+'»; las otras opciones no se desprenden de ella.'});});
   SABER_ICFES.preguntas().forEach(function(x){if(x.imgOps)return;
@@ -179,19 +180,7 @@ var MODO_ESTUDIANTE_ACTIVO=false;
 if(!MODO_ESTUDIANTE_ACTIVO){var _m=document.querySelector('.modos');if(_m)_m.hidden=true;}
 var TEMAS=window.TEMAS_JUEGO,BANCO_TODO=window.BANCO_BIO,BANCO=BANCO_TODO;
 var PAL_TODO=window.BANCO_AHORCADO||[],BANCO_PAL=PAL_TODO;
-/* ── Niveles del juego (versión 2.31): Básico 6.°–7.°, Medio 8.°–9.°, Completo 10.°–11.°.
-   Cada pregunta o palabra recibe el nivel mínimo en que se trabaja según los
-   Estándares del MEN: lo de profundización es Completo; genética, evolución,
-   reproducción y funciones comparadas son Medio (menos lo de 6.°–7.° que tienen:
-   origen del universo, extinciones, eras, pubertad, flor, reproducción asexual);
-   en los demás temas, alelos, meiosis, arqueas, dominios y hormonas son Medio. */
-var NIV_PROF=/\b(éter|éster)\b|potencial de (acción|reposo)|umbral de|mielina|cebador|primasa|okazaki|krebs|glucólisis|piruvato|atp sintasa|crestas|nadh|nadph|tilacoide|estroma|ciclo de calvin|cadena respiratoria|estabilizadora|disruptiva|deriva (génica|genética)|poiseuille|termodinámica|\bPCR\b|histonas/i;
-var NIV_MEDIO_T={genetica:1,evolucion:1,reproduccion:1,funciones:1};
-var NIV_BASICO_EN_MEDIO=/big bang|universo|extinci|era geológica|eras geológicas|paleozoico|mesozoico|cenozoico|precámbrico|fósil|miller|oparin|origen de la vida|meteorito|pubertad|menstrua|ovario|testícul|aparato reproductor|sistema reproductor|asexual|biparti|gemaci|esqueje|tubérculo|flor\b|poliniz|semilla|fruto|estambre|pistilo/i;
-var NIV_MEDIO_EN_BASICO=/alelo|genotip|fenotip|heterocig|homocig|meiosis|entrecruzamiento|haploide|diploide|cariotipo|síndrome de down|no disyunci|arquea|archaea|archaebacteria|dominio|woese|hormona|insulina|tiroides|homeostasis|adrenalina/i;
-function nivelDe(t,texto){if(NIV_PROF.test(texto))return 3;
-  if(NIV_MEDIO_T[t])return NIV_BASICO_EN_MEDIO.test(texto)?1:2;
-  return NIV_MEDIO_EN_BASICO.test(texto)?2:1;}
+/* Los niveles (nivelDe, NIV_*) están en nivel-bio.js. */
 BANCO_TODO.forEach(function(q){if(q.niv==null)q.niv=nivelDe(q.t,[q.q,q.exp,(q.ops||[]).join(' ')].join(' '));});
 (window.BANCO_AHORCADO||[]).forEach(function(w){if(w.niv==null)w.niv=nivelDe(w[1],w.join(' '));});
 var NIVEL=3;try{var nv=+localStorage.getItem('bionom_nivel_juego');if(nv>=1&&nv<=3)NIVEL=nv;}catch(e){}

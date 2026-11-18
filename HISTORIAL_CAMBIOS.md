@@ -6,6 +6,51 @@
 
 ---
 
+## Versión 2.55 — 18 de noviembre de 2026 · Filtro de nivel en el panel docente y revisión de respiración celular
+
+**Contexto.** Al revisar si había preguntas suficientes para evaluar en secundaria, se vio que el
+panel docente no tenía filtro por grado (el juego sí): una evaluación para 6.° podía traer
+preguntas de 10.°–11.° como Krebs o la ATP sintasa. El docente pidió empezar por el filtro y
+revisar específicamente la respiración celular.
+
+**Cambios**
+- **`nivel-bio.js` (nuevo):** las reglas de nivel que estaban dentro de `juego.html`, ahora
+  compartidas por el juego y el panel (`nivelDe`, `BIO_NIVEL.de`). Una pregunta puede traer
+  `niv` escrito a mano. Nuevas palabras de profundización: FADH, gradiente de protones,
+  quimiosmosis, fosforilación, aceptor final (más piruvato, ATP sintasa, crestas y NADH).
+- **`docente.html` y `docente-app.js`:** selector «Nivel de los estudiantes» (Básico 6.°–7.°,
+  Medio 8.°–9.°, Completo 10.°–11.°; Completo = todo, como antes). Filtra las preguntas Saber 11,
+  las del Juego y las abiertas, en guías, talleres y evaluaciones; se recuerda en el equipo; la
+  cabecera de la hoja dice «Nivel: …» si no es Completo; y un mensaje cuenta cuántas preguntas
+  hay con ese nivel. Un tema con menos de 15 preguntas Saber en ese nivel sube al siguiente
+  (en Básico: Genética, Evolución y Funciones) y el panel avisa. Las preguntas oficiales del
+  Icfes (son de Saber 11) solo se usan desde Medio.
+- **Respiración celular:** las 12 preguntas Saber nuevas llevan su nivel a mano, porque la
+  explicación menciona Krebs o glucólisis y el cálculo automático subía de más preguntas
+  generales (por ejemplo «¿de dónde viene el CO₂ que exhalas?», que es de 8.°–9.°) y dejaba en
+  Básico las de Mitchell y el lactato. Quedó: Básico (masa de pan, semillas germinando); Medio
+  (músculo sin oxígeno, CO₂ del pan, grasa que se pierde, glucosa con y sin oxígeno, lactato);
+  Completo (matriz y Krebs, piruvato, veneno de la cadena, ATP sintasa, Mitchell). Las abiertas
+  «Compara la respiración con oxígeno y la fermentación» (Medio) y «dónde ocurre cada etapa»
+  (Completo) tienen nivel fijo.
+- **`herramientas/generar-saber-juego.js`** pasa `niv` al juego; `saber-juego.js` regenerado y
+  `juego.html` lo lee. Caché `bionom-v69`; `?v=` de `docente-app.js` (15), `docente-datos.js`
+  (24) y `saber-juego.js` (5); `nivel-bio.js` en `ASSETS`.
+
+**Pruebas (Playwright).** Evaluación de La célula con 30 Saber en cada nivel: en Básico no sale
+ninguna pregunta de Krebs, ATP sintasa ni Mitchell; en Medio salen la fermentación, el lactato y
+la glucosa con y sin oxígeno; en Completo sale todo. Sin errores de consola en el panel ni en el
+juego.
+
+**Pendiente**
+- Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+- El juego calcula el nivel sin el contexto de la pregunta y el panel sí lo incluye: puede haber
+  alguna diferencia menor entre los dos.
+- Las guías y lecturas de la sesión 2 no se filtran por nivel (solo las preguntas).
+- Siguen pendientes las preguntas de indagación con tabla o gráfica (hoy 1 por tema).
+
+---
+
 ## Versión 2.54 — 18 de noviembre de 2026 · Animación de la respiración celular y preguntas nuevas
 
 **Contexto.** El docente preguntó qué había sobre respiración celular. La consulta mostró que
