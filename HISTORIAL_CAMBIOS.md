@@ -6,6 +6,55 @@
 
 ---
 
+## Versión 2.57 — 18 de noviembre de 2026 · Lo que faltaba de los DBA en los temas y 20 preguntas o más por DBA
+
+**Contexto.** El docente pidió subir a los temas lo que faltara de los DBA y crear al menos 20
+preguntas para cada uno. Al revisar el contenido de las páginas se corrigió un diagnóstico: en la
+versión 2.56 se dijo que no había nada del ancestro común, pero «Las evidencias de la evolución»
+ya tenía homologías, fósiles, ADN y embriones; faltaban la teoría nombrada, el árbol de parentesco
+y la distribución geográfica. También faltaba por completo «Colombia megadiversa».
+
+**Contenido nuevo**
+- **`evolucion.html`** (DBA 9.6): la sección 09 nombra la teoría del ancestro común y suma dos
+  pestañas. **Ancestro común:** árbol de parentesco interactivo (humano, chimpancé, perro, pollo,
+  atún, levadura): al tocar un organismo se resalta el ancestro común, con los millones de años y las
+  diferencias en el citocromo c. **Dónde viven:** biogeografía (marsupiales, Galápagos, islas sin
+  ranas, convergencia). Incluye tres chequeos.
+- **`genetica.html`** (DBA 10.4): lentes social, bioético y ambiental; tarjeta del Proyecto Genoma
+  Humano (la sección ya tenía transgénicos, clonación, CRISPR, reproducción asistida y pruebas de
+  ADN); chequeo de bioética.
+- **`regiones.html`** (DBA 11.5): sección nueva 06 «Colombia, país megadiverso: ¿qué significa y qué
+  lo amenaza?» (implicaciones sociales, ambientales y culturales; minería, ganadería, tala,
+  carreteras, agricultura y tráfico de especies) con dos chequeos. El «Reto» pasa a la sección 07.
+- **Corrección:** `regiones.html` y `reinos.html` decían «segundo país más biodiverso del mundo»;
+  según el Instituto Humboldt (2024) Colombia es cuarto en biodiversidad general y primero en aves,
+  orquídeas y mariposas. Ahora dicen «uno de los países megadiversos».
+
+**Preguntas** (todas con `dba` y `curso`; la primera opción es la correcta y las opciones tienen largo parecido)
+- **`banco.js` (Juego):** 24 por cada DBA 9.6, 10.4 y 11.5 (18 o 19 de opción múltiple y 5 o 6 de
+  verdadero/falso), con 2 pistas y explicación.
+- **`docente-datos.js` (Saber 11):** 20 por cada DBA 9.6, 10.4 y 11.5 (7 de uso, 7 de explicación y 6
+  de indagación, con 4 tablas y 3 gráficas por DBA entre las tres), más 4 de 7.3 y 6 de 9.5; y 34
+  abiertas (evolución 6, genética 10, Colombia 6, ecosistemas 8 con las de 7.4).
+- `saber-juego.js` regenerado (651 preguntas); `juego.html` toma el nivel `niv` de cada una.
+- **`MATRIZ_DBA.md`** con la cobertura y el conteo de preguntas por DBA; `CLAUDE.md` ajustado.
+- `sw.js`: caché `bionom-v71`; `?v=` de `banco.js` (21), `docente-datos.js` (26) y `saber-juego.js` (6).
+
+**Pruebas (Playwright).** Sin errores de consola ni desbordes a 390 y 1200 px en Evolución,
+Genética, Regiones y Reinos; el árbol responde a cada organismo; el panel por curso suma las
+preguntas nuevas (por ejemplo, Genética pasa de 54 Saber hasta 9.° a 78 hasta 10.°); el juego carga.
+
+**Pendiente**
+- Las cifras del árbol (citocromo c y fechas) son aproximadas y de tablas clásicas: conviene
+  revisarlas si se van a citar en una evaluación.
+- Los datos de las tablas y gráficas marcados «de ejemplo» son inventados.
+- En el celular en vertical los rótulos del árbol son pequeños (~12 px): usar «Pantalla completa».
+- Los DBA 6.4, 6.5, 7.3, 7.4, 8.4, 8.5, 9.4 y 9.5 ya tenían 20 preguntas o más por palabras clave (conteo
+  aproximado, no etiquetado); no se volvieron a etiquetar.
+- Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.56 — 18 de noviembre de 2026 · Filtro por curso según los DBA en el panel docente
 
 **Contexto.** El docente prefirió un filtro por **curso** (no por nivel) que use los Derechos

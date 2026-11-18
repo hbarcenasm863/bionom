@@ -257,9 +257,9 @@
 
   <section class="sec" id="evidencias">
     <h2><span class="n">09</span> Las evidencias de la evolución</h2>
-    <p class="lead">La evolución no es una simple opinión: muchas pruebas independientes llevan a la misma conclusión.</p>
+    <p class="lead">La evolución no es una simple opinión: muchas pruebas independientes llevan a la misma conclusión. Según la <b>teoría del ancestro común</b>, todos los seres vivos descendemos de antepasados compartidos, y la <b>selección natural</b> explica cómo cambiaron. Las pruebas: anatomía, fósiles, ADN, embriones y la distribución geográfica de las especies.</p>
     <div class="sim-grupo" data-pantalla="Las evidencias de la evolución">
-    <div class="tabs"><button class="chip on" data-tab="ev-hom">🦴 Anatomía comparada</button><button class="chip" data-tab="ev-fos">🦖 Fósiles</button><button class="chip" data-tab="ev-mol">🧬 ADN</button><button class="chip" data-tab="ev-emb">🥚 Embriología</button></div>
+    <div class="tabs"><button class="chip on" data-tab="ev-hom">🦴 Anatomía comparada</button><button class="chip" data-tab="ev-fos">🦖 Fósiles</button><button class="chip" data-tab="ev-mol">🧬 ADN</button><button class="chip" data-tab="ev-emb">🥚 Embriología</button><button class="chip" data-tab="ev-anc">🌳 Ancestro común</button><button class="chip" data-tab="ev-geo">🌍 Dónde viven</button></div>
     <div class="tab-p" id="ev-hom">
       <p>Las extremidades de un humano, un gato, una ballena y un murciélago sirven para cosas muy distintas, pero tienen <b>los mismos huesos en el mismo orden</b>. Son <b>órganos homólogos</b>: los heredaron de un antepasado común. Toca un tipo de hueso para resaltarlo en las cuatro.</p>
       <div class="ley-h" id="ley-h"></div>
@@ -281,6 +281,34 @@
     </div>
     <div class="tab-p" id="ev-emb">
       <p>En sus primeras semanas, los embriones de peces, reptiles, aves y mamíferos se parecen mucho: todos tienen <b>hendiduras en la garganta</b> y una <b>cola</b>. En los peces las hendiduras se vuelven branquias; en nosotros, partes del oído y del cuello. Es una huella de un antepasado común.</p>
+    </div>
+    <div class="tab-p" id="ev-anc">
+      <p>Si dos especies descienden de un <b>ancestro común</b> reciente, se parecen mucho; si ese ancestro vivió hace muchísimo tiempo, se parecen menos. Cada punto donde se unen dos ramas del árbol es un ancestro común. <b>Predice:</b> ¿con cuál de estos organismos tenemos menos diferencias en la proteína <b>citocromo c</b>? Toca uno para comprobarlo.</p>
+      <div class="ctrl" id="anc-btns"></div>
+      <svg id="anc-svg" viewBox="0 0 640 330" style="width:100%;max-width:680px;height:auto;background:#f8fbff;border-radius:12px;box-shadow:0 0 0 1px var(--cn-brd)" role="img" aria-label="Árbol de parentesco de seis organismos: humano, chimpancé, perro, pollo, atún y levadura"></svg>
+      <div class="card" id="anc-res" style="margin-top:10px" aria-live="polite">Toca un organismo para compararlo con el humano.</div>
+      <p style="font-size:.84rem;color:var(--cn-dim)">Tiempos y diferencias aproximados y redondeados (tablas clásicas del citocromo c, de 104 aminoácidos; fechas de TimeTree). El orden es el que importa: más atrás en el tiempo, más diferencias acumuladas.</p>
+      <div class="chequeo" data-ok="1" data-exp="Si dos especies descienden de un ancestro común reciente, tuvieron poco tiempo para acumular mutaciones: sus proteínas casi no difieren. Por eso el chimpancé es el pariente más cercano del ser humano.">
+        <div class="q">Dos especies tienen casi la misma secuencia de una proteína. ¿Qué se puede concluir?</div>
+        <div class="ops"><button class="op" data-por="Dos especies pueden vivir en el mismo lugar sin ser parientes cercanas; lo que cuenta es la secuencia.">Que viven en el mismo hábitat.</button><button class="op">Que comparten un ancestro común reciente.</button><button class="op" data-por="El tamaño del cuerpo no depende de una sola proteína: un ratón y una ballena son parientes y son muy distintos.">Que tienen el mismo tamaño.</button></div>
+      </div>
+    </div>
+    <div class="tab-p" id="ev-geo">
+      <p>La <b>biogeografía</b> estudia dónde vive cada especie. Darwin se fijó en un patrón: las especies de una región se parecen a las de las regiones <b>cercanas</b>, aunque el clima sea distinto, y no a las de regiones lejanas de clima parecido. Eso se explica si descienden de ancestros comunes que se fueron separando.</p>
+      <div class="grid g2">
+        <div class="card"><h3>🦘 Marsupiales en dos continentes</h3><p>Los canguros viven en Australia y las <b>zarigüeyas</b> (en Colombia, la «chucha») en América. Todos son marsupiales: crían a sus bebés en una bolsa. Probablemente descienden de un ancestro común que vivió cuando América del Sur, la Antártida y Australia estaban unidas.</p></div>
+        <div class="card"><h3>🏝️ Galápagos</h3><p>Las islas Galápagos están a unos 1 000 km de la costa de Ecuador. Sus tortugas, iguanas y pinzones se parecen a los de Sudamérica y no a los de otras islas calientes del mundo: descienden de aves y reptiles que llegaron del continente y se diversificaron.</p></div>
+        <div class="card"><h3>🐸 Islas sin ranas</h3><p>Las islas oceánicas lejanas, como Hawái, no tenían mamíferos terrestres (salvo murciélagos) ni anfibios nativos: no cruzan el mar salado. Las especies que sí llegaron, como aves, insectos y plantas, se diversificaron muchísimo.</p></div>
+        <div class="card"><h3>🌵 Mismo clima, distinto linaje</h3><p>Los cactus del desierto americano y las euforbias del desierto africano se parecen, pero no son parientes cercanos: se parecen por vivir en ambientes parecidos (<b>analogía</b>). Parecerse no siempre significa descender de un ancestro común reciente.</p></div>
+      </div>
+      <div class="chequeo" data-ok="2" data-exp="Los marsupiales descienden de un ancestro común y los continentes estuvieron unidos. Cuando se separaron, cada grupo evolucionó por su lado. Por eso especies emparentadas pueden vivir en continentes distintos.">
+        <div class="q">Los canguros de Australia y las zarigüeyas de Colombia son parientes. ¿Qué explica mejor que vivan tan lejos?</div>
+        <div class="ops"><button class="op" data-por="Los marsupiales no nadan ni vuelan por el océano; no cruzaron el mar por su cuenta.">Que unos nadaron hasta cruzar el océano.</button><button class="op" data-por="No hay evidencia de eso: las especies no son creadas «a pedido» en cada clima.">Que cada clima crea sus propios marsupiales.</button><button class="op">Que descienden de un ancestro común y los continentes estuvieron unidos.</button></div>
+      </div>
+      <div class="chequeo" data-ok="0" data-exp="Los anfibios tienen la piel permeable y no soportan el agua salada, así que no cruzan el mar hasta una isla oceánica. Las aves y los insectos sí llegan volando o arrastrados por el viento.">
+        <div class="q">¿Por qué las islas oceánicas lejanas casi nunca tienen ranas nativas?</div>
+        <div class="ops"><button class="op">Porque los anfibios no resisten el agua salada y no cruzan el mar.</button><button class="op" data-por="Las ranas viven en climas muy distintos, incluidos los tropicales de muchas islas.">Porque en las islas hace demasiado calor.</button><button class="op" data-por="Hay muchas islas con insectos de los que se alimentan las ranas.">Porque en las islas no hay insectos.</button></div>
+      </div>
     </div>
     </div>
   </section>
@@ -601,6 +629,46 @@ BIO.clasificar(document.getElementById('clas-end'),{
    {t:'Periquito de Santa Marta',caja:'end',exp:'solo vive en la Sierra Nevada de Santa Marta.',pista:'Fíjate en el nombre del lugar.'},
    {t:'Rana toro',caja:'inv',exp:'traída de Norteamérica, devora ranas nativas.',pista:'Fue traída de Norteamérica para criadero.'}
   ]});
+})();
+</script>
+<script>
+/* Árbol del ancestro común (DBA 9.°, evidencia de la teoría del ancestro común) */
+(function(){
+  var cont=document.getElementById('anc-svg');if(!cont)return;
+  /* hojas de arriba abajo; cada nodo une una hoja con el nodo anterior (escalera) */
+  var HOJAS=[['levadura','Levadura','🍞',44,1000,'un organismo eucariota unicelular'],['atun','Atún','🐟',21,430,'un pez óseo primitivo'],['pollo','Pollo','🐔',13,310,'un reptil primitivo (amniota)'],['perro','Perro','🐕',10,95,'un pequeño mamífero placentario'],['chimpance','Chimpancé','🐒',0,7,'un primate africano']];
+  var YH={levadura:40,atun:95,pollo:150,perro:205,chimpance:262,humano:304},XF=470;
+  function X(ma){return XF-410*Math.sqrt(ma/1000);}
+  /* nodo k (0 = levadura … 4 = chimpancé): une la hoja k con «el resto» (nodo k+1, o el humano si k=4) */
+  var NX=HOJAS.map(function(h){return X(h[4]);}),Y=[];
+  function yHoja(k){return YH[HOJAS[k][0]];}
+  function yResto(k){return k<4?Y[k+1]:YH.humano;}
+  for(var q=4;q>=0;q--)Y[q]=(yHoja(q)+yResto(q))/2;
+  var sel=null,btn=document.getElementById('anc-btns'),res=document.getElementById('anc-res');
+  btn.innerHTML=HOJAS.map(function(h){return '<button type="button" class="chip" data-a="'+h[0]+'">'+h[2]+' '+h[1]+'</button>';}).join('');
+  function nodoDe(id){for(var k=0;k<HOJAS.length;k++)if(HOJAS[k][0]===id)return k;return -1;}
+  function seg(x1,y1,x2,y2,on){return '<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="'+(on?'#ea580c':'#64748b')+'" stroke-width="'+(on?5:3)+'" stroke-linecap="round"/>';}
+  function dibujar(){
+    var m=sel===null?-1:nodoDe(sel),o='',k;
+    for(k=0;k<5;k++){
+      var yl=yHoja(k),yr=yResto(k),nx=NX[k],xr=k<4?NX[k+1]:XF,enHoja=m===k,enResto=m>=0&&k>=m;
+      o+=seg(nx,yl,nx,Y[k],enHoja)+seg(nx,Y[k],nx,yr,enResto);   // vertical del nodo
+      o+=seg(nx,yl,XF,yl,enHoja)+seg(nx,yr,xr,yr,enResto);        // ramas hacia la hoja y hacia el resto
+    }
+    for(k=0;k<5;k++)o+='<circle cx="'+NX[k].toFixed(1)+'" cy="'+Y[k].toFixed(1)+'" r="'+(m===k?9:6)+'" fill="'+(m===k?'#ea580c':'#334155')+'"/>';
+    if(m>=0)o+='<text x="'+(NX[m]-12).toFixed(1)+'" y="'+(Y[m]-12).toFixed(1)+'" text-anchor="end" font-size="18" font-weight="800" fill="#c2410c">ancestro común</text>';
+    HOJAS.map(function(h){return [h[0],h[1],h[2]];}).concat([['humano','Humano','🧑']]).forEach(function(n){
+      var on=n[0]===sel||(n[0]==='humano'&&sel!==null);
+      o+='<text x="'+(XF+10)+'" y="'+(YH[n[0]]+7)+'" font-size="20" font-weight="'+(on?800:600)+'" fill="'+(on?'#c2410c':'#1e293b')+'">'+n[2]+' '+n[1]+'</text>';});
+    cont.innerHTML=o;
+    btn.querySelectorAll('.chip').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-a')===sel);});
+  }
+  btn.addEventListener('click',function(e){var b=e.target.closest('[data-a]');if(!b)return;sel=b.getAttribute('data-a');var h=HOJAS[nodoDe(sel)];
+    res.innerHTML='<b>Humano y '+h[1].toLowerCase()+'.</b> Su ancestro común más reciente vivió hace unos <b>'+h[4].toLocaleString('es-CO')+' millones de años</b> y era '+h[5]+'. '+(h[3]===0?'En el citocromo c las dos proteínas son <b>idénticas</b> (0 diferencias de 104 aminoácidos).':'En el citocromo c hay unas <b>'+h[3]+'</b> diferencias de 104 aminoácidos.')+
+      '<div style="height:12px;background:#e2e8f0;border-radius:6px;margin-top:8px"><div style="height:12px;width:'+Math.max(2,h[3]/44*100)+'%;background:#ea580c;border-radius:6px"></div></div>'+
+      '<p style="margin:8px 0 0">'+(h[3]===0?'Casi no hay diferencias porque el ancestro común es muy reciente.':'Cuanto más lejano el ancestro común, más mutaciones se acumularon en cada linaje.')+'</p>';
+    dibujar();if(window.BIO&&BIO.marcarSeccion)BIO.marcarSeccion('evidencias');});
+  dibujar();
 })();
 </script>
 <script src="text-zoom.js?v=13"></script>
