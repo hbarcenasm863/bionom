@@ -6,6 +6,49 @@
 
 ---
 
+## Versión 2.56 — 18 de noviembre de 2026 · Filtro por curso según los DBA en el panel docente
+
+**Contexto.** El docente prefirió un filtro por **curso** (no por nivel) que use los Derechos
+Básicos de Aprendizaje (DBA) de cada tema. Pasó el PDF oficial (DBA Ciencias Naturales V.1,
+MEN 2016), porque la red de la sesión no permitía descargarlo.
+
+**Cambios**
+- **`dba-bio.js` (nuevo):** los DBA de biología de 6.° a 11.° con su texto oficial, el curso base
+  de cada tema y reglas por palabras clave para dar a cada pregunta su curso mínimo. Se
+  evalúan el enunciado y la opción correcta (no la explicación ni los distractores: antes una
+  explicación que nombraba Krebs subía preguntas generales). Una pregunta puede traer `curso`
+  a mano.
+- **`docente.html` y `docente-app.js`:** el selector de nivel de la versión 2.55 se cambia por
+  «Curso de los estudiantes» (6.° a 11.°; 11.° = todo). Filtra Saber, Juego y abiertas (guías,
+  talleres y evaluaciones), muestra cuántas preguntas hay hasta ese curso, y despliega el DBA
+  del curso para los temas marcados, con su cita. Si un tema no tiene al menos 15 preguntas
+  Saber hasta ese curso (p. ej. Genética en 6.°: los DBA la trabajan desde 9.°), sube al primer
+  curso que las tiene y el panel avisa. Las preguntas oficiales del Icfes solo desde 10.°. La
+  cabecera de la hoja dice «Preguntas según los DBA hasta N.°».
+- **Respiración celular:** según los DBA, la respiración celular y la mitocondria son de **6.°**
+  (DBA 6.4) y su comparación con la fotosíntesis, de **7.°** (DBA 7.3). Las etapas (glucólisis,
+  Krebs, cadena, ATP sintasa, Mitchell) no están en ningún DBA: **10.°**. Las 12 preguntas nuevas
+  y las abiertas llevan su `curso` a mano (por ejemplo el lactato en la carrera y la grasa que
+  se pierde: 7.°; el modelo de la ATP sintasa: 10.°).
+- **`MATRIZ_DBA.md` (nueva)** con la cobertura de cada DBA de biología; `CLAUDE.md` actualizado.
+- `sw.js`: caché `bionom-v70` y `dba-bio.js` en `ASSETS`; `?v=` de `docente-app.js` (16) y
+  `docente-datos.js` (25). El juego sigue con sus tres niveles (`nivel-bio.js`).
+
+**Pruebas (Playwright).** Evaluación de La célula en 6.°, 7.°, 8.°, 10.° y 11.°: en 6.° salen las
+de mitocondria y no las de levadura ni Krebs; desde 7.° la fermentación y el lactato; Krebs, ATP
+sintasa y Mitchell solo desde 10.°. Genética y Sistemas en 6.° suben a 9.° y 8.° con aviso. Sin
+errores de consola.
+
+**Pendiente**
+- **Falta la teoría del ancestro común** (DBA 9.6: distribución geográfica, fósiles, homologías,
+  comparación de ADN): no hay página ni preguntas.
+- El mapeo pregunta-curso es criterio de BioNom: conviene que el docente revise lo que le parezca
+  fuera de grado y lo corrija en `dba-bio.js` (`BASE` y `CURSOS`) o con `curso` en la pregunta.
+- Funciones vitales y Nutrición no tienen DBA propio: se ligaron a 7.° 3 y 8.° 4.
+- Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.55 — 18 de noviembre de 2026 · Filtro de nivel en el panel docente y revisión de respiración celular
 
 **Contexto.** Al revisar si había preguntas suficientes para evaluar en secundaria, se vio que el

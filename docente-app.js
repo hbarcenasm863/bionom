@@ -46,7 +46,7 @@ function temasMarcados(){return [].slice.call(document.querySelectorAll('#g-tema
 function cfg(){
   var n=function(id,mx){var e=$(id);return e?Math.max(0,Math.min(mx,parseInt(e.value,10)||0)):0;};
   var c={modo:MODO,temas:temasMarcados(),mc:n('g-mc',30),vf:n('g-vf',15),esc:n('g-esc',10),ord:n('g-ord',6),ab:n('g-ab',6),
-    nivel:Math.max(1,Math.min(3,parseInt(($('g-nivel')||{}).value,10)||3)),
+    curso:Math.max(6,Math.min(11,parseInt(($('g-curso')||{}).value,10)||11)),
     saber:n('g-saber',30),abE:n('g-abE',6),burbujas:$('g-burb').checked,icfes:!$('g-icfes')||$('g-icfes').checked,
     acts:[].slice.call(document.querySelectorAll('#g-acts input:checked')).map(function(x){return x.value;}),
     nver:Math.max(1,Math.min(10,n('g-nver',10)||1)),
@@ -55,33 +55,37 @@ function cfg(){
   return c;
 }
 
-/* ── nivel de los estudiantes (versión 2.55) ──
-   Básico 6.°–7.°, Medio 8.°–9.° y Completo 10.°–11.° (reglas de nivel-bio.js, las
-   mismas del juego). Una pregunta sale si su nivel es menor o igual al escogido.
-   Si en un tema casi no hay preguntas de ese nivel (genética, evolución,
-   reproducción y funciones empiezan en 8.°), el tema sube al primer nivel con
-   al menos 15 preguntas Saber, y el panel avisa. Las preguntas oficiales del
-   Icfes son de Saber 11: nunca se usan en Básico. */
-var NB=window.BIO_NIVEL,_nt={};
-function nivQ(q,t){if(!NB)return 1;var v=NB.de(q,t);return q.icfes?Math.max(2,v):v;}
-function nivTema(t,nivel){
-  if(!NB||nivel>=3)return 3;
-  var key=t+'|'+nivel;if(_nt[key])return _nt[key];
-  var base=(D.SABER||[]).filter(function(q){return q.t===t;}),k=nivel;
-  while(k<3&&base.filter(function(q){return nivQ(q)<=k;}).length<15)k++;
+/* ── curso de los estudiantes y DBA (versión 2.56) ──
+   El docente escoge el curso (6.° a 11.°) y salen las preguntas cuyo curso mínimo
+   es ese o uno anterior, según los DBA de Ciencias Naturales del MEN (dba-bio.js).
+   Si en un tema casi no hay preguntas hasta ese curso (por ejemplo Genética en 6.°:
+   los DBA lo trabajan desde 9.°), el tema sube al primer curso con al menos 15
+   preguntas Saber, y el panel avisa. Las preguntas oficiales del Icfes son de Saber
+   11: solo se usan desde 10.°. */
+var DB=window.BIO_DBA,_nt={};
+function cursoQ(q,t){if(!DB)return 6;var v=DB.curso(q,t);return q.icfes?Math.max(10,v):v;}
+function cursoTema(t,curso){
+  if(!DB||curso>=11)return 11;
+  var key=t+'|'+curso;if(_nt[key])return _nt[key];
+  var base=(D.SABER||[]).filter(function(q){return q.t===t;}),k=curso;
+  while(k<11&&base.filter(function(q){return cursoQ(q)<=k;}).length<15)k++;
   return (_nt[key]=k);}
-function okNivel(q,c){return !NB||nivQ(q)<=nivTema(q.t,c.nivel);}
-function okNivelAb(x,c){return !NB||nivQ(x.q,x.t)<=nivTema(x.t,c.nivel);}
+function okNivel(q,c){return !DB||cursoQ(q)<=cursoTema(q.t,c.curso);}
+function okNivelAb(x,c){return !DB||DB.cursoAb(x.q,x.t)<=cursoTema(x.t,c.curso);}
 function abiertasDe(c){var ab=[];c.temas.forEach(function(t){((D.ABIERTAS||{})[t]||[]).forEach(function(x){ab.push({t:t,q:x});});});return ab.filter(function(x){return okNivelAb(x,c);});}
 function notaNivel(c){
-  var e=$('g-nivel-nota');if(!e)return;
-  if(!c.temas.length){e.textContent='';return;}
+  var e=$('g-curso-nota'),d=$('g-dba');if(!e)return;
+  if(!c.temas.length){e.textContent='';if(d)d.innerHTML='';return;}
   var S=(D.SABER||[]).concat(window.SABER_ICFES?SABER_ICFES.preguntas():[]).filter(function(q){return c.temas.indexOf(q.t)>=0&&okNivel(q,c);}).length,
       J=(window.BANCO_BIO||[]).filter(function(q){return c.temas.indexOf(q.t)>=0&&q.k==='mc'&&okNivel(q,c);}).length,
-      A=abiertasDe(c).length,subidos=c.nivel<3?c.temas.filter(function(t){return nivTema(t,c.nivel)>c.nivel;}).map(function(t){return TEMAS_N[t]+' (desde '+(NB.CORTO[nivTema(t,c.nivel)])+')';}):[];
-  e.innerHTML='Con este nivel hay <b>'+S+'</b> preguntas tipo Saber 11, <b>'+J+'</b> de selección múltiple del Juego y <b>'+A+'</b> abiertas en los temas marcados.'+
-    (subidos.length?' <b>Ojo:</b> '+esc(subidos.join(', '))+' se trabaja sobre todo en un nivel más alto, así que ese tema sube de nivel.':'')+
-    (c.nivel<3?' Las preguntas oficiales del Icfes (Saber 11) solo se usan desde el nivel Medio.':'');
+      A=abiertasDe(c).length,subidos=c.curso<11?c.temas.filter(function(t){return cursoTema(t,c.curso)>c.curso;}).map(function(t){return TEMAS_N[t]+' (desde '+DB.NOM[cursoTema(t,c.curso)]+')';}):[];
+  e.innerHTML='Hasta '+DB.NOM[c.curso]+' hay <b>'+S+'</b> preguntas tipo Saber 11, <b>'+J+'</b> de selección múltiple del Juego y <b>'+A+'</b> abiertas en los temas marcados.'+
+    (subidos.length?' <b>Ojo:</b> '+esc(subidos.join(', '))+' no se trabaja en los DBA de ese curso, así que ese tema sube al curso indicado.':'')+
+    (c.curso<10?' Las preguntas oficiales del Icfes (Saber 11) solo se usan desde 10.°.':'');
+  if(d){var L=DB.dbaDe(c.curso,c.temas);
+    d.innerHTML='<details><summary>DBA de '+DB.NOM[c.curso]+' para los temas marcados ('+L.length+')</summary>'+
+      (L.length?L.map(function(x){return '<p><b>DBA '+x.n+'.</b> '+esc(x.tx)+(x.ev.length?'<br><small>Evidencias: '+x.ev.map(esc).join(' · ')+'</small>':'')+'</p>';}).join(''):'<p>Los DBA de Ciencias Naturales de '+DB.NOM[c.curso]+' no tratan estos temas; las preguntas son las de cursos anteriores o posteriores indicadas arriba.</p>')+
+      '<p><small>'+esc(DB.FUENTE)+' Lo que ningún DBA nombra (por ejemplo las etapas de la respiración celular) se trata como profundización de 10.°.</small></p></details>';}
 }
 /* ── selección ── */
 function preguntasBanco(c,v){
@@ -194,7 +198,7 @@ function titulo(c,parte){return c.tit||(parte==='guia'?'Guía de biología':part
 function cabecera(c,v,clave,primera,parte,nv){
   var tit=titulo(c,parte),ver=nv>1?'V'+(v+1)+' de '+nv:'';
   if(!primera)return '<div class="hoja-mini"><span>'+esc(tit)+(ver?' · '+ver:'')+(clave?' · CLAVE':'')+'</span><span>'+esc(c.col)+'</span></div>';
-  return '<div class="hoja-cab"><img src="icons/logo.webp" alt=""><div class="tt"><div class="t1">'+esc(tit)+(clave?' — CLAVE':'')+'</div><div class="t2">'+[c.col,c.doc&&('Docente: '+c.doc),c.cur&&('Curso: '+c.cur),c.nivel<3&&NB&&('Nivel: '+NB.CORTO[c.nivel]),'Temas: '+c.temas.map(function(t){return TEMAS_N[t];}).join(', ')].filter(Boolean).map(esc).join(' · ')+'</div></div>'+(ver?'<div class="ver">'+ver+'</div>':'')+'</div>'+
+  return '<div class="hoja-cab"><img src="icons/logo.webp" alt=""><div class="tt"><div class="t1">'+esc(tit)+(clave?' — CLAVE':'')+'</div><div class="t2">'+[c.col,c.doc&&('Docente: '+c.doc),c.cur&&('Curso: '+c.cur),c.curso<11&&DB&&('Preguntas según los DBA hasta '+DB.NOM[c.curso]),'Temas: '+c.temas.map(function(t){return TEMAS_N[t];}).join(', ')].filter(Boolean).map(esc).join(' · ')+'</div></div>'+(ver?'<div class="ver">'+ver+'</div>':'')+'</div>'+
     (clave?'<div class="hoja-ins clave-ins">🔒 Solo para el docente · Código '+esc(c.seed)+(nv>1?' · versión '+(v+1):'')+'. Las explicaciones en verde ayudan a retroalimentar.</div>'
       :'<div class="hoja-datos"><span>Nombre:</span><span>Curso:</span><span>Fecha:</span></div><div class="hoja-ins">'+(parte==='eval'?'Lee con atención. Trabaja de forma individual.'+(c.burbujas?' Marca tus respuestas en la hoja de respuestas.':''):parte==='guia'?'Desarrolla cada sesión en orden. Puedes apoyarte en los módulos de BioNom.':'Lee con atención cada pregunta. Puedes apoyarte en los módulos de BioNom.')+'</div>');
 }
@@ -319,8 +323,8 @@ window.DOC_GEN={modo:function(m){MODO=m;$('panel-gen').setAttribute('data-modo',
   $('g-intro').innerHTML=intro;llenarVersiones();pintar();},pintar:pintar};
 ['g-mc','g-vf','g-esc','g-ord','g-ab','g-saber','g-abE','g-mcE','g-col','g-doc','g-cur','g-tit','g-seed'].forEach(function(id){var e=$(id);if(e)e.addEventListener('input',pintar);});
 if($('g-icfes'))$('g-icfes').addEventListener('change',pintar);
-if($('g-nivel')){try{var _nv=localStorage.getItem('bionom_nivel_docente');if(_nv&&/^[123]$/.test(_nv))$('g-nivel').value=_nv;}catch(e){}
-  $('g-nivel').addEventListener('change',function(){try{localStorage.setItem('bionom_nivel_docente',$('g-nivel').value);}catch(e){}pintar();});}
+if($('g-curso')){try{var _nv=localStorage.getItem('bionom_curso_docente');if(_nv&&/^(6|7|8|9|10|11)$/.test(_nv))$('g-curso').value=_nv;}catch(e){}
+  $('g-curso').addEventListener('change',function(){try{localStorage.setItem('bionom_curso_docente',$('g-curso').value);}catch(e){}pintar();});}
 ['g-burb'].forEach(function(id){$(id).addEventListener('change',pintar);});
 $('g-acts').addEventListener('change',pintar);
 $('g-nver').addEventListener('input',function(){llenarVersiones();pintar();});$('g-vsel').addEventListener('change',pintar);
