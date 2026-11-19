@@ -145,6 +145,7 @@
     <a href="#punnett">🔲 Punnett</a>
     <a href="#dihibrido">🧮 Dihíbrido</a>
     <a href="#meiosis">✂️ Meiosis y Mendel</a>
+    <a href="#probabilidad">🎲 Probabilidades</a>
     <a href="#otras">🔴 Más allá de Mendel</a>
     <a href="#genealogias">🌳 Genealogías</a>
     <strong>Molecular</strong>
@@ -172,7 +173,7 @@
       </div>
     </div>
     <div class="grid g3" style="margin-top:14px">
-      <div class="flip"><div class="in"><div class="fr"><span class="e">🔠</span><b>Dominante y recesivo</b><small>toca para voltear</small></div><div class="bk">El alelo <b>dominante</b> (mayúscula) se manifiesta aunque haya uno solo. El <b>recesivo</b> (minúscula) solo se ve si hay dos iguales.</div></div></div>
+      <div class="flip"><div class="in"><div class="fr"><span class="e">🔠</span><b>Dominante y recesivo</b><small>toca para voltear</small></div><div class="bk">El alelo <b>dominante</b> (mayúscula) se manifiesta aunque haya uno solo. El <b>recesivo</b> (minúscula) solo se ve si hay dos iguales. <b>Dominante no significa más frecuente ni mejor:</b> hay rasgos dominantes poco comunes y recesivos muy comunes, como el grupo sanguíneo O.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">👯</span><b>Homocigoto y heterocigoto</b><small>toca para voltear</small></div><div class="bk"><b>Homocigoto</b>: los dos alelos iguales (AA o aa). <b>Heterocigoto</b>: dos alelos distintos (Aa). «Homo» = igual; «hetero» = diferente.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">🧾</span><b>Genotipo y fenotipo</b><small>toca para voltear</small></div><div class="bk"><b>Genotipo</b>: las letras, los alelos que tienes (Aa). <b>Fenotipo</b>: lo que se ve o se mide (semilla amarilla). Dos genotipos distintos pueden dar el mismo fenotipo.</div></div></div>
     </div>
@@ -238,11 +239,43 @@
   <!-- ═══ MEIOSIS ═══ -->
   <section class="sec" id="meiosis">
     <h2><span class="n">05</span> La meiosis explica las leyes de Mendel</h2>
-    <div class="clave">La <b>segregación</b> de Mendel ocurre cuando se separan las parejas de cromosomas en la meiosis I: cada gameto recibe un solo alelo de cada gen. La <b>transmisión independiente</b> ocurre porque cada pareja se orienta al azar en la metafase I.</div>
+    <div class="clave">La <b>segunda ley de Mendel</b> (segregación) y la <b>tercera</b> (distribución independiente) se explican con la meiosis. La <b>segregación</b> ocurre cuando se separan las parejas de cromosomas en la meiosis I: cada gameto recibe un solo alelo de cada gen. La <b>transmisión independiente</b> ocurre porque cada pareja se orienta al azar en la metafase I.</div>
     <a class="card" href="division.html#meiosis" style="display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--cn-tx)"><span style="font-size:2.6rem">✂️</span><span><b style="color:var(--cn-brand-d);font-size:1.15rem">Ver la meiosis paso a paso →</b><br><small style="color:var(--cn-dim)">En el módulo División celular: sigue los alelos A, a, B y b hasta los gametos.</small></span></a>
   </section>
 
   <!-- ═══ MÁS ALLÁ DE MENDEL ═══ -->
+  <section class="sec" id="probabilidad">
+    <h2><span class="n">05b</span> Probabilidades sin cuadro, cruce de prueba y Rh</h2>
+    <p class="lead">El cuadro de Punnett es un camino; las <b>probabilidades</b> son otro, más rápido cuando hay muchos genes. Toca cada pestaña.</p>
+    <div class="tabs"><button class="chip on" data-tab="pr-reg">✖️ Multiplicar y sumar</button><button class="chip" data-tab="pr-tri">🔢 Trihíbrido</button><button class="chip" data-tab="pr-test">🔍 Cruce de prueba</button><button class="chip" data-tab="pr-rh">🩸 El factor Rh</button></div>
+    <div class="tab-p" id="pr-reg">
+      <p><b>Regla del producto:</b> la probabilidad de que ocurran <b>dos cosas independientes</b> a la vez es el producto de sus probabilidades. En Aa × Aa, cada padre da el alelo <i>a</i> con probabilidad ½: P(aa) = ½ × ½ = <b>¼</b>.</p>
+      <p><b>Regla de la suma:</b> si hay <b>varias formas</b> de obtener el mismo resultado, se suman. Aa puede salir de dos maneras (A del padre y a de la madre, o al revés): ¼ + ¼ = <b>½</b>.</p>
+      <p>En un dihíbrido AaBb × AaBb, P(con A y con B) = ¾ × ¾ = <b>9/16</b>, igual que en la proporción 9:3:3:1.</p>
+    </div>
+    <div class="tab-p" id="pr-tri">
+      <p>Un <b>trihíbrido</b> sigue tres genes. Ejemplo (arveja): plantas altas (T) o enanas (t), semillas amarillas (A) o verdes (a), lisas (L) o rugosas (l). Se cruza <b>TtAaLl × ttaall</b>.</p>
+      <p>Cada gen se calcula aparte: Tt × tt da ½ Tt y ½ tt; igual con A y con L. Para <b>TtAaLl</b>: ½ × ½ × ½ = <b>1/8</b>. Hay 8 combinaciones posibles, todas con probabilidad 1/8: no hace falta un cuadro de 64 casillas.</p>
+    </div>
+    <div class="tab-p" id="pr-test">
+      <p>¿Cómo sabes si una planta de semillas amarillas es <b>AA</b> o <b>Aa</b>? Se hace un <b>cruce de prueba</b>: se cruza con una planta recesiva <b>aa</b>.</p>
+      <ul><li>Si <b>todos</b> los hijos son amarillos, la planta era <b>AA</b>.</li><li>Si <b>cerca de la mitad</b> son verdes, la planta era <b>Aa</b>.</li></ul>
+      <p><b>Diseña tu experimento:</b> para comprobar la ley de la segregación con una planta de dos formas, escribe qué cruces harías, cuántos descendientes contarías y qué proporción esperarías.</p>
+    </div>
+    <div class="tab-p" id="pr-rh">
+      <p>El <b>factor Rh</b> es otro rasgo de la sangre: <b>Rh positivo</b> es dominante (D) y <b>Rh negativo</b> es recesivo (d). Dos padres Rh positivos heterocigotos (Dd × Dd) pueden tener un hijo Rh negativo con probabilidad <b>¼</b>.</p>
+      <p>Se combina con los grupos ABO: una persona puede ser, por ejemplo, A+ o A−.</p>
+    </div>
+    <div class="chequeo" data-ok="0" data-exp="Cada padre Aa da el alelo a con probabilidad ½. Para que el hijo sea aa deben darlo los dos: ½ × ½ = ¼.">
+      <div class="q">Si dos padres Aa tienen un hijo, ¿cuál es la probabilidad de que sea aa?</div>
+      <div class="ops"><button class="op">¼</button><button class="op" data-por="½ es la probabilidad de que sea Aa (dos maneras de obtenerlo), no aa.">½</button><button class="op" data-por="Hay probabilidad de que sea aa, y no es un 100 %: depende del azar en cada gameto.">1</button></div>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="Con una planta aa solo se puede ver el alelo que da la otra planta: si es AA, todos los hijos serán Aa (amarillos); si es Aa, la mitad serán aa (verdes).">
+      <div class="q">En un cruce de prueba salen unos hijos amarillos y unos verdes. ¿Qué genotipo tenía la planta amarilla?</div>
+      <div class="ops"><button class="op" data-por="Si fuera AA, todos los hijos serían amarillos.">AA</button><button class="op">Aa</button><button class="op" data-por="aa sería verde, no amarilla.">aa</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="otras">
     <h2><span class="n">06</span> Más allá de Mendel</h2>
     <p class="lead">No todos los genes funcionan con un dominante y un recesivo. Explora tres casos famosos.</p>
@@ -343,7 +376,7 @@
       <div class="ops"><button class="op" data-por="El ARNm no fabrica aminoácidos: lleva la receta. Los aminoácidos los traen los ARN de transferencia.">Porque fabrica los aminoácidos.</button><button class="op">Porque el ADN no sale del núcleo y los ribosomas están afuera.</button><button class="op" data-por="El ARNm no copia el ADN para la división: eso es la replicación, y la hace la ADN polimerasa.">Porque copia el ADN antes de la división celular.</button></div>
     </div>
     <div class="chequeo" data-ok="0" data-exp="La primasa pone un cebador de ARN para que la ADN polimerasa pueda empezar a copiar. El ARN mensajero y el de transferencia trabajan después, en la síntesis de proteínas.">
-      <div class="q">¿Qué ARN participa en la replicación del ADN?</div>
+      <div class="q">¿Qué ARN participa en la replicación del ADN? (profundización 10.°–11.°)</div>
       <div class="ops"><button class="op">El cebador de ARN que pone la primasa.</button><button class="op" data-por="El ARN mensajero lleva la receta de un gen al ribosoma: actúa en la síntesis de proteínas, no en la copia del ADN.">El ARN mensajero.</button><button class="op" data-por="El ARN de transferencia lleva aminoácidos al ribosoma durante la traducción.">El ARN de transferencia.</button></div>
     </div>
     <div class="grid g2" style="margin-top:12px">
@@ -372,6 +405,8 @@
       <div class="card"><h3>🚬 Sustancias químicas</h3><p>El humo del tabaco, el benceno, el asbesto y algunas sustancias que se forman al quemar o ahumar mucho los alimentos, o los nitritos de muchas carnes procesadas.</p></div>
       <div class="card"><h3>🦠 Algunos virus</h3><p>Como el virus del papiloma humano (VPH), que puede causar cáncer de cuello uterino. Por eso existe una vacuna para niñas y niños.</p></div>
     </div>
+    <div class="dato">🧬 <b>Mutaciones cromosómicas:</b> además de cambios en una letra (mutaciones génicas), pueden cambiar trozos de cromosomas o su <b>número</b>. En el <b>síndrome de Down</b> hay tres copias del cromosoma 21 (trisomía 21), casi siempre por una no disyunción en la meiosis. El <b>cariotipo</b> es la foto ordenada de los cromosomas de una persona y sirve para detectarlo. No es contagioso ni lo causa algo que hicieran los padres.</div>
+    <div class="dato">📌 Una mutación en una célula del cuerpo (<b>somática</b>) no se hereda. Solo pasa a los hijos si ocurre en un gameto o en las células que lo forman.</div>
     <div class="dato">No todas las mutaciones son malas: la mayoría no tiene efecto y algunas son <b>ventajosas</b>. Son la fuente de la variabilidad sobre la que actúa la evolución.</div>
     <div class="chequeo" data-ok="1" data-exp="Al insertar o borrar una letra, todos los codones que siguen se leen corridos: cambia casi toda la proteína. Por eso suelen ser mutaciones más graves.">
       <div class="q">¿Por qué una inserción suele ser más grave que cambiar una letra por otra?</div>
@@ -383,6 +418,7 @@
   <section class="sec" id="biotecnologia">
     <h2><span class="n">12</span> Biotecnología: ¿hasta dónde debemos llegar?</h2>
     <p class="lead">La <b>biotecnología</b> usa seres vivos o sus moléculas para producir algo útil. Hacer pan o yogur ya es biotecnología; hoy además podemos <b>leer, cortar y pegar genes</b>. Eso trae grandes beneficios y preguntas éticas difíciles. Lee cada técnica, piensa tu posición y luego mira los argumentos de los dos lados.</p>
+    <div class="dato">🌱 <b>Biotecnología para el ambiente y la energía:</b> hay bacterias que degradan derrames de petróleo (<b>biorremediación</b>), caña de azúcar que se fermenta para obtener <b>etanol</b> como combustible y residuos orgánicos que producen <b>biogás</b>. Cada país regula estas técnicas con leyes y entidades; en Colombia las revisan, por ejemplo, el ICA, el Invima y el Ministerio de Salud, siguiendo acuerdos como el Protocolo de Cartagena.</div>
     <div class="grid g3">
       <div class="card"><h3>👥 Lente social</h3><p>¿Quién se beneficia y quién queda por fuera? Costos, acceso a los tratamientos y derechos de las personas.</p></div>
       <div class="card"><h3>⚖️ Lente bioético</h3><p>La <b>bioética</b> pregunta si algo se debe hacer, no solo si se puede: consentimiento, privacidad, respeto por la vida.</p></div>
@@ -396,7 +432,7 @@
     </div>
     <div class="chequeo" data-ok="1" data-exp="La bioética no se limita a lo que es posible hacer: analiza si es correcto hacerlo, con argumentos sobre la vida, la dignidad y la justicia.">
       <div class="q">Un laboratorio puede editar el ADN de un embrión. ¿Qué pregunta es de bioética?</div>
-      <div class="ops"><button class="op" data-por="Es una pregunta técnica: sobre cómo se hace, no sobre si debe hacerse.">¿Qué enzima corta mejor el ADN?</button><button class="op">¿Es correcto hacerlo y quién debe decidirlo?</button><button class="op" data-por="Es una pregunta económica; la bioética se ocupa de lo que es justo y respetuoso de la vida.">¿Cuánto cuesta cada edición?</button></div>
+      <div class="ops"><button class="op" data-por="Es una pregunta técnica: sobre cómo se hace, no sobre si debe hacerse.">¿Qué enzima corta mejor el ADN?</button><button class="op">¿Es correcto hacerlo y quién debe decidirlo?</button><button class="op" data-por="Es una pregunta técnica sobre el tiempo; no trata de si es correcto hacerlo.">¿Cuántas horas tarda el procedimiento?</button></div>
     </div>
     <div class="sig"><a href="reproduccion.html"><small>← Anterior</small><b>👶 Reproducción</b></a><a class="der" href="evolucion.html"><small>Siguiente →</small><b>🦎 Evolución</b></a></div>
   </section>

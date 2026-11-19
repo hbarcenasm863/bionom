@@ -29,6 +29,16 @@ ajustes pregunta por pregunta de la auditoría están en `dba-ajustes.js`. **El 
 (0 contradicciones de 1 432). Cada DBA tiene **20 o más** preguntas del Juego, Saber 11 y abiertas. Sin DBA propio hay
 130 del Juego, 122 Saber y 95 abiertas. El panel docente permite escoger «Solo un DBA» o «Sin DBA propio».
 
+**Contenido agregado en la versión 2.64 (auditoría, fase 4)** para cubrir evidencias de los DBA y respaldar preguntas:
+- 7.° DBA 3: tabla de fotosíntesis frente a respiración con reactivos, productos y la predicción de la tala (Ecosistemas §10); descomponedores en la red; «respirar no es la respiración celular» y un chequeo de comparación (Célula).
+- 7.° DBA 4: uso responsable del agua, microbios útiles (compost, fermentados, plantas de tratamiento), especie clave, biomagnificación y polinización (Ecosistemas §10).
+- 8.° DBA 4: «Mis hábitos y mis sistemas» (los seis sistemas, Sistemas §13), la sangre y la coagulación (§11), cómo se forma la orina (§12), bocio, amilasa, alergias y enfermedades autoinmunes, y «Inmune» en el clasificador.
+- 9.° DBA 4: probabilidades (producto y suma), trihíbrido, cruce de prueba y factor Rh (Genética §05b); la 2.ª y 3.ª ley nombradas con la meiosis. 9.° DBA 5: mutaciones cromosómicas, síndrome de Down, cariotipo y mutaciones somáticas.
+- 9.° DBA 6: definición de teoría e hipótesis, «no sobreviven los más fuertes», formación de un fósil y convergencia (Evolución).
+- 10.° DBA 4: biotecnología ambiental y energética y quién regula (Genética). 6.° DBA 5: líquenes, la mula y las especies endémicas (Reinos).
+- 11.° DBA 5: tiempo y clima, sumideros y albedo, acuerdos (Montreal y París), residuos, economía circular y microplásticos, clima y salud (Ambiente §09); dimensión económica, guardaparques, hipopótamos invasores y una investigación de especies del entorno (Regiones §06); «Mi huella y la de mi comunidad» (Ambiente §07).
+- Siguen sin cubrirse por decisión del docente (hasta que haya política pública): consentimiento y abuso, ruta legal de la interrupción del embarazo, salud mental y conductas alimentarias, líneas de ayuda.
+
 **Sin DBA propio:** Funciones vitales comparadas y Nutrición y salud (se ligan a 7.° 3 y 8.° 4).
 La respiración celular: el DBA pide *explicar el proceso y el rol de la mitocondria* en 6.° y
 *compararla con la fotosíntesis (reactivos y productos)* en 7.°. Las etapas (glucólisis, ciclo de

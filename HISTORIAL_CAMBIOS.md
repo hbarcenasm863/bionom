@@ -6,6 +6,36 @@
 
 ---
 
+## Versión 2.64 — 19 de noviembre de 2026 · Auditoría, fase 4: contenido que respalda las preguntas
+
+**Contexto.** El docente decidió **agregar el contenido** que respalda las preguntas que la auditoría halló sin base
+(respuesta 2), y dejar fuera el contenido sensible hasta que haya política pública (respuesta 1).
+
+**Páginas (con chequeos nuevos en cada sección)**
+- **Ambiente §09 «Clima, acuerdos y residuos»:** tiempo y clima, sumideros y albedo, Protocolo de Montreal y Acuerdo de
+  París (Colombia: neutralidad de carbono hacia 2050, Ley 2169 de 2021; las metas se actualizan), 3 R, economía circular,
+  microplásticos, compost y clima y salud (dengue). El simulador aclara que muestra el calentamiento de largo plazo y que los
+  corales dependen de lo que hagamos.
+- **Ecosistemas §10 «Más piezas»:** descomponedores, tabla de fotosíntesis y respiración con predicción de la tala, especie
+  clave, biomagnificación, polinización, microbios útiles y uso responsable del agua. La barra «Siguiente» pasa al final.
+- **Regiones §06:** tarjeta económica, guardaparques, hipopótamos del Magdalena Medio e investigación de especies del entorno.
+- **Sistemas §11 a §13:** la sangre (componentes, coagulación, circulación mayor y menor), cómo se forma la orina y «Mis
+  hábitos y mis sistemas» (los seis sistemas); bocio, amilasa, alergias y autoinmunidad; «Inmune» en el clasificador; la zona
+  normal de glucosa aclara «en ayunas».
+- **Célula:** «respirar no es la respiración celular», chequeo de comparación y citoesqueleto. **Reinos:** la mula y el concepto
+  de especie, los líquenes y las especies endémicas.
+- **Genética §05b:** probabilidades, trihíbrido, cruce de prueba y Rh; la 2.ª y la 3.ª ley con la meiosis; mutaciones
+  cromosómicas, síndrome de Down, cariotipo y mutaciones somáticas; biotecnología ambiental; «dominante no es más frecuente»; el
+  chequeo de bioética ya no contradice el lente social. **Evolución:** teoría e hipótesis, «no sobreviven los más fuertes»,
+  formación de un fósil, convergencia y aviso sobre las cifras de ADN compartido.
+- `MATRIZ_DBA.md` con lo agregado. Todas las páginas sin errores ni desbordes a 390 y 1100 px.
+
+**Pendiente.** Fase 3 (calidad de las preguntas: largo de las opciones, pistas, duplicados) y ajustar las preguntas a lo nuevo.
+Quedan sin hacer (no se pidieron o falta verificar): un árbol de parentesco en Reinos, más sobre el sistema óseo y muscular,
+una red trófica con los organismos locales del estudiante, manglares y agricultura amigable.
+
+---
+
 ## Versión 2.63 — 19 de noviembre de 2026 · Herramienta privada del docente (sin cambios en el sitio)
 
 **Contexto.** El docente pidió una herramienta privada para su cuenta de Claude, armada con los bancos de preguntas

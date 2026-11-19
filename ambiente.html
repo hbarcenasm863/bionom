@@ -59,6 +59,7 @@
     <a href="#energias">⚡ Energías</a>
     <a href="#huella">👣 Mi huella</a>
     <a href="#aire">🌫️ Contaminación del aire</a>
+    <a href="#acuerdos">🧩 Clima, acuerdos y residuos</a>
     <a href="#acciones">✅ Qué hacer</a>
   </nav>
 
@@ -71,6 +72,7 @@
         <label for="co2" style="font-weight:800">CO₂ en la atmósfera (partes por millón)</label>
         <input type="range" id="co2" min="280" max="800" step="10" value="280" style="width:100%">
         <div id="co2-t" aria-live="polite" style="margin-top:8px"></div>
+        <p style="font-size:.84rem;color:var(--cn-dim);margin:6px 0 0">El calentamiento que muestra el control es el de <b>largo plazo</b> para ese nivel de CO₂. El que ya se ha medido (cerca de 1,2 °C) es menor porque el océano tarda décadas en calentarse.</p>
       </div>
     </div>
     <h3 style="margin-top:18px">📈 Los datos: el CO₂ medido desde 1960</h3>
@@ -169,8 +171,44 @@
     </div>
   </section>
 
+  <section class="sec" id="acuerdos">
+    <h2><span class="n">09</span> Clima, acuerdos y residuos: piezas que completan el cuadro</h2>
+    <p class="lead">Para entender el cambio climático y actuar hacen falta algunas ideas más. Toca cada pestaña a tu ritmo.</p>
+    <div class="tabs"><button class="chip on" data-tab="ac-tc">🌦️ Tiempo y clima</button><button class="chip" data-tab="ac-sum">🌳 Sumideros y albedo</button><button class="chip" data-tab="ac-acu">🤝 Acuerdos</button><button class="chip" data-tab="ac-res">♻️ Residuos y plásticos</button><button class="chip" data-tab="ac-sal">🩺 Clima y salud</button></div>
+    <div class="tab-p" id="ac-tc">
+      <p>El <b>tiempo</b> es cómo está la atmósfera hoy o esta semana: lluvia, sol, temperatura. El <b>clima</b> es el patrón promedio de muchos años (se calcula con 30 años o más).</p>
+      <p>Un día muy frío no desmiente el calentamiento global, igual que un día de lluvia no cambia el clima de un lugar seco. El <b>cambio climático</b> es un cambio en esos promedios y en la frecuencia de los eventos extremos.</p>
+    </div>
+    <div class="tab-p" id="ac-sum">
+      <p>Un <b>sumidero de carbono</b> es un sistema que absorbe más carbono del que libera: los bosques (por la fotosíntesis), los océanos y los suelos. Por eso deforestar convierte un sumidero en una fuente de CO₂.</p>
+      <p>El <b>albedo</b> es la fracción de la luz del Sol que una superficie refleja. La nieve y el hielo reflejan mucha luz (albedo alto); el océano y el bosque oscuro, poca (albedo bajo). Cuando el hielo se derrite queda una superficie oscura que absorbe más calor, y eso calienta aún más: es una <b>retroalimentación positiva</b>.</p>
+    </div>
+    <div class="tab-p" id="ac-acu">
+      <p>🌍 <b>Protocolo de Montreal (1987):</b> los países acordaron eliminar los CFC, los gases que dañaban la capa de ozono. Funcionó: la capa se está recuperando. Es la prueba de que los acuerdos pueden resolver un problema ambiental global.</p>
+      <p>🤝 <b>Acuerdo de París (2015):</b> casi todos los países se comprometieron a mantener el calentamiento <b>muy por debajo de 2 °C</b> y a esforzarse por llegar a <b>1,5 °C</b>, frente a la era preindustrial. Cada país presenta sus propias metas de reducción de emisiones y las revisa cada cierto tiempo.</p>
+      <p>Colombia presentó metas de reducción para 2030 y se ha propuesto llegar a la neutralidad de carbono hacia 2050 (Ley 2169 de 2021). Las metas se actualizan: consulta las más recientes en el sitio del Ministerio de Ambiente.</p>
+    </div>
+    <div class="tab-p" id="ac-res">
+      <p>♻️ <b>Las 3 R:</b> <b>reducir</b> (comprar y usar menos), <b>reutilizar</b> (darle otro uso) y <b>reciclar</b> (convertir el residuo en materia prima). El orden importa: lo mejor es no generar el residuo.</p>
+      <p>🔄 <b>Economía circular:</b> en vez de «extraer, fabricar, usar y botar» (economía lineal), los productos se diseñan para repararse, reutilizarse y reciclarse, de modo que el residuo de uno sea la materia prima de otro.</p>
+      <p>🔬 <b>Microplásticos:</b> son fragmentos de plástico de menos de 5 mm. Se forman cuando los plásticos se rompen o se desgastan, llegan a ríos y mares, los animales los comen y así entran en la cadena alimentaria. Lo orgánico, en cambio, puede volverse abono con el <b>compostaje</b> en vez de producir metano en el relleno sanitario.</p>
+    </div>
+    <div class="tab-p" id="ac-sal">
+      <p>El calentamiento aumenta las olas de calor y puede ampliar la zona donde viven los mosquitos que transmiten enfermedades como el <b>dengue</b>, hacia ciudades que antes eran más frescas.</p>
+      <p>Los más afectados suelen ser los niños, los adultos mayores y las comunidades con menos servicios. Cuidar el clima también cuida la salud.</p>
+    </div>
+    <div class="chequeo" data-ok="1" data-exp="El tiempo es lo que pasa hoy; el clima es el promedio de muchos años. Un día frío no cambia el promedio ni desmiente el calentamiento global.">
+      <div class="q">Un día muy frío en Bogotá, ¿desmiente el calentamiento global?</div>
+      <div class="ops"><button class="op" data-por="Un solo día es tiempo, no clima: el calentamiento se ve en los promedios de muchos años.">Sí, porque si el planeta se calienta no puede hacer frío.</button><button class="op">No, porque el tiempo de un día no es lo mismo que el clima.</button><button class="op" data-por="El clima no cambia de un día para otro: se mide con promedios de décadas.">Sí, porque el clima cambia cada día.</button></div>
+    </div>
+    <div class="chequeo" data-ok="2" data-exp="Un sumidero absorbe más carbono del que libera. Los bosques lo hacen con la fotosíntesis; si se talan, dejan de absorberlo y pueden liberarlo.">
+      <div class="q">¿Qué es un sumidero de carbono?</div>
+      <div class="ops"><button class="op" data-por="Eso sería una fuente de carbono, no un sumidero.">Un lugar que produce más CO₂ del que absorbe.</button><button class="op" data-por="Un sumidero no es un hueco: es un sistema vivo o natural que absorbe carbono.">Un hueco donde se entierra la basura.</button><button class="op">Un sistema, como un bosque, que absorbe más carbono del que libera.</button></div>
+    </div>
+  </section>
+
   <section class="sec" id="acciones">
-    <h2><span class="n">09</span> Mitigar, adaptarse y ser resilientes</h2>
+    <h2><span class="n">10</span> Mitigar, adaptarse y ser resilientes</h2>
     <p class="lead">Frente al cambio climático hay tres tipos de acciones. <b>Mitigar</b> es reducir las emisiones (atacar la causa). <b>Adaptarse</b> es prepararse para los cambios que ya vienen. Ser <b>resiliente</b> es poder recuperarse rápido después de un desastre. Clasifica estas acciones.</p>
     <div class="card" id="clas-acc"></div>
     <div class="clave">Ninguna persona sola detiene el cambio climático, pero las decisiones de muchos sí cambian las cosas: en la casa, en el colegio, en el barrio y en lo que exigimos a los gobiernos. Un proyecto escolar de reforestación, de ahorro de agua o de reciclaje es ciencia aplicada.</div>
@@ -200,7 +238,7 @@ function dibTierra(c){var k=(c-280)/520,s='<defs><radialGradient id="esp" cx="50
 function verCO2(){var c=+co2.value,dt=3*Math.log(c/280)/Math.log(2);
   document.getElementById('tierra').innerHTML=dibTierra(c);
   var hito=c<=290?'Nivel de antes de la Revolución Industrial (siglo XVIII).':c<=330?'Nivel de 1970.':c<=380?'Nivel del año 2005.':c<=410?'Nivel de los años 2010 a 2019.':c<=430?'<b>Nivel actual</b> (cerca de 420 ppm o más): el más alto en al menos 800 000 años.':c<=560?'El doble que antes de la industria: puede ocurrir en este siglo si no cambiamos.':'Escenario extremo de emisiones muy altas.';
-  document.getElementById('co2-t').innerHTML='<div class="termo">+'+dt.toFixed(1).replace('.',',')+' °C</div><p>Calentamiento aproximado a largo plazo respecto a la era preindustrial.</p><p style="margin-top:6px">'+hito+'</p>'+(dt>1.5?'<p style="margin-top:6px;color:#b42318;font-weight:700">Por encima de 1,5 °C los científicos esperan daños graves: pérdida de casi todos los corales, más sequías e inundaciones, glaciares perdidos.</p>':'');
+  document.getElementById('co2-t').innerHTML='<div class="termo">+'+dt.toFixed(1).replace('.',',')+' °C</div><p>Calentamiento aproximado a largo plazo respecto a la era preindustrial.</p><p style="margin-top:6px">'+hito+'</p>'+(dt>1.5?'<p style="margin-top:6px;color:#b42318;font-weight:700">Por encima de 1,5 °C los científicos esperan daños graves: pérdida de la gran mayoría de los corales, más sequías e inundaciones, glaciares perdidos. Lo que pase depende de lo que hagamos desde ahora.</p>':'');
   if(c>=420)BIO.marcarSeccion('invernadero');}
 co2.oninput=verCO2;verCO2();
 // curva de Keeling (valores aproximados)
