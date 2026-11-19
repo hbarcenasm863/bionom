@@ -18,6 +18,20 @@
 
 ---
 
+## Versión 2.73 — 19 de noviembre de 2026 · Banco Saber de biología: 96 preguntas nuevas de explicación e indagación
+
+**Contexto.** El docente pidió ampliar los bancos hacia ~30 preguntas por tema y por competencia, empezando por química y siguiendo con biología, y reforzar sobre todo la **indagación**, lo más débil en las instituciones. En BioNom, la explicación (8 a 22 por tema) y la indagación (8 a 16) eran las competencias más cortas.
+
+**Cambios.**
+- `docente-datos.js` (bloque nuevo al final): 96 preguntas Saber originales, 8 por tema en los 12 temas: 1 de uso, 3 de explicación y 4 de indagación (48 de indagación, la mitad del lote). 24 de las de indagación traen su tabla o su gráfica; 10 son de ciencia, tecnología y sociedad. Escritas con el estilo del cuadernillo del Icfes y la matriz del Marco de referencia 2019; las cifras inventadas terminan con «(Datos de ejemplo.)».
+- **Auditoría independiente** (un agente resolvió las 96 a ciegas y las contrastó con el Marco): coincidió con la clave en 96 de 96; 60 aprobadas, 23 con ajuste menor y 13 por corregir. Se aplicó el informe completo: un error científico (Q51, ciclo hormonal: la LH se dispara con estrógenos altos a mitad de ciclo), explicaciones que no correspondían, contextos que adelantaban la respuesta, datos incoherentes (Q63, Q69, Q88) y distractores de opinión o costo cambiados por errores conceptuales reales; la idea lamarckiana quedó como distractor en 3 preguntas, no en 7. La opción correcta es la más larga en 20 % de las preguntas y nunca por más de 8 caracteres.
+- `saber-juego.js`: regenerado con `node herramientas/generar-saber-juego.js` (739 preguntas).
+- Caché `bionom-v86`; `docente-datos.js?v=35`, `saber-juego.js?v=14`. `node herramientas/revisar-sintaxis.js`: sin errores. Se probó con Playwright que `docente.html` y `juego.html` cargan sin errores.
+
+**Pendiente.** Una revisión del docente por muestreo (sobre todo indagación). Llegar a 30 por competencia en cada tema (hoy, por ejemplo, funciones tiene 11 de explicación y 13 de indagación; nutrición, 13 y 12). Las evidencias del marco 7.1 y 8.2 casi no tienen preguntas y faltan ítems de nivel 4. Las preguntas nuevas no traen DBA escrito a mano: lo deduce `dba-bio.js` (revisar `MATRIZ_DBA.md` si se quiere el conteo exacto). No se tocó `bionom-analytics.gs`.
+
+---
+
 ## Versión 2.72 — 19 de noviembre de 2026 · Pregunta J89 de Evolución
 
 **Contexto.** El docente pidió revisar la pregunta «Dos especies emparentadas solo pueden vivir en el mismo lugar», cuya palabra «solo» delataba que era falsa.
