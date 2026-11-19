@@ -6,6 +6,24 @@
 
 ---
 
+## Versión 2.70 — 19 de noviembre de 2026 · Fase 3 de la auditoría: retoques menores
+
+**Contexto.** El docente pidió seguir con los retoques menores de los informes.
+
+**Cambios.**
+- `ahorcado-datos.js`: dos palabras que eran fragmentos (EFECTO, DIÓXIDO) pasan a TERMÓMETRO y DESHIELO; CADENA y RED ya no
+  repiten la pista 3.
+- `sistemas.html` y `banco.js`: el intestino delgado mide de 3 a 5 metros en una persona viva (los 6 m son medidos tras la muerte).
+- `reproduccion.html`: la tabla de métodos anticonceptivos queda de mayor a menor eficacia y se quitó una frase sin fuente
+  («muy usado por adolescentes en Colombia»).
+- `dogma-anim.js`: nota del sentido 5′→3′ en la transcripción y del uso del ARNm por varios ribosomas.
+- Caché `bionom-v82`; `banco.js?v=28`, `ahorcado-datos.js?v=20`, `dogma-anim.js?v=3`.
+
+**Pendiente.** Marcar «datos de ejemplo» en algunas preguntas Saber con cifras, mejorar la plausibilidad de unos pocos
+distractores, y la notación RR/BB de dominancia incompleta (opcional). El resto de los informes ya está aplicado.
+
+---
+
 ## Versión 2.69 — 19 de noviembre de 2026 · Fase 3 de la auditoría: abiertas repetidas y retoques de redacción
 
 **Contexto.** El docente pidió terminar la fase 3: parejas de Saber de Evolución y Genética, abiertas duplicadas y retoques menores.
