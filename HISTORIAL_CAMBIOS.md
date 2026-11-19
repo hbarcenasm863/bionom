@@ -6,6 +6,23 @@
 
 ---
 
+## Versión 2.67 — 19 de noviembre de 2026 · Fase 3 de la auditoría: opciones de largo parecido
+
+**Contexto.** El docente pidió seguir con la fase 3 (calidad de las preguntas). Se midió que la respuesta correcta era la más larga
+en el 44 % de las preguntas del Juego y el 51 % de las Saber, lo que permite acertar sin saber.
+
+**Cambios.**
+- `banco.js`: dos bloques `A()` reescriben las opciones de unas 60 preguntas del Juego para que la correcta ya no sea claramente
+  la más larga. Las de 4 o más palabras con correcta ≥1,3 veces más larga que las demás bajaron de 64 a 4.
+- `docente-datos.js`: bloque `S()` que reescribe las opciones de 16 preguntas Saber (la correcta sigue de primera en el archivo).
+  Las que quedan con razón ≥1,3 bajaron de 66 a 53 (la mayoría son respuestas cortas de un sustantivo, naturales).
+- `saber-juego.js` regenerado. Caché `bionom-v79`; `banco.js?v=25`, `docente-datos.js?v=31`, `saber-juego.js?v=11`.
+
+**Pendiente de la fase 3.** Duplicados señalados en los informes, 92 preguntas verdadero/falso sin dos pistas (la mayoría
+anteriores), y retoques menores de redacción de los informes A–D. Revisar-sintaxis: 80 scripts sin errores.
+
+---
+
 ## Versión 2.66 — 19 de noviembre de 2026 · Arreglo urgente: el panel docente no cargaba
 
 **Qué pasó.** En la versión 2.61 un retoque de la redacción del aviso del filtro de curso dejó mal escrita una línea de
