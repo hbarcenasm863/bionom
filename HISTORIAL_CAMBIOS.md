@@ -40,8 +40,7 @@ cualquier curso): hay…»). Se probó el panel con varios temas, cursos y DBA y
 
 **Pendiente.** En el Juego la correcta es la más larga en 44 % de las preguntas (17 % por 1,3 veces o más); en Saber, 51 % (11 %).
 Un acortamiento automático solo sirvió en 9 casos y cambiaba el sentido de algunos, así que queda para reescribir a mano.
-También los duplicados y las 92 preguntas de verdadero/falso sin pistas. La skill «nom-banco» (versión 2.63) trae una copia de
-los bancos hecha antes de las versiones 2.60 a 2.65: conviene volver a armarla con `herramientas/armar-skill-banco.js`.
+También los duplicados y las 92 preguntas de verdadero/falso sin pistas.
 
 ---
 
