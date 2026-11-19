@@ -29,7 +29,7 @@ ajustes pregunta por pregunta de la auditoría están en `dba-ajustes.js`. **El 
 (0 contradicciones de 1 432). Cada DBA tiene **20 o más** preguntas del Juego, Saber 11 y abiertas. Sin DBA propio hay
 130 del Juego, 122 Saber y 95 abiertas. El panel docente permite escoger «Solo un DBA» o «Sin DBA propio».
 
-**Contenido agregado en la versión 2.63 (auditoría, fase 4)** para cubrir evidencias de los DBA y respaldar preguntas:
+**Contenido agregado en la versión 2.64 (auditoría, fase 4)** para cubrir evidencias de los DBA y respaldar preguntas:
 - 7.° DBA 3: tabla de fotosíntesis frente a respiración con reactivos, productos y la predicción de la tala (Ecosistemas §10); descomponedores en la red; «respirar no es la respiración celular» y un chequeo de comparación (Célula).
 - 7.° DBA 4: uso responsable del agua, microbios útiles (compost, fermentados, plantas de tratamiento), especie clave, biomagnificación y polinización (Ecosistemas §10).
 - 8.° DBA 4: «Mis hábitos y mis sistemas» (los seis sistemas, Sistemas §13), la sangre y la coagulación (§11), cómo se forma la orina (§12), bocio, amilasa, alergias y enfermedades autoinmunes, y «Inmune» en el clasificador.
