@@ -6,6 +6,31 @@
 
 ---
 
+## Versión 2.69 — 19 de noviembre de 2026 · Fase 3 de la auditoría: abiertas repetidas y retoques de redacción
+
+**Contexto.** El docente pidió terminar la fase 3: parejas de Saber de Evolución y Genética, abiertas duplicadas y retoques menores.
+
+**Cambios.**
+- `docente-datos.js`: se quitaron 8 preguntas abiertas que repetían otra (estatura y Punnett, transgénicos, Lamarck y Darwin,
+  homólogos y análogos, mutaciones, eutrofización y fijación de nitrógeno). Se reescribieron 4 para que pidan algo distinto
+  (anemia falciforme, fragmento de ADN TAC CGA ATT, agua de lluvia en una región pavimentada y antibióticos sobrantes). Cada DBA
+  sigue con 20 o más abiertas y cada tema con 40 o más.
+- Retoques de los informes: Linneo «popularizó y sistematizó» el sistema binomial; halófilas «unas 10 veces» más sal; aceite de
+  inmersión por índice de refracción; *Lactobacillus delbrueckii* subsp. *bulgaricus*; Mendel «presenta en 1865 y publica en
+  1866»; especiación «en condiciones naturales»; huevos con cáscara de insectos; agua del cuerpo entre 50 y 65 %; bomba de
+  sodio entre una cuarta y una tercera parte; pistas que revelaban la respuesta (cromosomas, Acuerdo de París «se adoptó»),
+  «varios tipos de acciones», región de menor densidad de población, Genoma Humano «descifrar la secuencia», frailejón «su
+  género es Espeletia». Muchos otros retoques de los informes ya estaban hechos en las versiones 2.57 a 2.65.
+- Caché `bionom-v81`; `banco.js?v=27`, `docente-datos.js?v=33`, `ahorcado-datos.js?v=19`, `microlab.js?v=6`.
+
+**Decisión.** Las parejas de Saber de Genética (falciforme, insulina, Dolly) y de Evolución (ballenas, río y especiación) se
+dejaron: preguntan cosas distintas con el mismo caso y los DBA 9.5 y 7.4 están justo en 20 de Saber.
+
+**Pendiente.** Algunos retoques menores de los informes B, C y D (marcar datos «de ejemplo», plausibilidad de distractores,
+rótulos 5′/3′ en `dogma-anim.js`, orden de la tabla de métodos anticonceptivos) quedan para otra sesión.
+
+---
+
 ## Versión 2.68 — 19 de noviembre de 2026 · Fase 3 de la auditoría: duplicados y pistas de verdadero/falso
 
 **Contexto.** El docente pidió seguir con los duplicados y las preguntas de verdadero/falso de la fase 3.

@@ -180,7 +180,7 @@ TEMAS: [
   'El <strong>efecto invernadero</strong> es natural: gases como el CO₂, el metano y el vapor de agua retienen calor y mantienen la Tierra a unos 15 °C. Al quemar combustibles fósiles, talar bosques y criar ganado, los humanos aumentamos esos gases y el planeta se calienta: es el <strong>cambio climático</strong>.',
   'Sus efectos ya se ven: deshielo de los glaciares, subida del nivel del mar, blanqueamiento de los corales, acidificación del océano, lluvias e inundaciones más fuertes y sequías más largas. En Colombia, El Niño trae sequías y La Niña inundaciones.',
   'En Colombia la mayor fuente de emisiones es la <strong>deforestación</strong> y el cambio de uso del suelo, sobre todo en la Amazonía. En el mundo es quemar petróleo, carbón y gas.',
-  'Hay dos tipos de acciones: la <strong>mitigación</strong> ataca la causa (energías renovables, proteger los bosques, reducir la huella de carbono) y la <strong>adaptación</strong> prepara a las comunidades para el clima que viene (recoger agua lluvia, cultivos resistentes a la sequía).'],
+  'Hay varios tipos de acciones: la <strong>mitigación</strong> ataca la causa (energías renovables, proteger los bosques, reducir la huella de carbono) y la <strong>adaptación</strong> prepara a las comunidades para el clima que viene (recoger agua lluvia, cultivos resistentes a la sequía).'],
   esquema:{raiz:'Cambio climático',ramas:[
    {t:'Causas',items:['Combustibles fósiles','Deforestación','Ganadería']},
    {t:'Gases',items:['CO₂','Metano']},
@@ -1378,4 +1378,25 @@ S('celula','Un glóbulo rojo se pone en agua destilada','El agua entra por ósmo
   ['sistemas',"Después de almorzar, el nivel de glucosa en la san","¿Qué hormona hizo que la glucosa bajara?"],
 ];
 for(var i=0;i<Q.length;i++){var ok=false;for(var k=D.SABER.length-1;k>=0;k--){var q=D.SABER[k];if(q.t===Q[i][0]&&q.ctx&&q.ctx.indexOf(Q[i][1])===0&&q.q===Q[i][2]){D.SABER.splice(k,1);ok=true;break;}}if(!ok&&window.console)console.warn('Saber duplicada no encontrada:',Q[i][0],Q[i][1]);}
+})();
+
+/* ── Fase 3 de la auditoría (versión 2.69): preguntas abiertas repetidas ── */
+(function(){var D=window.DOCENTE_DATOS;if(!D||!D.ABIERTAS)return;
+var Q=[
+['genetica',"¿Por qué la estatura no se puede predecir con un cuadro de Punnett?"],
+['genetica',"Argumenta a favor o en contra de los cultivos transgénicos en Colombia."],
+['genetica',"Explica qué es un organismo transgénico y da dos ejemplos."],
+['evolucion',"Compara las ideas de Lamarck y de Darwin sobre el cuello de la jirafa."],
+['evolucion',"Explica la diferencia entre órganos homólogos y análogos con dibujos."],
+['evolucion',"Explica por qué las mutaciones son importantes para la evolución."],
+['ecosistemas',"Explica qué es la eutrofización y cómo prevenirla."],
+['ecosistemas',"Explica qué hacen las bacterias fijadoras de nitrógeno y por qué los agricultores siembran leguminosas para mejorar el suelo."]];
+var C=[
+['nutricion',"¿Por qué no se deben tomar antibióticos para la gripa?","Una persona con gripa toma antibióticos que le sobraron. Explica por qué no le sirven y qué riesgo corre la comunidad si muchos hacen lo mismo."],
+['genetica',"Explica con un ejemplo cómo una mutación en un gen puede cambiar la proteína y el fenotipo de un organismo.","La anemia falciforme se debe al cambio de una sola base en el gen de la hemoglobina. Explica cómo ese cambio altera la proteína y qué efecto tiene en el organismo."],
+['genetica',"Describe paso a paso cómo se pasa de un gen a una proteína (transcripción y traducción) y qué papel tiene el código genético.","Un fragmento de ADN tiene la secuencia TAC CGA ATT. Escribe el ARN mensajero que se transcribe, cuántos codones tiene y qué señala el último."],
+['ecosistemas',"Escribe cómo cambiaría el ciclo del agua en una región si se talaran sus bosques y se pavimentaran sus suelos.","Se talan los bosques de una región y se pavimentan sus suelos. Describe cómo cambia el recorrido del agua de lluvia (infiltración, escorrentía y evaporación)."]];
+function pos(t,x){var L=D.ABIERTAS[t]||[];for(var i=0;i<L.length;i++){if(L[i]===x)return i;}if(window.console)console.warn('Abierta no encontrada:',t,x);return -1;}
+for(var i=0;i<C.length;i++){var p=pos(C[i][0],C[i][1]);if(p>=0)D.ABIERTAS[C[i][0]][p]=C[i][2];}
+for(var j=0;j<Q.length;j++){var r=pos(Q[j][0],Q[j][1]);if(r>=0)D.ABIERTAS[Q[j][0]].splice(r,1);}
 })();

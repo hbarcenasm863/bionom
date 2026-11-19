@@ -20,7 +20,7 @@ var REAL={cebolla:['k_cebolla','Epidermis de cebolla al microscopio óptico (400
   mejilla:['k_cheek','Células de la mejilla teñidas con azul de metileno: el núcleo se ve azul oscuro.'],
   elodea:['k_elodea','Hoja de <i>Elodea</i>: cada célula está llena de cloroplastos verdes.'],
   sangre:['m_frotis','Frotis de sangre teñido: un neutrófilo (glóbulo blanco) entre muchos glóbulos rojos y plaquetas.'],
-  yogur:['m_yogur','<i>Lactobacillus bulgaricus</i>, la bacteria del yogur, vista por el ocular a 1000×.']};
+  yogur:['m_yogur','<i>Lactobacillus delbrueckii</i> subsp. <i>bulgaricus</i>, la bacteria del yogur, vista por el ocular a 1000×.']};
 var RETO_DE={cebolla:'ceb',mejilla:'mej',elodea:'elo',sangre:'san',yogur:'yog'};
 var TIN={ninguna:'Sin teñir',lugol:'Lugol',azul:'Azul de metileno'};
 var CAMPO={4:4500,10:1800,40:450,100:180};          // diámetro del campo en µm
