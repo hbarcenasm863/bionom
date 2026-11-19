@@ -3,7 +3,7 @@
 // JS y CSS: red primero. Íconos y fuentes: stale-while-revalidate (rápido y se
 // autoactualiza en segundo plano). Todo funciona offline como respaldo.
 
-const CACHE = 'bionom-v72';
+const CACHE = 'bionom-v75';
 const FONT_CACHE = 'bionom-fonts-v1';
 
 const ASSETS = [
@@ -21,7 +21,7 @@ const ASSETS = [
   './bio.js',
   './cuerpo.js',
   './repro-anim.js',
-  './dogma-anim.js','./respiracion-anim.js','./nivel-bio.js','./dba-bio.js',
+  './dogma-anim.js','./respiracion-anim.js','./nivel-bio.js','./dba-bio.js','./dba-ajustes.js',
   './embrion-fig.js','./modelo3d.js','./microlab.js',
   './fotos.js',
   './fotos-datos.js',

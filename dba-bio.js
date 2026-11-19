@@ -64,7 +64,7 @@ var PROF_RESP='glucólisis|glucolisis|krebs|cadena respiratoria|atp sintasa|piru
 var CURSOS={
  celula:[[7,/fotos[ií]ntesis|autótrof|heterótrof|fermentaci|levadura|cloroplasto|clorofila|quimiosíntesis/i],
          [9,/endosimbi|margulis|código genético|ribosoma.*protein/i],
-         [10,new RegExp(PROF_RESP+'|lactato','i')]],
+         [10,new RegExp(PROF_RESP+'|lactato|fase luminosa|fase oscura|calvin','i')]],
  division:[[9,/meiosis|gameto|haploide|diploide|entrecruzamiento|homólog|cariotipo|disyunci|síndrome de down|punto de control|ciclina|cáncer|tumor/i]],
  reinos:[[7,/descompon|biogeoqu|ciclo del nitr|fijaci[oó]n|simbiosis|micorriz|patógen/i],
          [9,/filogen|cladograma|ancestro común|secuencias? de (adn|arn)/i]],
@@ -81,7 +81,7 @@ var CURSOS={
                [10,/fertilizaci[oó]n asistida|in vitro|clonaci|transgén|inseminaci[oó]n artificial|terapia génica/i]],
  genetica:[[10,/biotecnolog|transgénic|clonaci|crispr|terapia génica|genoma humano|ingenier[ií]a genética|\bPCR\b|adn recombinante|fertilizaci[oó]n asistida|organismo modificado|modificaci[oó]n genética|cebador|primasa|okazaki|helicasa|polimerasa|intr[oó]n|ex[oó]n|splicing|capuchón|poli-?a\b/i]],
  evolucion:[[7,/big bang|universo|oparin|miller|generaci[oó]n espont|panspermia|mundo de arn|origen de la vida|meteorito|coacervado|extinci[oó]n|extinci[oó]nes/i],
-            [10,/deriva (génica|genética)|equilibrio puntuado|cuello de botella|efecto fundador|especiaci[oó]n|hardy|weinberg|frecuencias? al[eé]lic|selección (estabilizadora|disruptiva)/i]]
+            [10,/deriva (génica|genética)|equilibrio puntuado|cuello de botella|efecto fundador|hardy|weinberg|frecuencias? al[eé]lic|selección (estabilizadora|disruptiva)/i]]
 };
 
 function texto(q){
@@ -93,36 +93,46 @@ function texto(q){
   return [q.ctx,q.q,ok].join(' ');
 }
 /* Curso mínimo de una pregunta (objeto con t, ctx, q, o|ops, curso) o de un texto con su tema. */
+function gradoDe(d){return d&&d!=='sin'?(+String(d).split('.')[0]||0):0;}
+/* Ajustes escritos a mano (dba-ajustes.js): clave «tema|comienzo del enunciado» → [dba, curso]. */
+function clave(q,tema){var t=tema||q.t,x=(typeof q==='string'?q:((q.ctx||'')+' '+(q.q||''))).replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim().toLowerCase();return t+'|'+x.slice(0,90);}
+function ajuste(q,tema){var A=window.BIO_DBA_AJUSTES;return A?A[clave(q,tema)]:null;}
 function curso(q,tema){
-  if(q&&typeof q==='object'&&q.curso!=null)return q.curso;
-  var t=tema||(q&&q.t),tx=texto(q),R=CURSOS[t]||[],mx=0;
-  for(var i=0;i<R.length;i++)if(R[i][1].test(tx)&&R[i][0]>mx)mx=R[i][0];
-  var c=mx||BASE[t]||6;
-  if(q&&typeof q==='object')q.curso=c;
+  var t=tema||(q&&q.t),aj=ajuste(q,t),obj=q&&typeof q==='object',c;
+  if(aj&&aj[1]!=null)c=aj[1];
+  else if(obj&&q.curso!=null)c=q.curso;
+  else{var tx=texto(q),R=CURSOS[t]||[],mx=0;
+    for(var i=0;i<R.length;i++)if(R[i][1].test(tx)&&R[i][0]>mx)mx=R[i][0];
+    c=mx||BASE[t]||6;}
+  var g=gradoDe(dbaDe1(q,t));if(c<g)c=g;   // el curso nunca es menor que el grado del DBA
   return c;
 }
-/* ── DBA de cada pregunta (versión 2.58) ──
-   Una pregunta con `dba` escrito a mano (las de la versión 2.57) lo conserva. Las demás
-   se etiquetan por tema y palabras clave del enunciado y la respuesta correcta:
-   la primera regla que coincide gana y, si ninguna coincide, se usa el DBA por defecto
-   del tema. Funciones vitales comparadas y Nutrición y salud no tienen DBA propio: su
-   etiqueta es la más cercana (7.3 nutrición; 8.4 sistemas y hábitos). */
+/* ── DBA de cada pregunta (versión 2.58, con «sin DBA» desde la 2.61) ──
+   Una pregunta con `dba` escrito a mano lo conserva. Las demás se etiquetan por tema y
+   palabras clave del enunciado y la respuesta correcta: la primera regla que coincide
+   gana y, si ninguna coincide, se usa el DBA por defecto del tema. `sin` es contenido
+   que ningún DBA de biología nombra (se apoya en los Estándares Básicos). Los ajustes
+   pregunta por pregunta están en dba-ajustes.js. */
 var BIOTEC=/biotecnolog|transg[eé]nic|clonaci|crispr|terapia g[eé]nica|genoma humano|ingenier[ií]a gen[eé]tica|\bPCR\b|adn recombinante|fertilizaci[oó]n asistida|in vitro|modificaci[oó]n gen[eé]tica|organismo modificado|bio[eé]tic|prueba de adn|editar el adn|edici[oó]n gen[eé]tica|embriones humanos/i;
+var TROF=/cadena|red tr[oó]fica|tr[oó]fic|productor|consumidor|descompon|flujo de energ|pir[aá]mide de energ|fotos[ií]ntesis|respiraci[oó]n|autótrof|heterótrof|nutrici/i;
+var CICLOS=/ciclo del (agua|carbono|nitr)|ciclos? de (los )?nutrientes|biogeoqu|erosi|eutrof|deforest|contaminaci[oó]n del (agua|suelo)|fijaci[oó]n de nitr|bacterias fijadoras|transpiraci|evaporaci|condensaci|infiltraci|precipitaci|microorganism|uso (responsable )?del agua|ahorro de agua|humus|suelo|nitr[oó]geno|carbono|compost/i;
+var CLIMA=/calentamiento global|cambio climático|efecto invernadero|megadiver|acuerdo de par[ií]s|huella de carbono|sumidero/i;
 var DBA_TEMA={
  celula:{def:'6.4',r:[['7.3',/fotos[ií]ntesis|cloroplasto|clorofila|autótrof|heterótrof|priestley|ciclo de calvin|tilacoide/i]]},
- division:{def:'6.4',r:[['9.4',/meiosis|gameto|haploide|diploide|entrecruzamiento|homólog|cariotipo|disyunci|síndrome de down/i]]},
- reinos:{def:'6.5',r:[['7.4',/descompon|biogeoqu|ciclo del nitr|fijaci[oó]n de nitr|micorriz/i]]},
- ecosistemas:{def:'7.3',r:[['7.4',/ciclo|carbono|nitr[oó]geno|biogeoqu|erosi|suelo|deforest|contaminaci|microorganism|agua/i],['11.5',/calentamiento global|cambio climático|efecto invernadero|megadiver/i]]},
- colombia:{def:'7.3',r:[['11.5',/megadiver|biodiversidad|amenaz|en peligro|conservaci|tráfico|miner[ií]a|deforest|calentamiento|deshielo|nevado|endémic|protegid|parque|especies? (invasora|exótica)/i]]},
+ division:{def:'6.4',r:[['sin',/inclusi[oó]n|discriminaci[oó]n/i],['9.4',/meiosis|gameto|haploide|diploide|entrecruzamiento|homólog|cariotipo|disyunci|síndrome de down|hermanos|\bpolen\b|fecundaci/i]]},
+ reinos:{def:'6.5',r:[['11.5',/endémic|biodiversidad|megadiver|conservaci/i],['7.4',/descompon|biogeoqu|ciclo del nitr|fijaci[oó]n de nitr|micorriz/i]]},
+ ecosistemas:{def:'sin',r:[['11.5',CLIMA],['7.4',CICLOS],['7.3',TROF]]},
+ colombia:{def:'sin',r:[['11.5',/megadiver|biodiversidad|amenaz|en peligro|conservaci|tráfico|miner[ií]a|deforest|calentamiento|deshielo|nevado|endémic|protegid|parque|especies? (invasora|exótica)/i],['7.3',TROF]]},
  ambiente:{def:'11.5',r:[['7.4',/ciclo del|ciclo de|biogeoqu|erosi|eutrof|uso responsable|ahorro de agua|fijaci[oó]n/i]]},
- sistemas:{def:'8.4',r:[]},
- funciones:{def:'8.4',r:[['7.3',/digesti|nutrici|alimentaci|fotos[ií]ntesis/i]]},
- nutricion:{def:'8.4',r:[['7.3',/nutrici[oó]n|nutriente|autótrof|heterótrof|molécula|carbohidrat|lípid|prote[ií]na|agua|glucosa|ATP|vitamina|mineral|dieta|alimentaci|caloría|balanceada/i],['8.5',/\bITS\b|infecciones de transmisión|embarazo|anticonce|\bVPH\b|sexual/i]]},
- reproduccion:{def:'8.5',r:[['10.4',BIOTEC]]},
+ sistemas:{def:'8.4',r:[['8.5',/reproducci|gameto|fecund|embri[oó]n|feto|testosterona|ovario|testículo|pubertad|menstru|esperm/i]]},
+ funciones:{def:'sin',r:[['7.3',/nutrici|autótrof|heterótrof|alimentaci|fotos[ií]ntesis|digesti/i],['8.4',/hormon|nervio|neurona|homeosta|inmun|excre|termorregul|osmorregul|regulaci[oó]n/i]]},
+ nutricion:{def:'8.4',r:[['8.5',/\bITS\b|infecciones de transmisión|embarazo|anticonce|\bVPH\b|sexual/i],['7.3',/nutrici[oó]n|autótrof|heterótrof|digesti/i],['sin',/molécula|carbohidrat|lípid|prote[ií]na|\bagua\b|glucosa|\bATP\b|vitamina|mineral|dieta|alimentaci|caloría|balanceada|nutriente|polisac|enzima/i]]},
+ reproduccion:{def:'8.5',r:[['sin',/tasa de reemplazo|pir[aá]mide (de )?poblaci|natalidad|demogr|crecimiento de la poblaci/i],['10.4',BIOTEC]]},
  genetica:{def:'9.4',r:[['10.4',BIOTEC],['9.5',/\bADN\b|\bARN|traducci|transcrip|prote[ií]na|codón|mutaci|código genético|ribosoma|expresi|replicaci|nucle[oó]tido/i]]},
- evolucion:{def:'9.6',r:[]}
+ evolucion:{def:'9.6',r:[['sin',/big bang|universo|panspermia|oparin|miller|generaci[oó]n espont|origen de la vida|meteorito|coacervado|mundo de arn|\bredi\b|pasteur|astronom|estrella/i],['11.5',/invasora|endémic|hipop[oó]tamo|ex[oó]tica/i]]}
 };
 function dbaDe1(q,tema){
+  var aj=ajuste(q,tema||(q&&q.t));if(aj&&aj[0])return aj[0];
   if(q&&typeof q==='object'&&q.dba)return q.dba;
   var t=tema||(q&&q.t),T=DBA_TEMA[t];if(!T)return null;
   var tx=texto(q);
@@ -132,6 +142,7 @@ function dbaDe1(q,tema){
 /* Temas de cada DBA, para el selector del panel. */
 function dbasDeTemas(temas){var o=[],vis={};
   [6,7,8,9,10,11].forEach(function(c){(DBA[c]||[]).forEach(function(d){var k=c+'.'+d.n;if(!vis[k]&&d.temas.some(function(t){return temas.indexOf(t)>=0;})){vis[k]=1;o.push({id:k,curso:c,n:d.n,tx:d.tx});}});});
+  o.push({id:'sin',curso:0,n:0,tx:'Sin DBA propio: contenido que ningún DBA nombra (se apoya en los Estándares Básicos de Competencias)'});
   return o;}
 
 /* Abiertas con curso fijo (por el comienzo del texto). */

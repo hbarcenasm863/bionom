@@ -552,7 +552,7 @@ function cmdValidar(d){
       }
     }
     if(d.sitio === 'bionom' && x.curso && (x.curso < 6 || x.curso > 11)) E('curso debe ser de 6 a 11.');
-    if(d.sitio === 'bionom' && x.dba && d.dba && !((d.dba[String(x.dba).split('.')[0]] || []).some(z => String(z.n) === String(x.dba).split('.')[1]))) A('el DBA «' + x.dba + '» no está en la lista de DBA de biología.');
+    if(d.sitio === 'bionom' && x.dba && x.dba !== 'sin' && d.dba && !((d.dba[String(x.dba).split('.')[0]] || []).some(z => String(z.n) === String(x.dba).split('.')[1]))) A('el DBA «' + x.dba + '» no está en la lista de DBA de biología.');
     // ¿ya existe en el banco?
     let mejor = null, sim = 0;
     todasQ.forEach(b => { if(b.tema !== x.tema) return; const s = parecido(x.q + ' ' + (x.ctx || ''), b.q + ' ' + (b.ctx || '')); if(s > sim){ sim = s; mejor = b; } });

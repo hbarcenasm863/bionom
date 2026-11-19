@@ -86,5 +86,5 @@ Los de `grupo` `reaccion` traen `ecuacion` y `tipoReaccion`; los de `mol-masa`, 
 - **10.4** Biotecnología (fertilización asistida, clonación, transgénicos…).
 - **11.5** Cuestiones ambientales actuales desde una visión sistémica.
 
-Lo que ningún DBA nombra (por ejemplo las etapas de la respiración celular) va como
-profundización de 10.° (`curso: 10`).
+Lo que ningún DBA nombra (por ejemplo las etapas de la respiración celular) lleva
+`dba: "sin"` y va como profundización de 10.° (`curso: 10`).

@@ -28,6 +28,14 @@
 .medidor{height:22px;border-radius:999px;background:linear-gradient(90deg,#2e9a5a,#e8c02a,#d64535);position:relative;margin:10px 0}
 .medidor i{position:absolute;top:-6px;width:6px;height:34px;background:#10261a;border-radius:3px;transition:left .5s}
 .comp label{display:flex;gap:8px;align-items:flex-start;padding:6px 0;font-size:.95rem}
+.hu-ambito{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.hu-fila{display:grid;grid-template-columns:minmax(120px,1.1fr) minmax(90px,1.4fr) auto;gap:6px 10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--cn-brd)}
+@media(max-width:640px){.hu-fila{grid-template-columns:1fr}}
+.hu-fila b{font-size:.92rem}.hu-fila small{display:block;color:var(--cn-dim)}
+.hu-bar{height:14px;border-radius:7px;background:#e2e8f0;overflow:hidden}.hu-bar i{display:block;height:14px;border-radius:7px}
+.hu-qn{display:inline-block;font-size:.74rem;font-weight:800;padding:2px 8px;border-radius:999px;background:var(--cn-brand-l);color:var(--cn-brand-d);margin:2px 3px 0 0;white-space:nowrap}
+.hu-ref label{display:block;margin:12px 0 4px;font-weight:800}
+.hu-ref textarea{width:100%;border:1.5px solid var(--cn-brd);border-radius:10px;padding:10px;font:inherit}
 </style>
 </head>
 <body>
@@ -49,7 +57,7 @@
     <a href="#nino">🌊 El Niño y La Niña</a>
     <a href="#oceanos">🐠 Océanos</a>
     <a href="#energias">⚡ Energías</a>
-    <a href="#huella">👣 Tu huella</a>
+    <a href="#huella">👣 Mi huella</a>
     <a href="#aire">🌫️ Contaminación del aire</a>
     <a href="#acciones">✅ Qué hacer</a>
   </nav>
@@ -79,7 +87,7 @@
     <h2><span class="n">02</span> ¿Qué lo causa? El caso de Colombia</h2>
     <p class="lead">En el mundo, la principal causa es quemar <b>combustibles fósiles</b> (petróleo, gas, carbón). En Colombia es distinto: la mayor parte de los gases de efecto invernadero sale del <b>cambio en el uso del suelo</b>: tumbar selva para potreros, la ganadería y la agricultura.</p>
     <div class="card"><canvas id="emis" width="900" height="250" aria-label="Fuentes de gases de efecto invernadero en Colombia"></canvas>
-      <p style="font-size:.84rem;color:var(--cn-dim)">Porcentajes aproximados del inventario nacional de gases de efecto invernadero (IDEAM). Toca una barra.</p><p id="emis-t" aria-live="polite"></p></div>
+      <p style="font-size:.84rem;color:var(--cn-dim)">Porcentajes aproximados del inventario nacional de gases de efecto invernadero de Colombia con datos de 2014 (IDEAM, 2018); en otros años cambian un poco, pero el uso del suelo sigue siendo la primera fuente. Toca una barra.</p><p id="emis-t" aria-live="polite"></p></div>
     <div class="grid g3" style="margin-top:12px">
       <div class="flip"><div class="in"><div class="fr"><span class="e">🚜</span><b>Deforestación</b><small>toca para voltear</small></div><div class="bk">Al talar y quemar el bosque, el carbono guardado en los árboles sale como CO₂, y ese bosque deja de absorberlo. La mayor parte de la deforestación de Colombia ocurre en la Amazonia, para convertirla en potreros.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">🐄</span><b>Ganadería</b><small>toca para voltear</small></div><div class="bk">Las vacas producen metano al digerir el pasto (gracias a arqueas de su estómago). El metano calienta cerca de 80 veces más que el CO₂ en sus primeros 20 años.</div></div></div>
@@ -131,12 +139,16 @@
     </div>
   </section>
 
-  <section class="sec" id="huella" data-pantalla="Calcula tu huella de carbono">
-    <h2><span class="n">07</span> Calcula tu huella de carbono</h2>
-    <p class="lead">La <b>huella de carbono</b> es la cantidad de gases de efecto invernadero que producen tus actividades. Responde con sinceridad: no es un examen. Al final escoge compromisos que sí puedas cumplir.</p>
+  <section class="sec" id="huella" data-pantalla="Mi huella y la de mi comunidad">
+    <h2><span class="n">07</span> Mi huella y la de mi comunidad</h2>
+    <p class="lead">La <b>huella de carbono</b> es la cantidad de gases de efecto invernadero que producen nuestras actividades. Aquí no vas a «medirla»: vas a descubrir <b>qué hábitos pesan más</b>, <b>quién puede cambiarlos</b> (tú, tu familia, tu colegio o tu ciudad) y <b>qué te propones hacer</b>. No es un examen ni hay culpables: muchas decisiones no dependen de una sola persona.</p>
+    <div class="ctrl hu-ambito" id="hu-ambito" role="tablist" aria-label="Escoge dónde mirar tu huella"></div>
     <div class="card huella" id="hu"></div>
-    <div class="card" style="margin-top:10px"><div class="medidor"><i id="hu-m" style="left:0"></i></div><div id="hu-t" aria-live="polite"></div></div>
+    <div class="card" id="hu-res" style="margin-top:10px" aria-live="polite"></div>
+    <div class="card" id="hu-ref" style="margin-top:10px" hidden></div>
+    <p class="dato" style="margin-top:10px">Esta herramienta <b>no mide kilos de CO₂</b>: compara cuánto pesan tus hábitos entre sí y quién puede cambiarlos. Una calculadora de verdad usa factores de emisión (por ejemplo, por kilo de carne de res, por viaje en avión o por kWh de electricidad) y los datos reales de tu casa o tu colegio.</p>
     <h3 style="margin-top:16px">Mis compromisos</h3>
+    <p style="margin:0 0 6px">Escoge algunos que sí puedas cumplir: <b>uno tuyo</b> y <b>uno de tu comunidad</b>.</p>
     <div class="card comp" id="comp"></div>
   </section>
 
@@ -187,7 +199,7 @@ function dibTierra(c){var k=(c-280)/520,s='<defs><radialGradient id="esp" cx="50
   return s;}
 function verCO2(){var c=+co2.value,dt=3*Math.log(c/280)/Math.log(2);
   document.getElementById('tierra').innerHTML=dibTierra(c);
-  var hito=c<=290?'Nivel de antes de la Revolución Industrial (siglo XVIII).':c<=330?'Nivel de 1970.':c<=380?'Nivel del año 2005.':c<=430?'<b>Nivel actual</b> (más de 420 ppm): el más alto en al menos 800 000 años.':c<=560?'El doble que antes de la industria: puede ocurrir en este siglo si no cambiamos.':'Escenario extremo de emisiones muy altas.';
+  var hito=c<=290?'Nivel de antes de la Revolución Industrial (siglo XVIII).':c<=330?'Nivel de 1970.':c<=380?'Nivel del año 2005.':c<=410?'Nivel de los años 2010 a 2019.':c<=430?'<b>Nivel actual</b> (cerca de 420 ppm o más): el más alto en al menos 800 000 años.':c<=560?'El doble que antes de la industria: puede ocurrir en este siglo si no cambiamos.':'Escenario extremo de emisiones muy altas.';
   document.getElementById('co2-t').innerHTML='<div class="termo">+'+dt.toFixed(1).replace('.',',')+' °C</div><p>Calentamiento aproximado a largo plazo respecto a la era preindustrial.</p><p style="margin-top:6px">'+hito+'</p>'+(dt>1.5?'<p style="margin-top:6px;color:#b42318;font-weight:700">Por encima de 1,5 °C los científicos esperan daños graves: pérdida de casi todos los corales, más sequías e inundaciones, glaciares perdidos.</p>':'');
   if(c>=420)BIO.marcarSeccion('invernadero');}
 co2.oninput=verCO2;verCO2();
@@ -208,7 +220,7 @@ document.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){v
   document.getElementById('keel-t').innerHTML=(v===490?'✅ Bien leído: ':'🤔 Mira la pendiente: ')+'en los últimos 20 años el CO₂ ha subido unas <b>2,4 ppm por año</b>. Si sigue así, en 2050 estaríamos cerca de 490 ppm. Que la curva baje depende de reducir las emisiones: los datos permiten predecir, pero el futuro depende de lo que hagamos.';};});
 
 /* ═══ Emisiones de Colombia ═══ */
-var EM=[['Uso del suelo, deforestación y ganadería',59,'#3f8f4a','Deforestación, potreros, ganadería (metano) y cultivos. Por eso detener la deforestación de la Amazonia es lo más importante que puede hacer Colombia.'],['Energía y transporte',31,'#e07a3f','Gasolina y diésel de carros, buses y camiones; gas y carbón en industrias y centrales térmicas.'],['Residuos',7,'#8a6d3b','Los rellenos sanitarios producen metano cuando la basura orgánica se pudre sin oxígeno. Separar y compostar lo reduce.'],['Procesos industriales',3,'#6b7280','Producción de cemento, acero y químicos.']];
+var EM=[['Uso del suelo, deforestación y ganadería',55,'#3f8f4a','Deforestación, potreros, ganadería (metano) y cultivos. Por eso detener la deforestación de la Amazonia es lo más importante que puede hacer Colombia.'],['Energía y transporte',35,'#e07a3f','Gasolina y diésel de carros, buses y camiones; gas y carbón en industrias y centrales térmicas.'],['Residuos',6,'#8a6d3b','Los rellenos sanitarios producen metano cuando la basura orgánica se pudre sin oxígeno. Separar y compostar lo reduce.'],['Procesos industriales',4,'#6b7280','Producción de cemento, acero y químicos.']];
 var emSel=-1;
 function grafE(){var cv=document.getElementById('emis'),c=cv.getContext('2d'),W=900,H=250;c.clearRect(0,0,W,H);
   EM.forEach(function(e,i){var y=20+i*56,w=(W-300)*e[1]/60;c.fillStyle=e[2];c.globalAlpha=emSel<0||emSel===i?1:.35;c.beginPath();c.roundRect?c.roundRect(280,y,w,40,8):c.rect(280,y,w,40);c.fill();c.globalAlpha=1;
@@ -258,29 +270,90 @@ BIO.clasificar(document.getElementById('clas-en'),{
   cajas:[{id:'ren',titulo:'♻️ Renovable'},{id:'nor',titulo:'⛽ No renovable'}],
   fichas:[{t:'☀️ Paneles solares',caja:'ren'},{t:'💨 Parques eólicos de La Guajira',caja:'ren'},{t:'💧 Hidroeléctrica',caja:'ren',pista:'El agua de los ríos se repone con la lluvia.'},{t:'⛽ Gasolina',caja:'nor'},{t:'⛏️ Carbón del Cerrejón',caja:'nor'},{t:'🔥 Gas natural',caja:'nor',pista:'Es un combustible fósil, como el petróleo.'},{t:'🌋 Geotermia (calor de los volcanes)',caja:'ren'},{t:'🌾 Biogás de estiércol',caja:'ren',pista:'Se produce con desechos que se renuevan cada día.'}]});
 
-/* ═══ Huella de carbono ═══ */
-var HQ=[
- ['¿Cómo vas al colegio casi siempre?',[['🚶 A pie o en bicicleta',0],['🚌 En bus o transporte público',1],['🏍️ En moto',2],['🚗 En carro particular',3]]],
- ['¿Cuántos días a la semana comes carne de res?',[['Ninguno',0],['1 o 2',1],['3 a 5',2],['Todos los días',3]]],
- ['¿Qué tan seguido comes paquetes, gaseosas y comida ultraprocesada?',[['Casi nunca',0],['A veces',1],['Casi todos los días',2],['Varias veces al día',3]]],
- ['¿Apagan las luces y los aparatos cuando no los usan en tu casa?',[['Siempre',0],['Casi siempre',1],['A veces',2],['Casi nunca',3]]],
- ['¿Separan la basura y reciclan?',[['Sí, siempre',0],['A veces',1],['Casi nunca',2],['Nunca',3]]],
- ['¿Cuánto tardas en la ducha?',[['Menos de 5 minutos',0],['5 a 10 minutos',1],['10 a 20 minutos',2],['Más de 20 minutos',3]]]
-];
-var hres={};
-document.getElementById('hu').innerHTML=HQ.map(function(q,i){return '<label class="q">'+(i+1)+'. '+q[0]+'</label><div class="chips">'+q[1].map(function(o,j){return '<button class="chip" data-q="'+i+'" data-v="'+o[1]+'">'+o[0]+'</button>';}).join('')+'</div>';}).join('');
-document.querySelectorAll('#hu [data-q]').forEach(function(b){b.onclick=function(){var q=b.getAttribute('data-q');hres[q]=+b.getAttribute('data-v');document.querySelectorAll('#hu [data-q="'+q+'"]').forEach(function(x){x.classList.toggle('on',x===b);});calcH();};});
-var CONSEJO=['Caminar, usar la bici o el transporte público en los trayectos cortos.','Cambiar algunas comidas con carne de res por fríjol, lenteja, garbanzo, huevo o pollo.','Preferir frutas, verduras y alimentos locales en vez de paquetes y gaseosas: menos empaques, menos transporte y mejor salud.','Apagar luces y desconectar cargadores y aparatos que no se usan.','Separar los residuos: orgánicos, aprovechables (plástico, papel, vidrio) y no aprovechables.','Duchas de 5 minutos: se ahorra agua y la energía para calentarla.'];
-function calcH(){var n=Object.keys(hres).length,tot=Object.keys(hres).reduce(function(a,k){return a+hres[k];},0),pct=n?tot/(n*3):0;
-  document.getElementById('hu-m').style.left='calc('+(pct*100)+'% - 3px)';
-  var peores=Object.keys(hres).filter(function(k){return hres[k]>=2;});
-  document.getElementById('hu-t').innerHTML=n<HQ.length?'Responde las '+HQ.length+' preguntas ('+n+' de '+HQ.length+').':'<b>'+(pct<0.34?'🌱 Tu huella es baja. ¡Sigue así y comparte tus hábitos!':pct<0.67?'🌤️ Tu huella es media. Hay cosas fáciles que puedes cambiar.':'🔥 Tu huella es alta. Pequeños cambios hacen una gran diferencia.')+'</b>'+(peores.length?'<p style="margin-top:6px">Lo que más puedes mejorar:</p><ul>'+peores.map(function(k){return '<li>'+CONSEJO[k]+'</li>';}).join('')+'</ul>':'');
-  if(n===HQ.length)BIO.marcarSeccion('huella');}
-calcH();
-var COMP=['Caminaré o iré en bici cuando sea posible.','Comeré menos carne de res y más legumbres.','Llevaré mi botella y no compraré agua en botella plástica.','Separaré los residuos en mi casa.','Apagaré luces y aparatos que no use.','Me ducharé en 5 minutos.','Participaré en una siembra o en un proyecto ambiental del colegio.','Compraré alimentos locales y de temporada.'];
-var guard=BIO.leer('bionom_compromisos',[]);
-document.getElementById('comp').innerHTML=COMP.map(function(c,i){return '<label><input type="checkbox" data-c="'+i+'"'+(guard.indexOf(i)>=0?' checked':'')+'> '+c+'</label>';}).join('')+'<p style="font-size:.84rem;color:var(--cn-dim);margin-top:6px">Tus compromisos se guardan solo en este dispositivo.</p>';
-document.querySelectorAll('#comp [data-c]').forEach(function(x){x.onchange=function(){var a=[].slice.call(document.querySelectorAll('#comp [data-c]:checked')).map(function(y){return +y.getAttribute('data-c');});BIO.guardar('bionom_compromisos',a);};});
+/* ═══ Mi huella y la de mi comunidad ═══
+   Tres ámbitos (yo, mi casa, mi colegio). Cada pregunta da un peso relativo de 0 (pesa poco) a 3 (pesa
+   mucho); no son kilos de CO₂. Cada área dice quién puede cambiarla (yo, mi familia, el colegio o la ciudad). */
+var QN={yo:'👤 Yo',fam:'🏠 Mi familia',col:'🏫 El colegio',ciu:'🏙️ La ciudad'};
+var PESO=['pesa poco','pesa algo','pesa bastante','pesa mucho'],COL=['#2e9a5a','#9bbf3a','#e8a52a','#d64535'];
+var AMB={
+ yo:{ico:'👤',nom:'Yo',intro:'Lo que depende más de ti. Responde pensando en una semana normal.',
+  items:[
+   {a:'Trayectos cortos',q:'Cuando voy a la tienda, al parque o donde un amigo cercano, casi siempre voy…',o:[['🚶 A pie o en bicicleta',0],['🚌 En bus o transporte público',1],['🏍️ En moto',2],['🚗 En carro particular',3]],w:['yo','ciu'],p:'Caminar o usar la bici en los trayectos cortos; pedir ciclovías y andenes seguros también cuenta.'},
+   {a:'Lo que como',q:'¿Cuántos días a la semana como carne de res?',o:[['Ninguno',0],['1 o 2',1],['3 a 5',2],['Todos los días',3]],w:['yo','fam'],p:'Cambiar algunas comidas con carne de res por fríjol, lenteja, huevo o pollo: la carne de res es de los alimentos que más gases produce.'},
+   {a:'Lo que compro',q:'La ropa, el celular y otras cosas que uso…',o:[['Las reparo, heredo o compro usadas',0],['Las cuido para que duren',1],['Las cambio cuando salen nuevas',2],['Estreno cosas con mucha frecuencia',3]],w:['yo','fam'],p:'Reparar, heredar o intercambiar: fabricar cosas nuevas también produce gases.'},
+   {a:'Agua caliente y ducha',q:'¿Cuánto me demoro en la ducha?',o:[['Menos de 5 minutos',0],['5 a 10 minutos',1],['10 a 20 minutos',2],['Más de 20 minutos',3]],w:['yo','fam'],p:'Una ducha corta ahorra agua y la energía que la calienta o la bombea.'},
+   {a:'Mis residuos',q:'¿Separo la basura y llevo mi botella reutilizable?',o:[['Sí, siempre',0],['A veces',1],['Casi nunca',2],['Nunca',3]],w:['yo','col','ciu'],p:'Llevar tu botella y separar: pero también hacen falta canecas y rutas de reciclaje, que dependen de otros.'},
+   {a:'Comida que se bota',q:'¿Cuánta comida dejo en el plato o se me daña?',o:[['Casi nada',0],['Poca',1],['Bastante',2],['Mucha',3]],w:['yo','fam'],p:'La comida que se bota ya gastó agua, energía y tierra, y al pudrirse en la basura produce metano.'}]},
+ casa:{ico:'🏠',nom:'Mi casa',intro:'Lo que decide tu familia. Tú puedes observar, preguntar y proponer.',
+  items:[
+   {a:'Cómo se mueve la familia',q:'Para los trayectos de la familia se usa sobre todo…',o:[['🚶 Caminar, bici o transporte público',0],['🚌 Transporte público y a veces moto',1],['🏍️ Moto',2],['🚗 Carro particular para casi todo',3]],w:['fam','ciu'],p:'Compartir trayectos, preferir el transporte público y planear las vueltas del mismo día. La ciudad también decide con sus buses y vías.'},
+   {a:'Electricidad',q:'En casa, ¿qué tanto cuidamos la energía (bombillos LED, apagar lo que no se usa, aparatos eficientes)?',o:[['Mucho: casi siempre',0],['Bastante',1],['Poco',2],['Casi nada',3]],w:['fam'],p:'Bombillos LED y apagar aparatos. En Colombia buena parte de la electricidad es hidroeléctrica, así que ahorrar energía pesa menos que en países que usan carbón, pero igual ahorra dinero y recursos.'},
+   {a:'Agua',q:'¿Arreglamos pronto las goteras y evitamos el desperdicio de agua?',o:[['Siempre',0],['Casi siempre',1],['A veces',2],['Casi nunca',3]],w:['fam'],p:'Reparar fugas y reutilizar agua (por ejemplo, la del lavado de verduras para las plantas).'},
+   {a:'Residuos de la casa',q:'¿Separamos y aprovechamos los residuos (reciclaje, compost de cáscaras)?',o:[['Sí, separamos y compostamos',0],['Separamos algunos',1],['Casi nunca',2],['Todo va junto a la basura',3]],w:['fam','ciu'],p:'Separar en la fuente y compostar lo orgánico: menos metano en el relleno sanitario. Depende también de que la ciudad recoja por separado.'},
+   {a:'Comida de la casa',q:'En la comida de la casa, ¿cuánto pesan la carne de res y el desperdicio?',o:[['Poco: comemos variado y casi no se bota',0],['Algo',1],['Bastante',2],['Mucho: carne casi todos los días y se bota comida',3]],w:['fam'],p:'Planear compras, aprovechar sobras y alternar proteínas (fríjol, huevo, pollo, pescado de la región).'},
+   {a:'Viajes largos',q:'¿Con qué frecuencia viaja la familia lejos en avión o en carro particular?',o:[['Casi nunca',0],['Una vez al año',1],['Varias veces al año',2],['Muy seguido',3]],w:['fam'],p:'Escoger destinos cercanos, viajar en bus y alargar la estadía en vez de viajar muchas veces.'}]},
+ cole:{ico:'🏫',nom:'Mi colegio',intro:'Lo que decide la comunidad educativa: rectoría, docentes, estudiantes y familias. Responde con lo que observas.',
+  items:[
+   {a:'Cómo llegamos al colegio',q:'¿Cómo llega la mayoría de estudiantes y profesores?',o:[['A pie, en bici o en ruta escolar',0],['En transporte público',1],['Muchos en moto',2],['La mayoría en carro particular',3]],w:['col','fam','ciu'],p:'Rutas escolares, parqueaderos de bicicletas y turnos de carro compartido. La ciudad aporta rutas seguras.'},
+   {a:'Energía del colegio',q:'¿Se apagan luces, ventiladores y computadores en aulas vacías?',o:[['Siempre',0],['Casi siempre',1],['A veces',2],['Casi nunca',3]],w:['col'],p:'Brigadas de «apagado» por salón y revisar los consumos del colegio.'},
+   {a:'Agua del colegio',q:'¿Hay llaves y sanitarios que gotean o se riega sin cuidado? ¿Se aprovecha el agua lluvia?',o:[['Todo bien y se aprovecha la lluvia',0],['Casi todo bien',1],['Hay varias fugas',2],['Se desperdicia mucho',3]],w:['col','yo'],p:'Reportar fugas, aprovechar agua lluvia para el riego y revisar los recibos de agua.'},
+   {a:'Residuos del colegio',q:'¿Hay puntos de separación y la cafetería usa empaques reutilizables?',o:[['Sí, funcionan y se usan',0],['Hay, pero se usan poco',1],['Casi no hay',2],['Todo es desechable y va a la basura',3]],w:['col','yo','ciu'],p:'Puntos de separación bien señalados, vasos y cubiertos reutilizables y campañas de los estudiantes.'},
+   {a:'Cafetería',q:'¿La cafetería ofrece comida local y fresca, o sobre todo paquetes y desechables?',o:[['Sobre todo comida local y fresca',0],['Mezcla',1],['Sobre todo paquetes',2],['Casi todo ultraprocesado y desechable',3]],w:['col','fam'],p:'Pedir más frutas, comida de la región y menos empaques: mejor para la salud y para el ambiente.'},
+   {a:'Zonas verdes y huerta',q:'¿Cuántos árboles y zonas verdes tiene el colegio? ¿Hay huerta o jardín?',o:[['Muchos, y hay huerta',0],['Algunos',1],['Pocos',2],['Casi ninguno',3]],w:['col','yo'],p:'Sembrar árboles nativos, una huerta escolar y cuidar las zonas verdes: sombra, agua, biodiversidad y aprendizaje.'}]}
+};
+var HR=BIO.leer('bionom_huella_resp',{}),HF=BIO.leer('bionom_huella_ref',{}),amb='yo';
+var REFL={
+ yo:['¿Cuál de mis hábitos me costaría más cambiar y por qué? ¿Qué lo haría más fácil: algo mío, de mi familia o de mi ciudad?','¿Qué hábito mío podría animar a otras personas a cambiar el suyo?'],
+ casa:['Si propongo un cambio en mi casa, ¿cuál sería el más fácil de lograr y a quién tendría que convencer? ¿Con qué argumentos (ahorro, salud, cuidado)?','¿Qué cambio de mi casa depende de la ciudad (rutas de basura, transporte, tarifas) y no de mi familia?'],
+ cole:['Si yo fuera rector o rectora por un día, ¿qué decisión tomaría para cambiar los hábitos de todos a la vez? ¿Qué obstáculos habría?','¿Qué propuesta podría presentar mi curso al consejo estudiantil o a un docente?']
+};
+function respuestas(k){return HR[k]||(HR[k]={});}
+function completo(k){var n=AMB[k].items.length,r=respuestas(k);return Object.keys(r).length>=n;}
+function pesoMedio(k){var r=respuestas(k),v=Object.keys(r).map(function(i){return r[i];});return v.length?v.reduce(function(a,b){return a+b;},0)/(v.length*3):0;}
+function pintarAmbitos(){
+  document.getElementById('hu-ambito').innerHTML=Object.keys(AMB).map(function(k){return '<button type="button" class="chip'+(k===amb?' on':'')+'" role="tab" aria-selected="'+(k===amb)+'" data-amb="'+k+'">'+AMB[k].ico+' '+AMB[k].nom+(completo(k)?' ✓':'')+'</button>';}).join('');
+  document.querySelectorAll('#hu-ambito [data-amb]').forEach(function(b){b.onclick=function(){amb=b.getAttribute('data-amb');pintarHuella();};});
+}
+function pintarHuella(){
+  var A=AMB[amb],r=respuestas(amb);pintarAmbitos();
+  document.getElementById('hu').innerHTML='<p style="margin:0 0 4px"><b>'+A.ico+' '+A.nom+'.</b> '+A.intro+'</p>'+A.items.map(function(it,i){return '<label class="q">'+(i+1)+'. '+it.q+'</label><div class="chips">'+it.o.map(function(o){return '<button type="button" class="chip'+(r[i]===o[1]?' on':'')+'" data-q="'+i+'" data-v="'+o[1]+'">'+o[0]+'</button>';}).join('')+'</div>';}).join('');
+  document.querySelectorAll('#hu [data-q]').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-q');respuestas(amb)[i]=+b.getAttribute('data-v');BIO.guardar('bionom_huella_resp',HR);pintarHuella();};});
+  pintarResultado();
+}
+function pintarResultado(){
+  var A=AMB[amb],r=respuestas(amb),n=Object.keys(r).length,tot=A.items.length,R=document.getElementById('hu-res'),F=document.getElementById('hu-ref');
+  if(n<tot){R.innerHTML='Responde las '+tot+' preguntas de «'+A.nom+'» ('+n+' de '+tot+').';F.hidden=true;return;}
+  var filas=A.items.map(function(it,i){var v=r[i];return '<div class="hu-fila"><div><b>'+it.a+'</b><small>'+it.o.filter(function(o){return o[1]===v;})[0][0]+'</small></div><div><div class="hu-bar" role="img" aria-label="'+PESO[v]+'"><i style="width:'+Math.max(6,v/3*100)+'%;background:'+COL[v]+'"></i></div><small>'+PESO[v]+'</small></div><div>'+it.w.map(function(w){return '<span class="hu-qn">'+QN[w]+'</span>';}).join('')+'</div></div>';}).join('');
+  var mayor=Math.max.apply(null,A.items.map(function(it,i){return r[i];})),
+      lo_mas=A.items.filter(function(it,i){return r[i]===mayor&&mayor>=2;}).map(function(it){return it.a;}),
+      mio=A.items.filter(function(it,i){return r[i]>=1&&it.w.indexOf('yo')>=0;}).slice(0,3),
+      otros=A.items.filter(function(it,i){return r[i]>=2&&it.w.indexOf('yo')<0;}).slice(0,3);
+  var h='<h3 style="margin:0 0 4px">'+A.ico+' '+A.nom+': qué pesa y quién puede cambiarlo</h3><p style="margin:0 0 6px;font-size:.9rem;color:var(--cn-dim)">Cada barra compara tus hábitos entre sí (no son kilos de CO₂). Las etiquetas dicen quién puede cambiar esa área.</p>'+filas;
+  h+='<div style="margin-top:12px">'+(lo_mas.length?'<p><b>Lo que más pesa aquí:</b> '+lo_mas.join(', ')+'.</p>':'<p><b>Ningún área pesa mucho.</b> ¡Buenos hábitos! Puedes compartirlos con otras personas.</p>');
+  if(mio.length)h+='<p><b>🌱 Lo que puedo cambiar yo:</b></p><ul>'+mio.map(function(it){return '<li><b>'+it.a+'.</b> '+it.p+'</li>';}).join('')+'</ul>';
+  if(otros.length)h+='<p><b>🤝 Lo que se cambia entre varios:</b></p><ul>'+otros.map(function(it){return '<li><b>'+it.a+'</b> (necesita a: '+it.w.map(function(w){return QN[w];}).join(', ')+'). '+it.p+'</li>';}).join('')+'</ul>';
+  h+='</div>';
+  var hechos=Object.keys(AMB).filter(completo);
+  if(hechos.length>=2)h+='<div style="margin-top:12px"><p><b>Individual y comunidad, lado a lado</b></p>'+hechos.map(function(k){var m=pesoMedio(k);return '<div class="hu-fila"><div><b>'+AMB[k].ico+' '+AMB[k].nom+'</b></div><div><div class="hu-bar"><i style="width:'+Math.max(6,m*100)+'%;background:'+COL[Math.min(3,Math.round(m*3))]+'"></i></div></div><div></div></div>';}).join('')+'<p style="font-size:.9rem">Lo que decide una familia o un colegio llega a muchas personas a la vez: por eso las decisiones colectivas pesan tanto como los hábitos de cada uno. Las dos cosas se necesitan.</p></div>';
+  R.innerHTML=h;
+  F.hidden=false;
+  F.innerHTML='<h3 style="margin:0 0 4px">🤔 Para reflexionar</h3><p style="margin:0">Escribe con tus palabras; se guarda en este equipo.</p><div class="hu-ref">'+REFL[amb].map(function(t,i){var kk=amb+i;return '<label for="hr-'+kk+'">'+(i+1)+'. '+t+'</label><textarea id="hr-'+kk+'" rows="3" data-r="'+kk+'">'+(HF[kk]||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</textarea>';}).join('')+'<label for="hr-cierre">Para cerrar: ¿qué diferencia hay entre lo que puedo hacer yo solo y lo que solo se logra entre muchos? ¿Qué voy a hacer yo?</label><textarea id="hr-cierre" rows="3" data-r="cierre">'+(HF.cierre||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</textarea></div><p style="margin:10px 0 0"><button type="button" class="cn-btn cn-btn--primary" id="hu-imp">🖨️ Imprimir o guardar mi reflexión en PDF</button></p>';
+  F.querySelectorAll('[data-r]').forEach(function(t){t.oninput=function(){HF[t.getAttribute('data-r')]=t.value;BIO.guardar('bionom_huella_ref',HF);};});
+  document.getElementById('hu-imp').onclick=imprimirHuella;
+  BIO.marcarSeccion('huella');
+}
+function imprimirHuella(){
+  var w=window.open('','_blank');if(!w){alert('Permite las ventanas emergentes para imprimir.');return;}
+  var es=function(t){return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');},f=new Date().toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'});
+  var cuerpo=Object.keys(AMB).filter(completo).map(function(k){var A=AMB[k];return '<h2>'+A.ico+' '+A.nom+'</h2><table><tr><th>Área</th><th>Mi respuesta</th><th>Pesa…</th><th>Quién puede cambiarlo</th></tr>'+A.items.map(function(it,i){var v=respuestas(k)[i];return '<tr><td>'+es(it.a)+'</td><td>'+es(it.o.filter(function(o){return o[1]===v;})[0][0])+'</td><td>'+PESO[v]+'</td><td>'+it.w.map(function(x){return QN[x];}).join(', ')+'</td></tr>';}).join('')+'</table>'+REFL[k].map(function(t,i){return '<p><b>'+es(t)+'</b></p><div class="r">'+es(HF[k+i]||'')+'</div>';}).join('');}).join('');
+  w.document.write('<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Mi huella y la de mi comunidad</title><style>body{font-family:Outfit,Arial,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;color:#1f2937}h1{font-size:1.4rem}h2{font-size:1.1rem;margin:18px 0 6px}table{border-collapse:collapse;width:100%;font-size:.9rem}td,th{border:1px solid #cbd5e1;padding:5px 7px;text-align:left}.r{border:1px solid #cbd5e1;border-radius:8px;padding:8px;min-height:60px;white-space:pre-wrap;margin-bottom:8px}.m{color:#64748b}</style></head><body><h1>👣 Mi huella y la de mi comunidad</h1><p class="m">BioNom · '+f+'</p>'+cuerpo+'<h2>Para cerrar</h2><div class="r">'+es(HF.cierre)+'</div><p class="m">No son kilos de CO₂: comparan cuánto pesan los hábitos entre sí.</p></body></html>');
+  w.document.close();w.focus();setTimeout(function(){w.print();},300);
+}
+var COMP=[['yo','Caminaré o iré en bici los trayectos cortos.'],['yo','Comeré menos carne de res y más fríjol, lenteja o huevo.'],['yo','Llevaré mi botella y no compraré agua en botella plástica.'],['yo','Me ducharé en 5 minutos y cerraré la llave mientras me cepillo.'],['yo','Reparé o reutilizaré antes de comprar algo nuevo.'],['com','Propondré en mi casa separar los residuos y compostar las cáscaras.'],['com','Invitaré a mi familia a revisar las fugas de agua y los aparatos encendidos.'],['com','Organizaré con mi curso una campaña de separación de residuos en el colegio.'],['com','Propondré al consejo estudiantil una huerta o una siembra de árboles nativos.'],['com','Pediré en la cafetería más comida local y menos empaques desechables.']];
+var guard=BIO.leer('bionom_compromisos2',[]);
+document.getElementById('comp').innerHTML='<p style="margin:0 0 2px"><b>🌱 Míos</b></p>'+COMP.map(function(c,i){return c[0]==='yo'?'<label><input type="checkbox" data-c="'+i+'"'+(guard.indexOf(i)>=0?' checked':'')+'> '+c[1]+'</label>':'';}).join('')+'<p style="margin:10px 0 2px"><b>🤝 De mi comunidad (casa o colegio)</b></p>'+COMP.map(function(c,i){return c[0]==='com'?'<label><input type="checkbox" data-c="'+i+'"'+(guard.indexOf(i)>=0?' checked':'')+'> '+c[1]+'</label>':'';}).join('')+'<p style="font-size:.84rem;color:var(--cn-dim);margin-top:6px">Tus compromisos se guardan solo en este dispositivo.</p>';
+document.querySelectorAll('#comp [data-c]').forEach(function(x){x.onchange=function(){var a=[].slice.call(document.querySelectorAll('#comp [data-c]:checked')).map(function(y){return +y.getAttribute('data-c');});BIO.guardar('bionom_compromisos2',a);};});
+pintarHuella();
 
 /* ═══ Mitigar, adaptarse, resiliencia ═══ */
 BIO.clasificar(document.getElementById('clas-acc'),{

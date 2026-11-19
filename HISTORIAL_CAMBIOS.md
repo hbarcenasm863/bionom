@@ -6,7 +6,7 @@
 
 ---
 
-## Versión 2.60 — 19 de noviembre de 2026 · Skill «nom-banco»: banco de preguntas y generadores de los tres sitios
+## Versión 2.63 — 19 de noviembre de 2026 · Skill «nom-banco»: banco de preguntas y generadores de los tres sitios
 
 **Contexto.** El docente preguntó si se podía hacer una skill con el banco de preguntas y los generadores de
 crucigramas, sopas de letras y ahorcado. Escogió una sola skill con los bancos de BioNom, ChromaNom e IonNom, que
@@ -50,6 +50,93 @@ por ejemplo «un crucigrama de la célula para 7.°», sin abrir el panel docent
 
 **Sin resolver.** No se tocó el sitio (ni `sw.js` ni `bionom-analytics.gs`): la skill no se sirve en las páginas.
 Las preguntas Saber antiguas de BioNom no traen competencia (`c`); en la hoja salen sin ella.
+## Versión 2.62 — 19 de noviembre de 2026 · «Mi huella y la de mi comunidad» (reflexión individual y comunitaria)
+
+**Contexto.** La auditoría señaló que la «calculadora» de huella de carbono de `ambiente.html` no tenía factores de
+emisión ni fuentes, pesaba igual todas las preguntas, podía estigmatizar («tu huella es alta») y no distinguía lo que
+decide una persona de lo que decide su familia o su colegio. El docente pidió una herramienta que muestre el nivel
+**individual y comunitario (casa o colegio)** y que **busque una reflexión en el estudiante**.
+
+**Cambios en `ambiente.html` (sección 07, ahora «Mi huella y la de mi comunidad»)**
+- Tres ámbitos: **Yo**, **Mi casa** y **Mi colegio**, con 6 preguntas cada uno (trayectos, comida, compras, agua, residuos y
+  desperdicio; transporte, electricidad, agua, residuos, comida y viajes de la familia; transporte, energía, agua,
+  residuos, cafetería y zonas verdes del colegio).
+- Cada respuesta da un **peso relativo** («pesa poco» a «pesa mucho»), no kilos de CO₂, y cada área dice **quién puede
+  cambiarla**: yo, mi familia, el colegio o la ciudad. Sin etiquetas como «tu huella es alta».
+- El resultado separa **lo que puedo cambiar yo** de **lo que se cambia entre varios**, y compara los ámbitos lado a lado.
+- **Reflexión guiada:** preguntas propias de cada ámbito y una de cierre (qué puedo yo solo y qué solo se logra entre
+  muchos), con cuadros de texto que se guardan en el equipo y botón para imprimir o guardar en PDF.
+- **Compromisos:** cinco personales y cinco de la comunidad (casa o colegio). Se guardan en el equipo
+  (`bionom_compromisos2`, `bionom_huella_resp`, `bionom_huella_ref`).
+- Aviso de que la herramienta no mide kilos de CO₂ y de que una calculadora de verdad usa factores de emisión.
+- La barra de la página ahora dice «Mi huella».
+
+**Pruebas (Playwright).** En 1100 y 390 px: se responden los tres ámbitos, aparece la comparación, la reflexión y los
+compromisos se guardan y se recuperan al recargar; sin errores de consola.
+
+**Pendiente.** Fases 3 a 5 (calidad de preguntas, contenido que respalda las preguntas). Sin pasos manuales.
+
+---
+
+## Versión 2.61 — 19 de noviembre de 2026 · Auditoría, fase 2: etiquetas de DBA y curso, y «sin DBA»
+
+**Contexto.** La auditoría mostró 252 de 1 432 preguntas con un curso menor que el grado de su DBA (defecto de las
+reglas de `dba-bio.js`) y contenido forzado al DBA «más cercano». El docente pidió marcar con **«sin DBA»** lo que
+ningún DBA nombra (respuesta 3 de sus decisiones, interpretada así).
+
+**Cambios**
+- **`dba-bio.js`:** el curso de cada pregunta nunca es menor que el grado de su DBA (0 contradicciones de 1 432). Nueva
+  etiqueta **`sin`** por reglas: en Ecosistemas (relaciones entre especies, nicho, poblaciones), Colombia (geografía
+  ecológica), Evolución (origen del universo y de la vida), Reproducción (demografía), Nutrición (biomoléculas y dieta),
+  Funciones vitales comparadas y División (inclusión). Funciones y Nutrición ya no se atan al DBA «más cercano» salvo lo
+  que sí nombra el DBA (regulación, hábitos). Sistemas: lo de reproducción va al 8.5. La especiación ya no es 10.°.
+- **`dba-ajustes.js` (nuevo):** 60 ajustes pregunta por pregunta tomados de las listas de la auditoría (fase luminosa y
+  cadena respiratoria en 10.°, biotecnología en 10.°, líquenes en 7.4, etc.). Clave «tema|comienzo del enunciado».
+- **Panel docente:** nueva opción «Sin DBA propio» en el selector «Solo un DBA», con su explicación. Ambiente (DBA 11.5)
+  aparece desde 11.° y el panel avisa que sube de curso.
+- **Se agregaron 5 preguntas Saber** (3 de 7.4 y 2 de 9.5) porque el reetiquetado dejó esos DBA en 18 y 19: todos siguen
+  con 20 o más (Juego, Saber y abiertas). Sin DBA propio hay 130 del Juego, 122 Saber y 95 abiertas.
+- `MATRIZ_DBA.md` con el conteo exacto y `CLAUDE.md` actualizado. `saber-juego.js` regenerado (659). Caché `bionom-v74`;
+  `?v=`: `dba-bio.js` 3, `docente-app.js` 18, `docente-datos.js` 29, `saber-juego.js` 9.
+
+**Pendiente.** Fases 3 a 5 y la herramienta de huella de carbono (ver `AUDITORIA_DBA_2026-11.md`).
+
+---
+
+## Versión 2.60 — 19 de noviembre de 2026 · Auditoría, fase 1: errores de hecho
+
+**Contexto.** Tras la auditoría de la versión 2.59, el docente respondió las decisiones: (1) **no** agregar contenido
+sensible (consentimiento y abuso, ruta legal de la interrupción del embarazo, salud mental, conductas
+alimentarias, líneas de ayuda) hasta que aparezca política pública al respecto; (2) **agregar el contenido** que
+respalda las preguntas sin base; (3) «sin…», que se interpretó como **«sin DBA»** para lo que ningún DBA nombra
+(si el docente quería otra cosa, revertir); (4) la huella de carbono debe ser una herramienta de reflexión a nivel
+individual y comunitario (casa o colegio). Esta versión hace la fase 1 del plan: errores de hecho.
+
+**Corregido**
+- **Ambiente:** el simulador de CO₂ ya no llama «Nivel actual» a 390-410 ppm; el inventario de emisiones de Colombia
+  usa los datos de 2014 (IDEAM, 2018: 55 % uso del suelo, 35 % energía, 6 % residuos, 4 % procesos industriales),
+  calculados a partir de las cifras publicadas.
+- **Regiones:** páramo «1 a 12 °C» y nival «menos de 1 °C» (coherentes con 6 °C por 1 000 m); Caño Cristales pasa de
+  «sabana» a «humedal»; palma de cera «50 a 60 m»; «menos del 1 % de la superficie terrestre».
+- **Ecosistemas:** el jaguar y el águila arpía ya no son «consumidores terciarios» sin más (según lo que coman);
+  retamo espinoso «sin herbívoros ni enemigos naturales»; «casi toda» la energía; regla del 10 % «entre 5 y 20 %»;
+  peces pequeños «comen plantas, algas y restos»; suelos «de tierra firme».
+- **Célula:** la analogía confusa de la atmósfera como membrana se reemplaza por la del colador con aviso sobre el efecto
+  invernadero. **Reinos:** termófilas (desde ~45 °C), euglena mixótrofa, esponjas sin tejidos verdaderos, «Filo o
+  división», arqueas («no se ha demostrado…») y el ranking de Colombia citado como Instituto Humboldt (2024).
+- **Nutrición:** sello «Exceso en grasas trans» (los sellos pueden cambiar: hay un proyecto de 2026 para reemplazar la
+  Res. 810; no se pudo confirmar); La Guajira con causas múltiples. **Sistemas:** el riñón filtra unos 180 L al día.
+  **Funciones:** el armadillo se refugia bajo su caparazón. **Reproducción:** musgos y helechos ya no se presentan como
+  «asexual». **Genética:** la animación avisa que su secuencia está simplificada. **Evolución:** vida «entre 3500 y
+  3800 millones de años», genoma «casi todo» (completo en 2022), frailejones ~140 (subtribu), homininos y «no es una
+  escalera», habilis, neandertal 1-2 %, miles con espacio fino (1 000).
+- **Preguntas:** la fresa (planta, no fruta); Ecosistemas S37 (la clave estaba invertida); las bolsas sobre flores ahora
+  usan ahuyama (flores femeninas y masculinas separadas: el tomate se autopoliniza); Archaeopteryx «dinosaurios y
+  aves»; ranking de Colombia con su fuente. `saber-juego.js` regenerado. Caché `bionom-v73`.
+
+**Pendiente.** Fases 2 a 5 del plan de `AUDITORIA_DBA_2026-11.md`: etiquetas y «sin DBA», herramienta de huella,
+contenido que respalda las preguntas, calidad de las preguntas. Las líneas de ayuda y el contenido sensible quedan
+fuera por decisión del docente.
 
 ---
 

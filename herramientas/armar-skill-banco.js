@@ -51,7 +51,7 @@ function grupos(g){ return plano(g || []).map(x => ({id: x[0], nombre: limpio(x[
 
 /* ═════════════════ BioNom ═════════════════ */
 function bionom(){
-  const w = cargar(BIO, ['banco.js', 'ahorcado-datos.js', 'docente-datos.js', 'dba-bio.js', 'nivel-bio.js']);
+  const w = cargar(BIO, ['dba-bio.js', 'dba-ajustes.js', 'banco.js', 'ahorcado-datos.js', 'docente-datos.js', 'nivel-bio.js'].filter(f => fs.existsSync(path.join(BIO, f))));
   const temas = plano(w.TEMAS_JUEGO).map(t => ({id: t[0], nombre: t[1]}));
   const NIV = {1: 'basico', 2: 'medio', 3: 'completo'};
   const preguntas = w.BANCO_BIO.map((q, i) => {

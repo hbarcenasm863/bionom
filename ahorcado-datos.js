@@ -324,7 +324,7 @@ window.BANCO_AHORCADO.push(
 ["AISLAMIENTO","evolucion","Separación de poblaciones.","Lo causa una barrera.","Lleva a la especiación."],
 ["GENERACIÓN","evolucion","Unidad de tiempo en evolución.","Pasa de padres a hijos.","La evolución ocurre en muchas."],
 ["POLILLA","evolucion","Insecto nocturno.","Se volvió oscura en Inglaterra.","Ejemplo de selección natural."],
-["ARCHAEOPTERYX","evolucion","Fósil famoso.","Tenía plumas y dientes.","Une reptiles y aves."],
+["ARCHAEOPTERYX","evolucion","Fósil famoso.","Tenía plumas y dientes.","Une dinosaurios y aves."],
 ["MAÍZ","evolucion","Planta domesticada.","Viene del teosinte.","Ejemplo de selección artificial."],
 ["BIÓTICO","ecosistemas","Tipo de factor.","Tiene vida.","Como plantas y animales."],
 ["CONSUMIDOR","ecosistemas","Organismo del ecosistema.","No fabrica su alimento.","Come a otros seres vivos."],
