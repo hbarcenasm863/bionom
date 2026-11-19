@@ -8,24 +8,26 @@ pertenece cada pregunta: ese mapeo es criterio de BioNom.
 
 | Curso | DBA | Tema de BioNom | Cobertura | Juego / Saber 11 / abiertas (exacto) |
 |---|---|---|---|---|
-| 6.° | 4. Funciones básicas de la célula: transporte de membrana, obtención de energía (**respiración celular y rol de la mitocondria**) y división celular (mitosis) | La célula, División celular | ✅ | 84 / 87 / 64 |
-| 6.° | 5. Clasificación en grupos taxonómicos y dominios según el tipo de células | Reinos | ✅ | 73 / 50 / 39 |
-| 7.° | 3. Cadenas y redes tróficas; nutrición, fotosíntesis y **respiración celular** (comparar reactivos y productos) | Ecosistemas, La célula, Funciones, Nutrición | ✅ | 110 / 106 / 80 |
-| 7.° | 4. Ciclos del carbono, el nitrógeno y el agua; intervención humana; uso responsable del agua | Ecosistemas, Ambiente | ✅ (se completaron preguntas en la 2.58) | 25 / 23 / 20 |
-| 8.° | 4. Sistemas de órganos (excretor, inmune, nervioso, endocrino, óseo, muscular) y homeostasis; hábitos no saludables | Sistemas, Funciones, Nutrición | ✅ | 128 / 123 / 107 |
-| 8.° | 5. Reproducción asexual y sexual; embarazo en la adolescencia; prevención | Reproducción | ✅ | 50 / 50 / 40 |
-| 9.° | 4. Genética mendeliana y post-mendeliana; meiosis y leyes de Mendel | Genética, División celular | ✅ | 44 / 49 / 38 |
-| 9.° | 5. Expresión del ADN (traducción), fenotipo, mutaciones | Genética | ✅ | 27 / 20 / 21 |
-| 9.° | 6. Origen de las especies: selección natural y **ancestro común** (distribución geográfica, fósiles, homologías, comparación de ADN); eras geológicas | Evolución | ✅ desde la versión 2.57: «Las evidencias de la evolución» ya tenía anatomía, fósiles, ADN y embriones; se agregaron las pestañas **Ancestro común** (árbol interactivo) y **Dónde viven** (biogeografía) | 88 / 67 / 46 |
-| 10.° | 4. Biotecnología (fertilización asistida, clonación, modificación genética, terapias génicas) e implicaciones bioéticas | Genética (sección 12) | ✅ desde la 2.57: se agregó el Proyecto Genoma Humano, los lentes social, bioético y ambiental y un chequeo de bioética | 27 / 22 / 23 |
-| 11.° | 5. Cuestiones ambientales (calentamiento global, contaminación, tala, minería); Colombia megadiversa | Ambiente, Ecosistemas de Colombia | ✅ desde la 2.57: nueva sección «Colombia, país megadiverso» en Regiones (implicaciones social, ambiental y cultural; minería, ganadería, tala, carreteras, agricultura y tráfico) | 96 / 83 / 59 |
+| 6.° | 4. Funciones básicas de la célula: transporte de membrana, obtención de energía (**respiración celular y rol de la mitocondria**) y división celular (mitosis) | La célula, División celular | ✅ | 84 / 87 / 61 |
+| 6.° | 5. Clasificación en grupos taxonómicos y dominios según el tipo de células | Reinos | ✅ | 69 / 46 / 35 |
+| 7.° | 3. Cadenas y redes tróficas; nutrición, fotosíntesis y **respiración celular** (comparar reactivos y productos) | Ecosistemas, La célula, Funciones, Nutrición | ✅ | 27 / 33 / 20 |
+| 7.° | 4. Ciclos del carbono, el nitrógeno y el agua; intervención humana; uso responsable del agua | Ecosistemas, Ambiente | ✅ (se completaron preguntas en la 2.58) | 24 / 21 / 22 |
+| 8.° | 4. Sistemas de órganos (excretor, inmune, nervioso, endocrino, óseo, muscular) y homeostasis; hábitos no saludables | Sistemas, Funciones, Nutrición | ✅ | 82 / 84 / 71 |
+| 8.° | 5. Reproducción asexual y sexual; embarazo en la adolescencia; prevención | Reproducción | ✅ | 56 / 48 / 41 |
+| 9.° | 4. Genética mendeliana y post-mendeliana; meiosis y leyes de Mendel | Genética, División celular | ✅ | 40 / 45 / 39 |
+| 9.° | 5. Expresión del ADN (traducción), fenotipo, mutaciones | Genética | ✅ | 30 / 21 / 20 |
+| 9.° | 6. Origen de las especies: selección natural y **ancestro común** (distribución geográfica, fósiles, homologías, comparación de ADN); eras geológicas | Evolución | ✅ desde la versión 2.57: «Las evidencias de la evolución» ya tenía anatomía, fósiles, ADN y embriones; se agregaron las pestañas **Ancestro común** (árbol interactivo) y **Dónde viven** (biogeografía) | 83 / 65 / 44 |
+| 10.° | 4. Biotecnología (fertilización asistida, clonación, modificación genética, terapias génicas) e implicaciones bioéticas | Genética (sección 12) | ✅ desde la 2.57: se agregó el Proyecto Genoma Humano, los lentes social, bioético y ambiental y un chequeo de bioética | 27 / 27 / 25 |
+| 11.° | 5. Cuestiones ambientales (calentamiento global, contaminación, tala, minería); Colombia megadiversa | Ambiente, Ecosistemas de Colombia | ✅ desde la 2.57: nueva sección «Colombia, país megadiverso» en Regiones (implicaciones social, ambiental y cultural; minería, ganadería, tala, carreteras, agricultura y tráfico) | 100 / 86 / 64 |
 
-**Cómo se cuenta (exacto desde la versión 2.58).** Cada pregunta tiene su DBA: las de la versión 2.57
-y 2.58 lo llevan escrito (`dba:'9.6'`); las demás se etiquetan por tema y palabras clave del
-enunciado y la respuesta correcta (`BIO_DBA.dba`, en `dba-bio.js`). Cada DBA tiene **20 o más** preguntas
-del Juego (opción múltiple y verdadero/falso), tipo Saber 11 y abiertas. El panel docente permite
-escoger «Solo un DBA». Las etiquetas por palabras clave son criterio de BioNom y se pueden corregir
-en `dba-bio.js` (`DBA_TEMA`) o con `dba` en la pregunta.
+**Cómo se cuenta (exacto desde la versión 2.58; con «sin DBA» desde la 2.61).** Cada pregunta tiene un DBA o la
+etiqueta **«sin DBA»** (contenido que ningún DBA de biología nombra: relaciones entre especies, nicho y poblaciones,
+ubicación de regiones y ecosistemas de Colombia, origen del universo y de la vida, demografía, comparación de funciones
+vitales entre animales, biomoléculas y dieta; se apoyan en los Estándares Básicos de Competencias). Las de las versiones
+2.57 y 2.58 llevan el `dba` escrito; las demás se etiquetan por tema y palabras clave (`DBA_TEMA` en `dba-bio.js`) y los
+ajustes pregunta por pregunta de la auditoría están en `dba-ajustes.js`. **El curso nunca es menor que el grado de su DBA**
+(0 contradicciones de 1 432). Cada DBA tiene **20 o más** preguntas del Juego, Saber 11 y abiertas. Sin DBA propio hay
+130 del Juego, 122 Saber y 95 abiertas. El panel docente permite escoger «Solo un DBA» o «Sin DBA propio».
 
 **Sin DBA propio:** Funciones vitales comparadas y Nutrición y salud (se ligan a 7.° 3 y 8.° 4).
 La respiración celular: el DBA pide *explicar el proceso y el rol de la mitocondria* en 6.° y

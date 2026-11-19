@@ -76,7 +76,7 @@ function okNivel(q,c){if(!DB)return true;if(c.dba)return DB.dba(q)===c.dba&&!(q.
 function okNivelAb(x,c){if(!DB)return true;if(c.dba)return DB.dba(x.q,x.t)===c.dba;return DB.cursoAb(x.q,x.t)<=cursoTema(x.t,c.curso);}
 function pintarDbaSel(){
   var e=$('g-dba-sel');if(!e||!DB)return;var antes=e.value,L=DB.dbasDeTemas(temasMarcados());
-  e.innerHTML='<option value="">Todos los DBA del curso</option>'+L.map(function(d){return '<option value="'+d.id+'">DBA '+d.id+' · '+esc(d.tx.length>62?d.tx.slice(0,60)+'…':d.tx)+'</option>';}).join('');
+  e.innerHTML='<option value="">Todos los DBA del curso</option>'+L.map(function(d){return '<option value="'+d.id+'">'+(d.id==='sin'?'Sin DBA propio (Estándares Básicos)':'DBA '+d.id+' · '+esc(d.tx.length>62?d.tx.slice(0,60)+'…':d.tx))+'</option>';}).join('');
   if(antes&&L.some(function(d){return d.id===antes;}))e.value=antes;}
 function abiertasDe(c){var ab=[];c.temas.forEach(function(t){((D.ABIERTAS||{})[t]||[]).forEach(function(x){ab.push({t:t,q:x});});});return ab.filter(function(x){return okNivelAb(x,c);});}
 function notaNivel(c){
@@ -86,15 +86,15 @@ function notaNivel(c){
       J=(window.BANCO_BIO||[]).filter(function(q){return c.temas.indexOf(q.t)>=0&&q.k==='mc'&&okNivel(q,c);}).length,
       A=abiertasDe(c).length,
       subidos=!c.dba&&c.curso<11?c.temas.filter(function(t){return cursoTema(t,c.curso)>c.curso;}).map(function(t){return TEMAS_N[t]+' (desde '+DB.NOM[cursoTema(t,c.curso)]+')';}):[],
-      txt=(c.dba?'Solo el DBA '+c.dba+' (de cualquier curso)':'Hasta '+DB.NOM[c.curso])+' hay <b>'+S+'</b> preguntas tipo Saber 11, <b>'+J+'</b> de selección múltiple del Juego y <b>'+A+'</b> abiertas en los temas marcados.';
+      txt=(c.dba?(c.dba==='sin'?'Solo lo que no tiene DBA propio (de cualquier curso)':'Solo el DBA '+c.dba+' (de cualquier curso)'):'Hasta '+DB.NOM[c.curso])+'+(c.dba?': hay ':' hay ')+'<b>'+S+'</b> preguntas tipo Saber 11, <b>'+J+'</b> de selección múltiple del Juego y <b>'+A+'</b> abiertas en los temas marcados.';
   if(subidos.length)txt+=' <b>Ojo:</b> '+esc(subidos.join(', '))+' no se trabaja en los DBA de ese curso, así que ese tema sube al curso indicado.';
   if(c.curso<10||c.dba&&c.curso<10)txt+=' Las preguntas oficiales del Icfes (Saber 11) solo se usan desde 10.°.';
   e.innerHTML=txt;
   if(!d)return;
   var L=c.dba?DB.dbasDeTemas(c.temas).filter(function(x){return x.id===c.dba;}).map(function(x){return DB.dbaDe(x.curso,c.temas).filter(function(y){return y.n===x.n;})[0];}).filter(Boolean):DB.dbaDe(c.curso,c.temas),
-      tit=c.dba?'DBA '+c.dba+' escogido':'DBA de '+DB.NOM[c.curso]+' para los temas marcados ('+L.length+')';
+      tit=c.dba?(c.dba==='sin'?'Qué significa «sin DBA propio»':'DBA '+c.dba+' escogido'):'DBA de '+DB.NOM[c.curso]+' para los temas marcados ('+L.length+')';
   d.innerHTML='<details><summary>'+tit+'</summary>'+
-    (L.length?L.map(function(x){return '<p><b>DBA '+x.n+'.</b> '+esc(x.tx)+(x.ev.length?'<br><small>Evidencias: '+x.ev.map(esc).join(' · ')+'</small>':'')+'</p>';}).join(''):'<p>Los DBA de Ciencias Naturales de '+DB.NOM[c.curso]+' no tratan estos temas; las preguntas son las de cursos anteriores o posteriores indicadas arriba.</p>')+
+    (c.dba==='sin'?'<p>Son contenidos que ningún DBA de biología nombra (por ejemplo, relaciones entre especies, ubicación de regiones y ecosistemas, el origen del universo o la comparación de funciones vitales entre animales). Se apoyan en los Estándares Básicos de Competencias del MEN.</p>':L.length?L.map(function(x){return '<p><b>DBA '+x.n+'.</b> '+esc(x.tx)+(x.ev.length?'<br><small>Evidencias: '+x.ev.map(esc).join(' · ')+'</small>':'')+'</p>';}).join(''):'<p>Los DBA de Ciencias Naturales de '+DB.NOM[c.curso]+' no tratan estos temas; las preguntas son las de cursos anteriores o posteriores indicadas arriba.</p>')+
     '<p><small>'+esc(DB.FUENTE)+' Lo que ningún DBA nombra (por ejemplo las etapas de la respiración celular) se trata como profundización de 10.°. Funciones vitales y Nutrición y salud no tienen DBA propio: se etiquetan con el más cercano.</small></p></details>';
 }
 /* ── selección ── */

@@ -6,6 +6,31 @@
 
 ---
 
+## Versión 2.61 — 19 de noviembre de 2026 · Auditoría, fase 2: etiquetas de DBA y curso, y «sin DBA»
+
+**Contexto.** La auditoría mostró 252 de 1 432 preguntas con un curso menor que el grado de su DBA (defecto de las
+reglas de `dba-bio.js`) y contenido forzado al DBA «más cercano». El docente pidió marcar con **«sin DBA»** lo que
+ningún DBA nombra (respuesta 3 de sus decisiones, interpretada así).
+
+**Cambios**
+- **`dba-bio.js`:** el curso de cada pregunta nunca es menor que el grado de su DBA (0 contradicciones de 1 432). Nueva
+  etiqueta **`sin`** por reglas: en Ecosistemas (relaciones entre especies, nicho, poblaciones), Colombia (geografía
+  ecológica), Evolución (origen del universo y de la vida), Reproducción (demografía), Nutrición (biomoléculas y dieta),
+  Funciones vitales comparadas y División (inclusión). Funciones y Nutrición ya no se atan al DBA «más cercano» salvo lo
+  que sí nombra el DBA (regulación, hábitos). Sistemas: lo de reproducción va al 8.5. La especiación ya no es 10.°.
+- **`dba-ajustes.js` (nuevo):** 60 ajustes pregunta por pregunta tomados de las listas de la auditoría (fase luminosa y
+  cadena respiratoria en 10.°, biotecnología en 10.°, líquenes en 7.4, etc.). Clave «tema|comienzo del enunciado».
+- **Panel docente:** nueva opción «Sin DBA propio» en el selector «Solo un DBA», con su explicación. Ambiente (DBA 11.5)
+  aparece desde 11.° y el panel avisa que sube de curso.
+- **Se agregaron 5 preguntas Saber** (3 de 7.4 y 2 de 9.5) porque el reetiquetado dejó esos DBA en 18 y 19: todos siguen
+  con 20 o más (Juego, Saber y abiertas). Sin DBA propio hay 130 del Juego, 122 Saber y 95 abiertas.
+- `MATRIZ_DBA.md` con el conteo exacto y `CLAUDE.md` actualizado. `saber-juego.js` regenerado (659). Caché `bionom-v74`;
+  `?v=`: `dba-bio.js` 3, `docente-app.js` 18, `docente-datos.js` 29, `saber-juego.js` 9.
+
+**Pendiente.** Fases 3 a 5 y la herramienta de huella de carbono (ver `AUDITORIA_DBA_2026-11.md`).
+
+---
+
 ## Versión 2.60 — 19 de noviembre de 2026 · Auditoría, fase 1: errores de hecho
 
 **Contexto.** Tras la auditoría de la versión 2.59, el docente respondió las decisiones: (1) **no** agregar contenido
