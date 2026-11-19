@@ -210,3 +210,25 @@ del PDF V.1 y proponer la corrección. Trabajaron solo con lectura sobre los dat
 confianza (SEGURO, PROBABLE, DUDOSO); los que verifiqué yo mismo están en la sección 1. Las etiquetas de DBA y
 curso que proponen son su criterio contra los textos oficiales; el propio repositorio reconoce que el mapeo
 pregunta-curso es criterio de BioNom.
+
+---
+
+## 10. Estado de las correcciones (actualizado el 19-11-2026)
+
+Decisiones del docente: no agregar contenido sensible hasta que haya política pública; agregar el contenido que respalda las
+preguntas sin base; marcar «sin DBA» lo que ningún DBA nombra; y rehacer la huella como reflexión individual y comunitaria.
+
+| Fase | Estado | Versión |
+|---|---|---|
+| 1. Errores de hecho (páginas y preguntas) | Hecha | 2.60 |
+| 2. Etiquetas de DBA y curso, y «sin DBA» | Hecha (0 contradicciones; 60 ajustes de la auditoría) | 2.61 |
+| Huella de carbono → «Mi huella y la de mi comunidad» | Hecha | 2.62 |
+| 4. Contenido que respalda las preguntas | Hecha en Ambiente, Ecosistemas, Regiones, Sistemas, Célula, Reinos, Genética y Evolución | 2.64 |
+| 3. Calidad de las preguntas | **Parcial**: se corrigieron las pistas que regalaban la respuesta, los distractores absurdos de biotecnología y 14 enunciados defectuosos | 2.65 |
+
+**Pendiente de la fase 3** (se mide con los datos actuales): en el Juego, la correcta es la más larga en 44 % de las preguntas
+de opción múltiple (17 % por 1,3 veces o más); en Saber, 51 % (11 % por 1,3 veces o más). Faltan los duplicados y las 92 preguntas
+de verdadero/falso del Juego sin pistas (la mayoría anteriores a esta auditoría). Quedan sin hacer los hallazgos medios y menores
+de redacción de los informes que no se mencionan arriba.
+**Sin hacer por decisión del docente:** consentimiento y abuso, ruta legal de la interrupción del embarazo, salud mental y
+conductas alimentarias, líneas de ayuda.

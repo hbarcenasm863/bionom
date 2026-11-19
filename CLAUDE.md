@@ -60,6 +60,10 @@ Si la sesión fue solo de consulta, no hace falta registrar nada.
   aviso «Nueva versión disponible» de la app instalada solo aparece cuando
   cambia `sw.js` (versión 2.25).
 
+- **Antes de cada commit:** correr `node herramientas/revisar-sintaxis.js` (revisa todos los `.js` y los scripts dentro de las
+  páginas). Un error de sintaxis rompe la página entera y no se ve probando solo los datos (versión 2.66: un `+'+(` mal escrito dejó
+  sin funcionar el panel docente en las versiones 2.61 a 2.65). Después, abrir la página afectada con Playwright.
+
 - **Emojis:** no usar banderas (Windows no las dibuja: para Colombia usar
   `<span class="co"></span>`) ni emojis de la versión 12 en adelante (🫁 🫀
   🫘 🫧 🪸 🩸 🟢…), porque en el Windows del docente salen como

@@ -1222,4 +1222,53 @@ V('Todas las mutaciones cambian la proteína y el fenotipo.',false,['Piensa en e
 V('El ambiente puede influir en el fenotipo sin cambiar el genotipo.',true,['Piensa en el color de la piel con el sol.','El ADN permanece igual.'],'Verdadero. El fenotipo resulta del genotipo y del ambiente: por ejemplo, la estatura depende de los genes y de la alimentación.');
 BIO_NUEVAS(L);
 })();
+/* ── Ajustes de calidad de la auditoría (versión 2.65) ──
+   Pistas que regalaban la respuesta, distractores absurdos y enunciados defectuosos. A(tema, comienzo
+   del enunciado, cambios) cambia campos de la pregunta ya cargada. */
+(function(){
+function A(t,ini,c){var L=window.BANCO_BIO||[];for(var i=0;i<L.length;i++){var q=L[i];if(q.t===t&&q.q.indexOf(ini)===0){for(var k in c)q[k]=c[k];return;}}if(window.console)console.warn('Ajuste sin pregunta:',t,ini);}
+A('colombia','Caño Cristales, «el río de los cinco colores»',{p:['Es una serranía aislada entre los Andes, la Orinoquía y la Amazonía.','Sus plantas acuáticas se ponen rojas en una época del año.']});
+A('colombia','El bosque seco tropical es muy importante',{q:'¿Por qué el bosque seco tropical es uno de los ecosistemas más amenazados?',ops:['Porque casi todo se volvió potrero, cultivo o ciudad','Porque se cubrió de nieve y glaciares todo el año','Porque una sequía mató a todos sus seres vivos','Porque hoy cubre más de la mitad del territorio'],a:0});
+A('colombia','Chiribiquete, el parque nacional más grande',{p:['Está en la Amazonía, entre Caquetá y Guaviare.','Es Patrimonio Mixto de la Humanidad, por su naturaleza y su cultura.']});
+A('ecosistemas','Si desaparecen los peces de un río amazónico',{p:['Busca al animal que come casi solo peces.','Vive en agua dulce y es un mamífero.']});
+A('ecosistemas','¿Qué se forma cuando el vapor de agua se enfría?',{p:['Es un cambio de estado: de gas a líquido.','Las gotas pequeñas se juntan en lo alto de la atmósfera.']});
+A('ecosistemas','Según la segunda ley de la termodinámica',{ops:['Parte de la energía se pierde como calor','La energía se recicla por completo','La energía total aumenta en cada nivel','La energía desaparece sin dejar rastro'],a:0});
+A('ambiente','¿Cuál de estos es un gas de efecto invernadero?',{p:['Retiene el calor en la atmósfera.','Su molécula tiene un átomo de carbono y dos de oxígeno.']});
+A('ambiente','¿Cuál es la principal fuente de gases de efecto invernadero en Colombia?',{p:['En Colombia es diferente al resto del mundo.','Tiene que ver con lo que pasa en los bosques y en los potreros.']});
+A('ambiente','¿Qué gas producen las vacas al digerir el pasto?',{p:['Lo producen microorganismos (arqueas) del estómago de la vaca.','Es el mismo gas que sale de los rellenos de basura.']});
+A('ambiente','Detener la deforestación para reducir las emisiones',{p:['Hay varios tipos de acciones frente al cambio climático.','Esta ataca la causa del problema.']});
+A('ambiente','¿Qué gas, además del CO₂, sale en grandes cantidades',{q:'¿Qué contaminantes, además del CO₂, salen en grandes cantidades al quemar bosques?'});
+A('ambiente','¿Cuál es la principal causa de emisiones en Colombia?',{p:['Ocurre sobre todo en la Amazonía.','Es una actividad que cambia el uso del suelo.']});
+A('ambiente','¿Qué gas producen los arrozales y las vacas?',{p:['Lo producen microorganismos que viven sin oxígeno.','También sale de los rellenos.']});
+A('reinos','¿A qué reino pertenecen los hongos como el champiñón y la levadura?',{p:['No son plantas: no hacen fotosíntesis.','Absorben su alimento del medio en el que viven.']});
+A('reinos','¿Qué característica tienen las arqueas que NO tienen las eubacterias?',{ops:['Pared celular con peptidoglucano','Membrana con lípidos unidos por enlaces éter','Núcleo rodeado por una doble membrana','Cloroplastos para hacer fotosíntesis'],a:1});
+A('reinos','¿Cómo se llama la ciencia que nombra y clasifica a los seres vivos?',{p:['Su padre es Carl von Linneo.','Estudia cómo se ordena la diversidad de la vida.']});
+A('celula','¿Qué estructura forma el esqueleto interno de la célula',{p:['Está formado por fibras y tubos de proteína en el citoplasma.','Ayuda a mover los organelos y a que la célula cambie de forma.']});
+A('celula','¿Qué produce la fermentación láctica en los músculos',{p:['Es la misma fermentación que convierte la leche en yogur.','Es el compuesto que se acumula cuando se agria la leche.']});
+A('celula','¿Qué hace la ATP sintasa?',{p:['Es una proteína de la membrana interna de la mitocondria.','Gira como una turbina cuando pasan protones.']});
+A('funciones','¿Con qué respiran los insectos?',{p:['Su aire entra por huecos del cuerpo llamados espiráculos.','Es una red de tubos que llega hasta cada célula.']});
+A('funciones','¿Cuántas cavidades tiene el corazón de un pez?',{p:['El pez tiene circulación simple: la sangre pasa una sola vez por el corazón en cada vuelta.','Es el corazón con menos cavidades de los vertebrados.']});
+A('funciones','¿Cuántas cavidades tiene el corazón de una rana?',{p:['Es un corazón intermedio entre el del pez y el de un mamífero.','Tiene más cavidades que el del pez y menos que el de un mamífero.']});
+A('funciones','¿Qué desecho nitrogenado eliminan los peces?',{q:'¿Qué desecho nitrogenado eliminan los peces óseos de agua dulce?'});
+A('funciones','Si una arteria se estrecha a la mitad de su radio',{p:['El caudal depende mucho del radio del vaso.','Un cambio pequeño en el radio produce un cambio muy grande en el caudal.']});
+A('funciones','Las auxinas hacen que el tallo crezca hacia la sombra.',{q:'Las auxinas hacen que el tallo se curve alejándose de la luz.',p:['Piensa en una planta junto a una ventana.','Es un tropismo: la planta responde a un estímulo del ambiente.']});
+A('reproduccion','Los helechos producen esporas en unos puntos cafés',{p:['Se ven por el envés (la parte de abajo) de las hojas.','Cada punto es un grupo de sacos de esporas.']});
+A('reproduccion','Si cortas una estrella de mar',{q:'En algunas especies de estrella de mar, un brazo desprendido regenera un individuo completo. Esto es:'});
+A('reproduccion','¿Qué hormona hace que se produzcan los cambios de la pubertad en las mujeres',{p:['La producen los ovarios.','Es una hormona sexual que también regula el ciclo menstrual.']});
+A('reproduccion','Ordena las etapas del desarrollo humano antes del nacimiento',{p:['Empieza con la unión de los gametos.','La etapa de feto empieza hacia la semana 11 de embarazo (9 después de la fecundación).']});
+A('reproduccion','¿Cómo se llama la célula que resulta de la unión del óvulo',{p:['Es la primera célula de un nuevo individuo.','Tiene 46 cromosomas en los humanos: 23 de cada gameto.']});
+A('nutricion','¿Qué biomolécula forma las membranas de todas las células?',{p:['Tienen una cabeza que atrae el agua y colas que la repelen.','No se mezclan con el agua.']});
+A('nutricion','Usar antibióticos sin necesidad favorece',{p:['Sobreviven las bacterias que ya eran resistentes.','Es selección natural.']});
+A('nutricion','¿Por qué el mercurio afecta a quien come pescado',{p:['Es un metal pesado que el cuerpo no elimina con facilidad.','Los peces grandes tienen más mercurio que los pequeños.']});
+A('nutricion','¿Qué molécula es la «moneda» de energía de la célula?',{p:['Se fabrica en la mitocondria.','Cuando se gasta, la célula la vuelve a fabricar con la energía de los alimentos.']});
+A('genetica','¿Cuántos cromosomas tiene una célula del cuerpo humano',{p:['Los cromosomas vienen en parejas: uno de cada progenitor.','Es el doble de los que tiene un gameto.']});
+A('genetica','CRISPR se describe como:',{ops:['Unas tijeras moleculares para editar el ADN','Una enzima que copia el ADN en cada división','Un virus usado para fabricar proteínas','Un método para contar los cromosomas'],a:0});
+A('genetica','¿Qué pregunta es de bioética?',{ops:['¿Es correcto hacerlo?','¿Qué enzima se usa?','¿Cuántas horas tarda?','¿Qué temperatura necesita?'],a:0});
+A('genetica','¿Qué riesgo ambiental se discute de los transgénicos?',{ops:['Cruce con variedades nativas','Que cambie el sabor del maíz','Que suba el precio del agua','Que dañe las máquinas de cosecha'],a:0});
+A('genetica','Una prueba de ADN en medicina legal sirve para:',{ops:['Identificar personas','Medir la estatura','Calcular la edad de los huesos','Determinar el tipo de sangre'],a:0});
+A('genetica','El Proyecto Genoma Humano buscó:',{ops:['Descifrar la secuencia del ADN humano','Clonar a una persona adulta','Curar el cáncer en un año','Fabricar insulina en bacterias'],a:0});
+A('genetica','Una ventaja del maíz Bt resistente a plagas es:',{ops:['Menos insecticida aplicado','Mazorcas siempre más grandes','Menor necesidad de agua','Resistencia a todas las enfermedades'],a:0});
+A('genetica','¿Qué dilema plantea guardar datos genéticos?',{ops:['La privacidad','El costo del secuenciador','El tamaño de la muestra','La rapidez del resultado'],a:0});
+A('evolucion','¿En qué continente apareció el Homo sapiens?',{exp:'El Homo sapiens apareció en África hace unos 300 000 años; desde allí migró a los otros continentes. A América llegó hace más de 15 000 años (la fecha exacta se sigue discutiendo).'});
+})();
 delete window.BIO_AJ;delete window.BIO_NUEVAS;

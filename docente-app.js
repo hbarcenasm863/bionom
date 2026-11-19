@@ -86,7 +86,7 @@ function notaNivel(c){
       J=(window.BANCO_BIO||[]).filter(function(q){return c.temas.indexOf(q.t)>=0&&q.k==='mc'&&okNivel(q,c);}).length,
       A=abiertasDe(c).length,
       subidos=!c.dba&&c.curso<11?c.temas.filter(function(t){return cursoTema(t,c.curso)>c.curso;}).map(function(t){return TEMAS_N[t]+' (desde '+DB.NOM[cursoTema(t,c.curso)]+')';}):[],
-      txt=(c.dba?(c.dba==='sin'?'Solo lo que no tiene DBA propio (de cualquier curso)':'Solo el DBA '+c.dba+' (de cualquier curso)'):'Hasta '+DB.NOM[c.curso])+'+(c.dba?': hay ':' hay ')+'<b>'+S+'</b> preguntas tipo Saber 11, <b>'+J+'</b> de selección múltiple del Juego y <b>'+A+'</b> abiertas en los temas marcados.';
+      txt=(c.dba?(c.dba==='sin'?'Solo lo que no tiene DBA propio (de cualquier curso)':'Solo el DBA '+c.dba+' (de cualquier curso)'):'Hasta '+DB.NOM[c.curso])+(c.dba?': hay ':' hay ')+'<b>'+S+'</b> preguntas tipo Saber 11, <b>'+J+'</b> de selección múltiple del Juego y <b>'+A+'</b> abiertas en los temas marcados.';
   if(subidos.length)txt+=' <b>Ojo:</b> '+esc(subidos.join(', '))+' no se trabaja en los DBA de ese curso, así que ese tema sube al curso indicado.';
   if(c.curso<10||c.dba&&c.curso<10)txt+=' Las preguntas oficiales del Icfes (Saber 11) solo se usan desde 10.°.';
   e.innerHTML=txt;

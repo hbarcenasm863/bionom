@@ -6,6 +6,45 @@
 
 ---
 
+## Versión 2.66 — 19 de noviembre de 2026 · Arreglo urgente: el panel docente no cargaba
+
+**Qué pasó.** En la versión 2.61 un retoque de la redacción del aviso del filtro de curso dejó mal escrita una línea de
+`docente-app.js` (`+'+(c.dba…`). Eso es un error de sintaxis: el script no se leía y **el panel docente no generaba nada** en las
+versiones 2.61 a 2.65 publicadas. No se vio antes porque las pruebas de esas versiones se hicieron antes de ese retoque o solo
+sobre los datos. El juego y las páginas de contenido no se afectaron.
+
+**Arreglo.** Se corrigió la línea; el aviso de «Solo un DBA» y de «Sin DBA propio» se ve bien (por ejemplo «Solo el DBA 9.6 (de
+cualquier curso): hay…»). Se probó el panel con varios temas, cursos y DBA y las 17 páginas del sitio: sin errores de consola.
+**Prevención:** nuevo `herramientas/revisar-sintaxis.js` (revisa 80 scripts: todos los `.js` y los de las páginas) y una regla en
+`CLAUDE.md` para correrlo antes de cada commit. Caché `bionom-v78`; `docente-app.js?v=19`.
+
+**Pendiente.** Lo de la fase 3 (ver la versión 2.65).
+
+---
+
+## Versión 2.65 — 19 de noviembre de 2026 · Auditoría, fase 3 (parcial): calidad de las preguntas
+
+**Contexto.** Continuación de la auditoría: pistas que regalaban la respuesta, distractores absurdos y enunciados defectuosos.
+
+**Cambios**
+- **`banco.js`:** bloque «Ajustes de calidad» (función `A(tema, comienzo, cambios)`) con 45 ajustes: pistas nuevas que ya no
+  regalan la respuesta (Caño Cristales, Chiribiquete, el gas de las vacas, los hongos, la ATP sintasa, el corazón del pez y de
+  la rana, los helechos, el mercurio…); distractores plausibles en las de biotecnología (CRISPR, bioética, transgénicos, prueba de
+  ADN, genoma, maíz Bt, datos genéticos); enunciados corregidos (bosque seco «más amenazado», contaminantes del humo, peces óseos de
+  agua dulce, estrella de mar «en algunas especies», auxinas, semanas del feto «11 de embarazo, 9 después de la fecundación»).
+- **`docente-datos.js`:** cadena molde en la pregunta del ARNm; «¿qué estructura…» de la foto 51; transmisión independiente
+  de los cromosomas; llegada a América «más de 15 000 años (la fecha se discute)»; índice mitótico y temperatura de la levadura
+  verosímiles; la tabla de CO₂ sin variable de confusión (plaza sin árboles); distractores de biotecnología.
+- `AUDITORIA_DBA_2026-11.md` con el estado de cada fase. `saber-juego.js` regenerado. Caché `bionom-v77`; `?v=` de `banco.js`
+  (24), `docente-datos.js` (30) y `saber-juego.js` (10).
+
+**Pendiente.** En el Juego la correcta es la más larga en 44 % de las preguntas (17 % por 1,3 veces o más); en Saber, 51 % (11 %).
+Un acortamiento automático solo sirvió en 9 casos y cambiaba el sentido de algunos, así que queda para reescribir a mano.
+También los duplicados y las 92 preguntas de verdadero/falso sin pistas. La skill «nom-banco» (versión 2.63) trae una copia de
+los bancos hecha antes de las versiones 2.60 a 2.65: conviene volver a armarla con `herramientas/armar-skill-banco.js`.
+
+---
+
 ## Versión 2.64 — 19 de noviembre de 2026 · Auditoría, fase 4: contenido que respalda las preguntas
 
 **Contexto.** El docente decidió **agregar el contenido** que respalda las preguntas que la auditoría halló sin base
