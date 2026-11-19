@@ -106,6 +106,14 @@ function armarMenu(){
   if(pie&&!pie.children.length){
     pie.innerHTML='<b>Bio<span style="color:#9be3a8">Nom</span></b> · Biología interactiva por niveles de organización<br>© 2026 Harvey Bárcenas Morales · Licencia CC BY-NC 4.0';
   }
+  /* Aviso de uso de IA (Directiva 002 de 2026, Secretaría General de Bogotá, numeral 3.4) */
+  if(pie&&!pie.querySelector('.aviso-ia')){
+    var av=document.createElement('div');
+    av.className='aviso-ia';
+    av.style.cssText='margin-top:6px;font-size:.78rem;opacity:.92;line-height:1.5';
+    av.textContent='Parte de este contenido fue generado con apoyo de inteligencia artificial y revisado y aprobado por el docente Harvey Bárcenas Morales.';
+    pie.appendChild(av);
+  }
 }
 
 /* ── chequeo rápido ── */
