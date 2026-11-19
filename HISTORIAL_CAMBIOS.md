@@ -6,6 +6,34 @@
 
 ---
 
+## Versión 2.62 — 19 de noviembre de 2026 · «Mi huella y la de mi comunidad» (reflexión individual y comunitaria)
+
+**Contexto.** La auditoría señaló que la «calculadora» de huella de carbono de `ambiente.html` no tenía factores de
+emisión ni fuentes, pesaba igual todas las preguntas, podía estigmatizar («tu huella es alta») y no distinguía lo que
+decide una persona de lo que decide su familia o su colegio. El docente pidió una herramienta que muestre el nivel
+**individual y comunitario (casa o colegio)** y que **busque una reflexión en el estudiante**.
+
+**Cambios en `ambiente.html` (sección 07, ahora «Mi huella y la de mi comunidad»)**
+- Tres ámbitos: **Yo**, **Mi casa** y **Mi colegio**, con 6 preguntas cada uno (trayectos, comida, compras, agua, residuos y
+  desperdicio; transporte, electricidad, agua, residuos, comida y viajes de la familia; transporte, energía, agua,
+  residuos, cafetería y zonas verdes del colegio).
+- Cada respuesta da un **peso relativo** («pesa poco» a «pesa mucho»), no kilos de CO₂, y cada área dice **quién puede
+  cambiarla**: yo, mi familia, el colegio o la ciudad. Sin etiquetas como «tu huella es alta».
+- El resultado separa **lo que puedo cambiar yo** de **lo que se cambia entre varios**, y compara los ámbitos lado a lado.
+- **Reflexión guiada:** preguntas propias de cada ámbito y una de cierre (qué puedo yo solo y qué solo se logra entre
+  muchos), con cuadros de texto que se guardan en el equipo y botón para imprimir o guardar en PDF.
+- **Compromisos:** cinco personales y cinco de la comunidad (casa o colegio). Se guardan en el equipo
+  (`bionom_compromisos2`, `bionom_huella_resp`, `bionom_huella_ref`).
+- Aviso de que la herramienta no mide kilos de CO₂ y de que una calculadora de verdad usa factores de emisión.
+- La barra de la página ahora dice «Mi huella».
+
+**Pruebas (Playwright).** En 1100 y 390 px: se responden los tres ámbitos, aparece la comparación, la reflexión y los
+compromisos se guardan y se recuperan al recargar; sin errores de consola.
+
+**Pendiente.** Fases 3 a 5 (calidad de preguntas, contenido que respalda las preguntas). Sin pasos manuales.
+
+---
+
 ## Versión 2.61 — 19 de noviembre de 2026 · Auditoría, fase 2: etiquetas de DBA y curso, y «sin DBA»
 
 **Contexto.** La auditoría mostró 252 de 1 432 preguntas con un curso menor que el grado de su DBA (defecto de las
