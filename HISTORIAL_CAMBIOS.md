@@ -6,6 +6,33 @@
 
 ---
 
+## Versión 2.59 — 19 de noviembre de 2026 · Auditoría total contrastada con los DBA (solo informes, sin correcciones)
+
+**Contexto.** El docente pidió enviar un agente experto en biología y didáctica para hacer una auditoría
+total de las páginas y las preguntas, contrastando con los DBA. Se enviaron cuatro auditores en paralelo (uno
+por bloque de temas, porque son 13 páginas y unas 2 560 piezas) con lectura solamente: no modificaron el sitio.
+
+**Qué se agregó (solo documentos)**
+- `AUDITORIA_DBA_2026-11.md`: resumen (9 críticos, 97 medios, 86 menores), hallazgos verificados por mí, patrones
+  transversales, cobertura de cada DBA, cosas sin verificar, plan de corrección en cinco fases y las decisiones
+  que le tocan al docente.
+- `auditoria-2026-11/`: los cuatro informes completos (A: célula, división y reinos; B: ecosistemas, Colombia y
+  ambiente; C: sistemas, funciones, nutrición y reproducción; D: genética y evolución) y `volcar-preguntas.js`.
+- `CLAUDE.md`: fila nueva en la tabla de arquitectura.
+
+**Lo más importante.** No hay claves incorrectas en el Juego ni ambigüedades que invaliden, salvo la pregunta
+Saber S37 de Ecosistemas (clave invertida). Los chequeos de las páginas están bien. Los problemas son de
+coherencia: 252 de 1 432 preguntas con curso menor que el grado de su DBA (defecto de mis reglas de `dba-bio.js`);
+unas 35 preguntas de Ambiente, Ecosistemas y Colombia sobre lo que las páginas no enseñan; claves que se delatan
+por ser las más largas; pistas que regalan la respuesta; duplicados. Errores de hecho puntuales: la fruta de la
+fresa, los límites de temperatura del páramo, el rótulo del simulador de CO₂ y el sello de grasas trans.
+
+**Pendiente: todo.** No se corrigió nada. Ver el plan en `AUDITORIA_DBA_2026-11.md` (sección 7) y las decisiones
+del docente (sección 8). Sin pasos manuales (no se tocó `bionom-analytics.gs`; tampoco el sitio, así que no se
+subió el caché).
+
+---
+
 ## Versión 2.58 — 18 de noviembre de 2026 · Todas las preguntas con su DBA y filtro «Solo un DBA»
 
 **Contexto.** El docente aceptó etiquetar con su DBA las preguntas de los otros ocho DBA, para que el
