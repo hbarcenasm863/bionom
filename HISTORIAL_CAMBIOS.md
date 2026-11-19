@@ -6,6 +6,43 @@
 
 ---
 
+## Versión 2.60 — 19 de noviembre de 2026 · Auditoría, fase 1: errores de hecho
+
+**Contexto.** Tras la auditoría de la versión 2.59, el docente respondió las decisiones: (1) **no** agregar contenido
+sensible (consentimiento y abuso, ruta legal de la interrupción del embarazo, salud mental, conductas
+alimentarias, líneas de ayuda) hasta que aparezca política pública al respecto; (2) **agregar el contenido** que
+respalda las preguntas sin base; (3) «sin…», que se interpretó como **«sin DBA»** para lo que ningún DBA nombra
+(si el docente quería otra cosa, revertir); (4) la huella de carbono debe ser una herramienta de reflexión a nivel
+individual y comunitario (casa o colegio). Esta versión hace la fase 1 del plan: errores de hecho.
+
+**Corregido**
+- **Ambiente:** el simulador de CO₂ ya no llama «Nivel actual» a 390-410 ppm; el inventario de emisiones de Colombia
+  usa los datos de 2014 (IDEAM, 2018: 55 % uso del suelo, 35 % energía, 6 % residuos, 4 % procesos industriales),
+  calculados a partir de las cifras publicadas.
+- **Regiones:** páramo «1 a 12 °C» y nival «menos de 1 °C» (coherentes con 6 °C por 1 000 m); Caño Cristales pasa de
+  «sabana» a «humedal»; palma de cera «50 a 60 m»; «menos del 1 % de la superficie terrestre».
+- **Ecosistemas:** el jaguar y el águila arpía ya no son «consumidores terciarios» sin más (según lo que coman);
+  retamo espinoso «sin herbívoros ni enemigos naturales»; «casi toda» la energía; regla del 10 % «entre 5 y 20 %»;
+  peces pequeños «comen plantas, algas y restos»; suelos «de tierra firme».
+- **Célula:** la analogía confusa de la atmósfera como membrana se reemplaza por la del colador con aviso sobre el efecto
+  invernadero. **Reinos:** termófilas (desde ~45 °C), euglena mixótrofa, esponjas sin tejidos verdaderos, «Filo o
+  división», arqueas («no se ha demostrado…») y el ranking de Colombia citado como Instituto Humboldt (2024).
+- **Nutrición:** sello «Exceso en grasas trans» (los sellos pueden cambiar: hay un proyecto de 2026 para reemplazar la
+  Res. 810; no se pudo confirmar); La Guajira con causas múltiples. **Sistemas:** el riñón filtra unos 180 L al día.
+  **Funciones:** el armadillo se refugia bajo su caparazón. **Reproducción:** musgos y helechos ya no se presentan como
+  «asexual». **Genética:** la animación avisa que su secuencia está simplificada. **Evolución:** vida «entre 3500 y
+  3800 millones de años», genoma «casi todo» (completo en 2022), frailejones ~140 (subtribu), homininos y «no es una
+  escalera», habilis, neandertal 1-2 %, miles con espacio fino (1 000).
+- **Preguntas:** la fresa (planta, no fruta); Ecosistemas S37 (la clave estaba invertida); las bolsas sobre flores ahora
+  usan ahuyama (flores femeninas y masculinas separadas: el tomate se autopoliniza); Archaeopteryx «dinosaurios y
+  aves»; ranking de Colombia con su fuente. `saber-juego.js` regenerado. Caché `bionom-v73`.
+
+**Pendiente.** Fases 2 a 5 del plan de `AUDITORIA_DBA_2026-11.md`: etiquetas y «sin DBA», herramienta de huella,
+contenido que respalda las preguntas, calidad de las preguntas. Las líneas de ayuda y el contenido sensible quedan
+fuera por decisión del docente.
+
+---
+
 ## Versión 2.59 — 19 de noviembre de 2026 · Auditoría total contrastada con los DBA (solo informes, sin correcciones)
 
 **Contexto.** El docente pidió enviar un agente experto en biología y didáctica para hacer una auditoría

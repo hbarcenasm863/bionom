@@ -79,7 +79,7 @@
     <h2><span class="n">02</span> ¿Qué lo causa? El caso de Colombia</h2>
     <p class="lead">En el mundo, la principal causa es quemar <b>combustibles fósiles</b> (petróleo, gas, carbón). En Colombia es distinto: la mayor parte de los gases de efecto invernadero sale del <b>cambio en el uso del suelo</b>: tumbar selva para potreros, la ganadería y la agricultura.</p>
     <div class="card"><canvas id="emis" width="900" height="250" aria-label="Fuentes de gases de efecto invernadero en Colombia"></canvas>
-      <p style="font-size:.84rem;color:var(--cn-dim)">Porcentajes aproximados del inventario nacional de gases de efecto invernadero (IDEAM). Toca una barra.</p><p id="emis-t" aria-live="polite"></p></div>
+      <p style="font-size:.84rem;color:var(--cn-dim)">Porcentajes aproximados del inventario nacional de gases de efecto invernadero de Colombia con datos de 2014 (IDEAM, 2018); en otros años cambian un poco, pero el uso del suelo sigue siendo la primera fuente. Toca una barra.</p><p id="emis-t" aria-live="polite"></p></div>
     <div class="grid g3" style="margin-top:12px">
       <div class="flip"><div class="in"><div class="fr"><span class="e">🚜</span><b>Deforestación</b><small>toca para voltear</small></div><div class="bk">Al talar y quemar el bosque, el carbono guardado en los árboles sale como CO₂, y ese bosque deja de absorberlo. La mayor parte de la deforestación de Colombia ocurre en la Amazonia, para convertirla en potreros.</div></div></div>
       <div class="flip"><div class="in"><div class="fr"><span class="e">🐄</span><b>Ganadería</b><small>toca para voltear</small></div><div class="bk">Las vacas producen metano al digerir el pasto (gracias a arqueas de su estómago). El metano calienta cerca de 80 veces más que el CO₂ en sus primeros 20 años.</div></div></div>
@@ -187,7 +187,7 @@ function dibTierra(c){var k=(c-280)/520,s='<defs><radialGradient id="esp" cx="50
   return s;}
 function verCO2(){var c=+co2.value,dt=3*Math.log(c/280)/Math.log(2);
   document.getElementById('tierra').innerHTML=dibTierra(c);
-  var hito=c<=290?'Nivel de antes de la Revolución Industrial (siglo XVIII).':c<=330?'Nivel de 1970.':c<=380?'Nivel del año 2005.':c<=430?'<b>Nivel actual</b> (más de 420 ppm): el más alto en al menos 800 000 años.':c<=560?'El doble que antes de la industria: puede ocurrir en este siglo si no cambiamos.':'Escenario extremo de emisiones muy altas.';
+  var hito=c<=290?'Nivel de antes de la Revolución Industrial (siglo XVIII).':c<=330?'Nivel de 1970.':c<=380?'Nivel del año 2005.':c<=410?'Nivel de los años 2010 a 2019.':c<=430?'<b>Nivel actual</b> (cerca de 420 ppm o más): el más alto en al menos 800 000 años.':c<=560?'El doble que antes de la industria: puede ocurrir en este siglo si no cambiamos.':'Escenario extremo de emisiones muy altas.';
   document.getElementById('co2-t').innerHTML='<div class="termo">+'+dt.toFixed(1).replace('.',',')+' °C</div><p>Calentamiento aproximado a largo plazo respecto a la era preindustrial.</p><p style="margin-top:6px">'+hito+'</p>'+(dt>1.5?'<p style="margin-top:6px;color:#b42318;font-weight:700">Por encima de 1,5 °C los científicos esperan daños graves: pérdida de casi todos los corales, más sequías e inundaciones, glaciares perdidos.</p>':'');
   if(c>=420)BIO.marcarSeccion('invernadero');}
 co2.oninput=verCO2;verCO2();
@@ -208,7 +208,7 @@ document.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){v
   document.getElementById('keel-t').innerHTML=(v===490?'✅ Bien leído: ':'🤔 Mira la pendiente: ')+'en los últimos 20 años el CO₂ ha subido unas <b>2,4 ppm por año</b>. Si sigue así, en 2050 estaríamos cerca de 490 ppm. Que la curva baje depende de reducir las emisiones: los datos permiten predecir, pero el futuro depende de lo que hagamos.';};});
 
 /* ═══ Emisiones de Colombia ═══ */
-var EM=[['Uso del suelo, deforestación y ganadería',59,'#3f8f4a','Deforestación, potreros, ganadería (metano) y cultivos. Por eso detener la deforestación de la Amazonia es lo más importante que puede hacer Colombia.'],['Energía y transporte',31,'#e07a3f','Gasolina y diésel de carros, buses y camiones; gas y carbón en industrias y centrales térmicas.'],['Residuos',7,'#8a6d3b','Los rellenos sanitarios producen metano cuando la basura orgánica se pudre sin oxígeno. Separar y compostar lo reduce.'],['Procesos industriales',3,'#6b7280','Producción de cemento, acero y químicos.']];
+var EM=[['Uso del suelo, deforestación y ganadería',55,'#3f8f4a','Deforestación, potreros, ganadería (metano) y cultivos. Por eso detener la deforestación de la Amazonia es lo más importante que puede hacer Colombia.'],['Energía y transporte',35,'#e07a3f','Gasolina y diésel de carros, buses y camiones; gas y carbón en industrias y centrales térmicas.'],['Residuos',6,'#8a6d3b','Los rellenos sanitarios producen metano cuando la basura orgánica se pudre sin oxígeno. Separar y compostar lo reduce.'],['Procesos industriales',4,'#6b7280','Producción de cemento, acero y químicos.']];
 var emSel=-1;
 function grafE(){var cv=document.getElementById('emis'),c=cv.getContext('2d'),W=900,H=250;c.clearRect(0,0,W,H);
   EM.forEach(function(e,i){var y=20+i*56,w=(W-300)*e[1]/60;c.fillStyle=e[2];c.globalAlpha=emSel<0||emSel===i?1:.35;c.beginPath();c.roundRect?c.roundRect(280,y,w,40,8):c.rect(280,y,w,40);c.fill();c.globalAlpha=1;
