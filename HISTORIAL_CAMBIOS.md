@@ -6,6 +6,27 @@
 
 ---
 
+## Versión 2.68 — 19 de noviembre de 2026 · Fase 3 de la auditoría: duplicados y pistas de verdadero/falso
+
+**Contexto.** El docente pidió seguir con los duplicados y las preguntas de verdadero/falso de la fase 3.
+
+**Cambios.**
+- `banco.js`: se quitaron 35 preguntas del Juego que repetían la misma idea de otra del mismo tema (por ejemplo, cóndor, mutualismo,
+  hábitat, Acuerdo de París, órganos análogos y homólogos, clonación y transgénicos). Se dejó la mejor redactada de cada pareja.
+  No se tocaron las parejas que piden algo distinto ni las que se repiten a propósito por modelo de reinos.
+- `docente-datos.js`: se quitaron 17 preguntas Saber con el mismo caso y la misma pregunta (por ejemplo, el maíz y el viento,
+  el marsupial, el banano clonado, la eutrofización, la deriva genética y los antibióticos y la gripa).
+- `banco.js`: las 87 preguntas de verdadero/falso que no tenían pistas ahora tienen dos (una general y una concreta, sin la
+  respuesta). Ya ninguna queda sin pistas.
+- Se comprobó que cada DBA sigue con 20 o más preguntas (Juego, Saber y abiertas), cada tema con 40 o más del Juego, Saber y
+  cortas para los laberintos (División justo en 40 cortas). `saber-juego.js` regenerado.
+- Caché `bionom-v80`; `banco.js?v=26`, `docente-datos.js?v=32`, `saber-juego.js?v=12`.
+
+**Pendiente.** Las parejas de Evolución y Genética que se dejaron porque piden cosas distintas con el mismo caso (Saber), las
+abiertas duplicadas, y retoques menores de redacción de los informes A–D.
+
+---
+
 ## Versión 2.67 — 19 de noviembre de 2026 · Fase 3 de la auditoría: opciones de largo parecido
 
 **Contexto.** El docente pidió seguir con la fase 3 (calidad de las preguntas). Se midió que la respuesta correcta era la más larga

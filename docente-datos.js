@@ -1356,3 +1356,26 @@ S('ambiente','Una persona deja todas las luces y aparatos','Gasta más energía'
 S('funciones','Un estudiante registró la frecuencia cardíaca','La frecuencia aumenta con el ejercicio',['La frecuencia aumenta con el ejercicio y baja de nuevo al descansar','La frecuencia aumenta aunque la persona descanse por completo','La frecuencia no cambia con ninguna actividad física','La frecuencia baja mientras se hace ejercicio intenso']);
 S('celula','Un glóbulo rojo se pone en agua destilada','El agua entra por ósmosis',['El agua entra por ósmosis porque afuera hay menos solutos que adentro','Las sales del agua destilada entran en el glóbulo y lo rompen','El glóbulo rojo produce agua por respiración celular','El agua destilada tiene más sales que el contenido de la célula']);
 })();
+
+/* ── Fase 3 de la auditoría (versión 2.68): se quita una de cada pareja de preguntas Saber que repiten la misma idea ── */
+(function(){var D=window.DOCENTE_DATOS;if(!D||!D.SABER)return;var Q=[
+  ['ecosistemas',"En un potrero hay pasto, conejos y zorros. Una enf","¿Qué pasará primero con los conejos?"],
+  ['ecosistemas',"Durante seis años se contaron las presas (conejos)","¿Qué patrón muestran las dos poblaciones?"],
+  ['ecosistemas',"Las bacterias del suelo transforman el nitrógeno d","¿Para qué los usan las plantas?"],
+  ['ecosistemas',"Un lago recibe aguas con mucho fertilizante de los","¿Qué secuencia ocurre?"],
+  ['genetica',"Una mutación cambia un codón por otro que codifica","¿Por qué la proteína no cambia?"],
+  ['evolucion',"El ala de una mariposa y el ala de un ave sirven p","¿Qué tipo de órganos son?"],
+  ['evolucion',"Los embriones de pez, de ave y de humano tienen he","¿Qué sugiere esta semejanza?"],
+  ['evolucion',"El coxis humano es un hueso pequeño al final de la","¿Cómo se clasifica?"],
+  ['evolucion',"En un hospital, una bacteria que antes moría con u","¿Qué explica mejor el cambio?"],
+  ['evolucion',"Una población de bacterias recibe un antibiótico; ","¿Cómo se explica que después haya más bacterias resistentes?"],
+  ['evolucion',"El maíz moderno tiene mazorcas grandes y el teosin","¿Qué produjo ese cambio?"],
+  ['evolucion',"En una población pequeña de 20 ranas, por azar mue","¿Qué mecanismo actuó?"],
+  ['reproduccion',"Una planta de maíz tiene flores pequeñas, sin colo","¿Quién la poliniza?"],
+  ['reproduccion',"Un bebé nace muy pequeño y termina de desarrollars","Es una cría de"],
+  ['reproduccion',"Un cultivo de bananos clonados es atacado por un h","¿Qué desventaja de la reproducción asexual muestra este caso?"],
+  ['reproduccion',"Después de la fecundación, una flor de maracuyá pi","¿En qué se convierte el ovario?"],
+  ['sistemas',"Después de almorzar, el nivel de glucosa en la san","¿Qué hormona hizo que la glucosa bajara?"],
+];
+for(var i=0;i<Q.length;i++){var ok=false;for(var k=D.SABER.length-1;k>=0;k--){var q=D.SABER[k];if(q.t===Q[i][0]&&q.ctx&&q.ctx.indexOf(Q[i][1])===0&&q.q===Q[i][2]){D.SABER.splice(k,1);ok=true;break;}}if(!ok&&window.console)console.warn('Saber duplicada no encontrada:',Q[i][0],Q[i][1]);}
+})();
