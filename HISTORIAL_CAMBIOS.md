@@ -6,50 +6,20 @@
 
 ---
 
-## Versión 2.63 — 19 de noviembre de 2026 · Skill «nom-banco»: banco de preguntas y generadores de los tres sitios
+## Versión 2.63 — 19 de noviembre de 2026 · Herramienta privada del docente (sin cambios en el sitio)
 
-**Contexto.** El docente preguntó si se podía hacer una skill con el banco de preguntas y los generadores de
-crucigramas, sopas de letras y ahorcado. Escogió una sola skill con los bancos de BioNom, ChromaNom e IonNom, que
-sirva para tres cosas: hacer crucigrama, sopa y ahorcado; armar talleres y evaluaciones con preguntas del banco; y
-escribir preguntas nuevas con las reglas del banco. Así puede pedirle a Claude, desde el chat o desde Claude Code,
-por ejemplo «un crucigrama de la célula para 7.°», sin abrir el panel docente.
+**Contexto.** El docente pidió una herramienta privada para su cuenta de Claude, armada con los bancos de preguntas
+y palabras de los sitios. Por un momento quedó en este repositorio (carpeta `skill/` y
+`herramientas/armar-skill-banco.js`). El docente pidió que no se publicara aquí, así que se retiró: vive solo en su
+cuenta.
 
-**Qué se agregó**
-- `skill/nom-banco/`: la skill.
-  - `SKILL.md`: cuándo usarla, cómo generar cada hoja, cómo entregarla (PDF, Word, chat) y el flujo para preguntas nuevas.
-  - `scripts/nom.js`: programa con los comandos `temas`, `buscar`, `crucigrama`, `sopa`, `ahorcado`, `cuestionario`,
-    `validar` y `exportar`. El crucigrama y la sopa usan las mismas reglas de `retos.js` (palabras sin tildes, la Ñ
-    como letra, nada pegado a los lados en el crucigrama, cada palabra una sola vez en la sopa; ahorcado de 6 fallos
-    con pista 2 al 2.º fallo y pista 3 al 4.º). Las hojas salen en tamaño carta con logo, Nombre/Curso/Fecha, pie del
-    sitio y una página de respuestas; con `--pdf` también en PDF. Filtros por tema, curso (DBA), nivel, tipo,
-    competencia Saber y «cortas». `--semilla` repite la misma hoja (sirve para filas A y B). En IonNom también hay
-    ejercicios de nomenclatura nombre ↔ fórmula con los 783 compuestos.
-  - `validar` revisa las preguntas y palabras nuevas: pistas que no regalen la respuesta, explicación, clave que no
-    se delate por ser la más larga, competencia y afirmación del Icfes coherentes, DBA válido, palabra + pista 1 ≤ 95
-    caracteres, emojis que no se ven en Windows, fórmulas con ramas entre paréntesis y repetidos con el banco.
-  - `exportar` pasa lo nuevo al formato de cada sitio y dice en qué archivo va.
-  - `referencias/formato.md` (formato común, afirmaciones del Icfes, DBA) y `referencias/reglas.md` (reglas del docente).
-  - `datos/*.json`: copia de los bancos (BioNom 808 del juego, 680 Saber, 537 abiertas, 489 palabras; ChromaNom 863, 373,
-    217, 146; IonNom 378, 1023, 522, 162 y 783 compuestos). Las preguntas de nomenclatura de ChromaNom traen el
-    dibujo de su estructura, sacado del propio `juego.html` (semidesarrollada con todos sus enlaces cuando existe).
-- `skill/nom-banco.zip`: el paquete para subir a claude.ai.
-- `herramientas/armar-skill-banco.js`: vuelve a copiar los bancos de los tres repositorios (deben estar al lado de
-  BioNom) y arma el `.zip`. Necesita Playwright para los dibujos de ChromaNom.
-- `CLAUDE.md`: fila nueva en la tabla de arquitectura.
+**Cambios en el repositorio.** Ninguno en el sitio. Se agregaron y luego se borraron `skill/` y
+`herramientas/armar-skill-banco.js`, y la fila que se había puesto en `CLAUDE.md`.
 
-**Decisiones**
-- En hojas impresas no salen las 35 preguntas de ChromaNom que tienen fórmulas con ramas entre paréntesis escritas
-  en el texto (el sitio las convierte en dibujo con `fx-libro.js`, pero en papel saldrían como texto). Con
-  `buscar … --con-ramas` se pueden ver para dibujarlas con la skill `chromanom-estructuras`.
-- Las preguntas oficiales del Icfes no van en la skill (necesitan sus imágenes y su crédito).
+**Pendiente.** Nada en el sitio. Sin pasos manuales.
 
-**Pasos manuales del docente**
-- Subir `skill/nom-banco.zip` en claude.ai → Configuración → Capacidades → Skills (igual que `chromanom-estructuras`).
-- La skill es una copia: cuando cambien los bancos de cualquiera de los tres sitios, correr
-  `node herramientas/armar-skill-banco.js` y volver a subir el `.zip`.
+---
 
-**Sin resolver.** No se tocó el sitio (ni `sw.js` ni `bionom-analytics.gs`): la skill no se sirve en las páginas.
-Las preguntas Saber antiguas de BioNom no traen competencia (`c`); en la hoja salen sin ella.
 ## Versión 2.62 — 19 de noviembre de 2026 · «Mi huella y la de mi comunidad» (reflexión individual y comunitaria)
 
 **Contexto.** La auditoría señaló que la «calculadora» de huella de carbono de `ambiente.html` no tenía factores de
