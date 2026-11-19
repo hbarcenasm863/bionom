@@ -6,6 +6,15 @@
 
 ---
 
+## Versión 2.72 — 19 de noviembre de 2026 · Pregunta J89 de Evolución
+
+**Contexto.** El docente pidió revisar la pregunta «Dos especies emparentadas solo pueden vivir en el mismo lugar», cuya palabra «solo» delataba que era falsa.
+
+**Cambio.** `banco.js`: ahora dice «Dos especies emparentadas pueden vivir en continentes distintos» (verdadero), con explicación nueva
+(marsupiales de Australia y América) y las mismas dos pistas. Sigue siendo del DBA 9.6. Caché `bionom-v84`; `banco.js?v=30`.
+
+---
+
 ## Versión 2.71 — 19 de noviembre de 2026 · Fase 3 de la auditoría: datos de ejemplo, distractores y dominancia incompleta
 
 **Contexto.** El docente pidió terminar los tres retoques que quedaban de los informes.

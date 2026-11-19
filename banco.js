@@ -1479,4 +1479,6 @@ A('funciones','La presión arterial normal de un adulto',['120/80 mmHg','80/40 m
 A('nutricion','¿Cuánta actividad física diaria recomienda la OMS',['60 minutos al día','20 minutos al día','5 horas al día','Solo los fines de semana']);
 A('reproduccion','Si nacen muy pocos niños durante años',['Envejece','Crece rápido','No cambia','Aumenta el número de niños']);
 })();
+/* ── Versión 2.72: pregunta de especies emparentadas sin la palabra «solo» que delataba la respuesta ── */
+(function(){var L=window.BANCO_BIO||[];for(var i=0;i<L.length;i++){var q=L[i];if(q.t==='evolucion'&&q.k==='vf'&&q.q.indexOf('Dos especies emparentadas solo')===0){q.q='Dos especies emparentadas pueden vivir en continentes distintos.';q.a=true;q.exp='Verdadero. Si sus ancestros quedaron separados cuando los continentes se movieron, sus descendientes siguen siendo parientes aunque vivan lejos. Es el caso de los marsupiales de Australia y de América.';return;}}if(window.console)console.warn('Pregunta J89 no encontrada');})();
 delete window.BIO_AJ;delete window.BIO_NUEVAS;
