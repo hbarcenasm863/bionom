@@ -6,6 +6,24 @@
 
 ---
 
+## Versión 2.71 — 19 de noviembre de 2026 · Fase 3 de la auditoría: datos de ejemplo, distractores y dominancia incompleta
+
+**Contexto.** El docente pidió terminar los tres retoques que quedaban de los informes.
+
+**Cambios.**
+- `docente-datos.js`: 27 preguntas Saber con cifras inventadas (frecuencia cardíaca, páramo, aves, etiquetas, glucosa, etc.) ahora
+  terminan con «(Datos de ejemplo.)». No se marcaron las de datos reales (Lindeman, CO₂ de Hawái, citocromo c, Mendel, nevado).
+- `banco.js` y `docente-datos.js`: distractores más creíbles en 10 preguntas (extinción de dinosaurios, panspermia, presión arterial,
+  actividad física, población, embriones, fósil de 200 millones de años, bacterias, moléculas comunes). Las respuestas correctas no cambian.
+- `genetica.html`: la dominancia incompleta se escribe CᴿCᴿ, CᴿCᴮ y CᴮCᴮ (letra base con superíndice) en el texto, los selectores y el
+  cuadro de Punnett, en vez de RR/RB/BB que parecía mezclar dos genes. El cuadro de Punnett recibe un rotulador de alelos opcional.
+- Caché `bionom-v83`; `banco.js?v=29`, `docente-datos.js?v=34`, `saber-juego.js?v=13`.
+
+**Sin cambiar.** J89 de Evolución («solo pueden vivir en el mismo lugar»): corregir la palabra delatora exige invertir la
+respuesta y su explicación; queda para una revisión de esa pregunta.
+
+---
+
 ## Versión 2.70 — 19 de noviembre de 2026 · Fase 3 de la auditoría: retoques menores
 
 **Contexto.** El docente pidió seguir con los retoques menores de los informes.

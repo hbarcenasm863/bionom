@@ -1400,3 +1400,46 @@ function pos(t,x){var L=D.ABIERTAS[t]||[];for(var i=0;i<L.length;i++){if(L[i]===
 for(var i=0;i<C.length;i++){var p=pos(C[i][0],C[i][1]);if(p>=0)D.ABIERTAS[C[i][0]][p]=C[i][2];}
 for(var j=0;j<Q.length;j++){var r=pos(Q[j][0],Q[j][1]);if(r>=0)D.ABIERTAS[Q[j][0]].splice(r,1);}
 })();
+
+/* ── Retoques menores (versión 2.71): se marcan como «datos de ejemplo» las cifras inventadas de las preguntas Saber ── */
+(function(){var D=window.DOCENTE_DATOS;if(!D||!D.SABER)return;var Q=[
+  ["division","En una preparación de punta de raíz de cebolla se contaron 2"],
+  ["sistemas","Se midió la frecuencia cardíaca de 5 estudiantes. Promedios:"],
+  ["funciones","Se midió el consumo de oxígeno de un ratón y de una lagartij"],
+  ["ecosistemas","Durante 6 años se contaron conejos y zorros en una zona. Con"],
+  ["colombia","En un páramo se midió la temperatura media a distintas altur"],
+  ["colombia","Un estudio contó las especies de aves en fragmentos de bosqu"],
+  ["ambiente","Se midió el oxígeno disuelto en un río: antes de la descarga"],
+  ["division","Se contaron células en mitosis en dos tejidos humanos: en la"],
+  ["division","Se midió cuánto tarda en dividirse una célula de levadura a "],
+  ["sistemas","Se midió la glucosa en la sangre de una persona sana: en ayu"],
+  ["funciones","Se midió la temperatura corporal de un perro y de una lagart"],
+  ["funciones","En un acuario, se contó cuántas veces por minuto abría la bo"],
+  ["reproduccion","Se contaron renacuajos que llegaron a ranas en dos charcas: "],
+  ["ecosistemas","Durante 10 años se registró que, después de quitar el ganado"],
+  ["colombia","En el páramo de Sumapaz se midió el agua que guarda el suelo"],
+  ["colombia","Se contaron especies de aves en una finca cafetera con sombr"],
+  ["ambiente","En Bogotá se midió el material particulado PM2,5 en una call"],
+  ["ambiente","En dos lotes iguales de maíz, uno con árboles en los bordes "],
+  ["celula","Un grupo construyó tres cubos de agar de distinto tamaño, co"],
+  ["evolucion","Para estudiar la selección natural, un grupo liberó polillas"],
+  ["funciones","Un estudiante registró la frecuencia cardíaca de un compañer"],
+  ["nutricion","Una nutricionista recomienda no pasar de 25 g de azúcar libr"],
+  ["reproduccion","Una estudiante leyó que, tras la ovulación, la temperatura c"],
+  ["sistemas","Después de una comida rica en azúcares, se midió cada 30 min"],
+  ["colombia","Un estudiante registró la temperatura media de cuatro lugare"],
+  ["celula","Un grupo comparó cuánta glucosa consume una población de lev"],
+  ["celula","Se midió el lactato, una sustancia que sale de la fermentaci"],
+];
+for(var i=0;i<Q.length;i++){var ok=false;for(var k=0;k<D.SABER.length;k++){var q=D.SABER[k];if(q.t===Q[i][0]&&q.ctx&&q.ctx.indexOf(Q[i][1])===0){if(!/ejemplo/i.test(q.ctx))q.ctx=q.ctx+' (Datos de ejemplo.)';ok=true;break;}}if(!ok&&window.console)console.warn('Saber sin coincidencia:',Q[i][0],Q[i][1]);}
+})();
+
+/* ── Retoques menores (versión 2.71): distractores más creíbles en preguntas Saber ── */
+(function(){var D=window.DOCENTE_DATOS;if(!D||!D.SABER)return;
+function S(t,ini,o){var L=D.SABER;for(var i=0;i<L.length;i++){var q=L[i];if(q.t===t&&q.ctx&&q.ctx.indexOf(ini)===0&&q.o[0]===o[0]){q.o=o;return;}}if(window.console)console.warn('Ajuste sin pregunta:',t,ini);}
+S('evolucion','Los embriones de pez, pollo y humano',['Un antepasado común','Que las tres son la misma especie','Que el humano viene del pez actual','Que el pollo se desarrolló a partir del humano']);
+S('evolucion','Hace 66 millones de años se extinguieron',['Los mamíferos','Los trilobites','Los pterosaurios','Los dinosaurios no avianos']);
+S('evolucion','Un fósil se encuentra en una capa de roca',['Vivió hace unos 200 millones de años','Vivió hace unos 2 millones de años','Vivió hace unos 200 años','Era un ser humano primitivo']);
+S('evolucion','Las bacterias se reproducen cada 20 minutos',['Tienen muchas generaciones en poco tiempo','Sus mutaciones son más dañinas que en otros seres','Tienen más cromosomas que los animales','No necesitan que haya selección natural']);
+S('nutricion','Se compara una bacteria, un hongo',['Carbohidratos, lípidos, proteínas y ácidos nucleicos','Solo proteínas y agua, porque los demás son de las plantas','Solo agua, sales minerales y vitaminas del ambiente','Solo carbohidratos y lípidos, porque los demás son de los animales']);
+})();

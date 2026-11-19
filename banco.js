@@ -1470,4 +1470,13 @@ for(var i=0;i<Q.length;i++){var ok=false;for(var k=BANCO_BIO.length-1;k>=0;k--){
 ];
 for(var i=0;i<Q.length;i++){var ok=false;for(var k=0;k<BANCO_BIO.length;k++){var q=BANCO_BIO[k];if(q.t===Q[i][0]&&q.k==='vf'&&q.q.indexOf(Q[i][1])===0&&!(q.p&&q.p.length>=2)){q.p=[Q[i][2],Q[i][3]];ok=true;break;}}if(!ok&&window.console)console.warn('vf sin coincidencia:',Q[i][0],Q[i][1]);}
 })();
+/* ── Retoques menores (versión 2.71): distractores más creíbles ── */
+(function(){var L=window.BANCO_BIO||[];
+function A(t,ini,ops){for(var i=0;i<L.length;i++){var q=L[i];if(q.t===t&&q.k==='mc'&&q.q.indexOf(ini)===0){q.ops=ops;q.a=0;return;}}if(window.console)console.warn('Ajuste sin pregunta:',t,ini);}
+A('evolucion','¿Qué causó la extinción de los dinosaurios',['El choque de un asteroide','Una glaciación causada por el cambio de órbita','La falta de oxígeno en todos los mares','Una enfermedad que atacó a los mamíferos']);
+A('evolucion','La panspermia propone que la vida',['Llegó del espacio en meteoritos','Se origina cada día de la materia sin vida','Siempre existió y nunca tuvo un comienzo','Fue creada por los primeros animales']);
+A('funciones','La presión arterial normal de un adulto',['120/80 mmHg','80/40 mmHg','160/100 mmHg','200/120 mmHg']);
+A('nutricion','¿Cuánta actividad física diaria recomienda la OMS',['60 minutos al día','20 minutos al día','5 horas al día','Solo los fines de semana']);
+A('reproduccion','Si nacen muy pocos niños durante años',['Envejece','Crece rápido','No cambia','Aumenta el número de niños']);
+})();
 delete window.BIO_AJ;delete window.BIO_NUEVAS;

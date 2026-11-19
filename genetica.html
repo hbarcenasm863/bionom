@@ -282,7 +282,7 @@
     <div class="sim-grupo" data-pantalla="Más allá de Mendel">
     <div class="tabs"><button class="chip on" data-tab="o-inc">🌸 Dominancia incompleta</button><button class="chip" data-tab="o-abo">🔴 Grupos sanguíneos</button><button class="chip" data-tab="o-sex">👁️ Ligada al sexo</button><button class="chip" data-tab="o-poli">📏 Poligénica y ambiente</button></div>
     <div class="tab-p card" id="o-inc">
-      <p>En la flor <b>don Diego de noche</b> (<i>Mirabilis jalapa</i>), ningún alelo domina: al cruzar roja (RR) con blanca (BB) los hijos salen <b>rosados</b> (RB), una mezcla intermedia.</p>
+      <p>En la flor <b>don Diego de noche</b> (<i>Mirabilis jalapa</i>), ningún alelo domina: al cruzar roja (CᴿCᴿ) con blanca (CᴮCᴮ) los hijos salen <b>rosados</b> (CᴿCᴮ), una mezcla intermedia. Se escribe con una letra base (C, de «color») y un superíndice, porque ningún alelo es dominante.</p>
       <div class="padres" id="inc-padres"></div><div id="inc-tab"></div><div id="inc-prop"></div>
     </div>
     <div class="tab-p card" id="o-abo">
@@ -495,9 +495,10 @@ document.getElementById('men-3').innerHTML=rot('F2: 3 amarillas : 1 verde')+fila
 document.getElementById('men-4').innerHTML=rot('Aa × Aa')+'<div id="men-pun"></div>';
 
 /* ═══ Punnett genérico ═══ */
-function tabla(g1,g2,celda,clase){
-  var h='<table class="ptab'+(clase?' '+clase:'')+'"><tr><th class="esq"></th>'+g2.map(function(g){return '<th>'+g+'</th>';}).join('')+'</tr>';
-  g1.forEach(function(a,i){h+='<tr><th>'+a+'</th>'+g2.map(function(b,j){return celda(a,b,i,j);}).join('')+'</tr>';});return h+'</table>';
+function tabla(g1,g2,celda,clase,et){
+  et=et||function(x){return x;};
+  var h='<table class="ptab'+(clase?' '+clase:'')+'"><tr><th class="esq"></th>'+g2.map(function(g){return '<th>'+et(g)+'</th>';}).join('')+'</tr>';
+  g1.forEach(function(a,i){h+='<tr><th>'+et(a)+'</th>'+g2.map(function(b,j){return celda(a,b,i,j);}).join('')+'</tr>';});return h+'</table>';
 }
 function ordenar(a,b){return (a===a.toUpperCase()&&b!==b.toUpperCase())?a+b:(b===b.toUpperCase()&&a!==a.toUpperCase())?b+a:[a,b].sort().join('');}
 document.getElementById('men-pun').innerHTML=tabla(['A','a'],['A','a'],function(a,b){var g=ordenar(a,b);return '<td style="cursor:default">'+arveja(g.indexOf('A')>=0?'am':'ve',true,30)+'<div style="font-size:.8rem">'+g+'</div></td>';},'chica');
@@ -576,12 +577,13 @@ pintarDi();
 var I1='RB',I2='RB';
 function colI(g){return g==='RR'?'ro':g==='BB'?'bl':'rs';}
 var NOM_I={ro:'Roja',bl:'Blanca',rs:'Rosada'};
+function etI(x){return x==='R'?'Cᴿ':x==='B'?'Cᴮ':x;}
 function pintarInc(){
-  var c=document.getElementById('inc-padres'),OPS=[['RR','RR · roja'],['RB','RB · rosada'],['BB','BB · blanca']];
+  var c=document.getElementById('inc-padres'),OPS=[['RR','CᴿCᴿ · roja'],['RB','CᴿCᴮ · rosada'],['BB','CᴮCᴮ · blanca']];
   c.innerHTML='<div class="p">'+flor(colI(I1),44)+'<br>'+selector('Madre',OPS,I1)+'</div><span class="x">×</span><div class="p">'+flor(colI(I2),44)+'<br>'+selector('Padre',OPS,I2)+'</div>';
   c.querySelectorAll('select').forEach(function(s){s.onchange=function(){if(s.getAttribute('data-sel')==='Madre')I1=s.value;else I2=s.value;pintarInc();};});
   var cnt={};
-  document.getElementById('inc-tab').innerHTML=tabla(I1.split(''),I2.split(''),function(a,b){var g=[a,b].sort().reverse().join('');g=g==='BR'?'RB':g;var k=colI(g);cnt[k]=(cnt[k]||0)+1;return '<td style="cursor:default">'+flor(k,30)+'<div>'+g+'</div></td>';},'chica');
+  document.getElementById('inc-tab').innerHTML=tabla(I1.split(''),I2.split(''),function(a,b){var g=[a,b].sort().reverse().join('');g=g==='BR'?'RB':g;var k=colI(g);cnt[k]=(cnt[k]||0)+1;return '<td style="cursor:default">'+flor(k,30)+'<div>'+g.split('').map(etI).join('')+'</div></td>';},'chica',etI);
   document.getElementById('inc-prop').innerHTML=barras(['ro','rs','bl'].filter(function(k){return cnt[k];}).map(function(k){return [NOM_I[k],cnt[k]/4,{ro:'#e04848',rs:'#f09ab8',bl:'#c9c9d6'}[k],cnt[k]*25+' %'];}));
 }
 pintarInc();
