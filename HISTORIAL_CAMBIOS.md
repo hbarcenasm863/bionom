@@ -6,6 +6,19 @@
 
 ---
 
+## Versión 2.75 — 22 de noviembre de 2026 · Lote 2 del banco Saber: 36 preguntas con tablas y gráficas, auditadas por dos expertos
+
+**Contexto.** El docente pidió seguir con el siguiente lote, con tablas y gráficas «de libro de texto», y que toda auditoría la hagan agentes expertos de cada categoría (regla nueva en `CLAUDE.md`).
+
+**Cambios.**
+- `docente-datos.js` (bloque nuevo al final): 36 preguntas Saber en célula, ecosistemas, ambiente, Colombia, evolución y genética (6 por tema: 2 de explicación y 4 de indagación). 23 traen tabla o gráfica con datos reales de Mauna Loa/NOAA, IDEAM, Chargaff, Hershey–Chase, Mendel, Lenski, Grant y MacArthur–Wilson; los inventados dicen «(Datos de ejemplo.)». Todas llevan `dba`; 5 llevan `niv:3`.
+- **Proceso:** un agente redactó el lote; un segundo agente (biología y visualización de datos) verificó cada cifra contra su fuente y corrigió 4 preguntas (espectro de la clorofila a, curva de glucosa, Lenski, pH de ALOHA) y 8 con ajustes menores; un tercero (Saber/Icfes y MEN) revisó competencia, afirmación, calidad de ítem y asignó DBA, y arregló contextos que regalaban la clave (cubo, hielo, herbario), la pregunta de islas (Cuba y La Española) y distractores absurdos. Coincidencia con la clave a ciegas: 36 de 36 en ambas auditorías.
+- `saber-juego.js` regenerado (806 preguntas). Caché `bionom-v89`; `docente-datos.js?v=38`, `saber-juego.js?v=17`. `revisar-sintaxis.js` sin errores; páginas cargan sin errores.
+
+**Pendiente.** El lote no trae preguntas de uso comprensivo (I1–I3) y casi no hay de nivel 4 ni de nivel 1: compensar en el siguiente. La evidencia numerada «7.1/8.2» no está en el repositorio. Las cifras reales están contrastadas por un agente, pero conviene que el docente revise a ojo los datos de IDEAM. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.74 — 22 de noviembre de 2026 · Banco Saber de biología: 36 preguntas más de explicación e indagación
 
 **Contexto.** El docente pidió continuar con las preguntas pendientes de los tres sitios (un lote por sitio), llevando cada tema hacia ~30 por competencia y reforzando la indagación. En BioNom se escogieron los temas con menos explicación e indagación: funciones, nutrición, reinos, división celular, sistemas y reproducción.
