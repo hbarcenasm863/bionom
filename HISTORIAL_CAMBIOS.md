@@ -6,6 +6,23 @@
 
 ---
 
+## Versión 2.76 — 22 de noviembre de 2026 · «Grupos» de Reproducción: fotos reales en vez de emojis
+
+**Contexto.** El docente vio en el celular que la lista de grupos de `reproduccion.html` mostraba un **pez** para los cnidarios, una **oruga** (larva de artrópodo) para platelmintos y anélidos, una **estrella genérica** para equinodermos, una **gota** para protistas y una **esponja de cocina** para poríferos. Daba una idea equivocada de cada reino y pidió que cada grupo se represente con un ejemplar lo más cercano posible a un representante típico. Los emojis de medusa, coral y otros no sirven (son de la versión 12 en adelante: salen como rectángulos negros en el Windows del docente), así que se usaron fotos reales según la «Regla de imágenes».
+
+**Cambios.**
+- `reproduccion.html`: los 18 grupos pasan de emoji a foto real. Cada botón muestra una miniatura circular y el panel del grupo muestra la foto con su pie y su cita APA debajo (antes del título). Se agregó `FPIE` (pie de cada foto). Ejemplares: *E. coli* (SEM), *Paramecium*, champiñón *Agaricus*, musgo con cápsulas, helecho con soros, conos de pino, orquídea *Cattleya trianae*, esponja de vaso, medusa *Aurelia*, lombriz roja californiana, caracol pala, mariposa morfo, estrella de cojín del Caribe, cardumen de *Prochilodus* (género del bocachico), rana dorada, tortuga caná, cóndor andino y chucha.
+- `fotos-datos.js`: 18 entradas nuevas (`g_<grupo>`); `img/fotos/g_*.jpg` (800 px) y `g_*_s.jpg` (miniaturas de 128 px). Todas de Wikimedia Commons con licencia CC0, dominio público, CC BY o CC BY-SA.
+- Caché `bionom-v90`; `fotos-datos.js?v=10` en todas las páginas. `revisar-sintaxis.js` sin errores; página probada con Playwright en pantalla de celular (0 errores, 0 imágenes rotas).
+
+**Pendiente.**
+- Estas fotos no pasaron aún por la auditoría con agentes expertos que exige `CLAUDE.md` (revisión de biología, licencias y accesibilidad): solo las revisó el autor a ojo. Conviene pedirla.
+- «Platelmintos y anélidos» usa una lombriz de tierra (anélido); falta una foto de planaria para el otro grupo.
+- La foto de la tortuga caná no trae año en Commons (se cita «s. f.»). La de peces es de *Prochilodus lineatus* (sábalo), pariente del bocachico, no el bocachico mismo.
+- Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.75 — 22 de noviembre de 2026 · Lote 2 del banco Saber: 36 preguntas con tablas y gráficas, auditadas por dos expertos
 
 **Contexto.** El docente pidió seguir con el siguiente lote, con tablas y gráficas «de libro de texto», y que toda auditoría la hagan agentes expertos de cada categoría (regla nueva en `CLAUDE.md`).
