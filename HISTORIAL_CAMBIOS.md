@@ -18,7 +18,9 @@
 
 **Cuentas nuevas (explicación / indagación).** funciones 13 / 17; nutrición 15 / 16; reinos 15 / 17; división 20 / 17; sistemas 18 / 17; reproducción 20 / 17.
 
-**Pendiente.** Esta vez **no** se hizo la auditoría independiente a ciegas (la hizo el mismo autor): conviene que el docente revise una muestra, sobre todo las de indagación. Siguen por debajo de 30 por competencia casi todos los temas, y las evidencias 7.1 y 8.2 y los ítems de nivel 4. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+**Auditoría con agente experto (ciencias naturales, Saber 11/Icfes y MEN).** Coincidió con la clave en 36 de 36; 2 aprobadas, 11 con ajuste menor y 23 corregidas. Se aplicó todo: opciones absurdas o con palabras delatoras cambiadas por errores conceptuales reales, la pregunta de microscopía con clave ambigua reformulada, opciones equivalentes en altitud y glóbulos rojos corregidas, tabla de la cebolla ajustada, gráficas con ejes equidistantes (pH) y más puntos (longitud cabeza-nalgas, según Hadlock et al., 1992), y las de indagación N4 con predicción para evaluar. La correcta es la más larga en 11 de 36. Caché `bionom-v88`; `docente-datos.js?v=37`, `saber-juego.js?v=16`.
+
+**Pendiente.** Revisión del docente por muestreo; probar en pantalla las etiquetas largas del eje x de la pregunta de masa del animal (frecuencia cardíaca); falta asignar `dba` con `dba-bio.js` a las preguntas nuevas. Siguen por debajo de 30 por competencia casi todos los temas, y las evidencias 7.1 y 8.2 y los ítems de nivel 4. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
 
 **Aclaración sobre la huella de carbono.** La lista de pendientes anterior la mencionaba, pero ya estaba hecha en la versión 2.62 («Mi huella y la de mi comunidad»).
 
