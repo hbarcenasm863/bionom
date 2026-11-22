@@ -6,6 +6,24 @@
 
 ---
 
+## Versión 2.74 — 22 de noviembre de 2026 · Banco Saber de biología: 36 preguntas más de explicación e indagación
+
+**Contexto.** El docente pidió continuar con las preguntas pendientes de los tres sitios (un lote por sitio), llevando cada tema hacia ~30 por competencia y reforzando la indagación. En BioNom se escogieron los temas con menos explicación e indagación: funciones, nutrición, reinos, división celular, sistemas y reproducción.
+
+**Cambios.**
+- `docente-datos.js` (bloque nuevo al final): 36 preguntas Saber originales, 6 por tema (2 de explicación y 4 de indagación). 12 traen tabla o gráfica (las cifras inventadas dicen «Datos de ejemplo» y las reales «Valores aproximados»). Hay 1 de ciencia, tecnología y sociedad (E3) y 6 sobre cómo se construye el conocimiento (entre ellas, Harvey, Beaumont y Spallanzani).
+- Las respuestas correctas se igualaron en largo con los distractores (la más larga en 22 de 36, solo 4 por 1,3 veces o más).
+- `saber-juego.js` regenerado (773 preguntas). Caché `bionom-v87`; `docente-datos.js?v=36`, `saber-juego.js?v=15`.
+- Probado: `node herramientas/revisar-sintaxis.js` sin errores; `docente.html` y `juego.html` cargan sin errores con Playwright.
+
+**Cuentas nuevas (explicación / indagación).** funciones 13 / 17; nutrición 15 / 16; reinos 15 / 17; división 20 / 17; sistemas 18 / 17; reproducción 20 / 17.
+
+**Pendiente.** Esta vez **no** se hizo la auditoría independiente a ciegas (la hizo el mismo autor): conviene que el docente revise una muestra, sobre todo las de indagación. Siguen por debajo de 30 por competencia casi todos los temas, y las evidencias 7.1 y 8.2 y los ítems de nivel 4. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+**Aclaración sobre la huella de carbono.** La lista de pendientes anterior la mencionaba, pero ya estaba hecha en la versión 2.62 («Mi huella y la de mi comunidad»).
+
+---
+
 ## Versión 2.73 — 19 de noviembre de 2026 · Aviso de uso de IA según la Directiva 002 de 2026
 
 **Contexto.** El docente compartió la Directiva 002 de 2026 de la Secretaría General de Bogotá (uso de IA generativa en comunicaciones institucionales, radicada el 8 de octubre de 2026) y pidió aplicar a los sitios los arreglos que resultaran de revisarla. La directiva (numerales 3.4 y 4.1.8) pide declarar cuando la IA generó sustancialmente el texto de una pieza pública, y que en caso de duda se declare.
