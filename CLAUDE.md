@@ -15,7 +15,7 @@ pasos manuales.
 
 ## Push a `main`
 
-El docente estableció (10-11-2026) que hacer **push a `main` está autorizado**:
+El docente estableció (10-11-2026, ratificado el 22-11-2026 para los tres sitios) que hacer **push a `main` está autorizado**:
 cuando una tarea queda lista y probada, Claude hace commit y push a `main` sin
 volver a preguntar. Si en una sesión el docente indica otra cosa, se respeta lo
 que diga en esa sesión.
