@@ -6,6 +6,20 @@
 
 ---
 
+## Versión 2.79 — 23 de noviembre de 2026 · «Banco de preguntas»: selector por grado, DBA, estándar y aprendizaje priorizado
+
+**Contexto.** El docente preguntó si las preguntas nuevas llegaban a talleres, evaluaciones y guías (sí, por sorteo) y pidió poder **escoger** las preguntas filtrando por grado, estándar y/o DBA, y que se implementen los DBA, los estándares y los aprendizajes priorizados en ciencias en los tres sitios, con una pestaña aparte.
+
+**Cambios.**
+- **Pestaña «📚 Banco de preguntas»** en `docente.html` (`banco-sel.js`, `banco-sel-cfg.js`, `referentes-men.js`): filtros por grado, DBA, estándar, aprendizaje priorizado, tema, competencia, afirmación, con tabla o gráfica y búsqueda de texto; cada referente elegido muestra su texto oficial con la fuente. Las preguntas se eligen con casillas (selección guardada en `bionom-banco-sel`); con «Usar mi selección» activo, guías, talleres y evaluaciones usan las elegidas y completan al azar si piden más. Un aviso en el panel de generación y el contador en la pestaña lo recuerdan.
+- **Textos oficiales** (`referentes-men.js`, generado): 29 DBA V.1 (MEN, 2016) cotejados letra por letra con el PDF oficial; 243 Estándares Básicos (MEN, 2004) cotejados con el libro «Formar en ciencias: ¡el desafío!» (242 de 243 coincidían; el 8-9/EF-8 solo difería en la puntuación y se corrigió); 30 aprendizajes priorizados (SED Bogotá, 2025, versiones Secundaria y Media, CC BY-NC-ND 4.0: citados sin adaptar, con su fuente).
+- **Relaciones** tema → DBA → estándares y priorizados: las propuso un agente experto en currículo y las **auditó otro agente independiente** (quitó 4 DBA y 4 estándares, agregó 2 y 13 y reclasificó 4 en BioNom; ajustó el grado de 8 de los 12 temas según `AUDITORIA_SECUENCIA_6-9.md`). En BioNom cada pregunta usa su DBA de `dba-bio.js`; los temas sin DBA propio heredan estándares y priorizados de los DBA «cercanos».
+- Caché `bionom-v93`; `banco-sel.js?v=2`. Probado con Playwright: la pestaña carga (886 preguntas), filtra, muestra el texto oficial y una evaluación generada usa las tres preguntas elegidas.
+
+**Pendiente.** Los DBA de biología se revisan en `dba-bio.js`, no en la tabla; muchas preguntas quedan «sin DBA propio» porque ninguno de los 29 las nombra. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.78 — 23 de noviembre de 2026 · Lote 3 del banco Saber: uso comprensivo, N1 y nivel 4, auditado por dos expertos
 
 **Contexto.** El docente pidió el siguiente lote enfocado en lo que quedó corto (preguntas de uso comprensivo I1–I3, indagación N1 y nivel 4), con tablas y gráficas de libro de texto.
