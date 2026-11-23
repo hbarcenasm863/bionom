@@ -163,6 +163,7 @@
     <button class="chip on" data-p="gen" data-m="guia" role="tab">📘 Guías</button>
     <button class="chip" data-p="gen" data-m="taller" role="tab">✏️ Talleres</button>
     <button class="chip" data-p="gen" data-m="eval" role="tab">📝 Evaluaciones</button>
+    <button class="chip" data-p="bs" role="tab">📚 Banco de preguntas<span id="bsel-insignia"></span></button>
     <button class="chip" data-p="lab" role="tab">🧭 Laberintos</button>
     <button class="chip" data-p="cz" role="tab">🔤 Crucigramas</button>
     <button class="chip" data-p="ah" role="tab">🔠 Ahorcado</button>
@@ -174,6 +175,7 @@
 
   <!-- ══ GUÍAS, TALLERES Y EVALUACIONES (docente-app.js + docente-datos.js) ══ -->
   <section class="panel" id="panel-gen" data-modo="guia">
+    <div id="bsel-aviso" class="no-print"></div>
     <div class="tipo-intro" id="g-intro"></div>
     <div class="gsec"><h2>1 · Temas</h2><div class="chks" id="g-temas"></div></div>
     <div class="gsec"><h2>2 · Curso y contenido</h2>
@@ -219,6 +221,9 @@
   </section>
 
   <!-- ══════════════ LABERINTOS (laberinto.js) ══════════════ -->
+  <!-- ══ BANCO DE PREGUNTAS (banco-sel.js) ══ -->
+  <section class="panel act-panel" id="panel-bs" hidden><div id="bs-app"></div></section>
+
   <section class="panel act-panel" id="panel-lab" hidden>
    <div id="lab-app" data-mode="fund">
     <div class="tipo-intro"><strong>🧭 Laberinto</strong> Una hoja con casillas A, B, C…: en cada una el estudiante resuelve un ejercicio y sigue la flecha rotulada con su respuesta hasta llegar a FIN. Solo hay una ruta correcta; algunas casillas son trampas. Se puede imprimir o jugar en pantalla.</div>
@@ -401,6 +406,9 @@
 <script src="docente-datos.js?v=39"></script>
 <script src="saber-icfes.js?v=3"></script>
 <script src="icfes-datos.js?v=1"></script>
+<script src="referentes-men.js?v=1"></script>
+<script src="banco-sel-cfg.js?v=1"></script>
+<script src="banco-sel.js?v=1"></script>
 <script>
 /* Ajustes de BioNom para extras.js: textos de biología y criptograma con el código genético. */
 window.EXTRAS_SITIO={area:'biología',adj:'biológico',cripto:'codon'};
@@ -416,11 +424,12 @@ window.EXTRAS_SITIO={area:'biología',adj:'biológico',cripto:'codon'};
 /* ── pestañas ── */
 (function(){
 var $=function(i){return document.getElementById(i);};
-var PANELES=['gen','lab','cz','ah','sp','cr','mp','dt'];
+var PANELES=['gen','bs','lab','cz','ah','sp','cr','mp','dt'];
 document.querySelectorAll('.dtabs [data-p]').forEach(function(b){b.onclick=function(){var p=b.getAttribute('data-p');
   document.querySelectorAll('.dtabs [data-p]').forEach(function(x){x.classList.toggle('on',x===b);});
   PANELES.forEach(function(k){$('panel-'+k).hidden=k!==p;});
   if(p==='gen'&&window.DOC_GEN)window.DOC_GEN.modo(b.getAttribute('data-m'));
+  if(p==='bs'&&window.BancoSel)window.BancoSel.montar($('bs-app'));
   if(p==='lab'&&window.LABERINTO)window.LABERINTO.render();
   if(p==='cz'&&window.CRUCI)window.CRUCI.render();
   if(p==='ah'&&window.AHORCADO)window.AHORCADO.render();
