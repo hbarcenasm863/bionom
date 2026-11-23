@@ -6,6 +6,18 @@
 
 ---
 
+## Versión 2.79 — 23 de noviembre de 2026 · Resumen de estándares, DBA y aprendizajes priorizados (`REFERENTES_CURRICULARES.md`)
+
+**Contexto.** El docente subió cinco documentos (Estándares Básicos de Competencias del MEN 2004, DBA de Ciencias Naturales V.1 de 2016, Aprendizajes priorizados de la SED Bogotá 2025 para básica secundaria y media, y la Guía introductoria al Diseño Centrado en Evidencias del Icfes) y pidió un resumen por grado, para biología, química y física, contra el que se revise toda pregunta nueva de los tres sitios (juego, talleres, evaluaciones, crucigramas y demás), y que las de opción múltiple sigan el modelo basado en evidencias del Icfes.
+
+**Cambios.**
+- `REFERENTES_CURRICULARES.md` (nuevo, el mismo archivo en BioNom, ChromaNom e IonNom): fuentes y cómo se combinan (el DBA fija el curso mínimo; los priorizados SED que adelantan temas, como enlace químico o termodinámica en 7.°, se usan como anticipación); estándares de 6.°–7.°, 8.°–9.° y 10.°–11.° por columna; DBA de cada grado de 6.° a 11.° con sus evidencias y código grado.número; priorizados SED por grado y componente con sus evidencias por competencia; qué cubre cada sitio; progresión por eje; competencias; modelo DCE del Icfes (dominio, afirmación, evidencia, tarea), componentes, tabla de equivalencias entre los códigos `af` de los sitios (I1…N4) y las afirmaciones y evidencias del Marco 2019, niveles de desempeño, anatomía del ítem, distractores y tareas modelo; y una lista de verificación obligatoria para todo contenido y otra para las preguntas de opción múltiple.
+- `CLAUDE.md`: regla nueva «todo contenido se revisa contra `REFERENTES_CURRICULARES.md`» (también la reciben los agentes expertos de las auditorías).
+
+**Pendiente.** Los DBA de física no tienen módulo en ningún sitio (quedan citados para cuando una pregunta toque física). No se revisó el banco existente contra el resumen: se aplica a lo nuevo. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.78 — 23 de noviembre de 2026 · Lote 3 del banco Saber: uso comprensivo, N1 y nivel 4, auditado por dos expertos
 
 **Contexto.** El docente pidió el siguiente lote enfocado en lo que quedó corto (preguntas de uso comprensivo I1–I3, indagación N1 y nivel 4), con tablas y gráficas de libro de texto.
