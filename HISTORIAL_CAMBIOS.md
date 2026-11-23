@@ -6,16 +6,49 @@
 
 ---
 
-## Versión 2.76 — 23 de noviembre de 2026 · Lote 3 del banco Saber: uso comprensivo, N1 y nivel 4, auditado por dos expertos
+## Versión 2.78 — 23 de noviembre de 2026 · Lote 3 del banco Saber: uso comprensivo, N1 y nivel 4, auditado por dos expertos
 
 **Contexto.** El docente pidió el siguiente lote enfocado en lo que quedó corto (preguntas de uso comprensivo I1–I3, indagación N1 y nivel 4), con tablas y gráficas de libro de texto.
 
 **Cambios.**
 - `docente-datos.js` (bloque nuevo al final): 36 preguntas Saber en funciones, nutrición, reinos, sistemas, división y reproducción (18 de uso comprensivo, 6 de explicación y 12 de indagación, 6 de ellas N1). Las 36 traen tabla o gráfica (OMS, UICN, USDA, Guyton, Alberts, Campbell, Hook, Wallace y Kelsey, Weaver; los inventados dicen «Datos de ejemplo»). Todas llevan `dba` verificado y varias `niv`.
 - **Proceso:** (1) un agente redactó el lote; (2) un experto en biología y datos corrigió 17: las cifras de síndrome de Down no coincidían con Hook (1981), la pregunta del hongo quítrido tenía una opción cuya premisa era cierta, la gestación humana mezclaba 280 y 266 días sin aclarar que son 40 semanas desde la última menstruación, valores de hibernación de la marmota, ovocitos (el dato de los 25 años quedó como interpolado) y Eijkman (salvado, no cáscara); (3) un experto en Saber/Icfes, MEN y DBA reformuló una pregunta de pepsina y tripsina que era de explicación y no de uso, quitó palabras delatoras en 11 preguntas, corrigió 5 DBA (14: 7.3; 15: 8.5; 19, 21 y 22: «sin») y 9 niveles (`niv`). Coincidencia con la clave a ciegas: 36 de 36 en ambas auditorías.
-- `saber-juego.js` regenerado. Caché `bionom-v90`; `docente-datos.js?v=39`, `saber-juego.js?v=18`. `revisar-sintaxis.js` sin errores; páginas sin errores en Playwright.
+- `saber-juego.js` regenerado. Caché `bionom-v92` (tras mezclar con la 2.77); `docente-datos.js?v=39`, `saber-juego.js?v=18`. `revisar-sintaxis.js` sin errores; páginas sin errores en Playwright.
 
 **Pendiente.** Revisión del docente por muestreo, sobre todo de los datos de Hook y Wallace y Kelsey. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
+## Versión 2.77 — 23 de noviembre de 2026 · Auditoría de las fotos de «Grupos» con tres agentes expertos y correcciones
+
+**Contexto.** El docente pidió continuar con los pendientes de la versión 2.76: foto de planaria, auditoría con agentes expertos (regla de `CLAUDE.md`) y revisar el resto del sitio por emojis que representen mal un grupo.
+
+**Agentes (3, independientes).** Biología/taxonomía (abrió las 19 fotos a ciegas), licencias y citas APA y accesibilidad, y currículo MEN/didáctica (Mayer) con barrido de emojis engañosos en todo el sitio.
+
+**Cambios.**
+- `reproduccion.html`: foto de planaria (*Dugesia*) junto a la de lombriz en «Platelmintos y anélidos»; textos corregidos: planarias se reproducen por **fisión** (regenerar no es reproducirse), el caracol pala tiene sexos separados, artrópodos pasa a «asexual y sexual» (partenogénesis), musgos y helechos también se propagan por fragmentos o rizomas, la rana carga renacuajos a «pequeñas charcas» (no bromelias) y es la variedad verde menta, el pie de peces nombra el bocachico (*P. magdalenae*), el de gimnospermas nombra *Pinus banksiana*, esponja solo a nivel de género y mariposas «más de 3000». Orden del panel: título y etiqueta, fotos con cita, texto, ejemplo y al final la animación. Botones con `aria-pressed`; cita APA más legible.
+- `fotos-datos.js`: planaria, título de esponja y medusa como en Commons, año de la tortuga (2012). `fotos.js`: la foto con pie ya no repite el pie como texto alternativo.
+- Emojis engañosos corregidos: coral (`reinos.html`, pez → 🌊), invertebrados (🐌 → 🕷️), Protozoa (🦠 → 💧, distinto de bacterias), lombriz de tierra sin oruga (`funciones.html`), Schwann (🐸 → 🔬, `celula.html`), humano y jaguar de la portada (`index.html`), Explosión cámbrica (🐙 → 🦐, `evolucion.html`).
+- Las 19 licencias, autores y años se verificaron contra Commons (todas coinciden). Caché `bionom-v91`; `fotos-datos.js?v=11`, `fotos.js?v=2`.
+
+**Pendiente.** Foto de peces de baja calidad (*Prochilodus lineatus* en agua turbia; no es colombiana) y la del cóndor es una silueta: reemplazar si aparece algo mejor con licencia libre. La foto de helecho es hawaiana (*Cibotium*), no un *Cyathea* colombiano. Los emojis de otras páginas que el agente marcó como aceptables (🦠 para virus y bacterias, íconos de módulo) no se tocaron. Sin pasos manuales.
+
+---
+
+## Versión 2.76 — 22 de noviembre de 2026 · «Grupos» de Reproducción: fotos reales en vez de emojis
+
+**Contexto.** El docente vio en el celular que la lista de grupos de `reproduccion.html` mostraba un **pez** para los cnidarios, una **oruga** (larva de artrópodo) para platelmintos y anélidos, una **estrella genérica** para equinodermos, una **gota** para protistas y una **esponja de cocina** para poríferos. Daba una idea equivocada de cada reino y pidió que cada grupo se represente con un ejemplar lo más cercano posible a un representante típico. Los emojis de medusa, coral y otros no sirven (son de la versión 12 en adelante: salen como rectángulos negros en el Windows del docente), así que se usaron fotos reales según la «Regla de imágenes».
+
+**Cambios.**
+- `reproduccion.html`: los 18 grupos pasan de emoji a foto real. Cada botón muestra una miniatura circular y el panel del grupo muestra la foto con su pie y su cita APA debajo (antes del título). Se agregó `FPIE` (pie de cada foto). Ejemplares: *E. coli* (SEM), *Paramecium*, champiñón *Agaricus*, musgo con cápsulas, helecho con soros, conos de pino, orquídea *Cattleya trianae*, esponja de vaso, medusa *Aurelia*, lombriz roja californiana, caracol pala, mariposa morfo, estrella de cojín del Caribe, cardumen de *Prochilodus* (género del bocachico), rana dorada, tortuga caná, cóndor andino y chucha.
+- `fotos-datos.js`: 18 entradas nuevas (`g_<grupo>`); `img/fotos/g_*.jpg` (800 px) y `g_*_s.jpg` (miniaturas de 128 px). Todas de Wikimedia Commons con licencia CC0, dominio público, CC BY o CC BY-SA.
+- Caché `bionom-v90`; `fotos-datos.js?v=10` en todas las páginas. `revisar-sintaxis.js` sin errores; página probada con Playwright en pantalla de celular (0 errores, 0 imágenes rotas).
+
+**Pendiente.**
+- Estas fotos no pasaron aún por la auditoría con agentes expertos que exige `CLAUDE.md` (revisión de biología, licencias y accesibilidad): solo las revisó el autor a ojo. Conviene pedirla.
+- «Platelmintos y anélidos» usa una lombriz de tierra (anélido); falta una foto de planaria para el otro grupo.
+- La foto de la tortuga caná no trae año en Commons (se cita «s. f.»). La de peces es de *Prochilodus lineatus* (sábalo), pariente del bocachico, no el bocachico mismo.
+- Sin pasos manuales (no se tocó `bionom-analytics.gs`).
 
 ---
 

@@ -15,7 +15,7 @@ function apa(d){
 window.FOTO_APA=function(k){return F[k]?apa(F[k]):'';};
 window.FOTO=function(k,pie,cls){
   var d=F[k]; if(!d)return '';
-  return '<figure class="foto'+(cls?' '+cls:'')+'"><img src="img/fotos/'+k+'.jpg" alt="'+esc(pie||d.titulo)+'" loading="lazy" width="'+(d.w||640)+'" height="'+(d.h||480)+'">'+
+  return '<figure class="foto'+(cls?' '+cls:'')+'"><img src="img/fotos/'+k+'.jpg" alt="'+(pie?'':esc(d.titulo))+'" loading="lazy" width="'+(d.w||640)+'" height="'+(d.h||480)+'">'+
     '<figcaption>'+(pie?'<span class="pie">'+pie+'</span>':'')+'<cite class="apa">'+apa(d)+'</cite></figcaption></figure>';
 };
 function montar(){document.querySelectorAll('[data-foto]').forEach(function(el){
