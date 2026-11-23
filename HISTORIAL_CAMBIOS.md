@@ -6,6 +6,19 @@
 
 ---
 
+## Versión 2.81 — 23 de noviembre de 2026 · Lote 5 del banco Saber: explicación e indagación en seis temas, con DBA, auditado por dos expertos
+
+**Contexto.** El docente pidió continuar con lo pendiente. Este lote refuerza la explicación de fenómenos (incluidas las de ciencia y sociedad, E3) y la indagación en funciones, nutrición, reinos, ecosistemas, sistemas y división, y se construyó con el modelo basado en evidencias del Icfes y `REFERENTES_CURRICULARES.md` (regla del 23-11-2026).
+
+**Cambios.**
+- `docente-datos.js` (bloque nuevo al final): 36 preguntas Saber, 6 por tema (E1, E2, E3, N2, N3 y N4 en cada uno; 18 de explicación y 18 de indagación). 30 traen tabla o gráfica (ENSIN, OMS, FAO, NOAA, USGS, UICN, NIOSH, Guyton, Campbell, Schmidt-Nielsen, Woodwell, SEER, Hook; los inventados dicen «Datos de ejemplo»). Todas llevan `dba` verificado y `niv` donde el nivel del juego no se deduce.
+- **Proceso (3 agentes):** (1) redactor; (2) experto en biología y datos: reescribió los 28 distractores que el redactor había alargado con frases de relleno, reemplazó las cifras de síndrome de Down por las de Hook (1981; el riesgo de 35 a 40 años se multiplica por más de 3), arregló un halo de antibiograma que comparaba antibióticos distintos, corrigió dos valores de Mauna Loa de 2019 y rehízo la gráfica del ciclo menstrual (el pico de LH va después del de estradiol); (3) experto en Saber/Icfes, MEN y DBA: confirmó c y af en las 36, bajó el nivel 4 de 11 a 4 (más 2 en el límite), corrigió 6 DBA y 7 `niv`, quitó absolutos delatores y un distractor absurdo (glóbulos rojos → macrófagos). Coincidencia con la clave a ciegas: 36 de 36.
+- `saber-juego.js` regenerado (878). Caché `bionom-v94`; `docente-datos.js?v=40`, `saber-juego.js?v=` +1. `revisar-sintaxis.js` sin errores; páginas cargan sin errores.
+
+**Pendiente.** El auditor de ciencias no pudo consultar fuentes en línea (contrastó de memoria): conviene que el docente revise a ojo los datos de Woodwell (DDT), la anchoveta (FAO, solo 4 puntos) y el riesgo de síndrome de Down. El lote no trae preguntas de uso comprensivo ni N1. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.80 — 23 de noviembre de 2026 · «Banco de preguntas»: selector por grado, DBA, estándar y aprendizaje priorizado
 
 **Contexto.** El docente preguntó si las preguntas nuevas llegaban a talleres, evaluaciones y guías (sí, por sorteo) y pidió poder **escoger** las preguntas filtrando por grado, estándar y/o DBA, y que se implementen los DBA, los estándares y los aprendizajes priorizados en ciencias en los tres sitios, con una pestaña aparte.
