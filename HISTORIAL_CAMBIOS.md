@@ -6,6 +6,19 @@
 
 ---
 
+## Versión 2.76 — 23 de noviembre de 2026 · Lote 3 del banco Saber: uso comprensivo, N1 y nivel 4, auditado por dos expertos
+
+**Contexto.** El docente pidió el siguiente lote enfocado en lo que quedó corto (preguntas de uso comprensivo I1–I3, indagación N1 y nivel 4), con tablas y gráficas de libro de texto.
+
+**Cambios.**
+- `docente-datos.js` (bloque nuevo al final): 36 preguntas Saber en funciones, nutrición, reinos, sistemas, división y reproducción (18 de uso comprensivo, 6 de explicación y 12 de indagación, 6 de ellas N1). Las 36 traen tabla o gráfica (OMS, UICN, USDA, Guyton, Alberts, Campbell, Hook, Wallace y Kelsey, Weaver; los inventados dicen «Datos de ejemplo»). Todas llevan `dba` verificado y varias `niv`.
+- **Proceso:** (1) un agente redactó el lote; (2) un experto en biología y datos corrigió 17: las cifras de síndrome de Down no coincidían con Hook (1981), la pregunta del hongo quítrido tenía una opción cuya premisa era cierta, la gestación humana mezclaba 280 y 266 días sin aclarar que son 40 semanas desde la última menstruación, valores de hibernación de la marmota, ovocitos (el dato de los 25 años quedó como interpolado) y Eijkman (salvado, no cáscara); (3) un experto en Saber/Icfes, MEN y DBA reformuló una pregunta de pepsina y tripsina que era de explicación y no de uso, quitó palabras delatoras en 11 preguntas, corrigió 5 DBA (14: 7.3; 15: 8.5; 19, 21 y 22: «sin») y 9 niveles (`niv`). Coincidencia con la clave a ciegas: 36 de 36 en ambas auditorías.
+- `saber-juego.js` regenerado. Caché `bionom-v90`; `docente-datos.js?v=39`, `saber-juego.js?v=18`. `revisar-sintaxis.js` sin errores; páginas sin errores en Playwright.
+
+**Pendiente.** Revisión del docente por muestreo, sobre todo de los datos de Hook y Wallace y Kelsey. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.75 — 22 de noviembre de 2026 · Lote 2 del banco Saber: 36 preguntas con tablas y gráficas, auditadas por dos expertos
 
 **Contexto.** El docente pidió seguir con el siguiente lote, con tablas y gráficas «de libro de texto», y que toda auditoría la hagan agentes expertos de cada categoría (regla nueva en `CLAUDE.md`).
