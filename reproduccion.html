@@ -20,7 +20,8 @@
 .grupos-r button .e img{display:block;width:100%;height:100%;object-fit:cover}
 .gr-info .foto{margin:0 0 10px}
 .gr-info .foto img{max-height:260px}
-.gr-info .foto .apa{font-size:.68rem}
+.gr-info .foto .apa{font-size:.76rem}
+.gr-info .foto .apa a{text-decoration:underline}
 @media(max-width:480px){.gr-info .foto img{max-height:200px}}
 .grupos-r button.on{border-color:var(--cn-naranja);background:#fff7ec}
 .grupos-r .sep{grid-column:1/-1;font:800 .75rem Outfit;letter-spacing:.1em;text-transform:uppercase;color:var(--cn-brand);margin-top:6px}
@@ -292,8 +293,8 @@
   </section>
 </main>
 <footer class="site-foot"></footer>
-<script src="fotos-datos.js?v=10"></script>
-<script src="fotos.js?v=1"></script>
+<script src="fotos-datos.js?v=11"></script>
+<script src="fotos.js?v=2"></script>
 <script src="bio.js?v=30"></script>
 <script src="cuerpo.js?v=13"></script>
 <script src="repro-anim.js?v=9"></script>
@@ -332,7 +333,7 @@ var BADGE={asexual:['🧬 Asexual','#e0a024'],sexual:['💞 Sexual','#7b4bb7'],a
 var gb=document.getElementById('gr'),vG={};
 gb.innerHTML=GR.map(function(g,i){return g[0]==='sep'?'<div class="sep">'+g[1]+'</div>':'<button type="button" data-i="'+i+'"><span class="e"><img src="img/fotos/'+g[0]+'_s.jpg" alt="" width="64" height="64" loading="lazy"></span>'+g[1]+'</button>';}).join('');
 gb.querySelectorAll('button').forEach(function(b){b.onclick=function(){var g=GR[+b.getAttribute('data-i')],bd=BADGE[g[2]];vG[g[1]]=1;
-  gb.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
+  gb.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});
   document.getElementById('gr-info').innerHTML='<h3>'+g[1]+'</h3><p class="badges"><span class="tag" style="background:'+bd[1]+'22">'+bd[0]+'</span></p>'+(FEXTRA[g[5]]?FOTO(FEXTRA[g[5]][0],FEXTRA[g[5]][1]):'')+FOTO(g[0],FPIE[g[5]])+'<p style="margin-top:8px">'+g[3]+'</p><p style="margin-top:8px"><b><span class="co"></span> Ejemplo:</b> '+g[4]+'</p>';
   ANIM.montar(document.getElementById('gr-anim'),g[5]);
   if(Object.keys(vG).length>=8)BIO.marcarSeccion('grupos');};});

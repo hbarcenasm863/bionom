@@ -6,6 +6,22 @@
 
 ---
 
+## Versión 2.77 — 23 de noviembre de 2026 · Auditoría de las fotos de «Grupos» con tres agentes expertos y correcciones
+
+**Contexto.** El docente pidió continuar con los pendientes de la versión 2.76: foto de planaria, auditoría con agentes expertos (regla de `CLAUDE.md`) y revisar el resto del sitio por emojis que representen mal un grupo.
+
+**Agentes (3, independientes).** Biología/taxonomía (abrió las 19 fotos a ciegas), licencias y citas APA y accesibilidad, y currículo MEN/didáctica (Mayer) con barrido de emojis engañosos en todo el sitio.
+
+**Cambios.**
+- `reproduccion.html`: foto de planaria (*Dugesia*) junto a la de lombriz en «Platelmintos y anélidos»; textos corregidos: planarias se reproducen por **fisión** (regenerar no es reproducirse), el caracol pala tiene sexos separados, artrópodos pasa a «asexual y sexual» (partenogénesis), musgos y helechos también se propagan por fragmentos o rizomas, la rana carga renacuajos a «pequeñas charcas» (no bromelias) y es la variedad verde menta, el pie de peces nombra el bocachico (*P. magdalenae*), el de gimnospermas nombra *Pinus banksiana*, esponja solo a nivel de género y mariposas «más de 3000». Orden del panel: título y etiqueta, fotos con cita, texto, ejemplo y al final la animación. Botones con `aria-pressed`; cita APA más legible.
+- `fotos-datos.js`: planaria, título de esponja y medusa como en Commons, año de la tortuga (2012). `fotos.js`: la foto con pie ya no repite el pie como texto alternativo.
+- Emojis engañosos corregidos: coral (`reinos.html`, pez → 🌊), invertebrados (🐌 → 🕷️), Protozoa (🦠 → 💧, distinto de bacterias), lombriz de tierra sin oruga (`funciones.html`), Schwann (🐸 → 🔬, `celula.html`), humano y jaguar de la portada (`index.html`), Explosión cámbrica (🐙 → 🦐, `evolucion.html`).
+- Las 19 licencias, autores y años se verificaron contra Commons (todas coinciden). Caché `bionom-v91`; `fotos-datos.js?v=11`, `fotos.js?v=2`.
+
+**Pendiente.** Foto de peces de baja calidad (*Prochilodus lineatus* en agua turbia; no es colombiana) y la del cóndor es una silueta: reemplazar si aparece algo mejor con licencia libre. La foto de helecho es hawaiana (*Cibotium*), no un *Cyathea* colombiano. Los emojis de otras páginas que el agente marcó como aceptables (🦠 para virus y bacterias, íconos de módulo) no se tocaron. Sin pasos manuales.
+
+---
+
 ## Versión 2.76 — 22 de noviembre de 2026 · «Grupos» de Reproducción: fotos reales en vez de emojis
 
 **Contexto.** El docente vio en el celular que la lista de grupos de `reproduccion.html` mostraba un **pez** para los cnidarios, una **oruga** (larva de artrópodo) para platelmintos y anélidos, una **estrella genérica** para equinodermos, una **gota** para protistas y una **esponja de cocina** para poríferos. Daba una idea equivocada de cada reino y pidió que cada grupo se represente con un ejemplar lo más cercano posible a un representante típico. Los emojis de medusa, coral y otros no sirven (son de la versión 12 en adelante: salen como rectángulos negros en el Windows del docente), así que se usaron fotos reales según la «Regla de imágenes».
