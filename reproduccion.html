@@ -20,6 +20,8 @@
 .grupos-r button .e img{display:block;width:100%;height:100%;object-fit:cover}
 .gr-info .foto{margin:0 0 10px}
 .gr-info .foto img{max-height:260px}
+.gr-info .foto .apa{font-size:.68rem}
+@media(max-width:480px){.gr-info .foto img{max-height:200px}}
 .grupos-r button.on{border-color:var(--cn-naranja);background:#fff7ec}
 .grupos-r .sep{grid-column:1/-1;font:800 .75rem Outfit;letter-spacing:.1em;text-transform:uppercase;color:var(--cn-brand);margin-top:6px}
 .badges .tag{font-size:.78rem}
@@ -116,11 +118,11 @@
     <p class="lead">Cada reino y cada filo tiene sus estrategias. Toca un grupo y mira la animación paso a paso.</p>
     <div class="lado">
       <div class="grupos-r" id="gr"></div>
-      <div id="gr-t"><div id="gr-anim"></div><div class="gr-info" id="gr-info" aria-live="polite"></div></div>
+      <div id="gr-t"><div class="gr-info" id="gr-info" aria-live="polite"></div><div id="gr-anim"></div></div>
     </div>
     <h3 style="margin-top:18px">🎯 Clasifica</h3>
     <div class="card" id="clas-tipo"></div>
-      <div class="chequeo" data-ok="1" data-exp="Los helechos forman esporas en el envés de sus hojas. Necesitan agua para que el gameto masculino nade hasta el femenino.">
+      <div class="chequeo" data-ok="1" data-exp="Los helechos forman esporas en el envés de sus hojas. Necesitan agua para que el gameto masculino nade hasta el femenino. También se propagan de forma asexual por fragmentos.">
       <div class="q">¿Cómo se reproducen los helechos?</div>
       <div class="ops"><button class="op" data-por="Los helechos no tienen flores ni semillas.">Por semillas que caen de sus flores.</button><button class="op">Por esporas que se forman en el envés de las hojas.</button><button class="op" data-por="La bipartición es de organismos unicelulares; el helecho es pluricelular.">Solo por bipartición, como las bacterias.</button></div>
     </div>
@@ -307,31 +309,31 @@ var GR=[
  ['g_hongos','Hongos','ambas','Esporas, asexuales o sexuales; las levaduras hacen gemación. Los champiñones son el «fruto» que produce las esporas.','La levadura de la chicha y del pan.','hongos'],
  ['sep','Plantas'],
  ['g_musgos','Musgos (briofitos)','ambas','Alternan una generación que produce gametos y otra que produce esporas. Necesitan agua para que el gameto masculino nade hasta el femenino.','Los musgos del páramo, que retienen agua como esponjas.','musgos'],
- ['g_helechos','Helechos (pteridofitos)','ambas','Producen esporas en los <b>soros</b> (puntos cafés bajo las hojas). De la espora sale una plantita que forma gametos; también necesitan agua.','Los helechos arborescentes de los bosques andinos.','helechos'],
+ ['g_helechos','Helechos (pteridofitos)','ambas','Producen esporas en los <b>soros</b> (puntos cafés bajo las hojas). De la espora sale una plantita que forma gametos; también necesitan agua. Se propagan además por rizomas.','Los helechos arborescentes de los bosques andinos.','helechos'],
  ['g_gimnospermas','Gimnospermas','sexual','Semillas «desnudas», sin fruto, en conos o piñas. El polen viaja con el viento.','El pino colombiano o romerón (<i>Retrophyllum</i>), en peligro.','gimnospermas'],
  ['g_angiospermas','Angiospermas','ambas','Plantas con <b>flor</b>: polinización, fecundación, semilla dentro de un <b>fruto</b>. Muchas también se propagan de forma vegetativa.','La orquídea Cattleya trianae, el café, el maíz, la papa.','angiospermas'],
  ['sep','Animales invertebrados'],
  ['g_poriferos','Poríferos (esponjas)','ambas','Gemación y fragmentación; sexualmente, muchas son hermafroditas y sueltan gametos al agua.','Las esponjas de los arrecifes del Caribe.','poriferos'],
  ['g_cnidarios','Cnidarios','ambas','Los pólipos se reproducen por gemación y forman colonias (corales); las medusas se reproducen sexualmente. Muchos corales hacen un desove masivo una vez al año.','Los corales de San Andrés.','cnidarios'],
- ['g_platelmintos','Platelmintos y anélidos','ambas','La planaria se regenera de un fragmento. Las lombrices de tierra son hermafroditas, pero se cruzan con otra lombriz (fecundación cruzada).','La lombriz roja californiana del compostaje.','platelmintos'],
- ['g_moluscos','Moluscos','sexual','Fecundación interna o externa; muchos caracoles son hermafroditas. Ponen huevos.','El caracol pala del Caribe.','moluscos'],
- ['g_artropodos','Artrópodos','sexual','Fecundación interna, huevos y muchos con <b>metamorfosis</b>. Las abejas tienen partenogénesis: los zánganos nacen de óvulos sin fecundar.','Las más de 3600 especies de mariposas de Colombia.','artropodos'],
+ ['g_platelmintos','Platelmintos y anélidos','ambas','Muchas planarias se reproducen por <b>fisión</b>: se parten y cada trozo regenera un animal completo; también hay reproducción sexual. Las lombrices de tierra son hermafroditas, pero se cruzan con otra lombriz (fecundación cruzada) y forman un capullo con los huevos.','La lombriz roja californiana del compostaje.','platelmintos'],
+ ['g_moluscos','Moluscos','sexual','Fecundación interna o externa; muchos caracoles terrestres son hermafroditas, pero el caracol pala tiene sexos separados. Ponen huevos.','El caracol pala del Caribe.','moluscos'],
+ ['g_artropodos','Artrópodos','ambas','Casi todos con fecundación interna, huevos y muchos con <b>metamorfosis</b>. Algunos, como las abejas, tienen <b>partenogénesis</b> (reproducción asexual): los zánganos nacen de óvulos sin fecundar.','Las más de 3000 especies de mariposas de Colombia.','artropodos'],
  ['g_equinodermos','Equinodermos','ambas','Fecundación externa; las estrellas de mar pueden regenerarse a partir de un brazo.','Los erizos y estrellas de los arrecifes.','equinodermos'],
  ['sep','Animales vertebrados'],
  ['g_peces','Peces','sexual','Casi todos con fecundación externa y miles de huevos. Algunos tiburones son ovovivíparos. En el caballito de mar, el macho incuba los huevos.','Los bocachicos que suben por los ríos en la «subienda» para desovar.','peces'],
- ['g_anfibios','Anfibios','sexual','Fecundación casi siempre externa en el agua; desarrollo indirecto: huevo → renacuajo → adulto (metamorfosis).','La rana venenosa carga a sus renacuajos en la espalda hasta pozos de agua en las bromelias.','anfibios'],
+ ['g_anfibios','Anfibios','sexual','Fecundación casi siempre externa en el agua; desarrollo indirecto: huevo → renacuajo → adulto (metamorfosis).','La rana venenosa carga a sus renacuajos en la espalda hasta pequeñas charcas de agua.','anfibios'],
  ['g_reptiles','Reptiles','sexual','Fecundación interna y <b>huevo amniota</b> con cáscara, que no se seca en tierra. En las tortugas, la temperatura de la arena decide si nacen machos o hembras.','La tortuga caná desova en las playas del Chocó y La Guajira.','reptiles'],
  ['g_aves','Aves','sexual','Fecundación interna, huevos con cáscara dura que los padres incuban. Desarrollo directo.','El cóndor pone un solo huevo cada dos años: por eso se recupera tan despacio.','aves'],
  ['g_mamiferos','Mamíferos','sexual','Fecundación interna. Casi todos son <b>vivíparos placentarios</b>; los marsupiales (zarigüeya o chucha) terminan el desarrollo en una bolsa, y los monotremas (ornitorrinco) ponen huevos. Todos amamantan.','La chucha o zarigüeya, el marsupial más común de Colombia, aunque hay muchos más.','mamiferos']
 ];
-var FPIE={bacterias:'Bacterias <i>Escherichia coli</i> vistas al microscopio electrónico.',protistas:'<i>Paramecium caudatum</i>, un protista ciliado.',hongos:'Champiñón silvestre (<i>Agaricus campestris</i>): el «fruto» que produce las esporas.',musgos:'Musgo con sus cápsulas (esporangios) sobre tallitos.',helechos:'Helecho arborescente: los puntos bajo las hojas son los soros con esporas.',gimnospermas:'Conos de un pino: las semillas quedan «desnudas», sin fruto.',angiospermas:'Orquídea <i>Cattleya trianae</i>, la flor nacional de Colombia.',poriferos:'Esponja de vaso (<i>Callyspongia vaginalis</i>) en un arrecife del Caribe.',cnidarios:'Medusa luna (<i>Aurelia aurita</i>), un cnidario de vida libre.',platelmintos:'Lombriz roja californiana (<i>Eisenia fetida</i>), un anélido (segmentado, a diferencia de los platelmintos).',moluscos:'Caracol pala (<i>Lobatus gigas</i>), molusco del Caribe.',artropodos:'Mariposa morfo azul (<i>Morpho peleides</i>), un artrópodo.',equinodermos:'Estrella de mar de cojín del Caribe (<i>Oreaster reticulatus</i>).',peces:'Cardumen de <i>Prochilodus</i>, el mismo género del bocachico.',anfibios:'Rana dorada venenosa (<i>Phyllobates terribilis</i>), un anfibio de Colombia.',reptiles:'Tortuga caná o laúd (<i>Dermochelys coriacea</i>) volviendo al mar tras desovar.',aves:'Cóndor andino (<i>Vultur gryphus</i>) en vuelo.',mamiferos:'Zarigüeya o chucha (<i>Didelphis marsupialis</i>), un marsupial.'};
-var FEXTRA={platelmintos:['g_platelmintos2','Planaria (<i>Dugesia</i>), un platelminto de vida libre: se regenera de un fragmento. Se distinguen sus dos ocelos.']};
+var FPIE={bacterias:'Bacterias <i>Escherichia coli</i> vistas al microscopio electrónico de barrido.',protistas:'<i>Paramecium caudatum</i>, un protista ciliado.',hongos:'Champiñón silvestre (<i>Agaricus campestris</i>): el «fruto» que produce las esporas.',musgos:'Musgo con sus cápsulas (esporangios) sobre tallitos.',helechos:'Helecho arborescente: los puntos bajo las hojas son los soros con esporas.',gimnospermas:'Conos de un pino (<i>Pinus banksiana</i>): en las gimnospermas las semillas quedan «desnudas», sin fruto.',angiospermas:'Orquídea <i>Cattleya trianae</i>, la flor nacional de Colombia.',poriferos:'Esponja de vaso (<i>Callyspongia</i>) en un arrecife del Caribe.',cnidarios:'Medusa luna (<i>Aurelia aurita</i>), un cnidario de vida libre.',platelmintos:'Lombriz roja californiana (<i>Eisenia fetida</i>), un anélido (segmentado, a diferencia de los platelmintos).',moluscos:'Caracol pala (<i>Lobatus gigas</i>), molusco del Caribe.',artropodos:'Mariposa morfo azul (<i>Morpho peleides</i>), un artrópodo.',equinodermos:'Estrella de mar de cojín del Caribe (<i>Oreaster reticulatus</i>).',peces:'Cardumen de <i>Prochilodus lineatus</i>, del mismo género del bocachico colombiano (<i>P. magdalenae</i>).',anfibios:'Rana venenosa <i>Phyllobates terribilis</i> (variedad verde menta), un anfibio del Pacífico colombiano.',reptiles:'Tortuga caná o laúd (<i>Dermochelys coriacea</i>) volviendo al mar tras desovar.',aves:'Cóndor andino (<i>Vultur gryphus</i>) en vuelo.',mamiferos:'Zarigüeya o chucha (<i>Didelphis marsupialis</i>), un marsupial.'};
+var FEXTRA={platelmintos:['g_platelmintos2','Planaria (<i>Dugesia</i>), un platelminto de vida libre que puede reproducirse partiéndose (fisión). Se distinguen sus dos ocelos.']};
 var BADGE={asexual:['🧬 Asexual','#e0a024'],sexual:['💞 Sexual','#7b4bb7'],ambas:['🧬💞 Asexual y sexual','#2e7d4f']};
 var gb=document.getElementById('gr'),vG={};
 gb.innerHTML=GR.map(function(g,i){return g[0]==='sep'?'<div class="sep">'+g[1]+'</div>':'<button type="button" data-i="'+i+'"><span class="e"><img src="img/fotos/'+g[0]+'_s.jpg" alt="" width="64" height="64" loading="lazy"></span>'+g[1]+'</button>';}).join('');
 gb.querySelectorAll('button').forEach(function(b){b.onclick=function(){var g=GR[+b.getAttribute('data-i')],bd=BADGE[g[2]];vG[g[1]]=1;
   gb.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
-  document.getElementById('gr-info').innerHTML=(FEXTRA[g[5]]?FOTO(FEXTRA[g[5]][0],FEXTRA[g[5]][1]):'')+FOTO(g[0],FPIE[g[5]])+'<h3>'+g[1]+'</h3><p class="badges"><span class="tag" style="background:'+bd[1]+'22">'+bd[0]+'</span></p><p style="margin-top:8px">'+g[3]+'</p><p style="margin-top:8px"><b><span class="co"></span> Ejemplo:</b> '+g[4]+'</p>';
+  document.getElementById('gr-info').innerHTML='<h3>'+g[1]+'</h3><p class="badges"><span class="tag" style="background:'+bd[1]+'22">'+bd[0]+'</span></p>'+(FEXTRA[g[5]]?FOTO(FEXTRA[g[5]][0],FEXTRA[g[5]][1]):'')+FOTO(g[0],FPIE[g[5]])+'<p style="margin-top:8px">'+g[3]+'</p><p style="margin-top:8px"><b><span class="co"></span> Ejemplo:</b> '+g[4]+'</p>';
   ANIM.montar(document.getElementById('gr-anim'),g[5]);
   if(Object.keys(vG).length>=8)BIO.marcarSeccion('grupos');};});
 gb.querySelector('button').click();
