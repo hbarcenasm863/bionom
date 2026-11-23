@@ -6,6 +6,16 @@
 
 ---
 
+## Versión 2.81 — 23 de noviembre de 2026 · Motor de figuras nuevo en `saber-icfes.js` (sin preguntas todavía)
+
+El docente pidió preguntas que dependan de analizar gráficas, imágenes o tablas. El primer lote se hizo en IonNom; `saber-icfes.js` es el mismo archivo en los tres sitios y se copió aquí.
+
+- `saber-icfes.js`: nuevos `graf:{tipo:'xy'}`, `esq:{tipo:'tp'}` / `esq:{svg}` y `opsGraf` (opciones A–D dibujadas).
+- `sw.js`: `CACHE` de `bionom-v93` a `bionom-v94`.
+- **Pendiente:** ningún banco de BioNom usa aún los campos nuevos; falta el lote de biología con figuras (cruces, redes tróficas, curvas de crecimiento). Detalle y auditoría en el `CHANGELOG.md` de IonNom.
+
+---
+
 ## Versión 2.80 — 23 de noviembre de 2026 · «Banco de preguntas»: selector por grado, DBA, estándar y aprendizaje priorizado
 
 **Contexto.** El docente preguntó si las preguntas nuevas llegaban a talleres, evaluaciones y guías (sí, por sorteo) y pidió poder **escoger** las preguntas filtrando por grado, estándar y/o DBA, y que se implementen los DBA, los estándares y los aprendizajes priorizados en ciencias en los tres sitios, con una pestaña aparte.
