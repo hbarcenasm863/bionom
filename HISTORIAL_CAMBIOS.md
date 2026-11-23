@@ -6,6 +6,15 @@
 
 ---
 
+## Versión 2.82 — 23 de noviembre de 2026 · Motor de figuras nuevo en `saber-icfes.js` (sin preguntas todavía)
+
+El docente pidió preguntas que dependan de analizar gráficas, imágenes o tablas. El primer lote se hizo en IonNom; `saber-icfes.js` es el mismo archivo en los tres sitios y se copió aquí.
+
+- `saber-icfes.js`: nuevos `graf:{tipo:'xy'}`, `esq:{tipo:'tp'}` / `esq:{svg}` y `opsGraf` (opciones A–D dibujadas).
+- `sw.js`: `CACHE` de `bionom-v94` a `bionom-v95`.
+- **Pendiente:** ningún banco de BioNom usa aún los campos nuevos; falta el lote de biología con figuras (cruces, redes tróficas, curvas de crecimiento). Detalle y auditoría en el `CHANGELOG.md` de IonNom.
+---
+
 ## Versión 2.81 — 23 de noviembre de 2026 · Lote 5 del banco Saber: explicación e indagación en seis temas, con DBA, auditado por dos expertos
 
 **Contexto.** El docente pidió continuar con lo pendiente. Este lote refuerza la explicación de fenómenos (incluidas las de ciencia y sociedad, E3) y la indagación en funciones, nutrición, reinos, ecosistemas, sistemas y división, y se construyó con el modelo basado en evidencias del Icfes y `REFERENTES_CURRICULARES.md` (regla del 23-11-2026).
