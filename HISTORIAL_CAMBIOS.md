@@ -6,6 +6,18 @@
 
 ---
 
+## Versión 2.83 — 24 de noviembre de 2026 · Al menos 10 preguntas con figura por tema (lote 7)
+
+El docente pidió al menos 10 preguntas por tema cuya respuesta dependa de analizar una figura. En BioNom todos los temas tenían 9 o más; células, evolución y ambiente tenían 9.
+
+- `docente-datos.js`: 9 preguntas nuevas (3 por cada uno de esos temas) con crecimiento bacteriano en escala logarítmica, pigmento de remolacha, célula del páncreas, árbol filogenético, deriva génica, selección estabilizadora, cadena trófica con mercurio, oxígeno disuelto y balance de carbono. Todos los temas quedan con 10 o más figuras.
+- `saber-icfes.js`: motor mejorado (igual que IonNom). `juego.html`, `docente-app.js`, `banco-sel.js` y el generador aceptan `esq`, `opsGraf` y opciones A–D sin barajar; `saber-juego.js` regenerado (886).
+- `sw.js`: `CACHE` de `bionom-v95` a `bionom-v96`; `?v=` de las páginas subidos.
+- Proceso: experto en biología (3 correcciones de redacción y de rigor), experto en Saber/MEN (reclasificó una afirmación, igualó una opción larga y asignó `dba` y `curso`) y experto en figuras.
+- **Pendiente:** el curso 8–10 de algunas preguntas es criterio del auditor; probar a mano en `juego.html` una pregunta con opciones A–D. No se tocó `bionom-analytics.gs`.
+
+---
+
 ## Versión 2.82 — 23 de noviembre de 2026 · Motor de figuras nuevo en `saber-icfes.js` (sin preguntas todavía)
 
 El docente pidió preguntas que dependan de analizar gráficas, imágenes o tablas. El primer lote se hizo en IonNom; `saber-icfes.js` es el mismo archivo en los tres sitios y se copió aquí.

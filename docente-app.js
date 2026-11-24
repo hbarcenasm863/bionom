@@ -117,7 +117,7 @@ function preguntasEval(c,v){
   // (saber-icfes.js); las preguntas oficiales del Icfes no barajan opciones.
   var elegidas=SI?SI.elegir(pool,c.saber,r,{prioIcfes:c.icfes}):mezclar(pool,r).slice(0,c.saber);
   var sab=elegidas.map(function(q){
-    if(q.fijo)return {ctx:q.ctx,q:q.q,ops:q.imgOps?[]:q.o,a:q.r,exp:q.exp,src:q};
+    if(q.fijo)return {ctx:q.ctx,q:q.q,ops:(q.imgOps||q.opsGraf)?[]:q.o,a:q.r,exp:q.exp,src:q};
     var ord=mezclar([0,1,2,3],r);return {ctx:q.ctx,q:q.q,ops:ord.map(function(i){return q.o[i];}),a:ord.indexOf(0),src:q};});
   var ab=abiertasDe(c);
   // en la evaluación pueden sumarse preguntas de selección del banco del juego
@@ -159,7 +159,7 @@ function bloquesEval(E,c,clave){
   var SI=window.SABER_ICFES;
   E.saber.forEach(function(x,i){n++;var s=x.src||{};
     B.push('<div class="pq sq" data-k="'+i+'"><span class="n">'+n+'.</span><div>'+(x.ctx?'<div class="ctx">'+esc(x.ctx)+'</div>':'')+(SI?SI.extraHTML(s):'')+'<b>'+esc(x.q)+'</b>'+
-      (SI&&s.imgOps?SI.opsImgHTML(s)+(clave?'<div class="okc">✔ Respuesta: '+L[x.a]+'</div>':''):'<ol class="col1">'+x.ops.map(function(o,j){return '<li data-l="'+L[j]+'"'+(clave&&j===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&j===x.a?' ✔':'')+'</li>';}).join('')+'</ol>')+
+      (SI&&(s.imgOps||s.opsGraf)?SI.opsImgHTML(s)+(clave?'<div class="okc">✔ Respuesta: '+L[x.a]+'</div>':''):'<ol class="col1">'+x.ops.map(function(o,j){return '<li data-l="'+L[j]+'"'+(clave&&j===x.a?' class="ok"':'')+'>'+esc(o)+(clave&&j===x.a?' ✔':'')+'</li>';}).join('')+'</ol>')+
       (clave&&s.icfes&&x.exp?'<div class="exp">'+esc(x.exp)+'</div>':'')+
       (clave&&SI?'<div class="exp">Competencia: '+esc(SI.COMP[SI.competencia(s)].n)+'.</div>':'')+
       (SI?SI.creditoHTML(s):'')+'</div></div>');});
