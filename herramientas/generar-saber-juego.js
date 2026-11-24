@@ -4,7 +4,7 @@
    Hay que volver a correrlo cada vez que se agregan o cambian preguntas SABER. */
 const fs=require('fs'),vm=require('vm');
 const c={console};c.window=c;vm.createContext(c);
-['saber-icfes.js','banco.js','docente-datos.js'].forEach(f=>vm.runInContext(fs.readFileSync(f,'utf8'),c));
+['saber-icfes.js','banco.js','docente-datos.js','revision-ref.js'].forEach(f=>vm.runInContext(fs.readFileSync(f,'utf8'),c));
 const SI=c.SABER_ICFES,B=c.BANCO_BIO;
 const yaEstan=new Set(B.filter(q=>q.k==='mc').map(q=>q.q));
 const lim=s=>String(s==null?'':s).replace(/<[^>]+>/g,'');

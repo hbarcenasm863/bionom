@@ -1,0 +1,431 @@
+{
+ "lote": "icfes-bio-5",
+ "experto": "icfes",
+ "revisadas": 74,
+ "coincidencias_a_ciegas": 74,
+ "ev": {
+  "nutricion|1xr5ad9": "5.6",
+  "nutricion|eubji9": "5.6",
+  "nutricion|16ls5v6": "5.6",
+  "nutricion|wkbzxv": "5.6",
+  "nutricion|10xt5lz": "4.4",
+  "nutricion|1mxqyq9": "5.6",
+  "nutricion|hrch2o": "5.6",
+  "nutricion|2gtob6": "2.9",
+  "nutricion|7nyt03": "2.9",
+  "nutricion|y0jcxz": "1.2",
+  "nutricion|1698mwc": "1.1",
+  "nutricion|hhucej": "5.6",
+  "nutricion|14ia9od": "5.6",
+  "nutricion|sjjdop": "1.1",
+  "nutricion|1ypp6lb": "1.1",
+  "nutricion|yt1v8s": "1.2",
+  "nutricion|1kx90gu": "2.8",
+  "nutricion|c2r6np": "1.1",
+  "nutricion|1hjae8d": "2.9",
+  "nutricion|dkizrp": "1.1",
+  "nutricion|1mnz4go": "2.9",
+  "nutricion|1du64tz": "1.1",
+  "nutricion|1odsbli": "2.9",
+  "nutricion|19q7brf": "1.1",
+  "nutricion|1y1r5cr": "5.5",
+  "nutricion|19vrwb5": "1.1",
+  "nutricion|1p98k6s": "1.1",
+  "nutricion|atyj35": "4.5",
+  "nutricion|ocouec": "4.5",
+  "nutricion|1n4gcez": "5.7",
+  "nutricion|nvsgfa": "2.9",
+  "nutricion|1xn39c9": "1.3",
+  "nutricion|1vtfnzt": "1.2",
+  "nutricion|1knd4x9": "1.1",
+  "nutricion|fcvhc4": "1.2",
+  "nutricion|1ou6yyu": "1.2",
+  "nutricion|wqidr9": "1.1",
+  "nutricion|1y8qxkc": "5.6",
+  "nutricion|13g8iam": "1.2",
+  "nutricion|108c1oq": "1.1",
+  "nutricion|et8wrq": "8.1",
+  "nutricion|7dchxb": "7.3",
+  "nutricion|5sqa83": "9.2",
+  "nutricion|hxcndo": "7.3",
+  "nutricion|ejvjxe": "8.1",
+  "nutricion|6t4hwa": "6.2",
+  "nutricion|4e7ptk": "9.2",
+  "nutricion|smm3i8": "8.1",
+  "nutricion|1fw8bx7": "5.5",
+  "nutricion|1yuduyj": "2.9",
+  "nutricion|1q37xaw": "3.3",
+  "nutricion|v5fynl": "1.1",
+  "nutricion|ibugmz": "8.1",
+  "nutricion|ecxqgh": "9.2",
+  "nutricion|27wx28": "7.3",
+  "nutricion|1g7trny": "7.2",
+  "nutricion|1ppmrpu": "2.9",
+  "nutricion|1vovh37": "1.1",
+  "nutricion|7f95b4": "7.3",
+  "nutricion|9s78h2": "9.2",
+  "nutricion|8lhlqo": "8.1",
+  "nutricion|zvoj4j": "6.2",
+  "nutricion|p9cc5d": "8.1",
+  "nutricion|1a7qc1m": "4.4",
+  "nutricion|dd96if": "2.9",
+  "nutricion|1j4dmhs": "2.9",
+  "nutricion|1s1uz6b": "7.3",
+  "nutricion|1ud1fcw": "8.1",
+  "nutricion|zw72yo": "2.9",
+  "nutricion|1mhdhhq": "3.3",
+  "nutricion|y279sj": "1.1",
+  "nutricion|x0hmbh": "7.4",
+  "nutricion|1i9c6ot": "9.2",
+  "nutricion|ybxbrw": "8.1"
+ },
+ "nd": {
+  "nutricion|1xr5ad9": 1,
+  "nutricion|eubji9": 1,
+  "nutricion|16ls5v6": 1,
+  "nutricion|wkbzxv": 2,
+  "nutricion|10xt5lz": 2,
+  "nutricion|1mxqyq9": 1,
+  "nutricion|hrch2o": 1,
+  "nutricion|2gtob6": 2,
+  "nutricion|7nyt03": 2,
+  "nutricion|y0jcxz": 1,
+  "nutricion|1698mwc": 2,
+  "nutricion|hhucej": 1,
+  "nutricion|14ia9od": 1,
+  "nutricion|sjjdop": 1,
+  "nutricion|1ypp6lb": 2,
+  "nutricion|yt1v8s": 1,
+  "nutricion|1kx90gu": 2,
+  "nutricion|c2r6np": 1,
+  "nutricion|1hjae8d": 1,
+  "nutricion|dkizrp": 1,
+  "nutricion|1mnz4go": 1,
+  "nutricion|1du64tz": 2,
+  "nutricion|1odsbli": 1,
+  "nutricion|19q7brf": 2,
+  "nutricion|1y1r5cr": 1,
+  "nutricion|19vrwb5": 2,
+  "nutricion|1p98k6s": 1,
+  "nutricion|atyj35": 1,
+  "nutricion|ocouec": 1,
+  "nutricion|1n4gcez": 1,
+  "nutricion|nvsgfa": 2,
+  "nutricion|1xn39c9": 2,
+  "nutricion|1vtfnzt": 2,
+  "nutricion|1knd4x9": 1,
+  "nutricion|fcvhc4": 2,
+  "nutricion|1ou6yyu": 1,
+  "nutricion|wqidr9": 1,
+  "nutricion|1y8qxkc": 1,
+  "nutricion|13g8iam": 2,
+  "nutricion|108c1oq": 1,
+  "nutricion|et8wrq": 2,
+  "nutricion|7dchxb": 3,
+  "nutricion|5sqa83": 2,
+  "nutricion|hxcndo": 2,
+  "nutricion|ejvjxe": 2,
+  "nutricion|6t4hwa": 3,
+  "nutricion|4e7ptk": 3,
+  "nutricion|smm3i8": 2,
+  "nutricion|1fw8bx7": 1,
+  "nutricion|1yuduyj": 2,
+  "nutricion|1q37xaw": 2,
+  "nutricion|v5fynl": 1,
+  "nutricion|ibugmz": 3,
+  "nutricion|ecxqgh": 3,
+  "nutricion|27wx28": 2,
+  "nutricion|1g7trny": 4,
+  "nutricion|1ppmrpu": 2,
+  "nutricion|1vovh37": 2,
+  "nutricion|7f95b4": 2,
+  "nutricion|9s78h2": 2,
+  "nutricion|8lhlqo": 2,
+  "nutricion|zvoj4j": 3,
+  "nutricion|p9cc5d": 2,
+  "nutricion|1a7qc1m": 2,
+  "nutricion|dd96if": 3,
+  "nutricion|1j4dmhs": 3,
+  "nutricion|1s1uz6b": 3,
+  "nutricion|1ud1fcw": 3,
+  "nutricion|zw72yo": 3,
+  "nutricion|1mhdhhq": 3,
+  "nutricion|y279sj": 3,
+  "nutricion|x0hmbh": 3,
+  "nutricion|1i9c6ot": 3,
+  "nutricion|ybxbrw": 2
+ },
+ "hallazgos": [
+  {
+   "id": "nutricion|wkbzxv",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Solo agua, sales minerales y vitaminas del ambiente",
+     "nuevo": "Agua, sales minerales y vitaminas que toman del ambiente"
+    }
+   ],
+   "motivo": "Los tres distractores empiezan con «Solo», y la clave es la única sin esa palabra: el estudiante acierta por la forma. Se quita el «Solo» de un distractor (sigue siendo falso porque omite proteínas y ácidos nucleicos)."
+  },
+  {
+   "id": "nutricion|10xt5lz",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Inferir el antepasado común a partir del código genético compartido relaciona dos fenómenos biológicos (evidencia 4.4, afirmación I2), no identifica características de un fenómeno (I1, evidencias 5.x). Además es contenido de evolución dentro del tema nutrición."
+  },
+  {
+   "id": "nutricion|y0jcxz",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "La decisión de fundar ciudades junto a los ríos trata del aprovechamiento de un recurso natural para el desarrollo de las comunidades (afirmación 1 del Marco, E3, evidencia 1.2), no de la dinámica de un fenómeno natural (E1)."
+  },
+  {
+   "id": "nutricion|1698mwc",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|sjjdop",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|1ypp6lb",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|c2r6np",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|dkizrp",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|19q7brf",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|19vrwb5",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|1p98k6s",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|1knd4x9",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|108c1oq",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1)."
+  },
+  {
+   "id": "nutricion|1du64tz",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "No tiene razón solo porque el vapeador está prohibido en Colombia",
+     "nuevo": "No tiene razón solo porque el vapor mancha los dientes y la ropa"
+    }
+   ],
+   "motivo": "Pide valorar un riesgo o una medida de salud individual o pública: es la afirmación 1 del Marco (E3, evidencia 1.1-1.3, competencia explicación), no identificación de características de un fenómeno (I1). Además, el distractor B da a entender que el vapeador está prohibido en Colombia, lo cual es falso (la Ley 2354 de 2024 lo regula, no lo prohíbe): se cambia por otro error sin premisa falsa."
+  },
+  {
+   "id": "nutricion|1xn39c9",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar el uso de una tecnología o los efectos de explotar un recurso sobre la salud (afirmación 1 del Marco, E3, evidencia 1.3), no identificar características (I1)."
+  },
+  {
+   "id": "nutricion|1vtfnzt",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar el uso de una tecnología o los efectos de explotar un recurso sobre la salud (afirmación 1 del Marco, E3, evidencia 1.2), no identificar características (I1)."
+  },
+  {
+   "id": "nutricion|fcvhc4",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar el uso de una tecnología o los efectos de explotar un recurso sobre la salud (afirmación 1 del Marco, E3, evidencia 1.2), no identificar características (I1)."
+  },
+  {
+   "id": "nutricion|1ou6yyu",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide valorar el uso de una tecnología o los efectos de explotar un recurso sobre la salud (afirmación 1 del Marco, E3, evidencia 1.2), no identificar características (I1)."
+  },
+  {
+   "id": "nutricion|13g8iam",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Las comunidades saben transformar recursos locales en alimentos seguros",
+     "nuevo": "Que las comunidades saben transformar recursos locales en alimentos seguros"
+    }
+   ],
+   "motivo": "Pista gramatical: el enunciado «¿Qué muestra…?» y los tres distractores empiezan con «Que…», pero la clave no; se iguala la estructura. Además, valorar el conocimiento tradicional para transformar un recurso local en alimento seguro es E3 (evidencia 1.2), no I1."
+  },
+  {
+   "id": "nutricion|yt1v8s",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Porque así lo ordena la ley",
+     "nuevo": "Porque son los únicos alimentos que aportan energía"
+    },
+    {
+     "campo": "distractor",
+     "original": "Porque no les gustan otros alimentos",
+     "nuevo": "Porque el clima cálido impide digerir otros alimentos"
+    },
+    {
+     "campo": "distractor",
+     "original": "Porque el pescado no tiene proteína",
+     "nuevo": "Porque el coco reemplaza a todas las frutas y verduras"
+    }
+   ],
+   "motivo": "Los tres distractores son absurdos (la ley ordena la dieta, no les gustan otros alimentos, el pescado no tiene proteína) y nadie con conocimiento mínimo los escoge; el ítem se responde sin el concepto. Se reemplazan por errores plausibles."
+  },
+  {
+   "id": "nutricion|1y1r5cr",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "El sistema digestivo, que pide más",
+     "nuevo": "El cerebelo, que coordina el equilibrio"
+    },
+    {
+     "campo": "distractor",
+     "original": "El sistema óseo, que las almacena",
+     "nuevo": "El bulbo raquídeo, que controla la respiración"
+    },
+    {
+     "campo": "distractor",
+     "original": "El sistema excretor, que las elimina",
+     "nuevo": "La zona visual, que procesa las imágenes"
+    }
+   ],
+   "motivo": "El enunciado pregunta por un sistema «del cerebro» y los distractores son sistemas que no están en el cerebro (digestivo, óseo, excretor): la clave se delata. Se cambian por estructuras del encéfalo. La afirmación corresponde a un proceso del organismo (I3, evidencia 5.5)."
+  },
+  {
+   "id": "nutricion|atyj35",
+   "gravedad": "baja",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar una enfermedad con su forma de transmisión o su vector relaciona fenómenos biológicos con el entorno (evidencia 4.5, afirmación I2), no es una característica de un fenómeno (I1, evidencias 5.x)."
+  },
+  {
+   "id": "nutricion|ocouec",
+   "gravedad": "baja",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar una enfermedad con su forma de transmisión o su vector relaciona fenómenos biológicos con el entorno (evidencia 4.5, afirmación I2), no es una característica de un fenómeno (I1, evidencias 5.x)."
+  },
+  {
+   "id": "nutricion|p9cc5d",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N4"
+   },
+   "motivo": "La tarea es leer y comparar valores de una tabla para decidir qué afirmación se sostiene: es interpretación de datos (indagación, N4, evidencia 8.1), no uso comprensivo del concepto."
+  },
+  {
+   "id": "nutricion|1s1uz6b",
+   "gravedad": "baja",
+   "etiquetas": {
+    "af": "N2"
+   },
+   "motivo": "Se pide la explicación (conclusión) que sostienen los datos de la investigación: es la evidencia 7.3 (N2). N1 (evidencias 6.1, 6.2) trata de qué pregunta se puede contestar o de la importancia de la evidencia."
+  },
+  {
+   "id": "nutricion|x0hmbh",
+   "gravedad": "baja",
+   "motivo": "El nivel escrito a mano (niv 1) es bajo: hay que calcular las diferencias sucesivas, reconocer que la pérdida disminuye y extrapolar (interpretar un patrón para predecir), lo que corresponde al nivel 3. Revisar el campo niv (solo afecta Básico/Medio/Completo si se usa así)."
+  }
+ ]
+}

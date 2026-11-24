@@ -1,0 +1,1318 @@
+{
+ "lote": "icfes-bio-2",
+ "experto": "icfes",
+ "revisadas": 233,
+ "coincidencias_a_ciegas": 233,
+ "ev": {
+  "sistemas|944n1s": "5.5",
+  "sistemas|lzlvs0": "2.9",
+  "sistemas|1jwtk6d": "2.9",
+  "sistemas|1wexgph": "4.4",
+  "sistemas|mvrzje": "5.5",
+  "sistemas|5h83fp": "5.5",
+  "sistemas|29gdee": "2.9",
+  "sistemas|jzoiwu": "2.9",
+  "sistemas|32tds4": "2.9",
+  "sistemas|o6jgmm": "2.9",
+  "sistemas|149rfhj": "2.9",
+  "sistemas|1g33l6c": "5.5",
+  "sistemas|16l6me8": "2.9",
+  "sistemas|lj3ccb": "4.4",
+  "sistemas|2tedfc": "4.4",
+  "sistemas|19a3o5k": "5.5",
+  "sistemas|1c7a6rv": "4.4",
+  "sistemas|1v8owqr": "5.5",
+  "sistemas|5vrksi": "5.5",
+  "sistemas|949zf4": "5.5",
+  "sistemas|1fqmfk3": "5.5",
+  "sistemas|mdfwzs": "5.5",
+  "sistemas|kl5hea": "4.4",
+  "sistemas|1kenw8v": "4.4",
+  "sistemas|15e9mq3": "5.5",
+  "sistemas|3ur66k": "5.5",
+  "sistemas|157q9ea": "4.4",
+  "sistemas|ra4vhn": "2.9",
+  "sistemas|68lg8p": "5.5",
+  "sistemas|zxzsn6": "1.3",
+  "sistemas|104aks4": "4.4",
+  "sistemas|q9sf8z": "5.5",
+  "sistemas|i9en7b": "4.4",
+  "sistemas|1f1tti1": "5.5",
+  "sistemas|1n1h0q3": "2.9",
+  "sistemas|1w2rsz7": "4.4",
+  "sistemas|18hx0ge": "4.4",
+  "sistemas|1aczr4t": "4.4",
+  "sistemas|cu7qpj": "5.5",
+  "sistemas|1248u3f": "5.5",
+  "sistemas|f9fn2x": "2.9",
+  "sistemas|1bpx9tf": "2.9",
+  "sistemas|6ot531": "2.9",
+  "sistemas|ggnqg1": "7.3",
+  "sistemas|xdmluu": "9.2",
+  "sistemas|yhv2xv": "8.1",
+  "sistemas|1qzzvvq": "9.2",
+  "sistemas|1xiero9": "7.3",
+  "sistemas|hd7oqw": "6.2",
+  "sistemas|1mesg0b": "9.2",
+  "sistemas|1v518wj": "2.9",
+  "sistemas|nakv41": "2.9",
+  "sistemas|1w10lln": "2.9",
+  "sistemas|12eghnf": "3.3",
+  "sistemas|11sksyp": "5.5",
+  "sistemas|1ek4h0m": "8.1",
+  "sistemas|1cna5u1": "9.3",
+  "sistemas|gf78ov": "7.3",
+  "sistemas|rl87x0": "6.1",
+  "sistemas|7t3nuy": "2.9",
+  "sistemas|vrk2mj": "2.9",
+  "sistemas|b749m3": "7.3",
+  "sistemas|1txmusg": "9.2",
+  "sistemas|m8u9r5": "8.1",
+  "sistemas|wt5nli": "6.2",
+  "sistemas|ad547y": "5.5",
+  "sistemas|1ksu0aw": "4.4",
+  "sistemas|51edii": "5.5",
+  "sistemas|v6mkeg": "3.3",
+  "sistemas|d2f99x": "6.2",
+  "sistemas|1er6uvo": "8.1",
+  "sistemas|70lfra": "2.9",
+  "sistemas|1eyl99j": "3.3",
+  "sistemas|1w3arvk": "1.1",
+  "sistemas|hoqoen": "7.3",
+  "sistemas|1e4o4w1": "9.2",
+  "sistemas|18r26ug": "8.1",
+  "reproduccion|1aefje3": "5.5",
+  "reproduccion|y7kg3u": "5.5",
+  "reproduccion|1gntuay": "2.9",
+  "reproduccion|asfoht": "1.1",
+  "reproduccion|1p6d8gx": "5.5",
+  "reproduccion|v795c2": "2.9",
+  "reproduccion|1elvyby": "5.4",
+  "reproduccion|pzbugt": "5.5",
+  "reproduccion|1xcf78a": "5.5",
+  "reproduccion|1hf97jv": "4.4",
+  "reproduccion|yhctqx": "5.5",
+  "reproduccion|c4lr9a": "2.9",
+  "reproduccion|vcx95p": "4.4",
+  "reproduccion|1hc8nuv": "2.9",
+  "reproduccion|1mxj9ht": "1.1",
+  "reproduccion|19gnxko": "7.3",
+  "reproduccion|csdvws": "5.5",
+  "reproduccion|jezt9w": "1.1",
+  "reproduccion|1tr234f": "2.9",
+  "reproduccion|4wwrzd": "5.4",
+  "reproduccion|623w1z": "5.5",
+  "reproduccion|1oy8bmm": "1.1",
+  "reproduccion|1lxamtp": "5.5",
+  "reproduccion|1h1nt7r": "2.9",
+  "reproduccion|1cxyu5i": "2.9",
+  "reproduccion|kw14o5": "5.4",
+  "reproduccion|1mv9niy": "1.1",
+  "reproduccion|1k99dcv": "4.4",
+  "reproduccion|1xde4fg": "4.4",
+  "reproduccion|1mr2h2n": "5.5",
+  "reproduccion|1jwtndi": "5.5",
+  "reproduccion|ljfg0b": "1.1",
+  "reproduccion|z3zcla": "1.2",
+  "reproduccion|xdqr8m": "2.8",
+  "reproduccion|uv2kwf": "4.4",
+  "reproduccion|q6ejk6": "5.5",
+  "reproduccion|1dfexvc": "2.8",
+  "reproduccion|94in0x": "5.4",
+  "reproduccion|rw5t07": "7.3",
+  "reproduccion|1simhi6": "9.2",
+  "reproduccion|idrn1k": "9.2",
+  "reproduccion|35l18s": "7.3",
+  "reproduccion|1wccjcr": "8.1",
+  "reproduccion|i8spfp": "6.2",
+  "reproduccion|dfo6c2": "9.2",
+  "reproduccion|rmckpk": "8.1",
+  "reproduccion|7gfolz": "5.5",
+  "reproduccion|air72x": "2.9",
+  "reproduccion|1t3a3v6": "3.3",
+  "reproduccion|1ex5bp8": "1.1",
+  "reproduccion|1cho3ua": "8.1",
+  "reproduccion|g0w865": "9.4",
+  "reproduccion|n5pyqe": "7.3",
+  "reproduccion|ox5pjr": "6.2",
+  "reproduccion|s83i8z": "2.9",
+  "reproduccion|f01z3g": "3.3",
+  "reproduccion|13d1n94": "7.3",
+  "reproduccion|1nonxid": "9.2",
+  "reproduccion|5zbuiw": "8.1",
+  "reproduccion|dzoqjl": "6.1",
+  "reproduccion|15wlkuj": "8.1",
+  "reproduccion|yarwkt": "4.5",
+  "reproduccion|ubdbey": "5.5",
+  "reproduccion|1tbk6pv": "3.3",
+  "reproduccion|dlab0a": "6.2",
+  "reproduccion|1l1k7yy": "8.1",
+  "genetica|2wju42": "5.5",
+  "genetica|1qn2xva": "5.5",
+  "genetica|19yuet5": "5.5",
+  "genetica|1danydh": "4.4",
+  "genetica|70zw98": "2.9",
+  "genetica|1kn7ouf": "4.4",
+  "genetica|17he3t2": "2.9",
+  "genetica|1q3nufi": "5.5",
+  "genetica|1iqfoz8": "5.5",
+  "genetica|1twxfwv": "4.4",
+  "genetica|4hpo4u": "5.5",
+  "genetica|1itmxea": "5.5",
+  "genetica|3xo6n8": "5.5",
+  "genetica|1mzw8if": "5.5",
+  "genetica|p16qbx": "7.3",
+  "genetica|1ewi14s": "2.9",
+  "genetica|178lgnd": "5.5",
+  "genetica|1li7k6v": "2.9",
+  "genetica|jrdadp": "5.5",
+  "genetica|1udnqne": "3.3",
+  "genetica|hikg51": "4.4",
+  "genetica|n0z6vu": "1.2",
+  "genetica|1fywx82": "5.5",
+  "genetica|1gim4l0": "4.4",
+  "genetica|1pqq12r": "4.4",
+  "genetica|1lrxc72": "2.9",
+  "genetica|1vllsa9": "5.5",
+  "genetica|1zkszp": "5.5",
+  "genetica|e5chdq": "5.5",
+  "genetica|ziyg8h": "5.7",
+  "genetica|1nak6jw": "5.5",
+  "genetica|1g9j5so": "5.5",
+  "genetica|ekk6gd": "1.1",
+  "genetica|qp0cfl": "5.5",
+  "genetica|jkjulc": "4.4",
+  "genetica|13hezem": "2.9",
+  "genetica|1ejnzqx": "3.3",
+  "genetica|gtt5jy": "2.9",
+  "genetica|1iyythn": "2.9",
+  "genetica|1fns5xb": "2.9",
+  "genetica|9vb9w1": "7.3",
+  "genetica|1qvs0lk": "9.2",
+  "genetica|1dsousm": "8.1",
+  "genetica|1i8i3pz": "7.3",
+  "genetica|f70qkp": "6.2",
+  "genetica|17ertfg": "9.2",
+  "genetica|1y1gzpa": "7.3",
+  "genetica|1s7nqf8": "8.1",
+  "genetica|8yuhb4": "8.1",
+  "genetica|cwr92b": "4.4",
+  "genetica|1he0nk0": "4.4",
+  "genetica|jzidtw": "4.4",
+  "genetica|cqclxz": "5.5",
+  "genetica|6djs75": "4.4",
+  "genetica|1ailkfa": "4.4",
+  "genetica|hb99ml": "5.7",
+  "genetica|1r8pgf": "1.2",
+  "genetica|1nmdg10": "1.2",
+  "genetica|1qzc8t0": "1.2",
+  "genetica|1hvn0m3": "2.9",
+  "genetica|1ox1mcc": "3.3",
+  "genetica|ihukcw": "2.9",
+  "genetica|1tnv89u": "1.2",
+  "genetica|1sedvcp": "8.1",
+  "genetica|qmj2lh": "7.3",
+  "genetica|9pgf1": "9.2",
+  "genetica|1d23jp2": "6.2",
+  "genetica|g7rehc": "8.1",
+  "genetica|wsgetw": "9.5",
+  "genetica|1be1dcy": "5.5",
+  "genetica|1km4b98": "4.4",
+  "genetica|lrayt7": "3.3",
+  "genetica|1bqvf88": "9.5",
+  "genetica|wqn8zq": "2.9",
+  "genetica|q475c1": "4.4",
+  "genetica|1gy1cxr": "2.9",
+  "genetica|1fuglc8": "4.4",
+  "genetica|1ik14z": "2.9",
+  "genetica|10a0vuj": "3.3",
+  "genetica|1psrak": "2.9",
+  "genetica|16r7i4d": "8.1",
+  "genetica|1lh8svk": "9.5",
+  "genetica|1poblvy": "7.3",
+  "genetica|1p1bkns": "6.2",
+  "genetica|1agnwi0": "2.9",
+  "genetica|1y0tagi": "3.3",
+  "genetica|142l8fx": "7.3",
+  "genetica|1azxbux": "9.2",
+  "genetica|183784k": "8.1",
+  "genetica|1x1vxja": "6.2"
+ },
+ "nd": {
+  "sistemas|944n1s": 2,
+  "sistemas|lzlvs0": 2,
+  "sistemas|1jwtk6d": 2,
+  "sistemas|1wexgph": 2,
+  "sistemas|mvrzje": 2,
+  "sistemas|5h83fp": 1,
+  "sistemas|29gdee": 2,
+  "sistemas|jzoiwu": 2,
+  "sistemas|32tds4": 2,
+  "sistemas|o6jgmm": 2,
+  "sistemas|149rfhj": 2,
+  "sistemas|1g33l6c": 1,
+  "sistemas|16l6me8": 2,
+  "sistemas|lj3ccb": 1,
+  "sistemas|2tedfc": 2,
+  "sistemas|19a3o5k": 1,
+  "sistemas|1c7a6rv": 2,
+  "sistemas|1v8owqr": 1,
+  "sistemas|5vrksi": 1,
+  "sistemas|949zf4": 2,
+  "sistemas|1fqmfk3": 2,
+  "sistemas|mdfwzs": 2,
+  "sistemas|kl5hea": 1,
+  "sistemas|1kenw8v": 2,
+  "sistemas|15e9mq3": 1,
+  "sistemas|3ur66k": 1,
+  "sistemas|157q9ea": 1,
+  "sistemas|ra4vhn": 2,
+  "sistemas|68lg8p": 1,
+  "sistemas|zxzsn6": 2,
+  "sistemas|104aks4": 1,
+  "sistemas|q9sf8z": 2,
+  "sistemas|i9en7b": 1,
+  "sistemas|1f1tti1": 2,
+  "sistemas|1n1h0q3": 2,
+  "sistemas|1w2rsz7": 2,
+  "sistemas|18hx0ge": 2,
+  "sistemas|1aczr4t": 1,
+  "sistemas|cu7qpj": 1,
+  "sistemas|1248u3f": 3,
+  "sistemas|f9fn2x": 3,
+  "sistemas|1bpx9tf": 3,
+  "sistemas|6ot531": 2,
+  "sistemas|ggnqg1": 2,
+  "sistemas|xdmluu": 3,
+  "sistemas|yhv2xv": 2,
+  "sistemas|1qzzvvq": 3,
+  "sistemas|1xiero9": 2,
+  "sistemas|hd7oqw": 3,
+  "sistemas|1mesg0b": 3,
+  "sistemas|1v518wj": 3,
+  "sistemas|nakv41": 2,
+  "sistemas|1w10lln": 2,
+  "sistemas|12eghnf": 3,
+  "sistemas|11sksyp": 2,
+  "sistemas|1ek4h0m": 3,
+  "sistemas|1cna5u1": 2,
+  "sistemas|gf78ov": 3,
+  "sistemas|rl87x0": 2,
+  "sistemas|7t3nuy": 2,
+  "sistemas|vrk2mj": 2,
+  "sistemas|b749m3": 2,
+  "sistemas|1txmusg": 2,
+  "sistemas|m8u9r5": 2,
+  "sistemas|wt5nli": 3,
+  "sistemas|ad547y": 3,
+  "sistemas|1ksu0aw": 3,
+  "sistemas|51edii": 3,
+  "sistemas|v6mkeg": 4,
+  "sistemas|d2f99x": 4,
+  "sistemas|1er6uvo": 3,
+  "sistemas|70lfra": 3,
+  "sistemas|1eyl99j": 4,
+  "sistemas|1w3arvk": 3,
+  "sistemas|hoqoen": 3,
+  "sistemas|1e4o4w1": 4,
+  "sistemas|18r26ug": 3,
+  "reproduccion|1aefje3": 2,
+  "reproduccion|y7kg3u": 1,
+  "reproduccion|1gntuay": 2,
+  "reproduccion|asfoht": 1,
+  "reproduccion|1p6d8gx": 2,
+  "reproduccion|v795c2": 2,
+  "reproduccion|1elvyby": 2,
+  "reproduccion|pzbugt": 1,
+  "reproduccion|1xcf78a": 1,
+  "reproduccion|1hf97jv": 1,
+  "reproduccion|yhctqx": 1,
+  "reproduccion|c4lr9a": 2,
+  "reproduccion|vcx95p": 1,
+  "reproduccion|1hc8nuv": 2,
+  "reproduccion|1mxj9ht": 2,
+  "reproduccion|19gnxko": 2,
+  "reproduccion|csdvws": 1,
+  "reproduccion|jezt9w": 2,
+  "reproduccion|1tr234f": 2,
+  "reproduccion|4wwrzd": 2,
+  "reproduccion|623w1z": 1,
+  "reproduccion|1oy8bmm": 2,
+  "reproduccion|1lxamtp": 1,
+  "reproduccion|1h1nt7r": 2,
+  "reproduccion|1cxyu5i": 2,
+  "reproduccion|kw14o5": 1,
+  "reproduccion|1mv9niy": 2,
+  "reproduccion|1k99dcv": 1,
+  "reproduccion|1xde4fg": 1,
+  "reproduccion|1mr2h2n": 1,
+  "reproduccion|1jwtndi": 1,
+  "reproduccion|ljfg0b": 2,
+  "reproduccion|z3zcla": 2,
+  "reproduccion|xdqr8m": 2,
+  "reproduccion|uv2kwf": 1,
+  "reproduccion|q6ejk6": 1,
+  "reproduccion|1dfexvc": 3,
+  "reproduccion|94in0x": 2,
+  "reproduccion|rw5t07": 3,
+  "reproduccion|1simhi6": 3,
+  "reproduccion|idrn1k": 3,
+  "reproduccion|35l18s": 2,
+  "reproduccion|1wccjcr": 3,
+  "reproduccion|i8spfp": 3,
+  "reproduccion|dfo6c2": 2,
+  "reproduccion|rmckpk": 3,
+  "reproduccion|7gfolz": 2,
+  "reproduccion|air72x": 2,
+  "reproduccion|1t3a3v6": 3,
+  "reproduccion|1ex5bp8": 2,
+  "reproduccion|1cho3ua": 2,
+  "reproduccion|g0w865": 2,
+  "reproduccion|n5pyqe": 3,
+  "reproduccion|ox5pjr": 3,
+  "reproduccion|s83i8z": 2,
+  "reproduccion|f01z3g": 2,
+  "reproduccion|13d1n94": 3,
+  "reproduccion|1nonxid": 3,
+  "reproduccion|5zbuiw": 3,
+  "reproduccion|dzoqjl": 3,
+  "reproduccion|15wlkuj": 3,
+  "reproduccion|yarwkt": 3,
+  "reproduccion|ubdbey": 3,
+  "reproduccion|1tbk6pv": 3,
+  "reproduccion|dlab0a": 3,
+  "reproduccion|1l1k7yy": 4,
+  "genetica|2wju42": 2,
+  "genetica|1qn2xva": 2,
+  "genetica|19yuet5": 1,
+  "genetica|1danydh": 1,
+  "genetica|70zw98": 2,
+  "genetica|1kn7ouf": 1,
+  "genetica|17he3t2": 2,
+  "genetica|1q3nufi": 1,
+  "genetica|1iqfoz8": 1,
+  "genetica|1twxfwv": 1,
+  "genetica|4hpo4u": 2,
+  "genetica|1itmxea": 2,
+  "genetica|3xo6n8": 2,
+  "genetica|1mzw8if": 1,
+  "genetica|p16qbx": 2,
+  "genetica|1ewi14s": 2,
+  "genetica|178lgnd": 3,
+  "genetica|1li7k6v": 2,
+  "genetica|jrdadp": 2,
+  "genetica|1udnqne": 2,
+  "genetica|hikg51": 1,
+  "genetica|n0z6vu": 2,
+  "genetica|1fywx82": 2,
+  "genetica|1gim4l0": 2,
+  "genetica|1pqq12r": 2,
+  "genetica|1lrxc72": 2,
+  "genetica|1vllsa9": 1,
+  "genetica|1zkszp": 1,
+  "genetica|e5chdq": 2,
+  "genetica|ziyg8h": 1,
+  "genetica|1nak6jw": 2,
+  "genetica|1g9j5so": 1,
+  "genetica|ekk6gd": 1,
+  "genetica|qp0cfl": 2,
+  "genetica|jkjulc": 1,
+  "genetica|13hezem": 2,
+  "genetica|1ejnzqx": 2,
+  "genetica|gtt5jy": 2,
+  "genetica|1iyythn": 2,
+  "genetica|1fns5xb": 2,
+  "genetica|9vb9w1": 3,
+  "genetica|1qvs0lk": 3,
+  "genetica|1dsousm": 2,
+  "genetica|1i8i3pz": 3,
+  "genetica|f70qkp": 3,
+  "genetica|17ertfg": 3,
+  "genetica|1y1gzpa": 2,
+  "genetica|1s7nqf8": 3,
+  "genetica|8yuhb4": 3,
+  "genetica|cwr92b": 1,
+  "genetica|1he0nk0": 1,
+  "genetica|jzidtw": 2,
+  "genetica|cqclxz": 1,
+  "genetica|6djs75": 1,
+  "genetica|1ailkfa": 1,
+  "genetica|hb99ml": 1,
+  "genetica|1r8pgf": 2,
+  "genetica|1nmdg10": 2,
+  "genetica|1qzc8t0": 2,
+  "genetica|1hvn0m3": 2,
+  "genetica|1ox1mcc": 2,
+  "genetica|ihukcw": 2,
+  "genetica|1tnv89u": 2,
+  "genetica|1sedvcp": 3,
+  "genetica|qmj2lh": 2,
+  "genetica|9pgf1": 2,
+  "genetica|1d23jp2": 2,
+  "genetica|g7rehc": 3,
+  "genetica|wsgetw": 2,
+  "genetica|1be1dcy": 1,
+  "genetica|1km4b98": 2,
+  "genetica|lrayt7": 2,
+  "genetica|1bqvf88": 2,
+  "genetica|wqn8zq": 2,
+  "genetica|q475c1": 1,
+  "genetica|1gy1cxr": 2,
+  "genetica|1fuglc8": 2,
+  "genetica|1ik14z": 2,
+  "genetica|10a0vuj": 2,
+  "genetica|1psrak": 2,
+  "genetica|16r7i4d": 2,
+  "genetica|1lh8svk": 3,
+  "genetica|1poblvy": 3,
+  "genetica|1p1bkns": 3,
+  "genetica|1agnwi0": 3,
+  "genetica|1y0tagi": 4,
+  "genetica|142l8fx": 3,
+  "genetica|1azxbux": 4,
+  "genetica|183784k": 4,
+  "genetica|1x1vxja": 3
+ },
+ "hallazgos": [
+  {
+   "id": "sistemas|944n1s",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "uso",
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual ind/N3 (deducida automáticamente). La etiqueta automática la toma como indagación por la palabra «controló»; no hay diseño ni datos: es uso."
+  },
+  {
+   "id": "sistemas|1jwtk6d",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La pregunta pide elegir la mejor explicación de cómo o por qué ocurre un fenómeno del organismo: explicación E1 (evidencia 2.9)."
+  },
+  {
+   "id": "sistemas|1wexgph",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "textos": [
+    {
+     "campo": "ctx",
+     "original": "En una tabla se compara el sistema nervioso con el endocrino.",
+     "nuevo": "Un estudiante compara en su cuaderno el sistema nervioso con el endocrino."
+    }
+   ],
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2). El contexto anuncia una tabla que no aparece."
+  },
+  {
+   "id": "sistemas|mvrzje",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|5h83fp",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|1g33l6c",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|lj3ccb",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|2tedfc",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|19a3o5k",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|1c7a6rv",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|1v8owqr",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|5vrksi",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|949zf4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|1fqmfk3",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|mdfwzs",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|kl5hea",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|1kenw8v",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|15e9mq3",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|3ur66k",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|68lg8p",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|zxzsn6",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Para eliminar la infección del todo y evitar que vuelva",
+     "nuevo": "Porque así se elimina la infección del todo y se evita que vuelva"
+    }
+   ],
+   "motivo": "Etiqueta actual exp/E1 (deducida automáticamente). Uso correcto y seguro de un medicamento (E3, 1.3). Los tres distractores empiezan por «Porque» y la correcta no: pista gramatical."
+  },
+  {
+   "id": "sistemas|104aks4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|q9sf8z",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|i9en7b",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|1f1tti1",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|1w2rsz7",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|18hx0ge",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "sistemas|1aczr4t",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Inmunidad que viene de la madre",
+     "nuevo": "Inmunidad pasiva con anticuerpos ya fabricados"
+    },
+    {
+     "campo": "distractor",
+     "original": "Ninguna protección",
+     "nuevo": "Inmunidad activa con células de memoria propias"
+    }
+   ],
+   "motivo": "La correcta repite «madre» del contexto y se adivina; «Ninguna protección» no nace de un error concreto. Se reemplaza por la confusión pasiva/activa. "
+  },
+  {
+   "id": "sistemas|cu7qpj",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Orina",
+     "nuevo": "Grasa de reserva"
+    },
+    {
+     "campo": "distractor",
+     "original": "Saliva",
+     "nuevo": "Calcio para el cartílago"
+    },
+    {
+     "campo": "distractor",
+     "original": "Bilis",
+     "nuevo": "Líquido de las articulaciones"
+    }
+   ],
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7). Distractores absurdos (orina, saliva, bilis) y la correcta es tres veces más larga; se cambian por confusiones reales (médula amarilla, cartílago de crecimiento, líquido articular).  "
+  },
+  {
+   "id": "sistemas|1248u3f",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "sistemas|1v518wj",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Etiqueta actual ind/N4. Aunque trae gráfica, no se interpreta el patrón sino que se pide el mecanismo (insulina): es explicación."
+  },
+  {
+   "id": "sistemas|nakv41",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Etiqueta actual uso/I3. Pregunta «¿Qué explica ese cambio?»: pide una explicación causal, no identificar una característica."
+  },
+  {
+   "id": "sistemas|11sksyp",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "uso",
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual exp/E3. Se pregunta qué función del riñón reemplaza la máquina: identificar la función (5.5), no valorar efectos de la tecnología."
+  },
+  {
+   "id": "sistemas|m8u9r5",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "el aumento por cada 1.000 m es cada vez mayor (1, 1, 2 y 3 puntos)",
+     "nuevo": "el aumento por cada 1.000 m no disminuye y es mayor en las altitudes altas (1, 1, 2 y 3 puntos)"
+    }
+   ],
+   "motivo": "«Cada vez mayor» es inexacto: los dos primeros aumentos son iguales."
+  },
+  {
+   "id": "sistemas|ad547y",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1. Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|1aefje3",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|y7kg3u",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|asfoht",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Práctica de salud sexual (CTS, salud individual y pública, 1.1); ninguna evidencia de I1 corresponde."
+  },
+  {
+   "id": "reproduccion|1p6d8gx",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|pzbugt",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|1xcf78a",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|1hf97jv",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "reproduccion|yhctqx",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|1mxj9ht",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Etiqueta actual exp/E1 (deducida automáticamente). La tarea es valorar una práctica o tecnología por sus efectos en la salud o el entorno (CTS): E3, evidencias 1.1–1.3."
+  },
+  {
+   "id": "reproduccion|csdvws",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|jezt9w",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Etiqueta actual exp/E1 (deducida automáticamente). La tarea es valorar una práctica o tecnología por sus efectos en la salud o el entorno (CTS): E3, evidencias 1.1–1.3."
+  },
+  {
+   "id": "reproduccion|623w1z",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|1oy8bmm",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Etiqueta actual exp/E1 (deducida automáticamente). La tarea es valorar una práctica o tecnología por sus efectos en la salud o el entorno (CTS): E3, evidencias 1.1–1.3."
+  },
+  {
+   "id": "reproduccion|1lxamtp",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|1mv9niy",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Solo impiden la ovulación, no el contacto con los fluidos",
+     "nuevo": "Porque actúan sobre la ovulación y no impiden el contacto con los fluidos"
+    }
+   ],
+   "motivo": "Etiqueta actual exp/E1 (deducida automáticamente). La tarea es valorar una práctica o tecnología por sus efectos en la salud o el entorno (CTS): E3, evidencias 1.1–1.3. Los tres distractores empiezan por «Porque» y la correcta no (pista gramatical); además «solo impiden la ovulación» es inexacto (también espesan el moco cervical)."
+  },
+  {
+   "id": "reproduccion|1xde4fg",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "textos": [
+    {
+     "campo": "ctx",
+     "original": "En la flor, el pistilo está formado por estigma, estilo y ovario.",
+     "nuevo": "Una flor completa tiene sépalos, pétalos, estambres y pistilo."
+    }
+   ],
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2). El contexto decía que estigma y ovario son partes del pistilo (la parte femenina), lo que descarta tres opciones sin saber cuál es la masculina; se presenta la flor completa para que la tarea dependa del concepto."
+  },
+  {
+   "id": "reproduccion|1mr2h2n",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|1jwtndi",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|ljfg0b",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Funciona mejor antes de cualquier contacto con el virus",
+     "nuevo": "Porque funciona mejor antes de cualquier contacto con el virus"
+    }
+   ],
+   "motivo": "Etiqueta actual exp/E1 (deducida automáticamente). La tarea es valorar una práctica o tecnología por sus efectos en la salud o el entorno (CTS): E3, evidencias 1.1–1.3. Los tres distractores empiezan por «Porque» y la correcta no: pista gramatical."
+  },
+  {
+   "id": "reproduccion|z3zcla",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Etiqueta actual exp/E1 (deducida automáticamente). La tarea es valorar una práctica o tecnología por sus efectos en la salud o el entorno (CTS): E3, evidencias 1.1–1.3."
+  },
+  {
+   "id": "reproduccion|uv2kwf",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "reproduccion|q6ejk6",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "reproduccion|7gfolz",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "La cáscara y las membranas protegen al embrión de la desecación y le aportan agua y alimento",
+     "nuevo": "La cáscara y las membranas protegen al embrión de la desecación, y la yema y la clara le aportan alimento y agua"
+    }
+   ],
+   "motivo": "La cáscara y las membranas no aportan el alimento: lo aportan la yema y la clara."
+  },
+  {
+   "id": "reproduccion|15wlkuj",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N4"
+   },
+   "motivo": "Etiqueta actual uso/I1. El enunciado pide el patrón de la tabla."
+  },
+  {
+   "id": "reproduccion|ubdbey",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "ctx",
+     "original": "(Valores aproximados y redondeados a partir de las estimaciones de Wallace y Kelsey, 2010; varían mucho de una mujer a otra y el valor de los 25 años está interpolado.)",
+     "nuevo": "(Valores aproximados y redondeados de textos de fisiología humana; varían mucho de una mujer a otra.)"
+    }
+   ],
+   "motivo": "Fuente dudosa: el modelo de Wallace y Kelsey (2010) estima en promedio unos 300 000 folículos al nacer, no un millón; las cifras de la gráfica (1 millón, 400 000 en la pubertad, unos 25 000 a los 37 años, unos mil en la menopausia) son las de los textos de fisiología. Verificar y citar la fuente que corresponda; la clave no cambia."
+  },
+  {
+   "id": "genetica|2wju42",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1qn2xva",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|19yuet5",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1danydh",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "genetica|1q3nufi",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1iqfoz8",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1twxfwv",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "genetica|4hpo4u",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1itmxea",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|3xo6n8",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1mzw8if",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|p16qbx",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Se da el resultado del cruce y se pide qué concluyó Mendel: conclusión a partir de datos (N2, 7.3)."
+  },
+  {
+   "id": "genetica|178lgnd",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|jrdadp",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|hikg51",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "genetica|n0z6vu",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Pide ventaja y riesgo de un cultivo transgénico: efectos de una tecnología (E3, 1.2)."
+  },
+  {
+   "id": "genetica|1fywx82",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1pqq12r",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "genetica|1vllsa9",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1zkszp",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|e5chdq",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1nak6jw",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|1g9j5so",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|ekk6gd",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Medida de prevención para la salud (E3, 1.1)."
+  },
+  {
+   "id": "genetica|qp0cfl",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1 (deducida automáticamente). Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|jkjulc",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "uso",
+    "af": "I2"
+   },
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "La de la evolución",
+     "nuevo": "La de la segregación de los alelos"
+    },
+    {
+     "campo": "distractor",
+     "original": "La de la conservación de la masa",
+     "nuevo": "La de la dominancia"
+    }
+   ],
+   "motivo": "Etiqueta actual exp/E1 (deducida automáticamente). La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2). «Evolución» y «conservación de la masa» no son leyes de Mendel y se descartan sin saber genética; se cambian por confusiones reales (segregación y dominancia). "
+  },
+  {
+   "id": "genetica|gtt5jy",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Tienen un solo X sin un segundo alelo que los compense",
+     "nuevo": "Porque tienen un solo X, sin un segundo alelo que los compense"
+    }
+   ],
+   "motivo": "Los tres distractores empiezan por «Porque» y la correcta no: pista gramatical."
+  },
+  {
+   "id": "genetica|cwr92b",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I1. La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "genetica|1ailkfa",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Etiqueta actual uso/I3. La tarea es asociar el fenómeno descrito con un concepto o su nombre (tipo, tejido, órgano, técnica): afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "genetica|1be1dcy",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Etiqueta actual uso/I1. Identifica una característica de un proceso de los organismos: es la evidencia 5.5, que en los sitios corresponde a I3 (I1 se reserva para 5.1–5.4, 5.6 y 5.7)."
+  },
+  {
+   "id": "genetica|lrayt7",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Que los genes solo se transcriben en una de ellas",
+     "nuevo": "Que una de ellas fabrica la proteína sin ARN mensajero"
+    }
+   ],
+   "motivo": "El distractor es un caso extremo de regulación distinta de la expresión (en parte verdadero) y compite con la clave; se cambia por un error del dogma central."
+  },
+  {
+   "id": "genetica|1psrak",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E1"
+   },
+   "motivo": "Etiqueta actual exp/E3. Pide el mecanismo por el que la planta resiste (la proteína tóxica), no valorar efectos del cultivo: E1."
+  }
+ ]
+}

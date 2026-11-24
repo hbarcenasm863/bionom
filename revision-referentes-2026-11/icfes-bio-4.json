@@ -1,0 +1,1080 @@
+{
+ "lote": "icfes-bio-4",
+ "experto": "icfes",
+ "revisadas": 216,
+ "coincidencias_a_ciegas": 216,
+ "ev": {
+  "ambiente|i4axvg": "1.2",
+  "ambiente|15tbzfy": "1.2",
+  "ambiente|qro19l": "5.7",
+  "ambiente|1v679ij": "2.8",
+  "ambiente|j26pmm": "5.4",
+  "ambiente|9crol7": "5.7",
+  "ambiente|1nx5gq1": "2.8",
+  "ambiente|e1kopa": "5.4",
+  "ambiente|1a8p1j8": "2.8",
+  "ambiente|173a4xn": "5.7",
+  "ambiente|7deypj": "5.7",
+  "ambiente|17hzhea": "5.7",
+  "ambiente|fueczo": "5.7",
+  "ambiente|1mr2bl": "2.8",
+  "ambiente|4y70g1": "5.7",
+  "ambiente|11fyd7e": "2.8",
+  "ambiente|bm81b2": "2.8",
+  "ambiente|1jvuoby": "4.5",
+  "ambiente|nrdr6c": "5.4",
+  "ambiente|sajxkw": "2.8",
+  "ambiente|eq0cjc": "5.7",
+  "ambiente|z0jaa3": "5.7",
+  "ambiente|1hbtp1c": "5.4",
+  "ambiente|rdfy5q": "1.2",
+  "ambiente|1h2soz9": "5.7",
+  "ambiente|1hn90pv": "5.7",
+  "ambiente|12ko31z": "5.7",
+  "ambiente|1tny8fo": "2.8",
+  "ambiente|q2kjmn": "5.7",
+  "ambiente|135wbw": "5.7",
+  "ambiente|j46cuy": "5.7",
+  "ambiente|1u2nwp7": "5.4",
+  "ambiente|4hdrni": "2.8",
+  "ambiente|11b1xpz": "5.7",
+  "ambiente|1cc2xmm": "1.2",
+  "ambiente|1sjt3er": "2.8",
+  "ambiente|1wy5hmk": "2.8",
+  "ambiente|1eogftr": "5.7",
+  "ambiente|yzcvir": "1.2",
+  "ambiente|1vikbj8": "1.2",
+  "ambiente|1dz856r": "7.3",
+  "ambiente|te49ye": "9.2",
+  "ambiente|11mezza": "9.2",
+  "ambiente|lre0nv": "7.3",
+  "ambiente|1psb9uu": "8.1",
+  "ambiente|1raw059": "6.2",
+  "ambiente|eax39v": "7.3",
+  "ambiente|1orjaj0": "9.2",
+  "ambiente|w48kw": "8.1",
+  "ambiente|1si98z7": "7.3",
+  "ambiente|ai5487": "1.2",
+  "ambiente|1222o1u": "7.3",
+  "ambiente|1bclskp": "1.2",
+  "ambiente|qjo0fw": "4.5",
+  "ambiente|rpsswo": "2.8",
+  "ambiente|ttlk7p": "3.3",
+  "ambiente|11nz2p5": "1.2",
+  "ambiente|w5brcp": "8.1",
+  "ambiente|13b6fp2": "9.2",
+  "ambiente|1qf98ku": "7.3",
+  "ambiente|oyp6gi": "6.2",
+  "ambiente|1pjb15v": "1.2",
+  "ambiente|avhyhf": "2.8",
+  "ambiente|ki5fxf": "7.3",
+  "ambiente|78bvpa": "8.1",
+  "ambiente|spzfcv": "9.2",
+  "ambiente|7se6ws": "6.2",
+  "division|ftze1v": "5.5",
+  "division|1uwo75q": "5.5",
+  "division|1kxool2": "4.4",
+  "division|1d5tnw": "2.9",
+  "division|10m46w6": "2.9",
+  "division|c9teyz": "2.9",
+  "division|10glsy3": "4.4",
+  "division|boxa8p": "2.9",
+  "division|qufiae": "2.9",
+  "division|1qqv6al": "4.4",
+  "division|lqvnve": "5.5",
+  "division|1wtcvfk": "5.5",
+  "division|dxjw59": "5.5",
+  "division|12wf7ur": "2.9",
+  "division|irh8b8": "5.5",
+  "division|1nnad29": "4.4",
+  "division|396ri4": "4.4",
+  "division|tvgdky": "2.9",
+  "division|zsedga": "4.4",
+  "division|oisa6m": "2.9",
+  "division|1qgk9rq": "1.1",
+  "division|1el99qf": "2.9",
+  "division|oys5cg": "5.5",
+  "division|ca3w1v": "4.4",
+  "division|1c51lny": "2.9",
+  "division|oq8t00": "4.4",
+  "division|1n04n41": "2.9",
+  "division|dolsr9": "5.5",
+  "division|d6ppx8": "5.5",
+  "division|y5bluv": "5.5",
+  "division|1qhubyh": "4.4",
+  "division|1bbsg9u": "5.5",
+  "division|1138wd3": "5.5",
+  "division|ekjg9y": "5.5",
+  "division|1erqgbt": "2.9",
+  "division|1t88h7r": "2.9",
+  "division|wokuko": "2.9",
+  "division|93480f": "4.4",
+  "division|4765yx": "4.4",
+  "division|my68x0": "5.5",
+  "division|1neb7er": "7.3",
+  "division|1elrla1": "8.1",
+  "division|14e2ctz": "8.1",
+  "division|sg92xf": "9.2",
+  "division|609fdj": "7.3",
+  "division|1hgxhc8": "6.2",
+  "division|nc475k": "9.2",
+  "division|1k7a024": "7.3",
+  "division|12eexim": "8.1",
+  "division|qm6zc": "5.5",
+  "division|1nkqtry": "2.9",
+  "division|1vg0bb1": "3.3",
+  "division|6pp36c": "1.1",
+  "division|1859bbl": "8.1",
+  "division|f600ih": "9.1",
+  "division|1ravt7m": "7.4",
+  "division|1c54l0f": "7.2",
+  "division|qocmm8": "2.9",
+  "division|15zohc0": "3.3",
+  "division|c9ahra": "7.3",
+  "division|gszq4y": "9.2",
+  "division|1si0qmk": "8.1",
+  "division|xdidtj": "6.2",
+  "division|14abdrw": "5.5",
+  "division|zi48ld": "4.4",
+  "division|1oz0y4d": "5.5",
+  "division|1gw2h3a": "3.3",
+  "division|1mivrc4": "7.3",
+  "division|1okrby2": "8.1",
+  "division|huigdd": "2.9",
+  "division|1k1ve82": "3.3",
+  "division|1i0jiss": "1.1",
+  "division|17qwnqg": "7.3",
+  "division|1igo3sq": "9.2",
+  "division|hc61ze": "8.1",
+  "funciones|ddhljs": "5.5",
+  "funciones|inn5mp": "5.5",
+  "funciones|rofaim": "5.5",
+  "funciones|xusa0s": "5.5",
+  "funciones|1pwn1wm": "5.5",
+  "funciones|5t8w4n": "5.5",
+  "funciones|5bgsbf": "5.5",
+  "funciones|1wr0c2m": "2.9",
+  "funciones|13pa74c": "2.9",
+  "funciones|13j7gpc": "5.5",
+  "funciones|829yg2": "4.4",
+  "funciones|tvjft4": "4.4",
+  "funciones|1v71787": "4.4",
+  "funciones|1tvf9qj": "4.4",
+  "funciones|1mu0snx": "2.9",
+  "funciones|d38m48": "5.5",
+  "funciones|1aguuhk": "4.4",
+  "funciones|1yzr4or": "5.5",
+  "funciones|1yrwe0h": "4.4",
+  "funciones|i82ww": "2.9",
+  "funciones|oesjj8": "4.4",
+  "funciones|v290pu": "4.4",
+  "funciones|91a5t1": "2.9",
+  "funciones|1s4s5lj": "4.4",
+  "funciones|i602ih": "4.4",
+  "funciones|1fsoxs9": "2.9",
+  "funciones|12u3ovc": "5.5",
+  "funciones|1dy40ax": "4.4",
+  "funciones|s7o5h9": "4.4",
+  "funciones|11qbkrk": "4.5",
+  "funciones|1s5mte6": "4.5",
+  "funciones|1q7f7xy": "4.4",
+  "funciones|1grckzh": "4.5",
+  "funciones|k2iiuh": "4.5",
+  "funciones|13h1c2f": "5.5",
+  "funciones|elzj0v": "2.9",
+  "funciones|rqfeuc": "5.5",
+  "funciones|ot2clq": "4.4",
+  "funciones|1uruj08": "2.9",
+  "funciones|19yhp7h": "5.7",
+  "funciones|4ptrus": "7.3",
+  "funciones|1nrc0ik": "6.1",
+  "funciones|kxzydn": "9.2",
+  "funciones|1miubt6": "7.3",
+  "funciones|e5y2p9": "8.1",
+  "funciones|gmdzib": "6.2",
+  "funciones|tfs7r5": "7.3",
+  "funciones|lsvwhf": "8.1",
+  "funciones|1sbmx81": "5.5",
+  "funciones|s8c841": "2.9",
+  "funciones|1i8zi9p": "3.3",
+  "funciones|1ilo7vu": "2.9",
+  "funciones|1eulqf9": "8.1",
+  "funciones|d35ox0": "9.2",
+  "funciones|1lxsn8u": "7.3",
+  "funciones|4kv27y": "7.2",
+  "funciones|gjedd2": "2.9",
+  "funciones|awvaq6": "3.3",
+  "funciones|1icemah": "7.3",
+  "funciones|ag81fz": "9.2",
+  "funciones|1mb3qnf": "8.1",
+  "funciones|1g0mbnq": "6.1",
+  "funciones|aeyeax": "8.1",
+  "funciones|167k501": "4.5",
+  "funciones|15el88g": "5.5",
+  "funciones|7ypu3i": "2.9",
+  "funciones|15xgvg4": "7.3",
+  "funciones|1adybxv": "8.1",
+  "funciones|887n6f": "2.9",
+  "funciones|y0jaig": "3.3",
+  "funciones|gee7w7": "1.1",
+  "funciones|1ivjddd": "7.3",
+  "funciones|pmvu47": "9.2",
+  "funciones|1a131vk": "8.1"
+ },
+ "nd": {
+  "ambiente|i4axvg": 1,
+  "ambiente|15tbzfy": 2,
+  "ambiente|qro19l": 2,
+  "ambiente|1v679ij": 2,
+  "ambiente|j26pmm": 1,
+  "ambiente|9crol7": 1,
+  "ambiente|1nx5gq1": 2,
+  "ambiente|e1kopa": 1,
+  "ambiente|1a8p1j8": 1,
+  "ambiente|173a4xn": 1,
+  "ambiente|7deypj": 1,
+  "ambiente|17hzhea": 1,
+  "ambiente|fueczo": 2,
+  "ambiente|1mr2bl": 1,
+  "ambiente|4y70g1": 2,
+  "ambiente|11fyd7e": 1,
+  "ambiente|bm81b2": 2,
+  "ambiente|1jvuoby": 1,
+  "ambiente|nrdr6c": 2,
+  "ambiente|sajxkw": 2,
+  "ambiente|eq0cjc": 1,
+  "ambiente|z0jaa3": 1,
+  "ambiente|1hbtp1c": 1,
+  "ambiente|rdfy5q": 3,
+  "ambiente|1h2soz9": 1,
+  "ambiente|1hn90pv": 2,
+  "ambiente|12ko31z": 1,
+  "ambiente|1tny8fo": 2,
+  "ambiente|q2kjmn": 1,
+  "ambiente|135wbw": 1,
+  "ambiente|j46cuy": 1,
+  "ambiente|1u2nwp7": 1,
+  "ambiente|4hdrni": 3,
+  "ambiente|11b1xpz": 2,
+  "ambiente|1cc2xmm": 2,
+  "ambiente|1sjt3er": 1,
+  "ambiente|1wy5hmk": 3,
+  "ambiente|1eogftr": 2,
+  "ambiente|yzcvir": 1,
+  "ambiente|1vikbj8": 2,
+  "ambiente|1dz856r": 3,
+  "ambiente|te49ye": 3,
+  "ambiente|11mezza": 3,
+  "ambiente|lre0nv": 2,
+  "ambiente|1psb9uu": 2,
+  "ambiente|1raw059": 3,
+  "ambiente|eax39v": 2,
+  "ambiente|1orjaj0": 3,
+  "ambiente|w48kw": 3,
+  "ambiente|1si98z7": 2,
+  "ambiente|ai5487": 2,
+  "ambiente|1222o1u": 2,
+  "ambiente|1bclskp": 2,
+  "ambiente|qjo0fw": 1,
+  "ambiente|rpsswo": 3,
+  "ambiente|ttlk7p": 2,
+  "ambiente|11nz2p5": 2,
+  "ambiente|w5brcp": 3,
+  "ambiente|13b6fp2": 3,
+  "ambiente|1qf98ku": 3,
+  "ambiente|oyp6gi": 3,
+  "ambiente|1pjb15v": 3,
+  "ambiente|avhyhf": 2,
+  "ambiente|ki5fxf": 3,
+  "ambiente|78bvpa": 3,
+  "ambiente|spzfcv": 3,
+  "ambiente|7se6ws": 3,
+  "division|ftze1v": 1,
+  "division|1uwo75q": 1,
+  "division|1kxool2": 1,
+  "division|1d5tnw": 2,
+  "division|10m46w6": 2,
+  "division|c9teyz": 2,
+  "division|10glsy3": 1,
+  "division|boxa8p": 2,
+  "division|qufiae": 2,
+  "division|1qqv6al": 1,
+  "division|lqvnve": 1,
+  "division|1wtcvfk": 1,
+  "division|dxjw59": 2,
+  "division|12wf7ur": 2,
+  "division|irh8b8": 2,
+  "division|1nnad29": 1,
+  "division|396ri4": 1,
+  "division|tvgdky": 2,
+  "division|zsedga": 1,
+  "division|oisa6m": 2,
+  "division|1qgk9rq": 1,
+  "division|1el99qf": 2,
+  "division|oys5cg": 1,
+  "division|ca3w1v": 1,
+  "division|1c51lny": 2,
+  "division|oq8t00": 1,
+  "division|1n04n41": 2,
+  "division|dolsr9": 1,
+  "division|d6ppx8": 1,
+  "division|y5bluv": 2,
+  "division|1qhubyh": 1,
+  "division|1bbsg9u": 1,
+  "division|1138wd3": 1,
+  "division|ekjg9y": 2,
+  "division|1erqgbt": 1,
+  "division|1t88h7r": 2,
+  "division|wokuko": 2,
+  "division|93480f": 1,
+  "division|4765yx": 1,
+  "division|my68x0": 1,
+  "division|1neb7er": 3,
+  "division|1elrla1": 3,
+  "division|14e2ctz": 2,
+  "division|sg92xf": 2,
+  "division|609fdj": 2,
+  "division|1hgxhc8": 2,
+  "division|nc475k": 2,
+  "division|1k7a024": 3,
+  "division|12eexim": 2,
+  "division|qm6zc": 1,
+  "division|1nkqtry": 2,
+  "division|1vg0bb1": 2,
+  "division|6pp36c": 2,
+  "division|1859bbl": 2,
+  "division|f600ih": 3,
+  "division|1ravt7m": 2,
+  "division|1c54l0f": 3,
+  "division|qocmm8": 2,
+  "division|15zohc0": 2,
+  "division|c9ahra": 2,
+  "division|gszq4y": 2,
+  "division|1si0qmk": 2,
+  "division|xdidtj": 3,
+  "division|14abdrw": 2,
+  "division|zi48ld": 3,
+  "division|1oz0y4d": 2,
+  "division|1gw2h3a": 3,
+  "division|1mivrc4": 3,
+  "division|1okrby2": 3,
+  "division|huigdd": 3,
+  "division|1k1ve82": 3,
+  "division|1i0jiss": 3,
+  "division|17qwnqg": 3,
+  "division|1igo3sq": 3,
+  "division|hc61ze": 3,
+  "funciones|ddhljs": 1,
+  "funciones|inn5mp": 2,
+  "funciones|rofaim": 1,
+  "funciones|xusa0s": 1,
+  "funciones|1pwn1wm": 1,
+  "funciones|5t8w4n": 1,
+  "funciones|5bgsbf": 1,
+  "funciones|1wr0c2m": 1,
+  "funciones|13pa74c": 3,
+  "funciones|13j7gpc": 2,
+  "funciones|829yg2": 1,
+  "funciones|tvjft4": 2,
+  "funciones|1v71787": 1,
+  "funciones|1tvf9qj": 1,
+  "funciones|1mu0snx": 2,
+  "funciones|d38m48": 2,
+  "funciones|1aguuhk": 1,
+  "funciones|1yzr4or": 1,
+  "funciones|1yrwe0h": 1,
+  "funciones|i82ww": 2,
+  "funciones|oesjj8": 1,
+  "funciones|v290pu": 1,
+  "funciones|91a5t1": 2,
+  "funciones|1s4s5lj": 1,
+  "funciones|i602ih": 1,
+  "funciones|1fsoxs9": 2,
+  "funciones|12u3ovc": 1,
+  "funciones|1dy40ax": 1,
+  "funciones|s7o5h9": 1,
+  "funciones|11qbkrk": 1,
+  "funciones|1s5mte6": 1,
+  "funciones|1q7f7xy": 2,
+  "funciones|1grckzh": 1,
+  "funciones|k2iiuh": 1,
+  "funciones|13h1c2f": 1,
+  "funciones|elzj0v": 3,
+  "funciones|rqfeuc": 2,
+  "funciones|ot2clq": 1,
+  "funciones|1uruj08": 2,
+  "funciones|19yhp7h": 1,
+  "funciones|4ptrus": 3,
+  "funciones|1nrc0ik": 2,
+  "funciones|kxzydn": 2,
+  "funciones|1miubt6": 2,
+  "funciones|e5y2p9": 2,
+  "funciones|gmdzib": 2,
+  "funciones|tfs7r5": 2,
+  "funciones|lsvwhf": 1,
+  "funciones|1sbmx81": 2,
+  "funciones|s8c841": 3,
+  "funciones|1i8zi9p": 3,
+  "funciones|1ilo7vu": 2,
+  "funciones|1eulqf9": 2,
+  "funciones|d35ox0": 2,
+  "funciones|1lxsn8u": 3,
+  "funciones|4kv27y": 3,
+  "funciones|gjedd2": 2,
+  "funciones|awvaq6": 2,
+  "funciones|1icemah": 2,
+  "funciones|ag81fz": 2,
+  "funciones|1mb3qnf": 2,
+  "funciones|1g0mbnq": 2,
+  "funciones|aeyeax": 3,
+  "funciones|167k501": 3,
+  "funciones|15el88g": 2,
+  "funciones|7ypu3i": 2,
+  "funciones|15xgvg4": 3,
+  "funciones|1adybxv": 3,
+  "funciones|887n6f": 3,
+  "funciones|y0jaig": 3,
+  "funciones|gee7w7": 3,
+  "funciones|1ivjddd": 3,
+  "funciones|pmvu47": 4,
+  "funciones|1a131vk": 3
+ },
+ "hallazgos": [
+  {
+   "id": "ambiente|i4axvg",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Afirmación exp E1 → exp E3 (evidencia 1.2 del Marco 2019)."
+  },
+  {
+   "id": "ambiente|15tbzfy",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Afirmación exp E1 → exp E3 (evidencia 1.2 del Marco 2019)."
+  },
+  {
+   "id": "ambiente|j26pmm",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I1",
+    "c": "uso"
+   },
+   "motivo": "Afirmación exp E3 → uso I1 (evidencia 5.4 del Marco 2019)."
+  },
+  {
+   "id": "ambiente|rdfy5q",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Afirmación exp E1 → exp E3 (evidencia 1.2 del Marco 2019)."
+  },
+  {
+   "id": "ambiente|4hdrni",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E1",
+    "c": "exp"
+   },
+   "motivo": "Afirmación uso I1 → exp E1 (evidencia 2.8 del Marco 2019)."
+  },
+  {
+   "id": "ambiente|1cc2xmm",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Afirmación exp E1 → exp E3 (evidencia 1.2 del Marco 2019)."
+  },
+  {
+   "id": "ambiente|yzcvir",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Afirmación exp E1 → exp E3 (evidencia 1.2 del Marco 2019)."
+  },
+  {
+   "id": "division|ftze1v",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|1uwo75q",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|1kxool2",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "division|10glsy3",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "division|lqvnve",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019). La pregunta «¿Cuántas copias de ADN tendrá?» no concuerda con las opciones («Lo mismo», «La mitad», «Ninguna», «El doble de lo normal»), que comparan cantidades.",
+   "textos": [
+    {
+     "campo": "q",
+     "original": "¿Cuántas copias de ADN tendrá?",
+     "nuevo": "¿Cuánto ADN tendrá, comparado con el que tenía antes de copiarlo?"
+    }
+   ]
+  },
+  {
+   "id": "division|1wtcvfk",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|dxjw59",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|irh8b8",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|396ri4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "division|zsedga",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "division|1qgk9rq",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3",
+    "c": "exp"
+   },
+   "motivo": "Afirmación uso I1 → exp E3 (evidencia 1.1 del Marco 2019). El ítem (actitud de inclusión frente al síndrome de Down) se responde por valores ciudadanos, sin conocimiento ni evidencia de ciencias naturales: no provoca ninguna evidencia del Marco de Ciencias. Se recomienda sacarlo del banco Saber o reformularlo como E3 1.1 (salud pública: p. ej., qué se detecta con un cariotipo prenatal y para qué sirve el apoyo temprano). Si se conserva, va como E3."
+  },
+  {
+   "id": "division|oys5cg",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|ca3w1v",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "division|dolsr9",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|d6ppx8",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|y5bluv",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|1bbsg9u",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|1138wd3",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|ekjg9y",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|wokuko",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E1",
+    "c": "exp"
+   },
+   "motivo": "Afirmación uso I1 → exp E1 (evidencia 2.9 del Marco 2019)."
+  },
+  {
+   "id": "division|93480f",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2",
+    "c": "uso"
+   },
+   "motivo": "Afirmación exp E1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "division|4765yx",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2",
+    "c": "uso"
+   },
+   "motivo": "Afirmación exp E1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "division|my68x0",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|14abdrw",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "division|1mivrc4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N2"
+   },
+   "motivo": "Afirmación ind N1 → ind N2 (evidencia 7.3 del Marco 2019). Pide qué explicación apoyan los resultados de una investigación ajena: es derivar una conclusión (N2, 7.3), no qué pregunta se puede contestar ni la importancia de la evidencia (N1)."
+  },
+  {
+   "id": "funciones|ddhljs",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|inn5mp",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|rofaim",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|xusa0s",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1pwn1wm",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|5t8w4n",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|5bgsbf",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|13j7gpc",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|829yg2",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|tvjft4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1tvf9qj",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|d38m48",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1aguuhk",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1yzr4or",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1yrwe0h",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|oesjj8",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1s4s5lj",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2",
+    "c": "uso"
+   },
+   "motivo": "Afirmación ind N3 → uso I2 (evidencia 4.4 del Marco 2019). Identificar la hormona de la metamorfosis (ecdisona) es uso del conocimiento, no indagación: no hay pregunta, diseño ni datos."
+  },
+  {
+   "id": "funciones|i602ih",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|12u3ovc",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1dy40ax",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|11qbkrk",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1s5mte6",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.5 del Marco 2019). «Aposematismo propio» no es un término biológico y se descarta por raro; un distractor plausible es el camuflaje.",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Aposematismo propio",
+     "nuevo": "Camuflaje"
+    }
+   ]
+  },
+  {
+   "id": "funciones|1q7f7xy",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1grckzh",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|13h1c2f",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|rqfeuc",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Afirmación uso I1 → uso I3 (evidencia 5.5 del Marco 2019)."
+  },
+  {
+   "id": "funciones|ot2clq",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Afirmación uso I1 → uso I2 (evidencia 4.4 del Marco 2019)."
+  },
+  {
+   "id": "funciones|1ilo7vu",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E1"
+   },
+   "motivo": "Afirmación exp E3 → exp E1 (evidencia 2.9 del Marco 2019). No es CTS (E3, efectos de una tecnología en la salud o el ambiente): pide explicar cómo una estructura del organismo capta agua (E1, 2.9). Además, los distractores (riñón, pelaje, estómago) no hablan del caparazón y se descartan sin saber biología; se cambian dos por errores plausibles sobre el caparazón.",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Un riñón muy eficiente produce orina diluida con el exceso de agua",
+     "nuevo": "Su caparazón absorbe el agua de la niebla como una esponja y la pasa a la sangre"
+    },
+    {
+     "campo": "distractor",
+     "original": "Un pelaje grueso evita que el agua de la niebla llegue al cuerpo",
+     "nuevo": "Su caparazón produce agua a partir del aire seco por medio de una reacción"
+    }
+   ]
+  },
+  {
+   "id": "funciones|aeyeax",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N4",
+    "c": "ind"
+   },
+   "motivo": "Afirmación uso I1 → ind N4 (evidencia 8.1 del Marco 2019). La tarea es leer en la gráfica cómo cambia el ritmo de aumento (comparar incrementos): interpretar datos, N4 8.1, no uso del conocimiento."
+  },
+  {
+   "id": "funciones|15xgvg4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N2"
+   },
+   "motivo": "Afirmación ind N1 → ind N2 (evidencia 7.3 del Marco 2019). Pide la explicación que se construye con los resultados de Darwin: conclusión respaldada por la evidencia de otros (N2, 7.3), no N1."
+  },
+  {
+   "id": "funciones|elzj0v",
+   "gravedad": "media",
+   "motivo": "La clave exige la ley de Poiseuille (caudal proporcional a r⁴), que no está en la situación ni en los DBA de Ciencias de 6.°–11.° como contenido de biología; sin ese dato el ítem no es resoluble con la información dada. Se agrega a la situación.",
+   "textos": [
+    {
+     "campo": "ctx",
+     "original": "con la mitad de su radio por placas de grasa.",
+     "nuevo": "con la mitad de su radio por placas de grasa. En un tubo, si la presión no cambia, el caudal es proporcional al radio elevado a la cuarta potencia (r⁴)."
+    }
+   ]
+  },
+  {
+   "id": "division|1k7a024",
+   "gravedad": "baja",
+   "motivo": "El distractor habla de 40 °C, pero los datos son de 45 °C: se descarta por el número y no por el razonamiento.",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "A 40 °C la levadura se dividió",
+     "nuevo": "A 45 °C la levadura se dividió"
+    }
+   ]
+  },
+  {
+   "id": "division|12eexim",
+   "gravedad": "media",
+   "motivo": "En la gráfica, el punto «S inicio» vale 3, pero al inicio de la fase S el ADN aún es 2 (en el ítem gemelo division|1si0qmk está bien: Inicio de S = 2, Mitad de S = 3). Se corrige la etiqueta del eje para que los datos sean correctos.",
+   "textos": [
+    {
+     "campo": "graf",
+     "original": "S inicio",
+     "nuevo": "Mitad de S"
+    }
+   ]
+  },
+  {
+   "id": "funciones|1mb3qnf",
+   "gravedad": "baja",
+   "motivo": "En la etiqueta de la gráfica la masa usa punto de miles («4.000 kg»); el estilo del sitio usa espacio (1 024, 1 400).",
+   "textos": [
+    {
+     "campo": "graf",
+     "original": "Elefante (4.000 kg)",
+     "nuevo": "Elefante (4 000 kg)"
+    }
+   ]
+  },
+  {
+   "id": "ambiente|11fyd7e",
+   "gravedad": "media",
+   "motivo": "Distractor «Desaparece» no nace de un error concreto (se descarta sin saber biología).",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Desaparece",
+     "nuevo": "Lo absorben los pastos del potrero en pocos días"
+    }
+   ]
+  },
+  {
+   "id": "ambiente|sajxkw",
+   "gravedad": "media",
+   "motivo": "Distractores «Nada» y «Ríos más fríos para siempre» son débiles; «Nada» no nace de un error concreto.",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Nada",
+     "nuevo": "Más caudal en épocas secas, porque ya no hay hielo que retenga el agua"
+    }
+   ]
+  },
+  {
+   "id": "ambiente|12ko31z",
+   "gravedad": "media",
+   "motivo": "Tres distractores aumentan las emisiones de forma evidente (más carbón, talar, más petróleo): la clave se elige por sentido común. Se cambian dos por medidas que reducen poco.",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Talar bosques para leña",
+     "nuevo": "Sembrar árboles solo alrededor de las plantas de carbón"
+    },
+    {
+     "campo": "distractor",
+     "original": "Usar más petróleo",
+     "nuevo": "Cambiar el carbón por petróleo en las mismas plantas"
+    }
+   ]
+  },
+  {
+   "id": "ambiente|7deypj",
+   "gravedad": "media",
+   "motivo": "Distractores absurdos («Ir dos veces al día», «Comprar un carro más grande»): la clave se elige sin razonar sobre huella de carbono.",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Ir dos veces al día",
+     "nuevo": "Cambiar el carro por una moto a gasolina"
+    },
+    {
+     "campo": "distractor",
+     "original": "Comprar un carro más grande",
+     "nuevo": "Ir en carro, pero comprar más cosas en cada viaje"
+    }
+   ]
+  }
+ ]
+}

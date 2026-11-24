@@ -1,0 +1,880 @@
+{
+ "lote": "icfes-bio-1",
+ "experto": "icfes",
+ "revisadas": 151,
+ "coincidencias_a_ciegas": 151,
+ "ev": {
+  "celula|12mau33": "2.9",
+  "celula|1d0zy6d": "4.4",
+  "celula|10jszpi": "5.5",
+  "celula|d2kzvd": "6.2",
+  "celula|oyh8r8": "4.4",
+  "celula|12zbwf5": "2.9",
+  "celula|aila22": "6.2",
+  "celula|12bxox4": "5.5",
+  "celula|4n3ic": "5.5",
+  "celula|97e3nv": "9.2",
+  "celula|rxnjxe": "5.5",
+  "celula|14bbbz8": "4.4",
+  "celula|1dbyc21": "5.5",
+  "celula|a4osrg": "2.9",
+  "celula|rybs5b": "5.5",
+  "celula|uzkkev": "5.5",
+  "celula|1o81j1f": "2.9",
+  "celula|1kt993c": "5.5",
+  "celula|jh52tm": "4.4",
+  "celula|1vhgnez": "2.9",
+  "celula|1rz6fld": "9.2",
+  "celula|1xge87h": "2.9",
+  "celula|soq251": "4.4",
+  "celula|1k2g3kq": "2.9",
+  "celula|z16b4p": "5.5",
+  "celula|1rkfpby": "5.5",
+  "celula|exfu7e": "2.9",
+  "celula|tp92ib": "5.5",
+  "celula|1qif7if": "5.5",
+  "celula|e8emtf": "5.5",
+  "celula|4idqny": "5.5",
+  "celula|1mng27t": "4.4",
+  "celula|1e14gqk": "4.4",
+  "celula|qs7fev": "4.4",
+  "celula|1jfb7z4": "5.5",
+  "celula|1m1v9uc": "7.3",
+  "celula|9h3lqn": "9.3",
+  "celula|5yj6qy": "2.9",
+  "celula|1151g86": "2.9",
+  "celula|ror7wr": "5.5",
+  "celula|vtwe8g": "4.4",
+  "celula|ac1ssp": "5.4",
+  "celula|1yo59rk": "7.3",
+  "celula|i27l0u": "9.2",
+  "celula|zua8nb": "9.2",
+  "celula|7l37mg": "7.3",
+  "celula|szvr20": "8.1",
+  "celula|8ex0ys": "6.2",
+  "celula|v6y87a": "8.1",
+  "celula|1e2z37p": "5.5",
+  "celula|wrojv7": "4.4",
+  "celula|1tqt07v": "5.5",
+  "celula|o3iphn": "5.5",
+  "celula|1n90dbk": "2.9",
+  "celula|141uroz": "2.9",
+  "celula|1bjhwhr": "3.3",
+  "celula|j12tql": "2.9",
+  "celula|utmnue": "8.1",
+  "celula|94xhva": "9.5",
+  "celula|limi2a": "7.3",
+  "celula|1n8r1ni": "6.2",
+  "celula|e7cb8m": "5.5",
+  "celula|1s5b7ss": "2.9",
+  "celula|1mv5rml": "3.3",
+  "celula|hmxw5g": "1.1",
+  "celula|zquetd": "9.2",
+  "celula|1pc8qm4": "8.1",
+  "celula|g4qtw1": "6.2",
+  "celula|p7fd46": "7.3",
+  "celula|1txcgk2": "3.3",
+  "celula|muqeg4": "2.9",
+  "celula|lu2lzq": "7.3",
+  "celula|1dqeh4v": "9.2",
+  "celula|s0ne86": "8.1",
+  "celula|4pl2mk": "6.2",
+  "reinos|x55g6d": "4.4",
+  "reinos|1gifqoc": "4.4",
+  "reinos|ad6k6s": "4.4",
+  "reinos|1t0fe5s": "4.4",
+  "reinos|1gk32qg": "4.4",
+  "reinos|d8lfed": "4.4",
+  "reinos|1asbuaw": "2.9",
+  "reinos|meyu4u": "5.4",
+  "reinos|smb3y8": "4.4",
+  "reinos|z5de3z": "2.8",
+  "reinos|1f10za5": "4.4",
+  "reinos|10eqhw9": "4.4",
+  "reinos|1aus3hu": "4.4",
+  "reinos|xnngj3": "6.2",
+  "reinos|1axth0o": "4.4",
+  "reinos|5spa01": "4.4",
+  "reinos|ql42g": "4.4",
+  "reinos|ewrbaj": "4.4",
+  "reinos|gcsjfp": "4.4",
+  "reinos|1nb83w8": "4.4",
+  "reinos|1csm237": "4.4",
+  "reinos|18zs9x1": "4.4",
+  "reinos|188fuar": "2.9",
+  "reinos|1rz2xh0": "4.4",
+  "reinos|1ewane5": "4.4",
+  "reinos|1myv0hd": "4.4",
+  "reinos|3mc3dg": "4.4",
+  "reinos|1e4w7c0": "4.4",
+  "reinos|12yvj55": "4.4",
+  "reinos|1keo9s": "2.9",
+  "reinos|nea6pm": "7.3",
+  "reinos|4t1lre": "4.4",
+  "reinos|ib98b7": "4.4",
+  "reinos|lm00jg": "4.4",
+  "reinos|gonrik": "5.5",
+  "reinos|tz2a97": "5.5",
+  "reinos|101edal": "2.9",
+  "reinos|1amq636": "4.4",
+  "reinos|1b0kc7k": "2.9",
+  "reinos|8pi9gr": "4.4",
+  "reinos|m5dix": "7.3",
+  "reinos|18th03p": "4.4",
+  "reinos|58a5s4": "2.9",
+  "reinos|14m037y": "7.3",
+  "reinos|nh744b": "9.2",
+  "reinos|1db40va": "8.1",
+  "reinos|13dokz9": "9.2",
+  "reinos|ogaa17": "7.3",
+  "reinos|yrg961": "6.2",
+  "reinos|c35ows": "8.1",
+  "reinos|eejerl": "4.4",
+  "reinos|hmgtoj": "2.8",
+  "reinos|xoiccg": "3.3",
+  "reinos|s081pk": "5.5",
+  "reinos|1e4txln": "8.1",
+  "reinos|1mct9": "9.5",
+  "reinos|kn72q0": "7.3",
+  "reinos|1lmxiz9": "6.2",
+  "reinos|11pwhva": "2.9",
+  "reinos|pgimnl": "2.8",
+  "reinos|13flo4y": "7.3",
+  "reinos|u6oiwf": "9.2",
+  "reinos|1ksly7a": "8.1",
+  "reinos|n1ebfy": "6.2",
+  "reinos|gsws2z": "8.1",
+  "reinos|183b8ng": "4.4",
+  "reinos|qz0oee": "5.5",
+  "reinos|1w996cn": "1.2",
+  "reinos|bu55dn": "6.2",
+  "reinos|4texti": "8.1",
+  "reinos|24vubv": "2.8",
+  "reinos|1tty1gw": "7.4",
+  "reinos|11yilcf": "1.2",
+  "reinos|rwguqa": "7.2",
+  "reinos|rgjp88": "9.2",
+  "reinos|mq3ytx": "8.1"
+ },
+ "nd": {
+  "celula|12mau33": 2,
+  "celula|1d0zy6d": 1,
+  "celula|10jszpi": 2,
+  "celula|d2kzvd": 3,
+  "celula|oyh8r8": 1,
+  "celula|12zbwf5": 2,
+  "celula|aila22": 3,
+  "celula|12bxox4": 1,
+  "celula|4n3ic": 2,
+  "celula|97e3nv": 2,
+  "celula|rxnjxe": 2,
+  "celula|14bbbz8": 1,
+  "celula|1dbyc21": 2,
+  "celula|a4osrg": 2,
+  "celula|rybs5b": 2,
+  "celula|uzkkev": 2,
+  "celula|1o81j1f": 2,
+  "celula|1kt993c": 2,
+  "celula|jh52tm": 1,
+  "celula|1vhgnez": 2,
+  "celula|1rz6fld": 2,
+  "celula|1xge87h": 2,
+  "celula|soq251": 1,
+  "celula|1k2g3kq": 2,
+  "celula|z16b4p": 1,
+  "celula|1rkfpby": 2,
+  "celula|exfu7e": 3,
+  "celula|tp92ib": 2,
+  "celula|1qif7if": 1,
+  "celula|e8emtf": 1,
+  "celula|4idqny": 2,
+  "celula|1mng27t": 1,
+  "celula|1e14gqk": 1,
+  "celula|qs7fev": 1,
+  "celula|1jfb7z4": 1,
+  "celula|1m1v9uc": 2,
+  "celula|9h3lqn": 2,
+  "celula|5yj6qy": 2,
+  "celula|1151g86": 2,
+  "celula|ror7wr": 1,
+  "celula|vtwe8g": 2,
+  "celula|ac1ssp": 2,
+  "celula|1yo59rk": 3,
+  "celula|i27l0u": 2,
+  "celula|zua8nb": 2,
+  "celula|7l37mg": 2,
+  "celula|szvr20": 2,
+  "celula|8ex0ys": 2,
+  "celula|v6y87a": 3,
+  "celula|1e2z37p": 2,
+  "celula|wrojv7": 2,
+  "celula|1tqt07v": 2,
+  "celula|o3iphn": 1,
+  "celula|1n90dbk": 3,
+  "celula|141uroz": 3,
+  "celula|1bjhwhr": 3,
+  "celula|j12tql": 1,
+  "celula|utmnue": 3,
+  "celula|94xhva": 2,
+  "celula|limi2a": 3,
+  "celula|1n8r1ni": 3,
+  "celula|e7cb8m": 2,
+  "celula|1s5b7ss": 2,
+  "celula|1mv5rml": 3,
+  "celula|hmxw5g": 2,
+  "celula|zquetd": 2,
+  "celula|1pc8qm4": 2,
+  "celula|g4qtw1": 3,
+  "celula|p7fd46": 3,
+  "celula|1txcgk2": 3,
+  "celula|muqeg4": 2,
+  "celula|lu2lzq": 2,
+  "celula|1dqeh4v": 3,
+  "celula|s0ne86": 3,
+  "celula|4pl2mk": 3,
+  "reinos|x55g6d": 1,
+  "reinos|1gifqoc": 1,
+  "reinos|ad6k6s": 2,
+  "reinos|1t0fe5s": 2,
+  "reinos|1gk32qg": 1,
+  "reinos|d8lfed": 1,
+  "reinos|1asbuaw": 2,
+  "reinos|meyu4u": 1,
+  "reinos|smb3y8": 1,
+  "reinos|z5de3z": 2,
+  "reinos|1f10za5": 1,
+  "reinos|10eqhw9": 2,
+  "reinos|1aus3hu": 1,
+  "reinos|xnngj3": 2,
+  "reinos|1axth0o": 1,
+  "reinos|5spa01": 1,
+  "reinos|ql42g": 1,
+  "reinos|ewrbaj": 1,
+  "reinos|gcsjfp": 2,
+  "reinos|1nb83w8": 1,
+  "reinos|1csm237": 1,
+  "reinos|18zs9x1": 1,
+  "reinos|188fuar": 2,
+  "reinos|1rz2xh0": 1,
+  "reinos|1ewane5": 1,
+  "reinos|1myv0hd": 1,
+  "reinos|3mc3dg": 1,
+  "reinos|1e4w7c0": 1,
+  "reinos|12yvj55": 1,
+  "reinos|1keo9s": 2,
+  "reinos|nea6pm": 2,
+  "reinos|4t1lre": 1,
+  "reinos|ib98b7": 1,
+  "reinos|lm00jg": 1,
+  "reinos|gonrik": 1,
+  "reinos|tz2a97": 2,
+  "reinos|101edal": 2,
+  "reinos|1amq636": 1,
+  "reinos|1b0kc7k": 1,
+  "reinos|8pi9gr": 1,
+  "reinos|m5dix": 2,
+  "reinos|18th03p": 1,
+  "reinos|58a5s4": 2,
+  "reinos|14m037y": 3,
+  "reinos|nh744b": 3,
+  "reinos|1db40va": 3,
+  "reinos|13dokz9": 2,
+  "reinos|ogaa17": 2,
+  "reinos|yrg961": 2,
+  "reinos|c35ows": 1,
+  "reinos|eejerl": 1,
+  "reinos|hmgtoj": 1,
+  "reinos|xoiccg": 3,
+  "reinos|s081pk": 1,
+  "reinos|1e4txln": 1,
+  "reinos|1mct9": 3,
+  "reinos|kn72q0": 2,
+  "reinos|1lmxiz9": 3,
+  "reinos|11pwhva": 2,
+  "reinos|pgimnl": 2,
+  "reinos|13flo4y": 2,
+  "reinos|u6oiwf": 2,
+  "reinos|1ksly7a": 2,
+  "reinos|n1ebfy": 2,
+  "reinos|gsws2z": 3,
+  "reinos|183b8ng": 3,
+  "reinos|qz0oee": 2,
+  "reinos|1w996cn": 3,
+  "reinos|bu55dn": 3,
+  "reinos|4texti": 3,
+  "reinos|24vubv": 3,
+  "reinos|1tty1gw": 3,
+  "reinos|11yilcf": 4,
+  "reinos|rwguqa": 3,
+  "reinos|rgjp88": 3,
+  "reinos|mq3ytx": 2
+ },
+ "hallazgos": [
+  {
+   "id": "celula|1d0zy6d",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "celula|10jszpi",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|d2kzvd",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N1"
+   },
+   "motivo": "La tarea pide escoger la observación que apoya una idea científica (importancia de la evidencia, 6.2): es indagación N1, no uso."
+  },
+  {
+   "id": "celula|aila22",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N1"
+   },
+   "motivo": "La tarea pide escoger la observación que apoya la teoría endosimbiótica (6.2): es indagación N1, como la pregunta gemela celula|g4qtw1."
+  },
+  {
+   "id": "celula|12bxox4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|4n3ic",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|97e3nv",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N3"
+   },
+   "motivo": "Identificar la variable dependiente es parte de diseñar un experimento (evidencia 9.2, N3), no derivar una conclusión (N2)."
+  },
+  {
+   "id": "celula|rxnjxe",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|14bbbz8",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "celula|1dbyc21",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|rybs5b",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|uzkkev",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|1kt993c",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|1rz6fld",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N3"
+   },
+   "motivo": "Identificar las variables que se controlan es diseño experimental (9.2): indagación N3, no uso."
+  },
+  {
+   "id": "celula|soq251",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "celula|z16b4p",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|1rkfpby",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|tp92ib",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|1qif7if",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|e8emtf",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|4idqny",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4). «Fase oscura» es un término en desuso y engañoso: el ciclo de Calvin ocurre de día y depende de los productos de la fase luminosa.",
+   "textos": [
+    {
+     "campo": "ctx",
+     "original": "En la fase oscura de la fotosíntesis (ciclo de Calvin)",
+     "nuevo": "En el ciclo de Calvin de la fotosíntesis (la fase que no usa luz directamente)"
+    }
+   ]
+  },
+  {
+   "id": "celula|1mng27t",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "celula|1e14gqk",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "celula|qs7fev",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "celula|1jfb7z4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|9h3lqn",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N3"
+   },
+   "motivo": "Elegir el objetivo del microscopio para un aumento dado es usar un instrumento (evidencia 9.3): indagación N3."
+  },
+  {
+   "id": "celula|ror7wr",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|1tqt07v",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "celula|j12tql",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E1"
+   },
+   "motivo": "Explica un fenómeno (la masa crece por el CO₂ de la fermentación): E1, evidencia 2.9. No analiza efectos de un recurso o tecnología sobre ambiente o salud (E3)."
+  },
+  {
+   "id": "reinos|x55g6d",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1gifqoc",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|ad6k6s",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1t0fe5s",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1gk32qg",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|d8lfed",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|smb3y8",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1f10za5",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|10eqhw9",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1aus3hu",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|xnngj3",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N1"
+   },
+   "motivo": "La respuesta es que una evidencia nueva (lo visto al microscopio) obligó a cambiar la clasificación: es N1 (6.2), igual que las gemelas reinos|yrg961 y reinos|n1ebfy."
+  },
+  {
+   "id": "reinos|1axth0o",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|5spa01",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|ewrbaj",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|18zs9x1",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1rz2xh0",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1ewane5",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1myv0hd",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|3mc3dg",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|1e4w7c0",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "uso",
+    "af": "I2"
+   },
+   "motivo": "Solo pide ubicar a los procariotas en el modelo de cinco reinos: es uso (I2, 4.4), no modelación (E2)."
+  },
+  {
+   "id": "reinos|4t1lre",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|lm00jg",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|gonrik",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "reinos|tz2a97",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I3"
+   },
+   "motivo": "Proceso o relación estructura-función de los organismos: en el esquema del sitio corresponde a I3 (evidencia 5.5), no a I1, cuyas evidencias biológicas son de ecosistemas (5.4)."
+  },
+  {
+   "id": "reinos|1amq636",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|8pi9gr",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "uso",
+    "af": "I2"
+   },
+   "motivo": "Solo pide ubicar las algas pardas en el modelo de cinco reinos: es uso (I2, 4.4), no modelación (E2)."
+  },
+  {
+   "id": "reinos|18th03p",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Asociar un organismo, estructura o fenómeno con su concepto o grupo (clasificación, nomenclatura, tipo de célula): corresponde a I2 (evidencia 4.4); I1 no tiene evidencia biológica de este tipo."
+  },
+  {
+   "id": "reinos|s081pk",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "uso",
+    "af": "I3"
+   },
+   "motivo": "Pide reconocer el proceso (fermentación) que se aprovecha: uso I3 (5.5). No analiza efectos de la tecnología sobre el ambiente o la salud (E3)."
+  },
+  {
+   "id": "reinos|gsws2z",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N4"
+   },
+   "motivo": "Pide sumar y comparar valores leídos de la gráfica: es interpretar datos (8.1, N4), no uso del concepto."
+  },
+  {
+   "id": "reinos|1tty1gw",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N2"
+   },
+   "motivo": "Calcular el número de bacterias tras 2 horas con el patrón de la tabla es predecir con base en un patrón (7.4, N2), no modelar (E2)."
+  },
+  {
+   "id": "celula|exfu7e",
+   "gravedad": "media",
+   "motivo": "Las tres opciones incorrectas empiezan con «Porque» y la correcta no: la diferencia gramatical la delata.",
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Vienen de células con núcleo y tienen organización eucariota",
+     "nuevo": "Porque vienen de células con núcleo y conservan la organización eucariota"
+    }
+   ]
+  },
+  {
+   "id": "celula|vtwe8g",
+   "gravedad": "media",
+   "motivo": "La situación no da ningún resultado: la pregunta se responde de memoria y no con la observación. Se agrega el resultado que sustenta la clave.",
+   "textos": [
+    {
+     "campo": "ctx",
+     "original": "Se pone la membrana interna de una cáscara de huevo entre agua y agua con azúcar.",
+     "nuevo": "Se pone la membrana interna de una cáscara de huevo entre agua y agua con azúcar. Al rato sube el nivel del lado con azúcar, y el agua pura sigue sin sabor dulce."
+    }
+   ]
+  },
+  {
+   "id": "celula|1yo59rk",
+   "gravedad": "media",
+   "motivo": "La clave es la opción más larga y es inexacta con los datos: con 0 % y 1 % de sal las rodajas ganan masa (11,2 g y 10,1 g), no pierden agua. La nueva redacción es lo que los datos sí muestran y tiene la longitud de las demás.",
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "A mayor concentración de sal en el agua, más agua pierden las células de la papa por ósmosis",
+     "nuevo": "A mayor concentración de sal, menor es la masa final de las rodajas de papa"
+    }
+   ]
+  },
+  {
+   "id": "reinos|58a5s4",
+   "gravedad": "media",
+   "motivo": "Dos distractores no nacen de errores plausibles («son más grandes», «son de colores») y se descartan sin saber nada. Se cambian por confusiones reales sobre las enzimas.",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Porque son más grandes",
+     "nuevo": "Porque trabajan más rápido a cualquier temperatura"
+    },
+    {
+     "campo": "distractor",
+     "original": "Porque son de colores",
+     "nuevo": "Porque el calor no afecta a ninguna enzima"
+    }
+   ]
+  },
+  {
+   "id": "reinos|nh744b",
+   "gravedad": "media",
+   "motivo": "La clave es claramente la opción más larga (148 caracteres frente a 115-129): se acorta sin perder lo esencial.",
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Tomar muestras de la boca de varias personas antes y después de comer dulces, cultivarlas en las mismas condiciones y comparar el número de colonias",
+     "nuevo": "Tomar muestras de la boca de varias personas antes y después de comer dulces, cultivarlas igual y contar las colonias"
+    }
+   ]
+  },
+  {
+   "id": "reinos|1db40va",
+   "gravedad": "media",
+   "motivo": "Como 42 % > 40 %, decir «no la apoyan» es discutible y deja plausible la opción «la confirman». La nueva clave dice lo que se puede sostener: la diferencia es demasiado pequeña para apoyar la predicción.",
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Los datos no la apoyan: la diferencia es tan pequeña que la luz casi no influye",
+     "nuevo": "Los datos no bastan para apoyarla: 40 % y 42 % es una diferencia muy pequeña"
+    }
+   ]
+  }
+ ]
+}

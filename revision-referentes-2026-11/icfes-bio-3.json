@@ -1,0 +1,1067 @@
+{
+ "lote": "icfes-bio-3",
+ "experto": "icfes",
+ "revisadas": 234,
+ "coincidencias_a_ciegas": 234,
+ "ev": {
+  "evolucion|s3woei": "4.4",
+  "evolucion|1f28tt5": "2.9",
+  "evolucion|wpni3u": "4.4",
+  "evolucion|10d6a1h": "7.3",
+  "evolucion|1rkr6d1": "4.4",
+  "evolucion|nmg1rj": "4.4",
+  "evolucion|114kduj": "4.4",
+  "evolucion|wk4px4": "2.9",
+  "evolucion|1avzq5i": "7.3",
+  "evolucion|130gugo": "2.9",
+  "evolucion|wj1c95": "2.9",
+  "evolucion|1kqlei6": "4.4",
+  "evolucion|1djoedj": "4.4",
+  "evolucion|1acnizg": "4.4",
+  "evolucion|dqsxyw": "4.4",
+  "evolucion|9qteod": "7.3",
+  "evolucion|1pxpksz": "4.4",
+  "evolucion|16uf6oy": "2.9",
+  "evolucion|xm52lg": "2.9",
+  "evolucion|w3idf2": "2.8",
+  "evolucion|mjlgd4": "4.4",
+  "evolucion|81cokb": "4.4",
+  "evolucion|19g5ih8": "2.9",
+  "evolucion|o626p1": "2.9",
+  "evolucion|1c2ayer": "2.9",
+  "evolucion|16dxlsi": "4.4",
+  "evolucion|174d2iz": "4.4",
+  "evolucion|gqjv2f": "4.4",
+  "evolucion|wcdgwn": "7.3",
+  "evolucion|apk1t5": "2.9",
+  "evolucion|1k03eg8": "4.4",
+  "evolucion|161zl5k": "1.1",
+  "evolucion|88q6o5": "4.4",
+  "evolucion|2xx5vo": "6.2",
+  "evolucion|93otub": "4.4",
+  "evolucion|18xip36": "7.3",
+  "evolucion|164ddfi": "2.9",
+  "evolucion|s6u3kn": "9.1",
+  "evolucion|x69cxy": "7.3",
+  "evolucion|1apmw5u": "9.1",
+  "evolucion|x1637v": "2.8",
+  "evolucion|brdhe5": "7.3",
+  "evolucion|1wyzf6i": "9.2",
+  "evolucion|1mo1qrh": "8.1",
+  "evolucion|1ptukm5": "4.4",
+  "evolucion|3z6mh3": "4.4",
+  "evolucion|n3awnq": "4.4",
+  "evolucion|904gsl": "7.3",
+  "evolucion|1ve8hfm": "2.9",
+  "evolucion|16b66ol": "3.3",
+  "evolucion|jkp3bn": "2.9",
+  "evolucion|1vry8z8": "1.2",
+  "evolucion|1my06rv": "3.3",
+  "evolucion|on8x1p": "2.9",
+  "evolucion|1lalp2y": "8.1",
+  "evolucion|1v71o8n": "8.1",
+  "evolucion|1nbf35r": "9.5",
+  "evolucion|1gg2imd": "6.2",
+  "evolucion|p5pmat": "8.1",
+  "evolucion|57jsn7": "9.2",
+  "evolucion|hsxop": "4.4",
+  "evolucion|1yeczv0": "2.9",
+  "evolucion|pdfh4h": "3.3",
+  "evolucion|1c3rog6": "2.9",
+  "evolucion|zwyh1v": "8.1",
+  "evolucion|yixu08": "9.1",
+  "evolucion|1tr4bqy": "8.1",
+  "evolucion|mm7im0": "6.2",
+  "evolucion|vmj5kk": "2.9",
+  "evolucion|j8neu4": "3.3",
+  "evolucion|1tf2jcn": "7.3",
+  "evolucion|132xczo": "9.2",
+  "evolucion|tza1z0": "8.1",
+  "evolucion|fuifv4": "6.2",
+  "ecosistemas|9rj9pg": "5.4",
+  "ecosistemas|d5wro1": "4.5",
+  "ecosistemas|1xivbwb": "2.8",
+  "ecosistemas|12jugv4": "2.8",
+  "ecosistemas|am3d8": "5.4",
+  "ecosistemas|1geedlj": "5.4",
+  "ecosistemas|zmuc": "5.4",
+  "ecosistemas|1fwkc4d": "5.4",
+  "ecosistemas|1pjx4br": "4.5",
+  "ecosistemas|wj5aki": "4.5",
+  "ecosistemas|1bkkssq": "5.4",
+  "ecosistemas|146ft7j": "5.4",
+  "ecosistemas|o8b8mb": "5.4",
+  "ecosistemas|14x71ih": "5.4",
+  "ecosistemas|7efu2y": "2.8",
+  "ecosistemas|b3dch0": "5.4",
+  "ecosistemas|12i7l8p": "5.4",
+  "ecosistemas|5gvpx6": "2.8",
+  "ecosistemas|kw2o3e": "4.5",
+  "ecosistemas|841711": "4.5",
+  "ecosistemas|70tb5w": "5.4",
+  "ecosistemas|1erum7j": "5.4",
+  "ecosistemas|acxg6m": "2.8",
+  "ecosistemas|1pgxqal": "2.8",
+  "ecosistemas|1gh000b": "4.4",
+  "ecosistemas|1h2y1rz": "4.4",
+  "ecosistemas|1kgjgc0": "4.5",
+  "ecosistemas|bsbc2p": "5.4",
+  "ecosistemas|4iy78p": "4.5",
+  "ecosistemas|1gpg4b5": "5.4",
+  "ecosistemas|50xv1s": "2.8",
+  "ecosistemas|upybj6": "1.2",
+  "ecosistemas|rqjvqo": "2.8",
+  "ecosistemas|1l2hxb7": "1.1",
+  "ecosistemas|172u146": "5.4",
+  "ecosistemas|n5hvqx": "2.8",
+  "ecosistemas|rtqpwh": "1.2",
+  "ecosistemas|1w5ao2o": "5.4",
+  "ecosistemas|1tnc8nb": "2.8",
+  "ecosistemas|kvnw5g": "5.4",
+  "ecosistemas|w59k07": "8.1",
+  "ecosistemas|p5khpo": "9.2",
+  "ecosistemas|1puhjm5": "9.2",
+  "ecosistemas|yclj3f": "7.3",
+  "ecosistemas|8hfvzq": "8.1",
+  "ecosistemas|1q082y4": "6.2",
+  "ecosistemas|1j2ofyd": "7.3",
+  "ecosistemas|1qf1e3x": "9.2",
+  "ecosistemas|1sam1ri": "2.8",
+  "ecosistemas|1br6604": "5.5",
+  "ecosistemas|ysum6u": "7.3",
+  "ecosistemas|1hq0x4r": "2.8",
+  "ecosistemas|15kj72a": "5.4",
+  "ecosistemas|1fka1gl": "2.8",
+  "ecosistemas|1a19c20": "5.4",
+  "ecosistemas|1jwd45l": "9.2",
+  "ecosistemas|l18mib": "5.4",
+  "ecosistemas|enpgfo": "2.8",
+  "ecosistemas|e2ti12": "3.3",
+  "ecosistemas|8azvvd": "1.2",
+  "ecosistemas|1xytlzp": "8.1",
+  "ecosistemas|1ampha2": "9.2",
+  "ecosistemas|1dg63yl": "7.3",
+  "ecosistemas|8kq33y": "6.1",
+  "ecosistemas|kji06m": "2.8",
+  "ecosistemas|f72jj0": "3.3",
+  "ecosistemas|4ui14m": "7.3",
+  "ecosistemas|1q63u4y": "9.2",
+  "ecosistemas|j46qmv": "8.1",
+  "ecosistemas|j97v6x": "9.2",
+  "ecosistemas|1grkdk4": "2.8",
+  "ecosistemas|s7ectg": "3.3",
+  "ecosistemas|1uqvn4w": "1.1",
+  "ecosistemas|1wquo5p": "7.3",
+  "ecosistemas|1dj9un": "9.2",
+  "ecosistemas|14vcjax": "8.1",
+  "colombia|qakohz": "2.8",
+  "colombia|1da66u8": "5.4",
+  "colombia|1i4xx4i": "2.8",
+  "colombia|2rrogj": "5.4",
+  "colombia|1ck5i2w": "2.8",
+  "colombia|10kpblz": "5.4",
+  "colombia|yza53o": "5.4",
+  "colombia|1895y6x": "5.7",
+  "colombia|4bdodd": "1.1",
+  "colombia|1dxmsdx": "2.8",
+  "colombia|16ahjfk": "5.4",
+  "colombia|1d0b0in": "5.7",
+  "colombia|1i0rv1n": "5.4",
+  "colombia|66hdod": "5.4",
+  "colombia|1wvpnk5": "5.4",
+  "colombia|n47qr": "1.2",
+  "colombia|1yifwlv": "5.7",
+  "colombia|1c655sw": "1.3",
+  "colombia|dvjizh": "5.4",
+  "colombia|19vh5sh": "5.4",
+  "colombia|9w45yl": "5.4",
+  "colombia|yzxxt0": "2.8",
+  "colombia|3sk10k": "2.8",
+  "colombia|1x82lcl": "5.4",
+  "colombia|tqstt4": "5.4",
+  "colombia|136rg4q": "5.7",
+  "colombia|18z1fib": "5.4",
+  "colombia|1glt46": "2.8",
+  "colombia|znwezi": "5.4",
+  "colombia|w5veky": "2.8",
+  "colombia|1stytt0": "5.7",
+  "colombia|upggez": "5.4",
+  "colombia|1l99wf2": "5.7",
+  "colombia|uq1dpk": "1.3",
+  "colombia|q8tfh4": "5.4",
+  "colombia|xi6qkc": "5.7",
+  "colombia|dg42sp": "1.2",
+  "colombia|1j5or3t": "5.4",
+  "colombia|1349anv": "2.8",
+  "colombia|1uflwoh": "5.7",
+  "colombia|1dw7yow": "4.2",
+  "colombia|fqla7": "2.9",
+  "colombia|1j3y2ro": "7.4",
+  "colombia|ebnucr": "7.3",
+  "colombia|ixsdd5": "9.2",
+  "colombia|1cjgqx8": "7.3",
+  "colombia|1jh35tb": "8.1",
+  "colombia|1gxiwkn": "6.2",
+  "colombia|jcu3io": "7.3",
+  "colombia|1u573ug": "9.2",
+  "colombia|10i0m31": "7.4",
+  "colombia|jznff9": "5.7",
+  "colombia|1xvewjr": "4.5",
+  "colombia|1vuq6rl": "5.4",
+  "colombia|x8ktv": "4.5",
+  "colombia|sute2n": "4.5",
+  "colombia|ftqr9z": "5.4",
+  "colombia|r4rbp5": "4.5",
+  "colombia|plheb5": "1.2",
+  "colombia|1rpx1xg": "1.2",
+  "colombia|8hcowi": "1.2",
+  "colombia|1ib7u8z": "2.8",
+  "colombia|x3h6c9": "1.2",
+  "colombia|a9ul1v": "2.8",
+  "colombia|170o7zd": "1.2",
+  "colombia|1cvsjm2": "8.1",
+  "colombia|1b61onm": "8.1",
+  "colombia|saia0y": "9.5",
+  "colombia|10i2o4q": "6.2",
+  "colombia|iigj5o": "8.1",
+  "colombia|1bei731": "4.5",
+  "colombia|c7swv2": "2.8",
+  "colombia|1x1rlpk": "3.3",
+  "colombia|popfk3": "1.2",
+  "colombia|18aza60": "8.1",
+  "colombia|xhil79": "9.2",
+  "colombia|13eeq9l": "7.3",
+  "colombia|13hejp7": "6.2",
+  "colombia|8denwx": "1.2",
+  "colombia|1mwef6z": "2.9",
+  "colombia|14wudny": "7.3",
+  "colombia|954pkq": "9.2",
+  "colombia|1rn28cw": "8.1",
+  "colombia|1ksge5g": "6.2"
+ },
+ "nd": {
+  "evolucion|s3woei": 2,
+  "evolucion|1f28tt5": 2,
+  "evolucion|wpni3u": 2,
+  "evolucion|10d6a1h": 2,
+  "evolucion|1rkr6d1": 1,
+  "evolucion|nmg1rj": 2,
+  "evolucion|114kduj": 2,
+  "evolucion|wk4px4": 2,
+  "evolucion|1avzq5i": 2,
+  "evolucion|130gugo": 2,
+  "evolucion|wj1c95": 2,
+  "evolucion|1kqlei6": 2,
+  "evolucion|1djoedj": 1,
+  "evolucion|1acnizg": 2,
+  "evolucion|dqsxyw": 2,
+  "evolucion|9qteod": 3,
+  "evolucion|1pxpksz": 2,
+  "evolucion|16uf6oy": 2,
+  "evolucion|xm52lg": 2,
+  "evolucion|w3idf2": 2,
+  "evolucion|mjlgd4": 2,
+  "evolucion|81cokb": 1,
+  "evolucion|19g5ih8": 2,
+  "evolucion|o626p1": 2,
+  "evolucion|1c2ayer": 2,
+  "evolucion|16dxlsi": 1,
+  "evolucion|174d2iz": 2,
+  "evolucion|gqjv2f": 1,
+  "evolucion|wcdgwn": 2,
+  "evolucion|apk1t5": 2,
+  "evolucion|1k03eg8": 1,
+  "evolucion|161zl5k": 2,
+  "evolucion|88q6o5": 1,
+  "evolucion|2xx5vo": 2,
+  "evolucion|93otub": 1,
+  "evolucion|18xip36": 3,
+  "evolucion|164ddfi": 2,
+  "evolucion|s6u3kn": 2,
+  "evolucion|x69cxy": 2,
+  "evolucion|1apmw5u": 2,
+  "evolucion|x1637v": 1,
+  "evolucion|brdhe5": 2,
+  "evolucion|1wyzf6i": 3,
+  "evolucion|1mo1qrh": 3,
+  "evolucion|1ptukm5": 1,
+  "evolucion|3z6mh3": 1,
+  "evolucion|n3awnq": 2,
+  "evolucion|904gsl": 2,
+  "evolucion|1ve8hfm": 2,
+  "evolucion|16b66ol": 2,
+  "evolucion|jkp3bn": 2,
+  "evolucion|1vry8z8": 2,
+  "evolucion|1my06rv": 3,
+  "evolucion|on8x1p": 2,
+  "evolucion|1lalp2y": 3,
+  "evolucion|1v71o8n": 2,
+  "evolucion|1nbf35r": 3,
+  "evolucion|1gg2imd": 2,
+  "evolucion|p5pmat": 2,
+  "evolucion|57jsn7": 2,
+  "evolucion|hsxop": 1,
+  "evolucion|1yeczv0": 2,
+  "evolucion|pdfh4h": 3,
+  "evolucion|1c3rog6": 2,
+  "evolucion|zwyh1v": 3,
+  "evolucion|yixu08": 3,
+  "evolucion|1tr4bqy": 3,
+  "evolucion|mm7im0": 3,
+  "evolucion|vmj5kk": 3,
+  "evolucion|j8neu4": 3,
+  "evolucion|1tf2jcn": 3,
+  "evolucion|132xczo": 3,
+  "evolucion|tza1z0": 3,
+  "evolucion|fuifv4": 4,
+  "ecosistemas|9rj9pg": 2,
+  "ecosistemas|d5wro1": 1,
+  "ecosistemas|1xivbwb": 2,
+  "ecosistemas|12jugv4": 2,
+  "ecosistemas|am3d8": 2,
+  "ecosistemas|1geedlj": 1,
+  "ecosistemas|zmuc": 1,
+  "ecosistemas|1fwkc4d": 1,
+  "ecosistemas|1pjx4br": 1,
+  "ecosistemas|wj5aki": 1,
+  "ecosistemas|1bkkssq": 1,
+  "ecosistemas|146ft7j": 2,
+  "ecosistemas|o8b8mb": 1,
+  "ecosistemas|14x71ih": 1,
+  "ecosistemas|7efu2y": 2,
+  "ecosistemas|b3dch0": 1,
+  "ecosistemas|12i7l8p": 1,
+  "ecosistemas|5gvpx6": 2,
+  "ecosistemas|kw2o3e": 1,
+  "ecosistemas|841711": 1,
+  "ecosistemas|70tb5w": 1,
+  "ecosistemas|1erum7j": 1,
+  "ecosistemas|acxg6m": 1,
+  "ecosistemas|1pgxqal": 2,
+  "ecosistemas|1gh000b": 1,
+  "ecosistemas|1h2y1rz": 1,
+  "ecosistemas|1kgjgc0": 1,
+  "ecosistemas|bsbc2p": 2,
+  "ecosistemas|4iy78p": 1,
+  "ecosistemas|1gpg4b5": 1,
+  "ecosistemas|50xv1s": 2,
+  "ecosistemas|upybj6": 2,
+  "ecosistemas|rqjvqo": 1,
+  "ecosistemas|1l2hxb7": 2,
+  "ecosistemas|172u146": 1,
+  "ecosistemas|n5hvqx": 2,
+  "ecosistemas|rtqpwh": 2,
+  "ecosistemas|1w5ao2o": 1,
+  "ecosistemas|1tnc8nb": 3,
+  "ecosistemas|kvnw5g": 2,
+  "ecosistemas|w59k07": 3,
+  "ecosistemas|p5khpo": 3,
+  "ecosistemas|1puhjm5": 2,
+  "ecosistemas|yclj3f": 3,
+  "ecosistemas|8hfvzq": 2,
+  "ecosistemas|1q082y4": 2,
+  "ecosistemas|1j2ofyd": 2,
+  "ecosistemas|1qf1e3x": 2,
+  "ecosistemas|1sam1ri": 1,
+  "ecosistemas|1br6604": 2,
+  "ecosistemas|ysum6u": 2,
+  "ecosistemas|1hq0x4r": 1,
+  "ecosistemas|15kj72a": 1,
+  "ecosistemas|1fka1gl": 2,
+  "ecosistemas|1a19c20": 2,
+  "ecosistemas|1jwd45l": 2,
+  "ecosistemas|l18mib": 1,
+  "ecosistemas|enpgfo": 3,
+  "ecosistemas|e2ti12": 2,
+  "ecosistemas|8azvvd": 2,
+  "ecosistemas|1xytlzp": 3,
+  "ecosistemas|1ampha2": 2,
+  "ecosistemas|1dg63yl": 3,
+  "ecosistemas|8kq33y": 3,
+  "ecosistemas|kji06m": 3,
+  "ecosistemas|f72jj0": 3,
+  "ecosistemas|4ui14m": 3,
+  "ecosistemas|1q63u4y": 3,
+  "ecosistemas|j46qmv": 4,
+  "ecosistemas|j97v6x": 3,
+  "ecosistemas|1grkdk4": 3,
+  "ecosistemas|s7ectg": 3,
+  "ecosistemas|1uqvn4w": 3,
+  "ecosistemas|1wquo5p": 3,
+  "ecosistemas|1dj9un": 3,
+  "ecosistemas|14vcjax": 2,
+  "colombia|qakohz": 1,
+  "colombia|1da66u8": 1,
+  "colombia|1i4xx4i": 2,
+  "colombia|2rrogj": 1,
+  "colombia|1ck5i2w": 2,
+  "colombia|10kpblz": 1,
+  "colombia|yza53o": 1,
+  "colombia|1895y6x": 1,
+  "colombia|4bdodd": 2,
+  "colombia|1dxmsdx": 1,
+  "colombia|16ahjfk": 1,
+  "colombia|1d0b0in": 1,
+  "colombia|1i0rv1n": 1,
+  "colombia|66hdod": 1,
+  "colombia|1wvpnk5": 1,
+  "colombia|n47qr": 1,
+  "colombia|1yifwlv": 1,
+  "colombia|1c655sw": 1,
+  "colombia|dvjizh": 1,
+  "colombia|19vh5sh": 1,
+  "colombia|9w45yl": 1,
+  "colombia|yzxxt0": 2,
+  "colombia|3sk10k": 1,
+  "colombia|1x82lcl": 1,
+  "colombia|tqstt4": 1,
+  "colombia|136rg4q": 1,
+  "colombia|18z1fib": 1,
+  "colombia|1glt46": 1,
+  "colombia|znwezi": 1,
+  "colombia|w5veky": 2,
+  "colombia|1stytt0": 1,
+  "colombia|upggez": 1,
+  "colombia|1l99wf2": 1,
+  "colombia|uq1dpk": 1,
+  "colombia|q8tfh4": 1,
+  "colombia|xi6qkc": 1,
+  "colombia|dg42sp": 1,
+  "colombia|1j5or3t": 1,
+  "colombia|1349anv": 2,
+  "colombia|1uflwoh": 1,
+  "colombia|1dw7yow": 1,
+  "colombia|fqla7": 2,
+  "colombia|1j3y2ro": 2,
+  "colombia|ebnucr": 2,
+  "colombia|ixsdd5": 2,
+  "colombia|1cjgqx8": 2,
+  "colombia|1jh35tb": 2,
+  "colombia|1gxiwkn": 1,
+  "colombia|jcu3io": 2,
+  "colombia|1u573ug": 2,
+  "colombia|10i0m31": 2,
+  "colombia|jznff9": 1,
+  "colombia|1xvewjr": 1,
+  "colombia|1vuq6rl": 1,
+  "colombia|x8ktv": 1,
+  "colombia|sute2n": 1,
+  "colombia|ftqr9z": 1,
+  "colombia|r4rbp5": 1,
+  "colombia|plheb5": 2,
+  "colombia|1rpx1xg": 2,
+  "colombia|8hcowi": 1,
+  "colombia|1ib7u8z": 2,
+  "colombia|x3h6c9": 2,
+  "colombia|a9ul1v": 1,
+  "colombia|170o7zd": 2,
+  "colombia|1cvsjm2": 2,
+  "colombia|1b61onm": 1,
+  "colombia|saia0y": 3,
+  "colombia|10i2o4q": 1,
+  "colombia|iigj5o": 2,
+  "colombia|1bei731": 1,
+  "colombia|c7swv2": 2,
+  "colombia|1x1rlpk": 2,
+  "colombia|popfk3": 2,
+  "colombia|18aza60": 2,
+  "colombia|xhil79": 2,
+  "colombia|13eeq9l": 3,
+  "colombia|13hejp7": 3,
+  "colombia|8denwx": 3,
+  "colombia|1mwef6z": 3,
+  "colombia|14wudny": 3,
+  "colombia|954pkq": 2,
+  "colombia|1rn28cw": 3,
+  "colombia|1ksge5g": 2
+ },
+ "hallazgos": [
+  {
+   "id": "evolucion|s3woei",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|wpni3u",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|114kduj",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|1kqlei6",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|1acnizg",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|dqsxyw",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|1pxpksz",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|mjlgd4",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|81cokb",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|174d2iz",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|gqjv2f",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|1k03eg8",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|hsxop",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|3z6mh3",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2)."
+  },
+  {
+   "id": "evolucion|16dxlsi",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Migrando por Asia hace más de 15 000 años (la fecha exacta se discute)",
+     "nuevo": "Migrando por Asia hace más de 15 000 años"
+    }
+   ],
+   "motivo": "Patrón: en evolución, 'I1' (afirmación 5) no tiene evidencia que corresponda (5.4 es ecosistemas y 5.5 es I3); asociar un fenómeno evolutivo con su concepto es la afirmación 4, evidencia 4.4 (I2). Además, el paréntesis «(la fecha exacta se discute)» hace la correcta mucho más larga que las demás y la delata."
+  },
+  {
+   "id": "evolucion|n3awnq",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "Distribución de marsupiales = biogeografía y ancestro común, no un proceso del organismo (I3, 5.5): es I2, evidencia 4.4."
+  },
+  {
+   "id": "evolucion|130gugo",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Pide predecir el resultado de la selección natural tras varias generaciones (usar el modelo para predecir): es explicación, E1 (2.9), como las preguntas equivalentes 1ve8hfm y 16b66ol, no uso I1."
+  },
+  {
+   "id": "evolucion|xm52lg",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Pide predecir qué ocurre con poblaciones aisladas (especiación): es explicación E1 (2.9), igual que on8x1p; I1 no tiene evidencia de evolución."
+  },
+  {
+   "id": "evolucion|o626p1",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Pide predecir qué fenotipo deja más crías bajo una presión de selección: explicación E1 (2.9), como 1ve8hfm."
+  },
+  {
+   "id": "evolucion|161zl5k",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide escoger un hábito de salud frente a la resistencia a antibióticos: es la afirmación 1 del Marco (CTS, 1.1 salud individual y pública), E3, no uso I1."
+  },
+  {
+   "id": "evolucion|2xx5vo",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N1"
+   },
+   "motivo": "Trata la naturaleza de la ciencia (qué es una teoría apoyada en evidencias): indagación N1, evidencia 6.2, como 1gg2imd."
+  },
+  {
+   "id": "evolucion|18xip36",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N2"
+   },
+   "motivo": "Hay que inferir el clima del pasado a partir de un fósil (información no dada): indagación N2, 7.3, como 9qteod (Tatacoa), no uso I1."
+  },
+  {
+   "id": "evolucion|x69cxy",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N2"
+   },
+   "motivo": "Pide la conclusión que se deriva del experimento de Redi (qué idea refutó): indagación N2, 7.3, no uso I1."
+  },
+  {
+   "id": "evolucion|904gsl",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "ind",
+    "af": "N2"
+   },
+   "motivo": "Inferir el orden temporal a partir de capas de roca es una conclusión respaldada por la evidencia (N2, 7.3), igual que 10d6a1h; no es uso I1."
+  },
+  {
+   "id": "evolucion|1v71o8n",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N4"
+   },
+   "motivo": "Solo pide leer la tendencia de una gráfica (interpretar datos): N4, evidencia 8.1; N2 es concluir o predecir."
+  },
+  {
+   "id": "evolucion|1tr4bqy",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N4"
+   },
+   "motivo": "Pide interpretar el patrón de la gráfica (aumento cada vez más rápido): N4, evidencia 8.1, no N2."
+  },
+  {
+   "id": "evolucion|1c3rog6",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E1"
+   },
+   "motivo": "Explicar el origen del maíz por selección artificial es explicar un fenómeno biológico (E1, 2.9); E3 se reserva para efectos de un recurso o tecnología sobre ambiente y salud."
+  },
+  {
+   "id": "ecosistemas|12jugv4",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Pide predecir el efecto de modificar una variable del ecosistema (quitar depredadores): explicación E1, evidencia 2.8, no uso I1."
+  },
+  {
+   "id": "ecosistemas|5gvpx6",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Pide predecir el resultado de la competencia entre dos especies: explicación E1, 2.8."
+  },
+  {
+   "id": "ecosistemas|kw2o3e",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "uso",
+    "af": "I2"
+   },
+   "motivo": "Solo pide nombrar el concepto (capacidad de carga), como 1pjx4br que es uso I2: no es explicación."
+  },
+  {
+   "id": "ecosistemas|1h2y1rz",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Ninguna",
+     "nuevo": "Artificial"
+    }
+   ],
+   "motivo": "El distractor «Ninguna» es débil (equivale a «ninguna de las anteriores», que la sección 6.5 excluye)."
+  },
+  {
+   "id": "ecosistemas|upybj6",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Valora el efecto de una tecnología (insecticidas) sobre polinizadores y producción: afirmación 1 del Marco, E3 (1.2)."
+  },
+  {
+   "id": "ecosistemas|rtqpwh",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide escoger una acción para recuperar un humedal contaminado (efectos de usar un recurso y soluciones): explicación E3, 1.2, no uso I1."
+  },
+  {
+   "id": "ecosistemas|15kj72a",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I1"
+   },
+   "motivo": "La fijación de nitrógeno y su efecto en el suelo es un proceso del ecosistema (ciclo del nitrógeno, 5.4 = I1), no un proceso interno del organismo (I3, 5.5)."
+  },
+  {
+   "id": "ecosistemas|1a19c20",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I1"
+   },
+   "motivo": "La fijación de nitrógeno y su efecto en el suelo es un proceso del ecosistema (ciclo del nitrógeno, 5.4 = I1), no un proceso interno del organismo (I3, 5.5)."
+  },
+  {
+   "id": "ecosistemas|j97v6x",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N3"
+   },
+   "motivo": "Pregunta por qué hace falta la cuenca de control: es diseño experimental, N3 (9.2), no N1 (qué pregunta se puede contestar)."
+  },
+  {
+   "id": "ecosistemas|1pgxqal",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "No tiene efecto",
+     "nuevo": "No tiene efecto sobre la atmósfera"
+    },
+    {
+     "campo": "distractor",
+     "original": "Disminuye el CO₂",
+     "nuevo": "Disminuye el CO₂ de la atmósfera"
+    },
+    {
+     "campo": "distractor",
+     "original": "Aumenta el oxígeno",
+     "nuevo": "Aumenta el oxígeno de la atmósfera"
+    }
+   ],
+   "motivo": "La correcta es la única opción completa y la más larga (30 frente a 15-18 caracteres): se iguala la longitud de los distractores."
+  },
+  {
+   "id": "ecosistemas|rqjvqo",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Es un depredador",
+     "nuevo": "Es un depredador: come a los peces"
+    },
+    {
+     "campo": "distractor",
+     "original": "Es un mamífero",
+     "nuevo": "Es un consumidor: come a otros"
+    },
+    {
+     "campo": "distractor",
+     "original": "Es un descomponedor",
+     "nuevo": "Es un descomponedor: recicla materia"
+    }
+   ],
+   "motivo": "La correcta es la única con justificación y la más larga: se iguala la estructura de los distractores."
+  },
+  {
+   "id": "colombia|4bdodd",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Trata el efecto del mercurio de la minería en la salud de las personas: afirmación 1 del Marco (1.1), E3."
+  },
+  {
+   "id": "colombia|16ahjfk",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Siempre hará frío",
+     "nuevo": "Siempre hará frío, como en la cima"
+    },
+    {
+     "campo": "distractor",
+     "original": "Siempre hará calor",
+     "nuevo": "Siempre hará calor, como en la costa"
+    },
+    {
+     "campo": "distractor",
+     "original": "No habrá cambios",
+     "nuevo": "No habrá cambios de temperatura"
+    }
+   ],
+   "motivo": "La correcta es mucho más larga que los distractores (31 frente a 16-18 caracteres)."
+  },
+  {
+   "id": "colombia|1d0b0in",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "La siembra de frailejones",
+     "nuevo": "La siembra de frailejones en zonas degradadas"
+    },
+    {
+     "campo": "distractor",
+     "original": "La investigación científica",
+     "nuevo": "La investigación científica en sus lagunas"
+    },
+    {
+     "campo": "distractor",
+     "original": "La protección del parque",
+     "nuevo": "La protección del parque por sus guardas"
+    }
+   ],
+   "motivo": "La correcta es la más larga y la única con dos elementos; se igualan los distractores."
+  },
+  {
+   "id": "colombia|1i0rv1n",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "ctx",
+     "original": "una región tiene sabanas que se inundan",
+     "nuevo": "una región al oriente de los Andes tiene extensas sabanas que se inundan"
+    }
+   ],
+   "motivo": "Sabanas que se inundan en lluvias también hay en el Caribe (Córdoba, Sucre, depresión momposina): «Caribe» puede defenderse. Se precisa la situación."
+  },
+  {
+   "id": "colombia|n47qr",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "Valora las consecuencias de explotar un recurso (ganadería que reemplaza selva): afirmación 1, E3 (1.2)."
+  },
+  {
+   "id": "colombia|1c655sw",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide el uso correcto y respetuoso de un recurso (turismo de avistamiento): afirmación 1, evidencia 1.3, E3; no es asociar un fenómeno con un concepto (I2)."
+  },
+  {
+   "id": "colombia|9w45yl",
+   "gravedad": "alta",
+   "textos": [
+    {
+     "campo": "correcta",
+     "original": "Una planta acuática que florece",
+     "nuevo": "Una planta acuática que enrojece con el sol"
+    }
+   ],
+   "motivo": "Error científico en la correcta: el rojo de Caño Cristales lo da la planta acuática Macarenia clavigera (sus tallos y hojas enrojecen con el sol), no su floración."
+  },
+  {
+   "id": "colombia|yzxxt0",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E1"
+   },
+   "motivo": "Pide predecir el efecto de modificar una variable (calentamiento) en la distribución del cultivo: explicación E1, 2.8."
+  },
+  {
+   "id": "colombia|znwezi",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "uso",
+    "af": "I1"
+   },
+   "motivo": "Es un dato de geografía (por qué se llama estrella fluvial), no una explicación de un fenómeno: uso I1."
+  },
+  {
+   "id": "colombia|1l99wf2",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "La minería de carbón",
+     "nuevo": "La minería de carbón a cielo abierto"
+    },
+    {
+     "campo": "distractor",
+     "original": "La ganadería de páramo",
+     "nuevo": "La ganadería de páramo en las cumbres"
+    },
+    {
+     "campo": "distractor",
+     "original": "El cultivo de café",
+     "nuevo": "El cultivo de café en las laderas"
+    }
+   ],
+   "motivo": "La correcta es mucho más larga que los distractores."
+  },
+  {
+   "id": "colombia|uq1dpk",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Pide una acción responsable frente al tráfico de fauna (uso correcto de un recurso): E3, evidencia 1.3, no uso I1."
+  },
+  {
+   "id": "colombia|dg42sp",
+   "gravedad": "media",
+   "etiquetas": {
+    "c": "exp",
+    "af": "E3"
+   },
+   "motivo": "Valora los efectos positivos de una decisión de conservación sobre los ecosistemas: E3 (1.2)."
+  },
+  {
+   "id": "colombia|1349anv",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E1"
+   },
+   "textos": [
+    {
+     "campo": "distractor",
+     "original": "Aumentarían las nubes",
+     "nuevo": "Aumentarían las nubes sobre el bosque"
+    },
+    {
+     "campo": "distractor",
+     "original": "No cambiaría nada",
+     "nuevo": "No cambiaría nada en las quebradas"
+    },
+    {
+     "campo": "distractor",
+     "original": "Llovería más",
+     "nuevo": "Llovería más en toda la montaña"
+    }
+   ],
+   "motivo": "Predice el efecto de modificar una variable (talar el bosque de niebla): E1 (2.8); no usa ningún modelo (E2). Además la correcta es la más larga."
+  },
+  {
+   "id": "colombia|1dw7yow",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I2"
+   },
+   "motivo": "El origen de volcanes y sismos es geología (dinámica de un sistema, 4.2), no un proceso de los ecosistemas (5.4): I2."
+  },
+  {
+   "id": "colombia|1j3y2ro",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N2"
+   },
+   "motivo": "Pide predecir el siguiente valor a partir de la tendencia: evidencia 7.4, N2 (la sección 6.3 lo aclara), no N4."
+  },
+  {
+   "id": "colombia|10i0m31",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N2"
+   },
+   "motivo": "Pide predecir el siguiente valor a partir de la tendencia: evidencia 7.4, N2 (la sección 6.3 lo aclara), no N4."
+  },
+  {
+   "id": "colombia|1vuq6rl",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I1"
+   },
+   "motivo": "Servicio ecosistémico de regulación del agua: proceso del ecosistema (I1, 5.4), no proceso de un organismo (I3)."
+  },
+  {
+   "id": "colombia|ftqr9z",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "I1"
+   },
+   "motivo": "La acumulación de mercurio en la cadena trófica es un proceso del ecosistema (I1, 5.4), no un proceso interno del organismo (I3)."
+  },
+  {
+   "id": "colombia|x3h6c9",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "E3"
+   },
+   "motivo": "No se modela nada: se valora el beneficio social y económico de conservar (afirmación 1, 1.2), E3."
+  },
+  {
+   "id": "colombia|1b61onm",
+   "gravedad": "media",
+   "etiquetas": {
+    "af": "N4"
+   },
+   "motivo": "Solo pide leer cuál barra es la mayor: interpretar datos, N4 (8.1), nivel 1; no es concluir (N2)."
+  }
+ ]
+}

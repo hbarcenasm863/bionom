@@ -6,6 +6,29 @@
 
 ---
 
+## Versión 2.84 — 24 de noviembre de 2026 · Revisión del banco Saber contra los referentes curriculares (parte 1: evaluación Icfes)
+
+**Contexto.** El docente pidió revisar todo el banco existente de los tres sitios contra `REFERENTES_CURRICULARES.md` (estándares, DBA, priorizados y modelo basado en evidencias del Icfes) con agentes expertos, y dejarlo en `main`. Es un trabajo grande (unas 7000 preguntas y palabras en los tres sitios) y el límite de uso cortó dos veces a los agentes, así que se publica por partes. Esta primera parte cubre **las 908 preguntas Saber de BioNom** revisadas por el experto en evaluación Saber 11 / Icfes.
+
+**Proceso.** Cinco agentes expertos en evaluación Icfes (uno por bloque de temas) resolvieron **a ciegas** las 908 preguntas: coincidieron con la clave en **908 de 908**. Después revisaron cada pregunta contra la sección 6 de los referentes y asignaron a todas la **evidencia del Marco Saber 11.° 2019** y el **nivel de desempeño** (1 a 4). Instrucciones e informes completos en `revision-referentes-2026-11/`.
+
+**Hallazgos (305 en total):**
+- **1 de gravedad alta:** en la pregunta de Caño Cristales, la opción correcta decía que el rojo lo da «una planta acuática que florece»; lo dan los tallos y hojas de *Macarenia clavigera*. Corregida.
+- **296 de gravedad media**, la gran mayoría de **etiquetas**: la regla automática de `saber-icfes.js` pone I1 a toda pregunta de uso sin afirmación escrita, y muchas eran I2 (asociar con un concepto, 4.4) o I3 (procesos de los organismos, 5.5); preguntas de salud, recursos y tecnología marcadas como uso pasan a E3; preguntas de «predecir el siguiente valor» pasan de N4 a N2 (7.4). En total se corrigieron 280 afirmaciones y 63 competencias.
+- **Calidad de ítem:** distractores absurdos o que delataban la clave (por ejemplo, tres que empezaban por «Porque» o «Solo» y la correcta no), una gráfica con un rótulo equivocado («S inicio» → «Mitad de S»), una pregunta que pedía la ley de Poiseuille sin darla (se agregó el dato), una cita de Wallace y Kelsey corregida (unos 300 000 ovocitos al nacer), «fase oscura» → ciclo de Calvin, el vapeador no está «prohibido» en Colombia (está regulado). **74 correcciones de texto** aplicadas y verificadas una por una.
+
+**Cambios.**
+- `docente-datos.js`: las correcciones de texto (y se quitó un retoque de la versión 2.71 que volvía a poner los distractores viejos de la pregunta de biomoléculas).
+- `revision-ref.js` (nuevo, generado): etiquetas revisadas de cada pregunta Saber (`c`, `af`, `ev`, `nd`), por la misma clave del «Banco de preguntas». Se carga después de `docente-datos.js` en `docente.html` y lo usa `herramientas/generar-saber-juego.js`.
+- `banco-sel.js` (igual en los tres sitios): muestra la **evidencia** y el **nivel de desempeño** de cada pregunta, filtro nuevo «Nivel de desempeño (Icfes)», y acepta `dba`/`curso` escritos en la pregunta cuando el sitio no los calcula.
+- `saber-juego.js` regenerado. Caché `bionom-v97`; `docente-datos.js?v=42`, `banco-sel.js?v=4`, `revision-ref.js?v=1`. `revisar-sintaxis.js` sin errores; `docente.html` probado con Playwright (905 de 914 preguntas con evidencia y nivel; las otras son las nuevas del lote 7 y las que oculta el modelo de reinos), filtro de nivel funcionando, sin errores.
+
+**Lo que muestra la revisión.** El banco está muy cargado a niveles 1 y 2 (nivel 1: 294, nivel 2: 405, nivel 3: 196, nivel 4: solo 13); la correcta es la opción más larga en cerca de la mitad de las preguntas; hay grupos casi repetidos (penicilina, Virchow, líquenes, CO₂, síndrome de Down) que conviene no poner en la misma evaluación.
+
+**Pendiente (siguientes partes).** Revisión de **currículo MEN** (DBA y curso de cada pregunta del juego, Saber, abiertas y palabras) y de **ciencias** (juego, abiertas y palabras) de BioNom; los agentes ya dejaron señalados casos para el experto MEN (código genético dentro de Nutrición, oxalato en 6.°, telómeros y Poiseuille sin DBA, inactivación del X y ventaja del heterocigoto en 9.°, Miller-Urey en 7.°, muchas de ecosistemas y Colombia con DBA vacío). Las 9 preguntas del lote 7 no entraron en esta revisión. Mejorar la regla automática de afirmación de `saber-icfes.js`. Sin pasos manuales (no se tocó `bionom-analytics.gs`).
+
+---
+
 ## Versión 2.83 — 24 de noviembre de 2026 · Al menos 10 preguntas con figura por tema (lote 7)
 
 El docente pidió al menos 10 preguntas por tema cuya respuesta dependa de analizar una figura. En BioNom todos los temas tenían 9 o más; células, evolución y ambiente tenían 9.
