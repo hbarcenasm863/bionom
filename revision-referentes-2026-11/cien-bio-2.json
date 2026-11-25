@@ -1,0 +1,46 @@
+{
+ "lote": "cien-bio-2",
+ "experto": "ciencia",
+ "revisadas": 827,
+ "coincidencias_a_ciegas": 827,
+ "ev": {},
+ "nd": {},
+ "hallazgos": [
+  {
+   "id": "bio-j356",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "se forman los órganos, hasta la semana 8)",
+     "nuevo": "se forman los órganos, hasta la semana 8 después de la fecundación, la 10 de embarazo)"
+    }
+   ],
+   "motivo": "Ambigüedad de semanas: la explicación dice «semana 8» sin aclarar el conteo y la pista habla de semana 11 de embarazo (9 tras la fecundación). Se explicita el conteo (regla de semanas de embarazo)."
+  },
+  {
+   "id": "bio-j377",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "pista",
+     "original": "«Meta» recuerda a «medio».",
+     "nuevo": "En el «medio» (ecuador) de la célula quedan los cromosomas."
+    }
+   ],
+   "motivo": "«Meta» en griego significa «después/más allá», no «medio»; la pista usa una etimología falsa. Se deja la idea sin afirmar el origen de la palabra."
+  },
+  {
+   "id": "bio-j198",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "(pinos, cipreses, el romerón colombiano)",
+     "nuevo": "(pinos, cipreses, abetos)"
+    }
+   ],
+   "motivo": "El romerón (Retrophyllum, Podocarpaceae) no forma conos típicos: sus semillas llevan un arilo carnoso; no es buen ejemplo de «semillas en conos o piñas»."
+  }
+ ]
+}

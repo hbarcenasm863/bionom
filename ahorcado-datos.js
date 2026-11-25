@@ -30,7 +30,7 @@ window.BANCO_AHORCADO=[
 ["MITOSIS","celula","Tipo de división celular.","Tiene profase, metafase, anafase y telofase.","Produce dos células hijas idénticas."],
 ["FOTOSÍNTESIS","celula","Proceso que fabrica alimento con luz.","Usa CO₂ y agua.","Libera oxígeno y produce glucosa."],
 ["PROCARIOTA","celula","Tipo de célula muy pequeña y antigua.","No tiene organelos con membrana.","Su ADN está en el nucleoide, sin núcleo."],
-["LISOSOMA","celula","Vesícula de la célula animal.","Tiene enzimas digestivas.","El «servicio de reciclaje» de la célula."],
+["LISOSOMA","celula","Vesícula de las células eucariotas, abundante en las animales.","Tiene enzimas digestivas.","El «servicio de reciclaje» de la célula."],
 ["VIRCHOW","celula","Médico alemán del siglo XIX.","Completó la teoría celular.","Dijo: «toda célula proviene de otra célula»."],
 ["TAXONOMÍA","reinos","Ciencia que pone orden en la diversidad.","Su padre es Linneo.","Nombra y clasifica a los seres vivos."],
 ["ESPECIE","reinos","La categoría más específica de la clasificación.","Sus miembros tienen crías fértiles entre sí.","Va en minúscula en el nombre científico."],

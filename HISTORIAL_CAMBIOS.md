@@ -6,6 +6,36 @@
 
 ---
 
+## Versión 2.87 — 25 de noviembre de 2026 · Revisión contra los referentes (parte 4: ciencias del juego, abiertas y palabras)
+
+**Contexto.** Última parte de la revisión que pidió el docente (versiones 2.84 y 2.86). Dos agentes expertos en biología revisaron **1791 entradas**: el juego de opción múltiple, verdadero o falso, escribir y ordenar, más las abiertas y las palabras con pistas.
+
+**Hallazgos (11).** Ninguna clave equivocada ni pregunta con dos correctas.
+- **Pistas que daban la respuesta:** la de «agua» decía «H₂O» y la de Mendel decía «el monje de las arvejas».
+- **Explicaciones precisadas:**
+  - el embrión es tal hasta la semana 8 después de la fecundación, que es la 10 de embarazo;
+  - hay virus de hasta 300 nm, más grandes que el límite del microscopio óptico;
+  - la quitina es un indicio de parentesco, no una prueba;
+  - los 6 CO₂ se cuentan por glucosa;
+  - la arteria pulmonar es la que lleva sangre sin oxígeno en el adulto;
+  - la rana dorada pone sus huevos en el agua o en lugares muy húmedos;
+  - lisosomas no solo en la célula animal;
+  - una etimología falsa;
+  - el romerón cambia por los abetos.
+
+**Cambios.** `banco.js` y `ahorcado-datos.js` (caché `bionom-v100`; `banco.js?v=31`, `ahorcado-datos.js?v=22`). `revisar-sintaxis.js` sin errores; panel y juego probados con Playwright sin errores. Informes en `revision-referentes-2026-11/`.
+
+**Resumen de toda la revisión contra los referentes (partes 1 a 4).** Se revisaron las tres bases completas con agentes expertos independientes de tres categorías:
+- **Evaluación Icfes:** 2794 preguntas Saber resueltas a ciegas, con evidencia del Marco y nivel de desempeño en todas.
+- **Currículo MEN:** DBA y curso de unas 6870 entradas.
+- **Ciencias:** juego, abiertas y palabras.
+
+Ninguna clave del juego estaba equivocada. Los problemas de fondo eran las etiquetas, las pistas que delataban la clave y los distractores débiles. El banco queda con pocas preguntas de nivel 4 y con mucho uso comprensivo frente a explicación e indagación: los próximos lotes deben ir en esa dirección.
+
+**Pendiente.** Retirar o no la palabra INCLUSIÓN (decisión del docente). Sin pasos manuales.
+
+---
+
 ## Versión 2.86 — 25 de noviembre de 2026 · Revisión contra los referentes (parte 3: currículo MEN, DBA y curso)
 
 **Contexto.** Sigue la revisión del banco contra `REFERENTES_CURRICULARES.md` (versión 2.84). Dos agentes expertos en currículo MEN revisaron **las 2699 entradas de BioNom**: juego, Saber, abiertas y palabras. Para cada una miraron el DBA y el curso contra los estándares, los DBA y los priorizados SED.

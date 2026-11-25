@@ -1,0 +1,106 @@
+{
+ "lote": "cien-bio-1",
+ "experto": "ciencia",
+ "revisadas": 964,
+ "coincidencias_a_ciegas": 0,
+ "ev": {},
+ "nd": {},
+ "hallazgos": [
+  {
+   "id": "bio-j18",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "Los virus miden entre 20 y 300 nanómetros, menos que el límite del microscopio óptico (unos 200 nm).",
+     "nuevo": "Casi todos los virus miden entre 20 y 300 nanómetros, por debajo del límite del microscopio óptico (unos 200 nm)."
+    }
+   ],
+   "motivo": "Hay virus de hasta 300 nm, por encima del límite de 200 nm: «menos que» no es exacto para todos."
+  },
+  {
+   "id": "bio-j24",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "Esa es una prueba de que los hongos están más cerca de los animales que de las plantas.",
+     "nuevo": "Es un indicio, que el ADN confirma, de que los hongos están más cerca de los animales que de las plantas."
+    }
+   ],
+   "motivo": "La quitina por sí sola no prueba parentesco; la prueba es la comparación de ADN."
+  },
+  {
+   "id": "bio-j686",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "Un carbono de cada piruvato sale antes del ciclo y cuatro más salen en el ciclo de Krebs",
+     "nuevo": "Un carbono de cada piruvato sale antes del ciclo (2 en total) y cuatro más salen en el ciclo de Krebs"
+    }
+   ],
+   "motivo": "Mezcla unidades (por piruvato y por glucosa): con la aclaración la suma 2 + 4 = 6 queda coherente."
+  },
+  {
+   "id": "bio-j251",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "Es la única arteria que lleva sangre sin oxígeno",
+     "nuevo": "Es la única arteria del adulto que lleva sangre sin oxígeno"
+    }
+   ],
+   "motivo": "Las arterias umbilicales del feto también llevan sangre pobre en oxígeno."
+  },
+  {
+   "id": "bio-j233",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "exp",
+     "original": "ponen huevos sin cáscara en el agua",
+     "nuevo": "ponen huevos sin cáscara en el agua o en lugares muy húmedos"
+    }
+   ],
+   "motivo": "Phyllobates terribilis (rana dorada, Dendrobatidae) pone los huevos en tierra húmeda; el macho lleva los renacuajos al agua."
+  },
+  {
+   "id": "bio-p21",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "pista",
+     "original": "Vesícula de la célula animal.",
+     "nuevo": "Vesícula de las células eucariotas, abundante en las animales."
+    }
+   ],
+   "motivo": "Los lisosomas no son exclusivos de la célula animal (también hay en hongos, protistas y otras)."
+  },
+  {
+   "id": "bio-j680",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "pista",
+     "original": "Su fórmula es H₂O.",
+     "nuevo": "Es la molécula que forma la mayor parte de tu cuerpo."
+    }
+   ],
+   "motivo": "La pista 2 da la respuesta («Agua») casi textual; debe ser concreta sin revelarla."
+  },
+  {
+   "id": "bio-j96",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "pista",
+     "original": "Une las ideas de Darwin con las del monje de las arvejas.",
+     "nuevo": "Une las ideas de Darwin con la ciencia que explica cómo se heredan los rasgos."
+    }
+   ],
+   "motivo": "La pista 2 nombra a Mendel («el monje de las arvejas»), que es la respuesta."
+  }
+ ]
+}
