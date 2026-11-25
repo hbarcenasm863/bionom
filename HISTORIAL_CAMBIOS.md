@@ -6,6 +6,14 @@
 
 ---
 
+## Versión 2.88 — 26 de noviembre de 2026 · El método MDEC no se enlaza a DBA ni estándares
+
+**Contexto.** El docente aclaró que el método MDEC es un modelo propio y no debe enlazarse a ningún DBA o estándar.
+
+**Cambios.** `REFERENTES_CURRICULARES.md` (igual en los tres sitios): nota nueva en la sección 3 que dice que el método MDEC es un modelo propio del docente y que sus ejercicios no se enlazan a ningún DBA ni estándar; la lista de verificación 7.1 lo excluye del requisito de DBA. En BioNom no hay ejercicios MDEC; el cambio es solo del documento común. Sin pasos manuales.
+
+---
+
 ## Versión 2.87 — 25 de noviembre de 2026 · Revisión contra los referentes (parte 4: ciencias del juego, abiertas y palabras)
 
 **Contexto.** Última parte de la revisión que pidió el docente (versiones 2.84 y 2.86). Dos agentes expertos en biología revisaron **1791 entradas**: el juego de opción múltiple, verdadero o falso, escribir y ordenar, más las abiertas y las palabras con pistas.
