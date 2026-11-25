@@ -6,6 +6,39 @@
 
 ---
 
+## Versión 2.91 — 26 de noviembre de 2026 · Lote 8: 9 preguntas Saber de nivel alto
+
+**Contexto.** El docente pidió preguntas de nivel 4, el más alto de la prueba Saber 11. El banco tenía solo 13.
+
+**Cambios.**
+- `docente-datos.js` (`?v=44`): bloque nuevo «Lote 8» con 9 preguntas. Todas traen tabla y llevan `c`, `af`, `ev`, `nd`, `dba` y `curso`.
+  - Hay 5 de nivel 4: meiosis, nitrógeno y fósforo, resistencia a la insulina, moscas con genes ligados y pinzones.
+  - Hay 4 de nivel 3: arquea con dominios, cascada trófica, jugo frente a naranjas y ciclo menstrual sin ovulación.
+  - La de arquea lleva `d:1`: solo sale cuando el docente trabaja con dominios. El bloque aplica el modelo de reinos.
+- **Auditoría con 4 agentes en cadena** (informes en `revision-lote8-2026-11/`):
+  - **Autor:** escribió 12 preguntas con REFERENTES_CURRICULARES.md.
+  - **Biología:**
+    - Resolvió las 12 a ciegas y todas coincidieron con la clave.
+    - Descartó 3 que repetían situaciones del banco: papa en sal, páramo, y ratón y lagarto.
+    - Precisó los contextos de meiosis, ciclo menstrual y moscas, y cambió 2 distractores poco creíbles.
+  - **Evaluación Icfes, datos y tablas:**
+    - En las 9 la clave era la opción más larga; igualó el largo de las opciones.
+    - Bajó 4 preguntas de nivel 4 a 3, porque no exigían tanto.
+    - Quitó de 2 claves los datos que las delataban.
+  - **Currículo MEN:**
+    - Pasó la de arquea a curso 10.
+    - Puso la del jugo como «sin DBA propio».
+    - Resolvió las 9 a ciegas tras la reescritura y no halló errores.
+- `saber-juego.js` (`?v=21`) se generó de nuevo. Caché `bionom-v103`.
+- **Pruebas con Playwright:**
+  - El panel y el Juego cargan sin errores.
+  - Con dominios aparece la pregunta de arquea y sin dominios no.
+  - La revisión de sintaxis pasa sin errores.
+
+**Pendiente.** `MATRIZ_DBA.md` no se actualizó con estas 9 preguntas. Son pocas y no cambian la cobertura de ningún DBA.
+
+---
+
 ## Versión 2.90 — 26 de noviembre de 2026 · Palabras con DBA y curso, MONOSOMÍA en vez de INCLUSIÓN, contador
 
 **Contexto.** El docente pidió hacer todos los pendientes de la revisión. Para BioNom eran tres:
