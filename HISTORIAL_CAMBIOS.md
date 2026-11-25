@@ -6,6 +6,17 @@
 
 ---
 
+## Versión 2.85 — 25 de noviembre de 2026 · Contador de preguntas en la portada y en el panel docente
+
+El docente pidió un **contador de preguntas** en la portada y en el panel docente que se calcule solo y cambie siempre que cambie el banco.
+
+- **`contador.js`** (nuevo, el mismo archivo en los tres sitios): cada vez que se abre la página, después de que termina de cargar, carga los bancos en un marco invisible y cuenta el banco completo: preguntas del juego, tipo Saber 11, abiertas, palabras con pistas. No hay que actualizar ningún número a mano.
+- **`index.html`** y **`docente.html`**: recuadro `#contador-preguntas` debajo del encabezado.
+- Hoy muestra 2 219 (773 del juego, 917 tipo Saber 11 y 529 abiertas), más 489 palabras. Probado con Playwright en las dos páginas (mismo número en ambas, sin errores).
+- Caché `bionom-v98`; `contador.js?v=1`. `revisar-sintaxis.js` sin errores. Sin pasos manuales.
+
+---
+
 ## Versión 2.84 — 24 de noviembre de 2026 · Revisión del banco Saber contra los referentes curriculares (parte 1: evaluación Icfes)
 
 **Contexto.** El docente pidió revisar todo el banco existente de los tres sitios contra `REFERENTES_CURRICULARES.md` (estándares, DBA, priorizados y modelo basado en evidencias del Icfes) con agentes expertos, y dejarlo en `main`. Es un trabajo grande (unas 7000 preguntas y palabras en los tres sitios) y el límite de uso cortó dos veces a los agentes, así que se publica por partes. Esta primera parte cubre **las 908 preguntas Saber de BioNom** revisadas por el experto en evaluación Saber 11 / Icfes.

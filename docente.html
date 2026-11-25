@@ -133,6 +133,7 @@
     <h1>Material para la clase</h1>
     <p>Arme guías de 4 sesiones, talleres, evaluaciones tipo Saber 11, laberintos, crucigramas, ahorcados, sopas de letras, criptogramas genéticos, mapas conceptuales y casos del detective biológico, con las preguntas y palabras de BioNom. Todo con varias versiones para evitar la copia y con su clave.</p>
   </header>
+  <div id="contador-preguntas" aria-live="polite"></div>
   <details class="card recorrido" id="recorrido" style="margin:0 0 14px;border-left:6px solid #7b4bb7">
     <summary><b>📅 Recorrido sugerido por grado (Estándares del MEN)</b><small>Qué módulos y secciones trabajar en cada grado. Lo marcado «Profundización 10.°–11.°» en las páginas queda para la media.</small></summary>
     <div class="tbl-wrap"><table class="t">
@@ -440,5 +441,6 @@ document.querySelectorAll('.dtabs [data-p]').forEach(function(b){b.onclick=funct
 </script>
 <script src="text-zoom.js?v=13"></script>
 <script src="pwa-install.js?v=14"></script>
+<script src="contador.js?v=1" data-sitio="bionom" defer></script>
 </body>
 </html>
