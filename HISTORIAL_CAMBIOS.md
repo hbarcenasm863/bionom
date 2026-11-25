@@ -6,6 +6,18 @@
 
 ---
 
+## Versión 2.89 — 26 de noviembre de 2026 · Banco de preguntas: preguntas MDEC con colores y sin DBA (archivo común)
+
+**Contexto.** El docente amplió las preguntas MDEC de ChromaNom e IonNom.
+
+**Cambios.**
+- `banco-sel.js` (igual en los tres sitios): muestra las preguntas MDEC con sus colores y sin DBA, y suma el filtro «Solo método MDEC» o «Sin método MDEC».
+- `contador.js` (igual en los tres sitios): cuenta también las preguntas MDEC de los otros dos sitios.
+- En BioNom no hay preguntas MDEC, así que no cambia nada visible.
+- Caché `bionom-v101`; `banco-sel.js?v=5` y `contador.js?v=2`. Sin pasos manuales.
+
+---
+
 ## Versión 2.88 — 26 de noviembre de 2026 · El método MDEC no se enlaza a DBA ni estándares
 
 **Contexto.** El docente aclaró que el método MDEC es un modelo propio y no debe enlazarse a ningún DBA o estándar.
