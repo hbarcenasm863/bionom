@@ -6,6 +6,35 @@
 
 ---
 
+## Versión 2.90 — 26 de noviembre de 2026 · Palabras con DBA y curso, MONOSOMÍA en vez de INCLUSIÓN, contador
+
+**Contexto.** El docente pidió hacer todos los pendientes de la revisión. Para BioNom eran tres:
+- quitar la palabra INCLUSIÓN del banco de palabras, porque no mide ciencias;
+- dar DBA y curso a las palabras de crucigramas, sopas, ahorcados y criptogramas;
+- actualizar el contador común.
+
+**Cambios.**
+- `ahorcado-datos.js` (`?v=23`): INCLUSIÓN se cambió por **MONOSOMÍA**, con estas pistas: «Alteración cromosómica.», «A una pareja de cromosomas le falta uno.» y «Ejemplo: el síndrome de Turner, con un solo cromosoma X.». Es de 9.° (DBA 9.4).
+  - La revisaron 2 agentes expertos: uno de biología y uno de currículo MEN.
+  - Primero se propuso QUIASMA. El experto MEN la descartó: es profundización y repite ENTRECRUZAMIENTO.
+  - El banco sigue con 41 palabras de División celular.
+- **Palabras con DBA y curso** (archivos nuevos `palabras-dba.js`, igual en los tres sitios, y `palabras-dba-datos.js`, generado):
+  - Un agente experto en currículo MEN dio a cada una de las 489 palabras su DBA (MEN, 2016) y el curso mínimo.
+    - Reparto por curso: 6.° = 101, 7.° = 120, 8.° = 125, 9.° = 93, 10.° = 20 y 11.° = 30.
+    - 51 palabras quedaron «sin DBA propio».
+    - Algunas de esas 51 quedaron en cursos bajos porque su tema viene de los aprendizajes priorizados: energías renovables, nutrientes, regiones de Colombia, El Niño y La Niña.
+  - En el panel docente, las pestañas de Crucigramas, Ahorcado, Sopa de letras y Criptograma tienen el selector nuevo **«Palabras hasta el curso»**.
+    - El selector deja en el banco solo las palabras de ese curso o de cursos anteriores, y queda guardado en el equipo.
+    - Por ejemplo, «Hasta 9.°» deja 439 de 489 palabras.
+- `contador.js` (`?v=3`, el mismo archivo en los tres sitios): en ChromaNom suma las preguntas MDEC que el Juego arma al cargar.
+- Caché `bionom-v102`.
+- Probado con Playwright: el panel no tiene errores, el selector aparece en las cuatro pestañas y filtra bien.
+- La revisión de sintaxis pasa sin errores en los 87 scripts.
+
+**Pendiente.** Nada.
+
+---
+
 ## Versión 2.89 — 26 de noviembre de 2026 · Banco de preguntas: preguntas MDEC con colores y sin DBA (archivo común)
 
 **Contexto.** El docente amplió las preguntas MDEC de ChromaNom e IonNom.

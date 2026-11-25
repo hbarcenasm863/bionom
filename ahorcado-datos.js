@@ -179,7 +179,7 @@ window.BANCO_AHORCADO.push(
 ["MICROTÚBULO","division","Fibra de proteína.","Forma el huso.","Mueve los cromosomas."],
 ["CARIOCINESIS","division","División del núcleo.","Es la división del núcleo.","Reparte los cromosomas."],
 ["REPOSO","division","Estado de algunas células.","No se dividen.","Se escribe G0 en el ciclo."],
-["INCLUSIÓN","division","Valor de la convivencia.","Todos participan.","Derecho de las personas con síndrome de Down."],
+["MONOSOMÍA","division","Alteración cromosómica.","A una pareja de cromosomas le falta uno.","Ejemplo: el síndrome de Turner, con un solo cromosoma X."],
 ["ONCOLOGÍA","division","Rama de la medicina.","Estudia los tumores.","Trata el cáncer."],
 ["CARCINÓGENO","division","Sustancia peligrosa.","Puede causar cáncer.","Como el humo del cigarrillo."],
 ["WHITTAKER","reinos","Ecólogo estadounidense.","Propuso un modelo en 1969.","Creó el modelo de cinco reinos."],
