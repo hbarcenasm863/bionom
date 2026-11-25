@@ -6,6 +6,46 @@
 
 ---
 
+## Versión 2.86 — 25 de noviembre de 2026 · Revisión contra los referentes (parte 3: currículo MEN, DBA y curso)
+
+**Contexto.** Sigue la revisión del banco contra `REFERENTES_CURRICULARES.md` (versión 2.84). Dos agentes expertos en currículo MEN revisaron **las 2699 entradas de BioNom**: juego, Saber, abiertas y palabras. Para cada una miraron el DBA y el curso contra los estándares, los DBA y los priorizados SED.
+
+**Hallazgos (329).**
+- **1 alto:** la pista de CARIOCINESIS decía «otro nombre de la mitosis»; ahora dice «la división del núcleo».
+- **186 medios:**
+  - Las etapas de la respiración celular (glucólisis, Krebs, cadena respiratoria) pasan a «sin DBA», curso 10.
+  - Evolución humana y homínidos suben a curso 10, porque así lo nombra el priorizado de 10.°.
+  - Ambiente y Colombia estaban casi todo en 11.5 y bajan según los priorizados SED:
+    - energías renovables, curso 6;
+    - causas del cambio climático, curso 7;
+    - ciclos y deforestación, 7.4;
+    - El Niño y La Niña, curso 8;
+    - huella de carbono, curso 9.
+  - Siguen en 11.5: megadiversidad, minería y tráfico de fauna.
+  - Se completaron muchos DBA vacíos en funciones, nutrición, ecosistemas, sistemas y microbiología. El código genético universal pasa a 9.6, la segunda ley de la termodinámica a 8.1 y los telómeros y la ley de Poiseuille a «sin DBA», curso 10.
+- **142 bajos:**
+  - Deriva genética en 9.°.
+  - Selección estabilizadora y disruptiva y retroalimentación positiva en 10.°.
+  - Pistas de ARQUEA («enlaces éter», que es de 10.°) y de ADAPTACIÓN («seleccionada» delataba la respuesta).
+- La abierta sobre inclusión de personas con síndrome de Down se reformuló como pregunta de ciencias (trisomía 21, DBA 9.4).
+
+**Cambios.**
+- `revision-ref.js`: ahora también lleva `dba` y `curso` en 228 preguntas Saber.
+- `dba-ajustes.js`: 84 preguntas del juego con su DBA y curso corregidos. Otras 3 traen el DBA escrito a mano y no se tocaron (bio-j739, bio-j744 y bio-j745).
+- `ahorcado-datos.js`: pistas corregidas.
+- `docente-datos.js`: la abierta reformulada.
+- Caché `bionom-v99`; `dba-ajustes.js?v=2`, `docente-datos.js?v=43`, `revision-ref.js?v=2` y `ahorcado-datos.js?v=21`.
+- `revisar-sintaxis.js` sin errores. Probado con Playwright: el panel y el juego cargan sin errores.
+- Informes en `revision-referentes-2026-11/`.
+
+**Decisiones para el docente.**
+- El experto dejó con curso de 6.° a 9.° el contenido que un estándar o un priorizado cubre aunque no tenga DBA propio. Así lo hace ya el resto del banco: pasarlo todo a 10.° vaciaría los niveles Básico y Medio de esos temas.
+- Se sugiere retirar la palabra INCLUSIÓN del banco de ahorcado. No se retiró.
+
+**Pendiente.** Falta la revisión de ciencias del juego, las abiertas y las palabras (en curso). Sin pasos manuales: no se tocó `bionom-analytics.gs`.
+
+---
+
 ## Versión 2.85 — 25 de noviembre de 2026 · Contador de preguntas en la portada y en el panel docente
 
 El docente pidió un **contador de preguntas** en la portada y en el panel docente que se calcule solo y cambie siempre que cambie el banco.

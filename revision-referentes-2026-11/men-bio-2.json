@@ -1,0 +1,2366 @@
+{
+ "lote": "men-bio-2",
+ "experto": "men",
+ "revisadas": 1299,
+ "coincidencias_a_ciegas": 0,
+ "ev": {},
+ "nd": {},
+ "hallazgos": [
+  {
+   "id": "division|1qgk9rq",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "No mide ciencias naturales: pide una actitud de inclusión, sin competencia ni DBA que la sustente. Reformular hacia la causa cromosómica (trisomía 21, error en la meiosis, DBA 9.4) o retirarla del banco; la inclusión queda en la pregunta abierta y se trabaja en convivencia, no en el Saber de ciencias."
+  },
+  {
+   "id": "division|1k1ve82",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 10
+   },
+   "motivo": "Telómeros y límite de divisiones (HeLa frente a fibroblastos) no están en el DBA 6.4 ni en los estándares de 6.°; es profundización. DBA vacío en el lote: se marca 'sin' y curso 10."
+  },
+  {
+   "id": "bio-p164",
+   "gravedad": "alta",
+   "textos": [
+    {
+     "campo": "pista",
+     "original": "Es otro nombre de la mitosis.",
+     "nuevo": "Es la división del núcleo."
+    }
+   ],
+   "motivo": "Error científico: cariocinesis es la división del núcleo (una parte de la mitosis), no un sinónimo de mitosis, que incluye también la citocinesis."
+  },
+  {
+   "id": "bio-p166",
+   "gravedad": "baja",
+   "motivo": "INCLUSIÓN (valor de convivencia) no es vocabulario del DBA 6.4 ni 9.4; sin ligar a la trisomía 21 no pertenece al banco de ciencias. Sugerido retirar o cambiar por una palabra del tema (p. ej. NO DISYUNCIÓN ya existe; usar CARIOTIPO)."
+  },
+  {
+   "id": "bio-a421",
+   "gravedad": "media",
+   "textos": [
+    {
+     "campo": "q",
+     "original": "Escribe un texto sobre la inclusión de las personas con síndrome de Down en el colegio.",
+     "nuevo": "Explica por qué una copia extra del cromosoma 21 no impide que las personas con síndrome de Down participen en el colegio, y qué apoyos favorecen su inclusión."
+    }
+   ],
+   "motivo": "Pregunta abierta sin componente científico evaluable; se ancla en la trisomía 21 (DBA 9.4) para que mida explicación de fenómenos."
+  },
+  {
+   "id": "funciones|inn5mp",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: digestión y obtención de alimento comparadas corresponde a nutrición heterótrofa (DBA 7.3)."
+  },
+  {
+   "id": "funciones|rofaim",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: digestión y obtención de alimento comparadas corresponde a nutrición heterótrofa (DBA 7.3)."
+  },
+  {
+   "id": "funciones|xusa0s",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: digestión y obtención de alimento comparadas corresponde a nutrición heterótrofa (DBA 7.3)."
+  },
+  {
+   "id": "funciones|1pwn1wm",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: digestión y obtención de alimento comparadas corresponde a nutrición heterótrofa (DBA 7.3)."
+  },
+  {
+   "id": "funciones|167k501",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: digestión y obtención de alimento comparadas corresponde a nutrición heterótrofa (DBA 7.3)."
+  },
+  {
+   "id": "funciones|1yzr4or",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: excreción y balance de agua y sales pertenecen al sistema excretor y la homeostasis (DBA 8.4, grado 8); el resto de preguntas de excreción ya está en 8.4. Curso sube de 7 a 8."
+  },
+  {
+   "id": "funciones|i82ww",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: excreción y balance de agua y sales pertenecen al sistema excretor y la homeostasis (DBA 8.4, grado 8); el resto de preguntas de excreción ya está en 8.4. Curso sube de 7 a 8."
+  },
+  {
+   "id": "funciones|oesjj8",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: excreción y balance de agua y sales pertenecen al sistema excretor y la homeostasis (DBA 8.4, grado 8); el resto de preguntas de excreción ya está en 8.4. Curso sube de 7 a 8."
+  },
+  {
+   "id": "funciones|1i8zi9p",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: excreción y balance de agua y sales pertenecen al sistema excretor y la homeostasis (DBA 8.4, grado 8); el resto de preguntas de excreción ya está en 8.4. Curso sube de 7 a 8."
+  },
+  {
+   "id": "funciones|1eulqf9",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: excreción y balance de agua y sales pertenecen al sistema excretor y la homeostasis (DBA 8.4, grado 8); el resto de preguntas de excreción ya está en 8.4. Curso sube de 7 a 8."
+  },
+  {
+   "id": "funciones|1fsoxs9",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: hormonas vegetales, tropismos y fotoperiodo son regulación hormonal (DBA 8.4), como las demás de fitohormonas ya etiquetadas 8.4 con curso 8."
+  },
+  {
+   "id": "funciones|12u3ovc",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: hormonas vegetales, tropismos y fotoperiodo son regulación hormonal (DBA 8.4), como las demás de fitohormonas ya etiquetadas 8.4 con curso 8."
+  },
+  {
+   "id": "funciones|s7o5h9",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: hormonas vegetales, tropismos y fotoperiodo son regulación hormonal (DBA 8.4), como las demás de fitohormonas ya etiquetadas 8.4 con curso 8."
+  },
+  {
+   "id": "funciones|15xgvg4",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: hormonas vegetales, tropismos y fotoperiodo son regulación hormonal (DBA 8.4), como las demás de fitohormonas ya etiquetadas 8.4 con curso 8."
+  },
+  {
+   "id": "funciones|1ivjddd",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: hormonas vegetales, tropismos y fotoperiodo son regulación hormonal (DBA 8.4), como las demás de fitohormonas ya etiquetadas 8.4 con curso 8."
+  },
+  {
+   "id": "funciones|1g0mbnq",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: hormonas vegetales, tropismos y fotoperiodo son regulación hormonal (DBA 8.4), como las demás de fitohormonas ya etiquetadas 8.4 con curso 8."
+  },
+  {
+   "id": "funciones|7ypu3i",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: ecolocalización y percepción son sistema nervioso y sentidos (DBA 8.4)."
+  },
+  {
+   "id": "funciones|4ptrus",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: endotermia y ectotermia son regulación de la temperatura (homeostasis, DBA 8.4, grado 8)."
+  },
+  {
+   "id": "funciones|1lxsn8u",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: endotermia y ectotermia son regulación de la temperatura (homeostasis, DBA 8.4, grado 8)."
+  },
+  {
+   "id": "funciones|1miubt6",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: endotermia y ectotermia son regulación de la temperatura (homeostasis, DBA 8.4, grado 8)."
+  },
+  {
+   "id": "funciones|5t8w4n",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|5bgsbf",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1wr0c2m",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|13pa74c",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|13j7gpc",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|829yg2",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|tvjft4",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1v71787",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1tvf9qj",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1mu0snx",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|d38m48",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1aguuhk",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|rqfeuc",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|ot2clq",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1uruj08",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|19yhp7h",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1nrc0ik",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|kxzydn",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|e5y2p9",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|tfs7r5",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1sbmx81",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|s8c841",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1ilo7vu",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|d35ox0",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|4kv27y",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|gjedd2",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|awvaq6",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1icemah",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|ag81fz",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1mb3qnf",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|1adybxv",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|887n6f",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: intercambio de gases, circulación y transporte comparados (y transpiración) están en el estándar de 6.°-7.° («funciones de los seres vivos a partir de las relaciones entre sistemas de órganos») pero ningún DBA los nombra: llevan 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "funciones|11qbkrk",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: defensas de animales y plantas aparecen en el estándar de 8.°-9.° («sistemas de defensa y ataque»), no en un DBA; 'sin' y curso 8, igual que las otras defensas (espinas, toxina)."
+  },
+  {
+   "id": "funciones|1s5mte6",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: defensas de animales y plantas aparecen en el estándar de 8.°-9.° («sistemas de defensa y ataque»), no en un DBA; 'sin' y curso 8, igual que las otras defensas (espinas, toxina)."
+  },
+  {
+   "id": "funciones|1grckzh",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: defensas de animales y plantas aparecen en el estándar de 8.°-9.° («sistemas de defensa y ataque»), no en un DBA; 'sin' y curso 8, igual que las otras defensas (espinas, toxina)."
+  },
+  {
+   "id": "funciones|1q7f7xy",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: defensa de animales y plantas sin DBA propio; 'sin'."
+  },
+  {
+   "id": "funciones|k2iiuh",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: defensa de animales y plantas sin DBA propio; 'sin'."
+  },
+  {
+   "id": "funciones|elzj0v",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 10
+   },
+   "motivo": "Ley de Poiseuille (caudal proporcional a r^4): mecánica de fluidos en seres vivos es estándar de 10.°-11.° sin DBA; 'sin' y curso 10 (ya estaba en 10)."
+  },
+  {
+   "id": "bio-j531",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j532",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j533",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j536",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j556",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j538",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j543",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j544",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j560",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Excreción, sistema nervioso o fitohormonas: regulación de funciones (DBA 8.4, grado 8); las preguntas hermanas (Malpighi, nefridios, ecdisona, auxina, red nerviosa) ya están en 8.4|8 y estas quedaron en 'sin'|7."
+  },
+  {
+   "id": "bio-j547",
+   "gravedad": "baja",
+   "etiquetas": {
+    "curso": 8
+   },
+   "motivo": "Defensas de animales y plantas: estándar de 8.°-9.°; las demás defensas del banco (j545, j546, j561) están en curso 8."
+  },
+  {
+   "id": "bio-j548",
+   "gravedad": "baja",
+   "etiquetas": {
+    "curso": 8
+   },
+   "motivo": "Defensas de animales y plantas: estándar de 8.°-9.°; las demás defensas del banco (j545, j546, j561) están en curso 8."
+  },
+  {
+   "id": "bio-j549",
+   "gravedad": "baja",
+   "etiquetas": {
+    "curso": 8
+   },
+   "motivo": "Defensas de animales y plantas: estándar de 8.°-9.°; las demás defensas del banco (j545, j546, j561) están en curso 8."
+  },
+  {
+   "id": "bio-p435",
+   "gravedad": "baja",
+   "motivo": "Ley de Poiseuille es mecánica de fluidos en seres vivos (estándar de 10.°-11.°): vocabulario de profundización en un tema de curso 7; usarla solo con nivel Completo."
+  },
+  {
+   "id": "bio-a475",
+   "gravedad": "baja",
+   "motivo": "Ley de Poiseuille: contenido de 10.°-11.° (mecánica de fluidos, estándar de procesos biológicos); marcar nivel Completo."
+  },
+  {
+   "id": "nutricion|10xt5lz",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "9.6",
+    "curso": 9
+   },
+   "motivo": "Código genético universal como evidencia de ancestro común es DBA 9.6 (grado 9), igual que la pregunta bio-j569; estaba en 8.4|8."
+  },
+  {
+   "id": "nutricion|1fw8bx7",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Digestión enzimática y absorción de nutrientes: nutrición heterótrofa (DBA 7.3, grado 7). Estaba vacío o en 8.4."
+  },
+  {
+   "id": "nutricion|8lhlqo",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Digestión enzimática y absorción de nutrientes: nutrición heterótrofa (DBA 7.3, grado 7). Estaba vacío o en 8.4."
+  },
+  {
+   "id": "nutricion|1a7qc1m",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Digestión enzimática y absorción de nutrientes: nutrición heterótrofa (DBA 7.3, grado 7). Estaba vacío o en 8.4."
+  },
+  {
+   "id": "nutricion|1j4dmhs",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Digestión enzimática y absorción de nutrientes: nutrición heterótrofa (DBA 7.3, grado 7). Estaba vacío o en 8.4."
+  },
+  {
+   "id": "nutricion|zw72yo",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Digestión enzimática y absorción de nutrientes: nutrición heterótrofa (DBA 7.3, grado 7). Estaba vacío o en 8.4."
+  },
+  {
+   "id": "nutricion|1yuduyj",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Digestión enzimática y absorción de nutrientes: nutrición heterótrofa (DBA 7.3, grado 7). Estaba vacío o en 8.4."
+  },
+  {
+   "id": "nutricion|1q37xaw",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: absorción intestinal y vellosidades son nutrición (7.3); se conserva curso 8."
+  },
+  {
+   "id": "nutricion|ecxqgh",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Prueba de lugol con controles: igual que 1xr5ad9 y 5sqa83 (7.3|7). Curso 11 es excesivo: la tarea es diseñar un control sencillo."
+  },
+  {
+   "id": "nutricion|19vrwb5",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: prevención de enfermedades transmitidas por vectores o agua (inmunidad y salud, DBA 8.4); coincide con bio-j590, j592, j593."
+  },
+  {
+   "id": "nutricion|1p98k6s",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "DBA vacío: prevención de enfermedades transmitidas por vectores o agua (inmunidad y salud, DBA 8.4); coincide con bio-j590, j592, j593."
+  },
+  {
+   "id": "nutricion|2gtob6",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "6.3",
+    "curso": 6
+   },
+   "motivo": "DBA vacío: función del agua (regulación de temperatura, contenido de agua y metabolismo) corresponde al agua como solvente y sustancia vital (6.3, componente biológico que cubre BioNom)."
+  },
+  {
+   "id": "nutricion|7nyt03",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "6.3",
+    "curso": 6
+   },
+   "motivo": "DBA vacío: función del agua (regulación de temperatura, contenido de agua y metabolismo) corresponde al agua como solvente y sustancia vital (6.3, componente biológico que cubre BioNom)."
+  },
+  {
+   "id": "nutricion|16ls5v6",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|wkbzxv",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|1mxqyq9",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|hrch2o",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|1y8qxkc",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|1698mwc",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|hhucej",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|14ia9od",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|1ypp6lb",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|yt1v8s",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|y0jcxz",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|108c1oq",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|et8wrq",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|7dchxb",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|ibugmz",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|p9cc5d",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|7f95b4",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|1ud1fcw",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|1mhdhhq",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|ybxbrw",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|x0hmbh",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "nutricion|1s1uz6b",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: biomoléculas, dieta y balance de energía los cubre el estándar de 6.°-7.° pero ningún DBA los nombra; 'sin'. Se conserva el curso."
+  },
+  {
+   "id": "bio-j566",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Almidón como reserva: biomolécula sin DBA; su par j567 (glucógeno) es sin|6. Estaba en 8.4|8."
+  },
+  {
+   "id": "bio-j568",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Quitina como biomolécula estructural: sin DBA; estaba en 8.4|8."
+  },
+  {
+   "id": "bio-j607",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Universalidad del ADN en los seres vivos como idea de biomoléculas: sin DBA, grado 6; no es regulación (8.4)."
+  },
+  {
+   "id": "bio-j604",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "6.4",
+    "curso": 6
+   },
+   "motivo": "El ATP como moneda de energía es obtención de energía de la célula (DBA 6.4)."
+  },
+  {
+   "id": "bio-j573",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "6.3",
+    "curso": 6
+   },
+   "motivo": "Agua en el cuerpo: agua como sustancia vital (6.3)."
+  },
+  {
+   "id": "bio-j574",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "6.3",
+    "curso": 6
+   },
+   "motivo": "Calor específico del agua: propiedades del agua (6.3)."
+  },
+  {
+   "id": "bio-j575",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "6.3",
+    "curso": 6
+   },
+   "motivo": "Agua como disolvente: 6.3 textual (agua como solvente)."
+  },
+  {
+   "id": "bio-j591",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.4",
+    "curso": 8
+   },
+   "motivo": "Prevención de enfermedades por agua: salud (8.4), coincide con dengue j590 y tuberculosis j592."
+  },
+  {
+   "id": "bio-p451",
+   "gravedad": "baja",
+   "motivo": "La prueba de Benedict es evidencia del DBA 11.4 (pruebas químicas de biomoléculas, 11.°); en el crucigrama de nivel Básico/Medio conviene marcarla nivel Completo."
+  },
+  {
+   "id": "bio-p483",
+   "gravedad": "baja",
+   "motivo": "Quimiosíntesis no está en ningún DBA de 6.°-9.° (profundización de 10.°); nivel Completo."
+  },
+  {
+   "id": "bio-a527",
+   "gravedad": "baja",
+   "motivo": "Quimiosíntesis es profundización de 10.° (sin DBA); marcar nivel Completo o quitar del nivel Básico."
+  },
+  {
+   "id": "ambiente|17hzhea",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Energías renovables y no renovables: priorizado SED de 6.° (ambiental), sin DBA propio; estaba en 11.5|11, lo que deja sin ítems ambientales a los niveles Básico y Medio."
+  },
+  {
+   "id": "ambiente|yzcvir",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Energías renovables y no renovables: priorizado SED de 6.° (ambiental), sin DBA propio; estaba en 11.5|11, lo que deja sin ítems ambientales a los niveles Básico y Medio."
+  },
+  {
+   "id": "bio-j184",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Energías renovables y no renovables: priorizado SED de 6.° (ambiental), sin DBA propio; estaba en 11.5|11, lo que deja sin ítems ambientales a los niveles Básico y Medio."
+  },
+  {
+   "id": "bio-j493",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Energías renovables y no renovables: priorizado SED de 6.° (ambiental), sin DBA propio; estaba en 11.5|11, lo que deja sin ítems ambientales a los niveles Básico y Medio."
+  },
+  {
+   "id": "bio-j494",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Energías renovables y no renovables: priorizado SED de 6.° (ambiental), sin DBA propio; estaba en 11.5|11, lo que deja sin ítems ambientales a los niveles Básico y Medio."
+  },
+  {
+   "id": "bio-j495",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Energías renovables y no renovables: priorizado SED de 6.° (ambiental), sin DBA propio; estaba en 11.5|11, lo que deja sin ítems ambientales a los niveles Básico y Medio."
+  },
+  {
+   "id": "bio-j508",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Energías renovables y no renovables: priorizado SED de 6.° (ambiental), sin DBA propio; estaba en 11.5|11, lo que deja sin ítems ambientales a los niveles Básico y Medio."
+  },
+  {
+   "id": "bio-j340",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 6
+   },
+   "motivo": "Energías renovables y no renovables: priorizado SED de 6.° (ambiental), sin DBA propio; estaba en 11.5|11, lo que deja sin ítems ambientales a los niveles Básico y Medio."
+  },
+  {
+   "id": "ambiente|j26pmm",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "ambiente|1mr2bl",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "ambiente|1tny8fo",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "ambiente|11b1xpz",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j175",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j176",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j177",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j178",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j179",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j321",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j322",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j332",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j336",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j341",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j491",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j492",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j501",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "bio-j503",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Causas y consecuencias del cambio climático (combustibles fósiles, ganadería, deforestación, regiones de Colombia): priorizado SED de 7.°; el DBA 11.5 pide visión sistémica de grado 11. Se rebaja a 'sin' con curso 7."
+  },
+  {
+   "id": "ambiente|i4axvg",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del carbono, deforestación y acciones para mitigar: DBA 7.4 (grado 7), no 11.5."
+  },
+  {
+   "id": "ambiente|11fyd7e",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del carbono, deforestación y acciones para mitigar: DBA 7.4 (grado 7), no 11.5."
+  },
+  {
+   "id": "bio-j744",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del carbono, deforestación y acciones para mitigar: DBA 7.4 (grado 7), no 11.5."
+  },
+  {
+   "id": "bio-j745",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del carbono, deforestación y acciones para mitigar: DBA 7.4 (grado 7), no 11.5."
+  },
+  {
+   "id": "bio-j331",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del carbono, deforestación y acciones para mitigar: DBA 7.4 (grado 7), no 11.5."
+  },
+  {
+   "id": "bio-j507",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del carbono, deforestación y acciones para mitigar: DBA 7.4 (grado 7), no 11.5."
+  },
+  {
+   "id": "bio-j337",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del carbono, deforestación y acciones para mitigar: DBA 7.4 (grado 7), no 11.5."
+  },
+  {
+   "id": "bio-j496",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del carbono, deforestación y acciones para mitigar: DBA 7.4 (grado 7), no 11.5."
+  },
+  {
+   "id": "ambiente|4hdrni",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "La fotosíntesis de los bosques como causa del zigzag del CO₂ es DBA 7.3 (fotosíntesis y atmósfera), grado 7."
+  },
+  {
+   "id": "ambiente|rpsswo",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Eutrofización y calidad del agua (contaminación y ciclos): DBA 7.4, como j758; estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|1dz856r",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Eutrofización y calidad del agua (contaminación y ciclos): DBA 7.4, como j758; estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|oyp6gi",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Eutrofización y calidad del agua (contaminación y ciclos): DBA 7.4, como j758; estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|13b6fp2",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Eutrofización y calidad del agua (contaminación y ciclos): DBA 7.4, como j758; estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|15tbzfy",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|e1kopa",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|fueczo",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|1h2soz9",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|1sjt3er",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j180",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j181",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j190",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j497",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j498",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 8
+   },
+   "motivo": "El Niño y La Niña en Colombia: priorizado SED de 8.° (ambiental); sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|9crol7",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "Huella de carbono y calentamiento global desde la industrialización: priorizado SED de 9.°; sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|7deypj",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "Huella de carbono y calentamiento global desde la industrialización: priorizado SED de 9.°; sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|eq0cjc",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "Huella de carbono y calentamiento global desde la industrialización: priorizado SED de 9.°; sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ambiente|1hn90pv",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "Huella de carbono y calentamiento global desde la industrialización: priorizado SED de 9.°; sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j189",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "Huella de carbono y calentamiento global desde la industrialización: priorizado SED de 9.°; sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j192",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "Huella de carbono y calentamiento global desde la industrialización: priorizado SED de 9.°; sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j504",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "Huella de carbono y calentamiento global desde la industrialización: priorizado SED de 9.°; sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "bio-j335",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 9
+   },
+   "motivo": "Huella de carbono y calentamiento global desde la industrialización: priorizado SED de 9.°; sin DBA propio. Estaba en 11.5|11."
+  },
+  {
+   "id": "ecosistemas|am3d8",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: flujo de energía y relaciones tróficas (depredador-presa, cascadas tróficas) son DBA 7.3, igual que 9rj9pg y 1sam1ri."
+  },
+  {
+   "id": "ecosistemas|146ft7j",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: flujo de energía y relaciones tróficas (depredador-presa, cascadas tróficas) son DBA 7.3, igual que 9rj9pg y 1sam1ri."
+  },
+  {
+   "id": "ecosistemas|w59k07",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: flujo de energía y relaciones tróficas (depredador-presa, cascadas tróficas) son DBA 7.3, igual que 9rj9pg y 1sam1ri."
+  },
+  {
+   "id": "ecosistemas|1xytlzp",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: flujo de energía y relaciones tróficas (depredador-presa, cascadas tróficas) son DBA 7.3, igual que 9rj9pg y 1sam1ri."
+  },
+  {
+   "id": "ecosistemas|f72jj0",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: flujo de energía y relaciones tróficas (depredador-presa, cascadas tróficas) son DBA 7.3, igual que 9rj9pg y 1sam1ri."
+  },
+  {
+   "id": "ecosistemas|12jugv4",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: flujo de energía y relaciones tróficas (depredador-presa, cascadas tróficas) son DBA 7.3, igual que 9rj9pg y 1sam1ri."
+  },
+  {
+   "id": "ecosistemas|enpgfo",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: flujo de energía y relaciones tróficas (depredador-presa, cascadas tróficas) son DBA 7.3, igual que 9rj9pg y 1sam1ri."
+  },
+  {
+   "id": "ecosistemas|rtqpwh",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: contaminación, recuperación de ecosistemas y efectos de la tala sobre nutrientes y agua: DBA 7.4."
+  },
+  {
+   "id": "ecosistemas|j97v6x",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: contaminación, recuperación de ecosistemas y efectos de la tala sobre nutrientes y agua: DBA 7.4."
+  },
+  {
+   "id": "ecosistemas|1uqvn4w",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Bioacumulación en la cadena trófica (DDT): 7.3, como 1l2hxb7 (mercurio en el delfín rosado); 11.5|11 era un curso excesivo."
+  },
+  {
+   "id": "ecosistemas|d5wro1",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|zmuc",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1fwkc4d",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1pjx4br",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|wj5aki",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|14x71ih",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|12i7l8p",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|5gvpx6",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|kw2o3e",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|841711",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|acxg6m",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1gh000b",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1kgjgc0",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1gpg4b5",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|50xv1s",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|upybj6",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|n5hvqx",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|8hfvzq",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1j2ofyd",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1qf1e3x",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1ampha2",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1dg63yl",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|8kq33y",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|4ui14m",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|j46qmv",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|1wquo5p",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: relaciones entre especies, nicho, poblaciones, sucesión y muestreo ecológico están en el estándar de 6.°-7.° («ecosistemas y equilibrio dinámico entre poblaciones») pero ningún DBA los nombra; 'sin', igual que las preguntas hermanas del juego (bio-j105 a j118). Se conserva el curso 7."
+  },
+  {
+   "id": "ecosistemas|kvnw5g",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.1",
+    "curso": 8
+   },
+   "motivo": "La segunda ley de la termodinámica es el DBA 8.1 (grado 8; el priorizado SED de 7.° dice que el DBA la ubica en 8.°). Estaba en 7.3|10."
+  },
+  {
+   "id": "bio-j626",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "8.1",
+    "curso": 8
+   },
+   "motivo": "Segunda ley de la termodinámica: DBA 8.1, grado 8 (no 10)."
+  },
+  {
+   "id": "bio-j116",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Consecuencias de quitar a un eslabón de la red trófica: relaciones tróficas (7.3); estaba en 'sin'."
+  },
+  {
+   "id": "bio-j296",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.3",
+    "curso": 7
+   },
+   "motivo": "Consecuencias de quitar a un eslabón de la red trófica: relaciones tróficas (7.3); estaba en 'sin'."
+  },
+  {
+   "id": "bio-j478",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del agua, transpiración y quema de combustibles en el ciclo del carbono: DBA 7.4 (ver 4iy78p, 1pgxqal)."
+  },
+  {
+   "id": "bio-j108",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del agua, transpiración y quema de combustibles en el ciclo del carbono: DBA 7.4 (ver 4iy78p, 1pgxqal)."
+  },
+  {
+   "id": "bio-j111",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Ciclo del agua, transpiración y quema de combustibles en el ciclo del carbono: DBA 7.4 (ver 4iy78p, 1pgxqal)."
+  },
+  {
+   "id": "bio-j301",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "Tipos de ecosistema y factores abióticos limitantes no son flujo de materia ni energía; 'sin'."
+  },
+  {
+   "id": "bio-j302",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "Tipos de ecosistema y factores abióticos limitantes no son flujo de materia ni energía; 'sin'."
+  },
+  {
+   "id": "bio-p79",
+   "gravedad": "baja",
+   "textos": [
+    {
+     "campo": "pista",
+     "original": "Característica seleccionada.",
+     "nuevo": "Rasgo propio de una especie."
+    }
+   ],
+   "motivo": "«Seleccionada» remite a la selección natural (DBA 9.6, grado 9) en una palabra de ecosistemas de 7.°; pista 1 con vocabulario del grado."
+  },
+  {
+   "id": "colombia|1ck5i2w",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "colombia|1349anv",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "colombia|c7swv2",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "colombia|1i4xx4i",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "colombia|1cjgqx8",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "colombia|13eeq9l",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "colombia|qakohz",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "colombia|1bei731",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "colombia|popfk3",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "DBA vacío: el efecto de la deforestación, la erosión o el páramo sobre el ciclo del agua es DBA 7.4 (y priorizado SED 7.° sobre ecosistemas de Colombia)."
+  },
+  {
+   "id": "bio-j739",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Páramos que regulan el agua y la Amazonía que reciclan lluvia por transpiración: ciclo del agua (7.4); no requieren la visión sistémica de 11.5|11 y sus preguntas hermanas (qakohz, 1bei731) quedan en grado 7."
+  },
+  {
+   "id": "bio-j316",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "7.4",
+    "curso": 7
+   },
+   "motivo": "Páramos que regulan el agua y la Amazonía que reciclan lluvia por transpiración: ciclo del agua (7.4); no requieren la visión sistémica de 11.5|11 y sus preguntas hermanas (qakohz, 1bei731) quedan en grado 7."
+  },
+  {
+   "id": "colombia|1da66u8",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "sin",
+    "curso": 7
+   },
+   "motivo": "Orden de los pisos térmicos: sin DBA propio; la pregunta hermana bio-j128 está en 'sin'|7. Curso 11 impide usarla en niveles Básico y Medio."
+  },
+  {
+   "id": "colombia|w5veky",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "9.6",
+    "curso": 9
+   },
+   "motivo": "Endemismo por aislamiento geográfico de una montaña: especiación y distribución geográfica (DBA 9.6, grado 9), como fqla7."
+  },
+  {
+   "id": "colombia|1gxiwkn",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "6.5",
+    "curso": 7
+   },
+   "motivo": "Expedición Botánica y herbarios: reconocer y clasificar la biodiversidad (DBA 6.5). La primera estaba en 11.5|11 y la segunda sin DBA."
+  },
+  {
+   "id": "colombia|1ksge5g",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "6.5",
+    "curso": 7
+   },
+   "motivo": "Expedición Botánica y herbarios: reconocer y clasificar la biodiversidad (DBA 6.5). La primera estaba en 11.5|11 y la segunda sin DBA."
+  },
+  {
+   "id": "bio-j628",
+   "gravedad": "media",
+   "etiquetas": {
+    "dba": "9.6",
+    "curso": 9
+   },
+   "motivo": "Distribución geográfica y evolución (istmo de Panamá): DBA 9.6 como j639, no 'sin'|7."
+  },
+  {
+   "id": "colombia|10kpblz",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|yza53o",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1dxmsdx",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|16ahjfk",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1i0rv1n",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|66hdod",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1wvpnk5",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1c655sw",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|19vh5sh",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|9w45yl",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|yzxxt0",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|3sk10k",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1x82lcl",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|136rg4q",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1glt46",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|znwezi",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|upggez",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1l99wf2",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|q8tfh4",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1j5or3t",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1uflwoh",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1dw7yow",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1j3y2ro",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|ebnucr",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|ixsdd5",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1jh35tb",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|jcu3io",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1u573ug",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|10i0m31",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1x1rlpk",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|18aza60",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|xhil79",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|13hejp7",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|1mwef6z",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  },
+  {
+   "id": "colombia|14wudny",
+   "gravedad": "baja",
+   "etiquetas": {
+    "dba": "sin"
+   },
+   "motivo": "DBA vacío: regiones, pisos térmicos, adaptaciones y especies de Colombia son estándar de 6.°-7.° («adaptaciones de seres vivos en ecosistemas de Colombia») y priorizado SED 7.°, pero ningún DBA los nombra; 'sin' como las preguntas hermanas bio-j119 a j137."
+  }
+ ]
+}
